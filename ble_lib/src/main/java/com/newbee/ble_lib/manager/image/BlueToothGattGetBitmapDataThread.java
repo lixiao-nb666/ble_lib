@@ -1,0 +1,141 @@
+package com.newbee.ble_lib.manager.image;
+
+import android.graphics.Bitmap;
+
+
+import com.newbee.ble_lib.bean.BleSendImageEndInfoBean;
+import com.newbee.ble_lib.bean.BleSendImageStartInfoBean;
+import com.newbee.ble_lib.config.BlueToothGattConfig;
+
+import com.newbee.ble_lib.event.statu.BleStatu;
+import com.newbee.ble_lib.event.statu.BleStatuEventSubscriptionSubject;
+import com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager;
+import com.newbee.ble_lib.util.BleSendImageUtil;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class BlueToothGattGetBitmapDataThread extends Thread{
+    private Listen listen;
+    private Bitmap bitmap;
+    private BitmapQualityType qualityType;
+    private Queue<byte[]> dataInfoQueue=new LinkedList<>();
+    private boolean isStart;
+    private long startTime;
+    public BlueToothGattGetBitmapDataThread(Bitmap bitmap,BitmapQualityType qualityType,Listen listen){
+        this.bitmap=bitmap;
+        this.qualityType=qualityType;
+        if(null==this.qualityType){
+            this.qualityType=BitmapQualityType.LOW;
+        }
+        this.listen=listen;
+    }
+
+
+
+
+    public boolean isStart(){
+        return isStart;
+    }
+
+
+    public int index;
+    @Override
+    public void run() {
+        super.run();
+        startTime=System.currentTimeMillis();
+        if(null!=dataInfoQueue){
+            dataInfoQueue.clear();
+        }
+        isStart=true;
+        Bitmap newBitMap = BleSendImageUtil.autoScaleBitmap(bitmap);
+        if(null==newBitMap){
+            listen.sendOver(0);
+            return;
+        }
+
+        byte[] imageBytes=BleSendImageUtil.bitmap2Bytes(newBitMap,qualityType);
+        if(null==imageBytes||imageBytes.length==0){
+            listen.sendOver(0);
+            return;
+        }
+        w=newBitMap.getWidth();
+        h=newBitMap.getHeight();
+        size=imageBytes.length;
+        sendImageStart();
+        splitPacketForMtuByte(imageBytes);
+    }
+
+    public void sendImageStart(){
+        BleSendImageStartInfoBean startInfoBean=new BleSendImageStartInfoBean();
+        startInfoBean.setW(w);
+        startInfoBean.setH(h);
+        startInfoBean.setSize(size);
+        BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.SEND_IMAGE_START,startInfoBean);
+//        BleHintEventSubscriptionSubject.getInstance().sendImageStart(w,h,size);
+
+    }
+
+    public void sendImageEnd(long useTime){
+        index++;
+        BleSendImageEndInfoBean endInfoBean=new BleSendImageEndInfoBean();
+        endInfoBean.setW(w);
+        endInfoBean.setH(h);
+        endInfoBean.setSize(size);
+        endInfoBean.setUseTime(useTime);
+        endInfoBean.setIndex(index);
+        BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.SEND_IMAGE_END,endInfoBean);
+//        BleHintEventSubscriptionSubject.getInstance().sendImageEnd(w,h,size,useTime,index);
+    }
+
+
+
+
+    public void queToSend(){
+        if(null!=dataInfoQueue&&!dataInfoQueue.isEmpty()){
+            if(null!=dataInfoQueue.peek()){
+                byte[] cmd=dataInfoQueue.poll();
+                index++;
+                BlueToothGattSendMsgManager.getInstance().sendMsgByImg(index,cmd);
+            }
+        }else {
+            dataInfoQueue=null;
+            long endTime=System.currentTimeMillis();
+            sendImageEnd(endTime-startTime);
+            if(null!=listen){
+                listen.sendOver(endTime-startTime);
+            }
+            isStart=false;
+        }
+    }
+
+
+    private int w,h,size;
+    private   void splitPacketForMtuByte(byte[] data){
+        dataInfoQueue=new LinkedList();
+        if(null!=data){
+            int index=0;
+            do{
+                int mtu= BlueToothGattConfig.getInstance().getSendDataMtu();
+                byte[] currentData;
+                if(data.length- index <= mtu){
+                    currentData = new byte[data.length-index];
+                    System.arraycopy(data, index, currentData, 0, data.length - index);
+                    index = data.length;
+                }else {
+                    currentData = new byte[mtu];
+                    System.arraycopy(data, index, currentData, 0,mtu);
+                    index += mtu;
+                }
+                dataInfoQueue.offer(currentData);
+
+            }while (index < data.length);
+        }
+    }
+
+    public interface Listen{
+
+        public void sendOver(long useTime);
+    }
+
+}

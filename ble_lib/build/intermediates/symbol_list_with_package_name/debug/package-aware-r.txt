@@ -1,0 +1,17 @@
+com.newbee.ble_lib
+string ble_statu_adapter_can_not_use
+string ble_statu_can_not_use
+string ble_statu_can_send_data
+string ble_statu_connected
+string ble_statu_connecting
+string ble_statu_disconnected
+string ble_statu_manager_can_not_use
+string ble_statu_none
+string ble_statu_opening
+string ble_statu_retrun_bytes
+string ble_statu_run_err
+string ble_statu_send_image_end
+string ble_statu_send_image_start
+string ble_statu_sending_data
+string ble_statu_state_off
+string ble_statu_state_on
