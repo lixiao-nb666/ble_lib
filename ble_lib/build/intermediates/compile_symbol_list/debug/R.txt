@@ -14,3 +14,9 @@ int string ble_statu_send_image_start 0x0
 int string ble_statu_sending_data 0x0
 int string ble_statu_state_off 0x0
 int string ble_statu_state_on 0x0
+int string ble_statu_user_disconnect 0x0
+int string ble_statu_user_init 0x0
+int string ble_statu_user_scan 0x0
+int string ble_statu_user_send_cmd 0x0
+int string ble_statu_user_send_image 0x0
+int string ble_statu_user_send_image_cmd_index 0x0

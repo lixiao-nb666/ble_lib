@@ -15,3 +15,9 @@ string ble_statu_send_image_start
 string ble_statu_sending_data
 string ble_statu_state_off
 string ble_statu_state_on
+string ble_statu_user_disconnect
+string ble_statu_user_init
+string ble_statu_user_scan
+string ble_statu_user_send_cmd
+string ble_statu_user_send_image
+string ble_statu_user_send_image_cmd_index

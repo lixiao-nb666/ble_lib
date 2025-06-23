@@ -4,6 +4,7 @@ import com.newbee.ble_lib.R;
 
 public enum BleStatu {
     NONE(R.string.ble_statu_none),
+    USER_DO(R.string.ble_statu_none),
     RUN_ERR(R.string.ble_statu_run_err),//运行出错
     BLE_CAN_NOT_USE(R.string.ble_statu_can_not_use),//系统蓝牙不能使用
     BLE_MANAGER_CAN_NOT_USE(R.string.ble_statu_manager_can_not_use),//系统蓝牙管理器不能使用
@@ -19,6 +20,7 @@ public enum BleStatu {
     RETRUN_BYTES(R.string.ble_statu_retrun_bytes),//蓝牙返回值
     SEND_IMAGE_START(R.string.ble_statu_send_image_start),//蓝牙准备开始发送图片
     SEND_IMAGE_END(R.string.ble_statu_send_image_end),//蓝牙发送图片结束
+
     ;
     int strId;
     BleStatu(int strId){
@@ -27,5 +29,11 @@ public enum BleStatu {
 
     public int getStrId() {
         return strId;
+    }
+
+    public void setStrId(int strId) {
+        if(this==USER_DO){
+            this.strId = strId;
+        }
     }
 }

@@ -6,9 +6,17 @@
             android:gravity="center"
               android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/tv_ble"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="66px"
+        android:background="@color/black"/>
+
 
     <TextView
-        android:id="@+id/tv"
+        android:id="@+id/tv_ble_statu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"

@@ -1,66 +1,62 @@
 [
     {
-        "merged": "C:\\Users\\Mayn\\.gradle\\daemon\\7.4\\com.newbee.ble_tool.app-merged_res-10:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\Mayn\\.gradle\\daemon\\7.4\\com.newbee.ble_tool.app-main-12:\\mipmap-xhdpi\\ic_launcher_round.webp"
+        "merged": "com.newbee.ble_tool.app-merged_res-10:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.newbee.ble_tool.app-main-12:/mipmap-xhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\Mayn\\.gradle\\daemon\\7.4\\com.newbee.ble_tool.app-merged_res-10:\\mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\Mayn\\.gradle\\daemon\\7.4\\com.newbee.ble_tool.app-main-12:\\mipmap-xhdpi\\ic_launcher.webp"
+        "merged": "com.newbee.ble_tool.app-merged_res-10:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.newbee.ble_tool.app-main-12:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\Users\\Mayn\\.gradle\\daemon\\7.4\\com.newbee.ble_tool.app-merged_res-10:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\Mayn\\.gradle\\daemon\\7.4\\com.newbee.ble_tool.app-main-12:\\mipmap-xxxhdpi\\ic_launcher.webp"
+        "merged": "com.newbee.ble_tool.app-merged_res-10:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.newbee.ble_tool.app-main-12:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\Mayn\\.gradle\\daemon\\7.4\\com.newbee.ble_tool.app-merged_res-10:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\Mayn\\.gradle\\daemon\\7.4\\com.newbee.ble_tool.app-main-12:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+        "merged": "com.newbee.ble_tool.app-merged_res-10:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.newbee.ble_tool.app-main-12:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\Mayn\\.gradle\\daemon\\7.4\\com.newbee.ble_tool.app-merged_res-10:\\mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\Mayn\\.gradle\\daemon\\7.4\\com.newbee.ble_tool.app-main-12:\\mipmap-hdpi\\ic_launcher_round.webp"
-    },
-    {
-        "merged": "C:\\Users\\Mayn\\.gradle\\daemon\\7.4\\com.newbee.ble_tool.app-merged_res-10:\\mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\Mayn\\.gradle\\daemon\\7.4\\com.newbee.ble_tool.app-main-12:\\mipmap-hdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "C:\\Users\\Mayn\\.gradle\\daemon\\7.4\\com.newbee.ble_tool.app-merged_res-10:\\mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\Mayn\\.gradle\\daemon\\7.4\\com.newbee.ble_tool.app-main-12:\\mipmap-xxhdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "C:\\Users\\Mayn\\.gradle\\daemon\\7.4\\com.newbee.ble_tool.app-merged_res-10:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\Mayn\\.gradle\\daemon\\7.4\\com.newbee.ble_tool.app-main-12:\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "com.newbee.ble_tool.app-merged_res-10:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.newbee.ble_tool.app-main-12:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
         "merged": "com.newbee.ble_tool.app-merged_res-10:/layout_activity_main.xml.flat",
         "source": "com.newbee.ble_tool.app-main-12:/layout/activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\Mayn\\.gradle\\daemon\\7.4\\com.newbee.ble_tool.app-merged_res-10:\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\Mayn\\.gradle\\daemon\\7.4\\com.newbee.ble_tool.app-main-12:\\drawable\\ic_launcher_background.xml"
+        "merged": "com.newbee.ble_tool.app-merged_res-10:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.newbee.ble_tool.app-main-12:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\Mayn\\.gradle\\daemon\\7.4\\com.newbee.ble_tool.app-merged_res-10:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\Mayn\\.gradle\\daemon\\7.4\\com.newbee.ble_tool.app-main-12:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+        "merged": "com.newbee.ble_tool.app-merged_res-10:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.newbee.ble_tool.app-main-12:/mipmap-hdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\Mayn\\.gradle\\daemon\\7.4\\com.newbee.ble_tool.app-merged_res-10:\\mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\Mayn\\.gradle\\daemon\\7.4\\com.newbee.ble_tool.app-main-12:\\mipmap-mdpi\\ic_launcher_round.webp"
+        "merged": "com.newbee.ble_tool.app-merged_res-10:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.newbee.ble_tool.app-main-12:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\Mayn\\.gradle\\daemon\\7.4\\com.newbee.ble_tool.app-merged_res-10:\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\Mayn\\.gradle\\daemon\\7.4\\com.newbee.ble_tool.app-pngs-5:\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
+        "merged": "com.newbee.ble_tool.app-merged_res-10:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "com.newbee.ble_tool.app-pngs-5:/drawable-anydpi-v24/ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\Mayn\\.gradle\\daemon\\7.4\\com.newbee.ble_tool.app-merged_res-10:\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\Mayn\\.gradle\\daemon\\7.4\\com.newbee.ble_tool.app-main-12:\\layout\\activity_main.xml"
+        "merged": "com.newbee.ble_tool.app-merged_res-10:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.newbee.ble_tool.app-main-12:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\Mayn\\.gradle\\daemon\\7.4\\com.newbee.ble_tool.app-merged_res-10:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\Mayn\\.gradle\\daemon\\7.4\\com.newbee.ble_tool.app-main-12:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+        "merged": "com.newbee.ble_tool.app-merged_res-10:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.newbee.ble_tool.app-main-12:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\Mayn\\.gradle\\daemon\\7.4\\com.newbee.ble_tool.app-merged_res-10:\\mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\Mayn\\.gradle\\daemon\\7.4\\com.newbee.ble_tool.app-main-12:\\mipmap-mdpi\\ic_launcher.webp"
+        "merged": "com.newbee.ble_tool.app-merged_res-10:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.newbee.ble_tool.app-main-12:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.newbee.ble_tool.app-merged_res-10:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.newbee.ble_tool.app-main-12:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.newbee.ble_tool.app-merged_res-10:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.newbee.ble_tool.app-main-12:/mipmap-mdpi/ic_launcher.webp"
     }
 ]

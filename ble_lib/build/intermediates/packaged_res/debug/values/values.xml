@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="ble_statu_adapter_can_not_use">系统蓝牙适配器不能使用</string>
-    <string name="ble_statu_can_not_use">系统蓝牙不能使用</string>
-    <string name="ble_statu_can_send_data">蓝牙数据发送成功，可以重新发送数据</string>
-    <string name="ble_statu_connected">蓝牙已连接</string>
-    <string name="ble_statu_connecting">蓝牙连接中...</string>
-    <string name="ble_statu_disconnected">蓝牙连接已断开...请重连</string>
-    <string name="ble_statu_manager_can_not_use">系统蓝牙管理器不能使用</string>
-    <string name="ble_statu_none">蓝牙状态未知</string>
-    <string name="ble_statu_opening">蓝牙打开中...</string>
-    <string name="ble_statu_retrun_bytes">蓝牙返回值</string>
-    <string name="ble_statu_run_err">蓝牙运行错误</string>
-    <string name="ble_statu_send_image_end">蓝牙返回值</string>
-    <string name="ble_statu_send_image_start">蓝牙返回值</string>
-    <string name="ble_statu_sending_data">蓝牙数据发送中...</string>
-    <string name="ble_statu_state_off">蓝牙已关闭，请打开</string>
-    <string name="ble_statu_state_on">蓝牙已打开</string>
+    <string name="ble_statu_adapter_can_not_use">Bluetooth：The system adapter cannot be used</string>
+    <string name="ble_statu_can_not_use">Bluetooth：The system is not usable</string>
+    <string name="ble_statu_can_send_data">Bluetooth：Data transmission was successful. You can resend the data</string>
+    <string name="ble_statu_connected">Bluetooth：connected</string>
+    <string name="ble_statu_connecting">Bluetooth：connecting...</string>
+    <string name="ble_statu_disconnected">Bluetooth：disconnect...please reconnect</string>
+    <string name="ble_statu_manager_can_not_use">Bluetooth：The system manager cannot be used</string>
+    <string name="ble_statu_none">Bluetooth：unknown</string>
+    <string name="ble_statu_opening">Bluetooth：opening...</string>
+    <string name="ble_statu_retrun_bytes">Bluetooth：returned value</string>
+    <string name="ble_statu_run_err">Bluetooth：run-time error</string>
+    <string name="ble_statu_send_image_end">Bluetooth：Sending of images completed</string>
+    <string name="ble_statu_send_image_start">Bluetooth：Start sending pictures</string>
+    <string name="ble_statu_sending_data">Bluetooth：Data transmission is in progress...</string>
+    <string name="ble_statu_state_off">Bluetooth：off,please open</string>
+    <string name="ble_statu_state_on">Bluetooth：on</string>
+    <string name="ble_statu_user_disconnect">Bluetooth：User operation disconnection</string>
+    <string name="ble_statu_user_init">Bluetooth：User initialization in progress</string>
+    <string name="ble_statu_user_scan">Bluetooth：User scanning in progress</string>
+    <string name="ble_statu_user_send_cmd">Bluetooth：The user sends CMD data</string>
+    <string name="ble_statu_user_send_image">Bluetooth：User sends a picture</string>
+    <string name="ble_statu_user_send_image_cmd_index">Bluetooth：The CMD data of the image sent by the user</string>
 </resources>

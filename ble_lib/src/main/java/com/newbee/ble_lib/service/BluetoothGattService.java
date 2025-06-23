@@ -26,6 +26,7 @@ public class BluetoothGattService extends BaseService implements BleCmdEventObse
             super.handleMessage(msg);
             try {
                 BluetoothGattServiceMsgType msgType=BluetoothGattServiceMsgType.values()[msg.what];
+
                 switch (msgType){
                     case INIT_BLE:
                         BleConnectManager.getInstance().havePermissionInitBle(getBaseContext(),getPackageManager());
@@ -46,6 +47,9 @@ public class BluetoothGattService extends BaseService implements BleCmdEventObse
                         BlueToothGattSendMsgManager.getInstance().sendMsgByImg(msg.arg1, (byte[]) msg.obj);
                         break;
                 }
+                BleStatu bleStatu=BleStatu.USER_DO;
+                bleStatu.setStrId(msgType.getStrId());
+                BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(bleStatu);
             }catch (Exception e){
                 BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR,"BluetoothGattService: handler-"+e.toString());
             }
