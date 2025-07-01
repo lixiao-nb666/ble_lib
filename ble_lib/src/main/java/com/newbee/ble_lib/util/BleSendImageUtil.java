@@ -18,24 +18,31 @@ public class BleSendImageUtil {
                 if(null==qualityType){
                     qualityType=BitmapQualityType.LOW;
                 }
-                int qualityV=200;
-                switch (qualityType){
-                    case ULTRA_LOW:
-                        qualityV=6;
-                        break;
-                    case LOW:
-                        qualityV=20;
-                        break;
-                    case DEF:
-                        qualityV=40;
-                        break;
-                    case HIGH:
-                        qualityV=65;
-                        break;
-                    case ULTRA_HIGH:
-                        qualityV=100;
-                        break;
+                int qualityV= qualityType.getQualityV();
+                if(qualityV<0){
+                    qualityV=15;
+                }else if(qualityV>=100){
+                    qualityV=80;
                 }
+
+
+//                switch (qualityType){
+//                    case ULTRA_LOW:
+//                        qualityV=6;
+//                        break;
+//                    case LOW:
+//                        qualityV=15;
+//                        break;
+//                    case DEF:
+//                        qualityV=30;
+//                        break;
+//                    case HIGH:
+//                        qualityV=50;
+//                        break;
+//                    case ULTRA_HIGH:
+//                        qualityV=75;
+//                        break;
+//                }
                 return AbImageUtil.bitmap2Bytes(bm, Bitmap.CompressFormat.JPEG,true,qualityV);
     }
 
