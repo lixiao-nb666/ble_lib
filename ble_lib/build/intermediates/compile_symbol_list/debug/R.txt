@@ -3,6 +3,7 @@ int string ble_statu_can_not_use 0x0
 int string ble_statu_can_send_data 0x0
 int string ble_statu_connected 0x0
 int string ble_statu_connecting 0x0
+int string ble_statu_connecting_err 0x0
 int string ble_statu_disconnected 0x0
 int string ble_statu_manager_can_not_use 0x0
 int string ble_statu_none 0x0

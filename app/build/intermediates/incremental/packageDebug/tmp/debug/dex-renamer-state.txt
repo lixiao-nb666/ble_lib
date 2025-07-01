@@ -1,4 +1,4 @@
-#Mon Jun 23 17:49:14 CST 2025
+#Tue Jul 01 17:06:57 CST 2025
 path.4=1/classes.dex
 path.3=13/classes.dex
 path.2=11/classes.dex
@@ -6,15 +6,13 @@ renamed.9=classes10.dex
 path.1=10/classes.dex
 renamed.8=classes9.dex
 path.8=6/classes.dex
-renamed.14=classes15.dex
 path.7=5/classes.dex
 renamed.13=classes14.dex
-path.6=4/classes.dex
+path.6=9/classes.dex
 renamed.12=classes13.dex
 path.5=2/classes.dex
 renamed.11=classes12.dex
 renamed.10=classes11.dex
-base.14=G\:\\asworkspace\\lixiao_lib\\hud\\Ble_Tool\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\9\\classes.dex
 path.0=classes.dex
 base.4=G\:\\asworkspace\\lixiao_lib\\hud\\Ble_Tool\\app\\build\\intermediates\\dex\\debug\\mergeLibDexDebug\\1\\classes.dex
 base.3=G\:\\asworkspace\\lixiao_lib\\hud\\Ble_Tool\\app\\build\\intermediates\\dex\\debug\\mergeLibDexDebug\\13\\classes.dex
@@ -36,8 +34,7 @@ base.8=G\:\\asworkspace\\lixiao_lib\\hud\\Ble_Tool\\app\\build\\intermediates\\d
 renamed.6=classes7.dex
 base.7=G\:\\asworkspace\\lixiao_lib\\hud\\Ble_Tool\\app\\build\\intermediates\\dex\\debug\\mergeLibDexDebug\\5\\classes.dex
 renamed.5=classes6.dex
-base.6=G\:\\asworkspace\\lixiao_lib\\hud\\Ble_Tool\\app\\build\\intermediates\\dex\\debug\\mergeLibDexDebug\\4\\classes.dex
-path.14=9/classes.dex
+base.6=G\:\\asworkspace\\lixiao_lib\\hud\\Ble_Tool\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\9\\classes.dex
 renamed.4=classes5.dex
 base.5=G\:\\asworkspace\\lixiao_lib\\hud\\Ble_Tool\\app\\build\\intermediates\\dex\\debug\\mergeLibDexDebug\\2\\classes.dex
 base.13=G\:\\asworkspace\\lixiao_lib\\hud\\Ble_Tool\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex

@@ -6,8 +6,8 @@ import android.os.Handler;
 import android.os.Message;
 
 import com.newbee.ble_lib.base.BaseService;
-import com.newbee.ble_lib.event.send.BleCmdEventObserver;
-import com.newbee.ble_lib.event.send.BleCmdEventSubscriptionSubject;
+import com.newbee.ble_lib.event.send.BleEventObserver;
+import com.newbee.ble_lib.event.send.BleEventSubscriptionSubject;
 import com.newbee.ble_lib.event.statu.BleStatu;
 import com.newbee.ble_lib.event.statu.BleStatuEventSubscriptionSubject;
 import com.newbee.ble_lib.manager.child.BleConnectManager;
@@ -16,7 +16,7 @@ import com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager;
 import com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager;
 
 
-public class BluetoothGattService extends BaseService implements BleCmdEventObserver {
+public class BluetoothGattService extends BaseService implements BleEventObserver {
 
 
 
@@ -56,7 +56,7 @@ public class BluetoothGattService extends BaseService implements BleCmdEventObse
         }
     };
 
-    public BleCmdEventObserver getEventImp(){
+    public BleEventObserver getEventImp(){
         return this;
     }
 
@@ -66,7 +66,8 @@ public class BluetoothGattService extends BaseService implements BleCmdEventObse
     @Override
     public void init() {
 //        BleStatuEventSubscriptionSubject.getInstance().attach(bleStatuEventObserver);
-        BleCmdEventSubscriptionSubject.getInstance().attach(this);
+        BleEventSubscriptionSubject.getInstance().attach(this);
+
     }
 
 
@@ -80,7 +81,8 @@ public class BluetoothGattService extends BaseService implements BleCmdEventObse
     public void close() {
         handler.removeCallbacksAndMessages(null);
         BleConnectManager.getInstance().close(getBaseContext());
-        BleCmdEventSubscriptionSubject.getInstance().detach(this);
+        BleEventSubscriptionSubject.getInstance().detach(this);
+
 //        BleStatuEventSubscriptionSubject.getInstance().detach(bleStatuEventObserver);
     }
 

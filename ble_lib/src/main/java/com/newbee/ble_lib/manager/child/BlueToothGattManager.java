@@ -12,6 +12,7 @@ import android.content.Context;
 import android.os.Build;
 import android.util.Log;
 
+import com.newbee.ble_lib.R;
 import com.newbee.ble_lib.config.BlueToothGattConfig;
 import com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager;
 import com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager;
@@ -19,6 +20,7 @@ import com.newbee.ble_lib.event.statu.BleStatu;
 import com.newbee.ble_lib.event.statu.BleStatuEventSubscriptionSubject;
 
 import com.newbee.ble_lib.util.BleByteUtil;
+import com.newbee.ble_lib.util.BleConnectStatuUtil;
 
 
 import java.util.List;
@@ -107,6 +109,8 @@ public class BlueToothGattManager {
                 // 22 ：表示本地设备终止了连接
                 // 133 ：连接超时或未找到设备。
                 // status为错误的133时：调用gatt的disconnect方法，然后在onConnectionStateChange方法里调用Gatt的close方法并置空gatt并重新开始使用connectGatt方法进行连接
+
+                BleConnectStatuUtil.getInstance().setConnectErr("OnservicesDiscovered receiced can found :" + status);
             }
         }
 
@@ -198,9 +202,9 @@ public class BlueToothGattManager {
     public void initGatt(BluetoothDevice device,Context context){
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             //自动回连有个问题，如果数据量大的情况下，手机系统自动回连会按默认的mtu值传输
-            bluetoothGatt = device.connectGatt(context, BlueToothGattConfig.getInstance().isAutomatic(), mGattCallback, BluetoothDevice.TRANSPORT_LE);
+            bluetoothGatt = device.connectGatt(context, BlueToothGattConfig.getInstance().isAutoConnect(), mGattCallback, BluetoothDevice.TRANSPORT_LE);
         } else {
-            bluetoothGatt = device.connectGatt(context, BlueToothGattConfig.getInstance().isAutomatic(), mGattCallback);
+            bluetoothGatt = device.connectGatt(context, BlueToothGattConfig.getInstance().isAutoConnect(), mGattCallback);
         }
     }
 

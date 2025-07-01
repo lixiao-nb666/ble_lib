@@ -83,11 +83,11 @@ import java.util.TimerTask;
        Log.i("kankanindex","kankanindex:11111111111--");
 
        if(null!=getBitmapDataThread){
-            Log.i("kankanindex","kankanindex:11111111111--------1111");
+
             this.lastBitmap=bitmap;
             this.lastQualityType=qualityType;
         }else {
-            Log.i("kankanindex","kankanindex:11111111111--------2222");
+
             getBitmapDataThread=new BlueToothGattGetBitmapDataThread(bitmap,qualityType,threadListen);
             getBitmapDataThread.start();
         }

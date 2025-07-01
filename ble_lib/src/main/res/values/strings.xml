@@ -8,6 +8,7 @@
     <string name="ble_statu_state_on">Bluetooth：on</string>
     <string name="ble_statu_state_off">Bluetooth：off,please open</string>
     <string name="ble_statu_connecting">Bluetooth：connecting...</string>
+    <string name="ble_statu_connecting_err">Bluetooth：connection fail...</string>
     <string name="ble_statu_connected">Bluetooth：connected</string>
     <string name="ble_statu_disconnected">Bluetooth：disconnect...please reconnect</string>
     <string name="ble_statu_can_send_data">Bluetooth：Data transmission was successful. You can resend the data</string>

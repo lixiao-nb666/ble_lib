@@ -5,6 +5,7 @@ string ble_statu_can_not_use
 string ble_statu_can_send_data
 string ble_statu_connected
 string ble_statu_connecting
+string ble_statu_connecting_err
 string ble_statu_disconnected
 string ble_statu_manager_can_not_use
 string ble_statu_none

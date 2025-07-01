@@ -4,13 +4,14 @@ import android.text.TextUtils;
 import android.widget.TextView;
 
 import com.newbee.ble_lib.bean.BleDeviceBean;
+import com.newbee.ble_lib.util.BleConnectStatuUtil;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class BlueToothGattConfig {
     private static BlueToothGattConfig blueToothGattConfig;
-    private boolean isAutomatic ;
+    private boolean autoConnect ;
     private int mtu=517;
     private int sendDataMtu;
 //    public final static String ACTION_GATT_CONNECTED = "ACTION_GATT_CONNECTED";
@@ -20,11 +21,12 @@ public class BlueToothGattConfig {
     private String serviceID ;
     private String writeID ;
     private String noticeID ;
+    private boolean disconnectAutoConnect;
     private int imageW=200;
     private int imageH=260;
     private List<BleDeviceBean> bleDeviceList;
     private BleDeviceBean nowUseBleDevice;
-    private boolean isConnect=false;
+
 
     private BlueToothGattConfig(){
 
@@ -53,21 +55,18 @@ public class BlueToothGattConfig {
 //        isConnect=false;
 //    }
 
-    public void init(  boolean isAutomatic , int mtu,String serviceID , String writeID , String noticeID , List<BleDeviceBean> bleDeviceList){
-        this.isAutomatic=isAutomatic;
+    public void init(  boolean autoConnect , int mtu,String serviceID , String writeID , String noticeID , List<BleDeviceBean> bleDeviceList){
+        this.autoConnect=autoConnect;
         this.mtu=mtu;
         sendDataMtu=mtu-5;
         this.serviceID=serviceID;
         this.writeID=writeID;
         this.noticeID=noticeID;
         this.bleDeviceList=bleDeviceList;
-        isConnect=false;
     }
 
 
-    public void setAutomatic(boolean automatic) {
-        isAutomatic = automatic;
-    }
+
 
     public void setMtu(int mtu) {
         this.mtu = mtu;
@@ -86,8 +85,16 @@ public class BlueToothGattConfig {
         this.noticeID = noticeID;
     }
 
-    public boolean isAutomatic() {
-        return isAutomatic;
+    public boolean isAutoConnect() {
+        return autoConnect;
+    }
+
+    public void setAutoConnect(boolean autoConnect) {
+        this.autoConnect = autoConnect;
+    }
+
+    public void setSendDataMtu(int sendDataMtu) {
+        this.sendDataMtu = sendDataMtu;
     }
 
     public int getMtu() {
@@ -112,6 +119,14 @@ public class BlueToothGattConfig {
         return noticeID;
     }
 
+    public boolean isDisconnectAutoConnect() {
+        return disconnectAutoConnect;
+    }
+
+    public void setDisconnectAutoConnect(boolean disconnectAutoConnect) {
+        this.disconnectAutoConnect = disconnectAutoConnect;
+    }
+
     public int getImageW() {
         return imageW;
     }
@@ -127,6 +142,7 @@ public class BlueToothGattConfig {
     public void setImageH(int imageH) {
         this.imageH = imageH;
     }
+
 
 
     public BleDeviceBean checkBleName(String bleName){
@@ -157,22 +173,23 @@ public class BlueToothGattConfig {
     }
 
     public boolean isConnect() {
-        return isConnect;
+        return BleConnectStatuUtil.getInstance().isConnect();
     }
 
-    public void setConnect(boolean connect) {
-        isConnect = connect;
-    }
 
     @Override
     public String toString() {
         return "BlueToothGattConfig{" +
-                "isAutomatic=" + isAutomatic +
+                "autoConnect=" + autoConnect +
                 ", mtu=" + mtu +
                 ", sendDataMtu=" + sendDataMtu +
                 ", serviceID='" + serviceID + '\'' +
                 ", writeID='" + writeID + '\'' +
                 ", noticeID='" + noticeID + '\'' +
+                ", imageW=" + imageW +
+                ", imageH=" + imageH +
+                ", bleDeviceList=" + bleDeviceList +
+                ", nowUseBleDevice=" + nowUseBleDevice +
                 '}';
     }
 }

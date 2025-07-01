@@ -19,17 +19,12 @@ import com.newbee.ble_lib.config.BlueToothGattConfig;
 import com.newbee.ble_lib.event.statu.BleStatu;
 import com.newbee.ble_lib.event.statu.BleStatuEventObserver;
 import com.newbee.ble_lib.event.statu.BleStatuEventSubscriptionSubject;
-import com.newbee.ble_lib.manager.BleManager;
-import com.newbee.ble_lib.manager.child.BleConnectManager;
-import com.newbee.ble_lib.service.BluetoothGattServiceDao;
-import com.newbee.ble_lib.util.BleByteUtil;
+import com.newbee.ble_lib.BleManager;
 import com.newbee.ble_tool.R;
 import com.newbee.ble_tool.type.BleDeviceType;
+import com.newbee.bulid_lib.mybase.LG;
 import com.newbee.t800_lib.type.T800CmdType;
 import com.newbee.t800_lib.util.T800SendUtil;
-
-import java.nio.charset.StandardCharsets;
-import java.util.Objects;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -40,7 +35,11 @@ public class MainActivity extends AppCompatActivity {
         public void sendBleStatu(BleStatu bleStatu, Object... objects) {
             Message msg=new Message();
             msg.what=bleStatu.ordinal();
-            if(objects.length>0){
+            if(objects.length==1){
+                msg.obj=objects[1];
+            }
+            if(objects.length==2){
+                msg.arg1= (int) objects[0];
                 msg.obj=objects[1];
             }
             handler.sendMessage(msg);
@@ -99,9 +98,10 @@ public class MainActivity extends AppCompatActivity {
                     bleTV.setText("已经断开连接");
                     setViewByBleConnectStatu(BlueToothGattConfig.getInstance().isConnect());
                     break;
-                case BLE_CAN_NOT_USE:
-                case BLE_MANAGER_CAN_NOT_USE:
-                case BLE_ADAPTER_CAN_NOT_USE:
+                case RUN_ERR:
+                    String errStr=getResources().getText(msg.arg1)+":"+msg.obj.toString();
+                    bleStatuTV.append(errStr);
+                    LG.i("lixiaokankanerrStr","lixiaokankanerrStr:"+errStr);
                     break;
                 case SEND_IMAGE_START:
                     BleSendImageStartInfoBean startInfoBean= (BleSendImageStartInfoBean) msg.obj;

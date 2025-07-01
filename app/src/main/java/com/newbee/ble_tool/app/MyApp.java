@@ -1,9 +1,7 @@
 package com.newbee.ble_tool.app;
 
-import android.app.Application;
-
 import com.newbee.ble_lib.config.BlueToothGattConfig;
-import com.newbee.ble_lib.manager.BleManager;
+import com.newbee.ble_lib.BleManager;
 import com.newbee.ble_tool.config.T800Config;
 import com.newbee.ble_tool.type.BleDeviceType;
 import com.newbee.bulid_lib.mybase.appliction.BaseApplication;

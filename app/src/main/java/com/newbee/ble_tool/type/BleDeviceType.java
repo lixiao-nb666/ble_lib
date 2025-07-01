@@ -9,6 +9,7 @@ public enum BleDeviceType {
 
     T800("T800","data"),
     T700("T700","data"),
+    T700_1("T800","DATA"),
     ;
     private String title;
     private String body;

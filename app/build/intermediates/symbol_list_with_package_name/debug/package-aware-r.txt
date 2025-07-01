@@ -779,7 +779,6 @@ drawable btn_radio_on_to_off_mtrl_animation
 drawable ic_launcher
 drawable ic_launcher_background
 drawable ic_launcher_foreground
-drawable icon_back
 drawable launcher_app_list
 drawable launcher_app_list_bg
 drawable notification_action_background
@@ -1071,6 +1070,7 @@ string ble_statu_can_not_use
 string ble_statu_can_send_data
 string ble_statu_connected
 string ble_statu_connecting
+string ble_statu_connecting_err
 string ble_statu_disconnected
 string ble_statu_manager_can_not_use
 string ble_statu_none

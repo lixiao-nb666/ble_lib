@@ -7,14 +7,14 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.newbee.ble_lib.bean.BleDeviceBean;
 import com.newbee.ble_lib.config.BlueToothGattConfig;
 import com.newbee.ble_lib.event.statu.BleStatuEventSubscriptionSubject;
 
 import com.newbee.ble_lib.event.statu.BleStatu;
-import com.newbee.ble_lib.manager.child.BleConnectManager;
-import com.newbee.ble_lib.util.BleStatuSendUtil;
+import com.newbee.ble_lib.util.BleConnectStatuUtil;
 
 @SuppressLint("MissingPermission")
 public class BleStatuBroadcastReceiver extends BroadcastReceiver {
@@ -26,17 +26,18 @@ public class BleStatuBroadcastReceiver extends BroadcastReceiver {
         if(action.equals(BluetoothAdapter.ACTION_STATE_CHANGED)){
             sendChangedStatu(intent.getIntExtra(BluetoothAdapter.EXTRA_STATE, -1));
         }else if(action.equals(BluetoothDevice.ACTION_ACL_CONNECTED)){
-            BleStatuSendUtil.sendConnected();
+            BleConnectStatuUtil.getInstance().sendConnected();
         } else if(action.equals(BluetoothDevice.ACTION_ACL_DISCONNECTED)){
-            BleStatuSendUtil.sendDisconnected();
+            BleConnectStatuUtil.getInstance().sendDisconnected();
         }else if(action.equals(BluetoothDevice.ACTION_FOUND)){
             BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-             String deviceName = device.getName();
+            Log.i(tag,"kankanweiyizhi:"+device.getName()+"----"+device.getAddress());
+            String deviceName = device.getName();
 //            String deviceHardwareAddress = device.getAddress(); // MAC address
             BleDeviceBean bleDeviceBean=BlueToothGattConfig.getInstance().checkBleName(deviceName);
             String address=device.getAddress();
             if(null!=bleDeviceBean&&!TextUtils.isEmpty(address)){
-                BleStatuSendUtil.sendConnecting(context,bleDeviceBean,address);
+                BleConnectStatuUtil.getInstance().sendConnecting(context,bleDeviceBean,address);
             }
         }
 

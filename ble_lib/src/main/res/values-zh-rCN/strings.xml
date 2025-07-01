@@ -8,6 +8,7 @@
     <string name="ble_statu_state_on">蓝牙：已打开</string>
     <string name="ble_statu_state_off">蓝牙：已关闭，请打开</string>
     <string name="ble_statu_connecting">蓝牙：连接中...</string>
+    <string name="ble_statu_connecting_err">蓝牙：连接失败...</string>
     <string name="ble_statu_connected">蓝牙：已连接</string>
     <string name="ble_statu_disconnected">蓝牙：连接已断开...请重连</string>
     <string name="ble_statu_can_send_data">蓝牙：数据发送成功，可以重新发送数据</string>

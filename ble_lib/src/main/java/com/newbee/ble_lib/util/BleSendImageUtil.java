@@ -20,18 +20,22 @@ public class BleSendImageUtil {
                 }
                 int qualityV=200;
                 switch (qualityType){
-                    case LOW:
+                    case ULTRA_LOW:
                         qualityV=6;
                         break;
-                    case DEF:
+                    case LOW:
                         qualityV=20;
                         break;
-
-                    case HIGH:
+                    case DEF:
                         qualityV=40;
                         break;
+                    case HIGH:
+                        qualityV=65;
+                        break;
+                    case ULTRA_HIGH:
+                        qualityV=100;
+                        break;
                 }
-
                 return AbImageUtil.bitmap2Bytes(bm, Bitmap.CompressFormat.JPEG,true,qualityV);
     }
 
