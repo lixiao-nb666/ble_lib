@@ -5,7 +5,8 @@ import android.graphics.Bitmap;
 import android.util.Log;
 
 import com.newbee.ble_lib.config.BlueToothGattConfig;
-import com.newbee.ble_lib.manager.image.BitmapQualityType;
+
+import com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType;
 
 
 public class BleSendImageUtil {
@@ -14,9 +15,9 @@ public class BleSendImageUtil {
 
 
 
-    public static byte[] bitmap2Bytes(Bitmap bm, BitmapQualityType qualityType) {
+    public static byte[] bitmap2Bytes(Bitmap bm, BleSendBitmapQualityType qualityType) {
                 if(null==qualityType){
-                    qualityType=BitmapQualityType.LOW;
+                    qualityType=BleSendBitmapQualityType.LOW;
                 }
                 int qualityV= qualityType.getQualityV();
                 if(qualityV<0){

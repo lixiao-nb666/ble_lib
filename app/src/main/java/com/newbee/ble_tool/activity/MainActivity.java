@@ -23,8 +23,7 @@ import com.newbee.ble_lib.BleManager;
 import com.newbee.ble_tool.R;
 import com.newbee.ble_tool.type.BleDeviceType;
 import com.newbee.bulid_lib.mybase.LG;
-import com.newbee.t800_lib.type.T800CmdType;
-import com.newbee.t800_lib.util.T800SendUtil;
+
 
 
 public class MainActivity extends AppCompatActivity {

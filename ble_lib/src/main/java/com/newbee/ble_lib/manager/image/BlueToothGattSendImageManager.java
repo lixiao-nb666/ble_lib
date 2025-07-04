@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.newbee.ble_lib.event.statu.BleStatu;
 import com.newbee.ble_lib.event.statu.BleStatuEventSubscriptionSubject;
+import com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -76,18 +77,15 @@ import java.util.TimerTask;
 
 
    private Bitmap lastBitmap;
-   private BitmapQualityType lastQualityType;
+   private BleSendBitmapQualityType lastQualityType;
 
 
-   public void sendBitMap(Bitmap bitmap, BitmapQualityType qualityType){
+   public void sendBitMap(Bitmap bitmap, BleSendBitmapQualityType qualityType){
        Log.i("kankanindex","kankanindex:11111111111--");
-
        if(null!=getBitmapDataThread){
-
             this.lastBitmap=bitmap;
             this.lastQualityType=qualityType;
         }else {
-
             getBitmapDataThread=new BlueToothGattGetBitmapDataThread(bitmap,qualityType,threadListen);
             getBitmapDataThread.start();
         }

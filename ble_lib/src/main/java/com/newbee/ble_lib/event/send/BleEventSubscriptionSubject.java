@@ -3,7 +3,8 @@ package com.newbee.ble_lib.event.send;//package com.newbee.ble_lib.event.send;
 
 import android.graphics.Bitmap;
 
-import com.newbee.ble_lib.manager.image.BitmapQualityType;
+
+import com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,7 +78,7 @@ public class BleEventSubscriptionSubject implements BleEventSubject {
 
 
     @Override
-    public void sendImage(Bitmap bitmap, BitmapQualityType bitmapQualityType) {
+    public void sendImage(Bitmap bitmap, BleSendBitmapQualityType bitmapQualityType) {
         for (BleEventObserver observer:observers){
             observer.sendImage(bitmap,bitmapQualityType);
         }

@@ -11,6 +11,7 @@ import com.newbee.ble_lib.event.statu.BleStatu;
 import com.newbee.ble_lib.event.statu.BleStatuEventSubscriptionSubject;
 import com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager;
 import com.newbee.ble_lib.util.BleSendImageUtil;
+import com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -18,15 +19,15 @@ import java.util.Queue;
 public class BlueToothGattGetBitmapDataThread extends Thread{
     private Listen listen;
     private Bitmap bitmap;
-    private BitmapQualityType qualityType;
+    private BleSendBitmapQualityType qualityType;
     private Queue<byte[]> dataInfoQueue=new LinkedList<>();
     private boolean isStart;
     private long startTime;
-    public BlueToothGattGetBitmapDataThread(Bitmap bitmap,BitmapQualityType qualityType,Listen listen){
+    public BlueToothGattGetBitmapDataThread(Bitmap bitmap,BleSendBitmapQualityType qualityType,Listen listen){
         this.bitmap=bitmap;
         this.qualityType=qualityType;
         if(null==this.qualityType){
-            this.qualityType=BitmapQualityType.LOW;
+            this.qualityType=BleSendBitmapQualityType.LOW;
         }
         this.listen=listen;
     }

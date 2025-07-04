@@ -11,9 +11,10 @@ import com.newbee.ble_lib.event.send.BleEventSubscriptionSubject;
 import com.newbee.ble_lib.event.statu.BleStatu;
 import com.newbee.ble_lib.event.statu.BleStatuEventSubscriptionSubject;
 import com.newbee.ble_lib.manager.child.BleConnectManager;
-import com.newbee.ble_lib.manager.image.BitmapQualityType;
+
 import com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager;
 import com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager;
+import com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType;
 
 
 public class BluetoothGattService extends BaseService implements BleEventObserver {
@@ -41,7 +42,7 @@ public class BluetoothGattService extends BaseService implements BleEventObserve
                         BlueToothGattSendMsgManager.getInstance().sendMsgByCmd((byte[]) msg.obj);
                         break;
                     case SEND_IMAGE:
-                        BlueToothGattSendImageManager.getInstance().sendBitMap((Bitmap) msg.obj,BitmapQualityType.values()[msg.arg1]);
+                        BlueToothGattSendImageManager.getInstance().sendBitMap((Bitmap) msg.obj, BleSendBitmapQualityType.values()[msg.arg1]);
                         break;
                     case SEND_CMD_BY_IMAGE_INDEX:
                         BlueToothGattSendMsgManager.getInstance().sendMsgByImg(msg.arg1, (byte[]) msg.obj);
@@ -113,7 +114,7 @@ public class BluetoothGattService extends BaseService implements BleEventObserve
     }
 
     @Override
-    public void sendImage(Bitmap bitmap, BitmapQualityType bitmapQualityType) {
+    public void sendImage(Bitmap bitmap, BleSendBitmapQualityType bitmapQualityType) {
         Message msg=new Message();
         msg.what=BluetoothGattServiceMsgType.SEND_IMAGE.ordinal();
         msg.obj=bitmap;
