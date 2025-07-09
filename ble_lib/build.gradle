@@ -19,6 +19,8 @@ android {
         debug {
             //添加混淆
             minifyEnabled true
+            useProguard true
+            consumerProguardFiles 'proguard-rules.pro'
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 
 
@@ -27,6 +29,8 @@ android {
         release {
             //添加混淆
             minifyEnabled true
+            useProguard true
+            consumerProguardFiles 'proguard-rules.pro'
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 
 
