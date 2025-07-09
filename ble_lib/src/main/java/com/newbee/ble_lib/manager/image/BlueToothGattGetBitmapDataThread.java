@@ -117,7 +117,7 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
         if(null!=data){
             int index=0;
             do{
-                int mtu= BlueToothGattConfig.getInstance().getSendDataMtu();
+                int mtu= BlueToothGattConfig.getInstance().getSendFileMtu();
                 byte[] currentData;
                 if(data.length- index <= mtu){
                     currentData = new byte[data.length-index];

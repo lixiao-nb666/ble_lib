@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.newbee.ble_lib-merged_res-24:/layout-sw600dp-v13/mtrl_layout_snackbar.xml",
+        "source": "com.newbee.ble_lib-material-1.5.0-8:/layout-sw600dp-v13/mtrl_layout_snackbar.xml"
+    },
+    {
+        "merged": "com.newbee.ble_lib-merged_res-24:/layout-sw600dp-v13/design_layout_snackbar.xml",
+        "source": "com.newbee.ble_lib-material-1.5.0-8:/layout-sw600dp-v13/design_layout_snackbar.xml"
+    }
+]

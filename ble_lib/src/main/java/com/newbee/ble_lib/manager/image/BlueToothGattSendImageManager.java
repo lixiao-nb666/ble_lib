@@ -81,7 +81,6 @@ import java.util.TimerTask;
 
 
    public void sendBitMap(Bitmap bitmap, BleSendBitmapQualityType qualityType){
-       Log.i("kankanindex","kankanindex:11111111111--");
        if(null!=getBitmapDataThread){
             this.lastBitmap=bitmap;
             this.lastQualityType=qualityType;

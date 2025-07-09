@@ -23,7 +23,7 @@ import com.newbee.ble_lib.BleManager;
 import com.newbee.ble_tool.R;
 import com.newbee.ble_tool.type.BleDeviceType;
 import com.newbee.bulid_lib.mybase.LG;
-
+import com.newbee.t800_lib.type.T800CmdType;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             Message msg=new Message();
             msg.what=bleStatu.ordinal();
             if(objects.length==1){
-                msg.obj=objects[1];
+                msg.obj=objects[0];
             }
             if(objects.length==2){
                 msg.arg1= (int) objects[0];

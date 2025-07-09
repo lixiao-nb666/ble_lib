@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "com.newbee.ble_lib-merged_res-24:/layout-land/material_timepicker.xml",
+        "source": "com.newbee.ble_lib-material-1.5.0-8:/layout-land/material_timepicker.xml"
+    },
+    {
+        "merged": "com.newbee.ble_lib-merged_res-24:/layout-land/mtrl_picker_header_dialog.xml",
+        "source": "com.newbee.ble_lib-material-1.5.0-8:/layout-land/mtrl_picker_header_dialog.xml"
+    },
+    {
+        "merged": "com.newbee.ble_lib-merged_res-24:/layout-land/material_clock_period_toggle_land.xml",
+        "source": "com.newbee.ble_lib-material-1.5.0-8:/layout-land/material_clock_period_toggle_land.xml"
+    }
+]

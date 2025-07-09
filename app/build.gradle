@@ -16,10 +16,58 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    buildTypes {
+    signingConfigs {
+
+
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            storeFile file('../keystore/lixiao_public_app.jks')
+            keyPassword 'lixiao'
+            keyAlias 'lixiao123'
+            storePassword 'lixiao'
+        }
+
+    }
+
+    buildTypes {
+        debug {
+            //是否zip对齐
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+            //添加混淆
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            //签名配置
+            signingConfig signingConfigs.release
+
+            android.applicationVariants.all { variant ->
+                variant.outputs.all {
+                    outputFileName = "ble_tool_debug-${variant.name}-${variant.versionName}.apk"
+                }
+            }
+
+
+        }
+
+
+        release {
+            //是否zip对齐
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+            //添加混淆
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            //签名配置
+            signingConfig signingConfigs.release
+
+            android.applicationVariants.all { variant ->
+                variant.outputs.all {
+                    outputFileName = "ble_tool_release-${variant.name}-${variant.versionName}.apk"
+                }
+            }
         }
     }
     compileOptions {
@@ -34,7 +82,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation 'com.github.lixiao-nb666:build_lib:1.1.4'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
-    implementation 'com.github.lixiao-nb666:T800_Data_lib:1.0.1'
+    implementation 'com.github.lixiao-nb666:t800_data_lib:1.0.2'
     implementation 'com.github.lixiao-nb666:ble_event:1.0.0'
     implementation project(path: ':ble_lib')
 }

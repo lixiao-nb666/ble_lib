@@ -12,12 +12,8 @@ import java.util.List;
 public class BlueToothGattConfig {
     private static BlueToothGattConfig blueToothGattConfig;
     private boolean autoConnect ;
-    private int mtu=517;
-    private int sendDataMtu;
-//    public final static String ACTION_GATT_CONNECTED = "ACTION_GATT_CONNECTED";
-//    public final static String ACTION_GATT_DISCONNECTED = "ACTION_GATT_DISCONNECTED";
-//    public final static String ACTION_GATT_SERVICES_DISCOVERED = "ACTION_GATT_SERVICES_DISCOVERED";
-//    public final static String ACTION_GATT_WRITE_STATE = "ACTION_GATT_WRITE_STATE";
+    private int mtu;
+    private int sendFileMtu;
     private String serviceID ;
     private String writeID ;
     private String noticeID ;
@@ -58,7 +54,7 @@ public class BlueToothGattConfig {
     public void init(  boolean autoConnect , int mtu,String serviceID , String writeID , String noticeID , List<BleDeviceBean> bleDeviceList){
         this.autoConnect=autoConnect;
         this.mtu=mtu;
-        sendDataMtu=mtu-5;
+        sendFileMtu=mtu-5;
         this.serviceID=serviceID;
         this.writeID=writeID;
         this.noticeID=noticeID;
@@ -70,7 +66,7 @@ public class BlueToothGattConfig {
 
     public void setMtu(int mtu) {
         this.mtu = mtu;
-        sendDataMtu=mtu-5;
+        sendFileMtu=mtu-5;
     }
 
     public void setServiceID(String serviceID) {
@@ -93,19 +89,17 @@ public class BlueToothGattConfig {
         this.autoConnect = autoConnect;
     }
 
-    public void setSendDataMtu(int sendDataMtu) {
-        this.sendDataMtu = sendDataMtu;
-    }
+
 
     public int getMtu() {
         return mtu;
     }
 
-    public int getSendDataMtu() {
-
-
-        return sendDataMtu;
+    public int getSendFileMtu() {
+        return sendFileMtu;
     }
+
+
 
     public String getServiceID() {
         return serviceID;
@@ -182,10 +176,11 @@ public class BlueToothGattConfig {
         return "BlueToothGattConfig{" +
                 "autoConnect=" + autoConnect +
                 ", mtu=" + mtu +
-                ", sendDataMtu=" + sendDataMtu +
+                ", sendFileMtu=" + sendFileMtu +
                 ", serviceID='" + serviceID + '\'' +
                 ", writeID='" + writeID + '\'' +
                 ", noticeID='" + noticeID + '\'' +
+                ", disconnectAutoConnect=" + disconnectAutoConnect +
                 ", imageW=" + imageW +
                 ", imageH=" + imageH +
                 ", bleDeviceList=" + bleDeviceList +

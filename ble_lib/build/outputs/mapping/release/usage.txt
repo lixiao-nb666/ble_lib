@@ -1,0 +1,123 @@
+com.newbee.ble_lib.BleManager
+com.newbee.ble_lib.BuildConfig
+com.newbee.ble_lib.base.BaseService$BaseServiceBinder:
+    public com.newbee.ble_lib.base.BaseService getService()
+    public void setStatuListen(com.newbee.ble_lib.base.BaseService$StatuListen)
+com.newbee.ble_lib.base.BaseService:
+    static synthetic com.newbee.ble_lib.base.BaseService$StatuListen access$000(com.newbee.ble_lib.base.BaseService)
+    static synthetic com.newbee.ble_lib.base.BaseService$StatuListen access$002(com.newbee.ble_lib.base.BaseService,com.newbee.ble_lib.base.BaseService$StatuListen)
+    static synthetic boolean access$100(com.newbee.ble_lib.base.BaseService)
+com.newbee.ble_lib.base.BaseServiceDao$1
+com.newbee.ble_lib.base.BaseServiceDao
+com.newbee.ble_lib.bean.BleDeviceBean:
+    public java.lang.String getDeviceName()
+    public int getDeviceType()
+    public void setDeviceBody(java.lang.String)
+    public void setDeviceName(java.lang.String)
+    public void setDeviceTitle(java.lang.String)
+    public void setDeviceType(int)
+com.newbee.ble_lib.bean.BleSendImageEndInfoBean:
+    public int getH()
+    public int getIndex()
+    public int getSize()
+    public long getUseTime()
+    public int getW()
+com.newbee.ble_lib.bean.BleSendImageStartInfoBean:
+    public int getH()
+    public int getSize()
+    public int getW()
+com.newbee.ble_lib.config.BlueToothGattConfig:
+    public com.newbee.ble_lib.bean.BleDeviceBean getNowUseBleDevice()
+    public void init(boolean,int,java.lang.String,java.lang.String,java.lang.String,java.util.List)
+    public boolean isConnect()
+    public boolean isDisconnectAutoConnect()
+    public void setAutoConnect(boolean)
+    public void setDisconnectAutoConnect(boolean)
+    public void setImageH(int)
+    public void setImageW(int)
+    public void setNoticeID(java.lang.String)
+    public void setServiceID(java.lang.String)
+    public void setWriteID(java.lang.String)
+com.newbee.ble_lib.event.send.BleEventObserver:
+    public abstract void disconnectedBle()
+    public abstract void havePermissionInitBle()
+    public abstract void sendCmd(byte[])
+    public abstract void sendImage(android.graphics.Bitmap,com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType)
+    public abstract void sendImageIndexCmd(int,byte[])
+    public abstract void startSearchBle()
+com.newbee.ble_lib.event.send.BleEventSubject
+com.newbee.ble_lib.event.send.BleEventSubscriptionSubject:
+    public void disconnectedBle()
+    public void havePermissionInitBle()
+    public void sendCmd(byte[])
+    public void sendImage(android.graphics.Bitmap,com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType)
+    public void sendImageIndexCmd(int,byte[])
+    public void startSearchBle()
+com.newbee.ble_lib.event.statu.BleStatu:
+    public int getStrId()
+com.newbee.ble_lib.event.statu.BleStatuEventSubject
+com.newbee.ble_lib.event.statu.BleStatuEventSubscriptionSubject:
+    public void attach(com.newbee.ble_lib.event.statu.BleStatuEventObserver)
+    public void detach(com.newbee.ble_lib.event.statu.BleStatuEventObserver)
+com.newbee.ble_lib.manager.child.BleConnectManager:
+    private void closeBluetooth()
+com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager:
+    public void close()
+com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager:
+    public void close()
+com.newbee.ble_lib.receiver.BleStatuBroadcastReceiverDao
+com.newbee.ble_lib.service.BluetoothGattService:
+    public void disconnectedBle()
+    public com.newbee.ble_lib.event.send.BleEventObserver getEventImp()
+    public void havePermissionInitBle()
+    public void sendCmd(byte[])
+    public void sendImage(android.graphics.Bitmap,com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType)
+    public void sendImageIndexCmd(int,byte[])
+    public void startSearchBle()
+com.newbee.ble_lib.service.BluetoothGattServiceDao$1
+com.newbee.ble_lib.service.BluetoothGattServiceDao
+com.newbee.ble_lib.util.AbImageUtil$OnImageUtilsListener
+com.newbee.ble_lib.util.AbImageUtil:
+    private static com.newbee.ble_lib.util.AbImageUtil$OnImageUtilsListener onImageUtilsListener
+    public void <init>()
+    public static android.graphics.Bitmap base64ToBitmap(java.lang.String)
+    public static byte[] bitmap2Bytes(android.graphics.Bitmap,android.graphics.Bitmap$CompressFormat,boolean)
+    public static java.lang.String bitmapToBase64(android.graphics.Bitmap)
+    public static android.graphics.drawable.Drawable bitmapToDrawable(android.graphics.Bitmap)
+    public static java.lang.String bitmapToString(android.graphics.Bitmap)
+    public static android.graphics.Bitmap bytes2Bimap(byte[])
+    public static android.graphics.Bitmap centerSquareScaleBitmap(android.graphics.Bitmap,int)
+    public static android.graphics.Bitmap cutImg(android.graphics.Bitmap,int,int)
+    public static android.graphics.Bitmap cutImg(java.io.File,int,int)
+    public static android.graphics.Bitmap drawableToBitmap(android.graphics.drawable.Drawable)
+    public static byte[] imagePathToByte(java.lang.String)
+    public static android.graphics.Bitmap imageView2Bitmap(android.widget.ImageView)
+    public static android.graphics.Bitmap rotateBitmap(android.graphics.Bitmap,float)
+    public static android.graphics.Bitmap rotateBitmapTranslate(android.graphics.Bitmap,float)
+    public static android.graphics.Bitmap scaleImg(android.graphics.Bitmap,int,int)
+    public static android.graphics.Bitmap scaleImg(java.io.File,int,int)
+    public void setOnImageUtilsListener(com.newbee.ble_lib.util.AbImageUtil$OnImageUtilsListener)
+    public static android.graphics.Bitmap stringToBitmap(java.lang.String)
+    public static android.graphics.Bitmap toRoundBitmap(android.graphics.Bitmap)
+    public static android.graphics.Bitmap topSquareScaleBitmap(android.graphics.Bitmap,int)
+    public static android.graphics.Bitmap view2Bitmap(android.view.View)
+    public static byte[] view2Bytes(android.view.View,android.graphics.Bitmap$CompressFormat)
+    public static android.graphics.drawable.Drawable view2Drawable(android.view.View)
+com.newbee.ble_lib.util.BleByteUtil:
+    public void <init>()
+    public static varargs byte[] addToNewBytes(byte[][])
+    public static int byteArrayToInt(byte[])
+    public static byte[] intToByteArray32(int)
+    public static byte[] intToByteArray32only1(int)
+    public static byte[] intToByteArray32only2(int)
+    public static byte[] intToByteArray32only3(int)
+    public static java.lang.String parseByte2HexStr(byte)
+    public static byte[] resultData(byte[])
+com.newbee.ble_lib.util.BleCheckUtil:
+    public void <init>()
+com.newbee.ble_lib.util.BleConnectStatuUtil:
+    public boolean isConnect()
+com.newbee.ble_lib.util.BleSendImageUtil:
+    public void <init>()
+com.newbee.ble_lib.util.AbImageUtil:
+    private static java.lang.String TAG
