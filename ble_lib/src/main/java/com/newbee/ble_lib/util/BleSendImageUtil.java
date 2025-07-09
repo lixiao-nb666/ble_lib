@@ -47,16 +47,15 @@ public class BleSendImageUtil {
 
 
 
-    public static Bitmap autoScaleBitmap(Bitmap bm){
-        float w= NewBeeBleConfig.getInstance().getImageW();
-        float h= NewBeeBleConfig.getInstance().getImageH();
+    public static Bitmap autoScaleBitmap(Bitmap bm,int maxW,int maxH){
+
         float wmW=bm.getWidth();
         float wmH=bm.getHeight();
-        if(w>=wmW&&h>=wmH){
+        if(maxW>=wmW&&maxH>=wmH){
             return bm;
         }
-        float needScaleX =w/wmW;
-        float needScaleY =h/wmH;
+        float needScaleX =maxW/wmW;
+        float needScaleY =maxH/wmH;
         float needScale=needScaleX<needScaleY?needScaleX:needScaleY;
         Bitmap newBitMap=AbImageUtil.scaleImg(bm,needScale);
         return newBitMap;

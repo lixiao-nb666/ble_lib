@@ -370,10 +370,10 @@ library {
   maven_library {
     groupId: "com.github.lixiao-nb666"
     artifactId: "ble_event"
-    version: "1.0.3"
+    version: "1.0.7"
   }
   digests {
-    sha256: "M\0362\252\316\215\232\242k\255#\206\203\233\346~\204\207\345Lb\300\265m\332T\2408\342\031t\221"
+    sha256: "\274\203\236(\177\031\213#Q\307\'\263\212v\022N7\226\211$\033\031\327U\273eH\034\347\333\217|"
   }
   repo_index {
     value: 5

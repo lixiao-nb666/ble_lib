@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager;
 import com.newbee.ble_lib.util.BleSendImageUtil;
 import com.nrmyw.ble_event_lib.bean.BleSendImageEndInfoBean;
+import com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean;
 import com.nrmyw.ble_event_lib.bean.BleSendImageStartInfoBean;
 
 import com.nrmyw.ble_event_lib.config.NewBeeBleConfig;
@@ -19,18 +20,19 @@ import java.util.Queue;
 
 public class BlueToothGattGetBitmapDataThread extends Thread{
     private Listen listen;
-    private Bitmap bitmap;
-    private BleSendBitmapQualityType qualityType;
+    private BleSendImageInfoBean bleSendImageInfoBean;
     private Queue<byte[]> dataInfoQueue=new LinkedList<>();
     private boolean isStart;
     private long startTime;
-    public BlueToothGattGetBitmapDataThread(Bitmap bitmap,BleSendBitmapQualityType qualityType,Listen listen){
-        this.bitmap=bitmap;
-        this.qualityType=qualityType;
-        if(null==this.qualityType){
-            this.qualityType=BleSendBitmapQualityType.LOW;
+    private boolean canStart;
+    public BlueToothGattGetBitmapDataThread(BleSendImageInfoBean bleSendImageInfoBean, Listen listen){
+        if(null==bleSendImageInfoBean||null==bleSendImageInfoBean.getBitmap()){
+            canStart=false;
+            return;
         }
+        this.bleSendImageInfoBean=bleSendImageInfoBean;
         this.listen=listen;
+        canStart=true;
     }
 
 
@@ -45,18 +47,22 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
     @Override
     public void run() {
         super.run();
+        if(!canStart){
+            return;
+        }
+
         startTime=System.currentTimeMillis();
         if(null!=dataInfoQueue){
             dataInfoQueue.clear();
         }
         isStart=true;
-        Bitmap newBitMap = BleSendImageUtil.autoScaleBitmap(bitmap);
+        Bitmap newBitMap = BleSendImageUtil.autoScaleBitmap(bleSendImageInfoBean.getBitmap(),bleSendImageInfoBean.getMaxW(),bleSendImageInfoBean.getMaxH());
         if(null==newBitMap){
             listen.sendOver(0);
             return;
         }
 
-        byte[] imageBytes=BleSendImageUtil.bitmap2Bytes(newBitMap,qualityType);
+        byte[] imageBytes=BleSendImageUtil.bitmap2Bytes(newBitMap,bleSendImageInfoBean.getBitmapQualityType());
         if(null==imageBytes||imageBytes.length==0){
             listen.sendOver(0);
             return;
@@ -73,6 +79,8 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
         startInfoBean.setW(w);
         startInfoBean.setH(h);
         startInfoBean.setSize(size);
+        startInfoBean.setType(bleSendImageInfoBean.getType());
+        startInfoBean.setName(bleSendImageInfoBean.getName());
         BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.SEND_IMAGE_START,startInfoBean);
 //        BleHintEventSubscriptionSubject.getInstance().sendImageStart(w,h,size);
 
@@ -86,6 +94,8 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
         endInfoBean.setSize(size);
         endInfoBean.setUseTime(useTime);
         endInfoBean.setIndex(index);
+        endInfoBean.setType(bleSendImageInfoBean.getType());
+        endInfoBean.setName(bleSendImageInfoBean.getName());
         BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.SEND_IMAGE_END,endInfoBean);
 //        BleHintEventSubscriptionSubject.getInstance().sendImageEnd(w,h,size,useTime,index);
     }
@@ -107,6 +117,8 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
             if(null!=listen){
                 listen.sendOver(endTime-startTime);
             }
+            bleSendImageInfoBean.getBitmap().recycle();
+            bleSendImageInfoBean=null;
             isStart=false;
         }
     }

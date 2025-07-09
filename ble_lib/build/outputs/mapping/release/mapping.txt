@@ -2,8 +2,8 @@
 # compiler_version: 3.3.83
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 4fc2461
-# pg_map_hash: SHA-256 4fc24618e3886373fd0dd9b11d2204bf814b6aa738e53ef1194f3af14b5afa04
+# pg_map_id: 766d552
+# pg_map_hash: SHA-256 766d552f8f1dfef22de6784c3de0566181c0ee54682aef2d130c609bf08b0a89
 com.newbee.ble_lib.NewBeeBleManager -> com.newbee.ble_lib.NewBeeBleManager:
     com.newbee.ble_lib.NewBeeBleManager bleManager -> b
     com.newbee.ble_lib.service.BluetoothGattServiceDao bluetoothGattServiceDao -> a
@@ -74,16 +74,16 @@ com.newbee.ble_lib.manager.child.BlueToothGattManager$1 -> a.b$a:
     com.newbee.ble_lib.manager.child.BlueToothGattManager this$0 -> a
     void displayGattServices() -> a
 com.newbee.ble_lib.manager.image.BlueToothGattGetBitmapDataThread -> b.a:
-    android.graphics.Bitmap bitmap -> b
-    long startTime -> f
+    com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean bleSendImageInfoBean -> b
+    java.util.Queue dataInfoQueue -> c
     int size -> j
+    long startTime -> e
     int w -> h
     com.newbee.ble_lib.manager.image.BlueToothGattGetBitmapDataThread$Listen listen -> a
-    java.util.Queue dataInfoQueue -> d
     int h -> i
-    boolean isStart -> e
+    boolean canStart -> f
     int index -> g
-    com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType qualityType -> c
+    boolean isStart -> d
     boolean isStart() -> a
     void sendImageEnd(long) -> a
     void splitPacketForMtuByte(byte[]) -> a
@@ -93,14 +93,13 @@ com.newbee.ble_lib.manager.image.BlueToothGattGetBitmapDataThread$Listen -> b.a$
     void sendOver(long) -> a
 com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager -> b.b:
     com.newbee.ble_lib.manager.image.BlueToothGattGetBitmapDataThread getBitmapDataThread -> a
-    android.graphics.Bitmap lastBitmap -> c
+    com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean lastBleSendImageInfoBean -> c
     com.newbee.ble_lib.manager.image.BlueToothGattGetBitmapDataThread$Listen threadListen -> b
-    com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager sendImageManager -> e
-    com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType lastQualityType -> d
+    com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager sendImageManager -> d
     com.newbee.ble_lib.manager.image.BlueToothGattGetBitmapDataThread access$000(com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager) -> a
     com.newbee.ble_lib.manager.image.BlueToothGattGetBitmapDataThread access$002(com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager,com.newbee.ble_lib.manager.image.BlueToothGattGetBitmapDataThread) -> a
     boolean checkNowSendImage() -> a
-    void sendBitMap(android.graphics.Bitmap,com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType) -> a
+    void sendBitMap(com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean) -> a
     void access$100(com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager) -> b
     com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager getInstance() -> b
     void queLast() -> c
@@ -201,5 +200,5 @@ com.newbee.ble_lib.util.BleConnectStatuUtil -> f.d:
     void sendConnected() -> d
     void sendDisconnected() -> e
 com.newbee.ble_lib.util.BleSendImageUtil -> f.e:
-    android.graphics.Bitmap autoScaleBitmap(android.graphics.Bitmap) -> a
+    android.graphics.Bitmap autoScaleBitmap(android.graphics.Bitmap,int,int) -> a
     byte[] bitmap2Bytes(android.graphics.Bitmap,com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType) -> a

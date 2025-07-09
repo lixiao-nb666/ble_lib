@@ -1,6 +1,6 @@
 <dependencies>
   <compile
-      roots="androidx.appcompat:appcompat:1.2.0@aar,com.github.lixiao-nb666:build_lib:1.1.4@aar,androidx.recyclerview:recyclerview:1.2.1@aar,com.github.lixiao-nb666:t800_data_lib:1.0.2@aar,com.github.lixiao-nb666:ble_event:1.0.3@aar,G:\asworkspace\lixiao_lib\hud\Ble_Tool@@:ble_lib::release,androidx.fragment:fragment:1.1.0@aar,androidx.appcompat:appcompat-resources:1.2.0@aar,androidx.drawerlayout:drawerlayout:1.0.0@aar,androidx.viewpager:viewpager:1.0.0@aar,androidx.customview:customview:1.0.0@aar,androidx.loader:loader:1.0.0@aar,androidx.activity:activity:1.0.0@aar,androidx.vectordrawable:vectordrawable-animated:1.1.0@aar,androidx.vectordrawable:vectordrawable:1.1.0@aar,androidx.core:core:1.3.2@aar,androidx.cursoradapter:cursoradapter:1.0.0@aar,androidx.lifecycle:lifecycle-runtime:2.1.0@aar,androidx.versionedparcelable:versionedparcelable:1.1.0@aar,androidx.collection:collection:1.1.0@jar,androidx.lifecycle:lifecycle-viewmodel:2.1.0@aar,androidx.savedstate:savedstate:1.0.0@aar,androidx.lifecycle:lifecycle-livedata:2.0.0@aar,androidx.lifecycle:lifecycle-livedata-core:2.0.0@aar,androidx.lifecycle:lifecycle-common:2.1.0@jar,androidx.arch.core:core-runtime:2.0.0@aar,androidx.arch.core:core-common:2.1.0@jar,androidx.interpolator:interpolator:1.0.0@aar,androidx.annotation:annotation:1.1.0@jar">
+      roots="androidx.appcompat:appcompat:1.2.0@aar,com.github.lixiao-nb666:build_lib:1.1.4@aar,androidx.recyclerview:recyclerview:1.2.1@aar,com.github.lixiao-nb666:t800_data_lib:1.0.2@aar,com.github.lixiao-nb666:ble_event:1.0.7@aar,G:\asworkspace\lixiao_lib\hud\Ble_Tool@@:ble_lib::release,androidx.fragment:fragment:1.1.0@aar,androidx.appcompat:appcompat-resources:1.2.0@aar,androidx.drawerlayout:drawerlayout:1.0.0@aar,androidx.viewpager:viewpager:1.0.0@aar,androidx.customview:customview:1.0.0@aar,androidx.loader:loader:1.0.0@aar,androidx.activity:activity:1.0.0@aar,androidx.vectordrawable:vectordrawable-animated:1.1.0@aar,androidx.vectordrawable:vectordrawable:1.1.0@aar,androidx.core:core:1.3.2@aar,androidx.cursoradapter:cursoradapter:1.0.0@aar,androidx.lifecycle:lifecycle-runtime:2.1.0@aar,androidx.versionedparcelable:versionedparcelable:1.1.0@aar,androidx.collection:collection:1.1.0@jar,androidx.lifecycle:lifecycle-viewmodel:2.1.0@aar,androidx.savedstate:savedstate:1.0.0@aar,androidx.lifecycle:lifecycle-livedata:2.0.0@aar,androidx.lifecycle:lifecycle-livedata-core:2.0.0@aar,androidx.lifecycle:lifecycle-common:2.1.0@jar,androidx.arch.core:core-runtime:2.0.0@aar,androidx.arch.core:core-common:2.1.0@jar,androidx.interpolator:interpolator:1.0.0@aar,androidx.annotation:annotation:1.1.0@jar">
     <dependency
         name="androidx.appcompat:appcompat:1.2.0@aar"
         simpleName="androidx.appcompat:appcompat"/>
@@ -14,7 +14,7 @@
         name="com.github.lixiao-nb666:t800_data_lib:1.0.2@aar"
         simpleName="com.github.lixiao-nb666:t800_data_lib"/>
     <dependency
-        name="com.github.lixiao-nb666:ble_event:1.0.3@aar"
+        name="com.github.lixiao-nb666:ble_event:1.0.7@aar"
         simpleName="com.github.lixiao-nb666:ble_event"/>
     <dependency
         name="G:\asworkspace\lixiao_lib\hud\Ble_Tool@@:ble_lib::release"
@@ -90,7 +90,7 @@
         simpleName="androidx.annotation:annotation"/>
   </compile>
   <package
-      roots="com.github.lixiao-nb666:build_lib:1.1.4@aar,androidx.appcompat:appcompat:1.2.0@aar,androidx.recyclerview:recyclerview:1.2.1@aar,com.github.lixiao-nb666:t800_data_lib:1.0.2@aar,G:\asworkspace\lixiao_lib\hud\Ble_Tool@@:ble_lib::release,com.github.lixiao-nb666:ble_event:1.0.3@aar,androidx.drawerlayout:drawerlayout:1.0.0@aar,androidx.fragment:fragment:1.1.0@aar,androidx.viewpager:viewpager:1.0.0@aar,androidx.customview:customview:1.0.0@aar,androidx.appcompat:appcompat-resources:1.2.0@aar,androidx.loader:loader:1.0.0@aar,androidx.activity:activity:1.0.0@aar,androidx.vectordrawable:vectordrawable-animated:1.1.0@aar,androidx.vectordrawable:vectordrawable:1.1.0@aar,androidx.core:core:1.3.2@aar,androidx.cursoradapter:cursoradapter:1.0.0@aar,androidx.versionedparcelable:versionedparcelable:1.1.0@aar,androidx.collection:collection:1.1.0@jar,androidx.lifecycle:lifecycle-runtime:2.1.0@aar,androidx.lifecycle:lifecycle-viewmodel:2.1.0@aar,androidx.savedstate:savedstate:1.0.0@aar,androidx.interpolator:interpolator:1.0.0@aar,androidx.lifecycle:lifecycle-livedata:2.0.0@aar,androidx.lifecycle:lifecycle-livedata-core:2.0.0@aar,androidx.arch.core:core-runtime:2.0.0@aar,androidx.arch.core:core-common:2.1.0@jar,androidx.lifecycle:lifecycle-common:2.1.0@jar,androidx.annotation:annotation:1.1.0@jar,com.github.lixiao-nb666:sava_data_lib:1.0.0@aar,com.github.lixiao-nb666:gson_lib:1.0.0@aar,com.google.code.gson:gson:2.8.5@jar">
+      roots="com.github.lixiao-nb666:build_lib:1.1.4@aar,androidx.appcompat:appcompat:1.2.0@aar,androidx.recyclerview:recyclerview:1.2.1@aar,com.github.lixiao-nb666:t800_data_lib:1.0.2@aar,G:\asworkspace\lixiao_lib\hud\Ble_Tool@@:ble_lib::release,com.github.lixiao-nb666:ble_event:1.0.7@aar,androidx.drawerlayout:drawerlayout:1.0.0@aar,androidx.fragment:fragment:1.1.0@aar,androidx.viewpager:viewpager:1.0.0@aar,androidx.customview:customview:1.0.0@aar,androidx.appcompat:appcompat-resources:1.2.0@aar,androidx.loader:loader:1.0.0@aar,androidx.activity:activity:1.0.0@aar,androidx.vectordrawable:vectordrawable-animated:1.1.0@aar,androidx.vectordrawable:vectordrawable:1.1.0@aar,androidx.core:core:1.3.2@aar,androidx.cursoradapter:cursoradapter:1.0.0@aar,androidx.versionedparcelable:versionedparcelable:1.1.0@aar,androidx.collection:collection:1.1.0@jar,androidx.lifecycle:lifecycle-runtime:2.1.0@aar,androidx.lifecycle:lifecycle-viewmodel:2.1.0@aar,androidx.savedstate:savedstate:1.0.0@aar,androidx.interpolator:interpolator:1.0.0@aar,androidx.lifecycle:lifecycle-livedata:2.0.0@aar,androidx.lifecycle:lifecycle-livedata-core:2.0.0@aar,androidx.arch.core:core-runtime:2.0.0@aar,androidx.arch.core:core-common:2.1.0@jar,androidx.lifecycle:lifecycle-common:2.1.0@jar,androidx.annotation:annotation:1.1.0@jar,com.github.lixiao-nb666:sava_data_lib:1.0.0@aar,com.github.lixiao-nb666:gson_lib:1.0.0@aar,com.google.code.gson:gson:2.8.5@jar">
     <dependency
         name="com.github.lixiao-nb666:build_lib:1.1.4@aar"
         simpleName="com.github.lixiao-nb666:build_lib"/>
@@ -107,7 +107,7 @@
         name="G:\asworkspace\lixiao_lib\hud\Ble_Tool@@:ble_lib::release"
         simpleName="Ble_Tool:ble_lib"/>
     <dependency
-        name="com.github.lixiao-nb666:ble_event:1.0.3@aar"
+        name="com.github.lixiao-nb666:ble_event:1.0.7@aar"
         simpleName="com.github.lixiao-nb666:ble_event"/>
     <dependency
         name="androidx.drawerlayout:drawerlayout:1.0.0@aar"

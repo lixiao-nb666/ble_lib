@@ -2,6 +2,7 @@ package com.newbee.ble_lib.manager.image;
 
 import android.graphics.Bitmap;
 
+import com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean;
 import com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType;
 
 
@@ -22,11 +23,9 @@ import com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType;
     };
 
     private void queLast(){
-        if(null!=lastBitmap){
-            getBitmapDataThread=new BlueToothGattGetBitmapDataThread(lastBitmap,lastQualityType,threadListen);
+        if(null!=lastBleSendImageInfoBean){
+            getBitmapDataThread=new BlueToothGattGetBitmapDataThread(lastBleSendImageInfoBean,threadListen);
             getBitmapDataThread.start();
-            lastBitmap=null;
-            lastQualityType=null;
         }
     }
 
@@ -47,8 +46,6 @@ import com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType;
 
 
    public void close(){
-
-
        if(null!=getBitmapDataThread){
            getBitmapDataThread.stop();
            getBitmapDataThread=null;
@@ -72,16 +69,13 @@ import com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType;
 
 
 
-   private Bitmap lastBitmap;
-   private BleSendBitmapQualityType lastQualityType;
+  private BleSendImageInfoBean lastBleSendImageInfoBean;
 
-
-   public void sendBitMap(Bitmap bitmap, BleSendBitmapQualityType qualityType){
+   public void sendBitMap(BleSendImageInfoBean bleSendImageInfoBean){
        if(null!=getBitmapDataThread){
-            this.lastBitmap=bitmap;
-            this.lastQualityType=qualityType;
+            this.lastBleSendImageInfoBean=bleSendImageInfoBean;
         }else {
-            getBitmapDataThread=new BlueToothGattGetBitmapDataThread(bitmap,qualityType,threadListen);
+            getBitmapDataThread=new BlueToothGattGetBitmapDataThread(bleSendImageInfoBean,threadListen);
             getBitmapDataThread.start();
         }
 

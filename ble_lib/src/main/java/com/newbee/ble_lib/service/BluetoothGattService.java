@@ -11,6 +11,7 @@ import com.newbee.ble_lib.manager.child.BleConnectManager;
 
 import com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager;
 import com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager;
+import com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean;
 import com.nrmyw.ble_event_lib.send.BleEventObserver;
 import com.nrmyw.ble_event_lib.send.BleEventSubscriptionSubject;
 import com.nrmyw.ble_event_lib.statu.BleStatu;
@@ -43,7 +44,7 @@ public class BluetoothGattService extends BaseService implements BleEventObserve
                         BlueToothGattSendMsgManager.getInstance().sendMsgByCmd((byte[]) msg.obj);
                         break;
                     case SEND_IMAGE:
-                        BlueToothGattSendImageManager.getInstance().sendBitMap((Bitmap) msg.obj, BleSendBitmapQualityType.values()[msg.arg1]);
+                        BlueToothGattSendImageManager.getInstance().sendBitMap((BleSendImageInfoBean) msg.obj);
                         break;
                     case SEND_CMD_BY_IMAGE_INDEX:
                         BlueToothGattSendMsgManager.getInstance().sendMsgByImg(msg.arg1, (byte[]) msg.obj);
@@ -114,19 +115,17 @@ public class BluetoothGattService extends BaseService implements BleEventObserve
 
     }
 
+
     @Override
-    public void sendImage(Bitmap bitmap, BleSendBitmapQualityType bitmapQualityType) {
+    public void sendImage(BleSendImageInfoBean sendImageInfoBean) {
         Message msg=new Message();
         msg.what=BluetoothGattServiceMsgType.SEND_IMAGE.ordinal();
-        msg.obj=bitmap;
-        msg.arg1=bitmapQualityType.ordinal();
+        msg.obj=sendImageInfoBean;
+
         handler.sendMessage(msg);
-
-
-
-
-
     }
+
+
 
     @Override
     public void sendImageIndexCmd(int index, byte[] bytes) {
@@ -136,7 +135,6 @@ public class BluetoothGattService extends BaseService implements BleEventObserve
         msg.arg1=index;
         handler.sendMessage(msg);
     }
-
 
 
 
