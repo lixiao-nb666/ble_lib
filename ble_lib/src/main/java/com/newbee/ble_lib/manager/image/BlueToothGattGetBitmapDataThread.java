@@ -8,7 +8,8 @@ import com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager;
 import com.newbee.ble_lib.util.BleSendImageUtil;
 import com.nrmyw.ble_event_lib.bean.BleSendImageEndInfoBean;
 import com.nrmyw.ble_event_lib.bean.BleSendImageStartInfoBean;
-import com.nrmyw.ble_event_lib.config.HudBleConfig;
+
+import com.nrmyw.ble_event_lib.config.NewBeeBleConfig;
 import com.nrmyw.ble_event_lib.statu.BleStatu;
 import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
 import com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType;
@@ -117,7 +118,7 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
         if(null!=data){
             int index=0;
             do{
-                int mtu= HudBleConfig.getInstance().getSendFileMtu();
+                int mtu= NewBeeBleConfig.getInstance().getSendFileMtu();
                 byte[] currentData;
                 if(data.length- index <= mtu){
                     currentData = new byte[data.length-index];

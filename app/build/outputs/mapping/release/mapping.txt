@@ -3,8 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 98fef78
-# pg_map_hash: SHA-256 98fef78f438ca22c5c223bcba45761b5607f9b6db83a1f02924c94d136198244
+# pg_map_id: 70db28f
+# pg_map_hash: SHA-256 70db28fcce099fee25ce2547e7ee8dd60641f1071c8cf438b9ad07e6df6ebe10
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -6743,12 +6743,12 @@ androidx.versionedparcelable.VersionedParcelParcel -> androidx.versionedparcelab
     void setOutputField(int) -> w
     void writeBoolean(boolean) -> y
 androidx.versionedparcelable.VersionedParcelable -> c0.a:
-com.newbee.ble_lib.HudBleManager -> d0.a:
-    com.newbee.ble_lib.HudBleManager bleManager -> b
+com.newbee.ble_lib.NewBeeBleManager -> d0.a:
+    com.newbee.ble_lib.NewBeeBleManager bleManager -> b
     com.newbee.ble_lib.service.BluetoothGattServiceDao bluetoothGattServiceDao -> a
     void close() -> a
     com.nrmyw.ble_event_lib.send.BleEventObserver getEventImp() -> b
-    com.newbee.ble_lib.HudBleManager getInstance() -> c
+    com.newbee.ble_lib.NewBeeBleManager getInstance() -> c
     com.nrmyw.ble_event_lib.bean.BleDeviceBean getNowUseBleDevice() -> d
     void init(android.content.Context) -> e
     boolean isConnect() -> f
@@ -7384,12 +7384,12 @@ com.nrmyw.ble_event_lib.bean.BleSendImageStartInfoBean -> u0.c:
     void setH(int) -> a
     void setSize(int) -> b
     void setW(int) -> c
-com.nrmyw.ble_event_lib.config.HudBleConfig -> v0.a:
+com.nrmyw.ble_event_lib.config.NewBeeBleConfig -> v0.a:
     java.lang.String noticeID -> f
     int imageH -> h
+    com.nrmyw.ble_event_lib.config.NewBeeBleConfig blueToothGattConfig -> j
     int imageW -> g
     java.util.List bleDeviceList -> i
-    com.nrmyw.ble_event_lib.config.HudBleConfig blueToothGattConfig -> j
     boolean autoConnect -> a
     int mtu -> b
     int sendFileMtu -> c
@@ -7398,7 +7398,7 @@ com.nrmyw.ble_event_lib.config.HudBleConfig -> v0.a:
     com.nrmyw.ble_event_lib.bean.BleDeviceBean checkBleName(java.lang.String) -> a
     int getImageH() -> b
     int getImageW() -> c
-    com.nrmyw.ble_event_lib.config.HudBleConfig getInstance() -> d
+    com.nrmyw.ble_event_lib.config.NewBeeBleConfig getInstance() -> d
     int getMtu() -> e
     java.lang.String getNoticeID() -> f
     int getSendFileMtu() -> g

@@ -11,7 +11,8 @@ import android.util.Log;
 
 import com.newbee.ble_lib.util.BleConnectStatuUtil;
 import com.nrmyw.ble_event_lib.bean.BleDeviceBean;
-import com.nrmyw.ble_event_lib.config.HudBleConfig;
+
+import com.nrmyw.ble_event_lib.config.NewBeeBleConfig;
 import com.nrmyw.ble_event_lib.statu.BleStatu;
 import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
 
@@ -33,7 +34,7 @@ public class BleStatuBroadcastReceiver extends BroadcastReceiver {
             Log.i(tag,"kankanweiyizhi:"+device.getName()+"----"+device.getAddress());
             String deviceName = device.getName();
 //            String deviceHardwareAddress = device.getAddress(); // MAC address
-            BleDeviceBean bleDeviceBean= HudBleConfig.getInstance().checkBleName(deviceName);
+            BleDeviceBean bleDeviceBean= NewBeeBleConfig.getInstance().checkBleName(deviceName);
             String address=device.getAddress();
             if(null!=bleDeviceBean&&!TextUtils.isEmpty(address)){
                 BleConnectStatuUtil.getInstance().sendConnecting(context,bleDeviceBean,address);

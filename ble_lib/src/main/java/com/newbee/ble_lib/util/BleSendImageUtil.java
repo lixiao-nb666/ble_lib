@@ -3,7 +3,7 @@ package com.newbee.ble_lib.util;
 
 import android.graphics.Bitmap;
 
-import com.nrmyw.ble_event_lib.config.HudBleConfig;
+import com.nrmyw.ble_event_lib.config.NewBeeBleConfig;
 import com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType;
 
 
@@ -48,8 +48,8 @@ public class BleSendImageUtil {
 
 
     public static Bitmap autoScaleBitmap(Bitmap bm){
-        float w= HudBleConfig.getInstance().getImageW();
-        float h= HudBleConfig.getInstance().getImageH();
+        float w= NewBeeBleConfig.getInstance().getImageW();
+        float h= NewBeeBleConfig.getInstance().getImageH();
         float wmW=bm.getWidth();
         float wmH=bm.getHeight();
         if(w>=wmW&&h>=wmH){

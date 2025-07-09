@@ -11,7 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import com.newbee.ble_lib.HudBleManager;
+
+import com.newbee.ble_lib.NewBeeBleManager;
 import com.newbee.ble_tool.R;
 import com.newbee.ble_tool.type.BleDeviceType;
 import com.newbee.bulid_lib.mybase.LG;
@@ -54,18 +55,18 @@ public class MainActivity extends AppCompatActivity {
             try {
                 switch (v.getId()){
                     case R.id.bt_init:
-                        HudBleManager.getInstance().getEventImp().havePermissionInitBle();
+                        NewBeeBleManager.getInstance().getEventImp().havePermissionInitBle();
                         break;
                     case R.id.bt_search:
-                        HudBleManager.getInstance().getEventImp().startSearchBle();
+                        NewBeeBleManager.getInstance().getEventImp().startSearchBle();
                         break;
                     case R.id.bt_disconnected:
-                        HudBleManager.getInstance().getEventImp().disconnectedBle();
+                        NewBeeBleManager.getInstance().getEventImp().disconnectedBle();
                         break;
                     case R.id.bt_send_test:
                         T800CmdType t800CmdType=T800CmdType.TIME;
                         t800CmdType.useObjectSSetBody();
-                        HudBleManager.getInstance().getEventImp().sendCmd(t800CmdType.getAllByte());
+                        NewBeeBleManager.getInstance().getEventImp().sendCmd(t800CmdType.getAllByte());
                         break;
                 }
             }catch (Exception e){
@@ -82,18 +83,18 @@ public class MainActivity extends AppCompatActivity {
             bleStatuTV.setText(getResources().getText(bleStatu.getStrId()));
             switch (bleStatu){
                 case CONNECTING:
-                    BleDeviceBean bleDeviceBean= HudBleManager.getInstance().getNowUseBleDevice();
+                    BleDeviceBean bleDeviceBean= NewBeeBleManager.getInstance().getNowUseBleDevice();
                     if(null!=bleDeviceBean){
                         bleTV.setText(BleDeviceType.values()[bleDeviceBean.getDeviceType()].name());
                     }
                     break;
                 case CONNECTED:
                     bleTV.append("-连接成功");
-                    setViewByBleConnectStatu(HudBleManager.getInstance().isConnect());
+                    setViewByBleConnectStatu(NewBeeBleManager.getInstance().isConnect());
                     break;
                 case DISCONNECTED:
                     bleTV.setText("已经断开连接");
-                    setViewByBleConnectStatu(HudBleManager.getInstance().isConnect());
+                    setViewByBleConnectStatu(NewBeeBleManager.getInstance().isConnect());
                     break;
                 case RUN_ERR:
                     String errStr=getResources().getText(msg.arg1)+":"+msg.obj.toString();
@@ -126,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
         searchBT.setOnClickListener(onClickListener);
         disconnectedBT.setOnClickListener(onClickListener);
         sendTestBT.setOnClickListener(onClickListener);
-        setViewByBleConnectStatu(HudBleManager.getInstance().isConnect());
+        setViewByBleConnectStatu(NewBeeBleManager.getInstance().isConnect());
         BleStatuEventSubscriptionSubject.getInstance().attach(bleStatuEventObserver);
 //        BleHintEventSubscriptionSubject.getInstance().attach(bleHintEventObserver);
 

@@ -2,10 +2,10 @@
 # compiler_version: 3.3.83
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: d7eb523
-# pg_map_hash: SHA-256 d7eb523c8588b27883c731099dcc001e386da72e23b2a34abe68e91ac9c642d0
-com.newbee.ble_lib.HudBleManager -> com.newbee.ble_lib.HudBleManager:
-    com.newbee.ble_lib.HudBleManager bleManager -> b
+# pg_map_id: 4fc2461
+# pg_map_hash: SHA-256 4fc24618e3886373fd0dd9b11d2204bf814b6aa738e53ef1194f3af14b5afa04
+com.newbee.ble_lib.NewBeeBleManager -> com.newbee.ble_lib.NewBeeBleManager:
+    com.newbee.ble_lib.NewBeeBleManager bleManager -> b
     com.newbee.ble_lib.service.BluetoothGattServiceDao bluetoothGattServiceDao -> a
 com.newbee.ble_lib.base.BaseService -> com.newbee.ble_lib.base.BaseService:
     android.os.IBinder baseBinder -> b

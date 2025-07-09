@@ -32,7 +32,7 @@
 -keep public class * extends android.app.Service
 -keep public class * extends android.content.BroadcastReceiver
 -keep public class * extends android.content.ContentProvider
--keep public class com.newbee.ble_lib.HudBleManager{
+-keep public class com.newbee.ble_lib.NewBeeBleManager{
 
     getInstance(...);
     init(...);

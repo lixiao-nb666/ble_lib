@@ -52,10 +52,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="com.github.lixiao-nb666:ble_event:1.0.2@aar"
-      jars="C:\Users\Mayn\.gradle\caches\transforms-3\265c744f4db5a6b0d0a259f8a209a2d6\transformed\ble_event-1.0.2\jars\classes.jar"
-      resolved="com.github.lixiao-nb666:ble_event:1.0.2"
-      folder="C:\Users\Mayn\.gradle\caches\transforms-3\265c744f4db5a6b0d0a259f8a209a2d6\transformed\ble_event-1.0.2"
+      name="com.github.lixiao-nb666:ble_event:1.0.3@aar"
+      jars="C:\Users\Mayn\.gradle\caches\transforms-3\83746461e626fc9a14f69ea358b3acde\transformed\ble_event-1.0.3\jars\classes.jar"
+      resolved="com.github.lixiao-nb666:ble_event:1.0.3"
+      folder="C:\Users\Mayn\.gradle\caches\transforms-3\83746461e626fc9a14f69ea358b3acde\transformed\ble_event-1.0.3"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"

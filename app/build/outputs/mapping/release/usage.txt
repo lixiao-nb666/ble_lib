@@ -6011,7 +6011,7 @@ com.nrmyw.ble_event_lib.bean.BleSendImageStartInfoBean:
     public int getH()
     public int getSize()
     public int getW()
-com.nrmyw.ble_event_lib.config.HudBleConfig:
+com.nrmyw.ble_event_lib.config.NewBeeBleConfig:
     private boolean disconnectAutoConnect
     public boolean isDisconnectAutoConnect()
     public void setAutoConnect(boolean)
