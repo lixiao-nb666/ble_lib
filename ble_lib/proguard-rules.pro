@@ -32,7 +32,13 @@
 -keep public class * extends android.app.Service
 -keep public class * extends android.content.BroadcastReceiver
 -keep public class * extends android.content.ContentProvider
--keep public class com.newbee.ble_lib.BleManager
+-keep public class com.newbee.ble_lib.BleManager{
+
+    getInstance(...);
+    com.newbee.ble_lib.event.send.BleEventObserver getEventImp();
+    void init(...);
+    void close(...);
+}
 -keep public interface com.newbee.ble_lib.event.send.BleEventObserver
 -keep public interface com.newbee.ble_lib.event.statu.BleStatuEventObserver
 -keep public enum com.newbee.ble_lib.event.statu.BleStatu
