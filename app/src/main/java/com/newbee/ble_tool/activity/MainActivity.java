@@ -11,11 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
-
-import com.newbee.ble_lib.config.BlueToothGattConfig;
-
-import com.newbee.ble_lib.BleManager;
+import com.newbee.ble_lib.HudBleManager;
 import com.newbee.ble_tool.R;
 import com.newbee.ble_tool.type.BleDeviceType;
 import com.newbee.bulid_lib.mybase.LG;
@@ -58,19 +54,18 @@ public class MainActivity extends AppCompatActivity {
             try {
                 switch (v.getId()){
                     case R.id.bt_init:
-
-                        BleManager.getInstance().getEventImp().havePermissionInitBle();
+                        HudBleManager.getInstance().getEventImp().havePermissionInitBle();
                         break;
                     case R.id.bt_search:
-                        BleManager.getInstance().getEventImp().startSearchBle();
+                        HudBleManager.getInstance().getEventImp().startSearchBle();
                         break;
                     case R.id.bt_disconnected:
-                        BleManager.getInstance().getEventImp().disconnectedBle();
+                        HudBleManager.getInstance().getEventImp().disconnectedBle();
                         break;
                     case R.id.bt_send_test:
                         T800CmdType t800CmdType=T800CmdType.TIME;
                         t800CmdType.useObjectSSetBody();
-                        BleManager.getInstance().getEventImp().sendCmd(t800CmdType.getAllByte());
+                        HudBleManager.getInstance().getEventImp().sendCmd(t800CmdType.getAllByte());
                         break;
                 }
             }catch (Exception e){
@@ -87,18 +82,18 @@ public class MainActivity extends AppCompatActivity {
             bleStatuTV.setText(getResources().getText(bleStatu.getStrId()));
             switch (bleStatu){
                 case CONNECTING:
-                    BleDeviceBean bleDeviceBean= BlueToothGattConfig.getInstance().getNowUseBleDevice();
+                    BleDeviceBean bleDeviceBean= HudBleManager.getInstance().getNowUseBleDevice();
                     if(null!=bleDeviceBean){
                         bleTV.setText(BleDeviceType.values()[bleDeviceBean.getDeviceType()].name());
                     }
                     break;
                 case CONNECTED:
                     bleTV.append("-连接成功");
-                    setViewByBleConnectStatu(BlueToothGattConfig.getInstance().isConnect());
+                    setViewByBleConnectStatu(HudBleManager.getInstance().isConnect());
                     break;
                 case DISCONNECTED:
                     bleTV.setText("已经断开连接");
-                    setViewByBleConnectStatu(BlueToothGattConfig.getInstance().isConnect());
+                    setViewByBleConnectStatu(HudBleManager.getInstance().isConnect());
                     break;
                 case RUN_ERR:
                     String errStr=getResources().getText(msg.arg1)+":"+msg.obj.toString();
@@ -131,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
         searchBT.setOnClickListener(onClickListener);
         disconnectedBT.setOnClickListener(onClickListener);
         sendTestBT.setOnClickListener(onClickListener);
-        setViewByBleConnectStatu(BlueToothGattConfig.getInstance().isConnect());
+        setViewByBleConnectStatu(HudBleManager.getInstance().isConnect());
         BleStatuEventSubscriptionSubject.getInstance().attach(bleStatuEventObserver);
 //        BleHintEventSubscriptionSubject.getInstance().attach(bleHintEventObserver);
 

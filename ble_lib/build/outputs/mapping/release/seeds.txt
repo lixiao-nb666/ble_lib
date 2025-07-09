@@ -1,24 +1,26 @@
-com.newbee.ble_lib.receiver.BleStatuBroadcastReceiver
 com.newbee.ble_lib.service.BluetoothGattService
-com.newbee.ble_lib.BleManager
-com.newbee.ble_lib.service.BluetoothGattServiceMsgType
+com.newbee.ble_lib.receiver.BleStatuBroadcastReceiver
 com.newbee.ble_lib.base.BaseService
+com.newbee.ble_lib.service.BluetoothGattServiceMsgType
+com.newbee.ble_lib.HudBleManager
 com.newbee.ble_lib.R
-com.newbee.ble_lib.BleManager: BleManager()
-com.newbee.ble_lib.manager.child.BleConnectManager: BleConnectManager()
-com.newbee.ble_lib.service.BluetoothGattService: BluetoothGattService()
-com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager: BlueToothGattMsgManager()
-com.newbee.ble_lib.BleManager: void init(android.content.Context)
-com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager: BlueToothGattSendMsgManager()
-com.newbee.ble_lib.config.BlueToothGattConfig: BlueToothGattConfig()
-com.newbee.ble_lib.manager.child.BlueToothGattManager: BlueToothGattManager()
-com.newbee.ble_lib.service.BluetoothGattServiceMsgType: com.newbee.ble_lib.service.BluetoothGattServiceMsgType[] values()
-com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager: BlueToothGattSendImageManager()
-com.newbee.ble_lib.receiver.BleStatuBroadcastReceiverDao: BleStatuBroadcastReceiverDao()
-com.newbee.ble_lib.BleManager: void close()
-com.newbee.ble_lib.base.BaseService: BaseService()
+com.newbee.ble_lib.HudBleManager: com.nrmyw.ble_event_lib.send.BleEventObserver getEventImp()
 com.newbee.ble_lib.receiver.BleStatuBroadcastReceiver: BleStatuBroadcastReceiver()
-com.newbee.ble_lib.service.BluetoothGattServiceMsgType: com.newbee.ble_lib.service.BluetoothGattServiceMsgType valueOf(java.lang.String)
-com.newbee.ble_lib.util.BleConnectStatuUtil: BleConnectStatuUtil()
+com.newbee.ble_lib.HudBleManager: com.nrmyw.ble_event_lib.bean.BleDeviceBean getNowUseBleDevice()
+com.newbee.ble_lib.base.BaseService: BaseService()
+com.newbee.ble_lib.service.BluetoothGattService: BluetoothGattService()
 com.newbee.ble_lib.R: R()
-com.newbee.ble_lib.BleManager: com.newbee.ble_lib.BleManager getInstance()
+com.newbee.ble_lib.HudBleManager: void init(android.content.Context)
+com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager: BlueToothGattSendImageManager()
+com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager: BlueToothGattMsgManager()
+com.newbee.ble_lib.service.BluetoothGattServiceMsgType: com.newbee.ble_lib.service.BluetoothGattServiceMsgType valueOf(java.lang.String)
+com.newbee.ble_lib.HudBleManager: com.newbee.ble_lib.HudBleManager getInstance()
+com.newbee.ble_lib.manager.child.BleConnectManager: BleConnectManager()
+com.newbee.ble_lib.receiver.BleStatuBroadcastReceiverDao: BleStatuBroadcastReceiverDao()
+com.newbee.ble_lib.util.BleConnectStatuUtil: BleConnectStatuUtil()
+com.newbee.ble_lib.HudBleManager: void close()
+com.newbee.ble_lib.HudBleManager: boolean isConnect()
+com.newbee.ble_lib.service.BluetoothGattServiceMsgType: com.newbee.ble_lib.service.BluetoothGattServiceMsgType[] values()
+com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager: BlueToothGattSendMsgManager()
+com.newbee.ble_lib.HudBleManager: HudBleManager()
+com.newbee.ble_lib.manager.child.BlueToothGattManager: BlueToothGattManager()

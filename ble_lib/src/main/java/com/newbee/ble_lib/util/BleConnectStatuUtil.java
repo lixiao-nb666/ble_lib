@@ -2,8 +2,6 @@ package com.newbee.ble_lib.util;
 
 import android.content.Context;
 
-import com.newbee.ble_lib.R;
-import com.newbee.ble_lib.config.BlueToothGattConfig;
 import com.newbee.ble_lib.manager.child.BleConnectManager;
 import com.nrmyw.ble_event_lib.bean.BleDeviceBean;
 import com.nrmyw.ble_event_lib.statu.BleStatu;
@@ -11,6 +9,7 @@ import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
 
 public class BleConnectStatuUtil {
     private static BleConnectStatuUtil util;
+    private BleDeviceBean nowUseBleDevice;
     private boolean isConnect;
     private BleConnectStatuUtil(){
         isConnect=false;
@@ -25,6 +24,10 @@ public class BleConnectStatuUtil {
             }
         }
         return util;
+    }
+
+    public BleDeviceBean getNowUseBleDevice() {
+        return nowUseBleDevice;
     }
 
     public boolean isConnect() {
@@ -43,7 +46,7 @@ public class BleConnectStatuUtil {
             return;
         }
         lastConnectTime=nowTime;
-        BlueToothGattConfig.getInstance().setNowUseBleDevice(bleDeviceBean);
+        nowUseBleDevice=bleDeviceBean;
         BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.CONNECTING);
         BleConnectManager.getInstance().connect(context,address);
     }
@@ -66,7 +69,7 @@ public class BleConnectStatuUtil {
     public void sendDisconnected(){
         lastConnectTime=0;
         isConnect=false;
-        BlueToothGattConfig.getInstance().setNowUseBleDevice(null);
+        nowUseBleDevice=null;
         BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.DISCONNECTED);
     }
 

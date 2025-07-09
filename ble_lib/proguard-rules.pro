@@ -32,12 +32,15 @@
 -keep public class * extends android.app.Service
 -keep public class * extends android.content.BroadcastReceiver
 -keep public class * extends android.content.ContentProvider
--keep public class com.newbee.ble_lib.BleManager{
+-keep public class com.newbee.ble_lib.HudBleManager{
 
     getInstance(...);
-    com.nrmyw.ble_event_lib.send.BleEventObserver getEventImp();
-    void init(...);
-    void close(...);
+    init(...);
+    getEventImp();
+     isConnect();
+    getNowUseBleDevice();
+    close(...);
+
 }
 
 -keep public class *  implements java.io.Serializable

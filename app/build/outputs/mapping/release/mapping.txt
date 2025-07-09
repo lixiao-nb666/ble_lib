@@ -3,8 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 8ffa7ce
-# pg_map_hash: SHA-256 8ffa7cef26bc539352cbbdbe6750be93160491b451a2a08a0f87d8f84193d5b8
+# pg_map_id: 98fef78
+# pg_map_hash: SHA-256 98fef78f438ca22c5c223bcba45761b5607f9b6db83a1f02924c94d136198244
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -6743,13 +6743,15 @@ androidx.versionedparcelable.VersionedParcelParcel -> androidx.versionedparcelab
     void setOutputField(int) -> w
     void writeBoolean(boolean) -> y
 androidx.versionedparcelable.VersionedParcelable -> c0.a:
-com.newbee.ble_lib.BleManager -> d0.a:
+com.newbee.ble_lib.HudBleManager -> d0.a:
+    com.newbee.ble_lib.HudBleManager bleManager -> b
     com.newbee.ble_lib.service.BluetoothGattServiceDao bluetoothGattServiceDao -> a
-    com.newbee.ble_lib.BleManager bleManager -> b
     void close() -> a
     com.nrmyw.ble_event_lib.send.BleEventObserver getEventImp() -> b
-    com.newbee.ble_lib.BleManager getInstance() -> c
-    void init(android.content.Context) -> d
+    com.newbee.ble_lib.HudBleManager getInstance() -> c
+    com.nrmyw.ble_event_lib.bean.BleDeviceBean getNowUseBleDevice() -> d
+    void init(android.content.Context) -> e
+    boolean isConnect() -> f
 com.newbee.ble_lib.base.BaseService -> e0.a:
     android.os.IBinder baseBinder -> c
     java.lang.String tag -> b
@@ -6781,35 +6783,7 @@ com.newbee.ble_lib.base.BaseServiceDao -> e0.b:
     void stopServiceIsBind() -> f
 com.newbee.ble_lib.base.BaseServiceDao$1 -> e0.b$a:
     com.newbee.ble_lib.base.BaseServiceDao this$0 -> a
-com.newbee.ble_lib.config.BlueToothGattConfig -> f0.a:
-    java.lang.String noticeID -> f
-    com.newbee.ble_lib.config.BlueToothGattConfig blueToothGattConfig -> l
-    int imageW -> h
-    int imageH -> i
-    java.util.List bleDeviceList -> j
-    boolean disconnectAutoConnect -> g
-    boolean autoConnect -> a
-    int mtu -> b
-    int sendFileMtu -> c
-    java.lang.String writeID -> e
-    java.lang.String serviceID -> d
-    com.nrmyw.ble_event_lib.bean.BleDeviceBean nowUseBleDevice -> k
-    com.nrmyw.ble_event_lib.bean.BleDeviceBean checkBleName(java.lang.String) -> a
-    int getImageH() -> b
-    int getImageW() -> c
-    com.newbee.ble_lib.config.BlueToothGattConfig getInstance() -> d
-    int getMtu() -> e
-    java.lang.String getNoticeID() -> f
-    com.nrmyw.ble_event_lib.bean.BleDeviceBean getNowUseBleDevice() -> g
-    int getSendFileMtu() -> h
-    java.lang.String getServiceID() -> i
-    java.lang.String getWriteID() -> j
-    void init(boolean,int,java.lang.String,java.lang.String,java.lang.String,java.util.List) -> k
-    boolean isAutoConnect() -> l
-    boolean isConnect() -> m
-    void setMtu(int) -> n
-    void setNowUseBleDevice(com.nrmyw.ble_event_lib.bean.BleDeviceBean) -> o
-com.newbee.ble_lib.manager.child.BleConnectManager -> g0.a:
+com.newbee.ble_lib.manager.child.BleConnectManager -> f0.a:
     com.newbee.ble_lib.manager.child.BleConnectManager bleManager -> d
     android.bluetooth.BluetoothAdapter bluetoothAdapter -> b
     android.bluetooth.BluetoothManager bluetoothManager -> a
@@ -6822,7 +6796,7 @@ com.newbee.ble_lib.manager.child.BleConnectManager -> g0.a:
     void havePermissionInitBle(android.content.Context,android.content.pm.PackageManager) -> f
     void openBluetooth() -> g
     void startSearchBLE() -> h
-com.newbee.ble_lib.manager.child.BlueToothGattManager -> g0.b:
+com.newbee.ble_lib.manager.child.BlueToothGattManager -> f0.b:
     android.bluetooth.BluetoothGattCharacteristic writeCharacteristic -> c
     long lastSendTime -> f
     boolean nowCanSend -> e
@@ -6841,10 +6815,10 @@ com.newbee.ble_lib.manager.child.BlueToothGattManager -> g0.b:
     boolean isNowCanSend() -> i
     void queSendCmd(byte[]) -> j
     void setCharacteristicNotification(android.bluetooth.BluetoothGattCharacteristic,boolean) -> k
-com.newbee.ble_lib.manager.child.BlueToothGattManager$1 -> g0.b$a:
+com.newbee.ble_lib.manager.child.BlueToothGattManager$1 -> f0.b$a:
     com.newbee.ble_lib.manager.child.BlueToothGattManager this$0 -> a
     void displayGattServices() -> a
-com.newbee.ble_lib.manager.image.BlueToothGattGetBitmapDataThread -> h0.a:
+com.newbee.ble_lib.manager.image.BlueToothGattGetBitmapDataThread -> g0.a:
     int h -> j
     android.graphics.Bitmap bitmap -> c
     int size -> k
@@ -6860,9 +6834,9 @@ com.newbee.ble_lib.manager.image.BlueToothGattGetBitmapDataThread -> h0.a:
     void sendImageEnd(long) -> c
     void sendImageStart() -> d
     void splitPacketForMtuByte(byte[]) -> e
-com.newbee.ble_lib.manager.image.BlueToothGattGetBitmapDataThread$Listen -> h0.a$a:
+com.newbee.ble_lib.manager.image.BlueToothGattGetBitmapDataThread$Listen -> g0.a$a:
     void sendOver(long) -> a
-com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager -> h0.b:
+com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager -> g0.b:
     com.newbee.ble_lib.manager.image.BlueToothGattGetBitmapDataThread getBitmapDataThread -> a
     android.graphics.Bitmap lastBitmap -> c
     com.newbee.ble_lib.manager.image.BlueToothGattGetBitmapDataThread$Listen threadListen -> b
@@ -6876,10 +6850,10 @@ com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager -> h0.b:
     void queLast() -> f
     void queToSend() -> g
     void sendBitMap(android.graphics.Bitmap,com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType) -> h
-com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager$1 -> h0.b$a:
+com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager$1 -> g0.b$a:
     com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager this$0 -> a
     void sendOver(long) -> a
-com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager -> i0.a:
+com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager -> h0.a:
     java.util.Map msgMq -> a
     java.util.Map imageMsgMq -> b
     com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager$Listen listen -> c
@@ -6897,10 +6871,10 @@ com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager -> i0.a:
     void queMsg() -> k
     void removeImageMsg(java.lang.String) -> l
     void removeMsg(java.lang.String) -> m
-com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager$Listen -> i0.a$a:
+com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager$Listen -> h0.a$a:
     void canSendMsg(java.lang.String,byte[]) -> a
     void canSendImageMsg(int,byte[]) -> b
-com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager -> i0.b:
+com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager -> h0.b:
     com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager blueToothGattSendManager -> b
     com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager$Listen msgListen -> a
     void close() -> a
@@ -6908,14 +6882,14 @@ com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager -> i0.b:
     void sendMsgByCmd(byte[]) -> c
     void sendMsgByImg(int,byte[]) -> d
     void setNowCanSend() -> e
-com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager$1 -> i0.b$a:
+com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager$1 -> h0.b$a:
     com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager this$0 -> a
     void canSendMsg(java.lang.String,byte[]) -> a
     void canSendImageMsg(int,byte[]) -> b
-com.newbee.ble_lib.receiver.BleStatuBroadcastReceiver -> j0.a:
+com.newbee.ble_lib.receiver.BleStatuBroadcastReceiver -> i0.a:
     java.lang.String tag -> a
     void sendChangedStatu(int) -> a
-com.newbee.ble_lib.receiver.BleStatuBroadcastReceiverDao -> j0.b:
+com.newbee.ble_lib.receiver.BleStatuBroadcastReceiverDao -> i0.b:
     com.newbee.ble_lib.receiver.BleStatuBroadcastReceiver bleStatuBroadcastReceiver -> a
     android.content.Context context -> b
     com.newbee.ble_lib.receiver.BleStatuBroadcastReceiverDao bleStatuBroadcastReceiverDao -> c
@@ -6936,14 +6910,14 @@ com.newbee.ble_lib.service.BluetoothGattService$1 -> com.newbee.ble_lib.service.
     com.newbee.ble_lib.service.BluetoothGattService this$0 -> a
 com.newbee.ble_lib.service.BluetoothGattService$2 -> com.newbee.ble_lib.service.BluetoothGattService$b:
     int[] $SwitchMap$com$newbee$ble_lib$service$BluetoothGattServiceMsgType -> a
-com.newbee.ble_lib.service.BluetoothGattServiceDao -> k0.a:
+com.newbee.ble_lib.service.BluetoothGattServiceDao -> j0.a:
     com.newbee.ble_lib.base.BaseService$StatuListen statuListen -> f
     java.lang.Class getSsCls() -> c
     com.newbee.ble_lib.base.BaseService$StatuListen getStatuListen() -> d
-com.newbee.ble_lib.service.BluetoothGattServiceDao$1 -> k0.a$a:
+com.newbee.ble_lib.service.BluetoothGattServiceDao$1 -> j0.a$a:
     com.newbee.ble_lib.service.BluetoothGattServiceDao this$0 -> a
     void isStart() -> a
-com.newbee.ble_lib.service.BluetoothGattServiceMsgType -> k0.b:
+com.newbee.ble_lib.service.BluetoothGattServiceMsgType -> j0.b:
     com.newbee.ble_lib.service.BluetoothGattServiceMsgType NONE -> c
     com.newbee.ble_lib.service.BluetoothGattServiceMsgType INIT_BLE -> d
     com.newbee.ble_lib.service.BluetoothGattServiceMsgType SCAN_BLE -> e
@@ -6954,26 +6928,28 @@ com.newbee.ble_lib.service.BluetoothGattServiceMsgType -> k0.b:
     com.newbee.ble_lib.service.BluetoothGattServiceMsgType SEND_IMAGE -> h
     com.newbee.ble_lib.service.BluetoothGattServiceMsgType SEND_CMD_BY_IMAGE_INDEX -> i
     int getStrId() -> a
-com.newbee.ble_lib.util.AbImageUtil -> l0.a:
+com.newbee.ble_lib.util.AbImageUtil -> k0.a:
     byte[] bitmap2Bytes(android.graphics.Bitmap,android.graphics.Bitmap$CompressFormat,boolean,int) -> a
     android.graphics.Bitmap scaleImg(android.graphics.Bitmap,float) -> b
-com.newbee.ble_lib.util.BleByteUtil -> l0.b:
+com.newbee.ble_lib.util.BleByteUtil -> k0.b:
     java.lang.String getCmdStrK(byte[]) -> a
     java.lang.String parseByte2HexStr(byte[]) -> b
-com.newbee.ble_lib.util.BleCheckUtil -> l0.c:
+com.newbee.ble_lib.util.BleCheckUtil -> k0.c:
     boolean checkPhoneCanUseBle(android.content.pm.PackageManager) -> a
-com.newbee.ble_lib.util.BleConnectStatuUtil -> l0.d:
-    long lastConnectTime -> b
-    com.newbee.ble_lib.util.BleConnectStatuUtil util -> c
-    boolean isConnect -> a
+com.newbee.ble_lib.util.BleConnectStatuUtil -> k0.d:
+    com.newbee.ble_lib.util.BleConnectStatuUtil util -> d
+    com.nrmyw.ble_event_lib.bean.BleDeviceBean nowUseBleDevice -> a
+    long lastConnectTime -> c
+    boolean isConnect -> b
     com.newbee.ble_lib.util.BleConnectStatuUtil getInstance() -> a
-    boolean isConnect() -> b
-    void sendConnectErrMsg(java.lang.String) -> c
-    void sendConnected() -> d
-    void sendConnecting(android.content.Context,com.nrmyw.ble_event_lib.bean.BleDeviceBean,java.lang.String) -> e
-    void sendDisconnected() -> f
-    void setConnectErr(java.lang.String) -> g
-com.newbee.ble_lib.util.BleSendImageUtil -> l0.e:
+    com.nrmyw.ble_event_lib.bean.BleDeviceBean getNowUseBleDevice() -> b
+    boolean isConnect() -> c
+    void sendConnectErrMsg(java.lang.String) -> d
+    void sendConnected() -> e
+    void sendConnecting(android.content.Context,com.nrmyw.ble_event_lib.bean.BleDeviceBean,java.lang.String) -> f
+    void sendDisconnected() -> g
+    void setConnectErr(java.lang.String) -> h
+com.newbee.ble_lib.util.BleSendImageUtil -> k0.e:
     android.graphics.Bitmap autoScaleBitmap(android.graphics.Bitmap) -> a
     byte[] bitmap2Bytes(android.graphics.Bitmap,com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType) -> b
 com.newbee.ble_tool.activity.MainActivity -> com.newbee.ble_tool.activity.MainActivity:
@@ -7003,11 +6979,11 @@ com.newbee.ble_tool.app.MyApp -> com.newbee.ble_tool.app.MyApp:
     void close() -> a
     void init() -> b
     void needClear(java.lang.String) -> c
-com.newbee.ble_tool.config.T800Config -> m0.a:
+com.newbee.ble_tool.config.T800Config -> l0.a:
     java.lang.String serviceID -> a
     java.lang.String noticeID -> c
     java.lang.String writeID -> b
-com.newbee.ble_tool.type.BleDeviceType -> n0.a:
+com.newbee.ble_tool.type.BleDeviceType -> m0.a:
     com.newbee.ble_tool.type.BleDeviceType[] $VALUES -> g
     com.newbee.ble_tool.type.BleDeviceType T800 -> d
     com.newbee.ble_tool.type.BleDeviceType T700_1 -> f
@@ -7016,33 +6992,33 @@ com.newbee.ble_tool.type.BleDeviceType -> n0.a:
     java.lang.String title -> b
     com.nrmyw.ble_event_lib.bean.BleDeviceBean getBleDevice() -> a
     java.util.List getBleDeviceTypeList() -> b
-com.newbee.bulid_lib.mybase.LG -> o0.a:
+com.newbee.bulid_lib.mybase.LG -> n0.a:
     void i(java.lang.String,java.lang.Object) -> a
-com.newbee.bulid_lib.mybase.appliction.BaseApplication -> p0.a:
+com.newbee.bulid_lib.mybase.appliction.BaseApplication -> o0.a:
     com.newbee.bulid_lib.mybase.appliction.BaseApplication application -> c
     java.lang.String tag -> b
     android.content.Context context -> d
     void close() -> a
     void init() -> b
     void needClear(java.lang.String) -> c
-com.newbee.t800_lib.bean.T800LaneCountBean -> q0.a:
+com.newbee.t800_lib.bean.T800LaneCountBean -> p0.a:
     java.util.List laneList -> b
     java.util.List getLaneList() -> a
-com.newbee.t800_lib.bean.T800LaneHiPassCountBean -> q0.b:
+com.newbee.t800_lib.bean.T800LaneHiPassCountBean -> p0.b:
     java.util.List laneList -> b
     java.util.List getLaneList() -> a
-com.newbee.t800_lib.config.T800Config -> r0.a:
+com.newbee.t800_lib.config.T800Config -> q0.a:
     byte cmdt2 -> b
     byte cmdt1 -> a
     byte end2 -> d
     byte end1 -> c
-com.newbee.t800_lib.type.T800BrightnessType -> s0.a:
+com.newbee.t800_lib.type.T800BrightnessType -> r0.a:
     byte type -> b
     com.newbee.t800_lib.type.T800BrightnessType HAND -> d
     com.newbee.t800_lib.type.T800BrightnessType AUTO -> c
     com.newbee.t800_lib.type.T800BrightnessType[] $VALUES -> e
     byte getType() -> a
-com.newbee.t800_lib.type.T800CmdType -> s0.b:
+com.newbee.t800_lib.type.T800CmdType -> r0.b:
     com.newbee.t800_lib.type.T800CmdType SET_BRIGHTNESS -> r
     com.newbee.t800_lib.type.T800CmdType QUERY_SN -> t
     com.newbee.t800_lib.type.T800CmdType QUERY_DEVICE_VERSION -> v
@@ -7083,29 +7059,29 @@ com.newbee.t800_lib.type.T800CmdType -> s0.b:
     com.newbee.t800_lib.type.T800CmdType QUERY_GPS_SPEED -> q
     byte[] getAllByte() -> a
     void useObjectSSetBody(java.lang.Object[]) -> b
-com.newbee.t800_lib.type.T800CmdType$1 -> s0.b$a:
+com.newbee.t800_lib.type.T800CmdType$1 -> r0.b$a:
     int[] $SwitchMap$com$newbee$t800_lib$type$T800CmdType -> a
-com.newbee.t800_lib.type.T800GpsType -> s0.c:
+com.newbee.t800_lib.type.T800GpsType -> r0.c:
     com.newbee.t800_lib.type.T800GpsType CLOSE -> c
     com.newbee.t800_lib.type.T800GpsType LOST -> e
     com.newbee.t800_lib.type.T800GpsType OPEN -> d
     byte type -> b
     com.newbee.t800_lib.type.T800GpsType[] $VALUES -> f
     byte getType() -> a
-com.newbee.t800_lib.type.T800ImageShowType -> s0.d:
+com.newbee.t800_lib.type.T800ImageShowType -> r0.d:
     byte type -> b
     com.newbee.t800_lib.type.T800ImageShowType HIDE -> c
     com.newbee.t800_lib.type.T800ImageShowType[] $VALUES -> e
     com.newbee.t800_lib.type.T800ImageShowType SHOW -> d
     byte getType() -> a
-com.newbee.t800_lib.type.T800LaneInformationType -> s0.e:
+com.newbee.t800_lib.type.T800LaneInformationType -> r0.e:
     com.newbee.t800_lib.type.T800LaneInformationType[] $VALUES -> f
     byte type -> b
     com.newbee.t800_lib.type.T800LaneInformationType DEF -> d
     com.newbee.t800_lib.type.T800LaneInformationType HI_PASS -> e
     com.newbee.t800_lib.type.T800LaneInformationType NONE -> c
     byte getType() -> a
-com.newbee.t800_lib.type.T800LaneType -> s0.f:
+com.newbee.t800_lib.type.T800LaneType -> r0.f:
     com.newbee.t800_lib.type.T800LaneType L_F_N -> R
     com.newbee.t800_lib.type.T800LaneType R_Y -> s
     com.newbee.t800_lib.type.T800LaneType L_RF_N -> V
@@ -7190,7 +7166,7 @@ com.newbee.t800_lib.type.T800LaneType -> s0.f:
     com.newbee.t800_lib.type.T800LaneType LT_RF_Y_LT -> G
     java.lang.String imageFileName -> b
     byte getType() -> a
-com.newbee.t800_lib.type.T800NameType -> s0.g:
+com.newbee.t800_lib.type.T800NameType -> r0.g:
     com.newbee.t800_lib.type.T800NameType roadName -> f
     com.newbee.t800_lib.type.T800NameType location -> e
     com.newbee.t800_lib.type.T800NameType def -> g
@@ -7199,38 +7175,38 @@ com.newbee.t800_lib.type.T800NameType -> s0.g:
     byte type -> b
     com.newbee.t800_lib.type.T800NameType[] $VALUES -> h
     byte getType() -> a
-com.newbee.t800_lib.type.T800SendImageType -> s0.h:
+com.newbee.t800_lib.type.T800SendImageType -> r0.h:
     com.newbee.t800_lib.type.T800SendImageType[] $VALUES -> e
     byte type -> b
     com.newbee.t800_lib.type.T800SendImageType END -> c
     com.newbee.t800_lib.type.T800SendImageType START -> d
     byte getType() -> a
-com.newbee.t800_lib.type.T800SpeedShowBJType -> s0.i:
+com.newbee.t800_lib.type.T800SpeedShowBJType -> r0.i:
     com.newbee.t800_lib.type.T800SpeedShowBJType[] $VALUES -> e
     com.newbee.t800_lib.type.T800SpeedShowBJType NONE -> c
     byte type -> b
     com.newbee.t800_lib.type.T800SpeedShowBJType RED -> d
     byte getType() -> a
-com.newbee.t800_lib.type.T800SpeedShowType -> s0.j:
+com.newbee.t800_lib.type.T800SpeedShowType -> r0.j:
     com.newbee.t800_lib.type.T800SpeedShowType RED -> d
     byte type -> b
     com.newbee.t800_lib.type.T800SpeedShowType[] $VALUES -> e
     com.newbee.t800_lib.type.T800SpeedShowType WRITE -> c
     byte getType() -> a
-com.newbee.t800_lib.type.T800StatuType -> s0.k:
+com.newbee.t800_lib.type.T800StatuType -> r0.k:
     byte type -> b
     com.newbee.t800_lib.type.T800StatuType[] $VALUES -> e
     com.newbee.t800_lib.type.T800StatuType OPEN -> d
     com.newbee.t800_lib.type.T800StatuType CLOSE -> c
     byte getType() -> a
-com.newbee.t800_lib.type.T800TimeType -> s0.l:
+com.newbee.t800_lib.type.T800TimeType -> r0.l:
     com.newbee.t800_lib.type.T800TimeType[] $VALUES -> f
     byte type -> b
     com.newbee.t800_lib.type.T800TimeType NONE -> c
     com.newbee.t800_lib.type.T800TimeType AM -> d
     com.newbee.t800_lib.type.T800TimeType PM -> e
     byte getType() -> a
-com.newbee.t800_lib.type.T800TurnType -> s0.m:
+com.newbee.t800_lib.type.T800TurnType -> r0.m:
     com.newbee.t800_lib.type.T800TurnType tbt17 -> m
     com.newbee.t800_lib.type.T800TurnType tbt140 -> N
     com.newbee.t800_lib.type.T800TurnType tbt15 -> k
@@ -7280,7 +7256,7 @@ com.newbee.t800_lib.type.T800TurnType -> s0.m:
     com.newbee.t800_lib.type.T800TurnType tbt11 -> g
     com.newbee.t800_lib.type.T800TurnType tbt132 -> H
     byte getType() -> a
-com.newbee.t800_lib.type.T800WarningPointType -> s0.n:
+com.newbee.t800_lib.type.T800WarningPointType -> r0.n:
     com.newbee.t800_lib.type.T800WarningPointType p01 -> l
     com.newbee.t800_lib.type.T800WarningPointType numb_20 -> M
     com.newbee.t800_lib.type.T800WarningPointType c16 -> j
@@ -7323,14 +7299,14 @@ com.newbee.t800_lib.type.T800WarningPointType -> s0.n:
     com.newbee.t800_lib.type.T800WarningPointType numb_14 -> y
     com.newbee.t800_lib.type.T800WarningPointType numb_11 -> w
     byte getType() -> a
-com.newbee.t800_lib.util.BleByteUtil -> t0.a:
+com.newbee.t800_lib.util.BleByteUtil -> s0.a:
     int defMixLength -> a
     byte[] intToByteArray32(int) -> a
     byte[] intToByteArray32only1(int) -> b
     byte[] intToByteArray32only2(int) -> c
     byte[] intToByteArray32only3(int) -> d
     byte[] useTitleAndBodyGetAllCmdBytes(byte,byte[]) -> e
-com.newbee.t800_lib.util.T800CmdDataUtil -> t0.b:
+com.newbee.t800_lib.util.T800CmdDataUtil -> s0.b:
     boolean autoGetHipassL -> a
     byte[] getDefLaneInfo(com.newbee.t800_lib.bean.T800LaneCountBean) -> a
     byte[] getFactroySet() -> b
@@ -7354,7 +7330,7 @@ com.newbee.t800_lib.util.T800CmdDataUtil -> t0.b:
     byte[] getTrunType(java.lang.Object[]) -> t
     byte[] getWarningPoint(java.lang.Object[]) -> u
     byte[] hideLane() -> v
-com.nrmyw.ble_event_lib.R$string -> u0.a:
+com.nrmyw.ble_event_lib.R$string -> t0.a:
     int ble_statu_send_image_start -> n
     int ble_statu_sending_data -> o
     int ble_statu_run_err -> l
@@ -7378,7 +7354,7 @@ com.nrmyw.ble_event_lib.R$string -> u0.a:
     int ble_statu_user_init -> s
     int ble_statu_state_off -> p
     int ble_statu_state_on -> q
-com.nrmyw.ble_event_lib.bean.BleDeviceBean -> v0.a:
+com.nrmyw.ble_event_lib.bean.BleDeviceBean -> u0.a:
     java.lang.String deviceName -> b
     int deviceType -> c
     java.lang.String deviceBody -> e
@@ -7390,7 +7366,7 @@ com.nrmyw.ble_event_lib.bean.BleDeviceBean -> v0.a:
     void setDeviceName(java.lang.String) -> e
     void setDeviceTitle(java.lang.String) -> f
     void setDeviceType(int) -> g
-com.nrmyw.ble_event_lib.bean.BleSendImageEndInfoBean -> v0.b:
+com.nrmyw.ble_event_lib.bean.BleSendImageEndInfoBean -> u0.b:
     long useTime -> f
     int size -> d
     int index -> e
@@ -7401,13 +7377,36 @@ com.nrmyw.ble_event_lib.bean.BleSendImageEndInfoBean -> v0.b:
     void setSize(int) -> c
     void setUseTime(long) -> d
     void setW(int) -> e
-com.nrmyw.ble_event_lib.bean.BleSendImageStartInfoBean -> v0.c:
+com.nrmyw.ble_event_lib.bean.BleSendImageStartInfoBean -> u0.c:
     int size -> d
     int w -> b
     int h -> c
     void setH(int) -> a
     void setSize(int) -> b
     void setW(int) -> c
+com.nrmyw.ble_event_lib.config.HudBleConfig -> v0.a:
+    java.lang.String noticeID -> f
+    int imageH -> h
+    int imageW -> g
+    java.util.List bleDeviceList -> i
+    com.nrmyw.ble_event_lib.config.HudBleConfig blueToothGattConfig -> j
+    boolean autoConnect -> a
+    int mtu -> b
+    int sendFileMtu -> c
+    java.lang.String writeID -> e
+    java.lang.String serviceID -> d
+    com.nrmyw.ble_event_lib.bean.BleDeviceBean checkBleName(java.lang.String) -> a
+    int getImageH() -> b
+    int getImageW() -> c
+    com.nrmyw.ble_event_lib.config.HudBleConfig getInstance() -> d
+    int getMtu() -> e
+    java.lang.String getNoticeID() -> f
+    int getSendFileMtu() -> g
+    java.lang.String getServiceID() -> h
+    java.lang.String getWriteID() -> i
+    void init(boolean,int,java.lang.String,java.lang.String,java.lang.String,java.util.List) -> j
+    boolean isAutoConnect() -> k
+    void setMtu(int) -> l
 com.nrmyw.ble_event_lib.send.BleEventObserver -> w0.a:
     void disconnectedBle() -> a
     void sendCmd(byte[]) -> b

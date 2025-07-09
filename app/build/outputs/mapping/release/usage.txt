@@ -5811,15 +5811,6 @@ com.newbee.ble_lib.base.BaseServiceDao:
     public void setActionStr(java.lang.String)
     public void startService()
     public void stopService()
-com.newbee.ble_lib.config.BlueToothGattConfig:
-    public boolean isDisconnectAutoConnect()
-    public void setAutoConnect(boolean)
-    public void setDisconnectAutoConnect(boolean)
-    public void setImageH(int)
-    public void setImageW(int)
-    public void setNoticeID(java.lang.String)
-    public void setServiceID(java.lang.String)
-    public void setWriteID(java.lang.String)
 com.newbee.ble_lib.manager.child.BleConnectManager:
     private void closeBluetooth()
 com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager:
@@ -6020,6 +6011,16 @@ com.nrmyw.ble_event_lib.bean.BleSendImageStartInfoBean:
     public int getH()
     public int getSize()
     public int getW()
+com.nrmyw.ble_event_lib.config.HudBleConfig:
+    private boolean disconnectAutoConnect
+    public boolean isDisconnectAutoConnect()
+    public void setAutoConnect(boolean)
+    public void setDisconnectAutoConnect(boolean)
+    public void setImageH(int)
+    public void setImageW(int)
+    public void setNoticeID(java.lang.String)
+    public void setServiceID(java.lang.String)
+    public void setWriteID(java.lang.String)
 com.nrmyw.ble_event_lib.send.BleEventObserver:
     public abstract void sendImage(android.graphics.Bitmap,com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType)
     public abstract void sendImageIndexCmd(int,byte[])

@@ -245,9 +245,9 @@
 # The proguard configuration file for the following section is C:\Users\Mayn\.gradle\caches\transforms-3\6252025e83ade19d50291c3193fc35ea\transformed\t800_data_lib-1.0.2\proguard.txt
 
 # End of content from C:\Users\Mayn\.gradle\caches\transforms-3\6252025e83ade19d50291c3193fc35ea\transformed\t800_data_lib-1.0.2\proguard.txt
-# The proguard configuration file for the following section is C:\Users\Mayn\.gradle\caches\transforms-3\1e38591745981fb6c18e0ae403eb6f12\transformed\ble_event-1.0.1\proguard.txt
+# The proguard configuration file for the following section is C:\Users\Mayn\.gradle\caches\transforms-3\265c744f4db5a6b0d0a259f8a209a2d6\transformed\ble_event-1.0.2\proguard.txt
 
-# End of content from C:\Users\Mayn\.gradle\caches\transforms-3\1e38591745981fb6c18e0ae403eb6f12\transformed\ble_event-1.0.1\proguard.txt
+# End of content from C:\Users\Mayn\.gradle\caches\transforms-3\265c744f4db5a6b0d0a259f8a209a2d6\transformed\ble_event-1.0.2\proguard.txt
 # The proguard configuration file for the following section is C:\Users\Mayn\.gradle\caches\transforms-3\1282e2a4b56306d4b655af35a574b455\transformed\vectordrawable-animated-1.1.0\proguard.txt
 # Copyright (C) 2016 The Android Open Source Project
 #

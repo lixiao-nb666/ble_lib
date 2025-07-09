@@ -8,9 +8,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
 import android.util.Log;
-import com.newbee.ble_lib.config.BlueToothGattConfig;
+
 import com.newbee.ble_lib.util.BleConnectStatuUtil;
 import com.nrmyw.ble_event_lib.bean.BleDeviceBean;
+import com.nrmyw.ble_event_lib.config.HudBleConfig;
 import com.nrmyw.ble_event_lib.statu.BleStatu;
 import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
 
@@ -32,7 +33,7 @@ public class BleStatuBroadcastReceiver extends BroadcastReceiver {
             Log.i(tag,"kankanweiyizhi:"+device.getName()+"----"+device.getAddress());
             String deviceName = device.getName();
 //            String deviceHardwareAddress = device.getAddress(); // MAC address
-            BleDeviceBean bleDeviceBean=BlueToothGattConfig.getInstance().checkBleName(deviceName);
+            BleDeviceBean bleDeviceBean= HudBleConfig.getInstance().checkBleName(deviceName);
             String address=device.getAddress();
             if(null!=bleDeviceBean&&!TextUtils.isEmpty(address)){
                 BleConnectStatuUtil.getInstance().sendConnecting(context,bleDeviceBean,address);

@@ -1,31 +1,14 @@
-com.newbee.ble_lib.BleManager:
-    public com.nrmyw.ble_event_lib.send.BleEventObserver getEventImp()
 com.newbee.ble_lib.BuildConfig
 com.newbee.ble_lib.base.BaseServiceDao:
-    public com.newbee.ble_lib.base.BaseService getService()
     public void setActionStr(java.lang.String)
     public void startService()
     public void stopService()
-com.newbee.ble_lib.config.BlueToothGattConfig:
-    public com.nrmyw.ble_event_lib.bean.BleDeviceBean getNowUseBleDevice()
-    public void init(boolean,int,java.lang.String,java.lang.String,java.lang.String,java.util.List)
-    public boolean isConnect()
-    public boolean isDisconnectAutoConnect()
-    public void setAutoConnect(boolean)
-    public void setDisconnectAutoConnect(boolean)
-    public void setImageH(int)
-    public void setImageW(int)
-    public void setNoticeID(java.lang.String)
-    public void setServiceID(java.lang.String)
-    public void setWriteID(java.lang.String)
 com.newbee.ble_lib.manager.child.BleConnectManager:
     private void closeBluetooth()
 com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager:
     public void close()
 com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager:
     public void close()
-com.newbee.ble_lib.service.BluetoothGattService:
-    public com.nrmyw.ble_event_lib.send.BleEventObserver getEventImp()
 com.newbee.ble_lib.util.AbImageUtil$OnImageUtilsListener
 com.newbee.ble_lib.util.AbImageUtil:
     private static com.newbee.ble_lib.util.AbImageUtil$OnImageUtilsListener onImageUtilsListener
@@ -65,8 +48,6 @@ com.newbee.ble_lib.util.BleByteUtil:
     public static byte[] resultData(byte[])
 com.newbee.ble_lib.util.BleCheckUtil:
     public void <init>()
-com.newbee.ble_lib.util.BleConnectStatuUtil:
-    public boolean isConnect()
 com.newbee.ble_lib.util.BleSendImageUtil:
     public void <init>()
 com.newbee.ble_lib.util.AbImageUtil:

@@ -2,10 +2,8 @@ package com.newbee.ble_lib.util;
 
 
 import android.graphics.Bitmap;
-import android.util.Log;
 
-import com.newbee.ble_lib.config.BlueToothGattConfig;
-
+import com.nrmyw.ble_event_lib.config.HudBleConfig;
 import com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType;
 
 
@@ -50,8 +48,8 @@ public class BleSendImageUtil {
 
 
     public static Bitmap autoScaleBitmap(Bitmap bm){
-        float w= BlueToothGattConfig.getInstance().getImageW();
-        float h= BlueToothGattConfig.getInstance().getImageH();
+        float w= HudBleConfig.getInstance().getImageW();
+        float h= HudBleConfig.getInstance().getImageH();
         float wmW=bm.getWidth();
         float wmH=bm.getHeight();
         if(w>=wmW&&h>=wmH){
