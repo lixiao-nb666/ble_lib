@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.newbee.ble_tool.app-mergeReleaseResources-24:/values-v19/values-v19.xml",
+            "outputFile": "com.newbee.ble_tool.app-mergeReleaseResources-9:/values-v19/values-v19.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Mayn\\.gradle\\caches\\transforms-3\\78abc2b51b1969b31c6136540b763e63\\transformed\\build_lib-1.1.4\\res\\values-v19\\values-v19.xml",

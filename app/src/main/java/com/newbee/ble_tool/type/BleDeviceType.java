@@ -1,6 +1,7 @@
 package com.newbee.ble_tool.type;
 
-import com.newbee.ble_lib.bean.BleDeviceBean;
+
+import com.nrmyw.ble_event_lib.bean.BleDeviceBean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +19,7 @@ public enum BleDeviceType {
         this.body=body;
     }
 
-    public  BleDeviceBean getBleDevice(){
+    public BleDeviceBean getBleDevice(){
         BleDeviceBean bleDeviceBean=new BleDeviceBean();
         bleDeviceBean.setDeviceName(name());
         bleDeviceBean.setDeviceType(ordinal());

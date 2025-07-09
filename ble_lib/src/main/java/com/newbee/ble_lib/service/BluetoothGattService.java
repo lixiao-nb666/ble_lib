@@ -6,14 +6,15 @@ import android.os.Handler;
 import android.os.Message;
 
 import com.newbee.ble_lib.base.BaseService;
-import com.newbee.ble_lib.event.send.BleEventObserver;
-import com.newbee.ble_lib.event.send.BleEventSubscriptionSubject;
-import com.newbee.ble_lib.event.statu.BleStatu;
-import com.newbee.ble_lib.event.statu.BleStatuEventSubscriptionSubject;
+
 import com.newbee.ble_lib.manager.child.BleConnectManager;
 
 import com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager;
 import com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager;
+import com.nrmyw.ble_event_lib.send.BleEventObserver;
+import com.nrmyw.ble_event_lib.send.BleEventSubscriptionSubject;
+import com.nrmyw.ble_event_lib.statu.BleStatu;
+import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
 import com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType;
 
 

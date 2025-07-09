@@ -9,11 +9,12 @@ import android.content.pm.PackageManager;
 import android.text.TextUtils;
 
 import com.newbee.ble_lib.R;
-import com.newbee.ble_lib.event.statu.BleStatu;
-import com.newbee.ble_lib.event.statu.BleStatuEventSubscriptionSubject;
+
 
 import com.newbee.ble_lib.util.BleCheckUtil;
 import com.newbee.ble_lib.util.BleConnectStatuUtil;
+import com.nrmyw.ble_event_lib.statu.BleStatu;
+import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
 
 
 @SuppressLint("MissingPermission")
@@ -43,22 +44,21 @@ public class BleConnectManager {
     public void havePermissionInitBle(Context context, PackageManager packageManager){
         if(!BleCheckUtil.checkPhoneCanUseBle(packageManager)){
 //            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.BLE_CAN_NOT_USE);
-            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR,R.string.ble_statu_can_not_use);
+            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR,com.nrmyw.ble_event_lib.R.string.ble_statu_can_not_use);
             return;
         }
         bluetoothManager= (BluetoothManager) context.getSystemService(Context.BLUETOOTH_SERVICE);
         if(null==bluetoothManager){
 //            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.BLE_MANAGER_CAN_NOT_USE);
-            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR,R.string.ble_statu_manager_can_not_use);
+            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR,com.nrmyw.ble_event_lib.R.string.ble_statu_manager_can_not_use);
             return;
         }
         bluetoothAdapter=bluetoothManager.getAdapter();
         if(null==bluetoothAdapter){
 //            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.BLE_ADAPTER_CAN_NOT_USE);
-            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR,R.string.ble_statu_adapter_can_not_use);
+            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR,com.nrmyw.ble_event_lib.R.string.ble_statu_adapter_can_not_use);
             return;
         }
-
         if(bleIsOpen()){
             startSearchBLE();
         }else{
@@ -113,7 +113,7 @@ public class BleConnectManager {
     public boolean connect(Context context,String address) {
         if (null==bluetoothAdapter || TextUtils.isEmpty(address)) {
 //            LG.e("BluetoothAdapter not initialized or unspecified address");
-            BleConnectStatuUtil.getInstance().setConnectErr(context.getResources().getString(R.string.ble_statu_adapter_can_not_use));
+            BleConnectStatuUtil.getInstance().setConnectErr(context.getResources().getString(com.nrmyw.ble_event_lib.R.string.ble_statu_adapter_can_not_use));
             return false;
         }
         BluetoothDevice device = bluetoothAdapter.getRemoteDevice(address);

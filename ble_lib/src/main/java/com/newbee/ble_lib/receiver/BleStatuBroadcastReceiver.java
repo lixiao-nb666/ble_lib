@@ -8,13 +8,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
 import android.util.Log;
-
-import com.newbee.ble_lib.bean.BleDeviceBean;
 import com.newbee.ble_lib.config.BlueToothGattConfig;
-import com.newbee.ble_lib.event.statu.BleStatuEventSubscriptionSubject;
-
-import com.newbee.ble_lib.event.statu.BleStatu;
 import com.newbee.ble_lib.util.BleConnectStatuUtil;
+import com.nrmyw.ble_event_lib.bean.BleDeviceBean;
+import com.nrmyw.ble_event_lib.statu.BleStatu;
+import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
 
 @SuppressLint("MissingPermission")
 public class BleStatuBroadcastReceiver extends BroadcastReceiver {

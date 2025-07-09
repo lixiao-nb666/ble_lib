@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.newbee.ble_tool.app-mergeReleaseResources-24:/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "com.newbee.ble_tool.app-mergeReleaseResources-9:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Mayn\\.gradle\\caches\\transforms-3\\c9231f61ffc2ed8722bea521977306ff\\transformed\\appcompat-1.4.1\\res\\values-watch-v20\\values-watch-v20.xml",
+                    "source": "C:\\Users\\Mayn\\.gradle\\caches\\transforms-3\\a3858696d564d45af7268a0a610872e8\\transformed\\appcompat-1.2.0\\res\\values-watch-v20\\values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",

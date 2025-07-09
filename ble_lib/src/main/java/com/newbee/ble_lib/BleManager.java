@@ -3,10 +3,12 @@ package com.newbee.ble_lib;
 import android.content.Context;
 
 
-import com.newbee.ble_lib.event.send.BleEventObserver;
+
 import com.newbee.ble_lib.receiver.BleStatuBroadcastReceiverDao;
+
 import com.newbee.ble_lib.service.BluetoothGattService;
 import com.newbee.ble_lib.service.BluetoothGattServiceDao;
+import com.nrmyw.ble_event_lib.send.BleEventObserver;
 
 public class BleManager {
     private static BleManager bleManager;

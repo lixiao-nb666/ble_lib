@@ -1,33 +1,13 @@
-com.newbee.ble_lib.BleManager
+com.newbee.ble_lib.BleManager:
+    public com.nrmyw.ble_event_lib.send.BleEventObserver getEventImp()
 com.newbee.ble_lib.BuildConfig
-com.newbee.ble_lib.base.BaseService$BaseServiceBinder:
+com.newbee.ble_lib.base.BaseServiceDao:
     public com.newbee.ble_lib.base.BaseService getService()
-    public void setStatuListen(com.newbee.ble_lib.base.BaseService$StatuListen)
-com.newbee.ble_lib.base.BaseService:
-    static synthetic com.newbee.ble_lib.base.BaseService$StatuListen access$000(com.newbee.ble_lib.base.BaseService)
-    static synthetic com.newbee.ble_lib.base.BaseService$StatuListen access$002(com.newbee.ble_lib.base.BaseService,com.newbee.ble_lib.base.BaseService$StatuListen)
-    static synthetic boolean access$100(com.newbee.ble_lib.base.BaseService)
-com.newbee.ble_lib.base.BaseServiceDao$1
-com.newbee.ble_lib.base.BaseServiceDao
-com.newbee.ble_lib.bean.BleDeviceBean:
-    public java.lang.String getDeviceName()
-    public int getDeviceType()
-    public void setDeviceBody(java.lang.String)
-    public void setDeviceName(java.lang.String)
-    public void setDeviceTitle(java.lang.String)
-    public void setDeviceType(int)
-com.newbee.ble_lib.bean.BleSendImageEndInfoBean:
-    public int getH()
-    public int getIndex()
-    public int getSize()
-    public long getUseTime()
-    public int getW()
-com.newbee.ble_lib.bean.BleSendImageStartInfoBean:
-    public int getH()
-    public int getSize()
-    public int getW()
+    public void setActionStr(java.lang.String)
+    public void startService()
+    public void stopService()
 com.newbee.ble_lib.config.BlueToothGattConfig:
-    public com.newbee.ble_lib.bean.BleDeviceBean getNowUseBleDevice()
+    public com.nrmyw.ble_event_lib.bean.BleDeviceBean getNowUseBleDevice()
     public void init(boolean,int,java.lang.String,java.lang.String,java.lang.String,java.util.List)
     public boolean isConnect()
     public boolean isDisconnectAutoConnect()
@@ -38,44 +18,14 @@ com.newbee.ble_lib.config.BlueToothGattConfig:
     public void setNoticeID(java.lang.String)
     public void setServiceID(java.lang.String)
     public void setWriteID(java.lang.String)
-com.newbee.ble_lib.event.send.BleEventObserver:
-    public abstract void disconnectedBle()
-    public abstract void havePermissionInitBle()
-    public abstract void sendCmd(byte[])
-    public abstract void sendImage(android.graphics.Bitmap,com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType)
-    public abstract void sendImageIndexCmd(int,byte[])
-    public abstract void startSearchBle()
-com.newbee.ble_lib.event.send.BleEventSubject
-com.newbee.ble_lib.event.send.BleEventSubscriptionSubject:
-    public void disconnectedBle()
-    public void havePermissionInitBle()
-    public void sendCmd(byte[])
-    public void sendImage(android.graphics.Bitmap,com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType)
-    public void sendImageIndexCmd(int,byte[])
-    public void startSearchBle()
-com.newbee.ble_lib.event.statu.BleStatu:
-    public int getStrId()
-com.newbee.ble_lib.event.statu.BleStatuEventSubject
-com.newbee.ble_lib.event.statu.BleStatuEventSubscriptionSubject:
-    public void attach(com.newbee.ble_lib.event.statu.BleStatuEventObserver)
-    public void detach(com.newbee.ble_lib.event.statu.BleStatuEventObserver)
 com.newbee.ble_lib.manager.child.BleConnectManager:
     private void closeBluetooth()
 com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager:
     public void close()
 com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager:
     public void close()
-com.newbee.ble_lib.receiver.BleStatuBroadcastReceiverDao
 com.newbee.ble_lib.service.BluetoothGattService:
-    public void disconnectedBle()
-    public com.newbee.ble_lib.event.send.BleEventObserver getEventImp()
-    public void havePermissionInitBle()
-    public void sendCmd(byte[])
-    public void sendImage(android.graphics.Bitmap,com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType)
-    public void sendImageIndexCmd(int,byte[])
-    public void startSearchBle()
-com.newbee.ble_lib.service.BluetoothGattServiceDao$1
-com.newbee.ble_lib.service.BluetoothGattServiceDao
+    public com.nrmyw.ble_event_lib.send.BleEventObserver getEventImp()
 com.newbee.ble_lib.util.AbImageUtil$OnImageUtilsListener
 com.newbee.ble_lib.util.AbImageUtil:
     private static com.newbee.ble_lib.util.AbImageUtil$OnImageUtilsListener onImageUtilsListener

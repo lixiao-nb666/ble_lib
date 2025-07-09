@@ -1,12 +1,10 @@
 package com.newbee.ble_lib.config;
 
 import android.text.TextUtils;
-import android.widget.TextView;
 
-import com.newbee.ble_lib.bean.BleDeviceBean;
 import com.newbee.ble_lib.util.BleConnectStatuUtil;
+import com.nrmyw.ble_event_lib.bean.BleDeviceBean;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class BlueToothGattConfig {

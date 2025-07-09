@@ -12,15 +12,15 @@ import android.content.Context;
 import android.os.Build;
 import android.util.Log;
 
-import com.newbee.ble_lib.R;
 import com.newbee.ble_lib.config.BlueToothGattConfig;
 import com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager;
 import com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager;
-import com.newbee.ble_lib.event.statu.BleStatu;
-import com.newbee.ble_lib.event.statu.BleStatuEventSubscriptionSubject;
+
 
 import com.newbee.ble_lib.util.BleByteUtil;
 import com.newbee.ble_lib.util.BleConnectStatuUtil;
+import com.nrmyw.ble_event_lib.statu.BleStatu;
+import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
 
 
 import java.util.List;

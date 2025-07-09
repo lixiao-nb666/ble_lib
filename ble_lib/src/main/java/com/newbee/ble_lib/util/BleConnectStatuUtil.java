@@ -3,11 +3,11 @@ package com.newbee.ble_lib.util;
 import android.content.Context;
 
 import com.newbee.ble_lib.R;
-import com.newbee.ble_lib.bean.BleDeviceBean;
 import com.newbee.ble_lib.config.BlueToothGattConfig;
-import com.newbee.ble_lib.event.statu.BleStatu;
-import com.newbee.ble_lib.event.statu.BleStatuEventSubscriptionSubject;
 import com.newbee.ble_lib.manager.child.BleConnectManager;
+import com.nrmyw.ble_event_lib.bean.BleDeviceBean;
+import com.nrmyw.ble_event_lib.statu.BleStatu;
+import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
 
 public class BleConnectStatuUtil {
     private static BleConnectStatuUtil util;
@@ -32,7 +32,7 @@ public class BleConnectStatuUtil {
     }
 
     private long lastConnectTime;
-    public void sendConnecting(Context context,BleDeviceBean bleDeviceBean, String address){
+    public void sendConnecting(Context context, BleDeviceBean bleDeviceBean, String address){
         if(isConnect){
             sendConnectErrMsg("Now is connected,Can not connect other !");
             return;
@@ -59,7 +59,8 @@ public class BleConnectStatuUtil {
     }
 
     private void sendConnectErrMsg(String errStr){
-        BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR, R.string.ble_statu_connecting_err,errStr);
+
+        BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR,com.nrmyw.ble_event_lib.R.string.ble_statu_connecting_err,errStr);
     }
 
     public void sendDisconnected(){

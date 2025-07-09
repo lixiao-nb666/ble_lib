@@ -12,18 +12,20 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.newbee.ble_lib.bean.BleDeviceBean;
-import com.newbee.ble_lib.bean.BleSendImageEndInfoBean;
-import com.newbee.ble_lib.bean.BleSendImageStartInfoBean;
+
 import com.newbee.ble_lib.config.BlueToothGattConfig;
-import com.newbee.ble_lib.event.statu.BleStatu;
-import com.newbee.ble_lib.event.statu.BleStatuEventObserver;
-import com.newbee.ble_lib.event.statu.BleStatuEventSubscriptionSubject;
+
 import com.newbee.ble_lib.BleManager;
 import com.newbee.ble_tool.R;
 import com.newbee.ble_tool.type.BleDeviceType;
 import com.newbee.bulid_lib.mybase.LG;
 import com.newbee.t800_lib.type.T800CmdType;
+import com.nrmyw.ble_event_lib.bean.BleDeviceBean;
+import com.nrmyw.ble_event_lib.bean.BleSendImageEndInfoBean;
+import com.nrmyw.ble_event_lib.bean.BleSendImageStartInfoBean;
+import com.nrmyw.ble_event_lib.statu.BleStatu;
+import com.nrmyw.ble_event_lib.statu.BleStatuEventObserver;
+import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -56,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
             try {
                 switch (v.getId()){
                     case R.id.bt_init:
+
                         BleManager.getInstance().getEventImp().havePermissionInitBle();
                         break;
                     case R.id.bt_search:

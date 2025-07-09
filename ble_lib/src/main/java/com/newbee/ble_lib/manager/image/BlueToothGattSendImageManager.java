@@ -1,14 +1,10 @@
 package com.newbee.ble_lib.manager.image;
 
 import android.graphics.Bitmap;
-import android.util.Log;
 
-import com.newbee.ble_lib.event.statu.BleStatu;
-import com.newbee.ble_lib.event.statu.BleStatuEventSubscriptionSubject;
 import com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType;
 
-import java.util.Timer;
-import java.util.TimerTask;
+
 
 
  public class BlueToothGattSendImageManager {

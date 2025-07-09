@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.newbee.ble_tool.app-mergeReleaseResources-24:/values-v16/values-v16.xml",
+            "outputFile": "com.newbee.ble_tool.app-mergeReleaseResources-9:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Mayn\\.gradle\\caches\\transforms-3\\5586099dc2be2a001572cf14c2426ba8\\transformed\\core-1.7.0\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\Mayn\\.gradle\\caches\\transforms-3\\5c56de5eb577ed66bde2e174b1717882\\transformed\\core-1.3.2\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Mayn\\.gradle\\caches\\transforms-3\\c9231f61ffc2ed8722bea521977306ff\\transformed\\appcompat-1.4.1\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\Mayn\\.gradle\\caches\\transforms-3\\a3858696d564d45af7268a0a610872e8\\transformed\\appcompat-1.2.0\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

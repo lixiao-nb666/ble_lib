@@ -3,14 +3,16 @@ package com.newbee.ble_lib.manager.image;
 import android.graphics.Bitmap;
 
 
-import com.newbee.ble_lib.bean.BleSendImageEndInfoBean;
-import com.newbee.ble_lib.bean.BleSendImageStartInfoBean;
+
 import com.newbee.ble_lib.config.BlueToothGattConfig;
 
-import com.newbee.ble_lib.event.statu.BleStatu;
-import com.newbee.ble_lib.event.statu.BleStatuEventSubscriptionSubject;
+
 import com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager;
 import com.newbee.ble_lib.util.BleSendImageUtil;
+import com.nrmyw.ble_event_lib.bean.BleSendImageEndInfoBean;
+import com.nrmyw.ble_event_lib.bean.BleSendImageStartInfoBean;
+import com.nrmyw.ble_event_lib.statu.BleStatu;
+import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
 import com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType;
 
 import java.util.LinkedList;
