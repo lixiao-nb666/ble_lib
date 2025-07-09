@@ -32,9 +32,9 @@
 -keep public class * extends android.app.Service
 -keep public class * extends android.content.BroadcastReceiver
 -keep public class * extends android.content.ContentProvider
--keep public class BleManager
--keep public interface BleEventObserver
--keep public interface BleEventObserver
+-keep public class com.newbee.ble_lib.BleManager
+-keep public interface com.newbee.ble_lib.event.send.BleEventObserver
+-keep public interface com.newbee.ble_lib.event.statu.BleStatuEventObserver
+-keep public enum com.newbee.ble_lib.event.statu.BleStatu
 -keep public class *  implements java.io.Serializable
--keep public enum BleStatu
 -keep public class * extends android.preference.Preference
