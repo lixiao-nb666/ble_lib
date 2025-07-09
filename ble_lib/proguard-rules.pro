@@ -32,8 +32,9 @@
 -keep public class * extends android.app.Service
 -keep public class * extends android.content.BroadcastReceiver
 -keep public class * extends android.content.ContentProvider
+-keep public class BleManager
+-keep public interface BleEventObserver
+-keep public interface BleEventObserver
+-keep public class *  implements java.io.Serializable
+-keep public enum BleStatu
 -keep public class * extends android.preference.Preference
--keep public class com.android.vending.licensing.ILicensingService
--keep class android.support.v7.** { *; }    #过滤android.support.v7  注意这里v4还是v7要看gradle里面compile了那个扩展包
--keep interface android.support.constraint.** { *; }
--keep class com.alibaba.fastjson.** {*;}    #保持第三方包fastjson不被混淆，否则会报错
