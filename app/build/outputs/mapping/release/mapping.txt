@@ -3,8 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 70db28f
-# pg_map_hash: SHA-256 70db28fcce099fee25ce2547e7ee8dd60641f1071c8cf438b9ad07e6df6ebe10
+# pg_map_id: 3ae211a
+# pg_map_hash: SHA-256 3ae211a017ec4917f268ebdb6e366b9b44dd7ffb1a4cae1a550959b5885cc7e7
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -20,6 +20,20 @@ android.app.AppComponentFactory -> android.app.AppComponentFactory:
     android.content.BroadcastReceiver instantiateReceiver(java.lang.ClassLoader,java.lang.String,android.content.Intent) -> instantiateReceiver
       # {"id":"com.android.tools.r8.synthesized"}
     android.app.Service instantiateService(java.lang.ClassLoader,java.lang.String,android.content.Intent) -> instantiateService
+      # {"id":"com.android.tools.r8.synthesized"}
+android.app.job.JobServiceEngine -> android.app.job.JobServiceEngine:
+# {"id":"com.android.tools.r8.synthesized"}
+    void <clinit>() -> <clinit>
+      # {"id":"com.android.tools.r8.synthesized"}
+    void <init>(android.app.Service) -> <init>
+      # {"id":"com.android.tools.r8.synthesized"}
+    android.os.IBinder getBinder() -> getBinder
+      # {"id":"com.android.tools.r8.synthesized"}
+android.app.job.JobWorkItem -> android.app.job.JobWorkItem:
+# {"id":"com.android.tools.r8.synthesized"}
+    void <clinit>() -> <clinit>
+      # {"id":"com.android.tools.r8.synthesized"}
+    android.content.Intent getIntent() -> getIntent
       # {"id":"com.android.tools.r8.synthesized"}
 android.graphics.Insets -> android.graphics.Insets:
 # {"id":"com.android.tools.r8.synthesized"}
@@ -213,6 +227,23 @@ androidx.activity.OnBackPressedDispatcher$OnBackPressedCancellable -> androidx.a
     androidx.activity.OnBackPressedDispatcher this$0 -> b
 androidx.activity.OnBackPressedDispatcherOwner -> androidx.activity.c:
     androidx.activity.OnBackPressedDispatcher getOnBackPressedDispatcher() -> b
+androidx.annotation.InspectableProperty$ValueType -> androidx.annotation.InspectableProperty$ValueType:
+    androidx.annotation.InspectableProperty$ValueType COLOR -> f
+    androidx.annotation.InspectableProperty$ValueType INT_FLAG -> e
+    androidx.annotation.InspectableProperty$ValueType RESOURCE_ID -> h
+    androidx.annotation.InspectableProperty$ValueType GRAVITY -> g
+    androidx.annotation.InspectableProperty$ValueType NONE -> b
+    androidx.annotation.InspectableProperty$ValueType INT_ENUM -> d
+    androidx.annotation.InspectableProperty$ValueType INFERRED -> c
+    androidx.annotation.InspectableProperty$ValueType[] $VALUES -> i
+androidx.annotation.RestrictTo$Scope -> androidx.annotation.RestrictTo$Scope:
+    androidx.annotation.RestrictTo$Scope LIBRARY -> b
+    androidx.annotation.RestrictTo$Scope LIBRARY_GROUP -> c
+    androidx.annotation.RestrictTo$Scope LIBRARY_GROUP_PREFIX -> d
+    androidx.annotation.RestrictTo$Scope GROUP_ID -> e
+    androidx.annotation.RestrictTo$Scope TESTS -> f
+    androidx.annotation.RestrictTo$Scope SUBCLASSES -> g
+    androidx.annotation.RestrictTo$Scope[] $VALUES -> h
 androidx.appcompat.R$attr -> a.a:
     int alertDialogStyle -> n
     int actionOverflowMenuStyle -> l
@@ -648,7 +679,7 @@ androidx.appcompat.R$styleable -> a.j:
     int AppCompatTextView_lineHeight -> y0
     int AppCompatImageView_srcCompat -> S
     int Toolbar_contentInsetRight -> b3
-androidx.appcompat.app.ActionBar -> b.a:
+androidx.appcompat.app.ActionBar -> androidx.appcompat.app.a:
     boolean closeOptionsMenu() -> g
     boolean collapseActionView() -> h
     void dispatchMenuVisibilityChanged(boolean) -> i
@@ -664,10 +695,10 @@ androidx.appcompat.app.ActionBar -> b.a:
     void setShowHideAnimationEnabled(boolean) -> s
     void setWindowTitle(java.lang.CharSequence) -> t
     androidx.appcompat.view.ActionMode startActionMode(androidx.appcompat.view.ActionMode$Callback) -> u
-androidx.appcompat.app.ActionBar$LayoutParams -> b.a$a:
+androidx.appcompat.app.ActionBar$LayoutParams -> androidx.appcompat.app.a$a:
     int gravity -> a
-androidx.appcompat.app.ActionBar$OnMenuVisibilityListener -> b.a$b:
-androidx.appcompat.app.ActionBar$Tab -> b.a$c:
+androidx.appcompat.app.ActionBar$OnMenuVisibilityListener -> androidx.appcompat.app.a$b:
+androidx.appcompat.app.ActionBar$Tab -> androidx.appcompat.app.a$c:
     java.lang.CharSequence getContentDescription() -> a
     android.view.View getCustomView() -> b
     android.graphics.drawable.Drawable getIcon() -> c
@@ -816,11 +847,11 @@ androidx.appcompat.app.AlertController$RecycleListView -> androidx.appcompat.app
     int mPaddingTopNoTitle -> b
     int mPaddingBottomNoButtons -> c
     void setHasDecor(boolean,boolean) -> a
-androidx.appcompat.app.AlertDialog -> androidx.appcompat.app.a:
+androidx.appcompat.app.AlertDialog -> androidx.appcompat.app.b:
     androidx.appcompat.app.AlertController mAlert -> d
     android.widget.ListView getListView() -> f
     int resolveDialogTheme(android.content.Context,int) -> g
-androidx.appcompat.app.AlertDialog$Builder -> androidx.appcompat.app.a$a:
+androidx.appcompat.app.AlertDialog$Builder -> androidx.appcompat.app.b$a:
     androidx.appcompat.app.AlertController$AlertParams P -> a
     int mTheme -> b
     androidx.appcompat.app.AlertDialog create() -> a
@@ -831,7 +862,7 @@ androidx.appcompat.app.AlertDialog$Builder -> androidx.appcompat.app.a$a:
     androidx.appcompat.app.AlertDialog$Builder setOnKeyListener(android.content.DialogInterface$OnKeyListener) -> f
     androidx.appcompat.app.AlertDialog$Builder setSingleChoiceItems(android.widget.ListAdapter,int,android.content.DialogInterface$OnClickListener) -> g
     androidx.appcompat.app.AlertDialog$Builder setTitle(java.lang.CharSequence) -> h
-androidx.appcompat.app.AppCompatActivity -> b.b:
+androidx.appcompat.app.AppCompatActivity -> androidx.appcompat.app.AppCompatActivity:
     androidx.appcompat.app.AppCompatDelegate mDelegate -> r
     android.content.res.Resources mResources -> s
     boolean onSupportNavigateUp() -> A
@@ -849,11 +880,11 @@ androidx.appcompat.app.AppCompatActivity -> b.b:
     void onNightModeChanged(int) -> x
     void onPrepareSupportNavigateUpTaskStack(androidx.core.app.TaskStackBuilder) -> y
     void onSupportContentChanged() -> z
-androidx.appcompat.app.AppCompatCallback -> b.c:
+androidx.appcompat.app.AppCompatCallback -> b.a:
     void onSupportActionModeFinished(androidx.appcompat.view.ActionMode) -> d
     androidx.appcompat.view.ActionMode onWindowStartingSupportActionMode(androidx.appcompat.view.ActionMode$Callback) -> h
     void onSupportActionModeStarted(androidx.appcompat.view.ActionMode) -> i
-androidx.appcompat.app.AppCompatDelegate -> b.d:
+androidx.appcompat.app.AppCompatDelegate -> androidx.appcompat.app.c:
     androidx.collection.ArraySet sActivityDelegates -> c
     java.lang.Object sActivityDelegatesLock -> d
     int sDefaultNightMode -> b
@@ -886,7 +917,7 @@ androidx.appcompat.app.AppCompatDelegate -> b.d:
     void removeActivityDelegate(androidx.appcompat.app.AppCompatDelegate) -> x
     void removeDelegateFromActives(androidx.appcompat.app.AppCompatDelegate) -> y
     boolean requestWindowFeature(int) -> z
-androidx.appcompat.app.AppCompatDelegateImpl -> b.e:
+androidx.appcompat.app.AppCompatDelegateImpl -> androidx.appcompat.app.d:
     int mLocalNightMode -> O
     boolean sCanApplyOverrideConfiguration -> f0
     androidx.appcompat.app.AppCompatDelegateImpl$PanelFeatureState[] mPanels -> H
@@ -1025,48 +1056,48 @@ androidx.appcompat.app.AppCompatDelegateImpl -> b.e:
     androidx.appcompat.app.ActionBar peekSupportActionBar() -> y0
     boolean requestWindowFeature(int) -> z
     boolean performPanelShortcut(androidx.appcompat.app.AppCompatDelegateImpl$PanelFeatureState,int,android.view.KeyEvent,int) -> z0
-androidx.appcompat.app.AppCompatDelegateImpl$2 -> b.e$a:
+androidx.appcompat.app.AppCompatDelegateImpl$2 -> androidx.appcompat.app.d$a:
     androidx.appcompat.app.AppCompatDelegateImpl this$0 -> b
-androidx.appcompat.app.AppCompatDelegateImpl$3 -> b.e$b:
+androidx.appcompat.app.AppCompatDelegateImpl$3 -> androidx.appcompat.app.d$b:
     androidx.appcompat.app.AppCompatDelegateImpl this$0 -> a
     androidx.core.view.WindowInsetsCompat onApplyWindowInsets(android.view.View,androidx.core.view.WindowInsetsCompat) -> a
-androidx.appcompat.app.AppCompatDelegateImpl$5 -> b.e$c:
+androidx.appcompat.app.AppCompatDelegateImpl$5 -> androidx.appcompat.app.d$c:
     androidx.appcompat.app.AppCompatDelegateImpl this$0 -> a
     void onAttachedFromWindow() -> a
-androidx.appcompat.app.AppCompatDelegateImpl$6 -> b.e$d:
+androidx.appcompat.app.AppCompatDelegateImpl$6 -> androidx.appcompat.app.d$d:
     androidx.appcompat.app.AppCompatDelegateImpl this$0 -> b
-androidx.appcompat.app.AppCompatDelegateImpl$6$1 -> b.e$d$a:
+androidx.appcompat.app.AppCompatDelegateImpl$6$1 -> androidx.appcompat.app.d$d$a:
     androidx.appcompat.app.AppCompatDelegateImpl$6 this$1 -> a
     void onAnimationEnd(android.view.View) -> a
     void onAnimationStart(android.view.View) -> b
-androidx.appcompat.app.AppCompatDelegateImpl$7 -> b.e$e:
+androidx.appcompat.app.AppCompatDelegateImpl$7 -> androidx.appcompat.app.d$e:
     androidx.appcompat.app.AppCompatDelegateImpl this$0 -> a
     void onAnimationEnd(android.view.View) -> a
     void onAnimationStart(android.view.View) -> b
-androidx.appcompat.app.AppCompatDelegateImpl$ActionMenuPresenterCallback -> b.e$f:
+androidx.appcompat.app.AppCompatDelegateImpl$ActionMenuPresenterCallback -> androidx.appcompat.app.d$f:
     androidx.appcompat.app.AppCompatDelegateImpl this$0 -> b
     void onCloseMenu(androidx.appcompat.view.menu.MenuBuilder,boolean) -> a
     boolean onOpenSubMenu(androidx.appcompat.view.menu.MenuBuilder) -> b
-androidx.appcompat.app.AppCompatDelegateImpl$ActionModeCallbackWrapperV9 -> b.e$g:
+androidx.appcompat.app.AppCompatDelegateImpl$ActionModeCallbackWrapperV9 -> androidx.appcompat.app.d$g:
     androidx.appcompat.app.AppCompatDelegateImpl this$0 -> b
     androidx.appcompat.view.ActionMode$Callback mWrapped -> a
     boolean onActionItemClicked(androidx.appcompat.view.ActionMode,android.view.MenuItem) -> a
     boolean onCreateActionMode(androidx.appcompat.view.ActionMode,android.view.Menu) -> b
     void onDestroyActionMode(androidx.appcompat.view.ActionMode) -> c
     boolean onPrepareActionMode(androidx.appcompat.view.ActionMode,android.view.Menu) -> d
-androidx.appcompat.app.AppCompatDelegateImpl$ActionModeCallbackWrapperV9$1 -> b.e$g$a:
+androidx.appcompat.app.AppCompatDelegateImpl$ActionModeCallbackWrapperV9$1 -> androidx.appcompat.app.d$g$a:
     androidx.appcompat.app.AppCompatDelegateImpl$ActionModeCallbackWrapperV9 this$1 -> a
     void onAnimationEnd(android.view.View) -> a
-androidx.appcompat.app.AppCompatDelegateImpl$AppCompatWindowCallback -> b.e$h:
+androidx.appcompat.app.AppCompatDelegateImpl$AppCompatWindowCallback -> androidx.appcompat.app.d$h:
     androidx.appcompat.app.AppCompatDelegateImpl this$0 -> c
     android.view.ActionMode startAsSupportActionMode(android.view.ActionMode$Callback) -> b
-androidx.appcompat.app.AppCompatDelegateImpl$AutoBatteryNightModeManager -> b.e$i:
+androidx.appcompat.app.AppCompatDelegateImpl$AutoBatteryNightModeManager -> androidx.appcompat.app.d$i:
     android.os.PowerManager mPowerManager -> c
     androidx.appcompat.app.AppCompatDelegateImpl this$0 -> d
     android.content.IntentFilter createIntentFilterForBroadcastReceiver() -> b
     int getApplyableNightMode() -> c
     void onChange() -> d
-androidx.appcompat.app.AppCompatDelegateImpl$AutoNightModeManager -> b.e$j:
+androidx.appcompat.app.AppCompatDelegateImpl$AutoNightModeManager -> androidx.appcompat.app.d$j:
     androidx.appcompat.app.AppCompatDelegateImpl this$0 -> b
     android.content.BroadcastReceiver mReceiver -> a
     void cleanup() -> a
@@ -1074,26 +1105,26 @@ androidx.appcompat.app.AppCompatDelegateImpl$AutoNightModeManager -> b.e$j:
     int getApplyableNightMode() -> c
     void onChange() -> d
     void setup() -> e
-androidx.appcompat.app.AppCompatDelegateImpl$AutoNightModeManager$1 -> b.e$j$a:
+androidx.appcompat.app.AppCompatDelegateImpl$AutoNightModeManager$1 -> androidx.appcompat.app.d$j$a:
     androidx.appcompat.app.AppCompatDelegateImpl$AutoNightModeManager this$1 -> a
-androidx.appcompat.app.AppCompatDelegateImpl$AutoTimeNightModeManager -> b.e$k:
+androidx.appcompat.app.AppCompatDelegateImpl$AutoTimeNightModeManager -> androidx.appcompat.app.d$k:
     androidx.appcompat.app.TwilightManager mTwilightManager -> c
     androidx.appcompat.app.AppCompatDelegateImpl this$0 -> d
     android.content.IntentFilter createIntentFilterForBroadcastReceiver() -> b
     int getApplyableNightMode() -> c
     void onChange() -> d
-androidx.appcompat.app.AppCompatDelegateImpl$ConfigurationImplApi17 -> b.e$l:
+androidx.appcompat.app.AppCompatDelegateImpl$ConfigurationImplApi17 -> androidx.appcompat.app.d$l:
     void generateConfigDelta_densityDpi(android.content.res.Configuration,android.content.res.Configuration,android.content.res.Configuration) -> a
-androidx.appcompat.app.AppCompatDelegateImpl$ConfigurationImplApi24 -> b.e$m:
+androidx.appcompat.app.AppCompatDelegateImpl$ConfigurationImplApi24 -> androidx.appcompat.app.d$m:
     void generateConfigDelta_locale(android.content.res.Configuration,android.content.res.Configuration,android.content.res.Configuration) -> a
-androidx.appcompat.app.AppCompatDelegateImpl$ConfigurationImplApi26 -> b.e$n:
+androidx.appcompat.app.AppCompatDelegateImpl$ConfigurationImplApi26 -> androidx.appcompat.app.d$n:
     void generateConfigDelta_colorMode(android.content.res.Configuration,android.content.res.Configuration,android.content.res.Configuration) -> a
-androidx.appcompat.app.AppCompatDelegateImpl$ContextThemeWrapperCompatApi17Impl -> b.e$o:
+androidx.appcompat.app.AppCompatDelegateImpl$ContextThemeWrapperCompatApi17Impl -> androidx.appcompat.app.d$o:
     void applyOverrideConfiguration(android.view.ContextThemeWrapper,android.content.res.Configuration) -> a
-androidx.appcompat.app.AppCompatDelegateImpl$ListMenuDecorView -> b.e$p:
+androidx.appcompat.app.AppCompatDelegateImpl$ListMenuDecorView -> androidx.appcompat.app.d$p:
     androidx.appcompat.app.AppCompatDelegateImpl this$0 -> j
     boolean isOutOfBounds(int,int) -> b
-androidx.appcompat.app.AppCompatDelegateImpl$PanelFeatureState -> b.e$q:
+androidx.appcompat.app.AppCompatDelegateImpl$PanelFeatureState -> androidx.appcompat.app.d$q:
     boolean isPrepared -> m
     boolean isHandled -> n
     androidx.appcompat.view.menu.ListMenuPresenter listMenuPresenter -> k
@@ -1117,11 +1148,11 @@ androidx.appcompat.app.AppCompatDelegateImpl$PanelFeatureState -> b.e$q:
     boolean hasPanelItems() -> b
     void setMenu(androidx.appcompat.view.menu.MenuBuilder) -> c
     void setStyle(android.content.Context) -> d
-androidx.appcompat.app.AppCompatDelegateImpl$PanelMenuPresenterCallback -> b.e$r:
+androidx.appcompat.app.AppCompatDelegateImpl$PanelMenuPresenterCallback -> androidx.appcompat.app.d$r:
     androidx.appcompat.app.AppCompatDelegateImpl this$0 -> b
     void onCloseMenu(androidx.appcompat.view.menu.MenuBuilder,boolean) -> a
     boolean onOpenSubMenu(androidx.appcompat.view.menu.MenuBuilder) -> b
-androidx.appcompat.app.AppCompatDialog -> b.f:
+androidx.appcompat.app.AppCompatDialog -> b.b:
     androidx.appcompat.app.AppCompatDelegate mDelegate -> b
     androidx.core.view.KeyEventDispatcher$Component mKeyDispatcher -> c
     androidx.appcompat.app.AppCompatDelegate getDelegate() -> a
@@ -1131,10 +1162,10 @@ androidx.appcompat.app.AppCompatDialog -> b.f:
     boolean supportRequestWindowFeature(int) -> e
     androidx.appcompat.view.ActionMode onWindowStartingSupportActionMode(androidx.appcompat.view.ActionMode$Callback) -> h
     void onSupportActionModeStarted(androidx.appcompat.view.ActionMode) -> i
-androidx.appcompat.app.AppCompatDialog$1 -> b.f$a:
+androidx.appcompat.app.AppCompatDialog$1 -> b.b$a:
     androidx.appcompat.app.AppCompatDialog this$0 -> b
     boolean superDispatchKeyEvent(android.view.KeyEvent) -> e
-androidx.appcompat.app.AppCompatViewInflater -> b.g:
+androidx.appcompat.app.AppCompatViewInflater -> androidx.appcompat.app.e:
     androidx.collection.SimpleArrayMap sConstructorMap -> e
     java.lang.Object[] mConstructorArgs -> a
     int[] sOnClickAttrs -> c
@@ -1161,13 +1192,13 @@ androidx.appcompat.app.AppCompatViewInflater -> b.g:
     android.view.View createViewFromTag(android.content.Context,java.lang.String,android.util.AttributeSet) -> s
     android.content.Context themifyContext(android.content.Context,android.util.AttributeSet,boolean,boolean) -> t
     void verifyNotNull(android.view.View,java.lang.String) -> u
-androidx.appcompat.app.AppCompatViewInflater$DeclaredOnClickListener -> b.g$a:
+androidx.appcompat.app.AppCompatViewInflater$DeclaredOnClickListener -> androidx.appcompat.app.e$a:
     java.lang.reflect.Method mResolvedMethod -> d
     android.view.View mHostView -> b
     java.lang.String mMethodName -> c
     android.content.Context mResolvedContext -> e
     void resolveMethod(android.content.Context) -> a
-androidx.appcompat.app.ResourcesFlusher -> b.h:
+androidx.appcompat.app.ResourcesFlusher -> androidx.appcompat.app.f:
     java.lang.reflect.Field sResourcesImplField -> g
     java.lang.reflect.Field sThemedResourceCache_mUnthemedEntriesField -> e
     boolean sThemedResourceCache_mUnthemedEntriesFieldFetched -> f
@@ -1179,14 +1210,14 @@ androidx.appcompat.app.ResourcesFlusher -> b.h:
     void flush(android.content.res.Resources) -> a
     void flushNougats(android.content.res.Resources) -> b
     void flushThemedResourcesCache(java.lang.Object) -> c
-androidx.appcompat.app.TwilightCalculator -> b.i:
+androidx.appcompat.app.TwilightCalculator -> androidx.appcompat.app.g:
     long sunrise -> b
     long sunset -> a
     androidx.appcompat.app.TwilightCalculator sInstance -> d
     int state -> c
     void calculateTwilight(long,double,double) -> a
     androidx.appcompat.app.TwilightCalculator getInstance() -> b
-androidx.appcompat.app.TwilightManager -> b.j:
+androidx.appcompat.app.TwilightManager -> androidx.appcompat.app.h:
     android.content.Context mContext -> a
     androidx.appcompat.app.TwilightManager$TwilightState mTwilightState -> c
     androidx.appcompat.app.TwilightManager sInstance -> d
@@ -1197,14 +1228,14 @@ androidx.appcompat.app.TwilightManager -> b.j:
     boolean isNight() -> d
     boolean isStateValid() -> e
     void updateState(android.location.Location) -> f
-androidx.appcompat.app.TwilightManager$TwilightState -> b.j$a:
+androidx.appcompat.app.TwilightManager$TwilightState -> androidx.appcompat.app.h$a:
     long nextUpdate -> f
     long tomorrowSunrise -> e
     long yesterdaySunset -> b
     long todaySunset -> d
     long todaySunrise -> c
     boolean isNight -> a
-androidx.appcompat.app.WindowDecorActionBar -> b.k:
+androidx.appcompat.app.WindowDecorActionBar -> androidx.appcompat.app.i:
     android.content.Context mContext -> a
     androidx.appcompat.widget.ActionBarOverlayLayout mOverlayLayout -> d
     androidx.appcompat.app.WindowDecorActionBar$ActionModeImpl mActionMode -> m
@@ -1271,16 +1302,16 @@ androidx.appcompat.app.WindowDecorActionBar -> b.k:
     void completeDeferredDestroyActionMode() -> x
     void doHide(boolean) -> y
     void doShow(boolean) -> z
-androidx.appcompat.app.WindowDecorActionBar$1 -> b.k$a:
+androidx.appcompat.app.WindowDecorActionBar$1 -> androidx.appcompat.app.i$a:
     androidx.appcompat.app.WindowDecorActionBar this$0 -> a
     void onAnimationEnd(android.view.View) -> a
-androidx.appcompat.app.WindowDecorActionBar$2 -> b.k$b:
+androidx.appcompat.app.WindowDecorActionBar$2 -> androidx.appcompat.app.i$b:
     androidx.appcompat.app.WindowDecorActionBar this$0 -> a
     void onAnimationEnd(android.view.View) -> a
-androidx.appcompat.app.WindowDecorActionBar$3 -> b.k$c:
+androidx.appcompat.app.WindowDecorActionBar$3 -> androidx.appcompat.app.i$c:
     androidx.appcompat.app.WindowDecorActionBar this$0 -> a
     void onAnimationUpdate(android.view.View) -> a
-androidx.appcompat.app.WindowDecorActionBar$ActionModeImpl -> b.k$d:
+androidx.appcompat.app.WindowDecorActionBar$ActionModeImpl -> androidx.appcompat.app.i$d:
     androidx.appcompat.view.menu.MenuBuilder mMenu -> e
     androidx.appcompat.view.ActionMode$Callback mCallback -> f
     java.lang.ref.WeakReference mCustomView -> g
@@ -3837,9 +3868,9 @@ androidx.core.R$styleable -> k.b:
     int FontFamilyFont_fontVariationSettings -> q
 androidx.core.app.ActivityCompat -> l.a:
     androidx.core.app.ActivityCompat$PermissionCompatDelegate sDelegate -> b
-    void finishAffinity(android.app.Activity) -> d
-    androidx.core.app.ActivityCompat$PermissionCompatDelegate getPermissionCompatDelegate() -> e
-    void recreate(android.app.Activity) -> f
+    void finishAffinity(android.app.Activity) -> f
+    androidx.core.app.ActivityCompat$PermissionCompatDelegate getPermissionCompatDelegate() -> g
+    void recreate(android.app.Activity) -> h
 androidx.core.app.ActivityCompat$PermissionCompatDelegate -> l.a$a:
     boolean onActivityResult(android.app.Activity,int,int,android.content.Intent) -> a
 androidx.core.app.ActivityRecreator -> l.b:
@@ -3878,7 +3909,7 @@ androidx.core.app.ActivityRecreator$LifecycleCheckCallbacks -> l.b$d:
 androidx.core.app.AppOpsManagerCompat -> l.c:
     int noteProxyOpNoThrow(android.content.Context,java.lang.String,java.lang.String) -> a
     java.lang.String permissionToOp(java.lang.String) -> b
-androidx.core.app.ComponentActivity -> l.d:
+androidx.core.app.ComponentActivity -> androidx.core.app.ComponentActivity:
     androidx.collection.SimpleArrayMap mExtraDataMap -> b
     androidx.lifecycle.LifecycleRegistry mLifecycleRegistry -> c
     androidx.lifecycle.Lifecycle getLifecycle() -> a
@@ -3887,7 +3918,79 @@ androidx.core.app.CoreComponentFactory -> androidx.core.app.CoreComponentFactory
     java.lang.Object checkCompatWrapper(java.lang.Object) -> a
 androidx.core.app.CoreComponentFactory$CompatWrapped -> androidx.core.app.CoreComponentFactory$a:
     java.lang.Object getWrapper() -> a
-androidx.core.app.NavUtils -> l.e:
+androidx.core.app.JobIntentService -> androidx.core.app.JobIntentService:
+    java.util.HashMap sClassWorkEnqueuer -> j
+    java.lang.Object sLock -> i
+    java.util.ArrayList mCompatQueue -> h
+    androidx.core.app.JobIntentService$CompatJobEngine mJobImpl -> b
+    boolean mInterruptIfStopped -> e
+    boolean mStopped -> f
+    androidx.core.app.JobIntentService$WorkEnqueuer mCompatWorkEnqueuer -> c
+    boolean mDestroyed -> g
+    androidx.core.app.JobIntentService$CommandProcessor mCurProcessor -> d
+    androidx.core.app.JobIntentService$GenericWorkItem dequeueWork() -> a
+    boolean doStopCurrentWork() -> b
+    void ensureProcessorRunningLocked(boolean) -> c
+    androidx.core.app.JobIntentService$WorkEnqueuer getWorkEnqueuer(android.content.Context,android.content.ComponentName,boolean,int) -> d
+    void onHandleWork(android.content.Intent) -> e
+    boolean onStopCurrentWork() -> f
+    void processorFinished() -> g
+androidx.core.app.JobIntentService$CommandProcessor -> androidx.core.app.JobIntentService$a:
+    androidx.core.app.JobIntentService this$0 -> a
+    java.lang.Void doInBackground(java.lang.Void[]) -> a
+    void onCancelled(java.lang.Void) -> b
+    void onPostExecute(java.lang.Void) -> c
+androidx.core.app.JobIntentService$CompatJobEngine -> androidx.core.app.JobIntentService$b:
+    androidx.core.app.JobIntentService$GenericWorkItem dequeueWork() -> a
+    android.os.IBinder compatGetBinder() -> b
+androidx.core.app.JobIntentService$CompatWorkEnqueuer -> androidx.core.app.JobIntentService$c:
+    android.os.PowerManager$WakeLock mRunWakeLock -> f
+    android.os.PowerManager$WakeLock mLaunchWakeLock -> e
+    boolean mLaunchingService -> g
+    boolean mServiceProcessing -> h
+    android.content.Context mContext -> d
+    void serviceProcessingFinished() -> b
+    void serviceProcessingStarted() -> c
+    void serviceStartReceived() -> d
+androidx.core.app.JobIntentService$CompatWorkItem -> androidx.core.app.JobIntentService$d:
+    android.content.Intent mIntent -> a
+    androidx.core.app.JobIntentService this$0 -> c
+    int mStartId -> b
+    void complete() -> a
+androidx.core.app.JobIntentService$GenericWorkItem -> androidx.core.app.JobIntentService$e:
+    void complete() -> a
+androidx.core.app.JobIntentService$JobServiceEngineImpl -> androidx.core.app.JobIntentService$f:
+    android.app.job.JobParameters mParams -> c
+    androidx.core.app.JobIntentService mService -> a
+    java.lang.Object mLock -> b
+    androidx.core.app.JobIntentService$GenericWorkItem dequeueWork() -> a
+    android.os.IBinder compatGetBinder() -> b
+androidx.core.app.JobIntentService$JobServiceEngineImpl$$ExternalSyntheticApiModelOutline0 -> l.d:
+# {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
+# {"id":"com.android.tools.r8.synthesized"}
+    android.app.job.JobWorkItem androidx.core.app.JobIntentService$JobServiceEngineImpl$$InternalSyntheticApiModelOutline$1$ebcacfecb6783417b73e5ea173a4d8004aeacce96fe4c10fe466eb1f942c2d4b$0.m(android.app.job.JobParameters) -> a
+      # {"id":"com.android.tools.r8.synthesized"}
+androidx.core.app.JobIntentService$JobServiceEngineImpl$WrapperWorkItem -> androidx.core.app.JobIntentService$f$a:
+    android.app.job.JobWorkItem mJobWork -> a
+    androidx.core.app.JobIntentService$JobServiceEngineImpl this$0 -> b
+    void complete() -> a
+androidx.core.app.JobIntentService$JobServiceEngineImpl$WrapperWorkItem$$ExternalSyntheticApiModelOutline0 -> l.e:
+# {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
+# {"id":"com.android.tools.r8.synthesized"}
+    void androidx.core.app.JobIntentService$JobServiceEngineImpl$WrapperWorkItem$$InternalSyntheticApiModelOutline$2$c841524f85d99407c4162859db7c56ded9bb83d00e6c564863494f11e016c3b7$0.m(android.app.job.JobParameters,android.app.job.JobWorkItem) -> a
+      # {"id":"com.android.tools.r8.synthesized"}
+androidx.core.app.JobIntentService$JobWorkEnqueuer -> androidx.core.app.JobIntentService$g:
+    android.app.job.JobScheduler mJobScheduler -> e
+    android.app.job.JobInfo mJobInfo -> d
+androidx.core.app.JobIntentService$WorkEnqueuer -> androidx.core.app.JobIntentService$h:
+    android.content.ComponentName mComponentName -> a
+    boolean mHasJobId -> b
+    int mJobId -> c
+    void ensureJobId(int) -> a
+    void serviceProcessingFinished() -> b
+    void serviceProcessingStarted() -> c
+    void serviceStartReceived() -> d
+androidx.core.app.NavUtils -> l.f:
     android.content.Intent getParentActivityIntent(android.app.Activity) -> a
     android.content.Intent getParentActivityIntent(android.content.Context,android.content.ComponentName) -> b
     java.lang.String getParentActivityName(android.app.Activity) -> c
@@ -3901,8 +4004,8 @@ androidx.core.app.RemoteActionCompat -> androidx.core.app.RemoteActionCompat:
     boolean mEnabled -> e
     boolean mShouldShowIcon -> f
     android.app.PendingIntent mActionIntent -> d
-androidx.core.app.SharedElementCallback -> l.f:
-androidx.core.app.TaskStackBuilder -> l.g:
+androidx.core.app.SharedElementCallback -> l.g:
+androidx.core.app.TaskStackBuilder -> l.h:
     android.content.Context mSourceContext -> c
     java.util.ArrayList mIntents -> b
     androidx.core.app.TaskStackBuilder addNextIntent(android.content.Intent) -> a
@@ -3911,13 +4014,33 @@ androidx.core.app.TaskStackBuilder -> l.g:
     androidx.core.app.TaskStackBuilder create(android.content.Context) -> d
     void startActivities() -> e
     void startActivities(android.os.Bundle) -> f
-androidx.core.app.TaskStackBuilder$SupportParentable -> l.g$a:
+androidx.core.app.TaskStackBuilder$SupportParentable -> l.h$a:
     android.content.Intent getSupportParentActivityIntent() -> f
 androidx.core.content.ContextCompat -> m.a:
     java.lang.Object sLock -> a
     int getColor(android.content.Context,int) -> a
     android.graphics.drawable.Drawable getDrawable(android.content.Context,int) -> b
-    boolean startActivities(android.content.Context,android.content.Intent[],android.os.Bundle) -> c
+    java.io.File[] getExternalCacheDirs(android.content.Context) -> c
+    java.io.File[] getExternalFilesDirs(android.content.Context,java.lang.String) -> d
+    boolean startActivities(android.content.Context,android.content.Intent[],android.os.Bundle) -> e
+androidx.core.content.FileProvider -> androidx.core.content.FileProvider:
+    androidx.core.content.FileProvider$PathStrategy mStrategy -> b
+    java.io.File DEVICE_ROOT -> d
+    java.util.HashMap sCache -> e
+    java.lang.String[] COLUMNS -> c
+    java.io.File buildPath(java.io.File,java.lang.String[]) -> a
+    java.lang.Object[] copyOf(java.lang.Object[],int) -> b
+    java.lang.String[] copyOf(java.lang.String[],int) -> c
+    androidx.core.content.FileProvider$PathStrategy getPathStrategy(android.content.Context,java.lang.String) -> d
+    int modeToMode(java.lang.String) -> e
+    androidx.core.content.FileProvider$PathStrategy parsePathStrategy(android.content.Context,java.lang.String) -> f
+androidx.core.content.FileProvider$PathStrategy -> androidx.core.content.FileProvider$a:
+    java.io.File getFileForUri(android.net.Uri) -> a
+androidx.core.content.FileProvider$SimplePathStrategy -> androidx.core.content.FileProvider$b:
+    java.util.HashMap mRoots -> b
+    java.lang.String mAuthority -> a
+    java.io.File getFileForUri(android.net.Uri) -> a
+    void addRoot(java.lang.String,java.io.File) -> b
 androidx.core.content.PermissionChecker -> m.b:
     int checkPermission(android.content.Context,java.lang.String,int,int,java.lang.String) -> a
     int checkSelfPermission(android.content.Context,java.lang.String) -> b
@@ -3983,6 +4106,37 @@ androidx.core.content.res.ResourcesCompat$ThemeCompat$ImplApi29$$ExternalSynthet
 # {"id":"com.android.tools.r8.synthesized"}
     void androidx.core.content.res.ResourcesCompat$ThemeCompat$ImplApi29$$InternalSyntheticApiModelOutline$1$4db75ec214f22bec56c132f99e62eaf11fda1469acb22fd77dcff3f7bb76f5e0$0.m(android.content.res.Resources$Theme) -> a
       # {"id":"com.android.tools.r8.synthesized"}
+androidx.core.graphics.BlendModeCompat -> androidx.core.graphics.BlendModeCompat:
+    androidx.core.graphics.BlendModeCompat HUE -> A
+    androidx.core.graphics.BlendModeCompat DST -> d
+    androidx.core.graphics.BlendModeCompat CLEAR -> b
+    androidx.core.graphics.BlendModeCompat COLOR -> C
+    androidx.core.graphics.BlendModeCompat DST_IN -> h
+    androidx.core.graphics.BlendModeCompat DST_OVER -> f
+    androidx.core.graphics.BlendModeCompat DST_ATOP -> l
+    androidx.core.graphics.BlendModeCompat DST_OUT -> j
+    androidx.core.graphics.BlendModeCompat SCREEN -> p
+    androidx.core.graphics.BlendModeCompat PLUS -> n
+    androidx.core.graphics.BlendModeCompat COLOR_DODGE -> t
+    androidx.core.graphics.BlendModeCompat DARKEN -> r
+    androidx.core.graphics.BlendModeCompat DIFFERENCE -> x
+    androidx.core.graphics.BlendModeCompat HARD_LIGHT -> v
+    androidx.core.graphics.BlendModeCompat MULTIPLY -> z
+    androidx.core.graphics.BlendModeCompat LUMINOSITY -> D
+    androidx.core.graphics.BlendModeCompat SRC_OVER -> e
+    androidx.core.graphics.BlendModeCompat SATURATION -> B
+    androidx.core.graphics.BlendModeCompat SRC -> c
+    androidx.core.graphics.BlendModeCompat SRC_OUT -> i
+    androidx.core.graphics.BlendModeCompat[] $VALUES -> E
+    androidx.core.graphics.BlendModeCompat SRC_IN -> g
+    androidx.core.graphics.BlendModeCompat XOR -> m
+    androidx.core.graphics.BlendModeCompat SRC_ATOP -> k
+    androidx.core.graphics.BlendModeCompat OVERLAY -> q
+    androidx.core.graphics.BlendModeCompat MODULATE -> o
+    androidx.core.graphics.BlendModeCompat COLOR_BURN -> u
+    androidx.core.graphics.BlendModeCompat LIGHTEN -> s
+    androidx.core.graphics.BlendModeCompat EXCLUSION -> y
+    androidx.core.graphics.BlendModeCompat SOFT_LIGHT -> w
 androidx.core.graphics.ColorUtils -> o.a:
     java.lang.ThreadLocal TEMP_ARRAY -> a
     int compositeAlpha(int,int) -> a
@@ -5310,11 +5464,10 @@ androidx.fragment.app.Fragment$AnimationInfo -> androidx.fragment.app.Fragment$d
     androidx.fragment.app.Fragment$OnStartEnterTransitionListener mStartEnterTransitionListener -> p
     android.animation.Animator mAnimator -> b
     android.view.View mAnimatingAway -> a
-androidx.fragment.app.Fragment$InstantiationException -> androidx.fragment.app.Fragment$e:
-androidx.fragment.app.Fragment$OnStartEnterTransitionListener -> androidx.fragment.app.Fragment$f:
+androidx.fragment.app.Fragment$OnStartEnterTransitionListener -> androidx.fragment.app.Fragment$e:
     void onStartEnterTransition() -> a
     void startListening() -> b
-androidx.fragment.app.FragmentActivity -> androidx.fragment.app.c:
+androidx.fragment.app.FragmentActivity -> androidx.fragment.app.FragmentActivity:
     boolean mStopped -> m
     boolean mStartedIntentSenderFromFragment -> n
     androidx.fragment.app.FragmentController mFragments -> i
@@ -5333,7 +5486,7 @@ androidx.fragment.app.FragmentActivity -> androidx.fragment.app.c:
     boolean onPrepareOptionsPanel(android.view.View,android.view.Menu) -> r
     void onResumeFragments() -> s
     void supportInvalidateOptionsMenu() -> t
-androidx.fragment.app.FragmentActivity$HostCallbacks -> androidx.fragment.app.c$a:
+androidx.fragment.app.FragmentActivity$HostCallbacks -> androidx.fragment.app.FragmentActivity$a:
     androidx.fragment.app.FragmentActivity this$0 -> g
     androidx.lifecycle.Lifecycle getLifecycle() -> a
     androidx.activity.OnBackPressedDispatcher getOnBackPressedDispatcher() -> b
@@ -5349,11 +5502,11 @@ androidx.fragment.app.FragmentActivity$HostCallbacks -> androidx.fragment.app.c$
     boolean onShouldSaveFragmentState(androidx.fragment.app.Fragment) -> q
     void onSupportInvalidateOptionsMenu() -> r
     androidx.fragment.app.FragmentActivity onGetHost() -> s
-androidx.fragment.app.FragmentContainer -> androidx.fragment.app.d:
+androidx.fragment.app.FragmentContainer -> androidx.fragment.app.c:
     androidx.fragment.app.Fragment instantiate(android.content.Context,java.lang.String,android.os.Bundle) -> d
     android.view.View onFindViewById(int) -> e
     boolean onHasView() -> f
-androidx.fragment.app.FragmentController -> androidx.fragment.app.e:
+androidx.fragment.app.FragmentController -> androidx.fragment.app.d:
     androidx.fragment.app.FragmentHostCallback mHost -> a
     void attachHost(androidx.fragment.app.Fragment) -> a
     androidx.fragment.app.FragmentController createController(androidx.fragment.app.FragmentHostCallback) -> b
@@ -5380,13 +5533,13 @@ androidx.fragment.app.FragmentController -> androidx.fragment.app.e:
     android.view.View onCreateView(android.view.View,java.lang.String,android.content.Context,android.util.AttributeSet) -> w
     void restoreSaveState(android.os.Parcelable) -> x
     android.os.Parcelable saveAllState() -> y
-androidx.fragment.app.FragmentFactory -> androidx.fragment.app.f:
+androidx.fragment.app.FragmentFactory -> androidx.fragment.app.e:
     androidx.collection.SimpleArrayMap sClassMap -> a
     androidx.fragment.app.Fragment instantiate(java.lang.ClassLoader,java.lang.String) -> a
     boolean isFragmentClass(java.lang.ClassLoader,java.lang.String) -> b
     java.lang.Class loadClass(java.lang.ClassLoader,java.lang.String) -> c
     java.lang.Class loadFragmentClass(java.lang.ClassLoader,java.lang.String) -> d
-androidx.fragment.app.FragmentHostCallback -> androidx.fragment.app.g:
+androidx.fragment.app.FragmentHostCallback -> androidx.fragment.app.f:
     android.content.Context mContext -> c
     android.os.Handler mHandler -> d
     androidx.fragment.app.FragmentManagerImpl mFragmentManager -> f
@@ -5405,7 +5558,7 @@ androidx.fragment.app.FragmentHostCallback -> androidx.fragment.app.g:
     boolean onHasWindowAnimations() -> p
     boolean onShouldSaveFragmentState(androidx.fragment.app.Fragment) -> q
     void onSupportInvalidateOptionsMenu() -> r
-androidx.fragment.app.FragmentManager -> androidx.fragment.app.h:
+androidx.fragment.app.FragmentManager -> androidx.fragment.app.g:
     androidx.fragment.app.FragmentFactory mFragmentFactory -> b
     androidx.fragment.app.FragmentFactory DEFAULT_FACTORY -> c
     void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[]) -> a
@@ -5413,8 +5566,8 @@ androidx.fragment.app.FragmentManager -> androidx.fragment.app.h:
     java.util.List getFragments() -> c
     boolean popBackStackImmediate() -> d
     void setFragmentFactory(androidx.fragment.app.FragmentFactory) -> e
-androidx.fragment.app.FragmentManager$OnBackStackChangedListener -> androidx.fragment.app.h$a:
-androidx.fragment.app.FragmentManagerImpl -> androidx.fragment.app.i:
+androidx.fragment.app.FragmentManager$OnBackStackChangedListener -> androidx.fragment.app.g$a:
+androidx.fragment.app.FragmentManagerImpl -> androidx.fragment.app.h:
     android.os.Bundle mStateBundle -> D
     int mNextFragmentIndex -> f
     java.util.ArrayList mAdded -> g
@@ -5563,46 +5716,46 @@ androidx.fragment.app.FragmentManagerImpl -> androidx.fragment.app.i:
     boolean isDestroyed() -> y0
     void dispatchDestroyView() -> z
     boolean isMenuAvailable(androidx.fragment.app.Fragment) -> z0
-androidx.fragment.app.FragmentManagerImpl$1 -> androidx.fragment.app.i$a:
+androidx.fragment.app.FragmentManagerImpl$1 -> androidx.fragment.app.h$a:
     androidx.fragment.app.FragmentManagerImpl this$0 -> c
     void handleOnBackPressed() -> b
-androidx.fragment.app.FragmentManagerImpl$2 -> androidx.fragment.app.i$b:
+androidx.fragment.app.FragmentManagerImpl$2 -> androidx.fragment.app.h$b:
     androidx.fragment.app.FragmentManagerImpl this$0 -> b
-androidx.fragment.app.FragmentManagerImpl$3 -> androidx.fragment.app.i$c:
+androidx.fragment.app.FragmentManagerImpl$3 -> androidx.fragment.app.h$c:
     android.view.ViewGroup val$container -> a
     androidx.fragment.app.FragmentManagerImpl this$0 -> c
     androidx.fragment.app.Fragment val$fragment -> b
-androidx.fragment.app.FragmentManagerImpl$3$1 -> androidx.fragment.app.i$c$a:
+androidx.fragment.app.FragmentManagerImpl$3$1 -> androidx.fragment.app.h$c$a:
     androidx.fragment.app.FragmentManagerImpl$3 this$1 -> b
-androidx.fragment.app.FragmentManagerImpl$4 -> androidx.fragment.app.i$d:
+androidx.fragment.app.FragmentManagerImpl$4 -> androidx.fragment.app.h$d:
     android.view.ViewGroup val$container -> a
     androidx.fragment.app.FragmentManagerImpl this$0 -> d
     android.view.View val$viewToAnimate -> b
     androidx.fragment.app.Fragment val$fragment -> c
-androidx.fragment.app.FragmentManagerImpl$5 -> androidx.fragment.app.i$e:
+androidx.fragment.app.FragmentManagerImpl$5 -> androidx.fragment.app.h$e:
     android.view.ViewGroup val$container -> a
     androidx.fragment.app.FragmentManagerImpl this$0 -> d
     android.view.View val$animatingView -> b
     androidx.fragment.app.Fragment val$fragment -> c
-androidx.fragment.app.FragmentManagerImpl$6 -> androidx.fragment.app.i$f:
+androidx.fragment.app.FragmentManagerImpl$6 -> androidx.fragment.app.h$f:
     androidx.fragment.app.FragmentManagerImpl this$0 -> b
     androidx.fragment.app.Fragment instantiate(java.lang.ClassLoader,java.lang.String) -> a
-androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator -> androidx.fragment.app.i$g:
+androidx.fragment.app.FragmentManagerImpl$AnimationOrAnimator -> androidx.fragment.app.h$g:
     android.view.animation.Animation animation -> a
     android.animation.Animator animator -> b
-androidx.fragment.app.FragmentManagerImpl$EndViewTransitionAnimation -> androidx.fragment.app.i$h:
+androidx.fragment.app.FragmentManagerImpl$EndViewTransitionAnimation -> androidx.fragment.app.h$h:
     android.view.ViewGroup mParent -> b
     boolean mTransitionEnded -> e
     boolean mAnimating -> f
     android.view.View mChild -> c
     boolean mEnded -> d
-androidx.fragment.app.FragmentManagerImpl$FragmentLifecycleCallbacksHolder -> androidx.fragment.app.i$i:
+androidx.fragment.app.FragmentManagerImpl$FragmentLifecycleCallbacksHolder -> androidx.fragment.app.h$i:
     boolean mRecursive -> a
-androidx.fragment.app.FragmentManagerImpl$FragmentTag -> androidx.fragment.app.i$j:
+androidx.fragment.app.FragmentManagerImpl$FragmentTag -> androidx.fragment.app.h$j:
     int[] Fragment -> a
-androidx.fragment.app.FragmentManagerImpl$OpGenerator -> androidx.fragment.app.i$k:
+androidx.fragment.app.FragmentManagerImpl$OpGenerator -> androidx.fragment.app.h$k:
     boolean generateOps(java.util.ArrayList,java.util.ArrayList) -> a
-androidx.fragment.app.FragmentManagerImpl$StartEnterTransitionListener -> androidx.fragment.app.i$l:
+androidx.fragment.app.FragmentManagerImpl$StartEnterTransitionListener -> androidx.fragment.app.h$l:
     boolean mIsBack -> a
     int mNumPostponed -> c
     androidx.fragment.app.BackStackRecord mRecord -> b
@@ -5611,16 +5764,16 @@ androidx.fragment.app.FragmentManagerImpl$StartEnterTransitionListener -> androi
     void cancelTransaction() -> c
     void completeTransaction() -> d
     boolean isReady() -> e
-androidx.fragment.app.FragmentManagerState -> androidx.fragment.app.j:
+androidx.fragment.app.FragmentManagerState -> androidx.fragment.app.i:
     int mNextFragmentIndex -> f
     java.util.ArrayList mAdded -> c
     java.util.ArrayList mActive -> b
     androidx.fragment.app.BackStackState[] mBackStack -> d
     java.lang.String mPrimaryNavActiveWho -> e
-androidx.fragment.app.FragmentManagerState$1 -> androidx.fragment.app.j$a:
+androidx.fragment.app.FragmentManagerState$1 -> androidx.fragment.app.i$a:
     androidx.fragment.app.FragmentManagerState createFromParcel(android.os.Parcel) -> a
     androidx.fragment.app.FragmentManagerState[] newArray(int) -> b
-androidx.fragment.app.FragmentManagerViewModel -> androidx.fragment.app.k:
+androidx.fragment.app.FragmentManagerViewModel -> androidx.fragment.app.j:
     androidx.lifecycle.ViewModelProvider$Factory FACTORY -> i
     java.util.HashSet mRetainedFragments -> c
     boolean mStateAutomaticallySaved -> f
@@ -5638,9 +5791,9 @@ androidx.fragment.app.FragmentManagerViewModel -> androidx.fragment.app.k:
     boolean isCleared() -> j
     boolean removeRetainedFragment(androidx.fragment.app.Fragment) -> k
     boolean shouldDestroy(androidx.fragment.app.Fragment) -> l
-androidx.fragment.app.FragmentManagerViewModel$1 -> androidx.fragment.app.k$a:
+androidx.fragment.app.FragmentManagerViewModel$1 -> androidx.fragment.app.j$a:
     androidx.lifecycle.ViewModel create(java.lang.Class) -> a
-androidx.fragment.app.FragmentState -> androidx.fragment.app.l:
+androidx.fragment.app.FragmentState -> androidx.fragment.app.k:
     java.lang.String mTag -> g
     int mMaxLifecycleState -> m
     boolean mRemoving -> i
@@ -5656,10 +5809,10 @@ androidx.fragment.app.FragmentState -> androidx.fragment.app.l:
     java.lang.String mClassName -> b
     boolean mFromLayout -> d
     androidx.fragment.app.Fragment instantiate(java.lang.ClassLoader,androidx.fragment.app.FragmentFactory) -> a
-androidx.fragment.app.FragmentState$1 -> androidx.fragment.app.l$a:
+androidx.fragment.app.FragmentState$1 -> androidx.fragment.app.k$a:
     androidx.fragment.app.FragmentState createFromParcel(android.os.Parcel) -> a
     androidx.fragment.app.FragmentState[] newArray(int) -> b
-androidx.fragment.app.FragmentTransaction -> androidx.fragment.app.m:
+androidx.fragment.app.FragmentTransaction -> androidx.fragment.app.l:
     int mBreadCrumbShortTitleRes -> m
     boolean mAllowAddToBackStack -> i
     java.lang.String mName -> j
@@ -5679,7 +5832,7 @@ androidx.fragment.app.FragmentTransaction -> androidx.fragment.app.m:
     java.util.ArrayList mCommitRunnables -> r
     java.util.ArrayList mSharedElementTargetNames -> p
     void addOp(androidx.fragment.app.FragmentTransaction$Op) -> b
-androidx.fragment.app.FragmentTransaction$Op -> androidx.fragment.app.m$a:
+androidx.fragment.app.FragmentTransaction$Op -> androidx.fragment.app.l$a:
     int mPopExitAnim -> f
     androidx.fragment.app.Fragment mFragment -> b
     int mExitAnim -> d
@@ -5688,7 +5841,7 @@ androidx.fragment.app.FragmentTransaction$Op -> androidx.fragment.app.m$a:
     androidx.lifecycle.Lifecycle$State mOldMaxState -> g
     int mEnterAnim -> c
     int mCmd -> a
-androidx.fragment.app.FragmentTransition -> androidx.fragment.app.n:
+androidx.fragment.app.FragmentTransition -> androidx.fragment.app.m:
     androidx.fragment.app.FragmentTransitionImpl PLATFORM_IMPL -> b
     androidx.fragment.app.FragmentTransitionImpl SUPPORT_IMPL -> c
     int[] INVERSE_OPS -> a
@@ -5720,9 +5873,9 @@ androidx.fragment.app.FragmentTransition -> androidx.fragment.app.n:
     void retainValues(androidx.collection.ArrayMap,androidx.collection.ArrayMap) -> x
     void scheduleTargetChange(androidx.fragment.app.FragmentTransitionImpl,android.view.ViewGroup,androidx.fragment.app.Fragment,android.view.View,java.util.ArrayList,java.lang.Object,java.util.ArrayList,java.lang.Object,java.util.ArrayList) -> y
     void setOutEpicenter(androidx.fragment.app.FragmentTransitionImpl,java.lang.Object,java.lang.Object,androidx.collection.ArrayMap,boolean,androidx.fragment.app.BackStackRecord) -> z
-androidx.fragment.app.FragmentTransition$1 -> androidx.fragment.app.n$a:
+androidx.fragment.app.FragmentTransition$1 -> androidx.fragment.app.m$a:
     java.util.ArrayList val$exitingViews -> b
-androidx.fragment.app.FragmentTransition$2 -> androidx.fragment.app.n$b:
+androidx.fragment.app.FragmentTransition$2 -> androidx.fragment.app.m$b:
     java.lang.Object val$exitTransition -> i
     androidx.fragment.app.FragmentTransitionImpl val$impl -> c
     java.util.ArrayList val$exitingViews -> h
@@ -5731,7 +5884,7 @@ androidx.fragment.app.FragmentTransition$2 -> androidx.fragment.app.n$b:
     java.util.ArrayList val$sharedElementsIn -> f
     android.view.View val$nonExistentView -> d
     androidx.fragment.app.Fragment val$inFragment -> e
-androidx.fragment.app.FragmentTransition$3 -> androidx.fragment.app.n$c:
+androidx.fragment.app.FragmentTransition$3 -> androidx.fragment.app.m$c:
     androidx.collection.ArrayMap val$inSharedElements -> e
     androidx.fragment.app.FragmentTransitionImpl val$impl -> g
     android.graphics.Rect val$epicenter -> h
@@ -5739,7 +5892,7 @@ androidx.fragment.app.FragmentTransition$3 -> androidx.fragment.app.n$c:
     androidx.fragment.app.Fragment val$outFragment -> c
     boolean val$inIsPop -> d
     android.view.View val$epicenterView -> f
-androidx.fragment.app.FragmentTransition$4 -> androidx.fragment.app.n$d:
+androidx.fragment.app.FragmentTransition$4 -> androidx.fragment.app.m$d:
     androidx.fragment.app.Fragment val$inFragment -> h
     android.graphics.Rect val$inEpicenter -> m
     androidx.fragment.app.Fragment val$outFragment -> i
@@ -5752,14 +5905,14 @@ androidx.fragment.app.FragmentTransition$4 -> androidx.fragment.app.n$d:
     androidx.fragment.app.FragmentTransition$FragmentContainerTransition val$fragments -> e
     android.view.View val$nonExistentView -> g
     java.lang.Object val$enterTransition -> l
-androidx.fragment.app.FragmentTransition$FragmentContainerTransition -> androidx.fragment.app.n$e:
+androidx.fragment.app.FragmentTransition$FragmentContainerTransition -> androidx.fragment.app.m$e:
     androidx.fragment.app.BackStackRecord firstOutTransaction -> f
     boolean firstOutIsPop -> e
     androidx.fragment.app.Fragment lastIn -> a
     androidx.fragment.app.Fragment firstOut -> d
     boolean lastInIsPop -> b
     androidx.fragment.app.BackStackRecord lastInTransaction -> c
-androidx.fragment.app.FragmentTransitionCompat21 -> androidx.fragment.app.o:
+androidx.fragment.app.FragmentTransitionCompat21 -> androidx.fragment.app.n:
     java.lang.Object wrapTransitionInSet(java.lang.Object) -> A
     boolean hasSimpleTarget(android.transition.Transition) -> B
     void addTarget(java.lang.Object,android.view.View) -> a
@@ -5777,14 +5930,14 @@ androidx.fragment.app.FragmentTransitionCompat21 -> androidx.fragment.app.o:
     void setEpicenter(java.lang.Object,android.view.View) -> v
     void setSharedElementTargets(java.lang.Object,android.view.View,java.util.ArrayList) -> y
     void swapSharedElementTargets(java.lang.Object,java.util.ArrayList,java.util.ArrayList) -> z
-androidx.fragment.app.FragmentTransitionCompat21$1 -> androidx.fragment.app.o$a:
+androidx.fragment.app.FragmentTransitionCompat21$1 -> androidx.fragment.app.n$a:
     androidx.fragment.app.FragmentTransitionCompat21 this$0 -> b
     android.graphics.Rect val$epicenter -> a
-androidx.fragment.app.FragmentTransitionCompat21$2 -> androidx.fragment.app.o$b:
+androidx.fragment.app.FragmentTransitionCompat21$2 -> androidx.fragment.app.n$b:
     androidx.fragment.app.FragmentTransitionCompat21 this$0 -> c
     android.view.View val$fragmentView -> a
     java.util.ArrayList val$exitingViews -> b
-androidx.fragment.app.FragmentTransitionCompat21$3 -> androidx.fragment.app.o$c:
+androidx.fragment.app.FragmentTransitionCompat21$3 -> androidx.fragment.app.n$c:
     java.lang.Object val$sharedElementTransition -> e
     java.lang.Object val$exitTransition -> c
     java.util.ArrayList val$sharedElementsIn -> f
@@ -5792,10 +5945,10 @@ androidx.fragment.app.FragmentTransitionCompat21$3 -> androidx.fragment.app.o$c:
     java.util.ArrayList val$exitingViews -> d
     java.util.ArrayList val$enteringViews -> b
     androidx.fragment.app.FragmentTransitionCompat21 this$0 -> g
-androidx.fragment.app.FragmentTransitionCompat21$4 -> androidx.fragment.app.o$d:
+androidx.fragment.app.FragmentTransitionCompat21$4 -> androidx.fragment.app.n$d:
     androidx.fragment.app.FragmentTransitionCompat21 this$0 -> b
     android.graphics.Rect val$epicenter -> a
-androidx.fragment.app.FragmentTransitionImpl -> androidx.fragment.app.p:
+androidx.fragment.app.FragmentTransitionImpl -> androidx.fragment.app.o:
     java.lang.Object wrapTransitionInSet(java.lang.Object) -> A
     void addTarget(java.lang.Object,android.view.View) -> a
     void addTargets(java.lang.Object,java.util.ArrayList) -> b
@@ -5823,28 +5976,28 @@ androidx.fragment.app.FragmentTransitionImpl -> androidx.fragment.app.p:
     void setNameOverridesReordered(android.view.View,java.util.ArrayList,java.util.ArrayList,java.util.ArrayList,java.util.Map) -> x
     void setSharedElementTargets(java.lang.Object,android.view.View,java.util.ArrayList) -> y
     void swapSharedElementTargets(java.lang.Object,java.util.ArrayList,java.util.ArrayList) -> z
-androidx.fragment.app.FragmentTransitionImpl$1 -> androidx.fragment.app.p$a:
+androidx.fragment.app.FragmentTransitionImpl$1 -> androidx.fragment.app.o$a:
     java.util.ArrayList val$outNames -> f
     androidx.fragment.app.FragmentTransitionImpl this$0 -> g
     java.util.ArrayList val$sharedElementsOut -> e
     java.util.ArrayList val$inNames -> d
     int val$numSharedElements -> b
     java.util.ArrayList val$sharedElementsIn -> c
-androidx.fragment.app.FragmentTransitionImpl$2 -> androidx.fragment.app.p$b:
+androidx.fragment.app.FragmentTransitionImpl$2 -> androidx.fragment.app.o$b:
     java.util.Map val$nameOverrides -> c
     androidx.fragment.app.FragmentTransitionImpl this$0 -> d
     java.util.ArrayList val$sharedElementsIn -> b
-androidx.fragment.app.FragmentTransitionImpl$3 -> androidx.fragment.app.p$c:
+androidx.fragment.app.FragmentTransitionImpl$3 -> androidx.fragment.app.o$c:
     java.util.Map val$nameOverrides -> c
     androidx.fragment.app.FragmentTransitionImpl this$0 -> d
     java.util.ArrayList val$sharedElementsIn -> b
-androidx.fragment.app.FragmentViewLifecycleOwner -> androidx.fragment.app.q:
+androidx.fragment.app.FragmentViewLifecycleOwner -> androidx.fragment.app.p:
     androidx.lifecycle.LifecycleRegistry mLifecycleRegistry -> b
     androidx.lifecycle.Lifecycle getLifecycle() -> a
     void handleLifecycleEvent(androidx.lifecycle.Lifecycle$Event) -> d
     void initialize() -> e
     boolean isInitialized() -> f
-androidx.fragment.app.SuperNotCalledException -> androidx.fragment.app.r:
+androidx.fragment.app.SuperNotCalledException -> androidx.fragment.app.q:
 androidx.lifecycle.ClassesInfoCache -> androidx.lifecycle.a:
     java.util.Map mCallbackMap -> a
     java.util.Map mHasLifecycleMethods -> b
@@ -5881,13 +6034,12 @@ androidx.lifecycle.FullLifecycleObserverAdapter$1 -> androidx.lifecycle.FullLife
     int[] $SwitchMap$androidx$lifecycle$Lifecycle$Event -> a
 androidx.lifecycle.GeneratedAdapter -> androidx.lifecycle.c:
     void callMethods(androidx.lifecycle.LifecycleOwner,androidx.lifecycle.Lifecycle$Event,boolean,androidx.lifecycle.MethodCallsLogger) -> a
-androidx.lifecycle.Lifecycle -> androidx.lifecycle.d:
+androidx.lifecycle.Lifecycle -> androidx.lifecycle.Lifecycle:
     java.util.concurrent.atomic.AtomicReference mInternalScopeRef -> a
     void addObserver(androidx.lifecycle.LifecycleObserver) -> a
     androidx.lifecycle.Lifecycle$State getCurrentState() -> b
     void removeObserver(androidx.lifecycle.LifecycleObserver) -> c
-androidx.lifecycle.Lifecycle$Event -> androidx.lifecycle.d$a:
-androidx.lifecycle.Lifecycle$State -> androidx.lifecycle.d$b:
+androidx.lifecycle.Lifecycle$State -> androidx.lifecycle.Lifecycle$State:
     androidx.lifecycle.Lifecycle$State DESTROYED -> b
     androidx.lifecycle.Lifecycle$State[] $VALUES -> g
     androidx.lifecycle.Lifecycle$State RESUMED -> f
@@ -5895,12 +6047,12 @@ androidx.lifecycle.Lifecycle$State -> androidx.lifecycle.d$b:
     androidx.lifecycle.Lifecycle$State CREATED -> d
     androidx.lifecycle.Lifecycle$State INITIALIZED -> c
     boolean isAtLeast(androidx.lifecycle.Lifecycle$State) -> a
-androidx.lifecycle.LifecycleEventObserver -> androidx.lifecycle.e:
+androidx.lifecycle.LifecycleEventObserver -> androidx.lifecycle.d:
     void onStateChanged(androidx.lifecycle.LifecycleOwner,androidx.lifecycle.Lifecycle$Event) -> d
-androidx.lifecycle.LifecycleObserver -> androidx.lifecycle.f:
-androidx.lifecycle.LifecycleOwner -> androidx.lifecycle.g:
+androidx.lifecycle.LifecycleObserver -> androidx.lifecycle.e:
+androidx.lifecycle.LifecycleOwner -> androidx.lifecycle.f:
     androidx.lifecycle.Lifecycle getLifecycle() -> a
-androidx.lifecycle.LifecycleRegistry -> androidx.lifecycle.h:
+androidx.lifecycle.LifecycleRegistry -> androidx.lifecycle.g:
     androidx.arch.core.internal.FastSafeIterableMap mObserverMap -> b
     androidx.lifecycle.Lifecycle$State mState -> c
     java.util.ArrayList mParentStates -> h
@@ -5926,16 +6078,16 @@ androidx.lifecycle.LifecycleRegistry -> androidx.lifecycle.h:
     void setCurrentState(androidx.lifecycle.Lifecycle$State) -> p
     void sync() -> q
     androidx.lifecycle.Lifecycle$Event upEvent(androidx.lifecycle.Lifecycle$State) -> r
-androidx.lifecycle.LifecycleRegistry$1 -> androidx.lifecycle.h$a:
+androidx.lifecycle.LifecycleRegistry$1 -> androidx.lifecycle.g$a:
     int[] $SwitchMap$androidx$lifecycle$Lifecycle$State -> b
     int[] $SwitchMap$androidx$lifecycle$Lifecycle$Event -> a
-androidx.lifecycle.LifecycleRegistry$ObserverWithState -> androidx.lifecycle.h$b:
+androidx.lifecycle.LifecycleRegistry$ObserverWithState -> androidx.lifecycle.g$b:
     androidx.lifecycle.Lifecycle$State mState -> a
     androidx.lifecycle.LifecycleEventObserver mLifecycleObserver -> b
     void dispatchEvent(androidx.lifecycle.LifecycleOwner,androidx.lifecycle.Lifecycle$Event) -> a
-androidx.lifecycle.LifecycleRegistryOwner -> androidx.lifecycle.i:
+androidx.lifecycle.LifecycleRegistryOwner -> androidx.lifecycle.h:
     androidx.lifecycle.LifecycleRegistry getLifecycle() -> a
-androidx.lifecycle.Lifecycling -> androidx.lifecycle.j:
+androidx.lifecycle.Lifecycling -> androidx.lifecycle.i:
     java.util.Map sCallbackCache -> a
     java.util.Map sClassToAdapters -> b
     androidx.lifecycle.GeneratedAdapter createGeneratedAdapter(java.lang.reflect.Constructor,java.lang.Object) -> a
@@ -5982,53 +6134,53 @@ androidx.lifecycle.LiveData$ObserverWrapper -> androidx.lifecycle.LiveData$b:
     void activeStateChanged(boolean) -> h
     void detachObserver() -> i
     boolean shouldBeActive() -> j
-androidx.lifecycle.MethodCallsLogger -> androidx.lifecycle.k:
+androidx.lifecycle.MethodCallsLogger -> androidx.lifecycle.j:
     java.util.Map mCalledMethods -> a
-androidx.lifecycle.MutableLiveData -> androidx.lifecycle.l:
+androidx.lifecycle.MutableLiveData -> androidx.lifecycle.k:
     void setValue(java.lang.Object) -> g
-androidx.lifecycle.Observer -> androidx.lifecycle.m:
+androidx.lifecycle.Observer -> androidx.lifecycle.l:
     void onChanged(java.lang.Object) -> a
-androidx.lifecycle.OnLifecycleEvent -> androidx.lifecycle.n:
+androidx.lifecycle.OnLifecycleEvent -> androidx.lifecycle.m:
 androidx.lifecycle.ReflectiveGenericLifecycleObserver -> androidx.lifecycle.ReflectiveGenericLifecycleObserver:
     androidx.lifecycle.ClassesInfoCache$CallbackInfo mInfo -> b
     java.lang.Object mWrapped -> a
     void onStateChanged(androidx.lifecycle.LifecycleOwner,androidx.lifecycle.Lifecycle$Event) -> d
-androidx.lifecycle.ReportFragment -> androidx.lifecycle.o:
+androidx.lifecycle.ReportFragment -> androidx.lifecycle.n:
     androidx.lifecycle.ReportFragment$ActivityInitializationListener mProcessListener -> b
     void dispatch(androidx.lifecycle.Lifecycle$Event) -> a
     void dispatchCreate(androidx.lifecycle.ReportFragment$ActivityInitializationListener) -> b
     void dispatchResume(androidx.lifecycle.ReportFragment$ActivityInitializationListener) -> c
     void dispatchStart(androidx.lifecycle.ReportFragment$ActivityInitializationListener) -> d
     void injectIfNeededIn(android.app.Activity) -> e
-androidx.lifecycle.ReportFragment$ActivityInitializationListener -> androidx.lifecycle.o$a:
+androidx.lifecycle.ReportFragment$ActivityInitializationListener -> androidx.lifecycle.n$a:
     void onCreate() -> a
     void onResume() -> b
     void onStart() -> c
 androidx.lifecycle.SingleGeneratedAdapterObserver -> androidx.lifecycle.SingleGeneratedAdapterObserver:
     androidx.lifecycle.GeneratedAdapter mGeneratedAdapter -> a
     void onStateChanged(androidx.lifecycle.LifecycleOwner,androidx.lifecycle.Lifecycle$Event) -> d
-androidx.lifecycle.ViewModel -> androidx.lifecycle.p:
+androidx.lifecycle.ViewModel -> androidx.lifecycle.o:
     java.util.Map mBagOfTags -> a
     boolean mCleared -> b
     void clear() -> a
     void closeWithRuntimeException(java.lang.Object) -> b
     void onCleared() -> c
-androidx.lifecycle.ViewModelProvider -> androidx.lifecycle.q:
+androidx.lifecycle.ViewModelProvider -> androidx.lifecycle.p:
     androidx.lifecycle.ViewModelStore mViewModelStore -> b
     androidx.lifecycle.ViewModelProvider$Factory mFactory -> a
     androidx.lifecycle.ViewModel get(java.lang.Class) -> a
     androidx.lifecycle.ViewModel get(java.lang.String,java.lang.Class) -> b
-androidx.lifecycle.ViewModelProvider$Factory -> androidx.lifecycle.q$a:
+androidx.lifecycle.ViewModelProvider$Factory -> androidx.lifecycle.p$a:
     androidx.lifecycle.ViewModel create(java.lang.Class) -> a
-androidx.lifecycle.ViewModelProvider$KeyedFactory -> androidx.lifecycle.q$b:
+androidx.lifecycle.ViewModelProvider$KeyedFactory -> androidx.lifecycle.p$b:
     androidx.lifecycle.ViewModel create(java.lang.Class) -> a
     androidx.lifecycle.ViewModel create(java.lang.String,java.lang.Class) -> b
-androidx.lifecycle.ViewModelStore -> androidx.lifecycle.r:
+androidx.lifecycle.ViewModelStore -> androidx.lifecycle.q:
     java.util.HashMap mMap -> a
     void clear() -> a
     androidx.lifecycle.ViewModel get(java.lang.String) -> b
     void put(java.lang.String,androidx.lifecycle.ViewModel) -> c
-androidx.lifecycle.ViewModelStoreOwner -> androidx.lifecycle.s:
+androidx.lifecycle.ViewModelStoreOwner -> androidx.lifecycle.r:
     androidx.lifecycle.ViewModelStore getViewModelStore() -> g
 androidx.loader.app.LoaderManager -> androidx.loader.app.a:
     void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[]) -> a
@@ -6062,6 +6214,11 @@ androidx.loader.app.LoaderManagerImpl$LoaderViewModel -> androidx.loader.app.b$b
 androidx.loader.app.LoaderManagerImpl$LoaderViewModel$1 -> androidx.loader.app.b$b$a:
     androidx.lifecycle.ViewModel create(java.lang.Class) -> a
 androidx.loader.content.Loader -> z.a:
+androidx.loader.content.ModernAsyncTask$Status -> androidx.loader.content.ModernAsyncTask$Status:
+    androidx.loader.content.ModernAsyncTask$Status FINISHED -> d
+    androidx.loader.content.ModernAsyncTask$Status PENDING -> b
+    androidx.loader.content.ModernAsyncTask$Status RUNNING -> c
+    androidx.loader.content.ModernAsyncTask$Status[] $VALUES -> e
 androidx.recyclerview.R$styleable -> a0.a:
     int[] RecyclerView -> f
     int[] FontFamily -> b
@@ -6073,6 +6230,11 @@ androidx.recyclerview.R$styleable -> a0.a:
     int RecyclerView_spanCount -> i
     int RecyclerView_android_orientation -> g
     int[] ColorStateListItem -> a
+androidx.recyclerview.widget.ConcatAdapter$Config$StableIdMode -> androidx.recyclerview.widget.ConcatAdapter$Config$StableIdMode:
+    androidx.recyclerview.widget.ConcatAdapter$Config$StableIdMode[] $VALUES -> e
+    androidx.recyclerview.widget.ConcatAdapter$Config$StableIdMode SHARED_STABLE_IDS -> d
+    androidx.recyclerview.widget.ConcatAdapter$Config$StableIdMode ISOLATED_STABLE_IDS -> c
+    androidx.recyclerview.widget.ConcatAdapter$Config$StableIdMode NO_STABLE_IDS -> b
 androidx.recyclerview.widget.GapWorker -> androidx.recyclerview.widget.a:
     java.util.Comparator sTaskComparator -> g
     java.lang.ThreadLocal sGapWorker -> f
@@ -6222,7 +6384,7 @@ androidx.recyclerview.widget.OrientationHelper$2 -> androidx.recyclerview.widget
     int getDecoratedStart(android.view.View) -> e
     int getEndAfterPadding() -> f
     int getStartAfterPadding() -> g
-androidx.recyclerview.widget.RecyclerView -> androidx.recyclerview.widget.d:
+androidx.recyclerview.widget.RecyclerView -> androidx.recyclerview.widget.RecyclerView:
     boolean mFirstLayoutComplete -> m
     boolean mPreserveFocusAfterLayout -> P
     int mTouchSlop -> K
@@ -6340,18 +6502,22 @@ androidx.recyclerview.widget.RecyclerView -> androidx.recyclerview.widget.d:
     void invalidateGlows() -> x
     boolean isAccessibilityEnabled() -> y
     boolean isComputingLayout() -> z
-androidx.recyclerview.widget.RecyclerView$3 -> androidx.recyclerview.widget.d$a:
-androidx.recyclerview.widget.RecyclerView$Adapter -> androidx.recyclerview.widget.d$b:
-androidx.recyclerview.widget.RecyclerView$ChildDrawingOrderCallback -> androidx.recyclerview.widget.d$c:
+androidx.recyclerview.widget.RecyclerView$3 -> androidx.recyclerview.widget.RecyclerView$a:
+androidx.recyclerview.widget.RecyclerView$Adapter$StateRestorationPolicy -> androidx.recyclerview.widget.RecyclerView$Adapter$StateRestorationPolicy:
+    androidx.recyclerview.widget.RecyclerView$Adapter$StateRestorationPolicy ALLOW -> b
+    androidx.recyclerview.widget.RecyclerView$Adapter$StateRestorationPolicy PREVENT_WHEN_EMPTY -> c
+    androidx.recyclerview.widget.RecyclerView$Adapter$StateRestorationPolicy PREVENT -> d
+    androidx.recyclerview.widget.RecyclerView$Adapter$StateRestorationPolicy[] $VALUES -> e
+androidx.recyclerview.widget.RecyclerView$ChildDrawingOrderCallback -> androidx.recyclerview.widget.RecyclerView$b:
     int onGetChildDrawingOrder(int,int) -> a
-androidx.recyclerview.widget.RecyclerView$EdgeEffectFactory -> androidx.recyclerview.widget.d$d:
-androidx.recyclerview.widget.RecyclerView$ItemAnimator -> androidx.recyclerview.widget.d$e:
-androidx.recyclerview.widget.RecyclerView$ItemDecoration -> androidx.recyclerview.widget.d$f:
+androidx.recyclerview.widget.RecyclerView$EdgeEffectFactory -> androidx.recyclerview.widget.RecyclerView$c:
+androidx.recyclerview.widget.RecyclerView$ItemAnimator -> androidx.recyclerview.widget.RecyclerView$d:
+androidx.recyclerview.widget.RecyclerView$ItemDecoration -> androidx.recyclerview.widget.RecyclerView$e:
     void onDraw(android.graphics.Canvas,androidx.recyclerview.widget.RecyclerView) -> a
     void onDraw(android.graphics.Canvas,androidx.recyclerview.widget.RecyclerView,androidx.recyclerview.widget.RecyclerView$State) -> b
     void onDrawOver(android.graphics.Canvas,androidx.recyclerview.widget.RecyclerView) -> c
     void onDrawOver(android.graphics.Canvas,androidx.recyclerview.widget.RecyclerView,androidx.recyclerview.widget.RecyclerView$State) -> d
-androidx.recyclerview.widget.RecyclerView$LayoutManager -> androidx.recyclerview.widget.d$g:
+androidx.recyclerview.widget.RecyclerView$LayoutManager -> androidx.recyclerview.widget.RecyclerView$f:
     androidx.recyclerview.widget.ViewBoundsCheck$Callback mVerticalBoundCheckCallback -> c
     int mHeight -> l
     androidx.recyclerview.widget.ViewBoundsCheck$Callback mHorizontalBoundCheckCallback -> b
@@ -6425,53 +6591,53 @@ androidx.recyclerview.widget.RecyclerView$LayoutManager -> androidx.recyclerview
     int getDecoratedLeft(android.view.View) -> x
     int getDecoratedRight(android.view.View) -> y
     int getDecoratedTop(android.view.View) -> z
-androidx.recyclerview.widget.RecyclerView$LayoutManager$1 -> androidx.recyclerview.widget.d$g$a:
+androidx.recyclerview.widget.RecyclerView$LayoutManager$1 -> androidx.recyclerview.widget.RecyclerView$f$a:
     androidx.recyclerview.widget.RecyclerView$LayoutManager this$0 -> a
     android.view.View getChildAt(int) -> a
     int getParentEnd() -> b
     int getParentStart() -> c
     int getChildEnd(android.view.View) -> d
     int getChildStart(android.view.View) -> e
-androidx.recyclerview.widget.RecyclerView$LayoutManager$2 -> androidx.recyclerview.widget.d$g$b:
+androidx.recyclerview.widget.RecyclerView$LayoutManager$2 -> androidx.recyclerview.widget.RecyclerView$f$b:
     androidx.recyclerview.widget.RecyclerView$LayoutManager this$0 -> a
     android.view.View getChildAt(int) -> a
     int getParentEnd() -> b
     int getParentStart() -> c
     int getChildEnd(android.view.View) -> d
     int getChildStart(android.view.View) -> e
-androidx.recyclerview.widget.RecyclerView$LayoutManager$Properties -> androidx.recyclerview.widget.d$g$c:
+androidx.recyclerview.widget.RecyclerView$LayoutManager$Properties -> androidx.recyclerview.widget.RecyclerView$f$c:
     int spanCount -> b
     boolean reverseLayout -> c
     int orientation -> a
     boolean stackFromEnd -> d
-androidx.recyclerview.widget.RecyclerView$LayoutParams -> androidx.recyclerview.widget.d$h:
+androidx.recyclerview.widget.RecyclerView$LayoutParams -> androidx.recyclerview.widget.RecyclerView$g:
     androidx.recyclerview.widget.RecyclerView$ViewHolder mViewHolder -> a
     boolean mInsetsDirty -> c
     android.graphics.Rect mDecorInsets -> b
     boolean mPendingInvalidate -> d
     int getViewLayoutPosition() -> a
-androidx.recyclerview.widget.RecyclerView$OnChildAttachStateChangeListener -> androidx.recyclerview.widget.d$i:
+androidx.recyclerview.widget.RecyclerView$OnChildAttachStateChangeListener -> androidx.recyclerview.widget.RecyclerView$h:
     void onChildViewDetachedFromWindow(android.view.View) -> a
-androidx.recyclerview.widget.RecyclerView$OnFlingListener -> androidx.recyclerview.widget.d$j:
-androidx.recyclerview.widget.RecyclerView$OnItemTouchListener -> androidx.recyclerview.widget.d$k:
+androidx.recyclerview.widget.RecyclerView$OnFlingListener -> androidx.recyclerview.widget.RecyclerView$i:
+androidx.recyclerview.widget.RecyclerView$OnItemTouchListener -> androidx.recyclerview.widget.RecyclerView$j:
     boolean onInterceptTouchEvent(androidx.recyclerview.widget.RecyclerView,android.view.MotionEvent) -> a
     void onTouchEvent(androidx.recyclerview.widget.RecyclerView,android.view.MotionEvent) -> b
     void onRequestDisallowInterceptTouchEvent(boolean) -> c
-androidx.recyclerview.widget.RecyclerView$OnScrollListener -> androidx.recyclerview.widget.d$l:
+androidx.recyclerview.widget.RecyclerView$OnScrollListener -> androidx.recyclerview.widget.RecyclerView$k:
     void onScrollStateChanged(androidx.recyclerview.widget.RecyclerView,int) -> a
-androidx.recyclerview.widget.RecyclerView$RecycledViewPool -> androidx.recyclerview.widget.d$m:
-androidx.recyclerview.widget.RecyclerView$Recycler -> androidx.recyclerview.widget.d$n:
-androidx.recyclerview.widget.RecyclerView$RecyclerListener -> androidx.recyclerview.widget.d$o:
-androidx.recyclerview.widget.RecyclerView$SavedState -> androidx.recyclerview.widget.d$p:
+androidx.recyclerview.widget.RecyclerView$RecycledViewPool -> androidx.recyclerview.widget.RecyclerView$l:
+androidx.recyclerview.widget.RecyclerView$Recycler -> androidx.recyclerview.widget.RecyclerView$m:
+androidx.recyclerview.widget.RecyclerView$RecyclerListener -> androidx.recyclerview.widget.RecyclerView$n:
+androidx.recyclerview.widget.RecyclerView$SavedState -> androidx.recyclerview.widget.RecyclerView$o:
     android.os.Parcelable mLayoutState -> d
     void copyFrom(androidx.recyclerview.widget.RecyclerView$SavedState) -> b
-androidx.recyclerview.widget.RecyclerView$SavedState$1 -> androidx.recyclerview.widget.d$p$a:
+androidx.recyclerview.widget.RecyclerView$SavedState$1 -> androidx.recyclerview.widget.RecyclerView$o$a:
     androidx.recyclerview.widget.RecyclerView$SavedState createFromParcel(android.os.Parcel) -> a
     androidx.recyclerview.widget.RecyclerView$SavedState createFromParcel(android.os.Parcel,java.lang.ClassLoader) -> b
     androidx.recyclerview.widget.RecyclerView$SavedState[] newArray(int) -> c
-androidx.recyclerview.widget.RecyclerView$State -> androidx.recyclerview.widget.d$q:
-androidx.recyclerview.widget.RecyclerView$ViewCacheExtension -> androidx.recyclerview.widget.d$r:
-androidx.recyclerview.widget.RecyclerView$ViewHolder -> androidx.recyclerview.widget.d$s:
+androidx.recyclerview.widget.RecyclerView$State -> androidx.recyclerview.widget.RecyclerView$p:
+androidx.recyclerview.widget.RecyclerView$ViewCacheExtension -> androidx.recyclerview.widget.RecyclerView$q:
+androidx.recyclerview.widget.RecyclerView$ViewHolder -> androidx.recyclerview.widget.RecyclerView$r:
     boolean mInChangeScrap -> i
     int mPendingAccessibilityState -> j
     long mItemId -> e
@@ -6494,8 +6660,8 @@ androidx.recyclerview.widget.RecyclerView$ViewHolder -> androidx.recyclerview.wi
     boolean isTmpDetached() -> i
     boolean needsUpdate() -> j
     boolean shouldIgnore() -> k
-androidx.recyclerview.widget.RecyclerViewAccessibilityDelegate -> androidx.recyclerview.widget.e:
-androidx.recyclerview.widget.ScrollbarHelper -> androidx.recyclerview.widget.f:
+androidx.recyclerview.widget.RecyclerViewAccessibilityDelegate -> androidx.recyclerview.widget.d:
+androidx.recyclerview.widget.ScrollbarHelper -> androidx.recyclerview.widget.e:
     int computeScrollExtent(androidx.recyclerview.widget.RecyclerView$State,androidx.recyclerview.widget.OrientationHelper,android.view.View,android.view.View,androidx.recyclerview.widget.RecyclerView$LayoutManager,boolean) -> a
     int computeScrollOffset(androidx.recyclerview.widget.RecyclerView$State,androidx.recyclerview.widget.OrientationHelper,android.view.View,android.view.View,androidx.recyclerview.widget.RecyclerView$LayoutManager,boolean,boolean) -> b
     int computeScrollRange(androidx.recyclerview.widget.RecyclerView$State,androidx.recyclerview.widget.OrientationHelper,android.view.View,android.view.View,androidx.recyclerview.widget.RecyclerView$LayoutManager,boolean) -> c
@@ -6617,11 +6783,11 @@ androidx.recyclerview.widget.StaggeredGridLayoutManager$Span -> androidx.recycle
     int getStartLine() -> g
     int getStartLine(int) -> h
     void invalidateCache() -> i
-androidx.recyclerview.widget.ViewBoundsCheck -> androidx.recyclerview.widget.g:
+androidx.recyclerview.widget.ViewBoundsCheck -> androidx.recyclerview.widget.f:
     androidx.recyclerview.widget.ViewBoundsCheck$Callback mCallback -> a
     androidx.recyclerview.widget.ViewBoundsCheck$BoundFlags mBoundFlags -> b
     android.view.View findOneViewWithinBoundFlags(int,int,int,int) -> a
-androidx.recyclerview.widget.ViewBoundsCheck$BoundFlags -> androidx.recyclerview.widget.g$a:
+androidx.recyclerview.widget.ViewBoundsCheck$BoundFlags -> androidx.recyclerview.widget.f$a:
     int mChildStart -> d
     int mChildEnd -> e
     int mRvStart -> b
@@ -6632,7 +6798,7 @@ androidx.recyclerview.widget.ViewBoundsCheck$BoundFlags -> androidx.recyclerview
     int compare(int,int) -> c
     void resetFlags() -> d
     void setBounds(int,int,int,int) -> e
-androidx.recyclerview.widget.ViewBoundsCheck$Callback -> androidx.recyclerview.widget.g$b:
+androidx.recyclerview.widget.ViewBoundsCheck$Callback -> androidx.recyclerview.widget.f$b:
     android.view.View getChildAt(int) -> a
     int getParentEnd() -> b
     int getParentStart() -> c
@@ -6673,7 +6839,7 @@ androidx.versionedparcelable.ParcelImpl -> androidx.versionedparcelable.ParcelIm
 androidx.versionedparcelable.ParcelImpl$1 -> androidx.versionedparcelable.ParcelImpl$a:
     androidx.versionedparcelable.ParcelImpl createFromParcel(android.os.Parcel) -> a
     androidx.versionedparcelable.ParcelImpl[] newArray(int) -> b
-androidx.versionedparcelable.VersionedParcel -> androidx.versionedparcelable.a:
+androidx.versionedparcelable.VersionedParcel -> androidx.versionedparcelable.VersionedParcel:
     androidx.collection.ArrayMap mParcelizerCache -> c
     androidx.collection.ArrayMap mReadCache -> a
     androidx.collection.ArrayMap mWriteCache -> b
@@ -6717,7 +6883,7 @@ androidx.versionedparcelable.VersionedParcel -> androidx.versionedparcelable.a:
     void setSerializationFlags(boolean,boolean) -> x
     void writeBoolean(boolean) -> y
     void writeBoolean(boolean,int) -> z
-androidx.versionedparcelable.VersionedParcelParcel -> androidx.versionedparcelable.b:
+androidx.versionedparcelable.VersionedParcelParcel -> androidx.versionedparcelable.a:
     android.util.SparseIntArray mPositionLookup -> d
     java.lang.String mPrefix -> h
     int mNextRead -> j
@@ -6743,16 +6909,155 @@ androidx.versionedparcelable.VersionedParcelParcel -> androidx.versionedparcelab
     void setOutputField(int) -> w
     void writeBoolean(boolean) -> y
 androidx.versionedparcelable.VersionedParcelable -> c0.a:
-com.newbee.ble_lib.NewBeeBleManager -> d0.a:
+com.google.gson.FieldNamingPolicy -> com.google.gson.FieldNamingPolicy:
+    com.google.gson.FieldNamingPolicy LOWER_CASE_WITH_DASHES -> f
+    com.google.gson.FieldNamingPolicy LOWER_CASE_WITH_DOTS -> g
+    com.google.gson.FieldNamingPolicy[] $VALUES -> h
+    com.google.gson.FieldNamingPolicy IDENTITY -> b
+    com.google.gson.FieldNamingPolicy UPPER_CAMEL_CASE -> c
+    com.google.gson.FieldNamingPolicy UPPER_CAMEL_CASE_WITH_SPACES -> d
+    com.google.gson.FieldNamingPolicy LOWER_CASE_WITH_UNDERSCORES -> e
+com.google.gson.FieldNamingPolicy$1 -> com.google.gson.FieldNamingPolicy$a:
+com.google.gson.FieldNamingPolicy$2 -> com.google.gson.FieldNamingPolicy$b:
+com.google.gson.FieldNamingPolicy$3 -> com.google.gson.FieldNamingPolicy$c:
+com.google.gson.FieldNamingPolicy$4 -> com.google.gson.FieldNamingPolicy$d:
+com.google.gson.FieldNamingPolicy$5 -> com.google.gson.FieldNamingPolicy$e:
+com.google.gson.FieldNamingPolicy$6 -> com.google.gson.FieldNamingPolicy$f:
+com.google.gson.LongSerializationPolicy -> com.google.gson.LongSerializationPolicy:
+    com.google.gson.LongSerializationPolicy STRING -> c
+    com.google.gson.LongSerializationPolicy DEFAULT -> b
+    com.google.gson.LongSerializationPolicy[] $VALUES -> d
+com.google.gson.LongSerializationPolicy$1 -> com.google.gson.LongSerializationPolicy$a:
+com.google.gson.LongSerializationPolicy$2 -> com.google.gson.LongSerializationPolicy$b:
+com.google.gson.internal.LazilyParsedNumber -> com.google.gson.internal.LazilyParsedNumber:
+    java.lang.String value -> b
+com.google.gson.internal.LinkedHashTreeMap -> com.google.gson.internal.LinkedHashTreeMap:
+    com.google.gson.internal.LinkedHashTreeMap$Node header -> d
+    com.google.gson.internal.LinkedHashTreeMap$KeySet keySet -> i
+    com.google.gson.internal.LinkedHashTreeMap$EntrySet entrySet -> h
+    java.util.Comparator NATURAL_ORDER -> j
+    int modCount -> f
+    int threshold -> g
+    int size -> e
+    java.util.Comparator comparator -> b
+    com.google.gson.internal.LinkedHashTreeMap$Node[] table -> c
+    void doubleCapacity() -> a
+    com.google.gson.internal.LinkedHashTreeMap$Node[] doubleCapacity(com.google.gson.internal.LinkedHashTreeMap$Node[]) -> b
+    boolean equal(java.lang.Object,java.lang.Object) -> c
+    com.google.gson.internal.LinkedHashTreeMap$Node find(java.lang.Object,boolean) -> d
+    com.google.gson.internal.LinkedHashTreeMap$Node findByEntry(java.util.Map$Entry) -> e
+    com.google.gson.internal.LinkedHashTreeMap$Node findByObject(java.lang.Object) -> f
+    void rebalance(com.google.gson.internal.LinkedHashTreeMap$Node,boolean) -> g
+    void removeInternal(com.google.gson.internal.LinkedHashTreeMap$Node,boolean) -> h
+    com.google.gson.internal.LinkedHashTreeMap$Node removeInternalByKey(java.lang.Object) -> i
+    void replaceInParent(com.google.gson.internal.LinkedHashTreeMap$Node,com.google.gson.internal.LinkedHashTreeMap$Node) -> j
+    void rotateLeft(com.google.gson.internal.LinkedHashTreeMap$Node) -> k
+    void rotateRight(com.google.gson.internal.LinkedHashTreeMap$Node) -> l
+    int secondaryHash(int) -> m
+com.google.gson.internal.LinkedHashTreeMap$1 -> com.google.gson.internal.LinkedHashTreeMap$a:
+    int compare(java.lang.Comparable,java.lang.Comparable) -> a
+com.google.gson.internal.LinkedHashTreeMap$AvlBuilder -> com.google.gson.internal.LinkedHashTreeMap$b:
+    com.google.gson.internal.LinkedHashTreeMap$Node stack -> a
+    int size -> d
+    int leavesToSkip -> b
+    int leavesSkipped -> c
+    void add(com.google.gson.internal.LinkedHashTreeMap$Node) -> a
+    void reset(int) -> b
+    com.google.gson.internal.LinkedHashTreeMap$Node root() -> c
+com.google.gson.internal.LinkedHashTreeMap$AvlIterator -> com.google.gson.internal.LinkedHashTreeMap$c:
+    com.google.gson.internal.LinkedHashTreeMap$Node stackTop -> a
+    com.google.gson.internal.LinkedHashTreeMap$Node next() -> a
+    void reset(com.google.gson.internal.LinkedHashTreeMap$Node) -> b
+com.google.gson.internal.LinkedHashTreeMap$EntrySet -> com.google.gson.internal.LinkedHashTreeMap$d:
+    com.google.gson.internal.LinkedHashTreeMap this$0 -> b
+com.google.gson.internal.LinkedHashTreeMap$EntrySet$1 -> com.google.gson.internal.LinkedHashTreeMap$d$a:
+    com.google.gson.internal.LinkedHashTreeMap$EntrySet this$1 -> f
+    java.util.Map$Entry next() -> b
+com.google.gson.internal.LinkedHashTreeMap$KeySet -> com.google.gson.internal.LinkedHashTreeMap$e:
+    com.google.gson.internal.LinkedHashTreeMap this$0 -> b
+com.google.gson.internal.LinkedHashTreeMap$KeySet$1 -> com.google.gson.internal.LinkedHashTreeMap$e$a:
+    com.google.gson.internal.LinkedHashTreeMap$KeySet this$1 -> f
+com.google.gson.internal.LinkedHashTreeMap$LinkedTreeMapIterator -> com.google.gson.internal.LinkedHashTreeMap$f:
+    com.google.gson.internal.LinkedHashTreeMap$Node lastReturned -> c
+    com.google.gson.internal.LinkedHashTreeMap$Node next -> b
+    int expectedModCount -> d
+    com.google.gson.internal.LinkedHashTreeMap this$0 -> e
+    com.google.gson.internal.LinkedHashTreeMap$Node nextNode() -> a
+com.google.gson.internal.LinkedHashTreeMap$Node -> com.google.gson.internal.LinkedHashTreeMap$g:
+    com.google.gson.internal.LinkedHashTreeMap$Node left -> c
+    com.google.gson.internal.LinkedHashTreeMap$Node parent -> b
+    com.google.gson.internal.LinkedHashTreeMap$Node next -> e
+    com.google.gson.internal.LinkedHashTreeMap$Node right -> d
+    java.lang.Object value -> i
+    int height -> j
+    java.lang.Object key -> g
+    int hash -> h
+    com.google.gson.internal.LinkedHashTreeMap$Node prev -> f
+    com.google.gson.internal.LinkedHashTreeMap$Node first() -> a
+    com.google.gson.internal.LinkedHashTreeMap$Node last() -> b
+com.google.gson.internal.LinkedTreeMap -> com.google.gson.internal.LinkedTreeMap:
+    com.google.gson.internal.LinkedTreeMap$KeySet keySet -> h
+    java.util.Comparator NATURAL_ORDER -> i
+    com.google.gson.internal.LinkedTreeMap$EntrySet entrySet -> g
+    com.google.gson.internal.LinkedTreeMap$Node root -> c
+    int size -> d
+    int modCount -> e
+    com.google.gson.internal.LinkedTreeMap$Node header -> f
+    java.util.Comparator comparator -> b
+    boolean equal(java.lang.Object,java.lang.Object) -> a
+    com.google.gson.internal.LinkedTreeMap$Node find(java.lang.Object,boolean) -> b
+    com.google.gson.internal.LinkedTreeMap$Node findByEntry(java.util.Map$Entry) -> c
+    com.google.gson.internal.LinkedTreeMap$Node findByObject(java.lang.Object) -> d
+    void rebalance(com.google.gson.internal.LinkedTreeMap$Node,boolean) -> e
+    void removeInternal(com.google.gson.internal.LinkedTreeMap$Node,boolean) -> f
+    com.google.gson.internal.LinkedTreeMap$Node removeInternalByKey(java.lang.Object) -> g
+    void replaceInParent(com.google.gson.internal.LinkedTreeMap$Node,com.google.gson.internal.LinkedTreeMap$Node) -> h
+    void rotateLeft(com.google.gson.internal.LinkedTreeMap$Node) -> i
+    void rotateRight(com.google.gson.internal.LinkedTreeMap$Node) -> j
+com.google.gson.internal.LinkedTreeMap$1 -> com.google.gson.internal.LinkedTreeMap$a:
+    int compare(java.lang.Comparable,java.lang.Comparable) -> a
+com.google.gson.internal.LinkedTreeMap$EntrySet -> com.google.gson.internal.LinkedTreeMap$b:
+    com.google.gson.internal.LinkedTreeMap this$0 -> b
+com.google.gson.internal.LinkedTreeMap$EntrySet$1 -> com.google.gson.internal.LinkedTreeMap$b$a:
+    com.google.gson.internal.LinkedTreeMap$EntrySet this$1 -> f
+    java.util.Map$Entry next() -> b
+com.google.gson.internal.LinkedTreeMap$KeySet -> com.google.gson.internal.LinkedTreeMap$c:
+    com.google.gson.internal.LinkedTreeMap this$0 -> b
+com.google.gson.internal.LinkedTreeMap$KeySet$1 -> com.google.gson.internal.LinkedTreeMap$c$a:
+    com.google.gson.internal.LinkedTreeMap$KeySet this$1 -> f
+com.google.gson.internal.LinkedTreeMap$LinkedTreeMapIterator -> com.google.gson.internal.LinkedTreeMap$d:
+    com.google.gson.internal.LinkedTreeMap$Node next -> b
+    com.google.gson.internal.LinkedTreeMap$Node lastReturned -> c
+    com.google.gson.internal.LinkedTreeMap this$0 -> e
+    int expectedModCount -> d
+    com.google.gson.internal.LinkedTreeMap$Node nextNode() -> a
+com.google.gson.internal.LinkedTreeMap$Node -> com.google.gson.internal.LinkedTreeMap$e:
+    java.lang.Object value -> h
+    java.lang.Object key -> g
+    int height -> i
+    com.google.gson.internal.LinkedTreeMap$Node parent -> b
+    com.google.gson.internal.LinkedTreeMap$Node left -> c
+    com.google.gson.internal.LinkedTreeMap$Node prev -> f
+    com.google.gson.internal.LinkedTreeMap$Node right -> d
+    com.google.gson.internal.LinkedTreeMap$Node next -> e
+    com.google.gson.internal.LinkedTreeMap$Node first() -> a
+    com.google.gson.internal.LinkedTreeMap$Node last() -> b
+com.google.gson.stream.JsonToken -> com.google.gson.stream.JsonToken:
+    com.google.gson.stream.JsonToken BEGIN_ARRAY -> b
+    com.google.gson.stream.JsonToken NAME -> f
+    com.google.gson.stream.JsonToken END_OBJECT -> e
+    com.google.gson.stream.JsonToken BEGIN_OBJECT -> d
+    com.google.gson.stream.JsonToken END_ARRAY -> c
+    com.google.gson.stream.JsonToken NULL -> j
+    com.google.gson.stream.JsonToken BOOLEAN -> i
+    com.google.gson.stream.JsonToken NUMBER -> h
+    com.google.gson.stream.JsonToken STRING -> g
+    com.google.gson.stream.JsonToken END_DOCUMENT -> k
+    com.google.gson.stream.JsonToken[] $VALUES -> l
+com.newbee.ble_lib.NewBeeBleManager -> com.newbee.ble_lib.NewBeeBleManager:
     com.newbee.ble_lib.NewBeeBleManager bleManager -> b
     com.newbee.ble_lib.service.BluetoothGattServiceDao bluetoothGattServiceDao -> a
-    void close() -> a
-    com.nrmyw.ble_event_lib.send.BleEventObserver getEventImp() -> b
-    com.newbee.ble_lib.NewBeeBleManager getInstance() -> c
-    com.nrmyw.ble_event_lib.bean.BleDeviceBean getNowUseBleDevice() -> d
-    void init(android.content.Context) -> e
-    boolean isConnect() -> f
-com.newbee.ble_lib.base.BaseService -> e0.a:
+com.newbee.ble_lib.base.BaseService -> com.newbee.ble_lib.base.BaseService:
     android.os.IBinder baseBinder -> c
     java.lang.String tag -> b
     boolean isStart -> d
@@ -6763,13 +7068,13 @@ com.newbee.ble_lib.base.BaseService -> e0.a:
     void close() -> h
     void init() -> i
     void start(android.content.Intent,int,int) -> j
-com.newbee.ble_lib.base.BaseService$BaseServiceBinder -> e0.a$a:
+com.newbee.ble_lib.base.BaseService$BaseServiceBinder -> com.newbee.ble_lib.base.BaseService$a:
     com.newbee.ble_lib.base.BaseService this$0 -> a
     com.newbee.ble_lib.base.BaseService getService() -> a
     void setStatuListen(com.newbee.ble_lib.base.BaseService$StatuListen) -> b
-com.newbee.ble_lib.base.BaseService$StatuListen -> e0.a$b:
+com.newbee.ble_lib.base.BaseService$StatuListen -> com.newbee.ble_lib.base.BaseService$b:
     void isStart() -> a
-com.newbee.ble_lib.base.BaseServiceDao -> e0.b:
+com.newbee.ble_lib.base.BaseServiceDao -> com.newbee.ble_lib.base.a:
     android.content.Context context -> b
     com.newbee.ble_lib.base.BaseService ss -> d
     java.lang.String tag -> a
@@ -6781,9 +7086,9 @@ com.newbee.ble_lib.base.BaseServiceDao -> e0.b:
     com.newbee.ble_lib.base.BaseService$StatuListen getStatuListen() -> d
     void startServiceIsBind() -> e
     void stopServiceIsBind() -> f
-com.newbee.ble_lib.base.BaseServiceDao$1 -> e0.b$a:
+com.newbee.ble_lib.base.BaseServiceDao$1 -> com.newbee.ble_lib.base.a$a:
     com.newbee.ble_lib.base.BaseServiceDao this$0 -> a
-com.newbee.ble_lib.manager.child.BleConnectManager -> f0.a:
+com.newbee.ble_lib.manager.child.BleConnectManager -> d0.a:
     com.newbee.ble_lib.manager.child.BleConnectManager bleManager -> d
     android.bluetooth.BluetoothAdapter bluetoothAdapter -> b
     android.bluetooth.BluetoothManager bluetoothManager -> a
@@ -6796,7 +7101,7 @@ com.newbee.ble_lib.manager.child.BleConnectManager -> f0.a:
     void havePermissionInitBle(android.content.Context,android.content.pm.PackageManager) -> f
     void openBluetooth() -> g
     void startSearchBLE() -> h
-com.newbee.ble_lib.manager.child.BlueToothGattManager -> f0.b:
+com.newbee.ble_lib.manager.child.BlueToothGattManager -> d0.b:
     android.bluetooth.BluetoothGattCharacteristic writeCharacteristic -> c
     long lastSendTime -> f
     boolean nowCanSend -> e
@@ -6815,10 +7120,10 @@ com.newbee.ble_lib.manager.child.BlueToothGattManager -> f0.b:
     boolean isNowCanSend() -> i
     void queSendCmd(byte[]) -> j
     void setCharacteristicNotification(android.bluetooth.BluetoothGattCharacteristic,boolean) -> k
-com.newbee.ble_lib.manager.child.BlueToothGattManager$1 -> f0.b$a:
+com.newbee.ble_lib.manager.child.BlueToothGattManager$1 -> d0.b$a:
     com.newbee.ble_lib.manager.child.BlueToothGattManager this$0 -> a
     void displayGattServices() -> a
-com.newbee.ble_lib.manager.image.BlueToothGattGetBitmapDataThread -> g0.a:
+com.newbee.ble_lib.manager.image.BlueToothGattGetBitmapDataThread -> e0.a:
     int h -> j
     android.graphics.Bitmap bitmap -> c
     int size -> k
@@ -6834,9 +7139,9 @@ com.newbee.ble_lib.manager.image.BlueToothGattGetBitmapDataThread -> g0.a:
     void sendImageEnd(long) -> c
     void sendImageStart() -> d
     void splitPacketForMtuByte(byte[]) -> e
-com.newbee.ble_lib.manager.image.BlueToothGattGetBitmapDataThread$Listen -> g0.a$a:
+com.newbee.ble_lib.manager.image.BlueToothGattGetBitmapDataThread$Listen -> e0.a$a:
     void sendOver(long) -> a
-com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager -> g0.b:
+com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager -> e0.b:
     com.newbee.ble_lib.manager.image.BlueToothGattGetBitmapDataThread getBitmapDataThread -> a
     android.graphics.Bitmap lastBitmap -> c
     com.newbee.ble_lib.manager.image.BlueToothGattGetBitmapDataThread$Listen threadListen -> b
@@ -6850,10 +7155,10 @@ com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager -> g0.b:
     void queLast() -> f
     void queToSend() -> g
     void sendBitMap(android.graphics.Bitmap,com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType) -> h
-com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager$1 -> g0.b$a:
+com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager$1 -> e0.b$a:
     com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager this$0 -> a
     void sendOver(long) -> a
-com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager -> h0.a:
+com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager -> f0.a:
     java.util.Map msgMq -> a
     java.util.Map imageMsgMq -> b
     com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager$Listen listen -> c
@@ -6871,10 +7176,10 @@ com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager -> h0.a:
     void queMsg() -> k
     void removeImageMsg(java.lang.String) -> l
     void removeMsg(java.lang.String) -> m
-com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager$Listen -> h0.a$a:
+com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager$Listen -> f0.a$a:
     void canSendMsg(java.lang.String,byte[]) -> a
     void canSendImageMsg(int,byte[]) -> b
-com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager -> h0.b:
+com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager -> f0.b:
     com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager blueToothGattSendManager -> b
     com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager$Listen msgListen -> a
     void close() -> a
@@ -6882,14 +7187,14 @@ com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager -> h0.b:
     void sendMsgByCmd(byte[]) -> c
     void sendMsgByImg(int,byte[]) -> d
     void setNowCanSend() -> e
-com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager$1 -> h0.b$a:
+com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager$1 -> f0.b$a:
     com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager this$0 -> a
     void canSendMsg(java.lang.String,byte[]) -> a
     void canSendImageMsg(int,byte[]) -> b
-com.newbee.ble_lib.receiver.BleStatuBroadcastReceiver -> i0.a:
+com.newbee.ble_lib.receiver.BleStatuBroadcastReceiver -> com.newbee.ble_lib.receiver.BleStatuBroadcastReceiver:
     java.lang.String tag -> a
     void sendChangedStatu(int) -> a
-com.newbee.ble_lib.receiver.BleStatuBroadcastReceiverDao -> i0.b:
+com.newbee.ble_lib.receiver.BleStatuBroadcastReceiverDao -> g0.a:
     com.newbee.ble_lib.receiver.BleStatuBroadcastReceiver bleStatuBroadcastReceiver -> a
     android.content.Context context -> b
     com.newbee.ble_lib.receiver.BleStatuBroadcastReceiverDao bleStatuBroadcastReceiverDao -> c
@@ -6910,14 +7215,14 @@ com.newbee.ble_lib.service.BluetoothGattService$1 -> com.newbee.ble_lib.service.
     com.newbee.ble_lib.service.BluetoothGattService this$0 -> a
 com.newbee.ble_lib.service.BluetoothGattService$2 -> com.newbee.ble_lib.service.BluetoothGattService$b:
     int[] $SwitchMap$com$newbee$ble_lib$service$BluetoothGattServiceMsgType -> a
-com.newbee.ble_lib.service.BluetoothGattServiceDao -> j0.a:
+com.newbee.ble_lib.service.BluetoothGattServiceDao -> h0.a:
     com.newbee.ble_lib.base.BaseService$StatuListen statuListen -> f
     java.lang.Class getSsCls() -> c
     com.newbee.ble_lib.base.BaseService$StatuListen getStatuListen() -> d
-com.newbee.ble_lib.service.BluetoothGattServiceDao$1 -> j0.a$a:
+com.newbee.ble_lib.service.BluetoothGattServiceDao$1 -> h0.a$a:
     com.newbee.ble_lib.service.BluetoothGattServiceDao this$0 -> a
     void isStart() -> a
-com.newbee.ble_lib.service.BluetoothGattServiceMsgType -> j0.b:
+com.newbee.ble_lib.service.BluetoothGattServiceMsgType -> com.newbee.ble_lib.service.BluetoothGattServiceMsgType:
     com.newbee.ble_lib.service.BluetoothGattServiceMsgType NONE -> c
     com.newbee.ble_lib.service.BluetoothGattServiceMsgType INIT_BLE -> d
     com.newbee.ble_lib.service.BluetoothGattServiceMsgType SCAN_BLE -> e
@@ -6928,15 +7233,15 @@ com.newbee.ble_lib.service.BluetoothGattServiceMsgType -> j0.b:
     com.newbee.ble_lib.service.BluetoothGattServiceMsgType SEND_IMAGE -> h
     com.newbee.ble_lib.service.BluetoothGattServiceMsgType SEND_CMD_BY_IMAGE_INDEX -> i
     int getStrId() -> a
-com.newbee.ble_lib.util.AbImageUtil -> k0.a:
+com.newbee.ble_lib.util.AbImageUtil -> i0.a:
     byte[] bitmap2Bytes(android.graphics.Bitmap,android.graphics.Bitmap$CompressFormat,boolean,int) -> a
     android.graphics.Bitmap scaleImg(android.graphics.Bitmap,float) -> b
-com.newbee.ble_lib.util.BleByteUtil -> k0.b:
+com.newbee.ble_lib.util.BleByteUtil -> i0.b:
     java.lang.String getCmdStrK(byte[]) -> a
     java.lang.String parseByte2HexStr(byte[]) -> b
-com.newbee.ble_lib.util.BleCheckUtil -> k0.c:
+com.newbee.ble_lib.util.BleCheckUtil -> i0.c:
     boolean checkPhoneCanUseBle(android.content.pm.PackageManager) -> a
-com.newbee.ble_lib.util.BleConnectStatuUtil -> k0.d:
+com.newbee.ble_lib.util.BleConnectStatuUtil -> i0.d:
     com.newbee.ble_lib.util.BleConnectStatuUtil util -> d
     com.nrmyw.ble_event_lib.bean.BleDeviceBean nowUseBleDevice -> a
     long lastConnectTime -> c
@@ -6949,7 +7254,7 @@ com.newbee.ble_lib.util.BleConnectStatuUtil -> k0.d:
     void sendConnecting(android.content.Context,com.nrmyw.ble_event_lib.bean.BleDeviceBean,java.lang.String) -> f
     void sendDisconnected() -> g
     void setConnectErr(java.lang.String) -> h
-com.newbee.ble_lib.util.BleSendImageUtil -> k0.e:
+com.newbee.ble_lib.util.BleSendImageUtil -> i0.e:
     android.graphics.Bitmap autoScaleBitmap(android.graphics.Bitmap) -> a
     byte[] bitmap2Bytes(android.graphics.Bitmap,com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType) -> b
 com.newbee.ble_tool.activity.MainActivity -> com.newbee.ble_tool.activity.MainActivity:
@@ -6977,13 +7282,13 @@ com.newbee.ble_tool.activity.MainActivity$4 -> com.newbee.ble_tool.activity.Main
     int[] $SwitchMap$com$nrmyw$ble_event_lib$statu$BleStatu -> a
 com.newbee.ble_tool.app.MyApp -> com.newbee.ble_tool.app.MyApp:
     void close() -> a
-    void init() -> b
-    void needClear(java.lang.String) -> c
-com.newbee.ble_tool.config.T800Config -> l0.a:
+    void init() -> c
+    void needClear(java.lang.String) -> d
+com.newbee.ble_tool.config.T800Config -> j0.a:
     java.lang.String serviceID -> a
     java.lang.String noticeID -> c
     java.lang.String writeID -> b
-com.newbee.ble_tool.type.BleDeviceType -> m0.a:
+com.newbee.ble_tool.type.BleDeviceType -> com.newbee.ble_tool.type.BleDeviceType:
     com.newbee.ble_tool.type.BleDeviceType[] $VALUES -> g
     com.newbee.ble_tool.type.BleDeviceType T800 -> d
     com.newbee.ble_tool.type.BleDeviceType T700_1 -> f
@@ -6992,33 +7297,121 @@ com.newbee.ble_tool.type.BleDeviceType -> m0.a:
     java.lang.String title -> b
     com.nrmyw.ble_event_lib.bean.BleDeviceBean getBleDevice() -> a
     java.util.List getBleDeviceTypeList() -> b
-com.newbee.bulid_lib.mybase.LG -> n0.a:
-    void i(java.lang.String,java.lang.Object) -> a
-com.newbee.bulid_lib.mybase.appliction.BaseApplication -> o0.a:
+com.newbee.bulid_lib.mybase.LG -> k0.a:
+    void d(java.lang.String,java.lang.Object) -> a
+    void i(java.lang.String,java.lang.Object) -> b
+com.newbee.bulid_lib.mybase.MyWindowSet -> k0.b:
+    android.app.Activity activity -> a
+    android.view.Window window -> b
+    void hideBottomNavigation(android.view.View) -> a
+    void setKeepScreenOn() -> b
+    void setScreenFull() -> c
+com.newbee.bulid_lib.mybase.activity.BaseCompatActivity -> com.newbee.bulid_lib.mybase.activity.BaseCompatActivity:
+    com.newbee.bulid_lib.mybase.MyWindowSet myWindowSet -> v
+    float yMove -> F
+    float xMove -> E
+    float yDown -> D
+    float xDown -> C
+    android.view.VelocityTracker mVelocityTracker -> G
+    int YDISTANCE_MIN -> B
+    android.view.View view -> w
+    java.lang.String tag -> t
+    android.os.Handler basehandler -> x
+    int XDISTANCE_MIN -> A
+    boolean isReSume -> y
+    int YSPEED_MIN -> z
+    android.content.Context context -> u
+    void changeConfig() -> E
+    void closeActivity() -> F
+    void createVelocityTracker(android.view.MotionEvent) -> G
+    int getScrollVelocity() -> H
+    int getViewLayoutRsId() -> I
+    void getWAndH(int,int) -> J
+    void initControl() -> K
+    void initData() -> L
+    void initView() -> M
+    void initWAndH() -> N
+    boolean isLiveWall() -> O
+    boolean needFullScreen() -> P
+    void needGetSaveData(android.os.Bundle) -> Q
+    boolean needHideBottomNavigation() -> R
+    void needSaveData(android.os.Bundle) -> S
+    boolean needSlideBack() -> T
+    boolean needWAndH() -> U
+    void recycleVelocityTracker() -> V
+    void viewInBackground() -> W
+    void viewIsPause() -> X
+    void viewIsShow() -> Y
+    void viewReShow() -> Z
+com.newbee.bulid_lib.mybase.activity.BaseCompatActivity$1 -> com.newbee.bulid_lib.mybase.activity.BaseCompatActivity$a:
+    com.newbee.bulid_lib.mybase.activity.BaseCompatActivity this$0 -> b
+com.newbee.bulid_lib.mybase.activity.util.ActivityManager -> l0.a:
+    java.util.List list -> b
+    com.newbee.bulid_lib.mybase.activity.util.ActivityManager activityManager -> c
+    java.lang.String tag -> a
+    void add(android.app.Activity) -> a
+    void delete(android.app.Activity) -> b
+    com.newbee.bulid_lib.mybase.activity.util.ActivityManager getInstance() -> c
+com.newbee.bulid_lib.mybase.appliction.BaseApplication -> com.newbee.bulid_lib.mybase.appliction.BaseApplication:
     com.newbee.bulid_lib.mybase.appliction.BaseApplication application -> c
     java.lang.String tag -> b
     android.content.Context context -> d
     void close() -> a
+    android.content.Context getContext() -> b
+    void init() -> c
+    void needClear(java.lang.String) -> d
+com.newbee.bulid_lib.mybase.service.BaseService -> com.newbee.bulid_lib.mybase.service.BaseService:
+    android.os.IBinder baseBinder -> c
+    com.newbee.bulid_lib.mybase.service.BaseService$StatuListen statuListen -> e
+    java.lang.String tag -> b
+    boolean isStart -> d
+    void close() -> a
     void init() -> b
-    void needClear(java.lang.String) -> c
-com.newbee.t800_lib.bean.T800LaneCountBean -> p0.a:
+    void start(android.content.Intent,int,int) -> c
+com.newbee.bulid_lib.mybase.service.BaseService$BaseServiceBinder -> com.newbee.bulid_lib.mybase.service.BaseService$a:
+    com.newbee.bulid_lib.mybase.service.BaseService this$0 -> a
+com.newbee.bulid_lib.mybase.service.BaseService$StatuListen -> com.newbee.bulid_lib.mybase.service.BaseService$b:
+    void isStart() -> a
+com.newbee.bulid_lib.mybase.share.MyShare -> m0.a:
+    com.newbee.bulid_lib.mybase.share.MyShare myShare -> c
+    java.lang.String getString(java.lang.String) -> a
+    com.newbee.bulid_lib.mybase.share.MyShare getInstance() -> b
+com.newbee.data_sava_lib.share.BaseShare -> n0.a:
+    android.content.SharedPreferences$Editor editor -> b
+    android.content.SharedPreferences sharedPreferences -> a
+    java.lang.String getString(java.lang.String) -> a
+com.newbee.gson_lib.gson.bean.Send -> com.newbee.gson_lib.gson.bean.Send:
+    java.lang.String gs -> c
+    java.lang.String ss -> b
+com.newbee.t800_lib.bean.T800LaneCountBean -> com.newbee.t800_lib.bean.T800LaneCountBean:
     java.util.List laneList -> b
     java.util.List getLaneList() -> a
-com.newbee.t800_lib.bean.T800LaneHiPassCountBean -> p0.b:
+com.newbee.t800_lib.bean.T800LaneHiPassCountBean -> com.newbee.t800_lib.bean.T800LaneHiPassCountBean:
     java.util.List laneList -> b
     java.util.List getLaneList() -> a
-com.newbee.t800_lib.config.T800Config -> q0.a:
+com.newbee.t800_lib.config.T800Config -> o0.a:
     byte cmdt2 -> b
     byte cmdt1 -> a
     byte end2 -> d
     byte end1 -> c
-com.newbee.t800_lib.type.T800BrightnessType -> r0.a:
+com.newbee.t800_lib.type.T800BrightnessType -> com.newbee.t800_lib.type.T800BrightnessType:
     byte type -> b
     com.newbee.t800_lib.type.T800BrightnessType HAND -> d
     com.newbee.t800_lib.type.T800BrightnessType AUTO -> c
     com.newbee.t800_lib.type.T800BrightnessType[] $VALUES -> e
     byte getType() -> a
-com.newbee.t800_lib.type.T800CmdType -> r0.b:
+com.newbee.t800_lib.type.T800CmdRetrunType -> com.newbee.t800_lib.type.T800CmdRetrunType:
+    com.newbee.t800_lib.type.T800CmdRetrunType NONE -> c
+    com.newbee.t800_lib.type.T800CmdRetrunType[] $VALUES -> k
+    byte type -> b
+    com.newbee.t800_lib.type.T800CmdRetrunType GET_SN -> e
+    com.newbee.t800_lib.type.T800CmdRetrunType GET_BRIGHTNESS -> d
+    com.newbee.t800_lib.type.T800CmdRetrunType GET_SOUND -> g
+    com.newbee.t800_lib.type.T800CmdRetrunType GET_DEVICE_VERSION -> f
+    com.newbee.t800_lib.type.T800CmdRetrunType GET_ACK_SIZE -> i
+    com.newbee.t800_lib.type.T800CmdRetrunType GET_GPS_SPEED -> h
+    com.newbee.t800_lib.type.T800CmdRetrunType GET_DEVICE_SOUND_STATU -> j
+com.newbee.t800_lib.type.T800CmdType -> com.newbee.t800_lib.type.T800CmdType:
     com.newbee.t800_lib.type.T800CmdType SET_BRIGHTNESS -> r
     com.newbee.t800_lib.type.T800CmdType QUERY_SN -> t
     com.newbee.t800_lib.type.T800CmdType QUERY_DEVICE_VERSION -> v
@@ -7059,29 +7452,29 @@ com.newbee.t800_lib.type.T800CmdType -> r0.b:
     com.newbee.t800_lib.type.T800CmdType QUERY_GPS_SPEED -> q
     byte[] getAllByte() -> a
     void useObjectSSetBody(java.lang.Object[]) -> b
-com.newbee.t800_lib.type.T800CmdType$1 -> r0.b$a:
+com.newbee.t800_lib.type.T800CmdType$1 -> com.newbee.t800_lib.type.T800CmdType$a:
     int[] $SwitchMap$com$newbee$t800_lib$type$T800CmdType -> a
-com.newbee.t800_lib.type.T800GpsType -> r0.c:
+com.newbee.t800_lib.type.T800GpsType -> com.newbee.t800_lib.type.T800GpsType:
     com.newbee.t800_lib.type.T800GpsType CLOSE -> c
     com.newbee.t800_lib.type.T800GpsType LOST -> e
     com.newbee.t800_lib.type.T800GpsType OPEN -> d
     byte type -> b
     com.newbee.t800_lib.type.T800GpsType[] $VALUES -> f
     byte getType() -> a
-com.newbee.t800_lib.type.T800ImageShowType -> r0.d:
+com.newbee.t800_lib.type.T800ImageShowType -> com.newbee.t800_lib.type.T800ImageShowType:
     byte type -> b
     com.newbee.t800_lib.type.T800ImageShowType HIDE -> c
     com.newbee.t800_lib.type.T800ImageShowType[] $VALUES -> e
     com.newbee.t800_lib.type.T800ImageShowType SHOW -> d
     byte getType() -> a
-com.newbee.t800_lib.type.T800LaneInformationType -> r0.e:
+com.newbee.t800_lib.type.T800LaneInformationType -> com.newbee.t800_lib.type.T800LaneInformationType:
     com.newbee.t800_lib.type.T800LaneInformationType[] $VALUES -> f
     byte type -> b
     com.newbee.t800_lib.type.T800LaneInformationType DEF -> d
     com.newbee.t800_lib.type.T800LaneInformationType HI_PASS -> e
     com.newbee.t800_lib.type.T800LaneInformationType NONE -> c
     byte getType() -> a
-com.newbee.t800_lib.type.T800LaneType -> r0.f:
+com.newbee.t800_lib.type.T800LaneType -> com.newbee.t800_lib.type.T800LaneType:
     com.newbee.t800_lib.type.T800LaneType L_F_N -> R
     com.newbee.t800_lib.type.T800LaneType R_Y -> s
     com.newbee.t800_lib.type.T800LaneType L_RF_N -> V
@@ -7166,7 +7559,7 @@ com.newbee.t800_lib.type.T800LaneType -> r0.f:
     com.newbee.t800_lib.type.T800LaneType LT_RF_Y_LT -> G
     java.lang.String imageFileName -> b
     byte getType() -> a
-com.newbee.t800_lib.type.T800NameType -> r0.g:
+com.newbee.t800_lib.type.T800NameType -> com.newbee.t800_lib.type.T800NameType:
     com.newbee.t800_lib.type.T800NameType roadName -> f
     com.newbee.t800_lib.type.T800NameType location -> e
     com.newbee.t800_lib.type.T800NameType def -> g
@@ -7175,38 +7568,38 @@ com.newbee.t800_lib.type.T800NameType -> r0.g:
     byte type -> b
     com.newbee.t800_lib.type.T800NameType[] $VALUES -> h
     byte getType() -> a
-com.newbee.t800_lib.type.T800SendImageType -> r0.h:
+com.newbee.t800_lib.type.T800SendImageType -> com.newbee.t800_lib.type.T800SendImageType:
     com.newbee.t800_lib.type.T800SendImageType[] $VALUES -> e
     byte type -> b
     com.newbee.t800_lib.type.T800SendImageType END -> c
     com.newbee.t800_lib.type.T800SendImageType START -> d
     byte getType() -> a
-com.newbee.t800_lib.type.T800SpeedShowBJType -> r0.i:
+com.newbee.t800_lib.type.T800SpeedShowBJType -> com.newbee.t800_lib.type.T800SpeedShowBJType:
     com.newbee.t800_lib.type.T800SpeedShowBJType[] $VALUES -> e
     com.newbee.t800_lib.type.T800SpeedShowBJType NONE -> c
     byte type -> b
     com.newbee.t800_lib.type.T800SpeedShowBJType RED -> d
     byte getType() -> a
-com.newbee.t800_lib.type.T800SpeedShowType -> r0.j:
+com.newbee.t800_lib.type.T800SpeedShowType -> com.newbee.t800_lib.type.T800SpeedShowType:
     com.newbee.t800_lib.type.T800SpeedShowType RED -> d
     byte type -> b
     com.newbee.t800_lib.type.T800SpeedShowType[] $VALUES -> e
     com.newbee.t800_lib.type.T800SpeedShowType WRITE -> c
     byte getType() -> a
-com.newbee.t800_lib.type.T800StatuType -> r0.k:
+com.newbee.t800_lib.type.T800StatuType -> com.newbee.t800_lib.type.T800StatuType:
     byte type -> b
     com.newbee.t800_lib.type.T800StatuType[] $VALUES -> e
     com.newbee.t800_lib.type.T800StatuType OPEN -> d
     com.newbee.t800_lib.type.T800StatuType CLOSE -> c
     byte getType() -> a
-com.newbee.t800_lib.type.T800TimeType -> r0.l:
+com.newbee.t800_lib.type.T800TimeType -> com.newbee.t800_lib.type.T800TimeType:
     com.newbee.t800_lib.type.T800TimeType[] $VALUES -> f
     byte type -> b
     com.newbee.t800_lib.type.T800TimeType NONE -> c
     com.newbee.t800_lib.type.T800TimeType AM -> d
     com.newbee.t800_lib.type.T800TimeType PM -> e
     byte getType() -> a
-com.newbee.t800_lib.type.T800TurnType -> r0.m:
+com.newbee.t800_lib.type.T800TurnType -> com.newbee.t800_lib.type.T800TurnType:
     com.newbee.t800_lib.type.T800TurnType tbt17 -> m
     com.newbee.t800_lib.type.T800TurnType tbt140 -> N
     com.newbee.t800_lib.type.T800TurnType tbt15 -> k
@@ -7256,7 +7649,7 @@ com.newbee.t800_lib.type.T800TurnType -> r0.m:
     com.newbee.t800_lib.type.T800TurnType tbt11 -> g
     com.newbee.t800_lib.type.T800TurnType tbt132 -> H
     byte getType() -> a
-com.newbee.t800_lib.type.T800WarningPointType -> r0.n:
+com.newbee.t800_lib.type.T800WarningPointType -> com.newbee.t800_lib.type.T800WarningPointType:
     com.newbee.t800_lib.type.T800WarningPointType p01 -> l
     com.newbee.t800_lib.type.T800WarningPointType numb_20 -> M
     com.newbee.t800_lib.type.T800WarningPointType c16 -> j
@@ -7299,14 +7692,14 @@ com.newbee.t800_lib.type.T800WarningPointType -> r0.n:
     com.newbee.t800_lib.type.T800WarningPointType numb_14 -> y
     com.newbee.t800_lib.type.T800WarningPointType numb_11 -> w
     byte getType() -> a
-com.newbee.t800_lib.util.BleByteUtil -> s0.a:
+com.newbee.t800_lib.util.BleByteUtil -> p0.a:
     int defMixLength -> a
     byte[] intToByteArray32(int) -> a
     byte[] intToByteArray32only1(int) -> b
     byte[] intToByteArray32only2(int) -> c
     byte[] intToByteArray32only3(int) -> d
     byte[] useTitleAndBodyGetAllCmdBytes(byte,byte[]) -> e
-com.newbee.t800_lib.util.T800CmdDataUtil -> s0.b:
+com.newbee.t800_lib.util.T800CmdDataUtil -> p0.b:
     boolean autoGetHipassL -> a
     byte[] getDefLaneInfo(com.newbee.t800_lib.bean.T800LaneCountBean) -> a
     byte[] getFactroySet() -> b
@@ -7330,7 +7723,7 @@ com.newbee.t800_lib.util.T800CmdDataUtil -> s0.b:
     byte[] getTrunType(java.lang.Object[]) -> t
     byte[] getWarningPoint(java.lang.Object[]) -> u
     byte[] hideLane() -> v
-com.nrmyw.ble_event_lib.R$string -> t0.a:
+com.nrmyw.ble_event_lib.R$string -> q0.a:
     int ble_statu_send_image_start -> n
     int ble_statu_sending_data -> o
     int ble_statu_run_err -> l
@@ -7354,7 +7747,7 @@ com.nrmyw.ble_event_lib.R$string -> t0.a:
     int ble_statu_user_init -> s
     int ble_statu_state_off -> p
     int ble_statu_state_on -> q
-com.nrmyw.ble_event_lib.bean.BleDeviceBean -> u0.a:
+com.nrmyw.ble_event_lib.bean.BleDeviceBean -> com.nrmyw.ble_event_lib.bean.BleDeviceBean:
     java.lang.String deviceName -> b
     int deviceType -> c
     java.lang.String deviceBody -> e
@@ -7366,7 +7759,7 @@ com.nrmyw.ble_event_lib.bean.BleDeviceBean -> u0.a:
     void setDeviceName(java.lang.String) -> e
     void setDeviceTitle(java.lang.String) -> f
     void setDeviceType(int) -> g
-com.nrmyw.ble_event_lib.bean.BleSendImageEndInfoBean -> u0.b:
+com.nrmyw.ble_event_lib.bean.BleSendImageEndInfoBean -> com.nrmyw.ble_event_lib.bean.BleSendImageEndInfoBean:
     long useTime -> f
     int size -> d
     int index -> e
@@ -7377,14 +7770,14 @@ com.nrmyw.ble_event_lib.bean.BleSendImageEndInfoBean -> u0.b:
     void setSize(int) -> c
     void setUseTime(long) -> d
     void setW(int) -> e
-com.nrmyw.ble_event_lib.bean.BleSendImageStartInfoBean -> u0.c:
+com.nrmyw.ble_event_lib.bean.BleSendImageStartInfoBean -> com.nrmyw.ble_event_lib.bean.BleSendImageStartInfoBean:
     int size -> d
     int w -> b
     int h -> c
     void setH(int) -> a
     void setSize(int) -> b
     void setW(int) -> c
-com.nrmyw.ble_event_lib.config.NewBeeBleConfig -> v0.a:
+com.nrmyw.ble_event_lib.config.NewBeeBleConfig -> r0.a:
     java.lang.String noticeID -> f
     int imageH -> h
     com.nrmyw.ble_event_lib.config.NewBeeBleConfig blueToothGattConfig -> j
@@ -7407,18 +7800,18 @@ com.nrmyw.ble_event_lib.config.NewBeeBleConfig -> v0.a:
     void init(boolean,int,java.lang.String,java.lang.String,java.lang.String,java.util.List) -> j
     boolean isAutoConnect() -> k
     void setMtu(int) -> l
-com.nrmyw.ble_event_lib.send.BleEventObserver -> w0.a:
+com.nrmyw.ble_event_lib.send.BleEventObserver -> s0.a:
     void disconnectedBle() -> a
     void sendCmd(byte[]) -> b
     void havePermissionInitBle() -> c
     void startSearchBle() -> d
-com.nrmyw.ble_event_lib.send.BleEventSubscriptionSubject -> w0.b:
+com.nrmyw.ble_event_lib.send.BleEventSubscriptionSubject -> s0.b:
     java.util.List observers -> a
     com.nrmyw.ble_event_lib.send.BleEventSubscriptionSubject subscriptionSubject -> b
     void attach(com.nrmyw.ble_event_lib.send.BleEventObserver) -> a
     void detach(com.nrmyw.ble_event_lib.send.BleEventObserver) -> b
     com.nrmyw.ble_event_lib.send.BleEventSubscriptionSubject getInstance() -> c
-com.nrmyw.ble_event_lib.statu.BleStatu -> x0.a:
+com.nrmyw.ble_event_lib.statu.BleStatu -> com.nrmyw.ble_event_lib.statu.BleStatu:
     com.nrmyw.ble_event_lib.statu.BleStatu NONE -> c
     com.nrmyw.ble_event_lib.statu.BleStatu RUN_ERR -> e
     com.nrmyw.ble_event_lib.statu.BleStatu USER_DO -> d
@@ -7437,16 +7830,16 @@ com.nrmyw.ble_event_lib.statu.BleStatu -> x0.a:
     com.nrmyw.ble_event_lib.statu.BleStatu[] $VALUES -> q
     int getStrId() -> a
     void setStrId(int) -> b
-com.nrmyw.ble_event_lib.statu.BleStatuEventObserver -> x0.b:
+com.nrmyw.ble_event_lib.statu.BleStatuEventObserver -> t0.a:
     void sendBleStatu(com.nrmyw.ble_event_lib.statu.BleStatu,java.lang.Object[]) -> a
-com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject -> x0.c:
+com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject -> t0.b:
     java.util.List observers -> a
     com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject subscriptionSubject -> b
     void attach(com.nrmyw.ble_event_lib.statu.BleStatuEventObserver) -> a
     void detach(com.nrmyw.ble_event_lib.statu.BleStatuEventObserver) -> b
     com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject getInstance() -> c
     void sendBleStatu(com.nrmyw.ble_event_lib.statu.BleStatu,java.lang.Object[]) -> d
-com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType -> y0.a:
+com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType -> com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType:
     com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType HIGH -> f
     com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType ULTRA_HIGH -> g
     com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType[] $VALUES -> h
@@ -7455,3 +7848,8 @@ com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType -> y0.a:
     com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType LOW -> d
     com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType DEF -> e
     int getQualityV() -> a
+com.nrmyw.ble_event_lib.type.BleSendFileType -> com.nrmyw.ble_event_lib.type.BleSendFileType:
+    com.nrmyw.ble_event_lib.type.BleSendFileType OTA2 -> d
+    com.nrmyw.ble_event_lib.type.BleSendFileType[] $VALUES -> e
+    com.nrmyw.ble_event_lib.type.BleSendFileType DEF -> b
+    com.nrmyw.ble_event_lib.type.BleSendFileType OTA1 -> c

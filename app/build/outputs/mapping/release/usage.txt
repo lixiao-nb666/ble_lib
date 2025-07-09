@@ -1,7 +1,13 @@
 android.support.v4.app.INotificationSideChannel$Default
 android.support.v4.app.INotificationSideChannel$Stub$Proxy
-android.support.v4.app.INotificationSideChannel$Stub
-android.support.v4.app.INotificationSideChannel
+android.support.v4.app.INotificationSideChannel$Stub:
+    private static final java.lang.String DESCRIPTOR
+    static final int TRANSACTION_cancel
+    static final int TRANSACTION_cancelAll
+    static final int TRANSACTION_notify
+    public static android.support.v4.app.INotificationSideChannel asInterface(android.os.IBinder)
+    public static android.support.v4.app.INotificationSideChannel getDefaultImpl()
+    public static boolean setDefaultImpl(android.support.v4.app.INotificationSideChannel)
 android.support.v4.os.IResultReceiver$Default
 android.support.v4.os.IResultReceiver$Stub$Proxy
 android.support.v4.os.IResultReceiver$Stub
@@ -57,7 +63,6 @@ androidx.annotation.HalfFloat
 androidx.annotation.IdRes
 androidx.annotation.InspectableProperty$EnumEntry
 androidx.annotation.InspectableProperty$FlagEntry
-androidx.annotation.InspectableProperty$ValueType
 androidx.annotation.InspectableProperty
 androidx.annotation.IntDef
 androidx.annotation.IntRange
@@ -78,7 +83,6 @@ androidx.annotation.RequiresFeature
 androidx.annotation.RequiresPermission$Read
 androidx.annotation.RequiresPermission$Write
 androidx.annotation.RequiresPermission
-androidx.annotation.RestrictTo$Scope
 androidx.annotation.RestrictTo
 androidx.annotation.Size
 androidx.annotation.StringDef
@@ -2543,16 +2547,22 @@ androidx.core.app.FrameMetricsAggregator$FrameMetricsApi24Impl
 androidx.core.app.FrameMetricsAggregator$FrameMetricsBaseImpl
 androidx.core.app.FrameMetricsAggregator$MetricType
 androidx.core.app.FrameMetricsAggregator
-androidx.core.app.JobIntentService$CommandProcessor
-androidx.core.app.JobIntentService$CompatJobEngine
-androidx.core.app.JobIntentService$CompatWorkEnqueuer
-androidx.core.app.JobIntentService$CompatWorkItem
-androidx.core.app.JobIntentService$GenericWorkItem
-androidx.core.app.JobIntentService$JobServiceEngineImpl$WrapperWorkItem
-androidx.core.app.JobIntentService$JobServiceEngineImpl
-androidx.core.app.JobIntentService$JobWorkEnqueuer
-androidx.core.app.JobIntentService$WorkEnqueuer
-androidx.core.app.JobIntentService
+androidx.core.app.JobIntentService$CompatWorkEnqueuer:
+    void enqueueWork(android.content.Intent)
+androidx.core.app.JobIntentService$JobServiceEngineImpl:
+    static final boolean DEBUG
+    static final java.lang.String TAG
+androidx.core.app.JobIntentService$JobWorkEnqueuer:
+    void enqueueWork(android.content.Intent)
+androidx.core.app.JobIntentService$WorkEnqueuer:
+    abstract void enqueueWork(android.content.Intent)
+androidx.core.app.JobIntentService:
+    static final boolean DEBUG
+    static final java.lang.String TAG
+    public static void enqueueWork(android.content.Context,android.content.ComponentName,int,android.content.Intent)
+    public static void enqueueWork(android.content.Context,java.lang.Class,int,android.content.Intent)
+    public boolean isStopped()
+    public void setInterruptIfStopped(boolean)
 androidx.core.app.NavUtils:
     public static final java.lang.String PARENT_ACTIVITY
     private static final java.lang.String TAG
@@ -2589,8 +2599,6 @@ androidx.core.app.NotificationCompat
 androidx.core.app.NotificationCompatBuilder
 androidx.core.app.NotificationCompatExtras
 androidx.core.app.NotificationCompatJellybean
-androidx.core.app.NotificationCompatSideChannelService$NotificationSideChannelStub
-androidx.core.app.NotificationCompatSideChannelService
 androidx.core.app.NotificationManagerCompat$CancelTask
 androidx.core.app.NotificationManagerCompat$NotifyTask
 androidx.core.app.NotificationManagerCompat$ServiceConnectedEvent
@@ -2658,8 +2666,6 @@ androidx.core.content.ContextCompat:
     private static synchronized java.io.File createFilesDir(java.io.File)
     public static java.io.File getCodeCacheDir(android.content.Context)
     public static java.io.File getDataDir(android.content.Context)
-    public static java.io.File[] getExternalCacheDirs(android.content.Context)
-    public static java.io.File[] getExternalFilesDirs(android.content.Context,java.lang.String)
     public static java.util.concurrent.Executor getMainExecutor(android.content.Context)
     public static java.io.File getNoBackupFilesDir(android.content.Context)
     public static java.io.File[] getObbDirs(android.content.Context)
@@ -2669,9 +2675,22 @@ androidx.core.content.ContextCompat:
     public static boolean startActivities(android.content.Context,android.content.Intent[])
     public static void startActivity(android.content.Context,android.content.Intent,android.os.Bundle)
     public static void startForegroundService(android.content.Context,android.content.Intent)
-androidx.core.content.FileProvider$PathStrategy
-androidx.core.content.FileProvider$SimplePathStrategy
-androidx.core.content.FileProvider
+androidx.core.content.FileProvider$PathStrategy:
+    public abstract android.net.Uri getUriForFile(java.io.File)
+androidx.core.content.FileProvider$SimplePathStrategy:
+    public android.net.Uri getUriForFile(java.io.File)
+androidx.core.content.FileProvider:
+    private static final java.lang.String ATTR_NAME
+    private static final java.lang.String ATTR_PATH
+    private static final java.lang.String META_DATA_FILE_PROVIDER_PATHS
+    private static final java.lang.String TAG_CACHE_PATH
+    private static final java.lang.String TAG_EXTERNAL
+    private static final java.lang.String TAG_EXTERNAL_CACHE
+    private static final java.lang.String TAG_EXTERNAL_FILES
+    private static final java.lang.String TAG_EXTERNAL_MEDIA
+    private static final java.lang.String TAG_FILES_PATH
+    private static final java.lang.String TAG_ROOT_PATH
+    public static android.net.Uri getUriForFile(android.content.Context,java.lang.String,java.io.File)
 androidx.core.content.IntentCompat
 androidx.core.content.MimeTypeFilter
 androidx.core.content.PermissionChecker$PermissionResult
@@ -2756,7 +2775,6 @@ androidx.core.database.DatabaseUtilsCompat
 androidx.core.database.sqlite.SQLiteCursorCompat
 androidx.core.graphics.BitmapCompat
 androidx.core.graphics.BlendModeColorFilterCompat
-androidx.core.graphics.BlendModeCompat
 androidx.core.graphics.BlendModeUtils$1
 androidx.core.graphics.BlendModeUtils
 androidx.core.graphics.ColorUtils:
@@ -2943,7 +2961,6 @@ androidx.core.os.LocaleListCompatWrapper
 androidx.core.os.LocaleListInterface
 androidx.core.os.LocaleListPlatformWrapper
 androidx.core.os.MessageCompat
-androidx.core.os.OperationCanceledException
 androidx.core.os.ParcelCompat
 androidx.core.os.ParcelableCompat$ParcelableCompatCreatorHoneycombMR2
 androidx.core.os.ParcelableCompat
@@ -4473,7 +4490,6 @@ androidx.loader.content.ModernAsyncTask$3
 androidx.loader.content.ModernAsyncTask$4
 androidx.loader.content.ModernAsyncTask$AsyncTaskResult
 androidx.loader.content.ModernAsyncTask$InternalHandler
-androidx.loader.content.ModernAsyncTask$Status
 androidx.loader.content.ModernAsyncTask$WorkerRunnable
 androidx.loader.content.ModernAsyncTask
 androidx.recyclerview.R$attr
@@ -4597,7 +4613,6 @@ androidx.recyclerview.widget.ChildHelper:
     void unhide(android.view.View)
     private boolean unhideViewInternal(android.view.View)
 androidx.recyclerview.widget.ConcatAdapter$Config$Builder
-androidx.recyclerview.widget.ConcatAdapter$Config$StableIdMode
 androidx.recyclerview.widget.ConcatAdapter$Config
 androidx.recyclerview.widget.ConcatAdapter
 androidx.recyclerview.widget.ConcatAdapterController$WrapperAndLocalPosition
@@ -4758,7 +4773,6 @@ androidx.recyclerview.widget.RecyclerView$4
 androidx.recyclerview.widget.RecyclerView$5
 androidx.recyclerview.widget.RecyclerView$6
 androidx.recyclerview.widget.RecyclerView$7
-androidx.recyclerview.widget.RecyclerView$Adapter$StateRestorationPolicy
 androidx.recyclerview.widget.RecyclerView$Adapter:
     private boolean mHasStableIds
     private final androidx.recyclerview.widget.RecyclerView$AdapterDataObservable mObservable
@@ -5475,7 +5489,8 @@ androidx.versionedparcelable.ParcelImpl:
 androidx.versionedparcelable.ParcelUtils
 androidx.versionedparcelable.R
 androidx.versionedparcelable.VersionedParcel$1
-androidx.versionedparcelable.VersionedParcel$ParcelException
+androidx.versionedparcelable.VersionedParcel$ParcelException:
+    public void <init>(java.lang.Throwable)
 androidx.versionedparcelable.VersionedParcel:
     private static final int EX_BAD_PARCELABLE
     private static final int EX_ILLEGAL_ARGUMENT
@@ -5628,13 +5643,22 @@ androidx.viewpager.widget.ViewPager
 com.google.gson.DefaultDateTypeAdapter
 com.google.gson.ExclusionStrategy
 com.google.gson.FieldAttributes
-com.google.gson.FieldNamingPolicy$1
-com.google.gson.FieldNamingPolicy$2
-com.google.gson.FieldNamingPolicy$3
-com.google.gson.FieldNamingPolicy$4
-com.google.gson.FieldNamingPolicy$5
-com.google.gson.FieldNamingPolicy$6
-com.google.gson.FieldNamingPolicy
+com.google.gson.FieldNamingPolicy$1:
+    public java.lang.String translateName(java.lang.reflect.Field)
+com.google.gson.FieldNamingPolicy$2:
+    public java.lang.String translateName(java.lang.reflect.Field)
+com.google.gson.FieldNamingPolicy$3:
+    public java.lang.String translateName(java.lang.reflect.Field)
+com.google.gson.FieldNamingPolicy$4:
+    public java.lang.String translateName(java.lang.reflect.Field)
+com.google.gson.FieldNamingPolicy$5:
+    public java.lang.String translateName(java.lang.reflect.Field)
+com.google.gson.FieldNamingPolicy$6:
+    public java.lang.String translateName(java.lang.reflect.Field)
+com.google.gson.FieldNamingPolicy:
+    private static java.lang.String modifyString(char,java.lang.String,int)
+    static java.lang.String separateCamelCase(java.lang.String,java.lang.String)
+    static java.lang.String upperCaseFirstLetter(java.lang.String)
 com.google.gson.FieldNamingStrategy
 com.google.gson.Gson$1
 com.google.gson.Gson$2
@@ -5649,19 +5673,34 @@ com.google.gson.JsonArray
 com.google.gson.JsonDeserializationContext
 com.google.gson.JsonDeserializer
 com.google.gson.JsonElement
-com.google.gson.JsonIOException
+com.google.gson.JsonIOException:
+    private static final long serialVersionUID
+    public void <init>(java.lang.String)
+    public void <init>(java.lang.String,java.lang.Throwable)
+    public void <init>(java.lang.Throwable)
 com.google.gson.JsonNull
 com.google.gson.JsonObject
-com.google.gson.JsonParseException
+com.google.gson.JsonParseException:
+    static final long serialVersionUID
+    public void <init>(java.lang.String)
+    public void <init>(java.lang.String,java.lang.Throwable)
+    public void <init>(java.lang.Throwable)
 com.google.gson.JsonParser
 com.google.gson.JsonPrimitive
 com.google.gson.JsonSerializationContext
 com.google.gson.JsonSerializer
 com.google.gson.JsonStreamParser
-com.google.gson.JsonSyntaxException
-com.google.gson.LongSerializationPolicy$1
-com.google.gson.LongSerializationPolicy$2
-com.google.gson.LongSerializationPolicy
+com.google.gson.JsonSyntaxException:
+    private static final long serialVersionUID
+    public void <init>(java.lang.String)
+    public void <init>(java.lang.String,java.lang.Throwable)
+    public void <init>(java.lang.Throwable)
+com.google.gson.LongSerializationPolicy$1:
+    public com.google.gson.JsonElement serialize(java.lang.Long)
+com.google.gson.LongSerializationPolicy$2:
+    public com.google.gson.JsonElement serialize(java.lang.Long)
+com.google.gson.LongSerializationPolicy:
+    public abstract com.google.gson.JsonElement serialize(java.lang.Long)
 com.google.gson.TypeAdapter$1
 com.google.gson.TypeAdapter
 com.google.gson.TypeAdapterFactory
@@ -5695,25 +5734,13 @@ com.google.gson.internal.Excluder
 com.google.gson.internal.GsonBuildConfig
 com.google.gson.internal.JavaVersion
 com.google.gson.internal.JsonReaderInternalAccess
-com.google.gson.internal.LazilyParsedNumber
-com.google.gson.internal.LinkedHashTreeMap$1
-com.google.gson.internal.LinkedHashTreeMap$AvlBuilder
-com.google.gson.internal.LinkedHashTreeMap$AvlIterator
-com.google.gson.internal.LinkedHashTreeMap$EntrySet$1
-com.google.gson.internal.LinkedHashTreeMap$EntrySet
-com.google.gson.internal.LinkedHashTreeMap$KeySet$1
-com.google.gson.internal.LinkedHashTreeMap$KeySet
-com.google.gson.internal.LinkedHashTreeMap$LinkedTreeMapIterator
-com.google.gson.internal.LinkedHashTreeMap$Node
-com.google.gson.internal.LinkedHashTreeMap
-com.google.gson.internal.LinkedTreeMap$1
-com.google.gson.internal.LinkedTreeMap$EntrySet$1
-com.google.gson.internal.LinkedTreeMap$EntrySet
-com.google.gson.internal.LinkedTreeMap$KeySet$1
-com.google.gson.internal.LinkedTreeMap$KeySet
-com.google.gson.internal.LinkedTreeMap$LinkedTreeMapIterator
-com.google.gson.internal.LinkedTreeMap$Node
-com.google.gson.internal.LinkedTreeMap
+com.google.gson.internal.LazilyParsedNumber:
+    public void <init>(java.lang.String)
+    private java.lang.Object writeReplace()
+com.google.gson.internal.LinkedHashTreeMap:
+    private java.lang.Object writeReplace()
+com.google.gson.internal.LinkedTreeMap:
+    private java.lang.Object writeReplace()
 com.google.gson.internal.ObjectConstructor
 com.google.gson.internal.PreJava9DateFormatProvider
 com.google.gson.internal.Primitives
@@ -5802,9 +5829,12 @@ com.google.gson.reflect.TypeToken
 com.google.gson.stream.JsonReader$1
 com.google.gson.stream.JsonReader
 com.google.gson.stream.JsonScope
-com.google.gson.stream.JsonToken
 com.google.gson.stream.JsonWriter
-com.google.gson.stream.MalformedJsonException
+com.google.gson.stream.MalformedJsonException:
+    private static final long serialVersionUID
+    public void <init>(java.lang.String)
+    public void <init>(java.lang.String,java.lang.Throwable)
+    public void <init>(java.lang.Throwable)
 com.newbee.ble_lib.BuildConfig
 com.newbee.ble_lib.R
 com.newbee.ble_lib.base.BaseServiceDao:
@@ -5892,20 +5922,40 @@ com.newbee.bulid_lib.R$style
 com.newbee.bulid_lib.R
 com.newbee.bulid_lib.mybase.LG:
     public void <init>()
-    public static void d(java.lang.String,java.lang.Object)
     public static void e(java.lang.String,java.lang.Exception)
     public static void e(java.lang.String,java.lang.String)
     public static void w(java.lang.String,java.lang.Object)
-com.newbee.bulid_lib.mybase.MyWindowSet
+com.newbee.bulid_lib.mybase.MyWindowSet:
+    public boolean bottomNavigtionIsShow()
+    public int getBottomNavigationHeigh()
+    private int getStatusBarHeight()
+    public boolean screenIsLandscape()
+    public void setBackgroundBlur()
+    public void setFlatStyleColoredBars()
+    public void setNoActionBar()
+    public void setScreenConfig(int)
+    public void setScreenLandscape()
+    public void setScreenPortrait()
 com.newbee.bulid_lib.mybase.ServiceClose
 com.newbee.bulid_lib.mybase.ToastUtil
-com.newbee.bulid_lib.mybase.activity.BaseCompatActivity$1
-com.newbee.bulid_lib.mybase.activity.BaseCompatActivity
-com.newbee.bulid_lib.mybase.activity.util.ActivityManager
+com.newbee.bulid_lib.mybase.activity.BaseCompatActivity:
+    public java.lang.String getIntentString()
+    public int getRsColor(int)
+    public java.lang.String getRsString(int)
+    public void showToast(java.lang.String)
+    public void toActivity(java.lang.Class)
+    public void toActivity(java.lang.Class,java.lang.String)
+com.newbee.bulid_lib.mybase.activity.util.ActivityManager:
+    public boolean checkActivityIsStart(java.lang.Class)
+    public int checkActivityIsStartNumb(java.lang.Class)
+    public void clearActivity()
+    public void close()
+    public void finishAllActivity()
+    public void finishOtherActivity(java.lang.String)
+    public java.util.List getlist()
 com.newbee.bulid_lib.mybase.activity.util.ActivityUtil
 com.newbee.bulid_lib.mybase.appliction.BaseApplication:
     public static com.newbee.bulid_lib.mybase.appliction.BaseApplication getApplication()
-    public static android.content.Context getContext()
     public static java.lang.String getRsString(int)
 com.newbee.bulid_lib.mybase.dialog.BaseDialog
 com.newbee.bulid_lib.mybase.dialog.BaseDialogListen
@@ -5918,12 +5968,19 @@ com.newbee.bulid_lib.mybase.popupwindow.BasePopupWindow
 com.newbee.bulid_lib.mybase.popupwindow.BasePoputWindowListen
 com.newbee.bulid_lib.mybase.popupwindow.util.PopupManagerUtil$Listen
 com.newbee.bulid_lib.mybase.popupwindow.util.PopupManagerUtil
-com.newbee.bulid_lib.mybase.service.BaseService$BaseServiceBinder
-com.newbee.bulid_lib.mybase.service.BaseService$StatuListen
-com.newbee.bulid_lib.mybase.service.BaseService
+com.newbee.bulid_lib.mybase.service.BaseService$BaseServiceBinder:
+    public com.newbee.bulid_lib.mybase.service.BaseService getService()
+    public void setStatuListen(com.newbee.bulid_lib.mybase.service.BaseService$StatuListen)
+com.newbee.bulid_lib.mybase.service.BaseService:
+    static synthetic com.newbee.bulid_lib.mybase.service.BaseService$StatuListen access$000(com.newbee.bulid_lib.mybase.service.BaseService)
+    static synthetic com.newbee.bulid_lib.mybase.service.BaseService$StatuListen access$002(com.newbee.bulid_lib.mybase.service.BaseService,com.newbee.bulid_lib.mybase.service.BaseService$StatuListen)
+    static synthetic boolean access$100(com.newbee.bulid_lib.mybase.service.BaseService)
 com.newbee.bulid_lib.mybase.service.BaseServiceDao$1
 com.newbee.bulid_lib.mybase.service.BaseServiceDao
-com.newbee.bulid_lib.mybase.share.MyShare
+com.newbee.bulid_lib.mybase.share.MyShare:
+    public void clear()
+    public java.lang.String getString(java.lang.String,java.lang.String)
+    public void putString(java.lang.String,java.lang.String)
 com.newbee.bulid_lib.util.Md5Util
 com.newbee.bulid_lib.util.RandomUtil
 com.newbee.bulid_lib.util.SDCardUtils
@@ -5931,15 +5988,26 @@ com.newbee.bulid_lib.util.SelectViewUtil
 com.newbee.bulid_lib.util.StartServiceUtil
 com.newbee.bulid_lib.util.TimeUtil
 com.newbee.bulid_lib.util.myapp.MyAppUtils
-com.newbee.bulid_lib.util.phone.PhoneConfig
+com.newbee.bulid_lib.util.phone.PhoneConfig:
+    private int h
+    private com.newbee.bulid_lib.util.phone.PhoneSystemInfoBean phoneSystemInfoBean
+    private int w
 com.newbee.bulid_lib.util.phone.PhoneSystemInfoBean
 com.newbee.bulid_lib.util.phone.PhoneUtil
 com.newbee.bulid_lib.util.screenbrightness.ScreenBrightnessUtil
 com.newbee.bulid_lib.util.text.CheckTextUtil
 com.newbee.data_sava_lib.BuildConfig
 com.newbee.data_sava_lib.R
-com.newbee.data_sava_lib.bean.MyClassInfoBean
-com.newbee.data_sava_lib.share.BaseShare
+com.newbee.data_sava_lib.bean.MyClassInfoBean:
+    public java.lang.String[] fNameS
+    public java.util.Map fieldMap
+    public java.util.Map getMethodMap
+    public java.util.Map setMethodMap
+    public void <init>(java.lang.Class)
+com.newbee.data_sava_lib.share.BaseShare:
+    public void clear()
+    public java.lang.String getString(java.lang.String,java.lang.String)
+    public void putString(java.lang.String,java.lang.String)
 com.newbee.data_sava_lib.sqlite.BaseSqlServer
 com.newbee.data_sava_lib.sqlite.BaseSqlite
 com.newbee.data_sava_lib.sqlite.config.BaseSqliteConfig
@@ -5955,7 +6023,12 @@ com.newbee.gson_lib.BuildConfig
 com.newbee.gson_lib.R
 com.newbee.gson_lib.gson.MyGson
 com.newbee.gson_lib.gson.bean.Msg
-com.newbee.gson_lib.gson.bean.Send
+com.newbee.gson_lib.gson.bean.Send:
+    public void <init>(java.lang.String,java.lang.String)
+    public java.lang.String getGs()
+    public java.lang.String getSs()
+    public void setGs(java.lang.String)
+    public void setSs(java.lang.String)
 com.newbee.gson_lib.gson.util.NetToGet
 com.newbee.t800_lib.BuildConfig
 com.newbee.t800_lib.R
@@ -5977,7 +6050,9 @@ com.newbee.t800_lib.event.retrun.T800CmdRetrunEventObserver
 com.newbee.t800_lib.event.retrun.T800CmdRetrunEventSubject
 com.newbee.t800_lib.event.retrun.T800CmdRetrunEventSubscriptionSubject
 com.newbee.t800_lib.manager.T800SendManager
-com.newbee.t800_lib.type.T800CmdRetrunType
+com.newbee.t800_lib.type.T800CmdRetrunType:
+    public byte getType()
+    public static com.newbee.t800_lib.type.T800CmdRetrunType useByteGetRetrunType(byte)
 com.newbee.t800_lib.type.T800CmdType:
     public void setBody(byte[])
 com.newbee.t800_lib.util.BleByteUtil:
@@ -6035,10 +6110,15 @@ com.nrmyw.ble_event_lib.send.BleEventSubscriptionSubject:
 com.nrmyw.ble_event_lib.statu.BleStatuEventSubject
 com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType:
     public void setQualityV(int)
-com.nrmyw.ble_event_lib.type.BleSendFileType
+com.nrmyw.ble_event_lib.type.BleSendFileType:
+    int ord
+    public int getOrd()
+    public void setOrd(int)
 event.BaseEventObserver
 event.BaseEventSubject
 event.BaseEventSubscriptionSubject
+android.support.v4.app.INotificationSideChannel$Stub
+android.support.v4.app.INotificationSideChannel
 androidx.activity.ImmLeaksCleaner:
     void <init>(android.app.Activity)
 androidx.appcompat.R$styleable:
@@ -6130,6 +6210,12 @@ androidx.core.R$styleable:
     public static final int GradientColor_android_tileMode
     public static final int GradientColor_android_type
 androidx.core.app.ActivityCompat$2
+androidx.core.app.NotificationCompatSideChannelService$NotificationSideChannelStub
+androidx.core.app.NotificationCompatSideChannelService:
+    public abstract void cancel(java.lang.String,int,java.lang.String)
+    public abstract void cancelAll(java.lang.String)
+    void checkPermission(int,java.lang.String)
+    public abstract void notify(java.lang.String,int,java.lang.String,android.app.Notification)
 androidx.core.app.SharedElementCallback:
     public abstract void onMapSharedElements(java.util.List,java.util.Map)
     public abstract void onSharedElementEnd(java.util.List,java.util.List,java.util.List)
@@ -6814,6 +6900,10 @@ androidx.vectordrawable.graphics.drawable.VectorDrawableCompat:
     public void unscheduleSelf(java.lang.Runnable)
     private void updateStateFromTypedArray(android.content.res.TypedArray,org.xmlpull.v1.XmlPullParser,android.content.res.Resources$Theme)
     android.graphics.PorterDuffColorFilter updateTintFilter(android.graphics.PorterDuffColorFilter,android.content.res.ColorStateList,android.graphics.PorterDuff$Mode)
+com.google.gson.internal.LinkedHashTreeMap:
+    static final synthetic boolean $assertionsDisabled
+com.google.gson.internal.LinkedTreeMap:
+    static final synthetic boolean $assertionsDisabled
 com.newbee.ble_lib.util.AbImageUtil:
     private static java.lang.String TAG
 com.newbee.ble_tool.config.T800Config:
