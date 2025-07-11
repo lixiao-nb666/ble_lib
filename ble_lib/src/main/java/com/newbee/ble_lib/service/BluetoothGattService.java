@@ -59,9 +59,6 @@ public class BluetoothGattService extends BaseService implements BleEventObserve
         }
     };
 
-    public BleEventObserver getEventImp(){
-        return this;
-    }
 
 
 
@@ -121,7 +118,6 @@ public class BluetoothGattService extends BaseService implements BleEventObserve
         Message msg=new Message();
         msg.what=BluetoothGattServiceMsgType.SEND_IMAGE.ordinal();
         msg.obj=sendImageInfoBean;
-
         handler.sendMessage(msg);
     }
 

@@ -3,8 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 6d7c514
-# pg_map_hash: SHA-256 6d7c514bcc5b9711b6a9eb1bec619745b1f1bfb69cbfb15e2404262a7e573391
+# pg_map_id: cc31eb2
+# pg_map_hash: SHA-256 cc31eb2da33efe285660ed952f9dbac951469cc6065085a00a6ca7a0ab79ba20
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -7209,7 +7209,6 @@ com.newbee.ble_lib.service.BluetoothGattService -> com.newbee.ble_lib.service.Bl
     void close() -> h
     void init() -> i
     void start(android.content.Intent,int,int) -> j
-    com.nrmyw.ble_event_lib.send.BleEventObserver getEventImp() -> k
 com.newbee.ble_lib.service.BluetoothGattService$1 -> com.newbee.ble_lib.service.BluetoothGattService$a:
     com.newbee.ble_lib.service.BluetoothGattService this$0 -> a
 com.newbee.ble_lib.service.BluetoothGattService$2 -> com.newbee.ble_lib.service.BluetoothGattService$b:

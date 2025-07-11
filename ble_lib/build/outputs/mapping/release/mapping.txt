@@ -2,8 +2,8 @@
 # compiler_version: 3.3.83
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 766d552
-# pg_map_hash: SHA-256 766d552f8f1dfef22de6784c3de0566181c0ee54682aef2d130c609bf08b0a89
+# pg_map_id: 34b1c60
+# pg_map_hash: SHA-256 34b1c60ead822b84a9523e7a3c1c9ecc5e7bdf42cf7dd24790f6bdc6429bb97a
 com.newbee.ble_lib.NewBeeBleManager -> com.newbee.ble_lib.NewBeeBleManager:
     com.newbee.ble_lib.NewBeeBleManager bleManager -> b
     com.newbee.ble_lib.service.BluetoothGattServiceDao bluetoothGattServiceDao -> a
@@ -155,7 +155,6 @@ com.newbee.ble_lib.service.BluetoothGattService -> com.newbee.ble_lib.service.Bl
     void close() -> a
     void start(android.content.Intent,int,int) -> a
     void init() -> b
-    com.nrmyw.ble_event_lib.send.BleEventObserver getEventImp() -> c
 com.newbee.ble_lib.service.BluetoothGattService$1 -> com.newbee.ble_lib.service.BluetoothGattService$a:
     com.newbee.ble_lib.service.BluetoothGattService this$0 -> a
 com.newbee.ble_lib.service.BluetoothGattService$2 -> com.newbee.ble_lib.service.BluetoothGattService$b:

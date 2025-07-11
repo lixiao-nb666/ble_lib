@@ -40,10 +40,7 @@ public class NewBeeBleManager {
 
     public BleEventObserver getEventImp(){
         try {
-            BluetoothGattService bluetoothGattService=(BluetoothGattService) bluetoothGattServiceDao.getService();
-            if(null!=bluetoothGattService){
-                return bluetoothGattService.getEventImp();
-            }
+                return (BluetoothGattService) bluetoothGattServiceDao.getService();
         }catch (Exception e){
 
         }
