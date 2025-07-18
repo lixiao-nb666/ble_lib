@@ -35,6 +35,11 @@ import java.util.Map;
        this.listen=listen;
    }
 
+   public void clear(){
+       msgMq.clear();
+       imageMsgMq.clear();
+   }
+
    private void listenSendMsg(String kStr,byte[] msg){
        if(null!=listen){
            listen.canSendMsg(kStr,msg);

@@ -3,6 +3,8 @@ package com.newbee.ble_lib.util;
 import android.content.Context;
 
 import com.newbee.ble_lib.manager.child.BleConnectManager;
+import com.newbee.ble_lib.manager.child.BlueToothGattManager;
+import com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager;
 import com.nrmyw.ble_event_lib.bean.BleDeviceBean;
 import com.nrmyw.ble_event_lib.statu.BleStatu;
 import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
@@ -54,6 +56,7 @@ public class BleConnectStatuUtil {
     public  void sendConnected(){
         isConnect=true;
         BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.CONNECTED);
+        BlueToothGattSendMsgManager.getInstance().clear();
     }
 
     public void setConnectErr(String errStr){
@@ -71,6 +74,7 @@ public class BleConnectStatuUtil {
         isConnect=false;
         nowUseBleDevice=null;
         BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.DISCONNECTED);
+        BlueToothGattSendMsgManager.getInstance().clear();
     }
 
 

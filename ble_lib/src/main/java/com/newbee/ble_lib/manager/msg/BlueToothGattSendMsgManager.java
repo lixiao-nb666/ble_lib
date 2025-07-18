@@ -56,6 +56,10 @@ public class BlueToothGattSendMsgManager {
        blueToothGattSendManager=null;
    }
 
+   public void clear(){
+       BlueToothGattMsgManager.getInstance().clear();
+   }
+
    public void setNowCanSend(){
 
        BlueToothGattMsgManager.getInstance().queMsg();
