@@ -48,32 +48,33 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
     @Override
     public void run() {
         super.run();
-        if(!canStart){
-            return;
-        }
+        try {
+            if(!canStart){
+                return;
+            }
 
-        startTime=System.currentTimeMillis();
-        if(null!=dataInfoQueue){
-            dataInfoQueue.clear();
-        }
-        isStart=true;
-        newBitMap= BleSendImageUtil.autoScaleBitmap(bleSendImageInfoBean.getBitmap(),bleSendImageInfoBean.getMaxW(),bleSendImageInfoBean.getMaxH());
-        if(null==newBitMap){
-            listen.sendOver(0);
-            return;
-        }
+            startTime=System.currentTimeMillis();
+            if(null!=dataInfoQueue){
+                dataInfoQueue.clear();
+            }
+            isStart=true;
+            newBitMap= BleSendImageUtil.autoScaleBitmap(bleSendImageInfoBean.getBitmap(),bleSendImageInfoBean.getMaxW(),bleSendImageInfoBean.getMaxH());
+            if(null==newBitMap){
+                listen.sendOver(0);
+                return;
+            }
 
-        byte[] imageBytes=BleSendImageUtil.bitmap2Bytes(newBitMap,bleSendImageInfoBean.getBitmapQualityType());
-        if(null==imageBytes||imageBytes.length==0){
-            listen.sendOver(0);
-            return;
-        }
-        w=newBitMap.getWidth();
-        h=newBitMap.getHeight();
-        size=imageBytes.length;
-        sendImageStart();
-        splitPacketForMtuByte(imageBytes);
-
+            byte[] imageBytes=BleSendImageUtil.bitmap2Bytes(newBitMap,bleSendImageInfoBean.getBitmapQualityType());
+            if(null==imageBytes||imageBytes.length==0){
+                listen.sendOver(0);
+                return;
+            }
+            w=newBitMap.getWidth();
+            h=newBitMap.getHeight();
+            size=imageBytes.length;
+            sendImageStart();
+            splitPacketForMtuByte(imageBytes);
+        }catch (Exception e){}
     }
 
     public void sendImageStart(){
