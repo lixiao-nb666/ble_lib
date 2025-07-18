@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.os.Handler;
 import android.os.Message;
 
+import com.newbee.ble_lib.R;
 import com.newbee.ble_lib.base.BaseService;
 
 import com.newbee.ble_lib.manager.child.BleConnectManager;
@@ -54,7 +55,7 @@ public class BluetoothGattService extends BaseService implements BleEventObserve
                 bleStatu.setStrId(msgType.getStrId());
                 BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(bleStatu);
             }catch (Exception e){
-                BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR,"BluetoothGattService: handler-"+e.toString());
+                BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR, "BluetoothGattService: handler-"+e.toString());
             }
         }
     };

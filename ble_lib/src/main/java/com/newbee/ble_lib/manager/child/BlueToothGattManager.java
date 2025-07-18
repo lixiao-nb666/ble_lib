@@ -16,12 +16,13 @@ import com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager;
 import com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager;
 
 
-import com.newbee.ble_lib.util.BleByteUtil;
+
 import com.newbee.ble_lib.util.BleConnectStatuUtil;
 
 import com.nrmyw.ble_event_lib.config.NewBeeBleConfig;
 import com.nrmyw.ble_event_lib.statu.BleStatu;
 import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
+import com.nrmyw.ble_event_lib.util.BleByteUtil;
 
 
 import java.util.List;
@@ -254,7 +255,7 @@ public class BlueToothGattManager {
                 writeCharacteristic.setValue(cmd);
                 bluetoothGatt.writeCharacteristic(writeCharacteristic);
                 BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.SENDING_DATA,cmd);
-                Log.i("kankanfasongtupian","-------------kankanshenmegui111:"+BleByteUtil.parseByte2HexStr(cmd));
+                Log.i("kankanfasongtupian","-------------kankanshenmegui111:"+ BleByteUtil.parseByte2HexStr(cmd));
 //              LogUtil.e("发送指令："+ CYUtils.Bytes2HexString(cmd));
                 nowCanSend=false;
             }catch (Exception e){

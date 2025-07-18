@@ -43,5 +43,6 @@
 
 }
 
+-flattenpackagehierarchy 'com.newbee.ble_lib'
 -keep public class *  implements java.io.Serializable
 -keep public class * extends android.preference.Preference

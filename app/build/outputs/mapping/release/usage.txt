@@ -5877,16 +5877,6 @@ com.newbee.ble_lib.util.AbImageUtil:
     public static android.graphics.Bitmap view2Bitmap(android.view.View)
     public static byte[] view2Bytes(android.view.View,android.graphics.Bitmap$CompressFormat)
     public static android.graphics.drawable.Drawable view2Drawable(android.view.View)
-com.newbee.ble_lib.util.BleByteUtil:
-    public void <init>()
-    public static varargs byte[] addToNewBytes(byte[][])
-    public static int byteArrayToInt(byte[])
-    public static byte[] intToByteArray32(int)
-    public static byte[] intToByteArray32only1(int)
-    public static byte[] intToByteArray32only2(int)
-    public static byte[] intToByteArray32only3(int)
-    public static java.lang.String parseByte2HexStr(byte)
-    public static byte[] resultData(byte[])
 com.newbee.ble_lib.util.BleCheckUtil:
     public void <init>()
 com.newbee.ble_lib.util.BleSendImageUtil:
@@ -6121,6 +6111,16 @@ com.nrmyw.ble_event_lib.type.BleSendFileType:
     int ord
     public int getOrd()
     public void setOrd(int)
+com.nrmyw.ble_event_lib.util.BleByteUtil:
+    public void <init>()
+    public static varargs byte[] addToNewBytes(byte[][])
+    public static int byteArrayToInt(byte[])
+    public static byte[] intToByteArray32(int)
+    public static byte[] intToByteArray32only1(int)
+    public static byte[] intToByteArray32only2(int)
+    public static byte[] intToByteArray32only3(int)
+    public static java.lang.String parseByte2HexStr(byte)
+    public static byte[] resultData(byte[])
 event.BaseEventObserver
 event.BaseEventSubject
 event.BaseEventSubscriptionSubject

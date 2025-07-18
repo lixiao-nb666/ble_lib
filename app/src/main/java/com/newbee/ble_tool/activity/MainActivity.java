@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
             if(null==v){
                 return;
             }
-            try {
+
                 switch (v.getId()){
                     case R.id.bt_init:
                         NewBeeBleManager.getInstance().getEventImp().havePermissionInitBle();
@@ -69,9 +69,7 @@ public class MainActivity extends AppCompatActivity {
                         NewBeeBleManager.getInstance().getEventImp().sendCmd(t800CmdType.getAllByte());
                         break;
                 }
-            }catch (Exception e){
-                //可能报空指针异常
-            }
+
 
         }
     };
@@ -80,7 +78,9 @@ public class MainActivity extends AppCompatActivity {
         public void handleMessage(@NonNull Message msg) {
             super.handleMessage(msg);
             BleStatu bleStatu=BleStatu.values()[msg.what];
-            bleStatuTV.setText(getResources().getText(bleStatu.getStrId()));
+            if(0!=bleStatu.getStrId()){
+                bleStatuTV.setText(getResources().getText(bleStatu.getStrId()));
+            }
             switch (bleStatu){
                 case CONNECTING:
                     BleDeviceBean bleDeviceBean= NewBeeBleManager.getInstance().getNowUseBleDevice();
@@ -97,7 +97,12 @@ public class MainActivity extends AppCompatActivity {
                     setViewByBleConnectStatu(NewBeeBleManager.getInstance().isConnect());
                     break;
                 case RUN_ERR:
-                    String errStr=getResources().getText(msg.arg1)+":"+msg.obj.toString();
+                    String errStr="";
+                    if(msg.arg1==0){
+                        errStr=msg.obj.toString();
+                    }else {
+                        errStr=getResources().getString(msg.arg1)+":"+msg.obj.toString();
+                    }
                     bleStatuTV.append(errStr);
                     LG.i("lixiaokankanerrStr","lixiaokankanerrStr:"+errStr);
                     break;

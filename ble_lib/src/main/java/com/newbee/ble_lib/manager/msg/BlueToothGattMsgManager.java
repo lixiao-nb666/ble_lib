@@ -5,7 +5,7 @@ import android.util.ArrayMap;
 import android.util.Log;
 
 
-import com.newbee.ble_lib.util.BleByteUtil;
+import com.nrmyw.ble_event_lib.util.BleByteUtil;
 
 import java.util.Map;
 

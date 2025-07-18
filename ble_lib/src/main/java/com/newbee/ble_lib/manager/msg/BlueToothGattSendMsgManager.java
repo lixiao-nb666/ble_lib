@@ -4,7 +4,8 @@ package com.newbee.ble_lib.manager.msg;
 import android.util.Log;
 
 import com.newbee.ble_lib.manager.child.BlueToothGattManager;
-import com.newbee.ble_lib.util.BleByteUtil;
+import com.nrmyw.ble_event_lib.util.BleByteUtil;
+
 
 public class BlueToothGattSendMsgManager {
    private static BlueToothGattSendMsgManager blueToothGattSendManager;
@@ -28,7 +29,7 @@ public class BlueToothGattSendMsgManager {
            Log.i("nengfasongma","nengfasongshima???3");
 
            if(BlueToothGattManager.getInstance().isNowCanSend()){
-               Log.i("nengfasongma","nengfasongshima???4"+"---"+index+"-------"+BleByteUtil.parseByte2HexStr(msg));
+               Log.i("nengfasongma","nengfasongshima???4"+"---"+index+"-------"+ BleByteUtil.parseByte2HexStr(msg));
                BlueToothGattMsgManager.getInstance().removeImageMsg(index+"");
                BlueToothGattManager.getInstance().queSendCmd(msg);
            }
