@@ -44,6 +44,7 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
 
 
     public int index;
+    private Bitmap newBitMap;
     @Override
     public void run() {
         super.run();
@@ -56,7 +57,7 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
             dataInfoQueue.clear();
         }
         isStart=true;
-        Bitmap newBitMap = BleSendImageUtil.autoScaleBitmap(bleSendImageInfoBean.getBitmap(),bleSendImageInfoBean.getMaxW(),bleSendImageInfoBean.getMaxH());
+        newBitMap= BleSendImageUtil.autoScaleBitmap(bleSendImageInfoBean.getBitmap(),bleSendImageInfoBean.getMaxW(),bleSendImageInfoBean.getMaxH());
         if(null==newBitMap){
             listen.sendOver(0);
             return;
@@ -72,6 +73,7 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
         size=imageBytes.length;
         sendImageStart();
         splitPacketForMtuByte(imageBytes);
+
     }
 
     public void sendImageStart(){
@@ -117,7 +119,15 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
             if(null!=listen){
                 listen.sendOver(endTime-startTime);
             }
-            bleSendImageInfoBean.getBitmap().recycle();
+
+            if(null!=newBitMap){
+                newBitMap.recycle();
+                newBitMap=null;
+            }
+            if(null!=bleSendImageInfoBean.getBitmap()){
+                bleSendImageInfoBean.getBitmap().recycle();
+
+            }
             bleSendImageInfoBean=null;
             isStart=false;
         }

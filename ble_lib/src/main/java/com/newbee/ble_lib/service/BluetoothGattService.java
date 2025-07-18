@@ -112,7 +112,6 @@ public class BluetoothGattService extends BaseService implements BleEventObserve
 
     }
 
-
     @Override
     public void sendImage(BleSendImageInfoBean sendImageInfoBean) {
         Message msg=new Message();
@@ -120,8 +119,6 @@ public class BluetoothGattService extends BaseService implements BleEventObserve
         msg.obj=sendImageInfoBean;
         handler.sendMessage(msg);
     }
-
-
 
     @Override
     public void sendImageIndexCmd(int index, byte[] bytes) {
