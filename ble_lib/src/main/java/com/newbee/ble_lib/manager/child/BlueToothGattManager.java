@@ -49,7 +49,6 @@ public class BlueToothGattManager {
             }else {
                 BlueToothGattSendMsgManager.getInstance().setNowCanSend();
             }
-
             BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.CAN_SEND_DATA);
             Log.i(tag,"收到指令没111");
         }
