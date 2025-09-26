@@ -78,7 +78,7 @@ public class BluetoothGattService extends BaseService implements BleEventObserve
 
     private void autoConnectDevice(){
         handler.removeCallbacks(autoConnectRunnable);
-        handler.postDelayed(autoConnectRunnable,60*1000);
+        handler.postDelayed(autoConnectRunnable,20*1000);
     }
 
     private void autoConnectDeviceNow(){
