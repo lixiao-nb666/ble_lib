@@ -164,7 +164,7 @@ public class AbImageUtil {
             mt.postScale(scale, scale);
             resizeBmp = Bitmap.createBitmap(bitmap, 0, 0, bmpW, bmpH, mt, true);
         } catch (Exception e) {
-            Log.i("kankanshibushizheli","kankanshibushizheli:"+ e.toString());
+            Log.i("kankanshibushizheli","kankanshibushizheli:2222----"+ e.toString());
 
         }
         return resizeBmp;

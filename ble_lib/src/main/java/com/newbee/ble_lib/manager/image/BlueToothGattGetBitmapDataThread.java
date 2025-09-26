@@ -1,7 +1,7 @@
 package com.newbee.ble_lib.manager.image;
 
 import android.graphics.Bitmap;
-
+import android.util.Log;
 
 
 import com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager;
@@ -53,6 +53,7 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
                 return;
             }
             if(null==bleSendImageInfoBean||null==bleSendImageInfoBean.getBitmap()||bleSendImageInfoBean.getBitmap().isRecycled()){
+                Log.i("kankanshibushizheli","kankanshibushizheli:1111----"+(null==bleSendImageInfoBean)+(null==bleSendImageInfoBean.getBitmap())+(bleSendImageInfoBean.getBitmap().isRecycled()));
                 return;
             }
             startTime=System.currentTimeMillis();
@@ -75,7 +76,20 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
             size=imageBytes.length;
             sendImageStart();
             splitPacketForMtuByte(imageBytes);
-        }catch (Exception e){}
+
+        }catch (Exception e){
+            Log.i("kankanshibushizheli","kankanshibushizheli:333"+e.toString());
+        }
+    }
+
+    private void over(){
+        if(null!=newBitMap&&!newBitMap.isRecycled()){
+            newBitMap.recycle();
+            newBitMap=null;
+        }
+        if(null!=bleSendImageInfoBean&&null!=bleSendImageInfoBean.getBitmap()&&!bleSendImageInfoBean.getBitmap().isRecycled()){
+            bleSendImageInfoBean=null;
+        }
     }
 
     public void sendImageStart(){
@@ -121,8 +135,6 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
             if(null!=listen){
                 listen.sendOver(endTime-startTime);
             }
-
-
             bleSendImageInfoBean=null;
             isStart=false;
         }
@@ -149,10 +161,6 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
                 dataInfoQueue.offer(currentData);
             }while (index < data.length);
 
-            if(null!=newBitMap&&!newBitMap.isRecycled()){
-                newBitMap.recycle();
-                newBitMap=null;
-            }
 
         }
     }
