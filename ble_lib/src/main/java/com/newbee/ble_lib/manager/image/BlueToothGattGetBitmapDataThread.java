@@ -36,6 +36,7 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
     }
 
     public void close(){
+        isStart=false;
         over(0);
     }
 
@@ -100,6 +101,15 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
             listen.sendOver(useTime);
         }
         isStart=false;
+    }
+
+    public int getType(){
+        try {
+            return bleSendImageInfoBean.getType();
+        }catch (Exception e){
+            return -1;
+        }
+
     }
 
     public void sendImageStart(){

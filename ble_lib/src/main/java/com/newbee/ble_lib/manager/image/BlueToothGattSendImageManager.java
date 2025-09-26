@@ -69,12 +69,15 @@ public class BlueToothGattSendImageManager {
 
 
 
-    private Map<String,BleSendImageInfoBean>bleSendImageInfoBeanMap=new HashMap<>();
-
-  private BleSendImageInfoBean lastBleSendImageInfoBean;
+//    private Map<String,BleSendImageInfoBean>bleSendImageInfoBeanMap=new HashMap<>();
+//
+//  private BleSendImageInfoBean lastBleSendImageInfoBean;
 
    public void sendBitMap(BleSendImageInfoBean bleSendImageInfoBean){
        if(null!=getBitmapDataThread){
+            if(getBitmapDataThread.isStart()&&getBitmapDataThread.getType()==0&&bleSendImageInfoBean.getType()!=0){
+                return;
+            }
            getBitmapDataThread.close();
            getBitmapDataThread.stop();
            getBitmapDataThread=null;
