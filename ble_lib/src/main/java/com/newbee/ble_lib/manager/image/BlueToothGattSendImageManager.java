@@ -1,6 +1,7 @@
 package com.newbee.ble_lib.manager.image;
 
 import android.graphics.Bitmap;
+import android.util.Log;
 
 import com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean;
 import com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType;
@@ -48,7 +49,7 @@ public class BlueToothGattSendImageManager {
 
    public void close(){
        if(null!=getBitmapDataThread){
-      
+
            getBitmapDataThread.stop();
            getBitmapDataThread=null;
        }
@@ -78,15 +79,14 @@ public class BlueToothGattSendImageManager {
             if(getBitmapDataThread.isStart()&&getBitmapDataThread.getType()==0&&bleSendImageInfoBean.getType()!=0){
                 return;
             }
-
            getBitmapDataThread.stop();
            getBitmapDataThread=null;
-       }else {
-           getBitmapDataThread=new BlueToothGattGetBitmapDataThread(bleSendImageInfoBean,threadListen);
-           getBitmapDataThread.start();
+           Log.i("kaishifasongtupianle","kaishifasongtupianle-zhiling:3333");
        }
 
-
+       getBitmapDataThread=new BlueToothGattGetBitmapDataThread(bleSendImageInfoBean,threadListen);
+       getBitmapDataThread.start();
+       Log.i("kaishifasongtupianle","kaishifasongtupianle-zhiling:4444");
 //       if(null==getBitmapDataThread){
 //
 //
