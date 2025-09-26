@@ -45,7 +45,7 @@ public class BlueToothGattManager {
             Log.i(tag,"发送 ===  :发送成功"+status);
             nowCanSend=true;
             if(BlueToothGattSendImageManager.getInstance().checkNowSendImage()){
-                BlueToothGattSendImageManager.getInstance().queToSend();
+                BlueToothGattSendImageManager.getInstance().queToSendCmd();
             }else {
                 BlueToothGattSendMsgManager.getInstance().setNowCanSend();
             }

@@ -10,8 +10,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8eea6d03-d1e4-4dd5-a95d-cfd1509ed020" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/service/BluetoothGattService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/service/BluetoothGattService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/release/classes/com/newbee/ble_lib/manager/image/BlueToothGattGetBitmapDataThread$Listen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/release/classes/com/newbee/ble_lib/manager/image/BlueToothGattGetBitmapDataThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/release/classes/com/newbee/ble_lib/manager/image/BlueToothGattSendImageManager$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/release/classes/com/newbee/ble_lib/manager/image/BlueToothGattSendImageManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/manager/child/BlueToothGattManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/manager/child/BlueToothGattManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/manager/image/BlueToothGattGetBitmapDataThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/manager/image/BlueToothGattGetBitmapDataThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/manager/image/BlueToothGattSendImageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/manager/image/BlueToothGattSendImageManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

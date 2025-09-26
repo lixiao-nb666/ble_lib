@@ -5,17 +5,18 @@ import android.graphics.Bitmap;
 import com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean;
 import com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType;
 
+import java.util.HashMap;
+import java.util.Map;
 
 
-
- public class BlueToothGattSendImageManager {
+public class BlueToothGattSendImageManager {
    private static BlueToothGattSendImageManager sendImageManager;
     private BlueToothGattGetBitmapDataThread getBitmapDataThread;
     private BlueToothGattGetBitmapDataThread.Listen threadListen=new BlueToothGattGetBitmapDataThread.Listen() {
         @Override
         public void sendOver(long useTime) {
             if(null!=getBitmapDataThread){
-                getBitmapDataThread.interrupt();
+                getBitmapDataThread.stop();
                 getBitmapDataThread=null;
             }
 //            queLast();
@@ -47,6 +48,7 @@ import com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType;
 
    public void close(){
        if(null!=getBitmapDataThread){
+           getBitmapDataThread.close();
            getBitmapDataThread.stop();
            getBitmapDataThread=null;
        }
@@ -59,28 +61,35 @@ import com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType;
         return getBitmapDataThread.isStart();
    }
 
-   public void queToSend(){
+   public void queToSendCmd(){
        if(null!=getBitmapDataThread){
-           getBitmapDataThread.queToSend();
+           getBitmapDataThread.queToSendCmd();
        }
    }
 
 
 
+    private Map<String,BleSendImageInfoBean>bleSendImageInfoBeanMap=new HashMap<>();
 
-
-//  private BleSendImageInfoBean lastBleSendImageInfoBean;
+  private BleSendImageInfoBean lastBleSendImageInfoBean;
 
    public void sendBitMap(BleSendImageInfoBean bleSendImageInfoBean){
-       if(null==getBitmapDataThread){
+       if(null!=getBitmapDataThread){
+           getBitmapDataThread.close();
+           getBitmapDataThread.stop();
+           getBitmapDataThread=null;
+       }
+       getBitmapDataThread=new BlueToothGattGetBitmapDataThread(bleSendImageInfoBean,threadListen);
+       getBitmapDataThread.start();
 
-           getBitmapDataThread=new BlueToothGattGetBitmapDataThread(bleSendImageInfoBean,threadListen);
-           getBitmapDataThread.start();
-        }else {
-//           if(null!=bleSendImageInfoBean&&bleSendImageInfoBean.getType()==0){
-//               this.lastBleSendImageInfoBean=bleSendImageInfoBean;
-//           }
-        }
+//       if(null==getBitmapDataThread){
+//
+//
+//        }else {
+////           if(null!=bleSendImageInfoBean&&bleSendImageInfoBean.getType()==0){
+////               this.lastBleSendImageInfoBean=bleSendImageInfoBean;
+////           }
+//        }
 
     }
 

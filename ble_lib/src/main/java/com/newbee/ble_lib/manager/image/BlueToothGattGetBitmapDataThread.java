@@ -35,7 +35,9 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
         canStart=true;
     }
 
-
+    public void close(){
+        over(0);
+    }
 
 
     public boolean isStart(){
@@ -129,7 +131,7 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
 
 
 
-    public void queToSend(){
+    public void queToSendCmd(){
         if(null!=dataInfoQueue&&!dataInfoQueue.isEmpty()){
             if(null!=dataInfoQueue.peek()){
                 byte[] cmd=dataInfoQueue.poll();
