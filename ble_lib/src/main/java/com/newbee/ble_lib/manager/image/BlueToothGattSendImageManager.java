@@ -73,7 +73,9 @@ import com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType;
 
    public void sendBitMap(BleSendImageInfoBean bleSendImageInfoBean){
        if(null!=getBitmapDataThread){
-            this.lastBleSendImageInfoBean=bleSendImageInfoBean;
+            if(null!=bleSendImageInfoBean&&bleSendImageInfoBean.getType()==0){
+                this.lastBleSendImageInfoBean=bleSendImageInfoBean;
+            }
         }else {
             getBitmapDataThread=new BlueToothGattGetBitmapDataThread(bleSendImageInfoBean,threadListen);
             getBitmapDataThread.start();

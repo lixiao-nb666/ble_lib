@@ -62,18 +62,20 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
             }
             isStart=true;
             newBitMap= BleSendImageUtil.autoScaleBitmap(bleSendImageInfoBean.getBitmap(),bleSendImageInfoBean.getMaxW(),bleSendImageInfoBean.getMaxH());
+            w=newBitMap.getWidth();
+            h=newBitMap.getHeight();
             if(null==newBitMap){
                 listen.sendOver(0);
                 return;
             }
             byte[] imageBytes=BleSendImageUtil.bitmap2Bytes(newBitMap,bleSendImageInfoBean.getBitmapQualityType());
+            size=imageBytes.length;
             if(null==imageBytes||imageBytes.length==0){
                 listen.sendOver(0);
                 return;
             }
-            w=newBitMap.getWidth();
-            h=newBitMap.getHeight();
-            size=imageBytes.length;
+
+
             sendImageStart();
             splitPacketForMtuByte(imageBytes);
 
