@@ -80,6 +80,7 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
             splitPacketForMtuByte(imageBytes);
 
         }catch (Exception e){
+            listen.sendOver(0);
             Log.i("kankanshibushizheli","kankanshibushizheli:333"+e.toString());
         }
     }
