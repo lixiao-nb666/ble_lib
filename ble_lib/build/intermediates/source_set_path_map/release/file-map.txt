@@ -1,4 +1,4 @@
-com.newbee.ble_lib-ble_event-1.0.1-0 C:\Users\Mayn\.gradle\caches\transforms-3\1e38591745981fb6c18e0ae403eb6f12\transformed\ble_event-1.0.1\res
+com.newbee.ble_lib-ble_event-1.0.8-0 C:\Users\Mayn\.gradle\caches\transforms-3\791b1685456f108950d122cb456df31b\transformed\ble_event-1.0.8\res
 com.newbee.ble_lib-pngs-1 G:\asworkspace\lixiao_lib\hud\Ble_Tool\ble_lib\build\generated\res\pngs\release
 com.newbee.ble_lib-resValues-2 G:\asworkspace\lixiao_lib\hud\Ble_Tool\ble_lib\build\generated\res\resValues\release
 com.newbee.ble_lib-rs-3 G:\asworkspace\lixiao_lib\hud\Ble_Tool\ble_lib\build\generated\res\rs\release

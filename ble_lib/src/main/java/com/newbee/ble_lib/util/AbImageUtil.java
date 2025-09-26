@@ -16,6 +16,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.view.View.MeasureSpec;
 import android.widget.ImageView;
@@ -163,7 +164,8 @@ public class AbImageUtil {
             mt.postScale(scale, scale);
             resizeBmp = Bitmap.createBitmap(bitmap, 0, 0, bmpW, bmpH, mt, true);
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.i("kankanshibushizheli","kankanshibushizheli:"+ e.toString());
+
         }
         return resizeBmp;
     }

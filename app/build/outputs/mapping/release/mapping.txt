@@ -3,8 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 4f3a016
-# pg_map_hash: SHA-256 4f3a016b65d3aa968fd451b264c63521ce8579e3c116983ac9cc316fca0d0013
+# pg_map_id: 13b7469
+# pg_map_hash: SHA-256 13b746996ab724b9d5859a2865cd1a0651bab0fe4ecab2f1167956094dafa81e
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -7165,28 +7165,30 @@ com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager -> com.newbee.ble_lib.l0.
     com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager sendMsgManager -> d
     void addMsg(byte[]) -> a
     void addMsgByImage(int,byte[]) -> b
-    java.lang.String getFristKStr() -> c
-    int getImageFristK() -> d
-    com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager getInstance() -> e
-    void init(com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager$Listen) -> f
-    void listenSendImageMsg(int,byte[]) -> g
-    void listenSendMsg(java.lang.String,byte[]) -> h
-    void queCmdMsg() -> i
-    boolean queImageMsg() -> j
-    void queMsg() -> k
-    void removeImageMsg(java.lang.String) -> l
-    void removeMsg(java.lang.String) -> m
+    void clear() -> c
+    java.lang.String getFristKStr() -> d
+    int getImageFristK() -> e
+    com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager getInstance() -> f
+    void init(com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager$Listen) -> g
+    void listenSendImageMsg(int,byte[]) -> h
+    void listenSendMsg(java.lang.String,byte[]) -> i
+    void queCmdMsg() -> j
+    boolean queImageMsg() -> k
+    void queMsg() -> l
+    void removeImageMsg(java.lang.String) -> m
+    void removeMsg(java.lang.String) -> n
 com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager$Listen -> com.newbee.ble_lib.l0.a$a:
     void canSendMsg(java.lang.String,byte[]) -> a
     void canSendImageMsg(int,byte[]) -> b
 com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager -> com.newbee.ble_lib.l0.b:
     com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager blueToothGattSendManager -> b
     com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager$Listen msgListen -> a
-    void close() -> a
-    com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager getInstance() -> b
-    void sendMsgByCmd(byte[]) -> c
-    void sendMsgByImg(int,byte[]) -> d
-    void setNowCanSend() -> e
+    void clear() -> a
+    void close() -> b
+    com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager getInstance() -> c
+    void sendMsgByCmd(byte[]) -> d
+    void sendMsgByImg(int,byte[]) -> e
+    void setNowCanSend() -> f
 com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager$1 -> com.newbee.ble_lib.l0.b$a:
     com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager this$0 -> a
     void canSendMsg(java.lang.String,byte[]) -> a

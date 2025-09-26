@@ -52,7 +52,9 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
             if(!canStart){
                 return;
             }
-
+            if(null==bleSendImageInfoBean||null==bleSendImageInfoBean.getBitmap()||bleSendImageInfoBean.getBitmap().isRecycled()){
+                return;
+            }
             startTime=System.currentTimeMillis();
             if(null!=dataInfoQueue){
                 dataInfoQueue.clear();
@@ -63,7 +65,6 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
                 listen.sendOver(0);
                 return;
             }
-
             byte[] imageBytes=BleSendImageUtil.bitmap2Bytes(newBitMap,bleSendImageInfoBean.getBitmapQualityType());
             if(null==imageBytes||imageBytes.length==0){
                 listen.sendOver(0);
@@ -121,14 +122,7 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
                 listen.sendOver(endTime-startTime);
             }
 
-            if(null!=newBitMap){
-                newBitMap.recycle();
-                newBitMap=null;
-            }
-            if(null!=bleSendImageInfoBean.getBitmap()){
-                bleSendImageInfoBean.getBitmap().recycle();
 
-            }
             bleSendImageInfoBean=null;
             isStart=false;
         }
@@ -153,8 +147,13 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
                     index += mtu;
                 }
                 dataInfoQueue.offer(currentData);
-
             }while (index < data.length);
+
+            if(null!=newBitMap&&!newBitMap.isRecycled()){
+                newBitMap.recycle();
+                newBitMap=null;
+            }
+
         }
     }
 

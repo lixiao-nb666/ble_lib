@@ -4,7 +4,7 @@
             "outputFile": "com.newbee.ble_lib-merged_res-5:/values/values.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Mayn\\.gradle\\caches\\transforms-3\\1e38591745981fb6c18e0ae403eb6f12\\transformed\\ble_event-1.0.1\\res\\values\\values.xml",
+                    "source": "C:\\Users\\Mayn\\.gradle\\caches\\transforms-3\\791b1685456f108950d122cb456df31b\\transformed\\ble_event-1.0.8\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -19,7 +19,7 @@
             "outputFile": "com.newbee.ble_lib-mergeReleaseResources-3:/values/values.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Mayn\\.gradle\\caches\\transforms-3\\1e38591745981fb6c18e0ae403eb6f12\\transformed\\ble_event-1.0.1\\res\\values\\values.xml",
+                    "source": "C:\\Users\\Mayn\\.gradle\\caches\\transforms-3\\791b1685456f108950d122cb456df31b\\transformed\\ble_event-1.0.8\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
