@@ -46,8 +46,10 @@ public class BlueToothGattManager {
             nowCanSend=true;
             if(BlueToothGattSendImageManager.getInstance().checkNowSendImage()){
                 BlueToothGattSendImageManager.getInstance().queToSend();
+            }else {
+                BlueToothGattSendMsgManager.getInstance().setNowCanSend();
             }
-            BlueToothGattSendMsgManager.getInstance().setNowCanSend();
+
             BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.CAN_SEND_DATA);
             Log.i(tag,"收到指令没111");
         }

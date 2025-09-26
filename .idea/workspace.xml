@@ -11,8 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8eea6d03-d1e4-4dd5-a95d-cfd1509ed020" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/manager/child/BlueToothGattManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/manager/child/BlueToothGattManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/manager/image/BlueToothGattGetBitmapDataThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/manager/image/BlueToothGattGetBitmapDataThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/util/AbImageUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/util/AbImageUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
