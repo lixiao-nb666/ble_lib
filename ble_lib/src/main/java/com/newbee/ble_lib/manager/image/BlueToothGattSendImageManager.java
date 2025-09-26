@@ -48,7 +48,7 @@ public class BlueToothGattSendImageManager {
 
    public void close(){
        if(null!=getBitmapDataThread){
-           getBitmapDataThread.close();
+      
            getBitmapDataThread.stop();
            getBitmapDataThread=null;
        }
@@ -78,12 +78,14 @@ public class BlueToothGattSendImageManager {
             if(getBitmapDataThread.isStart()&&getBitmapDataThread.getType()==0&&bleSendImageInfoBean.getType()!=0){
                 return;
             }
-           getBitmapDataThread.close();
+
            getBitmapDataThread.stop();
            getBitmapDataThread=null;
+       }else {
+           getBitmapDataThread=new BlueToothGattGetBitmapDataThread(bleSendImageInfoBean,threadListen);
+           getBitmapDataThread.start();
        }
-       getBitmapDataThread=new BlueToothGattGetBitmapDataThread(bleSendImageInfoBean,threadListen);
-       getBitmapDataThread.start();
+
 
 //       if(null==getBitmapDataThread){
 //

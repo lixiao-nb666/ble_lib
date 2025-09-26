@@ -5845,6 +5845,7 @@ com.newbee.ble_lib.manager.child.BleConnectManager:
     private void closeBluetooth()
 com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager:
     public void close()
+    private void queLast()
 com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager:
     public void close()
 com.newbee.ble_lib.service.BluetoothGattService:

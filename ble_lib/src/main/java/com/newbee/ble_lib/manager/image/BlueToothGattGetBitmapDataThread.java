@@ -35,10 +35,7 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
         canStart=true;
     }
 
-    public void close(){
-        isStart=false;
-        over(0);
-    }
+
 
 
     public boolean isStart(){

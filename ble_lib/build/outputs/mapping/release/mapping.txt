@@ -2,8 +2,8 @@
 # compiler_version: 3.3.83
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: ba424f1
-# pg_map_hash: SHA-256 ba424f131b9d93545906ee14eada588a4f0d3f5cb28b781b678a87ca9877a6f9
+# pg_map_id: 5096108
+# pg_map_hash: SHA-256 509610826d7a7b4f3a36efe76ae5475435523fe7df2812550d9e8e0ef7a49a19
 com.newbee.ble_lib.NewBeeBleManager -> com.newbee.ble_lib.NewBeeBleManager:
     com.newbee.ble_lib.NewBeeBleManager bleManager -> b
     com.newbee.ble_lib.service.BluetoothGattServiceDao bluetoothGattServiceDao -> a
@@ -85,26 +85,26 @@ com.newbee.ble_lib.manager.image.BlueToothGattGetBitmapDataThread -> com.newbee.
     int index -> g
     android.graphics.Bitmap newBitMap -> h
     boolean isStart -> d
-    boolean isStart() -> a
-    void sendImageEnd(long) -> a
+    void close() -> a
+    void over(long) -> a
     void splitPacketForMtuByte(byte[]) -> a
-    void queToSend() -> b
-    void sendImageStart() -> c
+    int getType() -> b
+    void sendImageEnd(long) -> b
+    boolean isStart() -> c
+    void queToSendCmd() -> d
+    void sendImageStart() -> e
 com.newbee.ble_lib.manager.image.BlueToothGattGetBitmapDataThread$Listen -> com.newbee.ble_lib.b.a$a:
     void sendOver(long) -> a
 com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager -> com.newbee.ble_lib.b.b:
     com.newbee.ble_lib.manager.image.BlueToothGattGetBitmapDataThread getBitmapDataThread -> a
-    com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean lastBleSendImageInfoBean -> c
     com.newbee.ble_lib.manager.image.BlueToothGattGetBitmapDataThread$Listen threadListen -> b
-    com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager sendImageManager -> d
+    com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager sendImageManager -> c
     com.newbee.ble_lib.manager.image.BlueToothGattGetBitmapDataThread access$000(com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager) -> a
     com.newbee.ble_lib.manager.image.BlueToothGattGetBitmapDataThread access$002(com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager,com.newbee.ble_lib.manager.image.BlueToothGattGetBitmapDataThread) -> a
     boolean checkNowSendImage() -> a
     void sendBitMap(com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean) -> a
-    void access$100(com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager) -> b
     com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager getInstance() -> b
-    void queLast() -> c
-    void queToSend() -> d
+    void queToSendCmd() -> c
 com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager$1 -> com.newbee.ble_lib.b.b$a:
     com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager this$0 -> a
     void sendOver(long) -> a
@@ -155,12 +155,23 @@ com.newbee.ble_lib.receiver.BleStatuBroadcastReceiverDao -> com.newbee.ble_lib.d
     com.newbee.ble_lib.receiver.BleStatuBroadcastReceiverDao getInstance() -> b
 com.newbee.ble_lib.service.BluetoothGattService -> com.newbee.ble_lib.service.BluetoothGattService:
     android.os.Handler handler -> e
+    java.lang.Runnable autoConnectRunnable -> f
+    com.nrmyw.ble_event_lib.statu.BleStatuEventObserver bleStatuEventObserver -> g
+    void access$000(com.newbee.ble_lib.service.BluetoothGattService) -> a
     void close() -> a
     void start(android.content.Intent,int,int) -> a
+    void access$100(com.newbee.ble_lib.service.BluetoothGattService) -> b
     void init() -> b
+    void autoConnectDevice() -> c
+    void autoConnectDeviceNow() -> d
 com.newbee.ble_lib.service.BluetoothGattService$1 -> com.newbee.ble_lib.service.BluetoothGattService$a:
     com.newbee.ble_lib.service.BluetoothGattService this$0 -> a
 com.newbee.ble_lib.service.BluetoothGattService$2 -> com.newbee.ble_lib.service.BluetoothGattService$b:
+    com.newbee.ble_lib.service.BluetoothGattService this$0 -> a
+com.newbee.ble_lib.service.BluetoothGattService$3 -> com.newbee.ble_lib.service.BluetoothGattService$c:
+    com.newbee.ble_lib.service.BluetoothGattService this$0 -> a
+com.newbee.ble_lib.service.BluetoothGattService$4 -> com.newbee.ble_lib.service.BluetoothGattService$d:
+    int[] $SwitchMap$com$nrmyw$ble_event_lib$statu$BleStatu -> b
     int[] $SwitchMap$com$newbee$ble_lib$service$BluetoothGattServiceMsgType -> a
 com.newbee.ble_lib.service.BluetoothGattServiceDao -> com.newbee.ble_lib.e.a:
     com.newbee.ble_lib.base.BaseService$StatuListen statuListen -> f
