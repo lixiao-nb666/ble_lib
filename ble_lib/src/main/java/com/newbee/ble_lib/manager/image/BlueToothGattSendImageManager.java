@@ -17,7 +17,7 @@ public class BlueToothGattSendImageManager {
         @Override
         public void sendOver(long useTime) {
             if(null!=getBitmapDataThread){
-                getBitmapDataThread.stop();
+                getBitmapDataThread.interrupt();
                 getBitmapDataThread=null;
             }
 //            queLast();
@@ -50,7 +50,7 @@ public class BlueToothGattSendImageManager {
    public void close(){
        if(null!=getBitmapDataThread){
 
-           getBitmapDataThread.stop();
+           getBitmapDataThread.interrupt();
            getBitmapDataThread=null;
        }
    }
@@ -76,10 +76,11 @@ public class BlueToothGattSendImageManager {
 
    public void sendBitMap(BleSendImageInfoBean bleSendImageInfoBean){
        if(null!=getBitmapDataThread){
+           Log.i("kaishifasongtupianle","kaishifasongtupianle-zhiling:5555");
             if(getBitmapDataThread.isStart()&&getBitmapDataThread.getType()==0&&bleSendImageInfoBean.getType()!=0){
                 return;
             }
-           getBitmapDataThread.stop();
+           getBitmapDataThread.interrupt();
            getBitmapDataThread=null;
            Log.i("kaishifasongtupianle","kaishifasongtupianle-zhiling:3333");
        }
