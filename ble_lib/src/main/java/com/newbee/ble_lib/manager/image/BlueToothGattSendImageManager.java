@@ -75,18 +75,23 @@ public class BlueToothGattSendImageManager {
 //  private BleSendImageInfoBean lastBleSendImageInfoBean;
 
    public void sendBitMap(BleSendImageInfoBean bleSendImageInfoBean){
-       if(null!=getBitmapDataThread){
-           Log.i("kaishifasongtupianle","kaishifasongtupianle-zhiling:5555");
-            if(getBitmapDataThread.isStart()&&getBitmapDataThread.getType()==0&&bleSendImageInfoBean.getType()!=0){
-                return;
-            }
-           getBitmapDataThread.interrupt();
-           getBitmapDataThread=null;
-           Log.i("kaishifasongtupianle","kaishifasongtupianle-zhiling:3333");
-       }
+        if(null==getBitmapDataThread){
+            getBitmapDataThread=new BlueToothGattGetBitmapDataThread(bleSendImageInfoBean,threadListen);
+            getBitmapDataThread.start();
+        }
 
-       getBitmapDataThread=new BlueToothGattGetBitmapDataThread(bleSendImageInfoBean,threadListen);
-       getBitmapDataThread.start();
+//       if(null!=getBitmapDataThread){
+//           Log.i("kaishifasongtupianle","kaishifasongtupianle-zhiling:5555");
+//            if(getBitmapDataThread.isStart()&&getBitmapDataThread.getType()==0&&bleSendImageInfoBean.getType()!=0){
+//                return;
+//            }
+//           getBitmapDataThread.interrupt();
+//           getBitmapDataThread=null;
+//           Log.i("kaishifasongtupianle","kaishifasongtupianle-zhiling:3333");
+//       }
+
+//       getBitmapDataThread=new BlueToothGattGetBitmapDataThread(bleSendImageInfoBean,threadListen);
+//       getBitmapDataThread.start();
        Log.i("kaishifasongtupianle","kaishifasongtupianle-zhiling:4444");
 //       if(null==getBitmapDataThread){
 //
