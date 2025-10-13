@@ -156,24 +156,24 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
 
 
     private int w,h,size;
-    private   void splitPacketForMtuByte(byte[] data){
+    private   void splitPacketForMtuByte(byte[] imageDatas){
         dataInfoQueue=new LinkedList();
-        if(null!=data){
+        if(!(null == imageDatas)){
             int index=0;
             do{
                 int mtu= NewBeeBleConfig.getInstance().getSendFileMtu();
                 byte[] currentData;
-                if(data.length- index <= mtu){
-                    currentData = new byte[data.length-index];
-                    System.arraycopy(data, index, currentData, 0, data.length - index);
-                    index = data.length;
+                if(imageDatas.length- index <= mtu){
+                    currentData = new byte[imageDatas.length-index];
+                    System.arraycopy(imageDatas, index, currentData, 0, imageDatas.length - index);
+                    index = imageDatas.length;
                 }else {
                     currentData = new byte[mtu];
-                    System.arraycopy(data, index, currentData, 0,mtu);
+                    System.arraycopy(imageDatas, index, currentData, 0,mtu);
                     index += mtu;
                 }
                 dataInfoQueue.offer(currentData);
-            }while (index < data.length);
+            }while (index < imageDatas.length);
 
 
         }

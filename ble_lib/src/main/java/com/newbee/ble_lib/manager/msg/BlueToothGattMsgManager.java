@@ -11,161 +11,163 @@ import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
 import com.nrmyw.ble_event_lib.util.BleByteUtil;
 
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 
-  class BlueToothGattMsgManager {
-   private static BlueToothGattMsgManager sendMsgManager;
-   private Map<String,byte[]>msgMq=new ArrayMap<>();
-   private Map<String,byte[]>imageMsgMq=new ArrayMap<>();
+class BlueToothGattMsgManager {
+    private static BlueToothGattMsgManager sendMsgManager;
+    private Map<String, byte[]> msgMq = new ConcurrentHashMap<>();
+    private Map<String, byte[]> imageMsgMq = new ConcurrentHashMap<>();
 //   private Listen listen;
 
-   private BlueToothGattMsgManager(){
+    private BlueToothGattMsgManager() {
 
-   }
+    }
 
-   public static BlueToothGattMsgManager getInstance(){
-       if(null==sendMsgManager){
-           synchronized (BlueToothGattMsgManager.class){
-               if(null==sendMsgManager){
-                  sendMsgManager=new BlueToothGattMsgManager();
-               }
-           }
-       }
-       return sendMsgManager;
-   }
+    public static BlueToothGattMsgManager getInstance() {
+        if (null == sendMsgManager) {
+            synchronized (BlueToothGattMsgManager.class) {
+                if (null == sendMsgManager) {
+                    sendMsgManager = new BlueToothGattMsgManager();
+                }
+            }
+        }
+        return sendMsgManager;
+    }
 
 //   public void init(Listen listen){
 //       this.listen=listen;
 //   }
 
-   public void clear(){
-       msgMq.clear();
-       imageMsgMq.clear();
-   }
+    public void clear() {
+        msgMq.clear();
+        imageMsgMq.clear();
+    }
 
-   private void listenSendMsg(String kStr,byte[] msg){
+    private void listenSendMsg(String kStr, byte[] msg) {
 //       if(null!=listen){
 //           listen.canSendMsg(kStr,msg);
 //       }
 
 
-       Log.i("nengfasongma","nengfasongshima???1");
-       try {
-           if(BlueToothGattManager.getInstance().isNowCanSend()){
-               Log.i("nengfasongma","nengfasongshima???2");
-               removeMsg(kStr);
-               BlueToothGattManager.getInstance().queSendCmd(msg);
+        Log.i("nengfasongma", "nengfasongshima???1");
+        try {
+            if (BlueToothGattManager.getInstance().isNowCanSend()) {
+                Log.i("nengfasongma", "nengfasongshima???2");
 
-           }
-       }catch (Exception e){
-           BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR, "canSendMsg:"+e.toString());
-       }
-   }
+                BlueToothGattManager.getInstance().queSendCmd(msg);
+                removeMsg(kStr);
+            }
+        } catch (Exception e) {
+            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR, "canSendMsg:" + e.toString());
+        }
+    }
 
-   private void listenSendImageMsg(int index,byte[] msg){
+    private void listenSendImageMsg(int index, byte[] msg) {
 //       if(null!=listen){
 //           listen.canSendImageMsg(index,msg);
 //       }
-       Log.i("nengfasongma","nengfasongshima???3");
-       try {
-           if(BlueToothGattManager.getInstance().isNowCanSend()){
+        Log.i("nengfasongma", "nengfasongshima???3");
+        try {
+            if (BlueToothGattManager.getInstance().isNowCanSend()) {
 //               Log.i("nengfasongma","nengfasongshima???4"+"---"+index+"-------"+ BleByteUtil.parseByte2HexStr(msg));
-               removeImageMsg(index+"");
-               BlueToothGattManager.getInstance().queSendCmd(msg);
-           }
-       }catch (Exception e){
-           BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR, "canSendImageMsg:"+e.toString());
-       }
-   }
 
-   public void close(){
-       msgMq.clear();
-       sendMsgManager=null;
-   }
+                BlueToothGattManager.getInstance().queSendCmd(msg);
+                removeImageMsg(index + "");
+            }
+        } catch (Exception e) {
+            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR, "canSendImageMsg:" + e.toString());
+        }
+    }
 
-   public void addMsg(byte[] msg){
-       String kStr= BleByteUtil.getCmdStrK(msg);
-       msgMq.put(kStr,msg);
-       Log.i("kankanfasongtupian","-------------kankanshenmegui:111---"+kStr);
-   }
+    public void close() {
+        msgMq.clear();
+        sendMsgManager = null;
+    }
 
-      public void addMsgByImage(int index,byte[] msg){
-          imageMsgMq.put(index+"",msg);
-      }
+    public synchronized void addMsg(byte[] msg) {
+        String kStr = BleByteUtil.getCmdStrK(msg);
+        msgMq.put(kStr, msg);
+        Log.i("kankanfasongtupian", "-------------kankanshenmegui:111---" + kStr);
+    }
 
-
-
-   public  synchronized void queMsg(){
-       if(!queImageMsg()){
-           queCmdMsg();
-       }
-   }
-
-   private boolean queImageMsg(){
-       if(imageMsgMq.size()>0){
-           int index=getImageFristK();
-           byte[] cmd=imageMsgMq.get(index+"");
-           if(null==cmd||cmd.length==0){
-               imageMsgMq.clear();
-                return false;
-           }
-           listenSendImageMsg(index,cmd);
-           return true;
-       }
-       return false;
-   }
-
-   private void queCmdMsg(){
-       if(msgMq.size()>0){
-           String kStr=getFristKStr();
-           if(TextUtils.isEmpty(kStr)){
-               msgMq.clear();
-               return;
-           }
-           byte[] cmd=msgMq.get(kStr);
-           if(null==cmd||cmd.length==0){
-               msgMq.clear();
-                return;
-           }
-           listenSendMsg(kStr,cmd);
-       }
-   }
+    public synchronized void addMsgByImage(int index, byte[] msg) {
+        imageMsgMq.put(index + "", msg);
+    }
 
 
-   public void removeMsg(String kStr){
-       msgMq.remove(kStr);
+    public synchronized void queMsg() {
+        if (!queImageMsg()) {
+            queCmdMsg();
+        }
+    }
+
+    private boolean queImageMsg() {
+        if(imageMsgMq.isEmpty()){
+            return false;
+        }
+        int index = getImageFristK();
+        byte[] cmd = imageMsgMq.get(index + "");
+        if (null == cmd || cmd.length == 0) {
+            imageMsgMq.clear();
+            return false;
+        }
+        listenSendImageMsg(index, cmd);
+        return true;
+
+    }
+
+    private void queCmdMsg() {
+        if (msgMq.isEmpty()) {
+            return;
+        }
+        String kStr = getFristKStr();
+        if (TextUtils.isEmpty(kStr)) {
+            msgMq.clear();
+            return;
+        }
+        byte[] cmd = msgMq.get(kStr);
+        if (null == cmd || cmd.length == 0) {
+            msgMq.clear();
+            return;
+        }
+        listenSendMsg(kStr, cmd);
+    }
+
+
+    public synchronized void removeMsg(String kStr) {
+        msgMq.remove(kStr);
 //       LG.i("kankanshujuqingkongmei:"+msgMq.size());
-   }
+    }
 
-      public void removeImageMsg(String kStr){
-          imageMsgMq.remove(kStr);
+    public synchronized void removeImageMsg(String kStr) {
+        imageMsgMq.remove(kStr);
 //       LG.i("kankanshujuqingkongmei:"+msgMq.size());
-      }
+    }
 
 
+    private String getFristKStr() {
+        for (String str : msgMq.keySet()) {
+            if (!TextUtils.isEmpty(str)) {
+                return str;
+            }
+        }
+        return null;
+    }
 
-   private String getFristKStr(){
-       for(String str:msgMq.keySet()){
-           if(!TextUtils.isEmpty(str)){
-               return str;
-           }
-       }
-       return null;
-   }
-
-      private int getImageFristK(){
-            int index=1000;
-          for(String str:imageMsgMq.keySet()){
-              if(TextUtils.isEmpty(str)){
+    private int getImageFristK() {
+        int index = 1000;
+        for (String str : imageMsgMq.keySet()) {
+            if (TextUtils.isEmpty(str)) {
                 continue;
-              }
-              int nowIndex=Integer.valueOf(str);
-              if(nowIndex<index){
-                  index=nowIndex;
-              }
-          }
-          return index;
-      }
+            }
+            int nowIndex = Integer.valueOf(str);
+            if (nowIndex < index) {
+                index = nowIndex;
+            }
+        }
+        return index;
+    }
 
 //   public interface Listen{
 //

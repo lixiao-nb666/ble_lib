@@ -59,7 +59,7 @@ public class BluetoothGattService extends BaseService implements BleEventObserve
                 bleStatu.setStrId(msgType.getStrId());
                 BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(bleStatu);
             }catch (Exception e){
-                BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR, "BluetoothGattService: handler-"+e.toString());
+                BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR, "BluetoothGattService: handler:"+msg.what+"---"+e.toString());
             }
         }
     };
