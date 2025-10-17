@@ -5843,6 +5843,8 @@ com.newbee.ble_lib.base.BaseServiceDao:
     public void stopService()
 com.newbee.ble_lib.manager.child.BleConnectManager:
     private void closeBluetooth()
+com.newbee.ble_lib.manager.child.DataBle
+com.newbee.ble_lib.manager.child.OtaBle
 com.newbee.ble_lib.manager.image.BlueToothGattGetBitmapDataThread:
     public int getType()
 com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager:

@@ -35,9 +35,10 @@ public class MainActivity extends AppCompatActivity {
             msg.what=bleStatu.ordinal();
             if(objects.length==1){
                 msg.obj=objects[0];
-            }
-            if(objects.length==2){
-                msg.arg1= (int) objects[0];
+            }else if(objects.length==2){
+                if(objects[0] instanceof Integer){
+                    msg.arg1= (int) objects[0];
+                }
                 msg.obj=objects[1];
             }
             handler.sendMessage(msg);
@@ -78,8 +79,9 @@ public class MainActivity extends AppCompatActivity {
         public void handleMessage(@NonNull Message msg) {
             super.handleMessage(msg);
             BleStatu bleStatu=BleStatu.values()[msg.what];
-            if(0!=bleStatu.getStrId()){
-                bleStatuTV.setText(getResources().getText(bleStatu.getStrId()));
+            bleStatuTV.setText(getResources().getText(bleStatu.getStrId()));
+            if(msg.arg1!=0){
+                bleTV.append("-"+getResources().getText(msg.arg1));
             }
             switch (bleStatu){
                 case CONNECTING:
@@ -97,14 +99,10 @@ public class MainActivity extends AppCompatActivity {
                     setViewByBleConnectStatu(NewBeeBleManager.getInstance().isConnect());
                     break;
                 case RUN_ERR:
-                    String errStr="";
-                    if(msg.arg1==0){
-                        errStr=msg.obj.toString();
-                    }else {
-                        errStr=getResources().getString(msg.arg1)+":"+msg.obj.toString();
+                    if(null!=msg.obj){
+                        bleTV.append(msg.obj.toString());
                     }
-                    bleStatuTV.append(errStr);
-                    LG.i("lixiaokankanerrStr","lixiaokankanerrStr:"+errStr);
+
                     break;
                 case SEND_IMAGE_START:
                     BleSendImageStartInfoBean startInfoBean= (BleSendImageStartInfoBean) msg.obj;

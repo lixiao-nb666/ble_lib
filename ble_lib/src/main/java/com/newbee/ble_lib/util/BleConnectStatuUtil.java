@@ -43,14 +43,16 @@ public class BleConnectStatuUtil {
             return;
         }
         long nowTime=System.currentTimeMillis();
-        if(lastConnectTime!=0&&nowTime-lastConnectTime<4000){
-            sendConnectErrMsg("Connecting,Please wait for 4S !");
+        if(lastConnectTime!=0&&nowTime-lastConnectTime<2222){
+//            sendConnectErrMsg("Connecting,Please wait for 2S !");
+            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.CONNECTING,"Connecting,Please wait for 2S !");
             return;
         }
         lastConnectTime=nowTime;
         nowUseBleDevice=bleDeviceBean;
-        BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.CONNECTING);
         BleConnectManager.getInstance().connect(context,address);
+        BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.CONNECTING);
+
     }
 
     public  void sendConnected(){

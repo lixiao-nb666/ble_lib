@@ -7,6 +7,7 @@ import android.bluetooth.BluetoothManager;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.newbee.ble_lib.R;
 
@@ -94,10 +95,17 @@ public class BleConnectManager {
     }
 
     /** 开始扫描 **/
+    long lastSearchBleTime;
     public void startSearchBLE(){
         if(null==bluetoothAdapter){
             return;
         }
+        long nowTime=System.currentTimeMillis();
+        if(lastSearchBleTime!=0){
+            Log.i("1111","1234kasjffdlks:000000000------:"+(nowTime-lastSearchBleTime)/1000+"S");
+
+        }
+        lastSearchBleTime=nowTime;
 //        bluetoothAdapter.stopLeScan(leScanCallback);
 //        bluetoothAdapter.startLeScan(leScanCallback);
         bluetoothAdapter.startDiscovery();

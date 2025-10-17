@@ -1,5 +1,7 @@
 package com.newbee.ble_lib.manager.child;
 
+
+
 import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothGatt;
@@ -12,6 +14,7 @@ import android.content.Context;
 import android.os.Build;
 import android.util.Log;
 
+import com.newbee.ble_lib.NewBeeBleManager;
 import com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager;
 import com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager;
 
@@ -33,7 +36,10 @@ public class BlueToothGattManager {
     private final String tag=getClass().getName()+">>>>";
     private static BlueToothGattManager blueToothGattManager;
     private BluetoothGatt bluetoothGatt;
+
+    private BluetoothGattService dataService;
     private BluetoothGattCharacteristic writeCharacteristic;//写数据特征值
+    private BluetoothGattCharacteristic readCharacteristic;//写数据特征值
     /* 连接远程设备的回调函数 */
     private final BluetoothGattCallback mGattCallback = new BluetoothGattCallback() {
 
@@ -43,6 +49,7 @@ public class BlueToothGattManager {
             /* 蓝牙反馈回调 */
 //            EventBus.getDefault().post(new EventBluetoothStateMessage(ACTION_GATT_WRITE_STATE,status));
             Log.i(tag,"发送 ===  :发送成功"+status);
+            Log.w(tag,"BluetoothAdapter  initialized  111:1");
             nowCanSend=true;
             if(BlueToothGattSendImageManager.getInstance().checkNowSendImage()){
                 BlueToothGattSendImageManager.getInstance().queToSendCmd();
@@ -58,12 +65,18 @@ public class BlueToothGattManager {
             super.onDescriptorWrite(gatt, descriptor, status);
             /*if (status == BluetoothGatt.GATT_SUCCESS) {}*/
             Log.e(tag,"写入值成功22:" + status);
+            Log.w(tag,"BluetoothAdapter  initialized  111:2");
 
+            if (status == BluetoothGatt.GATT_SUCCESS) {
+//                bluetoothGatt.requestMtu(NewBeeBleConfig.getInstance().getMtu());
+//                BleConnectStatuUtil.getInstance().sendConnected();
+            }
         }
 
         @Override
         public void onMtuChanged(BluetoothGatt gatt, int mtu, int status) {
             super.onMtuChanged(gatt, mtu, status);
+            Log.w(tag,"BluetoothAdapter  initialized  111:3");
             NewBeeBleConfig.getInstance().setMtu(mtu);
             if (BluetoothGatt.GATT_SUCCESS == status){
                 Log.e(tag,"设置MTU值成功:" + bluetoothGatt.discoverServices());
@@ -75,6 +88,15 @@ public class BlueToothGattManager {
 
         @Override
         public void onConnectionStateChange(BluetoothGatt gatt, int status, int newState) {
+//            if (newState == BluetoothProfile.STATE_CONNECTED) {
+//                // 开始查找服务
+//                bluetoothGatt.discoverServices();
+//            } else if (newState == BluetoothProfile.STATE_DISCONNECTED) {
+//                isReady = false;
+//            }
+
+            Log.w(tag,"BluetoothAdapter  initialized  111:4");
+
             if (newState == BluetoothProfile.STATE_CONNECTED) {
                 //广播里面已经发送了事件通知，这里就不用处理了
                 Log.e(tag,"连接成功Connected to GATT server ");
@@ -82,17 +104,13 @@ public class BlueToothGattManager {
                     bluetoothGatt.requestConnectionPriority(BluetoothGatt.CONNECTION_PRIORITY_HIGH);
                     bluetoothGatt.requestMtu(NewBeeBleConfig.getInstance().getMtu());
                 }
+                bluetoothGatt.discoverServices();
 
             } else if (newState == BluetoothProfile.STATE_DISCONNECTED) {
                 //广播里面已经发送了事件通知，这里就不用处理了
                 Log.e(tag,"连接失败 Disconnected from GATT server "+newState+" === "+status);
-                if(null!=writeCharacteristic){
-                    writeCharacteristic=null;
-                }
-                if(null!=bluetoothGatt){
-                    bluetoothGatt.close();
-                    bluetoothGatt.close();
-                }
+                pause();
+                BleConnectStatuUtil.getInstance().sendDisconnected();
             }
 
         }
@@ -102,6 +120,7 @@ public class BlueToothGattManager {
          */
         @Override
         public void onServicesDiscovered(BluetoothGatt gatt, int status) {
+            Log.w(tag,"BluetoothAdapter  initialized  111:5");
             if (status == BluetoothGatt.GATT_SUCCESS) {
                 Log.i(tag,"--发现服务onServicesDiscovered called--");
                 //EventBus.getDefault().post(new EventBluetoothStateMessage(ACTION_GATT_SERVICES_DISCOVERED));
@@ -119,26 +138,50 @@ public class BlueToothGattManager {
 
         /** 查找蓝牙对应服务和读写特征 **/
         private void displayGattServices(){
-            List<BluetoothGattService> servicesList = bluetoothGatt.getServices();
-            for (int i = 0; i < servicesList.size(); i++) {
-                BluetoothGattService service = servicesList.get(i);
-                Log.e(tag,"onServicesDiscovered: 服务" + i + "+" + service.getUuid().toString());
-                if (service.getUuid().equals(UUID.fromString(NewBeeBleConfig.getInstance().getServiceID()))) {
-                    List<BluetoothGattCharacteristic> characteristicsList = service.getCharacteristics();
-                    for (int j = 0; j < characteristicsList.size(); j++) {
-                        BluetoothGattCharacteristic characteristic = characteristicsList.get(j);
-//                      ？  LogUtil.e("onServicesDiscovered: 特征" + j + "+" + characteristic.getUuid().toString());
-                        if (characteristic.getUuid().toString().equals(NewBeeBleConfig.getInstance().getNoticeID())) {
-                            setCharacteristicNotification(characteristic,true);
-                        }
-                        if (characteristic.getUuid().toString().equals(NewBeeBleConfig.getInstance().getWriteID())) {
-                            nowCanSend=true;
-                            writeCharacteristic = characteristic;
-                        }
-                    }
-//                    EventBus.getDefault().post(new EventBluetoothStateMessage(ACTION_GATT_SERVICES_DISCOVERED));
-                }
+//            List<BluetoothGattService> servicesList = bluetoothGatt.getServices();
+//            for (int i = 0; i < servicesList.size(); i++) {
+//                BluetoothGattService service = servicesList.get(i);
+//                Log.e(tag,"onServicesDiscovered: 服务" + i + "+" + service.getUuid().toString());
+//                if (service.getUuid().equals(UUID.fromString(NewBeeBleConfig.getInstance().getServiceID()))) {
+//                    List<BluetoothGattCharacteristic> characteristicsList = service.getCharacteristics();
+//                    for (int j = 0; j < characteristicsList.size(); j++) {
+//                        BluetoothGattCharacteristic characteristic = characteristicsList.get(j);
+////                      ？  LogUtil.e("onServicesDiscovered: 特征" + j + "+" + characteristic.getUuid().toString());
+//                        if (characteristic.getUuid().toString().equals(NewBeeBleConfig.getInstance().getNoticeID())) {
+//                            setCharacteristicNotification(characteristic,true);
+//                        }
+//                        if (characteristic.getUuid().toString().equals(NewBeeBleConfig.getInstance().getWriteID())) {
+//                            nowCanSend=true;
+//                            writeCharacteristic = characteristic;
+//                        }
+//                    }
+////                    EventBus.getDefault().post(new EventBluetoothStateMessage(ACTION_GATT_SERVICES_DISCOVERED));
+//                }
+//            }
+
+                aaa();
+        }
+
+        private void aaa(){
+            dataService=bluetoothGatt.getService(UUID.fromString(NewBeeBleConfig.getInstance().getServiceID()));
+            if (dataService == null) {
+//            notifyOnError(OtaError.NOT_FOUND_OTA_SERVICE);
+//                Timber.e("FOTA service not found");
+                BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR,com.nrmyw.ble_event_lib.R.string.ble_statu_connecting_err,"DATA service not found");
+                return;
             }
+            writeCharacteristic = dataService.getCharacteristic(UUID.fromString(NewBeeBleConfig.getInstance().getWriteID()));
+            readCharacteristic = dataService.getCharacteristic(UUID.fromString(NewBeeBleConfig.getInstance().getNoticeID()));
+
+            if (writeCharacteristic == null || readCharacteristic == null) {
+//            notifyOnError(OtaError.NOT_FOUND_OTA_CHARACTERISTIC);
+//                Timber.e("FOTA characteristic(s) not found");
+                BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR,com.nrmyw.ble_event_lib.R.string.ble_statu_connecting_err,"DATA characteristic(s) not found");
+                return;
+            }
+            // 订阅Data In
+            setCharacteristicNotification(readCharacteristic,true);
+            BleConnectStatuUtil.getInstance().sendConnected();
         }
 
         /**
@@ -146,6 +189,7 @@ public class BlueToothGattManager {
          */
         @Override
         public void onCharacteristicRead(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic, int status) {
+            Log.w(tag,"BluetoothAdapter  initialized  111:6");
             if (status == BluetoothGatt.GATT_SUCCESS) {
                 Log.i(tag,"--onCharacteristicRead called--");
                 /////将数据通过通知到页面
@@ -191,6 +235,17 @@ public class BlueToothGattManager {
         return blueToothGattManager;
     }
 
+
+    private void pause(){
+        dataService = null;
+        writeCharacteristic = null;
+        readCharacteristic = null;
+        if(null!=bluetoothGatt){
+            bluetoothGatt.close();
+
+        }
+    }
+
     public void close(){
         BlueToothGattSendMsgManager.getInstance().close();
         writeCharacteristic=null;
@@ -205,8 +260,10 @@ public class BlueToothGattManager {
     public void initGatt(BluetoothDevice device,Context context){
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             //自动回连有个问题，如果数据量大的情况下，手机系统自动回连会按默认的mtu值传输
+            Log.w(tag,"BluetoothAdapter  initialized  111");
             bluetoothGatt = device.connectGatt(context, NewBeeBleConfig.getInstance().isAutoConnect(), mGattCallback, BluetoothDevice.TRANSPORT_LE);
         } else {
+            Log.w(tag,"BluetoothAdapter  initialized  122");
             bluetoothGatt = device.connectGatt(context, NewBeeBleConfig.getInstance().isAutoConnect(), mGattCallback);
         }
     }
@@ -215,12 +272,22 @@ public class BlueToothGattManager {
      * 设置特征什变化通知
      */
     public void setCharacteristicNotification(BluetoothGattCharacteristic characteristic, boolean enabled) {
-        if ( bluetoothGatt == null) {
-            Log.w(tag,"BluetoothAdapter not initialized");
+
+
+        boolean setEnabled = bluetoothGatt.setCharacteristicNotification(readCharacteristic, enabled);
+        if (!setEnabled) {
+//            notifyOnError(OtaError.CAN_NOT_SUBSCRIBE_DATA_IN);
+//                Timber.e("Error subscribe FOTA Data In");
+            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR,com.nrmyw.ble_event_lib.R.string.ble_statu_connecting_err,"DATA Error subscribe  Data In");
             return;
         }
-        bluetoothGatt.setCharacteristicNotification(characteristic, enabled);
         BluetoothGattDescriptor clientConfig = characteristic.getDescriptor(UUID.fromString("00002902-0000-1000-8000-00805f9b34fb"));
+        if (clientConfig == null) {
+//            notifyOnError(OtaError.NOT_FOUND_CLIENT_CHARACTERISTIC_CONFIG);
+//                Timber.e("FOTA CCC not found");
+            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR,com.nrmyw.ble_event_lib.R.string.ble_statu_connecting_err,"DATA characteristic(s) not found");
+            return;
+        }
         if (enabled) {
             clientConfig.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
         } else {

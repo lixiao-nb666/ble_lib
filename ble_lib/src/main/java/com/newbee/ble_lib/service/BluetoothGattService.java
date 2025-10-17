@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 
 import com.newbee.ble_lib.R;
 import com.newbee.ble_lib.base.BaseService;
@@ -67,31 +68,52 @@ public class BluetoothGattService extends BaseService implements BleEventObserve
     private Runnable autoConnectRunnable=new Runnable() {
         @Override
         public void run() {
+            Log.i("1111","1234kasjffdlks:0");
             BleDeviceBean bleDeviceBean= BleConnectStatuUtil.getInstance().getNowUseBleDevice();
             boolean isConnect=BleConnectStatuUtil.getInstance().isConnect();
-            if(null==bleDeviceBean||!isConnect){
-                startSearchBle();
+            if(null!=bleDeviceBean&&isConnect){
+                return;
             }
+            Log.i("1111","1234kasjffdlks:1");
+            startSearchBle();
             autoConnectDevice();
         }
     };
 
     private void autoConnectDevice(){
+
+        Log.i("1111","1234kasjffdlks:2");
         handler.removeCallbacks(autoConnectRunnable);
-        handler.postDelayed(autoConnectRunnable,20*1000);
+        handler.postDelayed(autoConnectRunnable,3*1000);
     }
 
     private void autoConnectDeviceNow(){
+        Log.i("1111","1234kasjffdlks:3");
+        handler.removeCallbacks(autoConnectRunnable);
+        handler.postDelayed(autoConnectRunnable,2*1000);
+    }
+    private void nowConnectIngWait(){
+        Log.i("1111","1234kasjffdlks:4");
         handler.removeCallbacks(autoConnectRunnable);
         handler.postDelayed(autoConnectRunnable,5*1000);
     }
 
+    private void cancelAutoConnect(){
+        Log.i("1111","1234kasjffdlks:5");
+        handler.removeCallbacks(autoConnectRunnable);
+    }
     private BleStatuEventObserver bleStatuEventObserver=new BleStatuEventObserver() {
         @Override
         public void sendBleStatu(BleStatu bleStatu, Object... objects) {
                 switch (bleStatu){
                     case DISCONNECTED:
                         autoConnectDeviceNow();
+                        break;
+                    case CONNECTED:
+                        cancelAutoConnect();
+                        break;
+                    case CONNECTING:
+                        nowConnectIngWait();
                         break;
                 }
         }
@@ -129,6 +151,7 @@ public class BluetoothGattService extends BaseService implements BleEventObserve
 
     @Override
     public void startSearchBle() {
+
         handler.sendEmptyMessage(BluetoothGattServiceMsgType.SCAN_BLE.ordinal());
 
     }

@@ -26,17 +26,19 @@ public class BleStatuBroadcastReceiver extends BroadcastReceiver {
         if(action.equals(BluetoothAdapter.ACTION_STATE_CHANGED)){
             sendChangedStatu(intent.getIntExtra(BluetoothAdapter.EXTRA_STATE, -1));
         }else if(action.equals(BluetoothDevice.ACTION_ACL_CONNECTED)){
-            BleConnectStatuUtil.getInstance().sendConnected();
+//            BleConnectStatuUtil.getInstance().sendConnected();
         } else if(action.equals(BluetoothDevice.ACTION_ACL_DISCONNECTED)){
             BleConnectStatuUtil.getInstance().sendDisconnected();
         }else if(action.equals(BluetoothDevice.ACTION_FOUND)){
             BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-            Log.i(tag,"kankanweiyizhi:"+device.getName()+"----"+device.getAddress());
+            Log.i("1111","1234kasjffdlks:9999------"+device.getName()+"----"+device.getAddress());
+
             String deviceName = device.getName();
 //            String deviceHardwareAddress = device.getAddress(); // MAC address
             BleDeviceBean bleDeviceBean= NewBeeBleConfig.getInstance().checkBleName(deviceName);
             String address=device.getAddress();
             if(null!=bleDeviceBean&&!TextUtils.isEmpty(address)){
+                BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.CONNECTING,"Find ble device : "+deviceName);
                 BleConnectStatuUtil.getInstance().sendConnecting(context,bleDeviceBean,address);
             }
         }
