@@ -5843,6 +5843,10 @@ com.newbee.ble_lib.base.BaseServiceDao:
     public void stopService()
 com.newbee.ble_lib.manager.child.BleConnectManager:
     private void closeBluetooth()
+com.newbee.ble_lib.manager.child.BlueToothGattManager$1:
+    private void displayGattServices()
+com.newbee.ble_lib.manager.child.BlueToothGattManager:
+    public void setCharacteristicNotification(android.bluetooth.BluetoothGattCharacteristic,boolean)
 com.newbee.ble_lib.manager.child.DataBle
 com.newbee.ble_lib.manager.child.OtaBle
 com.newbee.ble_lib.manager.image.BlueToothGattGetBitmapDataThread:

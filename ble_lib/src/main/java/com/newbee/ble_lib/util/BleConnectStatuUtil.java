@@ -59,8 +59,9 @@ public class BleConnectStatuUtil {
 
     public  void sendConnected(){
         isConnect=true;
-        BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.CONNECTED);
         BlueToothGattSendMsgManager.getInstance().clear();
+        BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.CONNECTED);
+
     }
 
     public void setConnectErr(String errStr){

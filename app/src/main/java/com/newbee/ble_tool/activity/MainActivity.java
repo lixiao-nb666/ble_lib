@@ -26,9 +26,7 @@ import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
 
 
 public class MainActivity extends AppCompatActivity {
-
     private BleStatuEventObserver bleStatuEventObserver=new BleStatuEventObserver() {
-
         @Override
         public void sendBleStatu(BleStatu bleStatu, Object... objects) {
             Message msg=new Message();
@@ -44,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
             handler.sendMessage(msg);
         }
     };
-
     private TextView bleTV,bleStatuTV;
     private Button initBT,searchBT,disconnectedBT,sendTestBT;
     private View.OnClickListener onClickListener=new View.OnClickListener() {
@@ -84,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
                 bleTV.append("-"+getResources().getText(msg.arg1));
             }
             switch (bleStatu){
-
                 case CONNECTING:
                     BleDeviceBean bleDeviceBean= NewBeeBleManager.getInstance().getNowUseBleDevice();
                     if(null!=bleDeviceBean){
@@ -101,16 +97,21 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case RUN_ERR:
                 case NONE:
+                case CONNECTING_ERR:
                     if(null!=msg.obj){
                         bleTV.append(msg.obj.toString());
                     }
-
                     break;
                 case SEND_IMAGE_START:
-                    BleSendImageStartInfoBean startInfoBean= (BleSendImageStartInfoBean) msg.obj;
+                    if(msg.obj instanceof BleSendImageStartInfoBean){
+                        BleSendImageStartInfoBean startInfoBean= (BleSendImageStartInfoBean) msg.obj;
+                    }
+
                     break;
                 case SEND_IMAGE_END:
-                    BleSendImageEndInfoBean endInfoBean= (BleSendImageEndInfoBean) msg.obj;
+                    if(msg.obj instanceof BleSendImageEndInfoBean){
+                        BleSendImageEndInfoBean endInfoBean= (BleSendImageEndInfoBean) msg.obj;
+                    }
                     break;
             }
         }
