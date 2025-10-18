@@ -36,7 +36,11 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
     }
 
 
-
+    @Override
+    public void interrupt() {
+        super.interrupt();
+        clear();
+    }
 
     public boolean isStart(){
         return isStart;
@@ -74,11 +78,8 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
                 listen.sendOver(0);
                 return;
             }
-
-
             sendImageStart();
             splitPacketForMtuByte(imageBytes);
-
         }catch (Exception e){
             listen.sendOver(0);
             Log.i("kankanshibushizheli","kankanshibushizheli:333"+e.toString());
@@ -87,17 +88,23 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
 
 
     private void over(long useTime){
-        if(null!=newBitMap&&!newBitMap.isRecycled()){
-            newBitMap.recycle();
-            newBitMap=null;
-        }
-        if(null!=bleSendImageInfoBean&&null!=bleSendImageInfoBean.getBitmap()&&!bleSendImageInfoBean.getBitmap().isRecycled()){
-            bleSendImageInfoBean=null;
-        }
         if(null!=listen){
             listen.sendOver(useTime);
         }
         isStart=false;
+        clear();
+    }
+
+    private void clear(){
+        try {
+            if(null!=bleSendImageInfoBean){
+                bleSendImageInfoBean=null;
+            }
+            if(null!=newBitMap&&!newBitMap.isRecycled()){
+                newBitMap.recycle();
+                newBitMap=null;
+            }
+        }catch (Exception e){}
     }
 
     public int getType(){
