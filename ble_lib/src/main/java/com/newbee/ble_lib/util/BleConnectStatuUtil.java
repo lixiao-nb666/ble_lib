@@ -38,20 +38,22 @@ public class BleConnectStatuUtil {
 
     private long lastConnectTime;
     public void sendConnecting(Context context, BleDeviceBean bleDeviceBean, String address){
-        if(isConnect){
-            sendConnectErrMsg("Now is connected,Can not connect other !");
+        if(null!=bleDeviceBean&&isConnect){
+            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.NONE,"Now is connected,Can not connect other !");
+//            setConnectErr("Now is connected,Can not connect other !");
             return;
         }
         long nowTime=System.currentTimeMillis();
-        if(lastConnectTime!=0&&nowTime-lastConnectTime<2222){
+        if(BlueToothGattManager.getInstance().isConnecting()){
 //            sendConnectErrMsg("Connecting,Please wait for 2S !");
-            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.CONNECTING,"Connecting,Please wait for 2S !");
+            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.NONE,"Connecting,Please wait !");
             return;
         }
         lastConnectTime=nowTime;
         nowUseBleDevice=bleDeviceBean;
+
         BleConnectManager.getInstance().connect(context,address);
-        BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.CONNECTING);
+
 
     }
 
@@ -63,13 +65,10 @@ public class BleConnectStatuUtil {
 
     public void setConnectErr(String errStr){
         lastConnectTime=0;
-        sendConnectErrMsg(errStr);
+        BleErrManager.sendConnectErrMsg(errStr);
     }
 
-    private void sendConnectErrMsg(String errStr){
 
-        BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR,com.nrmyw.ble_event_lib.R.string.ble_statu_connecting_err,errStr);
-    }
 
     public void sendDisconnected(){
         lastConnectTime=0;

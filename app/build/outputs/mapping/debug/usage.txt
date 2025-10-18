@@ -5884,6 +5884,9 @@ com.newbee.ble_lib.util.AbImageUtil:
     public static android.graphics.drawable.Drawable view2Drawable(android.view.View)
 com.newbee.ble_lib.util.BleCheckUtil:
     public void <init>()
+com.newbee.ble_lib.util.BleErrManager:
+    public void <init>()
+    public static void sendErrMsg()
 com.newbee.ble_lib.util.BleSendImageUtil:
     public void <init>()
 com.newbee.ble_tool.BuildConfig

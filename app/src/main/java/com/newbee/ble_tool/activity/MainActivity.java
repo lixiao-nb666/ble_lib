@@ -84,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 bleTV.append("-"+getResources().getText(msg.arg1));
             }
             switch (bleStatu){
+
                 case CONNECTING:
                     BleDeviceBean bleDeviceBean= NewBeeBleManager.getInstance().getNowUseBleDevice();
                     if(null!=bleDeviceBean){
@@ -99,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
                     setViewByBleConnectStatu(NewBeeBleManager.getInstance().isConnect());
                     break;
                 case RUN_ERR:
+                case NONE:
                     if(null!=msg.obj){
                         bleTV.append(msg.obj.toString());
                     }

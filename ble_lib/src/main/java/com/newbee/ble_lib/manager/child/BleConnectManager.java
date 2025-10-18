@@ -115,12 +115,14 @@ public class BleConnectManager {
 
 
     private String mBluetoothDeviceAddress;
+
     /**
      * 连接远程蓝牙
      */
     public boolean connect(Context context,String address) {
         if (null==bluetoothAdapter || TextUtils.isEmpty(address)) {
 //            LG.e("BluetoothAdapter not initialized or unspecified address");
+
             BleConnectStatuUtil.getInstance().setConnectErr(context.getResources().getString(com.nrmyw.ble_event_lib.R.string.ble_statu_adapter_can_not_use));
             return false;
         }

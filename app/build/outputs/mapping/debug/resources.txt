@@ -117,6 +117,7 @@ ADD
 REWRITE_SN
 numb_64
 setTouchModal
+CONNECTING_ERR
 DST_ATOP
 GPS
 BanParcelableUsage
@@ -174,6 +175,7 @@ LOWER_CASE_WITH_DOTS
 HUE
 requestRelaunchActivity
 class
+设置MTU值成功
 ACTION_SCROLL_UP
 jobscheduler
 L_T_Y
@@ -476,7 +478,6 @@ NUMBER
 ResourcesCompat
 search_suggest_query
 RUNNING
-设置MTU值成功:
 query
 tbt160
 android.resource

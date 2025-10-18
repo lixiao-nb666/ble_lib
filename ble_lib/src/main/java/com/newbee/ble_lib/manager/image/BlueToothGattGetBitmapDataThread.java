@@ -161,7 +161,7 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
         if(!(null == imageDatas)){
             int index=0;
             do{
-                int mtu= NewBeeBleConfig.getInstance().getSendFileMtu();
+                int mtu= NewBeeBleConfig.getInstance().getRealMtu();
                 byte[] currentData;
                 if(imageDatas.length- index <= mtu){
                     currentData = new byte[imageDatas.length-index];

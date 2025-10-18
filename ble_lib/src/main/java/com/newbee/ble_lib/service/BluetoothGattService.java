@@ -16,6 +16,7 @@ import com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager;
 import com.newbee.ble_lib.util.BleConnectStatuUtil;
 import com.nrmyw.ble_event_lib.bean.BleDeviceBean;
 import com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean;
+import com.nrmyw.ble_event_lib.config.NewBeeBleConfig;
 import com.nrmyw.ble_event_lib.send.BleEventObserver;
 import com.nrmyw.ble_event_lib.send.BleEventSubscriptionSubject;
 import com.nrmyw.ble_event_lib.statu.BleStatu;
@@ -69,6 +70,11 @@ public class BluetoothGattService extends BaseService implements BleEventObserve
         @Override
         public void run() {
             Log.i("1111","1234kasjffdlks:0");
+            if(!NewBeeBleConfig.getInstance().isAutoConnect()){
+                return;
+            }
+
+
             BleDeviceBean bleDeviceBean= BleConnectStatuUtil.getInstance().getNowUseBleDevice();
             boolean isConnect=BleConnectStatuUtil.getInstance().isConnect();
             if(null!=bleDeviceBean&&isConnect){
@@ -84,18 +90,18 @@ public class BluetoothGattService extends BaseService implements BleEventObserve
 
         Log.i("1111","1234kasjffdlks:2");
         handler.removeCallbacks(autoConnectRunnable);
-        handler.postDelayed(autoConnectRunnable,3*1000);
+        handler.postDelayed(autoConnectRunnable,5*1000);
     }
 
     private void autoConnectDeviceNow(){
         Log.i("1111","1234kasjffdlks:3");
         handler.removeCallbacks(autoConnectRunnable);
-        handler.postDelayed(autoConnectRunnable,2*1000);
+        handler.postDelayed(autoConnectRunnable,1*1000);
     }
     private void nowConnectIngWait(){
         Log.i("1111","1234kasjffdlks:4");
         handler.removeCallbacks(autoConnectRunnable);
-        handler.postDelayed(autoConnectRunnable,5*1000);
+        handler.postDelayed(autoConnectRunnable,13*1000);
     }
 
     private void cancelAutoConnect(){
@@ -105,16 +111,20 @@ public class BluetoothGattService extends BaseService implements BleEventObserve
     private BleStatuEventObserver bleStatuEventObserver=new BleStatuEventObserver() {
         @Override
         public void sendBleStatu(BleStatu bleStatu, Object... objects) {
+            Log.w(tag,"BluetoothAdapter  initialized  11155----"+ bleStatu);
                 switch (bleStatu){
                     case DISCONNECTED:
+                    case CONNECTING_ERR:
                         autoConnectDeviceNow();
-                        break;
-                    case CONNECTED:
-                        cancelAutoConnect();
                         break;
                     case CONNECTING:
                         nowConnectIngWait();
                         break;
+                    case CONNECTED:
+                        cancelAutoConnect();
+                        break;
+
+
                 }
         }
     };
