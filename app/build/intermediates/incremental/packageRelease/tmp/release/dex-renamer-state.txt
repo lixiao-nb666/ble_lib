@@ -1,4 +1,0 @@
-#Fri Sep 26 18:58:49 CST 2025
-base.0=G\:\\asworkspace\\lixiao_lib\\hud\\Ble_Tool\\app\\build\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
-renamed.0=classes.dex
-path.0=classes.dex

@@ -1,6 +1,8 @@
 package com.newbee.ble_tool.activity;
 
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -16,16 +18,24 @@ import com.newbee.ble_lib.NewBeeBleManager;
 import com.newbee.ble_tool.R;
 import com.newbee.ble_tool.type.BleDeviceType;
 import com.newbee.bulid_lib.mybase.LG;
+import com.newbee.bulid_lib.mybase.activity.BaseCompatActivity;
+
 import com.newbee.t800_lib.type.T800CmdType;
 import com.nrmyw.ble_event_lib.bean.BleDeviceBean;
 import com.nrmyw.ble_event_lib.bean.BleSendImageEndInfoBean;
+import com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean;
 import com.nrmyw.ble_event_lib.bean.BleSendImageStartInfoBean;
+import com.nrmyw.ble_event_lib.send.BleEventSubscriptionSubject;
 import com.nrmyw.ble_event_lib.statu.BleStatu;
 import com.nrmyw.ble_event_lib.statu.BleStatuEventObserver;
 import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
+import com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType;
+import com.nrmyw.ble_event_lib.util.BleByteUtil;
+
+import java.nio.charset.StandardCharsets;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseCompatActivity {
     private BleStatuEventObserver bleStatuEventObserver=new BleStatuEventObserver() {
         @Override
         public void sendBleStatu(BleStatu bleStatu, Object... objects) {
@@ -43,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         }
     };
     private TextView bleTV,bleStatuTV;
-    private Button initBT,searchBT,disconnectedBT,sendTestBT;
+    private Button initBT,searchBT,disconnectedBT,sendTestBT,sendImageTestBT;
     private View.OnClickListener onClickListener=new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -65,6 +75,14 @@ public class MainActivity extends AppCompatActivity {
                         T800CmdType t800CmdType=T800CmdType.TIME;
                         t800CmdType.useObjectSSetBody();
                         NewBeeBleManager.getInstance().getEventImp().sendCmd(t800CmdType.getAllByte());
+                        break;
+                    case R.id.bt_send_test_image:
+                        Bitmap bt1 = BitmapFactory.decodeResource(MainActivity.this.getResources(), R.drawable.img_test_1);
+                        BleSendImageInfoBean bleSendImageInfoBean=new BleSendImageInfoBean();
+                        bleSendImageInfoBean.setBitmap(bt1);
+                        bleSendImageInfoBean.setBitmapQualityType(BleSendBitmapQualityType.ULTRA_HIGH);
+                        BleEventSubscriptionSubject.getInstance().sendImage(bleSendImageInfoBean);
+
                         break;
                 }
 
@@ -105,12 +123,17 @@ public class MainActivity extends AppCompatActivity {
                 case SEND_IMAGE_START:
                     if(msg.obj instanceof BleSendImageStartInfoBean){
                         BleSendImageStartInfoBean startInfoBean= (BleSendImageStartInfoBean) msg.obj;
+                        String startSS="A55A000F1000AF0104000008FA0100";
+                        BleEventSubscriptionSubject.getInstance().sendImageIndexCmd(0, startSS.getBytes(StandardCharsets.UTF_8));
                     }
 
                     break;
                 case SEND_IMAGE_END:
                     if(msg.obj instanceof BleSendImageEndInfoBean){
                         BleSendImageEndInfoBean endInfoBean= (BleSendImageEndInfoBean) msg.obj;
+                        String endSS="A55A000F1000AF0104000008FA0000";
+
+                        BleEventSubscriptionSubject.getInstance().sendImageIndexCmd(endInfoBean.getIndex(), endSS.getBytes(StandardCharsets.UTF_8));
                     }
                     break;
             }
@@ -118,26 +141,61 @@ public class MainActivity extends AppCompatActivity {
     };
 
 
+    @Override
+    public int getViewLayoutRsId() {
+        return R.layout.activity_main11;
+    }
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public void initView() {
         bleTV=findViewById(R.id.tv_ble);
         bleStatuTV=findViewById(R.id.tv_ble_statu);
         initBT=findViewById(R.id.bt_init);
         searchBT=findViewById(R.id.bt_search);
         disconnectedBT=findViewById(R.id.bt_disconnected);
         sendTestBT=findViewById(R.id.bt_send_test);
+        sendImageTestBT=findViewById(R.id.bt_send_test_image);
         initBT.setOnClickListener(onClickListener);
         searchBT.setOnClickListener(onClickListener);
         disconnectedBT.setOnClickListener(onClickListener);
         sendTestBT.setOnClickListener(onClickListener);
+        sendImageTestBT.setOnClickListener(onClickListener);
         setViewByBleConnectStatu(NewBeeBleManager.getInstance().isConnect());
         BleStatuEventSubscriptionSubject.getInstance().attach(bleStatuEventObserver);
 //        BleHintEventSubscriptionSubject.getInstance().attach(bleHintEventObserver);
+    }
+
+    @Override
+    public void initData() {
 
     }
+
+    @Override
+    public void initControl() {
+
+    }
+
+    @Override
+    public void closeActivity() {
+
+    }
+
+    @Override
+    public void viewIsShow() {
+
+    }
+
+    @Override
+    public void viewIsPause() {
+
+    }
+
+    @Override
+    public void changeConfig() {
+
+    }
+
+
 
 
     public void setViewByBleConnectStatu(boolean isConnected){
@@ -146,11 +204,13 @@ public class MainActivity extends AppCompatActivity {
             searchBT.setVisibility(View.GONE);
             disconnectedBT.setVisibility(View.VISIBLE);
             sendTestBT.setVisibility(View.VISIBLE);
+            sendImageTestBT.setVisibility(View.VISIBLE);
         }else {
             initBT.setVisibility(View.VISIBLE);
             searchBT.setVisibility(View.VISIBLE);
             disconnectedBT.setVisibility(View.GONE);
             sendTestBT.setVisibility(View.GONE);
+            sendImageTestBT.setVisibility(View.GONE);
         }
 
 

@@ -52,11 +52,12 @@ public class BlueToothGattManager {
             Log.i(tag,"发送 ===  :发送成功"+status);
             Log.w(tag,"BluetoothAdapter  initialized  111:1");
             nowCanSend=true;
-            if(BlueToothGattSendImageManager.getInstance().checkNowSendImage()){
-                BlueToothGattSendImageManager.getInstance().queToSendCmd();
-            }else {
-                BlueToothGattSendMsgManager.getInstance().setNowCanSend();
-            }
+//            if(BlueToothGattSendImageManager.getInstance().checkNowSendImage()){
+//                BlueToothGattSendImageManager.getInstance().queToSendCmd();
+//            }else {
+//
+//            }
+            BlueToothGattSendMsgManager.getInstance().setNowCanSend();
             BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.CAN_SEND_DATA);
             Log.i(tag,"收到指令没111");
         }
@@ -277,7 +278,7 @@ public class BlueToothGattManager {
     public void close(){
         pause();
         BlueToothGattSendMsgManager.getInstance().close();
-
+        BlueToothGattSendMsgManager.getInstance().close();
 
     }
 

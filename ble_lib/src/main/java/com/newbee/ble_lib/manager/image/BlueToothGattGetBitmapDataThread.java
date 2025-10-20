@@ -14,6 +14,7 @@ import com.nrmyw.ble_event_lib.config.NewBeeBleConfig;
 import com.nrmyw.ble_event_lib.statu.BleStatu;
 import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
 import com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType;
+import com.nrmyw.ble_event_lib.util.BleByteUtil;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -21,7 +22,7 @@ import java.util.Queue;
 public class BlueToothGattGetBitmapDataThread extends Thread{
     private Listen listen;
     private BleSendImageInfoBean bleSendImageInfoBean;
-    private Queue<byte[]> dataInfoQueue=new LinkedList<>();
+//    private Queue<byte[]> dataInfoQueue=new LinkedList<>();
     private boolean isStart;
     private long startTime;
     private boolean canStart;
@@ -47,7 +48,7 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
     }
 
 
-    public int index;
+    public int msgIndex;
     private Bitmap newBitMap;
     @Override
     public void run() {
@@ -61,9 +62,12 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
                 return;
             }
             startTime=System.currentTimeMillis();
-            if(null!=dataInfoQueue){
-                dataInfoQueue.clear();
-            }
+//            if(null==dataInfoQueue){
+//                dataInfoQueue=new LinkedList<>();
+//            }else {
+//                dataInfoQueue.clear();
+//            }
+
             isStart=true;
             newBitMap= BleSendImageUtil.autoScaleBitmap(bleSendImageInfoBean.getBitmap(),bleSendImageInfoBean.getMaxW(),bleSendImageInfoBean.getMaxH());
             w=newBitMap.getWidth();
@@ -80,6 +84,8 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
             }
             sendImageStart();
             splitPacketForMtuByte(imageBytes);
+//            queToSendCmd();
+            over();
         }catch (Exception e){
             listen.sendOver(0);
             Log.i("kankanshibushizheli","kankanshibushizheli:333"+e.toString());
@@ -87,12 +93,16 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
     }
 
 
-    private void over(long useTime){
+    private void over(){
+        long endTime=System.currentTimeMillis();
+        long useTime=endTime-startTime;
+        sendImageEnd(useTime);
+        isStart=false;
+        clear();
         if(null!=listen){
             listen.sendOver(useTime);
         }
-        isStart=false;
-        clear();
+
     }
 
     private void clear(){
@@ -117,6 +127,7 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
     }
 
     public void sendImageStart(){
+        BlueToothGattSendMsgManager.getInstance().readySendImage();
         BleSendImageStartInfoBean startInfoBean=new BleSendImageStartInfoBean();
         startInfoBean.setW(w);
         startInfoBean.setH(h);
@@ -124,65 +135,80 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
         startInfoBean.setType(bleSendImageInfoBean.getType());
         startInfoBean.setName(bleSendImageInfoBean.getName());
         BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.SEND_IMAGE_START,startInfoBean);
-//        BleHintEventSubscriptionSubject.getInstance().sendImageStart(w,h,size);
+
 
     }
 
     public void sendImageEnd(long useTime){
-        index++;
+        msgIndex++;
         BleSendImageEndInfoBean endInfoBean=new BleSendImageEndInfoBean();
         endInfoBean.setW(w);
         endInfoBean.setH(h);
         endInfoBean.setSize(size);
         endInfoBean.setUseTime(useTime);
-        endInfoBean.setIndex(index);
+        endInfoBean.setIndex(msgIndex);
         endInfoBean.setType(bleSendImageInfoBean.getType());
         endInfoBean.setName(bleSendImageInfoBean.getName());
         BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.SEND_IMAGE_END,endInfoBean);
+        BlueToothGattSendMsgManager.getInstance().setImageMsgNum(msgIndex+1);
 //        BleHintEventSubscriptionSubject.getInstance().sendImageEnd(w,h,size,useTime,index);
     }
 
 
 
 
-    public void queToSendCmd(){
-        if(null!=dataInfoQueue&&!dataInfoQueue.isEmpty()){
-            if(null!=dataInfoQueue.peek()){
-                byte[] cmd=dataInfoQueue.poll();
-                index++;
-                BlueToothGattSendMsgManager.getInstance().sendMsgByImg(index,cmd);
-            }
-        }else {
-            dataInfoQueue=null;
-            long endTime=System.currentTimeMillis();
-            long useTime=endTime-startTime;
-            sendImageEnd(useTime);
-            over(useTime);
-        }
-    }
+//    public void queToSendCmd(){
+
+//        while (!dataInfoQueue.isEmpty()){
+//            if(null!=dataInfoQueue.peek()){
+//                byte[] cmd=dataInfoQueue.poll();
+//                msgIndex++;
+//                BlueToothGattSendMsgManager.getInstance().sendMsgByImg(msgIndex,cmd);
+//                Log.i("kankanfasongtupian", "-------------kankanshenmegui:111---555666--88--????????" + msgIndex+"---"+ BleByteUtil.getCmdStrK(cmd));
+//            }
+//        }
+
+//        if(null!=dataInfoQueue&&!dataInfoQueue.isEmpty()){
+//            if(null!=dataInfoQueue.peek()){
+//                byte[] cmd=dataInfoQueue.poll();
+//                index++;
+//                BlueToothGattSendMsgManager.getInstance().sendMsgByImg(index,cmd);
+//            }
+//        }else {
+//            dataInfoQueue=null;
+//            over();
+//        }
+//    }
 
 
     private int w,h,size;
     private   void splitPacketForMtuByte(byte[] imageDatas){
-        dataInfoQueue=new LinkedList();
+//        dataInfoQueue=new LinkedList();
         if(!(null == imageDatas)){
-            int index=0;
+
+            int dataIndex=0;
+            int mtu= NewBeeBleConfig.getInstance().getRealMtu();
+            Log.i("kankanfasongtupian", "-------------kankanshenmegui:111---555666--999--????????" +mtu+"--"+imageDatas.length);
+            Log.i("kankanfasongtupian", "-------------kankanshenmegui:111---555666--99911111--????????" +BleByteUtil.parseByte2HexStr(imageDatas));
             do{
-                int mtu= NewBeeBleConfig.getInstance().getRealMtu();
+                msgIndex++;
                 byte[] currentData;
-                if(imageDatas.length- index <= mtu){
-                    currentData = new byte[imageDatas.length-index];
-                    System.arraycopy(imageDatas, index, currentData, 0, imageDatas.length - index);
-                    index = imageDatas.length;
+                if(imageDatas.length-dataIndex <= mtu){
+                    currentData = new byte[imageDatas.length-dataIndex];
+                    System.arraycopy(imageDatas, dataIndex, currentData, 0, imageDatas.length - dataIndex);
+
+                    dataIndex = imageDatas.length;
+
                 }else {
                     currentData = new byte[mtu];
-                    System.arraycopy(imageDatas, index, currentData, 0,mtu);
-                    index += mtu;
+                    System.arraycopy(imageDatas, dataIndex, currentData, 0,mtu);
+                    dataIndex += mtu;
+
                 }
-                dataInfoQueue.offer(currentData);
-            }while (index < imageDatas.length);
-
-
+                BlueToothGattSendMsgManager.getInstance().sendMsgByImg(msgIndex,currentData);
+                Log.i("kankanfasongtupian", "-------------kankanshenmegui:111---555666----????????" + dataIndex+"---"+ BleByteUtil.parseByte2HexStr(currentData));
+//                dataInfoQueue.offer(currentData);
+            }while (dataIndex < imageDatas.length);
         }
     }
 

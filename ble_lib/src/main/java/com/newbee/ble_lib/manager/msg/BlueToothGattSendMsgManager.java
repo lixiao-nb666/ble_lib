@@ -1,12 +1,6 @@
 package com.newbee.ble_lib.manager.msg;
 
 
-import android.util.Log;
-
-import com.newbee.ble_lib.manager.child.BlueToothGattManager;
-import com.nrmyw.ble_event_lib.statu.BleStatu;
-import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
-import com.nrmyw.ble_event_lib.util.BleByteUtil;
 
 
 public class BlueToothGattSendMsgManager {
@@ -15,41 +9,9 @@ public class BlueToothGattSendMsgManager {
 
 
 
-//   private BlueToothGattMsgManager.Listen msgListen=new BlueToothGattMsgManager.Listen() {
-//       @Override
-//       public void canSendMsg(String kStr, byte[] msg) {
-//            Log.i("nengfasongma","nengfasongshima???1");
-//            try {
-//                if(BlueToothGattManager.getInstance().isNowCanSend()){
-//                    Log.i("nengfasongma","nengfasongshima???2");
-//                    BlueToothGattManager.getInstance().queSendCmd(msg);
-//                    BlueToothGattMsgManager.getInstance().removeMsg(kStr);
-//
-//                }
-//            }catch (Exception e){
-//                BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR, "canSendMsg:"+e.toString());
-//            }
-//
-//       }
-//
-//       @Override
-//       public void canSendImageMsg(int index, byte[] msg) {
-//           Log.i("nengfasongma","nengfasongshima???3");
-//            try {
-//                if(BlueToothGattManager.getInstance().isNowCanSend()){
-//                    Log.i("nengfasongma","nengfasongshima???4"+"---"+index+"-------"+ BleByteUtil.parseByte2HexStr(msg));
-//                    BlueToothGattManager.getInstance().queSendCmd(msg);
-//                    BlueToothGattMsgManager.getInstance().removeImageMsg(index+"");
-//                }
-//            }catch (Exception e){
-//                BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR, "canSendImageMsg:"+e.toString());
-//            }
-//
-//       }
-//   };
 
    private BlueToothGattSendMsgManager(){
-//       BlueToothGattMsgManager.getInstance().init(msgListen);
+
    }
 
    public static BlueToothGattSendMsgManager getInstance(){
@@ -80,18 +42,6 @@ public class BlueToothGattSendMsgManager {
 
 
 
-//   private void sendMsg(String keyTitle,byte[] cmd){
-//
-//       if(BlueToothGattManager.getInstance().isNowCanSend()){
-////           LG.i("发送 ==    queToSend-----sendMsg:"+keyTitle);
-//           String strK= BleByteUtil.getCmdStrK(cmd);
-//           msgListen.canSendMsg(strK,cmd);
-//       }else {
-//
-//
-//
-//       }
-//   }
 
    public void sendMsgByCmd(byte[] cmd){
 
@@ -100,14 +50,19 @@ public class BlueToothGattSendMsgManager {
     }
 
    public void sendMsgByImg(int index,byte[] cmd){
-       Log.i("kankanfasongtupian","-------------kankanshenmegui:"+BleByteUtil.parseByte2HexStr(cmd));
+
        BlueToothGattMsgManager.getInstance().addMsgByImage(index,cmd);
        BlueToothGattMsgManager.getInstance().queMsg();
    }
 
 
+   public void readySendImage(){
+       BlueToothGattMsgManager.getInstance().readySendImage();
+   }
 
-
+    public void setImageMsgNum(int imageMsgNum){
+       BlueToothGattMsgManager.getInstance().setNowCanSendImageNumb(imageMsgNum);
+    }
 
 
 

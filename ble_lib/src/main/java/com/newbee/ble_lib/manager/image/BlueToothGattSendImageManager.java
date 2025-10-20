@@ -55,18 +55,18 @@ public class BlueToothGattSendImageManager {
        }
    }
 
-   public boolean checkNowSendImage(){
-        if(null==getBitmapDataThread){
-            return false;
-        }
-        return getBitmapDataThread.isStart();
-   }
-
-   public void queToSendCmd(){
-       if(null!=getBitmapDataThread){
-           getBitmapDataThread.queToSendCmd();
-       }
-   }
+//   public boolean checkNowSendImage(){
+//        if(null==getBitmapDataThread){
+//            return false;
+//        }
+//        return getBitmapDataThread.isStart();
+//   }
+//
+//   public void queToSendCmd(){
+//       if(null!=getBitmapDataThread){
+//           getBitmapDataThread.queToSendCmd();
+//       }
+//   }
 
 
 

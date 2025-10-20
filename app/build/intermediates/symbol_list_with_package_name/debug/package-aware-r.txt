@@ -779,6 +779,7 @@ drawable btn_radio_on_to_off_mtrl_animation
 drawable ic_launcher
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable img_test_1
 drawable launcher_app_list
 drawable launcher_app_list_bg
 drawable notification_action_background
@@ -865,6 +866,7 @@ id bt_init
 id bt_reget
 id bt_search
 id bt_send_test
+id bt_send_test_image
 id bt_update_now
 id buttonPanel
 id center_vertical
@@ -1019,7 +1021,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_main
+layout activity_main11
 layout activity_user_private
 layout activity_version_update
 layout adapter_apps_layout

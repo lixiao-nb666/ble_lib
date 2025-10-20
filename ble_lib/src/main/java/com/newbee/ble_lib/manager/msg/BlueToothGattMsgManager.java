@@ -1,10 +1,6 @@
 package com.newbee.ble_lib.manager.msg;
 
 import android.text.TextUtils;
-import android.util.ArrayMap;
-import android.util.Log;
-
-
 import com.newbee.ble_lib.manager.child.BlueToothGattManager;
 import com.nrmyw.ble_event_lib.statu.BleStatu;
 import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
@@ -17,8 +13,12 @@ import java.util.concurrent.ConcurrentHashMap;
 class BlueToothGattMsgManager {
     private static BlueToothGattMsgManager sendMsgManager;
     private Map<String, byte[]> msgMq = new ConcurrentHashMap<>();
+
+    private boolean nowCanSendImage;
+    private int imageMsgCountNumb;
+    private int imageMsgIndex;
     private Map<String, byte[]> imageMsgMq = new ConcurrentHashMap<>();
-//   private Listen listen;
+
 
     private BlueToothGattMsgManager() {
 
@@ -35,85 +35,29 @@ class BlueToothGattMsgManager {
         return sendMsgManager;
     }
 
+
+    public void close() {
+        clear();
+        sendMsgManager = null;
+    }
+
 //   public void init(Listen listen){
 //       this.listen=listen;
 //   }
 
     public void clear() {
         msgMq.clear();
-        imageMsgMq.clear();
+        clearImageMsg();
     }
-
-    private void listenSendMsg(String kStr, byte[] msg) {
-//       if(null!=listen){
-//           listen.canSendMsg(kStr,msg);
-//       }
-
-
-        Log.i("nengfasongma", "nengfasongshima???1");
-        try {
-            if (BlueToothGattManager.getInstance().isNowCanSend()) {
-                Log.i("nengfasongma", "nengfasongshima???2");
-
-                BlueToothGattManager.getInstance().queSendCmd(msg);
-                removeMsg(kStr);
-            }
-        } catch (Exception e) {
-            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR, "canSendMsg:" + e.toString());
-        }
-    }
-
-    private void listenSendImageMsg(int index, byte[] msg) {
-//       if(null!=listen){
-//           listen.canSendImageMsg(index,msg);
-//       }
-        Log.i("nengfasongma", "nengfasongshima???3");
-        try {
-            if (BlueToothGattManager.getInstance().isNowCanSend()) {
-//               Log.i("nengfasongma","nengfasongshima???4"+"---"+index+"-------"+ BleByteUtil.parseByte2HexStr(msg));
-
-                BlueToothGattManager.getInstance().queSendCmd(msg);
-                removeImageMsg(index + "");
-            }
-        } catch (Exception e) {
-            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR, "canSendImageMsg:" + e.toString());
-        }
-    }
-
-    public void close() {
-        msgMq.clear();
-        sendMsgManager = null;
-    }
-
-    public synchronized void addMsg(byte[] msg) {
-        String kStr = BleByteUtil.getCmdStrK(msg);
-        msgMq.put(kStr, msg);
-        Log.i("kankanfasongtupian", "-------------kankanshenmegui:111---" + kStr);
-    }
-
-    public synchronized void addMsgByImage(int index, byte[] msg) {
-        imageMsgMq.put(index + "", msg);
-    }
-
 
     public synchronized void queMsg() {
         if (!queImageMsg()) {
             queCmdMsg();
         }
     }
-
-    private boolean queImageMsg() {
-        if(imageMsgMq.isEmpty()){
-            return false;
-        }
-        int index = getImageFristK();
-        byte[] cmd = imageMsgMq.get(index + "");
-        if (null == cmd || cmd.length == 0) {
-            imageMsgMq.clear();
-            return false;
-        }
-        listenSendImageMsg(index, cmd);
-        return true;
+    public synchronized void addMsg(byte[] msg) {
+        String kStr = BleByteUtil.getCmdStrK(msg);
+        msgMq.put(kStr, msg);
 
     }
 
@@ -139,13 +83,6 @@ class BlueToothGattMsgManager {
         msgMq.remove(kStr);
 //       LG.i("kankanshujuqingkongmei:"+msgMq.size());
     }
-
-    public synchronized void removeImageMsg(String kStr) {
-        imageMsgMq.remove(kStr);
-//       LG.i("kankanshujuqingkongmei:"+msgMq.size());
-    }
-
-
     private String getFristKStr() {
         for (String str : msgMq.keySet()) {
             if (!TextUtils.isEmpty(str)) {
@@ -155,26 +92,102 @@ class BlueToothGattMsgManager {
         return null;
     }
 
-    private int getImageFristK() {
-        int index = 1000;
-        for (String str : imageMsgMq.keySet()) {
-            if (TextUtils.isEmpty(str)) {
-                continue;
+
+
+    private void listenSendMsg(String kStr, byte[] msg) {
+
+        try {
+            if (BlueToothGattManager.getInstance().isNowCanSend()) {
+                BlueToothGattManager.getInstance().queSendCmd(msg);
+                removeMsg(kStr);
             }
-            int nowIndex = Integer.valueOf(str);
-            if (nowIndex < index) {
-                index = nowIndex;
-            }
+        } catch (Exception e) {
+            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR, "canSendMsg:" + e.toString());
         }
-        return index;
     }
 
-//   public interface Listen{
-//
-//       public void canSendMsg(String kStr,byte[] msg);
-//
-//       public void canSendImageMsg(int index,byte[] msg);
-//
-//   }
+    public void clearImageMsg(){
+        nowCanSendImage=false;
+        imageMsgCountNumb=0;
+        imageMsgIndex=0;
+        imageMsgMq.clear();
+    }
+
+    public void readySendImage(){
+        nowCanSendImage=true;
+        imageMsgCountNumb=0;
+        imageMsgIndex=0;
+        imageMsgMq.clear();
+    }
+
+    public void setNowCanSendImageNumb(int countNumb){
+        imageMsgCountNumb=countNumb;
+    }
+
+    private void listenSendImageMsg(int index, byte[] msg) {
+        try {
+            if (BlueToothGattManager.getInstance().isNowCanSend()) {
+                BlueToothGattManager.getInstance().queSendCmd(msg);
+                if(index==imageMsgCountNumb-1){
+                    clearImageMsg();
+
+                }else {
+                    imageMsgIndex++;
+                }
+            }
+        } catch (Exception e) {
+            clearImageMsg();
+            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR, "canSendImageMsg:" + e.toString());
+        }
+    }
+
+
+
+    public synchronized void addMsgByImage(int index, byte[] msg) {
+        if(!nowCanSendImage){
+            return;
+        }
+        imageMsgMq.put(index + "", msg);
+    }
+
+
+
+
+    private synchronized boolean queImageMsg() {
+        if (!nowCanSendImage) {
+            return false;
+        }
+        if(imageMsgCountNumb==0){
+            return false;
+        }
+        if(imageMsgMq.isEmpty()){
+            return false;
+        }
+        if( imageMsgCountNumb!=imageMsgMq.size()){
+            return false;
+        }
+
+
+//        int index = getImageFristK();
+        byte[] cmd = imageMsgMq.get(imageMsgIndex + "");
+        if (null == cmd || cmd.length == 0) {
+            clearImageMsg();
+            return false;
+        }
+        listenSendImageMsg(imageMsgIndex, cmd);
+
+        return true;
+    }
+
+
+    public synchronized void removeImageMsg(String kStr) {
+        imageMsgMq.remove(kStr);
+//       LG.i("kankanshujuqingkongmei:"+msgMq.size());
+    }
+
+
+
+
+
 
 }

@@ -5851,14 +5851,13 @@ com.newbee.ble_lib.manager.child.DataBle
 com.newbee.ble_lib.manager.child.OtaBle
 com.newbee.ble_lib.manager.image.BlueToothGattGetBitmapDataThread:
     public int getType()
+    public boolean isStart()
 com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager:
     public void close()
     private void queLast()
 com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager:
     public void close()
-com.newbee.ble_lib.service.BluetoothGattService:
-    public void sendImage(com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean)
-    public void sendImageIndexCmd(int,byte[])
+    public synchronized void removeImageMsg(java.lang.String)
 com.newbee.ble_lib.util.AbImageUtil$OnImageUtilsListener
 com.newbee.ble_lib.util.AbImageUtil:
     private static com.newbee.ble_lib.util.AbImageUtil$OnImageUtilsListener onImageUtilsListener
@@ -6078,15 +6077,12 @@ com.nrmyw.ble_event_lib.bean.BleDeviceBean:
     public java.lang.String getDeviceName()
 com.nrmyw.ble_event_lib.bean.BleSendImageEndInfoBean:
     public int getH()
-    public int getIndex()
     public java.lang.String getName()
     public int getSize()
     public int getType()
     public long getUseTime()
     public int getW()
 com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean:
-    public void setBitmap(android.graphics.Bitmap)
-    public void setBitmapQualityType(com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType)
     public void setMaxH(int)
     public void setMaxW(int)
     public void setName(java.lang.String)
@@ -6105,16 +6101,11 @@ com.nrmyw.ble_event_lib.config.NewBeeBleConfig:
     public void setNoticeID(java.lang.String)
     public void setServiceID(java.lang.String)
     public void setWriteID(java.lang.String)
-com.nrmyw.ble_event_lib.send.BleEventObserver:
-    public abstract void sendImage(com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean)
-    public abstract void sendImageIndexCmd(int,byte[])
 com.nrmyw.ble_event_lib.send.BleEventSubject
 com.nrmyw.ble_event_lib.send.BleEventSubscriptionSubject:
     public void disconnectedBle()
     public void havePermissionInitBle()
     public void sendCmd(byte[])
-    public void sendImage(com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean)
-    public void sendImageIndexCmd(int,byte[])
     public void startSearchBle()
 com.nrmyw.ble_event_lib.statu.BleStatuEventSubject
 com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType:

@@ -1,10 +1,12 @@
-Marking layout:activity_main:2131361820 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
-Marking id:tv_ble:2131165355 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
-Marking id:tv_ble_statu:2131165356 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
+Marking drawable:img_test_1:2131099746 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
+Marking layout:activity_main11:2131361820 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
+Marking id:tv_ble:2131165356 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
+Marking id:tv_ble_statu:2131165357 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
 Marking id:bt_init:2131165250 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
 Marking id:bt_search:2131165252 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
 Marking id:bt_disconnected:2131165249 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
 Marking id:bt_send_test:2131165253 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
+Marking id:bt_send_test_image:2131165254 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
 android.content.res.Resources#getIdentifier present: true
 Web content present: false
 Referenced Strings:
@@ -242,6 +244,7 @@ kankanshibushizheli
 androidx.view.accessibility.Accessibi...
 DARKEN
 1234kasjffdlks:1
+A55A000F1000AF0104000008FA0000
 1234kasjffdlks:2
 1234kasjffdlks:0
 mServedView
@@ -286,6 +289,7 @@ TextView
 setEpicenterBounds
 ImageView
 R_F_Y
+A55A000F1000AF0104000008FA0100
 LF_RF_Y
 R_RF_N
 NULL
@@ -495,7 +499,6 @@ Class
 REACH_INFO
 61
 NestedScrollView
-nengfasongma
 android.bluetooth.device.action.ACL_C...
 TESTS
 bool
@@ -771,7 +774,7 @@ tbt105
 tbt106
 HIGH_Y
 Marking attr:defaultQueryHint:2130837600 used because it matches string pool constant def
-Marking id:default_activity_button:2131165266 used because it matches string pool constant def
+Marking id:default_activity_button:2131165267 used because it matches string pool constant def
 Marking attr:font:2130837632 used because it matches string pool constant font
 Marking attr:fontFamily:2130837633 used because it matches string pool constant font
 Marking attr:fontProviderAuthority:2130837634 used because it matches string pool constant font
@@ -790,8 +793,8 @@ Marking attr:contentInsetLeft:2130837594 used because it matches string pool con
 Marking attr:contentInsetRight:2130837595 used because it matches string pool constant content
 Marking attr:contentInsetStart:2130837596 used because it matches string pool constant content
 Marking attr:contentInsetStartWithNavigation:2130837597 used because it matches string pool constant content
-Marking id:content:2131165261 used because it matches string pool constant content
-Marking id:contentPanel:2131165262 used because it matches string pool constant content
+Marking id:content:2131165262 used because it matches string pool constant content
+Marking id:contentPanel:2131165263 used because it matches string pool constant content
 Marking attr:menu:2130837681 used because it matches string pool constant menu
 Marking id:accessibility_action_clickable_span:2131165190 used because it matches string pool constant accessibility
 Marking id:accessibility_custom_action_0:2131165191 used because it matches string pool constant accessibility
@@ -841,13 +844,13 @@ Marking attr:windowFixedWidthMinor:2130837788 used because it matches string poo
 Marking attr:windowMinWidthMajor:2130837789 used because it matches string pool constant window
 Marking attr:windowMinWidthMinor:2130837790 used because it matches string pool constant window
 Marking attr:windowNoTitle:2130837791 used because it matches string pool constant window
-Marking id:none:2131165296 used because it matches string pool constant none
+Marking id:none:2131165297 used because it matches string pool constant none
 Marking attr:itemPadding:2130837657 used because it matches string pool constant item
 Marking dimen:item_touch_helper_max_drag_scroll_per_frame:2131034210 used because it matches string pool constant item
 Marking dimen:item_touch_helper_swipe_escape_max_velocity:2131034211 used because it matches string pool constant item
 Marking dimen:item_touch_helper_swipe_escape_velocity:2131034212 used because it matches string pool constant item
-Marking id:item_touch_helper_previous_elevation:2131165283 used because it matches string pool constant item
-Marking id:group_divider:2131165274 used because it matches string pool constant group
+Marking id:item_touch_helper_previous_elevation:2131165284 used because it matches string pool constant item
+Marking id:group_divider:2131165275 used because it matches string pool constant group
 @anim/abc_fade_in : reachable=false
 @anim/abc_fade_out : reachable=false
 @anim/abc_grow_fade_in_from_bottom : reachable=false
@@ -1801,6 +1804,7 @@ Marking id:group_divider:2131165274 used because it matches string pool constant
 @drawable/ic_launcher_background : reachable=false
 @drawable/ic_launcher_foreground : reachable=false
     @drawable/$ic_launcher_foreground__0
+@drawable/img_test_1 : reachable=true
 @drawable/launcher_app_list : reachable=false
 @drawable/launcher_app_list_bg : reachable=false
 @drawable/notification_action_background : reachable=false
@@ -1903,6 +1907,7 @@ Marking id:group_divider:2131165274 used because it matches string pool constant
 @id/bt_reget : reachable=false
 @id/bt_search : reachable=true
 @id/bt_send_test : reachable=true
+@id/bt_send_test_image : reachable=true
 @id/bt_update_now : reachable=false
 @id/buttonPanel : reachable=true
 @id/center_vertical : reachable=false
@@ -2151,7 +2156,7 @@ Marking id:group_divider:2131165274 used because it matches string pool constant
     @style/TextAppearance_AppCompat_Tooltip
     @dimen/tooltip_margin
     @dimen/tooltip_vertical_padding
-@layout/activity_main : reachable=true
+@layout/activity_main11 : reachable=true
     @color/white
     @color/black
 @layout/activity_user_private : reachable=false
@@ -3874,6 +3879,7 @@ The root reachable resources are:
  drawable:abc_textfield_search_default_mtrl_alpha:2131099732
  drawable:abc_textfield_search_material:2131099733
  drawable:abc_vector_test:2131099734
+ drawable:img_test_1:2131099746
  id:accessibility_action_clickable_span:2131165190
  id:accessibility_custom_action_0:2131165191
  id:accessibility_custom_action_1:2131165192
@@ -3921,50 +3927,51 @@ The root reachable resources are:
  id:bt_init:2131165250
  id:bt_search:2131165252
  id:bt_send_test:2131165253
- id:buttonPanel:2131165255
- id:content:2131165261
- id:contentPanel:2131165262
- id:custom:2131165263
- id:customPanel:2131165264
- id:decor_content_parent:2131165265
- id:default_activity_button:2131165266
- id:edit_query:2131165269
- id:group_divider:2131165274
- id:item_touch_helper_previous_elevation:2131165283
- id:message:2131165292
- id:none:2131165296
- id:parentPanel:2131165303
- id:scrollIndicatorDown:2131165310
- id:scrollIndicatorUp:2131165311
- id:scrollView:2131165312
- id:search_button:2131165315
- id:search_close_btn:2131165316
- id:search_edit_frame:2131165317
- id:search_go_btn:2131165318
- id:search_mag_icon:2131165319
- id:search_plate:2131165320
- id:search_src_text:2131165321
- id:search_voice_btn:2131165322
- id:shortcut:2131165324
- id:spacer:2131165328
- id:split_action_bar:2131165329
- id:submenuarrow:2131165333
- id:submit_area:2131165334
- id:tag_accessibility_actions:2131165336
- id:tag_accessibility_clickable_spans:2131165337
- id:tag_accessibility_heading:2131165338
- id:tag_accessibility_pane_title:2131165339
- id:tag_screen_reader_focusable:2131165340
- id:tag_unhandled_key_event_manager:2131165342
- id:tag_unhandled_key_listeners:2131165343
- id:textSpacerNoButtons:2131165346
- id:textSpacerNoTitle:2131165347
- id:title:2131165349
- id:titleDividerNoCustom:2131165350
- id:title_template:2131165351
- id:topPanel:2131165353
- id:tv_ble:2131165355
- id:tv_ble_statu:2131165356
+ id:bt_send_test_image:2131165254
+ id:buttonPanel:2131165256
+ id:content:2131165262
+ id:contentPanel:2131165263
+ id:custom:2131165264
+ id:customPanel:2131165265
+ id:decor_content_parent:2131165266
+ id:default_activity_button:2131165267
+ id:edit_query:2131165270
+ id:group_divider:2131165275
+ id:item_touch_helper_previous_elevation:2131165284
+ id:message:2131165293
+ id:none:2131165297
+ id:parentPanel:2131165304
+ id:scrollIndicatorDown:2131165311
+ id:scrollIndicatorUp:2131165312
+ id:scrollView:2131165313
+ id:search_button:2131165316
+ id:search_close_btn:2131165317
+ id:search_edit_frame:2131165318
+ id:search_go_btn:2131165319
+ id:search_mag_icon:2131165320
+ id:search_plate:2131165321
+ id:search_src_text:2131165322
+ id:search_voice_btn:2131165323
+ id:shortcut:2131165325
+ id:spacer:2131165329
+ id:split_action_bar:2131165330
+ id:submenuarrow:2131165334
+ id:submit_area:2131165335
+ id:tag_accessibility_actions:2131165337
+ id:tag_accessibility_clickable_spans:2131165338
+ id:tag_accessibility_heading:2131165339
+ id:tag_accessibility_pane_title:2131165340
+ id:tag_screen_reader_focusable:2131165341
+ id:tag_unhandled_key_event_manager:2131165343
+ id:tag_unhandled_key_listeners:2131165344
+ id:textSpacerNoButtons:2131165347
+ id:textSpacerNoTitle:2131165348
+ id:title:2131165350
+ id:titleDividerNoCustom:2131165351
+ id:title_template:2131165352
+ id:topPanel:2131165354
+ id:tv_ble:2131165356
+ id:tv_ble_statu:2131165357
  layout:abc_action_bar_title_item:2131361792
  layout:abc_action_menu_item_layout:2131361794
  layout:abc_action_menu_layout:2131361795
@@ -3984,7 +3991,7 @@ The root reachable resources are:
  layout:abc_search_dropdown_item_icons_2line:2131361816
  layout:abc_search_view:2131361817
  layout:abc_tooltip:2131361819
- layout:activity_main:2131361820
+ layout:activity_main11:2131361820
  layout:support_simple_spinner_dropdown_item:2131361834
  mipmap:ic_launcher:2131427328
  mipmap:ic_launcher_round:2131427329
