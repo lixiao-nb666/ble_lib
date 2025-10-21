@@ -130,7 +130,6 @@ class BlueToothGattMsgManager {
                 BlueToothGattManager.getInstance().queSendCmd(msg);
                 if(index==imageMsgCountNumb-1){
                     clearImageMsg();
-
                 }else {
                     imageMsgIndex++;
                 }

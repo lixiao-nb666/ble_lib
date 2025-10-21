@@ -3,8 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 71dd042
-# pg_map_hash: SHA-256 71dd04209a95cdc040db0ca6f188f97a36003ef77277b70fec4038f4c8ee070a
+# pg_map_id: 5d8952c
+# pg_map_hash: SHA-256 5d8952c594058f3e110af36199e11f859b554bf579617c65ebacdb1847e6fd1f
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -6504,15 +6504,15 @@ com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager$1 -> com.newbee.b
 com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager -> com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager:
     15:25:void <init>() -> <init>
     58:62:void addMsg(byte[]) -> addMsg
-    146:151:void addMsgByImage(int,byte[]) -> addMsgByImage
+    145:150:void addMsgByImage(int,byte[]) -> addMsgByImage
     49:51:void clear() -> clear
     110:114:void clearImageMsg() -> clearImageMsg
     87:92:java.lang.String getFristKStr() -> getFristKStr
     28:35:com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager getInstance() -> getInstance
-    129:142:void listenSendImageMsg(int,byte[]) -> listenSendImageMsg
+    129:141:void listenSendImageMsg(int,byte[]) -> listenSendImageMsg
     100:107:void listenSendMsg(java.lang.String,byte[]) -> listenSendMsg
     65:79:void queCmdMsg() -> queCmdMsg
-    156:179:boolean queImageMsg() -> queImageMsg
+    155:178:boolean queImageMsg() -> queImageMsg
     53:57:void queMsg() -> queMsg
     117:121:void readySendImage() -> readySendImage
     82:85:void removeMsg(java.lang.String) -> removeMsg

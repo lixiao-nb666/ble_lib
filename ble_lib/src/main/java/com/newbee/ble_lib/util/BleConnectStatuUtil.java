@@ -74,6 +74,8 @@ public class BleConnectStatuUtil {
 
 
     public synchronized void sendDisconnected(){
+        BlueToothGattSendMsgManager.getInstance().clear();
+        BlueToothGattManager.getInstance().checkIsDisConnecting();
         if(!isConnect&&null==nowUseBleDevice){
             return;
         }
@@ -81,8 +83,6 @@ public class BleConnectStatuUtil {
         isConnect=false;
         nowUseBleDevice=null;
         BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.DISCONNECTED);
-        BlueToothGattSendMsgManager.getInstance().clear();
-        BlueToothGattManager.getInstance().checkIsDisConnecting();
     }
 
     public void checkDisconnectedDevice(String checkName,String checkAdress){
