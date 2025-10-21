@@ -6073,8 +6073,6 @@ com.nrmyw.ble_event_lib.BuildConfig
 com.nrmyw.ble_event_lib.R$string:
     private void <init>()
 com.nrmyw.ble_event_lib.R
-com.nrmyw.ble_event_lib.bean.BleDeviceBean:
-    public java.lang.String getDeviceName()
 com.nrmyw.ble_event_lib.bean.BleSendImageEndInfoBean:
     public int getH()
     public java.lang.String getName()

@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.newbee.ble_lib.manager.child.BlueToothGattManager;
 import com.newbee.ble_lib.util.BleConnectStatuUtil;
 import com.nrmyw.ble_event_lib.bean.BleDeviceBean;
 
@@ -30,6 +31,11 @@ public class BleStatuBroadcastReceiver extends BroadcastReceiver {
             Log.w(tag,"BluetoothAdapter  initialized  111:22222");
         } else if(action.equals(BluetoothDevice.ACTION_ACL_DISCONNECTED)){
 //            BleConnectStatuUtil.getInstance().sendDisconnected();
+            BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
+            String deviceName = device.getName();
+            String address=device.getAddress();
+            Log.w(tag,"BluetoothAdapter  initialized  111556677--88--"+ deviceName+"--"+address);
+            BleConnectStatuUtil.getInstance().checkDisconnectedDevice(deviceName,address);
         }else if(action.equals(BluetoothDevice.ACTION_FOUND)){
             BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
             Log.i("1111","1234kasjffdlks:9999------"+device.getName()+"----"+device.getAddress());
@@ -38,7 +44,7 @@ public class BleStatuBroadcastReceiver extends BroadcastReceiver {
             BleDeviceBean bleDeviceBean= NewBeeBleConfig.getInstance().checkBleName(deviceName);
             String address=device.getAddress();
             if(null!=bleDeviceBean&&!TextUtils.isEmpty(address)){
-                Log.w(tag,"BluetoothAdapter  initialized  1115566----"+ deviceName);
+                Log.w(tag,"BluetoothAdapter  initialized  111556677--8811--"+ deviceName+"--"+address);
                 BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.CONNECTING,"Find ble device : "+deviceName);
                 BleConnectStatuUtil.getInstance().sendConnecting(context,bleDeviceBean,address);
             }

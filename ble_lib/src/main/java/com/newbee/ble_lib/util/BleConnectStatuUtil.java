@@ -1,6 +1,7 @@
 package com.newbee.ble_lib.util;
 
 import android.content.Context;
+import android.text.TextUtils;
 
 import com.newbee.ble_lib.manager.child.BleConnectManager;
 import com.newbee.ble_lib.manager.child.BlueToothGattManager;
@@ -8,6 +9,8 @@ import com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager;
 import com.nrmyw.ble_event_lib.bean.BleDeviceBean;
 import com.nrmyw.ble_event_lib.statu.BleStatu;
 import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
+
+import java.security.spec.ECField;
 
 public class BleConnectStatuUtil {
     private static BleConnectStatuUtil util;
@@ -37,6 +40,7 @@ public class BleConnectStatuUtil {
     }
 
     private long lastConnectTime;
+    private String lastAddress;
     public void sendConnecting(Context context, BleDeviceBean bleDeviceBean, String address){
         if(null!=bleDeviceBean&&isConnect){
             BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.NONE,"Now is connected,Can not connect other !");
@@ -51,10 +55,8 @@ public class BleConnectStatuUtil {
         }
         lastConnectTime=nowTime;
         nowUseBleDevice=bleDeviceBean;
-
+        lastAddress=address;
         BleConnectManager.getInstance().connect(context,address);
-
-
     }
 
     public  void sendConnected(){
@@ -71,12 +73,34 @@ public class BleConnectStatuUtil {
 
 
 
-    public void sendDisconnected(){
+    public synchronized void sendDisconnected(){
+        if(!isConnect&&null==nowUseBleDevice){
+            return;
+        }
         lastConnectTime=0;
         isConnect=false;
         nowUseBleDevice=null;
         BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.DISCONNECTED);
         BlueToothGattSendMsgManager.getInstance().clear();
+        BlueToothGattManager.getInstance().checkIsDisConnecting();
+    }
+
+    public void checkDisconnectedDevice(String checkName,String checkAdress){
+        if(TextUtils.isEmpty(checkName)||TextUtils.isEmpty(checkAdress)){
+            return;
+        }
+
+        if(null==nowUseBleDevice||!isConnect){
+            return;
+        }
+        try {
+            if(nowUseBleDevice.getDeviceName().equals(checkName)&&lastAddress.equals(checkAdress)){
+                sendDisconnected();
+            }
+        }catch (Exception e){
+
+        }
+
     }
 
 

@@ -56,6 +56,7 @@ public class BluetoothGattService extends BaseService implements BleEventObserve
                     case SEND_CMD_BY_IMAGE_INDEX:
                         BlueToothGattSendMsgManager.getInstance().sendMsgByImg(msg.arg1, (byte[]) msg.obj);
                         break;
+
                 }
                 BleStatu bleStatu=BleStatu.USER_DO;
                 bleStatu.setStrId(msgType.getStrId());
@@ -108,6 +109,14 @@ public class BluetoothGattService extends BaseService implements BleEventObserve
         Log.i("1111","1234kasjffdlks:5");
         handler.removeCallbacks(autoConnectRunnable);
     }
+
+
+    private Runnable bleDisConnectRunnable=new Runnable() {
+        @Override
+        public void run() {
+            BleConnectStatuUtil.getInstance().sendDisconnected();
+        }
+    };
     private BleStatuEventObserver bleStatuEventObserver=new BleStatuEventObserver() {
         @Override
         public void sendBleStatu(BleStatu bleStatu, Object... objects) {
@@ -123,7 +132,13 @@ public class BluetoothGattService extends BaseService implements BleEventObserve
                     case CONNECTED:
                         cancelAutoConnect();
                         break;
-
+                    case SENDING_DATA:
+                        handler.removeCallbacks(bleDisConnectRunnable);
+                        handler.postDelayed(bleDisConnectRunnable,3000);
+                        break;
+                    case CAN_SEND_DATA:
+                        handler.removeCallbacks(bleDisConnectRunnable);
+                        break;
 
                 }
         }

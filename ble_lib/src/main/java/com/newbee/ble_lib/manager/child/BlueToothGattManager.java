@@ -52,11 +52,7 @@ public class BlueToothGattManager {
             Log.i(tag,"发送 ===  :发送成功"+status);
             Log.w(tag,"BluetoothAdapter  initialized  111:1");
             nowCanSend=true;
-//            if(BlueToothGattSendImageManager.getInstance().checkNowSendImage()){
-//                BlueToothGattSendImageManager.getInstance().queToSendCmd();
-//            }else {
-//
-//            }
+
             BlueToothGattSendMsgManager.getInstance().setNowCanSend();
             BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.CAN_SEND_DATA);
             Log.i(tag,"收到指令没111");
@@ -114,7 +110,6 @@ public class BlueToothGattManager {
             } else if (newState == BluetoothProfile.STATE_DISCONNECTED) {
                 //广播里面已经发送了事件通知，这里就不用处理了
                 Log.e(tag,"连接失败 Disconnected from GATT server "+newState+" === "+status);
-                pause();
                 BleConnectStatuUtil.getInstance().sendDisconnected();
             }
 
@@ -266,6 +261,7 @@ public class BlueToothGattManager {
 
 
     private void pause(){
+        nowCanSend=false;
         dataService = null;
         writeCharacteristic = null;
         readCharacteristic = null;
@@ -280,6 +276,10 @@ public class BlueToothGattManager {
         BlueToothGattSendMsgManager.getInstance().close();
         BlueToothGattSendMsgManager.getInstance().close();
 
+    }
+
+    public void checkIsDisConnecting(){
+        pause();
     }
 
     private boolean connecting=false;
@@ -384,7 +384,7 @@ public class BlueToothGattManager {
     }
 
 
-   public void queSendCmd(byte[] cmd){
+   public synchronized void queSendCmd(byte[] cmd){
         if (bluetoothGatt!=null&&writeCharacteristic!=null){
             try {
                 //if (Build.VERSION.SDK_INT>= Build.VERSION_CODES.TIRAMISU)
