@@ -132,7 +132,6 @@ public class MainActivity extends BaseCompatActivity {
                     if(msg.obj instanceof BleSendImageEndInfoBean){
                         BleSendImageEndInfoBean endInfoBean= (BleSendImageEndInfoBean) msg.obj;
                         String endSS="A55A000F1000AF0104000008FA0000";
-
                         BleEventSubscriptionSubject.getInstance().sendImageIndexCmd(endInfoBean.getIndex(), endSS.getBytes(StandardCharsets.UTF_8));
                     }
                     break;

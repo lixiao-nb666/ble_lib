@@ -113,11 +113,13 @@ class BlueToothGattMsgManager {
         imageMsgMq.clear();
     }
 
+    private long startSendImageTime;
     public void readySendImage(){
         nowCanSendImage=true;
         imageMsgCountNumb=0;
         imageMsgIndex=0;
         imageMsgMq.clear();
+        startSendImageTime=System.currentTimeMillis();
     }
 
     public void setNowCanSendImageNumb(int countNumb){
@@ -130,6 +132,8 @@ class BlueToothGattMsgManager {
                 BlueToothGattManager.getInstance().queSendCmd(msg);
                 if(index==imageMsgCountNumb-1){
                     clearImageMsg();
+                    long sendImageUseTime=System.currentTimeMillis()-startSendImageTime;
+                    BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.SEND_IMAGE_DATA_END, sendImageUseTime);
                 }else {
                     imageMsgIndex++;
                 }

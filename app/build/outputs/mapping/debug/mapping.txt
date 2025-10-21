@@ -3,8 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 5d8952c
-# pg_map_hash: SHA-256 5d8952c594058f3e110af36199e11f859b554bf579617c65ebacdb1847e6fd1f
+# pg_map_id: 907f530
+# pg_map_hash: SHA-256 907f530d5d874eb2ab307fc33fac6943fae2b9f329db680f58a567cee9d8c0ae
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -6504,19 +6504,19 @@ com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager$1 -> com.newbee.b
 com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager -> com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager:
     15:25:void <init>() -> <init>
     58:62:void addMsg(byte[]) -> addMsg
-    145:150:void addMsgByImage(int,byte[]) -> addMsgByImage
+    149:154:void addMsgByImage(int,byte[]) -> addMsgByImage
     49:51:void clear() -> clear
     110:114:void clearImageMsg() -> clearImageMsg
     87:92:java.lang.String getFristKStr() -> getFristKStr
     28:35:com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager getInstance() -> getInstance
-    129:141:void listenSendImageMsg(int,byte[]) -> listenSendImageMsg
+    131:145:void listenSendImageMsg(int,byte[]) -> listenSendImageMsg
     100:107:void listenSendMsg(java.lang.String,byte[]) -> listenSendMsg
     65:79:void queCmdMsg() -> queCmdMsg
-    155:178:boolean queImageMsg() -> queImageMsg
+    159:182:boolean queImageMsg() -> queImageMsg
     53:57:void queMsg() -> queMsg
-    117:121:void readySendImage() -> readySendImage
+    118:123:void readySendImage() -> readySendImage
     82:85:void removeMsg(java.lang.String) -> removeMsg
-    124:125:void setNowCanSendImageNumb(int) -> setNowCanSendImageNumb
+    126:127:void setNowCanSendImageNumb(int) -> setNowCanSendImageNumb
 com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager -> com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager:
     13:15:void <init>() -> <init>
     34:35:void clear() -> clear
@@ -6593,13 +6593,13 @@ com.newbee.ble_lib.util.BleCheckUtil -> com.newbee.ble_lib.util.BleCheckUtil:
     8:8:boolean checkPhoneCanUseBle(android.content.pm.PackageManager) -> checkPhoneCanUseBle
 com.newbee.ble_lib.util.BleConnectStatuUtil -> com.newbee.ble_lib.util.BleConnectStatuUtil:
     19:21:void <init>() -> <init>
-    89:104:void checkDisconnectedDevice(java.lang.String,java.lang.String) -> checkDisconnectedDevice
+    90:105:void checkDisconnectedDevice(java.lang.String,java.lang.String) -> checkDisconnectedDevice
     24:31:com.newbee.ble_lib.util.BleConnectStatuUtil getInstance() -> getInstance
     35:35:com.nrmyw.ble_event_lib.bean.BleDeviceBean getNowUseBleDevice() -> getNowUseBleDevice
     39:39:boolean isConnect() -> isConnect
     63:67:void sendConnected() -> sendConnected
     45:60:void sendConnecting(android.content.Context,com.nrmyw.ble_event_lib.bean.BleDeviceBean,java.lang.String) -> sendConnecting
-    76:86:void sendDisconnected() -> sendDisconnected
+    77:87:void sendDisconnected() -> sendDisconnected
     70:72:void setConnectErr(java.lang.String) -> setConnectErr
 com.newbee.ble_lib.util.BleErrManager -> com.newbee.ble_lib.util.BleErrManager:
     9:10:void sendConnectErrMsg(java.lang.String) -> sendConnectErrMsg
@@ -6611,16 +6611,16 @@ com.newbee.ble_tool.activity.MainActivity -> com.newbee.ble_tool.activity.MainAc
     38:38:android.os.Handler access$000(com.newbee.ble_tool.activity.MainActivity) -> access$000
     38:38:android.widget.TextView access$100(com.newbee.ble_tool.activity.MainActivity) -> access$100
     38:38:android.widget.TextView access$200(com.newbee.ble_tool.activity.MainActivity) -> access$200
-    196:196:void changeConfig() -> changeConfig
-    181:181:void closeActivity() -> closeActivity
-    146:146:int getViewLayoutRsId() -> getViewLayoutRsId
-    176:176:void initControl() -> initControl
-    171:171:void initData() -> initData
-    151:166:void initView() -> initView
-    222:226:void onDestroy() -> onDestroy
-    202:217:void setViewByBleConnectStatu(boolean) -> setViewByBleConnectStatu
-    191:191:void viewIsPause() -> viewIsPause
-    186:186:void viewIsShow() -> viewIsShow
+    195:195:void changeConfig() -> changeConfig
+    180:180:void closeActivity() -> closeActivity
+    145:145:int getViewLayoutRsId() -> getViewLayoutRsId
+    175:175:void initControl() -> initControl
+    170:170:void initData() -> initData
+    150:165:void initView() -> initView
+    221:225:void onDestroy() -> onDestroy
+    201:216:void setViewByBleConnectStatu(boolean) -> setViewByBleConnectStatu
+    190:190:void viewIsPause() -> viewIsPause
+    185:185:void viewIsShow() -> viewIsShow
 com.newbee.ble_tool.activity.MainActivity$1 -> com.newbee.ble_tool.activity.MainActivity$1:
     39:39:void <init>(com.newbee.ble_tool.activity.MainActivity) -> <init>
     42:53:void sendBleStatu(com.nrmyw.ble_event_lib.statu.BleStatu,java.lang.Object[]) -> sendBleStatu
@@ -6629,7 +6629,7 @@ com.newbee.ble_tool.activity.MainActivity$2 -> com.newbee.ble_tool.activity.Main
     60:90:void onClick(android.view.View) -> onClick
 com.newbee.ble_tool.activity.MainActivity$3 -> com.newbee.ble_tool.activity.MainActivity$3:
     92:92:void <init>(com.newbee.ble_tool.activity.MainActivity) -> <init>
-    95:140:void handleMessage(android.os.Message) -> handleMessage
+    95:139:void handleMessage(android.os.Message) -> handleMessage
 com.newbee.ble_tool.activity.MainActivity$4 -> com.newbee.ble_tool.activity.MainActivity$4:
     101:101:void <clinit>() -> <clinit>
 com.newbee.ble_tool.app.MyApp -> com.newbee.ble_tool.app.MyApp:
@@ -6912,10 +6912,10 @@ com.nrmyw.ble_event_lib.send.BleEventSubscriptionSubject -> com.nrmyw.ble_event_
     81:84:void sendImage(com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean) -> sendImage
     74:77:void sendImageIndexCmd(int,byte[]) -> sendImageIndexCmd
 com.nrmyw.ble_event_lib.statu.BleStatu -> com.nrmyw.ble_event_lib.statu.BleStatu:
-    6:24:void <clinit>() -> <clinit>
-    27:29:void <init>(java.lang.String,int,int) -> <init>
-    32:32:int getStrId() -> getStrId
-    36:39:void setStrId(int) -> setStrId
+    6:25:void <clinit>() -> <clinit>
+    28:30:void <init>(java.lang.String,int,int) -> <init>
+    33:33:int getStrId() -> getStrId
+    37:40:void setStrId(int) -> setStrId
     6:6:com.nrmyw.ble_event_lib.statu.BleStatu valueOf(java.lang.String) -> valueOf
     6:6:com.nrmyw.ble_event_lib.statu.BleStatu[] values() -> values
 com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject -> com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject:
