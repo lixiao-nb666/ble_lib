@@ -72,9 +72,8 @@ public class MainActivity extends BaseCompatActivity {
                         NewBeeBleManager.getInstance().getEventImp().disconnectedBle();
                         break;
                     case R.id.bt_send_test:
-                        T800CmdType t800CmdType=T800CmdType.TIME;
-                        t800CmdType.useObjectSSetBody();
-                        NewBeeBleManager.getInstance().getEventImp().sendCmd(t800CmdType.getAllByte());
+                        handler.removeCallbacks(sendTimeRunnable);
+                        handler.postDelayed(sendTimeRunnable,1000);
                         break;
                     case R.id.bt_send_test_image:
                         Bitmap bt1 = BitmapFactory.decodeResource(MainActivity.this.getResources(), R.drawable.img_test_1);
@@ -87,6 +86,18 @@ public class MainActivity extends BaseCompatActivity {
                 }
 
 
+        }
+    };
+
+
+    private Runnable sendTimeRunnable=new Runnable() {
+        @Override
+        public void run() {
+            T800CmdType t800CmdType=T800CmdType.TIME;
+            t800CmdType.useObjectSSetBody();
+            NewBeeBleManager.getInstance().getEventImp().sendCmd(t800CmdType.getAllByte());
+            handler.removeCallbacks(sendTimeRunnable);
+            handler.postDelayed(sendTimeRunnable,1000);
         }
     };
     private Handler handler=new Handler(){

@@ -82,7 +82,12 @@ public class BluetoothGattService extends BaseService implements BleEventObserve
                 return;
             }
             Log.i("1111","1234kasjffdlks:1");
-            startSearchBle();
+            if(isDisConnectReinit){
+                isDisConnectReinit=false;
+                havePermissionInitBle();
+            }else {
+                startSearchBle();
+            }
             autoConnectDevice();
         }
     };
@@ -94,10 +99,16 @@ public class BluetoothGattService extends BaseService implements BleEventObserve
         handler.postDelayed(autoConnectRunnable,5*1000);
     }
 
+    boolean isDisConnectReinit;
     private void autoConnectDeviceNow(){
         Log.i("1111","1234kasjffdlks:3");
         handler.removeCallbacks(autoConnectRunnable);
-        handler.postDelayed(autoConnectRunnable,1*1000);
+        int waitTime=1*1000;
+        if(isDisConnectReinit){
+            waitTime=3*1000;
+        }
+        handler.postDelayed(autoConnectRunnable,waitTime);
+
     }
     private void nowConnectIngWait(){
         Log.i("1111","1234kasjffdlks:4");
@@ -114,6 +125,7 @@ public class BluetoothGattService extends BaseService implements BleEventObserve
     private Runnable bleDisConnectRunnable=new Runnable() {
         @Override
         public void run() {
+            isDisConnectReinit=true;
             BleConnectStatuUtil.getInstance().sendDisconnected();
         }
     };
@@ -134,7 +146,7 @@ public class BluetoothGattService extends BaseService implements BleEventObserve
                         break;
                     case SENDING_DATA:
                         handler.removeCallbacks(bleDisConnectRunnable);
-                        handler.postDelayed(bleDisConnectRunnable,3000);
+                        handler.postDelayed(bleDisConnectRunnable,10*1000);
                         break;
                     case CAN_SEND_DATA:
                         handler.removeCallbacks(bleDisConnectRunnable);

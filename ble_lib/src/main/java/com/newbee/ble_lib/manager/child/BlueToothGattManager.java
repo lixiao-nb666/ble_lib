@@ -38,6 +38,7 @@ public class BlueToothGattManager {
     private static BlueToothGattManager blueToothGattManager;
     private BluetoothGatt bluetoothGatt;
 
+
     private BluetoothGattService dataService;
     private BluetoothGattCharacteristic writeCharacteristic;//写数据特征值
     private BluetoothGattCharacteristic readCharacteristic;//写数据特征值
@@ -266,6 +267,7 @@ public class BlueToothGattManager {
         writeCharacteristic = null;
         readCharacteristic = null;
         if(null!=bluetoothGatt){
+
             bluetoothGatt.close();
             bluetoothGatt=null;
         }
