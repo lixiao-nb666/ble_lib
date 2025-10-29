@@ -5838,6 +5838,7 @@ com.google.gson.stream.MalformedJsonException:
 com.newbee.ble_lib.BuildConfig
 com.newbee.ble_lib.R
 com.newbee.ble_lib.base.BaseServiceDao:
+    public com.newbee.ble_lib.base.BaseService getService()
     public void setActionStr(java.lang.String)
     public void startService()
     public void stopService()

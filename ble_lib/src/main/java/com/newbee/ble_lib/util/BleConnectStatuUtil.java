@@ -56,7 +56,7 @@ public class BleConnectStatuUtil {
         lastConnectTime=nowTime;
         nowUseBleDevice=bleDeviceBean;
         lastAddress=address;
-        BleConnectManager.getInstance().connect(context,address);
+        BleConnectManager.getInstance().connect(address);
     }
 
     public  void sendConnected(){

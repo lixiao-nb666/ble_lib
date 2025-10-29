@@ -1,3 +1,4 @@
+Marking mipmap:ic_launcher:2131427328 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
 Marking drawable:img_test_1:2131099746 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
 Marking layout:activity_main11:2131361820 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
 Marking id:tv_ble:2131165356 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
@@ -232,7 +233,6 @@ suggest_intent_action
 TypefaceCompatApi24Impl
 suggest_text_1
 suggest_text_2
-1234kasjffdlks:3
 1234kasjffdlks:4
 file
 androidx.view.accessibility.Accessibi...
@@ -246,7 +246,6 @@ DARKEN
 A55A000F1000AF0104000008FA0000
 1234kasjffdlks:1
 1234kasjffdlks:2
-1234kasjffdlks:0
 mServedView
 L_R_Y
 HIDE
@@ -274,6 +273,7 @@ mMainThread
 LF_RF_N
 R_F_N
 android.speech.action.RECOGNIZE_SPEECH
+Running...
 android.intent.action.TIME_SET
 mDrawableCache
 SEND_IMAGE
@@ -589,6 +589,7 @@ D_Y
 HARD_LIGHT
 DISCONNECT_BLE
 tbt119
+99
 tbt123
 tbt124
 item
@@ -679,6 +680,7 @@ SET_DEVICE_SOUND_STATU
 OP_SET_MAX_LIFECYCLE
 AppCompatViewInflater
 asyncTraceBegin
+notification
 2501
 1411
 2500
@@ -745,6 +747,7 @@ tbt103
 tbt104
 DEF
 LF_F_N
+PowerStateService
 ACTION_SHOW_TOOLTIP
 suggest_text_2_url
 0x%08x
@@ -851,6 +854,43 @@ Marking dimen:item_touch_helper_max_drag_scroll_per_frame:2131034210 used becaus
 Marking dimen:item_touch_helper_swipe_escape_max_velocity:2131034211 used because it matches string pool constant item
 Marking dimen:item_touch_helper_swipe_escape_velocity:2131034212 used because it matches string pool constant item
 Marking id:item_touch_helper_previous_elevation:2131165284 used because it matches string pool constant item
+Marking color:notification_action_color_filter:2130968741 used because it matches string pool constant notification
+Marking color:notification_icon_bg_color:2130968742 used because it matches string pool constant notification
+Marking dimen:notification_action_icon_size:2131034213 used because it matches string pool constant notification
+Marking dimen:notification_action_text_size:2131034214 used because it matches string pool constant notification
+Marking dimen:notification_big_circle_margin:2131034215 used because it matches string pool constant notification
+Marking dimen:notification_content_margin_start:2131034216 used because it matches string pool constant notification
+Marking dimen:notification_large_icon_height:2131034217 used because it matches string pool constant notification
+Marking dimen:notification_large_icon_width:2131034218 used because it matches string pool constant notification
+Marking dimen:notification_main_column_padding_top:2131034219 used because it matches string pool constant notification
+Marking dimen:notification_media_narrow_margin:2131034220 used because it matches string pool constant notification
+Marking dimen:notification_right_icon_size:2131034221 used because it matches string pool constant notification
+Marking dimen:notification_right_side_padding_top:2131034222 used because it matches string pool constant notification
+Marking dimen:notification_small_icon_background_padding:2131034223 used because it matches string pool constant notification
+Marking dimen:notification_small_icon_size_as_large:2131034224 used because it matches string pool constant notification
+Marking dimen:notification_subtext_size:2131034225 used because it matches string pool constant notification
+Marking dimen:notification_top_pad:2131034226 used because it matches string pool constant notification
+Marking dimen:notification_top_pad_large_text:2131034227 used because it matches string pool constant notification
+Marking drawable:notification_action_background:2131099749 used because it matches string pool constant notification
+Marking drawable:notification_bg:2131099750 used because it matches string pool constant notification
+Marking drawable:notification_bg_low:2131099751 used because it matches string pool constant notification
+Marking drawable:notification_bg_low_normal:2131099752 used because it matches string pool constant notification
+Marking drawable:notification_bg_low_pressed:2131099753 used because it matches string pool constant notification
+Marking drawable:notification_bg_normal:2131099754 used because it matches string pool constant notification
+Marking drawable:notification_bg_normal_pressed:2131099755 used because it matches string pool constant notification
+Marking drawable:notification_icon_background:2131099756 used because it matches string pool constant notification
+Marking drawable:notification_template_icon_bg:2131099757 used because it matches string pool constant notification
+Marking drawable:notification_template_icon_low_bg:2131099758 used because it matches string pool constant notification
+Marking drawable:notification_tile_bg:2131099759 used because it matches string pool constant notification
+Marking id:notification_background:2131165299 used because it matches string pool constant notification
+Marking id:notification_main_column:2131165300 used because it matches string pool constant notification
+Marking id:notification_main_column_container:2131165301 used because it matches string pool constant notification
+Marking layout:notification_action:2131361825 used because it matches string pool constant notification
+Marking layout:notification_action_tombstone:2131361826 used because it matches string pool constant notification
+Marking layout:notification_template_custom_big:2131361827 used because it matches string pool constant notification
+Marking layout:notification_template_icon_group:2131361828 used because it matches string pool constant notification
+Marking layout:notification_template_part_chronometer:2131361829 used because it matches string pool constant notification
+Marking layout:notification_template_part_time:2131361830 used because it matches string pool constant notification
 Marking id:group_divider:2131165275 used because it matches string pool constant group
 @anim/abc_fade_in : reachable=false
 @anim/abc_fade_out : reachable=false
@@ -1406,9 +1446,9 @@ Marking id:group_divider:2131165275 used because it matches string pool constant
 @color/moccasin : reachable=false
 @color/navajowhite : reachable=false
 @color/navy : reachable=false
-@color/notification_action_color_filter : reachable=false
+@color/notification_action_color_filter : reachable=true
     @color/androidx_core_secondary_text_default_material_light
-@color/notification_icon_bg_color : reachable=false
+@color/notification_icon_bg_color : reachable=true
 @color/oldlace : reachable=false
 @color/olive : reachable=false
 @color/olivedrab : reachable=false
@@ -1591,21 +1631,21 @@ Marking id:group_divider:2131165275 used because it matches string pool constant
 @dimen/item_touch_helper_max_drag_scroll_per_frame : reachable=true
 @dimen/item_touch_helper_swipe_escape_max_velocity : reachable=true
 @dimen/item_touch_helper_swipe_escape_velocity : reachable=true
-@dimen/notification_action_icon_size : reachable=false
-@dimen/notification_action_text_size : reachable=false
-@dimen/notification_big_circle_margin : reachable=false
-@dimen/notification_content_margin_start : reachable=false
-@dimen/notification_large_icon_height : reachable=false
-@dimen/notification_large_icon_width : reachable=false
-@dimen/notification_main_column_padding_top : reachable=false
-@dimen/notification_media_narrow_margin : reachable=false
-@dimen/notification_right_icon_size : reachable=false
-@dimen/notification_right_side_padding_top : reachable=false
-@dimen/notification_small_icon_background_padding : reachable=false
-@dimen/notification_small_icon_size_as_large : reachable=false
-@dimen/notification_subtext_size : reachable=false
-@dimen/notification_top_pad : reachable=false
-@dimen/notification_top_pad_large_text : reachable=false
+@dimen/notification_action_icon_size : reachable=true
+@dimen/notification_action_text_size : reachable=true
+@dimen/notification_big_circle_margin : reachable=true
+@dimen/notification_content_margin_start : reachable=true
+@dimen/notification_large_icon_height : reachable=true
+@dimen/notification_large_icon_width : reachable=true
+@dimen/notification_main_column_padding_top : reachable=true
+@dimen/notification_media_narrow_margin : reachable=true
+@dimen/notification_right_icon_size : reachable=true
+@dimen/notification_right_side_padding_top : reachable=true
+@dimen/notification_small_icon_background_padding : reachable=true
+@dimen/notification_small_icon_size_as_large : reachable=true
+@dimen/notification_subtext_size : reachable=true
+@dimen/notification_top_pad : reachable=true
+@dimen/notification_top_pad_large_text : reachable=true
 @dimen/tooltip_corner_radius : reachable=false
 @dimen/tooltip_horizontal_padding : reachable=false
 @dimen/tooltip_margin : reachable=false
@@ -1808,28 +1848,28 @@ Marking id:group_divider:2131165275 used because it matches string pool constant
 @drawable/img_test_1 : reachable=true
 @drawable/launcher_app_list : reachable=false
 @drawable/launcher_app_list_bg : reachable=false
-@drawable/notification_action_background : reachable=false
+@drawable/notification_action_background : reachable=true
     @color/androidx_core_ripple_material_light
     @dimen/compat_button_inset_horizontal_material
     @dimen/compat_button_inset_vertical_material
     @dimen/compat_control_corner_material
     @dimen/compat_button_padding_vertical_material
     @dimen/compat_button_padding_horizontal_material
-@drawable/notification_bg : reachable=false
+@drawable/notification_bg : reachable=true
     @drawable/notification_bg_normal_pressed
     @drawable/notification_bg_normal
-@drawable/notification_bg_low : reachable=false
+@drawable/notification_bg_low : reachable=true
     @drawable/notification_bg_low_pressed
     @drawable/notification_bg_low_normal
-@drawable/notification_bg_low_normal : reachable=false
-@drawable/notification_bg_low_pressed : reachable=false
-@drawable/notification_bg_normal : reachable=false
-@drawable/notification_bg_normal_pressed : reachable=false
-@drawable/notification_icon_background : reachable=false
+@drawable/notification_bg_low_normal : reachable=true
+@drawable/notification_bg_low_pressed : reachable=true
+@drawable/notification_bg_normal : reachable=true
+@drawable/notification_bg_normal_pressed : reachable=true
+@drawable/notification_icon_background : reachable=true
     @color/notification_icon_bg_color
-@drawable/notification_template_icon_bg : reachable=false
-@drawable/notification_template_icon_low_bg : reachable=false
-@drawable/notification_tile_bg : reachable=false
+@drawable/notification_template_icon_bg : reachable=true
+@drawable/notification_template_icon_low_bg : reachable=true
+@drawable/notification_tile_bg : reachable=true
     @drawable/notify_panel_notification_icon_bg
 @drawable/notify_panel_notification_icon_bg : reachable=false
 @drawable/tooltip_frame_dark : reachable=false
@@ -1953,9 +1993,9 @@ Marking id:group_divider:2131165275 used because it matches string pool constant
 @id/never : reachable=false
 @id/none : reachable=true
 @id/normal : reachable=false
-@id/notification_background : reachable=false
-@id/notification_main_column : reachable=false
-@id/notification_main_column_container : reachable=false
+@id/notification_background : reachable=true
+@id/notification_main_column : reachable=true
+@id/notification_main_column_container : reachable=true
 @id/off : reachable=false
 @id/on : reachable=false
 @id/parentPanel : reachable=true
@@ -2172,15 +2212,15 @@ Marking id:group_divider:2131165275 used because it matches string pool constant
 @layout/adapter_apps_layout : reachable=false
     @color/white
 @layout/custom_dialog : reachable=false
-@layout/notification_action : reachable=false
+@layout/notification_action : reachable=true
     @style/Widget_Compat_NotificationActionContainer
     @dimen/notification_action_icon_size
     @style/Widget_Compat_NotificationActionText
-@layout/notification_action_tombstone : reachable=false
+@layout/notification_action_tombstone : reachable=true
     @style/Widget_Compat_NotificationActionContainer
     @dimen/notification_action_icon_size
     @style/Widget_Compat_NotificationActionText
-@layout/notification_template_custom_big : reachable=false
+@layout/notification_template_custom_big : reachable=true
     @layout/notification_template_icon_group
     @dimen/notification_large_icon_width
     @dimen/notification_large_icon_height
@@ -2188,14 +2228,14 @@ Marking id:group_divider:2131165275 used because it matches string pool constant
     @layout/notification_template_part_time
     @layout/notification_template_part_chronometer
     @style/TextAppearance_Compat_Notification_Info
-@layout/notification_template_icon_group : reachable=false
+@layout/notification_template_icon_group : reachable=true
     @dimen/notification_large_icon_width
     @dimen/notification_large_icon_height
     @dimen/notification_big_circle_margin
     @dimen/notification_right_icon_size
-@layout/notification_template_part_chronometer : reachable=false
+@layout/notification_template_part_chronometer : reachable=true
     @style/TextAppearance_Compat_Notification_Time
-@layout/notification_template_part_time : reachable=false
+@layout/notification_template_part_time : reachable=true
     @style/TextAppearance_Compat_Notification_Time
 @layout/select_dialog_item_material : reachable=false
     @attr/listPreferredItemPaddingRight
@@ -3818,6 +3858,8 @@ The root reachable resources are:
  color:abc_tint_switch_track:2130968600
  color:androidx_core_ripple_material_light:2130968604
  color:androidx_core_secondary_text_default_material_light:2130968605
+ color:notification_action_color_filter:2130968741
+ color:notification_icon_bg_color:2130968742
  dimen:abc_action_bar_stacked_max_height:2131034121
  dimen:abc_action_bar_stacked_tab_max_width:2131034122
  dimen:abc_cascading_menus_min_smallest_width:2131034134
@@ -3829,6 +3871,21 @@ The root reachable resources are:
  dimen:item_touch_helper_max_drag_scroll_per_frame:2131034210
  dimen:item_touch_helper_swipe_escape_max_velocity:2131034211
  dimen:item_touch_helper_swipe_escape_velocity:2131034212
+ dimen:notification_action_icon_size:2131034213
+ dimen:notification_action_text_size:2131034214
+ dimen:notification_big_circle_margin:2131034215
+ dimen:notification_content_margin_start:2131034216
+ dimen:notification_large_icon_height:2131034217
+ dimen:notification_large_icon_width:2131034218
+ dimen:notification_main_column_padding_top:2131034219
+ dimen:notification_media_narrow_margin:2131034220
+ dimen:notification_right_icon_size:2131034221
+ dimen:notification_right_side_padding_top:2131034222
+ dimen:notification_small_icon_background_padding:2131034223
+ dimen:notification_small_icon_size_as_large:2131034224
+ dimen:notification_subtext_size:2131034225
+ dimen:notification_top_pad:2131034226
+ dimen:notification_top_pad_large_text:2131034227
  dimen:tooltip_precise_anchor_extra_offset:2131034231
  dimen:tooltip_precise_anchor_threshold:2131034232
  dimen:tooltip_y_offset_non_touch:2131034234
@@ -3881,6 +3938,17 @@ The root reachable resources are:
  drawable:abc_textfield_search_material:2131099733
  drawable:abc_vector_test:2131099734
  drawable:img_test_1:2131099746
+ drawable:notification_action_background:2131099749
+ drawable:notification_bg:2131099750
+ drawable:notification_bg_low:2131099751
+ drawable:notification_bg_low_normal:2131099752
+ drawable:notification_bg_low_pressed:2131099753
+ drawable:notification_bg_normal:2131099754
+ drawable:notification_bg_normal_pressed:2131099755
+ drawable:notification_icon_background:2131099756
+ drawable:notification_template_icon_bg:2131099757
+ drawable:notification_template_icon_low_bg:2131099758
+ drawable:notification_tile_bg:2131099759
  id:accessibility_action_clickable_span:2131165190
  id:accessibility_custom_action_0:2131165191
  id:accessibility_custom_action_1:2131165192
@@ -3941,6 +4009,9 @@ The root reachable resources are:
  id:item_touch_helper_previous_elevation:2131165284
  id:message:2131165293
  id:none:2131165297
+ id:notification_background:2131165299
+ id:notification_main_column:2131165300
+ id:notification_main_column_container:2131165301
  id:parentPanel:2131165304
  id:scrollIndicatorDown:2131165311
  id:scrollIndicatorUp:2131165312
@@ -3993,6 +4064,12 @@ The root reachable resources are:
  layout:abc_search_view:2131361817
  layout:abc_tooltip:2131361819
  layout:activity_main11:2131361820
+ layout:notification_action:2131361825
+ layout:notification_action_tombstone:2131361826
+ layout:notification_template_custom_big:2131361827
+ layout:notification_template_icon_group:2131361828
+ layout:notification_template_part_chronometer:2131361829
+ layout:notification_template_part_time:2131361830
  layout:support_simple_spinner_dropdown_item:2131361834
  mipmap:ic_launcher:2131427328
  mipmap:ic_launcher_round:2131427329
@@ -4060,26 +4137,6 @@ Skipped unused resource res/color-v23/abc_btn_colored_text_material.xml: 624 byt
 Skipped unused resource res/drawable/ic_launcher.png: 7658 bytes (replaced with small dummy file of size 67 bytes)
 Skipped unused resource res/drawable/launcher_app_list.png: 1346 bytes (replaced with small dummy file of size 67 bytes)
 Skipped unused resource res/drawable/launcher_app_list_bg.png: 1608696 bytes (replaced with small dummy file of size 67 bytes)
-Skipped unused resource res/drawable-v21/notification_action_background.xml: 2250 bytes (replaced with small dummy file of size 9 bytes)
-Skipped unused resource res/drawable/notification_bg.xml: 751 bytes (replaced with small dummy file of size 9 bytes)
-Skipped unused resource res/drawable/notification_bg_low.xml: 753 bytes (replaced with small dummy file of size 9 bytes)
-Skipped unused resource res/drawable/notification_icon_background.xml: 314 bytes (replaced with small dummy file of size 9 bytes)
-Skipped unused resource res/drawable/notification_tile_bg.xml: 319 bytes (replaced with small dummy file of size 9 bytes)
-Skipped unused resource res/drawable-mdpi-v4/notification_bg_low_normal.9.png: 215 bytes (replaced with small dummy file of size 77 bytes)
-Skipped unused resource res/drawable-mdpi-v4/notification_bg_low_pressed.9.png: 223 bytes (replaced with small dummy file of size 77 bytes)
-Skipped unused resource res/drawable-mdpi-v4/notification_bg_normal.9.png: 215 bytes (replaced with small dummy file of size 77 bytes)
-Skipped unused resource res/drawable-mdpi-v4/notification_bg_normal_pressed.9.png: 223 bytes (replaced with small dummy file of size 77 bytes)
-Skipped unused resource res/drawable-mdpi-v4/notify_panel_notification_icon_bg.png: 98 bytes (replaced with small dummy file of size 67 bytes)
-Skipped unused resource res/drawable-hdpi-v4/notification_bg_low_normal.9.png: 212 bytes (replaced with small dummy file of size 77 bytes)
-Skipped unused resource res/drawable-hdpi-v4/notification_bg_low_pressed.9.png: 225 bytes (replaced with small dummy file of size 77 bytes)
-Skipped unused resource res/drawable-hdpi-v4/notification_bg_normal.9.png: 212 bytes (replaced with small dummy file of size 77 bytes)
-Skipped unused resource res/drawable-hdpi-v4/notification_bg_normal_pressed.9.png: 225 bytes (replaced with small dummy file of size 77 bytes)
-Skipped unused resource res/drawable-hdpi-v4/notify_panel_notification_icon_bg.png: 107 bytes (replaced with small dummy file of size 67 bytes)
-Skipped unused resource res/drawable-xhdpi-v4/notification_bg_low_normal.9.png: 221 bytes (replaced with small dummy file of size 77 bytes)
-Skipped unused resource res/drawable-xhdpi-v4/notification_bg_low_pressed.9.png: 252 bytes (replaced with small dummy file of size 77 bytes)
-Skipped unused resource res/drawable-xhdpi-v4/notification_bg_normal.9.png: 221 bytes (replaced with small dummy file of size 77 bytes)
-Skipped unused resource res/drawable-xhdpi-v4/notification_bg_normal_pressed.9.png: 247 bytes (replaced with small dummy file of size 77 bytes)
-Skipped unused resource res/drawable-xhdpi-v4/notify_panel_notification_icon_bg.png: 138 bytes (replaced with small dummy file of size 67 bytes)
 Skipped unused resource res/layout/abc_action_bar_up_container.xml: 588 bytes (replaced with small dummy file of size 9 bytes)
 Skipped unused resource res/layout/abc_activity_chooser_view.xml: 3884 bytes (replaced with small dummy file of size 9 bytes)
 Skipped unused resource res/layout/abc_activity_chooser_view_list_item.xml: 2684 bytes (replaced with small dummy file of size 9 bytes)
@@ -4087,10 +4144,4 @@ Skipped unused resource res/layout-v2/activity_user_private.xml: 3491 bytes (rep
 Skipped unused resource res/layout-v2/activity_version_update.xml: 5123 bytes (replaced with small dummy file of size 9 bytes)
 Skipped unused resource res/layout-v2/adapter_apps_layout.xml: 1826 bytes (replaced with small dummy file of size 9 bytes)
 Skipped unused resource res/layout/custom_dialog.xml: 828 bytes (replaced with small dummy file of size 9 bytes)
-Skipped unused resource res/layout-v21/notification_action.xml: 2216 bytes (replaced with small dummy file of size 9 bytes)
-Skipped unused resource res/layout-v21/notification_action_tombstone.xml: 2677 bytes (replaced with small dummy file of size 9 bytes)
-Skipped unused resource res/layout-v21/notification_template_custom_big.xml: 6318 bytes (replaced with small dummy file of size 9 bytes)
-Skipped unused resource res/layout-v21/notification_template_icon_group.xml: 2432 bytes (replaced with small dummy file of size 9 bytes)
-Skipped unused resource res/layout/notification_template_part_chronometer.xml: 643 bytes (replaced with small dummy file of size 9 bytes)
-Skipped unused resource res/layout/notification_template_part_time.xml: 630 bytes (replaced with small dummy file of size 9 bytes)
 Skipped unused resource res/raw/beep.ogg: 12237 bytes (replaced with small dummy file of size 0 bytes)

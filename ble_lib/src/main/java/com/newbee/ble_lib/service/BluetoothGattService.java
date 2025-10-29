@@ -2,10 +2,12 @@ package com.newbee.ble_lib.service;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 
+import com.newbee.ble_lib.NewBeeBleManager;
 import com.newbee.ble_lib.R;
 import com.newbee.ble_lib.base.BaseService;
 
@@ -25,7 +27,7 @@ import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
 import com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType;
 
 
-public class BluetoothGattService extends BaseService implements BleEventObserver {
+public class BluetoothGattService extends BaseService {
 
 
 
@@ -38,10 +40,12 @@ public class BluetoothGattService extends BaseService implements BleEventObserve
 
                 switch (msgType){
                     case INIT_BLE:
+                        Log.w(tag,"BluetoothAdapter  initialized  11155----11999");
                         BleConnectManager.getInstance().havePermissionInitBle(getBaseContext(),getPackageManager());
                         autoConnectDevice();
                         break;
                     case SCAN_BLE:
+                        Log.w(tag,"BluetoothAdapter  initialized  11155----11000");
                         BleConnectManager.getInstance().startSearchBLE();
                         break;
                     case DISCONNECT_BLE:
@@ -70,23 +74,26 @@ public class BluetoothGattService extends BaseService implements BleEventObserve
     private Runnable autoConnectRunnable=new Runnable() {
         @Override
         public void run() {
-            Log.i("1111","1234kasjffdlks:0");
+            Log.w(tag,"BluetoothAdapter  initialized  11155----11333");
             if(!NewBeeBleConfig.getInstance().isAutoConnect()){
                 return;
             }
 
-
+            Log.w(tag,"BluetoothAdapter  initialized  11155----11444");
             BleDeviceBean bleDeviceBean= BleConnectStatuUtil.getInstance().getNowUseBleDevice();
             boolean isConnect=BleConnectStatuUtil.getInstance().isConnect();
             if(null!=bleDeviceBean&&isConnect){
+                Log.w(tag,"BluetoothAdapter  initialized  11155----11555");
                 return;
             }
-            Log.i("1111","1234kasjffdlks:1");
+            Log.w(tag,"BluetoothAdapter  initialized  11155----11666");
+            Log.i(tag,"1234kasjffdlks:1");
             if(isDisConnectReinit){
                 isDisConnectReinit=false;
-                havePermissionInitBle();
+                bleEventObserver.havePermissionInitBle();
             }else {
-                startSearchBle();
+                bleEventObserver. startSearchBle();
+
             }
             autoConnectDevice();
         }
@@ -94,14 +101,14 @@ public class BluetoothGattService extends BaseService implements BleEventObserve
 
     private void autoConnectDevice(){
 
-        Log.i("1111","1234kasjffdlks:2");
+        Log.i(tag,"1234kasjffdlks:2");
         handler.removeCallbacks(autoConnectRunnable);
         handler.postDelayed(autoConnectRunnable,5*1000);
     }
 
     boolean isDisConnectReinit;
     private void autoConnectDeviceNow(){
-        Log.i("1111","1234kasjffdlks:3");
+        Log.w(tag,"BluetoothAdapter  initialized  11155----11222");
         handler.removeCallbacks(autoConnectRunnable);
         int waitTime=1*1000;
         if(isDisConnectReinit){
@@ -111,13 +118,13 @@ public class BluetoothGattService extends BaseService implements BleEventObserve
 
     }
     private void nowConnectIngWait(){
-        Log.i("1111","1234kasjffdlks:4");
+        Log.i(tag,"1234kasjffdlks:4");
         handler.removeCallbacks(autoConnectRunnable);
         handler.postDelayed(autoConnectRunnable,13*1000);
     }
 
     private void cancelAutoConnect(){
-        Log.i("1111","1234kasjffdlks:5");
+        Log.i(tag,"1234kasjffdlks:5");
         handler.removeCallbacks(autoConnectRunnable);
     }
 
@@ -125,6 +132,7 @@ public class BluetoothGattService extends BaseService implements BleEventObserve
     private Runnable bleDisConnectRunnable=new Runnable() {
         @Override
         public void run() {
+            Log.w(tag,"BluetoothAdapter  initialized  11155----1122");
             isDisConnectReinit=true;
             BleConnectStatuUtil.getInstance().sendDisconnected();
         }
@@ -136,6 +144,7 @@ public class BluetoothGattService extends BaseService implements BleEventObserve
                 switch (bleStatu){
                     case DISCONNECTED:
                     case CONNECTING_ERR:
+                        Log.w(tag,"BluetoothAdapter  initialized  11155----1111");
                         autoConnectDeviceNow();
                         break;
                     case CONNECTING:
@@ -160,8 +169,22 @@ public class BluetoothGattService extends BaseService implements BleEventObserve
     @Override
     public void init() {
         BleStatuEventSubscriptionSubject.getInstance().attach(bleStatuEventObserver);
-        BleEventSubscriptionSubject.getInstance().attach(this);
+        BleEventSubscriptionSubject.getInstance().attach(bleEventObserver);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true){
 
+                    try {
+                        Log.w(tag,"BluetoothAdapter  initialized  1111111111");
+                        new Thread().sleep(1000);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }
+        }).start();
+        NewBeeBleManager.getInstance().setBleEventObserver(bleEventObserver);
     }
 
 
@@ -171,58 +194,85 @@ public class BluetoothGattService extends BaseService implements BleEventObserve
 
     }
 
+//    @Override
+//    public int onStartCommand(Intent intent, int flags, int startId) {
+//        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+//            if(NewBeeBleManager.getInstance().getNotificationId()==0||null==NewBeeBleManager.getInstance().getNotification()){
+//                return super.onStartCommand(intent, flags, startId);
+//
+//            }else {
+//                startForeground(NewBeeBleManager.getInstance().getNotificationId(), NewBeeBleManager.getInstance().getNotification());//服务前台化只能使用startForeground()方法,不能使用 notificationManager.notify(1,notification); 这个只是启动通知使用的,使用这个方法你只需要等待几秒就会发现报错了
+//                return START_STICKY;
+//            }
+//
+//
+//        }else {
+//            return super.onStartCommand(intent, flags, startId);
+//        }
+////
+//    }
+
+
     @Override
     public void close() {
+
         handler.removeCallbacksAndMessages(null);
         BleConnectManager.getInstance().close(getBaseContext());
-        BleEventSubscriptionSubject.getInstance().detach(this);
+        BleEventSubscriptionSubject.getInstance().detach(bleEventObserver);
 
         BleStatuEventSubscriptionSubject.getInstance().detach(bleStatuEventObserver);
     }
 
-    @Override
-    public void havePermissionInitBle() {
-        handler.sendEmptyMessage(BluetoothGattServiceMsgType.INIT_BLE.ordinal());
 
-    }
 
-    @Override
-    public void startSearchBle() {
+   private  BleEventObserver bleEventObserver=new BleEventObserver() {
 
-        handler.sendEmptyMessage(BluetoothGattServiceMsgType.SCAN_BLE.ordinal());
+        @Override
+        public void havePermissionInitBle() {
+            Log.w(tag,"BluetoothAdapter  initialized  11155----11888");
+            handler.sendEmptyMessage(BluetoothGattServiceMsgType.INIT_BLE.ordinal());
 
-    }
+        }
 
-    @Override
-    public void disconnectedBle() {
-        handler.sendEmptyMessage(BluetoothGattServiceMsgType.DISCONNECT_BLE.ordinal());
-    }
+        @Override
+        public void startSearchBle() {
+            Log.w(tag,"BluetoothAdapter  initialized  11155----11777");
+            handler.sendEmptyMessage(BluetoothGattServiceMsgType.SCAN_BLE.ordinal());
 
-    @Override
-    public void sendCmd(byte[] bytes) {
-        Message msg=new Message();
-        msg.what=BluetoothGattServiceMsgType.SEND_CMD.ordinal();
-        msg.obj=bytes;
-        handler.sendMessage(msg);
+        }
 
-    }
+        @Override
+        public void disconnectedBle() {
+            handler.sendEmptyMessage(BluetoothGattServiceMsgType.DISCONNECT_BLE.ordinal());
+        }
 
-    @Override
-    public void sendImage(BleSendImageInfoBean sendImageInfoBean) {
-        Message msg=new Message();
-        msg.what=BluetoothGattServiceMsgType.SEND_IMAGE.ordinal();
-        msg.obj=sendImageInfoBean;
-        handler.sendMessage(msg);
-    }
+        @Override
+        public void sendCmd(byte[] bytes) {
+            Message msg=new Message();
+            msg.what=BluetoothGattServiceMsgType.SEND_CMD.ordinal();
+            msg.obj=bytes;
+            handler.sendMessage(msg);
 
-    @Override
-    public void sendImageIndexCmd(int index, byte[] bytes) {
-        Message msg=new Message();
-        msg.what=BluetoothGattServiceMsgType.SEND_CMD_BY_IMAGE_INDEX.ordinal();
-        msg.obj=bytes;
-        msg.arg1=index;
-        handler.sendMessage(msg);
-    }
+        }
+
+        @Override
+        public void sendImage(BleSendImageInfoBean sendImageInfoBean) {
+            Message msg=new Message();
+            msg.what=BluetoothGattServiceMsgType.SEND_IMAGE.ordinal();
+            msg.obj=sendImageInfoBean;
+            handler.sendMessage(msg);
+        }
+
+        @Override
+        public void sendImageIndexCmd(int index, byte[] bytes) {
+            Message msg=new Message();
+            msg.what=BluetoothGattServiceMsgType.SEND_CMD_BY_IMAGE_INDEX.ordinal();
+            msg.obj=bytes;
+            msg.arg1=index;
+            handler.sendMessage(msg);
+        }
+    };
+
 
 
 

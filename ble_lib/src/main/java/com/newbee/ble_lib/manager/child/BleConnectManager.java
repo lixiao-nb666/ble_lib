@@ -41,13 +41,14 @@ public class BleConnectManager {
 
 
 
-
+    private Context context;
     public void havePermissionInitBle(Context context, PackageManager packageManager){
         if(!BleCheckUtil.checkPhoneCanUseBle(packageManager)){
 //            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.BLE_CAN_NOT_USE);
             BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR,com.nrmyw.ble_event_lib.R.string.ble_statu_can_not_use);
             return;
         }
+
         bluetoothManager= (BluetoothManager) context.getSystemService(Context.BLUETOOTH_SERVICE);
         if(null==bluetoothManager){
 //            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.BLE_MANAGER_CAN_NOT_USE);
@@ -60,6 +61,7 @@ public class BleConnectManager {
             BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR,com.nrmyw.ble_event_lib.R.string.ble_statu_adapter_can_not_use);
             return;
         }
+        this.context=context;
         if(bleIsOpen()){
             startSearchBLE();
         }else{
@@ -97,6 +99,7 @@ public class BleConnectManager {
     /** 开始扫描 **/
     long lastSearchBleTime;
     public void startSearchBLE(){
+
         if(null==bluetoothAdapter){
             return;
         }
@@ -109,6 +112,7 @@ public class BleConnectManager {
 //        bluetoothAdapter.stopLeScan(leScanCallback);
 //        bluetoothAdapter.startLeScan(leScanCallback);
         bluetoothAdapter.startDiscovery();
+        tryToConnectOldDevice();
     }
 
 
@@ -116,10 +120,17 @@ public class BleConnectManager {
 
     private String mBluetoothDeviceAddress;
 
+    private void tryToConnectOldDevice(){
+        if(TextUtils.isEmpty(mBluetoothDeviceAddress)){
+            return;
+        }
+        connect(mBluetoothDeviceAddress);
+    }
+
     /**
      * 连接远程蓝牙
      */
-    public boolean connect(Context context,String address) {
+    public boolean connect(String address) {
         if (null==bluetoothAdapter || TextUtils.isEmpty(address)) {
 //            LG.e("BluetoothAdapter not initialized or unspecified address");
 

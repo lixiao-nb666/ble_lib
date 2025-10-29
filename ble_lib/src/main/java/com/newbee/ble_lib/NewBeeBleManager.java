@@ -1,5 +1,6 @@
 package com.newbee.ble_lib;
 
+import android.app.Notification;
 import android.content.Context;
 
 import com.newbee.ble_lib.receiver.BleStatuBroadcastReceiverDao;
@@ -36,11 +37,22 @@ public class NewBeeBleManager {
 
     }
 
+    public void close(){
+        if(null!=bluetoothGattServiceDao){
+            bluetoothGattServiceDao.stopServiceIsBind();
+            bluetoothGattServiceDao=null;
+        }
+        BleStatuBroadcastReceiverDao.getInstance().close();
+    }
 
+    BleEventObserver bleEventObserver;
+    public void setBleEventObserver( BleEventObserver bleEventObserver){
+        this.bleEventObserver=bleEventObserver;
+    }
 
     public BleEventObserver getEventImp(){
         try {
-                return (BluetoothGattService) bluetoothGattServiceDao.getService();
+                return bleEventObserver;
         }catch (Exception e){
 
         }
@@ -56,12 +68,26 @@ public class NewBeeBleManager {
         return BleConnectStatuUtil.getInstance().isConnect();
     }
 
-    public void close(){
-        if(null!=bluetoothGattServiceDao){
-            bluetoothGattServiceDao.stopServiceIsBind();
-            bluetoothGattServiceDao=null;
-        }
-        BleStatuBroadcastReceiverDao.getInstance().close();
-    }
+
+
+//    private Notification notification;
+//
+//    public void setNotification(Notification notification){
+//        this.notification=notification;
+//    }
+//
+//    public Notification getNotification(){
+//        return notification;
+//    }
+//
+//    private int notificationId;
+//
+//    public int getNotificationId() {
+//        return notificationId;
+//    }
+//
+//    public void setNotificationId(int notificationId) {
+//        this.notificationId = notificationId;
+//    }
 
 }

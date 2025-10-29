@@ -38,7 +38,7 @@ public class BleStatuBroadcastReceiver extends BroadcastReceiver {
             BleConnectStatuUtil.getInstance().checkDisconnectedDevice(deviceName,address);
         }else if(action.equals(BluetoothDevice.ACTION_FOUND)){
             BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-            Log.i("1111","1234kasjffdlks:9999------"+device.getName()+"----"+device.getAddress());
+            Log.i(tag,"1234kasjffdlks:9999------"+device.getName()+"----"+device.getAddress());
             String deviceName = device.getName();
 //            String deviceHardwareAddress = device.getAddress(); // MAC address
             BleDeviceBean bleDeviceBean= NewBeeBleConfig.getInstance().checkBleName(deviceName);
