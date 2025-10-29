@@ -138,32 +138,32 @@ public class BlueToothGattManager {
         }
 
         /** 查找蓝牙对应服务和读写特征 **/
-        private void displayGattServices(){
-            List<BluetoothGattService> servicesList = bluetoothGatt.getServices();
-            for (int i = 0; i < servicesList.size(); i++) {
-                BluetoothGattService service = servicesList.get(i);
-                Log.e(tag,"onServicesDiscovered: 服务" + i + "+" + service.getUuid().toString());
-                if (service.getUuid().equals(UUID.fromString(NewBeeBleConfig.getInstance().getServiceID()))) {
-                    List<BluetoothGattCharacteristic> characteristicsList = service.getCharacteristics();
-                    for (int j = 0; j < characteristicsList.size(); j++) {
-                        BluetoothGattCharacteristic characteristic = characteristicsList.get(j);
-//                      ？  LogUtil.e("onServicesDiscovered: 特征" + j + "+" + characteristic.getUuid().toString());
-                        if (characteristic.getUuid().toString().equals(NewBeeBleConfig.getInstance().getNoticeID())) {
-                            readCharacteristic=characteristic;
-                            setCharacteristicNotification(characteristic,true);
-                        }
-                        if (characteristic.getUuid().toString().equals(NewBeeBleConfig.getInstance().getWriteID())) {
-                            nowCanSend=true;
-                            writeCharacteristic = characteristic;
-                            BleConnectStatuUtil.getInstance().sendConnected();
-                        }
-                    }
-//                    EventBus.getDefault().post(new EventBluetoothStateMessage(ACTION_GATT_SERVICES_DISCOVERED));
-                }
-            }
-            Log.w(tag,"BluetoothAdapter  initialized  111:222333444555");
-
-        }
+//        private void displayGattServices(){
+//            List<BluetoothGattService> servicesList = bluetoothGatt.getServices();
+//            for (int i = 0; i < servicesList.size(); i++) {
+//                BluetoothGattService service = servicesList.get(i);
+//                Log.e(tag,"onServicesDiscovered: 服务" + i + "+" + service.getUuid().toString());
+//                if (service.getUuid().equals(UUID.fromString(NewBeeBleConfig.getInstance().getServiceID()))) {
+//                    List<BluetoothGattCharacteristic> characteristicsList = service.getCharacteristics();
+//                    for (int j = 0; j < characteristicsList.size(); j++) {
+//                        BluetoothGattCharacteristic characteristic = characteristicsList.get(j);
+////                      ？  LogUtil.e("onServicesDiscovered: 特征" + j + "+" + characteristic.getUuid().toString());
+//                        if (characteristic.getUuid().toString().equals(NewBeeBleConfig.getInstance().getNoticeID())) {
+//                            readCharacteristic=characteristic;
+//                            setCharacteristicNotification(characteristic,true);
+//                        }
+//                        if (characteristic.getUuid().toString().equals(NewBeeBleConfig.getInstance().getWriteID())) {
+//                            nowCanSend=true;
+//                            writeCharacteristic = characteristic;
+//                            BleConnectStatuUtil.getInstance().sendConnected();
+//                        }
+//                    }
+////                    EventBus.getDefault().post(new EventBluetoothStateMessage(ACTION_GATT_SERVICES_DISCOVERED));
+//                }
+//            }
+//            Log.w(tag,"BluetoothAdapter  initialized  111:222333444555");
+//
+//        }
 
         private void displayGattServices1(){
             //查找服务

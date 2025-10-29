@@ -3,8 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 31f4383
-# pg_map_hash: SHA-256 31f4383bf960f8e7d4c393a71528665954610dd8227d064a24a56b270a145941
+# pg_map_id: efafb2a
+# pg_map_hash: SHA-256 efafb2a95a1af5bbb2d5f3be86efe61d6ebf5a9cb195eebbf08e0b532c4fe7cf
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -6474,10 +6474,10 @@ com.newbee.ble_lib.manager.child.BlueToothGattManager -> com.newbee.ble_lib.mana
     36:36:boolean access$202(com.newbee.ble_lib.manager.child.BlueToothGattManager,boolean) -> access$202
     36:36:android.bluetooth.BluetoothGattCharacteristic access$300(com.newbee.ble_lib.manager.child.BlueToothGattManager) -> access$300
     36:36:android.bluetooth.BluetoothGattCharacteristic access$302(com.newbee.ble_lib.manager.child.BlueToothGattManager,android.bluetooth.BluetoothGattCharacteristic) -> access$302
-    36:36:android.bluetooth.BluetoothGattCharacteristic access$400(com.newbee.ble_lib.manager.child.BlueToothGattManager) -> access$400
-    36:36:android.bluetooth.BluetoothGattCharacteristic access$402(com.newbee.ble_lib.manager.child.BlueToothGattManager,android.bluetooth.BluetoothGattCharacteristic) -> access$402
-    36:36:android.bluetooth.BluetoothGattService access$500(com.newbee.ble_lib.manager.child.BlueToothGattManager) -> access$500
-    36:36:android.bluetooth.BluetoothGattService access$502(com.newbee.ble_lib.manager.child.BlueToothGattManager,android.bluetooth.BluetoothGattService) -> access$502
+    36:36:android.bluetooth.BluetoothGattService access$400(com.newbee.ble_lib.manager.child.BlueToothGattManager) -> access$400
+    36:36:android.bluetooth.BluetoothGattService access$402(com.newbee.ble_lib.manager.child.BlueToothGattManager,android.bluetooth.BluetoothGattService) -> access$402
+    36:36:android.bluetooth.BluetoothGattCharacteristic access$500(com.newbee.ble_lib.manager.child.BlueToothGattManager) -> access$500
+    36:36:android.bluetooth.BluetoothGattCharacteristic access$502(com.newbee.ble_lib.manager.child.BlueToothGattManager,android.bluetooth.BluetoothGattCharacteristic) -> access$502
     284:285:void checkIsDisConnecting() -> checkIsDisConnecting
     277:281:void close() -> close
     415:420:void disconnect() -> disconnect
@@ -6647,16 +6647,16 @@ com.newbee.ble_tool.activity.MainActivity -> com.newbee.ble_tool.activity.MainAc
     38:38:java.lang.Runnable access$100(com.newbee.ble_tool.activity.MainActivity) -> access$100
     38:38:android.widget.TextView access$200(com.newbee.ble_tool.activity.MainActivity) -> access$200
     38:38:android.widget.TextView access$300(com.newbee.ble_tool.activity.MainActivity) -> access$300
-    206:206:void changeConfig() -> changeConfig
-    191:191:void closeActivity() -> closeActivity
-    156:156:int getViewLayoutRsId() -> getViewLayoutRsId
-    186:186:void initControl() -> initControl
-    181:181:void initData() -> initData
-    161:176:void initView() -> initView
-    232:236:void onDestroy() -> onDestroy
-    212:227:void setViewByBleConnectStatu(boolean) -> setViewByBleConnectStatu
-    201:201:void viewIsPause() -> viewIsPause
-    196:196:void viewIsShow() -> viewIsShow
+    207:207:void changeConfig() -> changeConfig
+    192:192:void closeActivity() -> closeActivity
+    157:157:int getViewLayoutRsId() -> getViewLayoutRsId
+    187:187:void initControl() -> initControl
+    182:182:void initData() -> initData
+    162:177:void initView() -> initView
+    233:237:void onDestroy() -> onDestroy
+    213:228:void setViewByBleConnectStatu(boolean) -> setViewByBleConnectStatu
+    202:202:void viewIsPause() -> viewIsPause
+    197:197:void viewIsShow() -> viewIsShow
 com.newbee.ble_tool.activity.MainActivity$1 -> com.newbee.ble_tool.activity.MainActivity$1:
     39:39:void <init>(com.newbee.ble_tool.activity.MainActivity) -> <init>
     42:53:void sendBleStatu(com.nrmyw.ble_event_lib.statu.BleStatu,java.lang.Object[]) -> sendBleStatu
@@ -6668,9 +6668,9 @@ com.newbee.ble_tool.activity.MainActivity$3 -> com.newbee.ble_tool.activity.Main
     96:101:void run() -> run
 com.newbee.ble_tool.activity.MainActivity$4 -> com.newbee.ble_tool.activity.MainActivity$4:
     103:103:void <init>(com.newbee.ble_tool.activity.MainActivity) -> <init>
-    106:150:void handleMessage(android.os.Message) -> handleMessage
+    106:151:void handleMessage(android.os.Message) -> handleMessage
 com.newbee.ble_tool.activity.MainActivity$5 -> com.newbee.ble_tool.activity.MainActivity$5:
-    112:112:void <clinit>() -> <clinit>
+    116:116:void <clinit>() -> <clinit>
 com.newbee.ble_tool.app.MyApp -> com.newbee.ble_tool.app.MyApp:
     18:18:void <init>() -> <init>
     34:35:void close() -> close

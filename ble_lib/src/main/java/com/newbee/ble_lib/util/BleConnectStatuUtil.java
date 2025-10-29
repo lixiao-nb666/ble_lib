@@ -80,7 +80,7 @@ public class BleConnectStatuUtil {
         }
         lastConnectTime=0;
         isConnect=false;
-        nowUseBleDevice=null;
+
         BlueToothGattSendMsgManager.getInstance().clear();
         BlueToothGattManager.getInstance().checkIsDisConnecting();
         BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.DISCONNECTED);

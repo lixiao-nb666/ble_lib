@@ -109,19 +109,20 @@ public class MainActivity extends BaseCompatActivity {
             if(msg.arg1!=0){
                 bleTV.append("-"+getResources().getText(msg.arg1));
             }
+            BleDeviceBean bleDeviceBean= NewBeeBleManager.getInstance().getNowUseBleDevice();
+            if(null!=bleDeviceBean){
+                bleTV.setText(BleDeviceType.values()[bleDeviceBean.getDeviceType()].name());
+            }
             switch (bleStatu){
                 case CONNECTING:
-                    BleDeviceBean bleDeviceBean= NewBeeBleManager.getInstance().getNowUseBleDevice();
-                    if(null!=bleDeviceBean){
-                        bleTV.setText(BleDeviceType.values()[bleDeviceBean.getDeviceType()].name());
-                    }
+
                     break;
                 case CONNECTED:
                     bleTV.append("-连接成功");
                     setViewByBleConnectStatu(NewBeeBleManager.getInstance().isConnect());
                     break;
                 case DISCONNECTED:
-                    bleTV.setText("已经断开连接");
+                    bleTV.append("已经断开连接");
                     setViewByBleConnectStatu(NewBeeBleManager.getInstance().isConnect());
                     break;
                 case RUN_ERR:
