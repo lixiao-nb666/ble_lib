@@ -170,20 +170,7 @@ public class BluetoothGattService extends BaseService {
     public void init() {
         BleStatuEventSubscriptionSubject.getInstance().attach(bleStatuEventObserver);
         BleEventSubscriptionSubject.getInstance().attach(bleEventObserver);
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while (true){
 
-                    try {
-                        Log.w(tag,"BluetoothAdapter  initialized  1111111111");
-                        new Thread().sleep(1000);
-                    } catch (InterruptedException e) {
-                        throw new RuntimeException(e);
-                    }
-                }
-            }
-        }).start();
         NewBeeBleManager.getInstance().setBleEventObserver(bleEventObserver);
     }
 
