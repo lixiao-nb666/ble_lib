@@ -22,12 +22,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8eea6d03-d1e4-4dd5-a95d-cfd1509ed020" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/newbee/ble_tool/activity/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/newbee/ble_tool/activity/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/NewBeeBleManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/NewBeeBleManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/manager/child/BleConnectManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/manager/child/BleConnectManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/service/BluetoothGattService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/service/BluetoothGattService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/proguard-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/proguard-rules.pro" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

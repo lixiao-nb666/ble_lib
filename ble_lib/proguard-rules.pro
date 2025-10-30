@@ -39,6 +39,7 @@
     getEventImp();
      isConnect();
     getNowUseBleDevice();
+    nowGetAllPermissions();
     close(...);
 
 }
