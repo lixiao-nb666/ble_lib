@@ -174,6 +174,7 @@ public class MainActivity extends BaseCompatActivity {
         setViewByBleConnectStatu(NewBeeBleManager.getInstance().isConnect());
         BleStatuEventSubscriptionSubject.getInstance().attach(bleStatuEventObserver);
 //        BleHintEventSubscriptionSubject.getInstance().attach(bleHintEventObserver);
+        NewBeeBleManager.getInstance().nowGetAllPermissions();
     }
 
     @Override

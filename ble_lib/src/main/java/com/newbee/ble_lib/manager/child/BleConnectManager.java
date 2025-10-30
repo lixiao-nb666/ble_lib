@@ -39,6 +39,19 @@ public class BleConnectManager {
         return bleManager;
     }
 
+    public void close(){
+        if(null!=context){
+            context=null;
+        }
+        if(null!=bluetoothAdapter){
+            bluetoothAdapter=null;
+        }
+        if(null!=bluetoothManager){
+            bluetoothManager=null;
+        }
+        BlueToothGattManager.getInstance().close();
+        bluetoothManager=null;
+    }
 
 
     private Context context;
@@ -160,16 +173,7 @@ public class BleConnectManager {
 
 
 
-    public void close(Context context){
-        if(null!=bluetoothAdapter){
-            bluetoothAdapter=null;
-        }
-        if(null!=bluetoothManager){
-            bluetoothManager=null;
-        }
-        BlueToothGattManager.getInstance().close();
-        bluetoothManager=null;
-    }
+
 
 
 

@@ -38,6 +38,10 @@ public class NewBeeBleManager {
     }
 
     public void close(){
+        if (null!=bleEventObserver) {
+            bleEventObserver=null;
+        }
+
         if(null!=bluetoothGattServiceDao){
             bluetoothGattServiceDao.stopServiceIsBind();
             bluetoothGattServiceDao=null;
@@ -45,18 +49,29 @@ public class NewBeeBleManager {
         BleStatuBroadcastReceiverDao.getInstance().close();
     }
 
-    BleEventObserver bleEventObserver;
+    private BleEventObserver bleEventObserver;
     public void setBleEventObserver( BleEventObserver bleEventObserver){
         this.bleEventObserver=bleEventObserver;
+        nowCheckToInitBle();
     }
 
     public BleEventObserver getEventImp(){
-        try {
-                return bleEventObserver;
-        }catch (Exception e){
 
+        return bleEventObserver;
+    }
+
+    private boolean needInitBle;
+    public void nowGetAllPermissions(){
+        needInitBle=true;
+        nowCheckToInitBle();
+    }
+
+    private void nowCheckToInitBle(){
+        if(null==bleEventObserver||!needInitBle){
+            return;
         }
-        return null;
+        bleEventObserver.havePermissionInitBle();
+        needInitBle=false;
     }
 
 

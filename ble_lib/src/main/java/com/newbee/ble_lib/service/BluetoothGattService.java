@@ -60,7 +60,6 @@ public class BluetoothGattService extends BaseService {
                     case SEND_CMD_BY_IMAGE_INDEX:
                         BlueToothGattSendMsgManager.getInstance().sendMsgByImg(msg.arg1, (byte[]) msg.obj);
                         break;
-
                 }
                 BleStatu bleStatu=BleStatu.USER_DO;
                 bleStatu.setStrId(msgType.getStrId());
@@ -202,11 +201,9 @@ public class BluetoothGattService extends BaseService {
 
     @Override
     public void close() {
-
         handler.removeCallbacksAndMessages(null);
-        BleConnectManager.getInstance().close(getBaseContext());
+        BleConnectManager.getInstance().close();
         BleEventSubscriptionSubject.getInstance().detach(bleEventObserver);
-
         BleStatuEventSubscriptionSubject.getInstance().detach(bleStatuEventObserver);
     }
 
