@@ -34,11 +34,13 @@
     <string name="ble_statu_connecting">Bluetooth：연결 중...</string>
     <string name="ble_statu_connecting_err">Bluetooth：연결 실패...</string>
     <string name="ble_statu_disconnected">Bluetooth：연결이 끊겼습니다...다시 연결해 주십시오</string>
+    <string name="ble_statu_init">Bluetooth：Init</string>
     <string name="ble_statu_manager_can_not_use">Bluetooth：시스템 관리자를 사용할 수 없습니다</string>
     <string name="ble_statu_none">Bluetooth：알 수 없는 상태</string>
     <string name="ble_statu_opening">Bluetooth：여는 중...</string>
     <string name="ble_statu_retrun_bytes">Bluetooth：반환 값</string>
     <string name="ble_statu_run_err">Bluetooth：실행 오류</string>
+    <string name="ble_statu_searching">Bluetooth：Searching</string>
     <string name="ble_statu_send_image_end">Bluetooth：그림 보내기 끝</string>
     <string name="ble_statu_send_image_start">Bluetooth：그림 보내기 시작</string>
     <string name="ble_statu_sending_data">Bluetooth：데이터 전송 중...</string>

@@ -1073,11 +1073,13 @@ int string ble_statu_connected 0x7f0d001f
 int string ble_statu_connecting 0x7f0d0020
 int string ble_statu_connecting_err 0x7f0d0021
 int string ble_statu_disconnected 0x7f0d0022
+int string ble_statu_init 0x7f0d0059
 int string ble_statu_manager_can_not_use 0x7f0d0023
 int string ble_statu_none 0x7f0d0024
 int string ble_statu_opening 0x7f0d0025
 int string ble_statu_retrun_bytes 0x7f0d0026
 int string ble_statu_run_err 0x7f0d0027
+int string ble_statu_searching 0x7f0d005a
 int string ble_statu_send_image_end 0x7f0d0028
 int string ble_statu_send_image_start 0x7f0d0029
 int string ble_statu_sending_data 0x7f0d002a

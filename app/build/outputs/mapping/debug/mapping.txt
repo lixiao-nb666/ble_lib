@@ -3,8 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 6ed6f43
-# pg_map_hash: SHA-256 6ed6f43e5534540a868c62e33947f5064597bd5c83cc476c434a8554823d5047
+# pg_map_id: d2d4625
+# pg_map_hash: SHA-256 d2d462582d7c6eb0aaa535704d3dad57d1b92248187ed1aa54ff7d8e4d3a1d74
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -6460,15 +6460,15 @@ com.newbee.ble_lib.base.BaseServiceDao$1 -> com.newbee.ble_lib.base.BaseServiceD
     38:39:void onServiceDisconnected(android.content.ComponentName) -> onServiceDisconnected
 com.newbee.ble_lib.manager.child.BleConnectManager -> com.newbee.ble_lib.manager.child.BleConnectManager:
     29:29:void <init>() -> <init>
-    87:90:boolean bleIsOpen() -> bleIsOpen
+    88:91:boolean bleIsOpen() -> bleIsOpen
     43:54:void close() -> close
-    147:163:boolean connect(java.lang.String) -> connect
-    170:172:void disconnect() -> disconnect
+    149:165:boolean connect(java.lang.String) -> connect
+    172:174:void disconnect() -> disconnect
     32:39:com.newbee.ble_lib.manager.child.BleConnectManager getInstance() -> getInstance
-    59:83:void havePermissionInitBle(android.content.Context,android.content.pm.PackageManager) -> havePermissionInitBle
-    96:101:void openBluetooth() -> openBluetooth
-    116:129:void startSearchBLE() -> startSearchBLE
-    137:141:void tryToConnectOldDevice() -> tryToConnectOldDevice
+    59:84:void havePermissionInitBle(android.content.Context,android.content.pm.PackageManager) -> havePermissionInitBle
+    97:102:void openBluetooth() -> openBluetooth
+    117:131:void startSearchBLE() -> startSearchBLE
+    139:143:void tryToConnectOldDevice() -> tryToConnectOldDevice
 com.newbee.ble_lib.manager.child.BlueToothGattManager -> com.newbee.ble_lib.manager.child.BlueToothGattManager:
     37:287:void <init>() -> <init>
     36:36:java.lang.String access$000(com.newbee.ble_lib.manager.child.BlueToothGattManager) -> access$000
@@ -6626,14 +6626,14 @@ com.newbee.ble_lib.util.BleCheckUtil -> com.newbee.ble_lib.util.BleCheckUtil:
     8:8:boolean checkPhoneCanUseBle(android.content.pm.PackageManager) -> checkPhoneCanUseBle
 com.newbee.ble_lib.util.BleConnectStatuUtil -> com.newbee.ble_lib.util.BleConnectStatuUtil:
     19:21:void <init>() -> <init>
-    90:105:void checkDisconnectedDevice(java.lang.String,java.lang.String) -> checkDisconnectedDevice
+    89:104:void checkDisconnectedDevice(java.lang.String,java.lang.String) -> checkDisconnectedDevice
     24:31:com.newbee.ble_lib.util.BleConnectStatuUtil getInstance() -> getInstance
     35:35:com.nrmyw.ble_event_lib.bean.BleDeviceBean getNowUseBleDevice() -> getNowUseBleDevice
     39:39:boolean isConnect() -> isConnect
-    63:67:void sendConnected() -> sendConnected
+    63:66:void sendConnected() -> sendConnected
     45:60:void sendConnecting(android.content.Context,com.nrmyw.ble_event_lib.bean.BleDeviceBean,java.lang.String) -> sendConnecting
-    77:87:void sendDisconnected() -> sendDisconnected
-    70:72:void setConnectErr(java.lang.String) -> setConnectErr
+    76:86:void sendDisconnected() -> sendDisconnected
+    69:71:void setConnectErr(java.lang.String) -> setConnectErr
 com.newbee.ble_lib.util.BleErrManager -> com.newbee.ble_lib.util.BleErrManager:
     9:10:void sendConnectErrMsg(java.lang.String) -> sendConnectErrMsg
 com.newbee.ble_lib.util.BleSendImageUtil -> com.newbee.ble_lib.util.BleSendImageUtil:
@@ -6953,25 +6953,25 @@ com.nrmyw.ble_event_lib.config.NewBeeBleConfig -> com.nrmyw.ble_event_lib.config
     79:79:boolean isAutoConnect() -> isAutoConnect
     63:64:void setRealMtu(int) -> setRealMtu
 com.nrmyw.ble_event_lib.send.BleEventSubscriptionSubject -> com.nrmyw.ble_event_lib.send.BleEventSubscriptionSubject:
-    19:21:void <init>() -> <init>
-    36:37:void attach(com.nrmyw.ble_event_lib.send.BleEventObserver) -> attach
-    41:42:void detach(com.nrmyw.ble_event_lib.send.BleEventObserver) -> detach
-    24:30:com.nrmyw.ble_event_lib.send.BleEventSubscriptionSubject getInstance() -> getInstance
-    81:84:void sendImage(com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean) -> sendImage
-    74:77:void sendImageIndexCmd(int,byte[]) -> sendImageIndexCmd
+    20:22:void <init>() -> <init>
+    37:38:void attach(com.nrmyw.ble_event_lib.send.BleEventObserver) -> attach
+    42:43:void detach(com.nrmyw.ble_event_lib.send.BleEventObserver) -> detach
+    25:31:com.nrmyw.ble_event_lib.send.BleEventSubscriptionSubject getInstance() -> getInstance
+    82:86:void sendImage(com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean) -> sendImage
+    75:78:void sendImageIndexCmd(int,byte[]) -> sendImageIndexCmd
 com.nrmyw.ble_event_lib.statu.BleStatu -> com.nrmyw.ble_event_lib.statu.BleStatu:
-    6:25:void <clinit>() -> <clinit>
-    28:30:void <init>(java.lang.String,int,int) -> <init>
-    33:33:int getStrId() -> getStrId
-    37:40:void setStrId(int) -> setStrId
+    6:27:void <clinit>() -> <clinit>
+    30:32:void <init>(java.lang.String,int,int) -> <init>
+    35:35:int getStrId() -> getStrId
+    39:42:void setStrId(int) -> setStrId
     6:6:com.nrmyw.ble_event_lib.statu.BleStatu valueOf(java.lang.String) -> valueOf
     6:6:com.nrmyw.ble_event_lib.statu.BleStatu[] values() -> values
 com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject -> com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject:
-    14:16:void <init>() -> <init>
-    31:32:void attach(com.nrmyw.ble_event_lib.statu.BleStatuEventObserver) -> attach
-    36:37:void detach(com.nrmyw.ble_event_lib.statu.BleStatuEventObserver) -> detach
-    19:25:com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject getInstance() -> getInstance
-    41:44:void sendBleStatu(com.nrmyw.ble_event_lib.statu.BleStatu,java.lang.Object[]) -> sendBleStatu
+    16:18:void <init>() -> <init>
+    33:35:void attach(com.nrmyw.ble_event_lib.statu.BleStatuEventObserver) -> attach
+    39:41:void detach(com.nrmyw.ble_event_lib.statu.BleStatuEventObserver) -> detach
+    21:27:com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject getInstance() -> getInstance
+    45:50:void sendBleStatu(com.nrmyw.ble_event_lib.statu.BleStatu,java.lang.Object[]) -> sendBleStatu
 com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType -> com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType:
     3:8:void <clinit>() -> <clinit>
     11:13:void <init>(java.lang.String,int,int) -> <init>

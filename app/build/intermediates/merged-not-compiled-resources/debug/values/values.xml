@@ -446,11 +446,13 @@
     <string name="ble_statu_connecting">Bluetooth：connecting...</string>
     <string name="ble_statu_connecting_err">Bluetooth：connection fail...</string>
     <string name="ble_statu_disconnected">Bluetooth：disconnect...please reconnect</string>
+    <string name="ble_statu_init">Bluetooth：Init</string>
     <string name="ble_statu_manager_can_not_use">Bluetooth：The system manager cannot be used</string>
     <string name="ble_statu_none">Bluetooth：unknown</string>
     <string name="ble_statu_opening">Bluetooth：opening...</string>
     <string name="ble_statu_retrun_bytes">Bluetooth：returned value</string>
     <string name="ble_statu_run_err">Bluetooth：run-time error</string>
+    <string name="ble_statu_searching">Bluetooth：Searching</string>
     <string name="ble_statu_send_image_end">Bluetooth：Sending of images completed</string>
     <string name="ble_statu_send_image_start">Bluetooth：Start sending pictures</string>
     <string name="ble_statu_sending_data">Bluetooth：Data transmission is in progress...</string>

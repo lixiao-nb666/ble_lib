@@ -1074,11 +1074,13 @@ string ble_statu_connected
 string ble_statu_connecting
 string ble_statu_connecting_err
 string ble_statu_disconnected
+string ble_statu_init
 string ble_statu_manager_can_not_use
 string ble_statu_none
 string ble_statu_opening
 string ble_statu_retrun_bytes
 string ble_statu_run_err
+string ble_statu_searching
 string ble_statu_send_image_end
 string ble_statu_send_image_start
 string ble_statu_sending_data
