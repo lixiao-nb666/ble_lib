@@ -34,6 +34,7 @@
     <string name="ble_statu_connecting">蓝牙：连接中...</string>
     <string name="ble_statu_connecting_err">蓝牙：连接失败...</string>
     <string name="ble_statu_disconnected">蓝牙：连接已断开...请重连</string>
+    <string name="ble_statu_found_ble_device">蓝牙：找到蓝牙设备</string>
     <string name="ble_statu_init">蓝牙：初始化中</string>
     <string name="ble_statu_manager_can_not_use">蓝牙：系统管理器不能使用</string>
     <string name="ble_statu_none">蓝牙：未知</string>

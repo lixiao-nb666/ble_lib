@@ -1073,6 +1073,7 @@ int string ble_statu_connected 0x7f0d001f
 int string ble_statu_connecting 0x7f0d0020
 int string ble_statu_connecting_err 0x7f0d0021
 int string ble_statu_disconnected 0x7f0d0022
+int string ble_statu_found_ble_device 0x7f0d005b
 int string ble_statu_init 0x7f0d0059
 int string ble_statu_manager_can_not_use 0x7f0d0023
 int string ble_statu_none 0x7f0d0024

@@ -41,7 +41,7 @@ public class BleConnectStatuUtil {
 
     private long lastConnectTime;
     private String lastAddress;
-    public void sendConnecting(Context context, BleDeviceBean bleDeviceBean, String address){
+    public void sendConnecting(BleDeviceBean bleDeviceBean, String address){
         if(null!=bleDeviceBean&&isConnect){
             BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.NONE,"Now is connected,Can not connect other !");
 //            setConnectErr("Now is connected,Can not connect other !");

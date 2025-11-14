@@ -34,6 +34,7 @@
     <string name="ble_statu_connecting">Bluetooth：연결 중...</string>
     <string name="ble_statu_connecting_err">Bluetooth：연결 실패...</string>
     <string name="ble_statu_disconnected">Bluetooth：연결이 끊겼습니다...다시 연결해 주십시오</string>
+    <string name="ble_statu_found_ble_device">Bluetooth：found ble device</string>
     <string name="ble_statu_init">Bluetooth：Init</string>
     <string name="ble_statu_manager_can_not_use">Bluetooth：시스템 관리자를 사용할 수 없습니다</string>
     <string name="ble_statu_none">Bluetooth：알 수 없는 상태</string>

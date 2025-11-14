@@ -446,6 +446,7 @@
     <string name="ble_statu_connecting">Bluetooth：connecting...</string>
     <string name="ble_statu_connecting_err">Bluetooth：connection fail...</string>
     <string name="ble_statu_disconnected">Bluetooth：disconnect...please reconnect</string>
+    <string name="ble_statu_found_ble_device">Bluetooth：found ble device</string>
     <string name="ble_statu_init">Bluetooth：Init</string>
     <string name="ble_statu_manager_can_not_use">Bluetooth：The system manager cannot be used</string>
     <string name="ble_statu_none">Bluetooth：unknown</string>

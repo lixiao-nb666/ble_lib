@@ -7,7 +7,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
-import android.util.Log;
+
 
 import com.newbee.ble_lib.manager.child.BlueToothGattManager;
 import com.newbee.ble_lib.util.BleConnectStatuUtil;
@@ -28,25 +28,27 @@ public class BleStatuBroadcastReceiver extends BroadcastReceiver {
             sendChangedStatu(intent.getIntExtra(BluetoothAdapter.EXTRA_STATE, -1));
         }else if(action.equals(BluetoothDevice.ACTION_ACL_CONNECTED)){
 //            BleConnectStatuUtil.getInstance().sendConnected();
-            Log.w(tag,"BluetoothAdapter  initialized  111:22222");
+//            Log.w(tag,"BluetoothAdapter  initialized  111:22222");
         } else if(action.equals(BluetoothDevice.ACTION_ACL_DISCONNECTED)){
 //            BleConnectStatuUtil.getInstance().sendDisconnected();
             BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
             String deviceName = device.getName();
             String address=device.getAddress();
-            Log.w(tag,"BluetoothAdapter  initialized  111556677--88--"+ deviceName+"--"+address);
+//            Log.w(tag,"BluetoothAdapter  initialized  111556677--88--"+ deviceName+"--"+address);
             BleConnectStatuUtil.getInstance().checkDisconnectedDevice(deviceName,address);
         }else if(action.equals(BluetoothDevice.ACTION_FOUND)){
             BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-            Log.i(tag,"1234kasjffdlks:9999------"+device.getName()+"----"+device.getAddress());
+//            Log.i(tag,"1234kasjffdlks:9999------"+device.getName()+"----"+device.getAddress());
             String deviceName = device.getName();
 //            String deviceHardwareAddress = device.getAddress(); // MAC address
             BleDeviceBean bleDeviceBean= NewBeeBleConfig.getInstance().checkBleName(deviceName);
             String address=device.getAddress();
             if(null!=bleDeviceBean&&!TextUtils.isEmpty(address)){
-                Log.w(tag,"BluetoothAdapter  initialized  111556677--8811--"+ deviceName+"--"+address);
-                BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.CONNECTING,"Find ble device : "+deviceName);
-                BleConnectStatuUtil.getInstance().sendConnecting(context,bleDeviceBean,address);
+//                Log.w(tag,"BluetoothAdapter  initialized  111556677--8811--"+ deviceName+"--"+address);
+                BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.CONNECTING,deviceName,address);
+                BleConnectStatuUtil.getInstance().sendConnecting(bleDeviceBean,address);
+            }else {
+                BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.FOUND_BLE_DEVICE,deviceName,address);
             }
         }
 

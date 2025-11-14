@@ -3,8 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: d2d4625
-# pg_map_hash: SHA-256 d2d462582d7c6eb0aaa535704d3dad57d1b92248187ed1aa54ff7d8e4d3a1d74
+# pg_map_id: 17fb4f7
+# pg_map_hash: SHA-256 17fb4f7209d7b8906ef2100fc6a786842b32616a47338664c04c67235265ab89
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -6548,8 +6548,8 @@ com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager -> com.newbee.ble_lib
     39:40:void setNowCanSend() -> setNowCanSend
 com.newbee.ble_lib.receiver.BleStatuBroadcastReceiver -> com.newbee.ble_lib.receiver.BleStatuBroadcastReceiver:
     21:22:void <init>() -> <init>
-    26:56:void onReceive(android.content.Context,android.content.Intent) -> onReceive
-    59:66:void sendChangedStatu(int) -> sendChangedStatu
+    26:58:void onReceive(android.content.Context,android.content.Intent) -> onReceive
+    61:68:void sendChangedStatu(int) -> sendChangedStatu
 com.newbee.ble_lib.receiver.BleStatuBroadcastReceiverDao -> com.newbee.ble_lib.receiver.BleStatuBroadcastReceiverDao:
     10:13:void <init>() -> <init>
     39:41:void close() -> close
@@ -6631,7 +6631,7 @@ com.newbee.ble_lib.util.BleConnectStatuUtil -> com.newbee.ble_lib.util.BleConnec
     35:35:com.nrmyw.ble_event_lib.bean.BleDeviceBean getNowUseBleDevice() -> getNowUseBleDevice
     39:39:boolean isConnect() -> isConnect
     63:66:void sendConnected() -> sendConnected
-    45:60:void sendConnecting(android.content.Context,com.nrmyw.ble_event_lib.bean.BleDeviceBean,java.lang.String) -> sendConnecting
+    45:60:void sendConnecting(com.nrmyw.ble_event_lib.bean.BleDeviceBean,java.lang.String) -> sendConnecting
     76:86:void sendDisconnected() -> sendDisconnected
     69:71:void setConnectErr(java.lang.String) -> setConnectErr
 com.newbee.ble_lib.util.BleErrManager -> com.newbee.ble_lib.util.BleErrManager:
@@ -6960,10 +6960,10 @@ com.nrmyw.ble_event_lib.send.BleEventSubscriptionSubject -> com.nrmyw.ble_event_
     82:86:void sendImage(com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean) -> sendImage
     75:78:void sendImageIndexCmd(int,byte[]) -> sendImageIndexCmd
 com.nrmyw.ble_event_lib.statu.BleStatu -> com.nrmyw.ble_event_lib.statu.BleStatu:
-    6:27:void <clinit>() -> <clinit>
-    30:32:void <init>(java.lang.String,int,int) -> <init>
-    35:35:int getStrId() -> getStrId
-    39:42:void setStrId(int) -> setStrId
+    6:28:void <clinit>() -> <clinit>
+    31:33:void <init>(java.lang.String,int,int) -> <init>
+    36:36:int getStrId() -> getStrId
+    40:43:void setStrId(int) -> setStrId
     6:6:com.nrmyw.ble_event_lib.statu.BleStatu valueOf(java.lang.String) -> valueOf
     6:6:com.nrmyw.ble_event_lib.statu.BleStatu[] values() -> values
 com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject -> com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject:

@@ -224,6 +224,7 @@ doAfterTextChanged
 DST_IN
 .xml
 INFERRED
+FOUND_BLE_DEVICE
 ACTION_CLEAR_SELECTION
 BlueBroadcastReceiver
 %s.%sParcelizer
@@ -2299,6 +2300,7 @@ Marking id:group_divider:2131165275 used because it matches string pool constant
 @string/ble_statu_connecting : reachable=true
 @string/ble_statu_connecting_err : reachable=true
 @string/ble_statu_disconnected : reachable=true
+@string/ble_statu_found_ble_device : reachable=true
 @string/ble_statu_init : reachable=true
 @string/ble_statu_manager_can_not_use : reachable=true
 @string/ble_statu_none : reachable=true
@@ -4096,24 +4098,25 @@ The root reachable resources are:
  string:ble_statu_connecting:2131558432
  string:ble_statu_connecting_err:2131558433
  string:ble_statu_disconnected:2131558434
- string:ble_statu_init:2131558435
- string:ble_statu_manager_can_not_use:2131558436
- string:ble_statu_none:2131558437
- string:ble_statu_opening:2131558438
- string:ble_statu_retrun_bytes:2131558439
- string:ble_statu_run_err:2131558440
- string:ble_statu_searching:2131558441
- string:ble_statu_send_image_end:2131558442
- string:ble_statu_send_image_start:2131558443
- string:ble_statu_sending_data:2131558444
- string:ble_statu_state_off:2131558445
- string:ble_statu_state_on:2131558446
- string:ble_statu_user_disconnect:2131558447
- string:ble_statu_user_init:2131558448
- string:ble_statu_user_scan:2131558449
- string:ble_statu_user_send_cmd:2131558450
- string:ble_statu_user_send_image:2131558451
- string:ble_statu_user_send_image_cmd_index:2131558452
+ string:ble_statu_found_ble_device:2131558435
+ string:ble_statu_init:2131558436
+ string:ble_statu_manager_can_not_use:2131558437
+ string:ble_statu_none:2131558438
+ string:ble_statu_opening:2131558439
+ string:ble_statu_retrun_bytes:2131558440
+ string:ble_statu_run_err:2131558441
+ string:ble_statu_searching:2131558442
+ string:ble_statu_send_image_end:2131558443
+ string:ble_statu_send_image_start:2131558444
+ string:ble_statu_sending_data:2131558445
+ string:ble_statu_state_off:2131558446
+ string:ble_statu_state_on:2131558447
+ string:ble_statu_user_disconnect:2131558448
+ string:ble_statu_user_init:2131558449
+ string:ble_statu_user_scan:2131558450
+ string:ble_statu_user_send_cmd:2131558451
+ string:ble_statu_user_send_image:2131558452
+ string:ble_statu_user_send_image_cmd_index:2131558453
  style:Animation_AppCompat_Tooltip:2131623940
  style:Theme_AppCompat_CompactMenu:2131624183
  style:Theme_AppCompat_Empty:2131624195

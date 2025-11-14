@@ -1074,6 +1074,7 @@ string ble_statu_connected
 string ble_statu_connecting
 string ble_statu_connecting_err
 string ble_statu_disconnected
+string ble_statu_found_ble_device
 string ble_statu_init
 string ble_statu_manager_can_not_use
 string ble_statu_none
