@@ -4,18 +4,29 @@ import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothManager;
+import android.bluetooth.le.BluetoothLeScanner;
+import android.bluetooth.le.ScanCallback;
+import android.bluetooth.le.ScanRecord;
+import android.bluetooth.le.ScanResult;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.os.Build;
+import android.os.ParcelUuid;
 import android.text.TextUtils;
 import android.util.Log;
+import android.util.SparseArray;
 
 import com.newbee.ble_lib.R;
 
 
 import com.newbee.ble_lib.util.BleCheckUtil;
 import com.newbee.ble_lib.util.BleConnectStatuUtil;
+import com.nrmyw.ble_event_lib.bean.BleDeviceBean;
 import com.nrmyw.ble_event_lib.statu.BleStatu;
 import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
+import com.nrmyw.ble_event_lib.util.BleByteUtil;
+
+import java.util.List;
 
 
 @SuppressLint("MissingPermission")
@@ -24,6 +35,7 @@ public class BleConnectManager {
     private BluetoothManager bluetoothManager;
     private BluetoothAdapter bluetoothAdapter;
 
+    private BluetoothLeScanner bluetoothLeScanner;
 
 
     private BleConnectManager(){}
@@ -74,6 +86,11 @@ public class BleConnectManager {
             BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR,com.nrmyw.ble_event_lib.R.string.ble_statu_adapter_can_not_use);
             return;
         }
+        bluetoothLeScanner =bluetoothAdapter.getBluetoothLeScanner();
+        if(null==bluetoothLeScanner){
+            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR,com.nrmyw.ble_event_lib.R.string.ble_statu_adapter_can_not_use);
+            return;
+        }
         BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.INIT);
         this.context=context;
         if(bleIsOpen()){
@@ -110,24 +127,56 @@ public class BleConnectManager {
         bluetoothAdapter.disable();
     }
 
+    private ScanCallback scanCallback=new ScanCallback() {
+        @Override
+        public void onScanFailed(int errorCode) {
+            super.onScanFailed(errorCode);
+        }
+
+        @Override
+        public void onBatchScanResults(List<ScanResult> results) {
+            super.onBatchScanResults(results);
+
+        }
+
+        @Override
+        public void onScanResult(int callbackType, ScanResult result) {
+            super.onScanResult(callbackType, result);
+            if(BleCheckUtil.checkTheBleCanUse(result)){
+                stopScan();
+            }
+
+        }
+    };
+
     /** 开始扫描 **/
 //    long lastSearchBleTime;
     public void startSearchBLE(){
 
-        if(null==bluetoothAdapter){
-            return;
-        }
+//        if(null==bluetoothAdapter){
+//            return;
+//        }
 //        long nowTime=System.currentTimeMillis();
 //        if(lastSearchBleTime!=0&&){
 //            Log.i("1111","1234kasjffdlks:000000000------:"+(nowTime-lastSearchBleTime)/1000+"S");
 //
 //        }
 //        lastSearchBleTime=nowTime;
-//        bluetoothAdapter.stopLeScan(leScanCallback);
-//        bluetoothAdapter.startLeScan(leScanCallback);
-        bluetoothAdapter.startDiscovery();
+
+//        bluetoothAdapter.startDiscovery();
+        if(null==bluetoothLeScanner){
+            return;
+        }
+        bluetoothLeScanner.startScan(scanCallback);
         BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.SEARCHING);
         tryToConnectOldDevice();
+    }
+
+    public void stopScan(){
+        if(null==bluetoothLeScanner){
+            return;
+        }
+        bluetoothLeScanner.stopScan(scanCallback);
     }
 
 

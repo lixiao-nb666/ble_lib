@@ -80,6 +80,7 @@ public class BlueToothGattSendImageManager {
             getBitmapDataThread.start();
         }
 
+
 //       if(null!=getBitmapDataThread){
 //           Log.i("kaishifasongtupianle","kaishifasongtupianle-zhiling:5555");
 //            if(getBitmapDataThread.isStart()&&getBitmapDataThread.getType()==0&&bleSendImageInfoBean.getType()!=0){

@@ -3,13 +3,17 @@ package com.newbee.ble_lib.receiver;
 import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
+import android.bluetooth.le.ScanRecord;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.text.TextUtils;
+import android.util.Log;
 
 
 import com.newbee.ble_lib.manager.child.BlueToothGattManager;
+import com.newbee.ble_lib.util.BleCheckUtil;
 import com.newbee.ble_lib.util.BleConnectStatuUtil;
 import com.nrmyw.ble_event_lib.bean.BleDeviceBean;
 
@@ -38,18 +42,7 @@ public class BleStatuBroadcastReceiver extends BroadcastReceiver {
             BleConnectStatuUtil.getInstance().checkDisconnectedDevice(deviceName,address);
         }else if(action.equals(BluetoothDevice.ACTION_FOUND)){
             BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-//            Log.i(tag,"1234kasjffdlks:9999------"+device.getName()+"----"+device.getAddress());
-            String deviceName = device.getName();
-//            String deviceHardwareAddress = device.getAddress(); // MAC address
-            BleDeviceBean bleDeviceBean= NewBeeBleConfig.getInstance().checkBleName(deviceName);
-            String address=device.getAddress();
-            if(null!=bleDeviceBean&&!TextUtils.isEmpty(address)){
-//                Log.w(tag,"BluetoothAdapter  initialized  111556677--8811--"+ deviceName+"--"+address);
-                BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.CONNECTING,deviceName,address);
-                BleConnectStatuUtil.getInstance().sendConnecting(bleDeviceBean,address);
-            }else {
-                BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.FOUND_BLE_DEVICE,deviceName,address);
-            }
+            BleCheckUtil.checkTheBleCanUse(device);
         }
 
 
