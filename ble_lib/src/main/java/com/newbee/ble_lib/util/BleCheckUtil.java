@@ -24,11 +24,11 @@ public class BleCheckUtil {
     public static boolean checkTheBleCanUse(ScanResult result){
         ScanRecord record = result.getScanRecord();
         BleDeviceBean bleDeviceBean= NewBeeBleConfig.getInstance().checkBleScanRecord(record);
+        BluetoothDevice device=result.getDevice();
+        String deviceName = device.getName();
+        String address=device.getAddress();
+        if(null!=bleDeviceBean&&!TextUtils.isEmpty(address)){
 
-        if(null!=bleDeviceBean){
-            BluetoothDevice device=result.getDevice();
-            String deviceName = device.getName();
-            String address=device.getAddress();
             setToConnecting(bleDeviceBean,deviceName,address);
             return true;
         }
