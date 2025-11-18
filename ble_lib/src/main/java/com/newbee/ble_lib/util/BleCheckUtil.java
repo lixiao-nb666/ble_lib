@@ -31,8 +31,11 @@ public class BleCheckUtil {
 
             setToConnecting(bleDeviceBean,deviceName,address);
             return true;
+        }else {
+            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.FOUND_BLE_DEVICE,deviceName,address);
+            return false;
         }
-        return false;
+
 
 //        byte[] manufacturerBytes= record.getManufacturerSpecificData(0x0642);
 //        if(null!=manufacturerBytes){
@@ -67,7 +70,7 @@ public class BleCheckUtil {
 
     private static void setToConnecting(BleDeviceBean bleDeviceBean,String deviceName,String address){
         bleDeviceBean.setBleName(deviceName);
-
+        bleDeviceBean.setAdress(address);
         BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.CONNECTING,deviceName,address);
         BleConnectStatuUtil.getInstance().sendConnecting(bleDeviceBean,address);
     }
