@@ -6,6 +6,7 @@ import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothManager;
 import android.bluetooth.le.BluetoothLeScanner;
 import android.bluetooth.le.ScanCallback;
+import android.bluetooth.le.ScanFilter;
 import android.bluetooth.le.ScanRecord;
 import android.bluetooth.le.ScanResult;
 import android.content.Context;
@@ -142,6 +143,7 @@ public class BleConnectManager {
         @Override
         public void onScanResult(int callbackType, ScanResult result) {
             super.onScanResult(callbackType, result);
+
             if(BleCheckUtil.checkTheBleCanUse(result)){
                 stopScan();
             }
@@ -167,6 +169,7 @@ public class BleConnectManager {
         if(null==bluetoothLeScanner){
             return;
         }
+
         bluetoothLeScanner.startScan(scanCallback);
         BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.SEARCHING);
         tryToConnectOldDevice();

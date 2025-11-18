@@ -5907,8 +5907,10 @@ com.newbee.ble_tool.config.T800Config:
     public static final boolean isAutomatic
     public static final int mtu
     public void <init>()
-com.newbee.ble_tool.type.BleDeviceType:
-    public static com.newbee.ble_tool.type.BleDeviceType getBleDeviceType(com.nrmyw.ble_event_lib.bean.BleDeviceBean)
+com.newbee.ble_tool.type.HudDevice:
+    private void <init>(java.lang.String,int,java.lang.String,int,com.newbee.ble_tool.type.HudDeviceSendDataType)
+    public static com.newbee.ble_tool.type.HudDevice getBleDeviceType(com.nrmyw.ble_event_lib.bean.BleDeviceBean)
+    public com.newbee.ble_tool.type.HudDeviceSendDataType getSendDataType()
 com.newbee.bulid_lib.BuildConfig
 com.newbee.bulid_lib.R$anim
 com.newbee.bulid_lib.R$color
@@ -6073,13 +6075,9 @@ com.nrmyw.ble_event_lib.R$string:
     private void <init>()
 com.nrmyw.ble_event_lib.R
 com.nrmyw.ble_event_lib.bean.BleDeviceBean:
-    private com.nrmyw.ble_event_lib.bean.BlePairFuntionType pairFuntionType
+    public java.lang.String getAdress()
     public java.lang.String getBleName()
-    public java.lang.String getManufacturerSpecificData()
-    public com.nrmyw.ble_event_lib.bean.BlePairFuntionType getPairFuntionType()
-    public void setBleName(java.lang.String)
-    public void setManufacturerSpecificData(java.lang.String)
-    public void setPairFuntionType(com.nrmyw.ble_event_lib.bean.BlePairFuntionType)
+    public void setAdress(java.lang.String)
 com.nrmyw.ble_event_lib.bean.BleSendImageEndInfoBean:
     public int getH()
     public java.lang.String getName()

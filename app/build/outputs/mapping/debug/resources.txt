@@ -80,6 +80,7 @@ UNSET_PRIMARY_NAV
 TypefaceCompatUtil
 mUnthemedEntries
 CheckBox
+T700_DEBUG
 androidx.view.accessibility.Accessibi...
 numb_41
 ACTION_CLEAR_FOCUS
@@ -92,8 +93,6 @@ requestRelaunchActivity
 ACTION_SCROLL_UP
 jobscheduler
 BITMAP_MASKABLE
-T700_1
-T700_2
 YELLOW_STATU
 android:support:fragments
 SearchView
@@ -270,7 +269,9 @@ TIME
 RatingBar
 L_LF_Y_L
 tbt11
+T700_UPDATE_2
 tbt12
+T700_UPDATE_1
 tbt13
 SEND_IMAGE_DATA_END
 QUERY_DEVICE_VERSION
@@ -486,7 +487,9 @@ ACTION_MOVE_WINDOW
 DEFAULT
 SHARED_STABLE_IDS
 android.hardware.bluetooth_le
+700666
 android.support.FILE_PROVIDER_PATHS
+kankanshujufdajfls:
 SCREEN
 GET_SN
 EditText

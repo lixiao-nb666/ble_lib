@@ -10,7 +10,8 @@ import android.graphics.Color;
 import com.newbee.ble_lib.NewBeeBleManager;
 import com.newbee.ble_tool.R;
 import com.newbee.ble_tool.config.T800Config;
-import com.newbee.ble_tool.type.BleDeviceType;
+
+import com.newbee.ble_tool.type.HudDevice;
 import com.newbee.bulid_lib.mybase.appliction.BaseApplication;
 import com.nrmyw.ble_event_lib.config.NewBeeBleConfig;
 
@@ -19,7 +20,7 @@ public class MyApp extends BaseApplication {
 
     @Override
     protected void init() {
-        NewBeeBleConfig.getInstance().init(T800Config.isAutomatic,T800Config.mtu,T800Config.serviceID,T800Config.writeID,T800Config.noticeID, BleDeviceType.getBleDeviceTypeList());
+        NewBeeBleConfig.getInstance().init(T800Config.isAutomatic,T800Config.mtu,T800Config.serviceID,T800Config.writeID,T800Config.noticeID, HudDevice.getBleDeviceTypeList());
         NewBeeBleManager.getInstance().init(getBaseContext());
         startTo();
     }

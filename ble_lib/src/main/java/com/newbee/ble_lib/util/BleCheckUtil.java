@@ -23,21 +23,31 @@ public class BleCheckUtil {
 
     public static boolean checkTheBleCanUse(ScanResult result){
         ScanRecord record = result.getScanRecord();
-        byte[] manufacturerBytes= record.getManufacturerSpecificData(0x0642);
-        if(null!=manufacturerBytes){
-            String manufacturerString= BleByteUtil.parseByte2HexStr(manufacturerBytes);
-            BleDeviceBean bleDeviceBean= NewBeeBleConfig.getInstance().checkBleName(manufacturerString);
-            Log.i("tag","34kasjffdlks:9999--11110000---"+manufacturerString);
-            if(null!=bleDeviceBean){
-                BluetoothDevice device=result.getDevice();
-                String deviceName = device.getName();
-                String address=device.getAddress();
-                BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.CONNECTING,deviceName,address);
-                BleConnectStatuUtil.getInstance().sendConnecting(bleDeviceBean,address);
-                return true;
-            }
+        BleDeviceBean bleDeviceBean= NewBeeBleConfig.getInstance().checkBleScanRecord(record);
+
+        if(null!=bleDeviceBean){
+            BluetoothDevice device=result.getDevice();
+            String deviceName = device.getName();
+            String address=device.getAddress();
+            setToConnecting(bleDeviceBean,deviceName,address);
+            return true;
         }
-       return checkTheBleCanUse(result.getDevice());
+        return false;
+
+//        byte[] manufacturerBytes= record.getManufacturerSpecificData(0x0642);
+//        if(null!=manufacturerBytes){
+//            String manufacturerString= BleByteUtil.parseByte2HexStr(manufacturerBytes);
+//
+//            Log.i("tag","34kasjffdlks:9999--11110000---"+manufacturerString+"--"+bleDeviceBean+"----"+record.getDeviceName());
+//            if(null!=bleDeviceBean){
+//                BluetoothDevice device=result.getDevice();
+//                String deviceName = device.getName();
+//                String address=device.getAddress();
+//                setToConnecting(bleDeviceBean,deviceName,address);
+//                return true;
+//            }
+//        }
+//       return checkTheBleCanUse(result.getDevice());
     }
     public static boolean checkTheBleCanUse( BluetoothDevice device){
         Log.i("tag","34kasjffdlks:9999--11110011---"+device.getName());
@@ -47,13 +57,19 @@ public class BleCheckUtil {
         String address=device.getAddress();
         if(null!=bleDeviceBean&&!TextUtils.isEmpty(address)){
 //                Log.w(tag,"BluetoothAdapter  initialized  111556677--8811--"+ deviceName+"--"+address);
-            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.CONNECTING,deviceName,address);
-            BleConnectStatuUtil.getInstance().sendConnecting(bleDeviceBean,address);
+                setToConnecting(bleDeviceBean,deviceName,address);
             return true;
         }else {
             BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.FOUND_BLE_DEVICE,deviceName,address);
             return false;
         }
     }
-    
+
+    private static void setToConnecting(BleDeviceBean bleDeviceBean,String deviceName,String address){
+        bleDeviceBean.setBleName(deviceName);
+
+        BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.CONNECTING,deviceName,address);
+        BleConnectStatuUtil.getInstance().sendConnecting(bleDeviceBean,address);
+    }
+
 }

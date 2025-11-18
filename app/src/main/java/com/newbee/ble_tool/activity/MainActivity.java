@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -16,8 +17,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.newbee.ble_lib.NewBeeBleManager;
 import com.newbee.ble_tool.R;
-import com.newbee.ble_tool.type.BleDeviceType;
-import com.newbee.bulid_lib.mybase.LG;
+
+
+import com.newbee.ble_tool.type.HudDevice;
 import com.newbee.bulid_lib.mybase.activity.BaseCompatActivity;
 
 import com.newbee.t800_lib.type.T800CmdType;
@@ -110,8 +112,9 @@ public class MainActivity extends BaseCompatActivity {
                 bleTV.append("-"+getResources().getText(msg.arg1));
             }
             BleDeviceBean bleDeviceBean= NewBeeBleManager.getInstance().getNowUseBleDevice();
+
             if(null!=bleDeviceBean){
-                bleTV.setText(BleDeviceType.values()[bleDeviceBean.getDeviceType()].name());
+                bleTV.setText(HudDevice.values()[bleDeviceBean.getDeviceType()].name());
             }
             switch (bleStatu){
                 case CONNECTING:
@@ -119,6 +122,7 @@ public class MainActivity extends BaseCompatActivity {
                     break;
                 case CONNECTED:
                     bleTV.append("-连接成功");
+                    Log.i("","kankanshujufdajfls:"+bleDeviceBean.getPairFuntionType());
                     setViewByBleConnectStatu(NewBeeBleManager.getInstance().isConnect());
                     break;
                 case DISCONNECTED:

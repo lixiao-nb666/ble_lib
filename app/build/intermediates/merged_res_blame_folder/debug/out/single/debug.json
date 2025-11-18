@@ -17,7 +17,7 @@
     },
     {
         "merged": "com.newbee.ble_tool.app-merged_res-11:/drawable_abc_vector_test.xml.flat",
-        "source": "com.newbee.ble_tool.app-appcompat-resources-1.2.0-2:/drawable/abc_vector_test.xml"
+        "source": "com.newbee.ble_tool.app-appcompat-resources-1.2.0-1:/drawable/abc_vector_test.xml"
     },
     {
         "merged": "com.newbee.ble_tool.app-merged_res-11:/drawable-hdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
@@ -221,7 +221,7 @@
     },
     {
         "merged": "com.newbee.ble_tool.app-merged_res-11:/anim_fade_in.xml.flat",
-        "source": "com.newbee.ble_tool.app-build_lib-1.1.4-4:/anim/fade_in.xml"
+        "source": "com.newbee.ble_tool.app-build_lib-1.1.4-3:/anim/fade_in.xml"
     },
     {
         "merged": "com.newbee.ble_tool.app-merged_res-11:/drawable-mdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
@@ -297,7 +297,7 @@
     },
     {
         "merged": "com.newbee.ble_tool.app-merged_res-11:/drawable_launcher_app_list.png.flat",
-        "source": "com.newbee.ble_tool.app-build_lib-1.1.4-4:/drawable/launcher_app_list.png"
+        "source": "com.newbee.ble_tool.app-build_lib-1.1.4-3:/drawable/launcher_app_list.png"
     },
     {
         "merged": "com.newbee.ble_tool.app-merged_res-11:/drawable-mdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
@@ -313,7 +313,7 @@
     },
     {
         "merged": "com.newbee.ble_tool.app-merged_res-11:/anim_fade_out.xml.flat",
-        "source": "com.newbee.ble_tool.app-build_lib-1.1.4-4:/anim/fade_out.xml"
+        "source": "com.newbee.ble_tool.app-build_lib-1.1.4-3:/anim/fade_out.xml"
     },
     {
         "merged": "com.newbee.ble_tool.app-merged_res-11:/drawable-hdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
@@ -389,7 +389,7 @@
     },
     {
         "merged": "com.newbee.ble_tool.app-merged_res-11:/anim_in.xml.flat",
-        "source": "com.newbee.ble_tool.app-build_lib-1.1.4-4:/anim/in.xml"
+        "source": "com.newbee.ble_tool.app-build_lib-1.1.4-3:/anim/in.xml"
     },
     {
         "merged": "com.newbee.ble_tool.app-merged_res-11:/drawable-xhdpi-v4_notification_bg_low_pressed.9.png.flat",
@@ -509,7 +509,7 @@
     },
     {
         "merged": "com.newbee.ble_tool.app-merged_res-11:/anim_dialog_enter.xml.flat",
-        "source": "com.newbee.ble_tool.app-build_lib-1.1.4-4:/anim/dialog_enter.xml"
+        "source": "com.newbee.ble_tool.app-build_lib-1.1.4-3:/anim/dialog_enter.xml"
     },
     {
         "merged": "com.newbee.ble_tool.app-merged_res-11:/drawable-xxhdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
@@ -737,7 +737,7 @@
     },
     {
         "merged": "com.newbee.ble_tool.app-merged_res-11:/layout-v2_activity_version_update.xml.flat",
-        "source": "com.newbee.ble_tool.app-build_lib-1.1.4-4:/layout-v2/activity_version_update.xml"
+        "source": "com.newbee.ble_tool.app-build_lib-1.1.4-3:/layout-v2/activity_version_update.xml"
     },
     {
         "merged": "com.newbee.ble_tool.app-merged_res-11:/drawable-mdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
@@ -765,7 +765,7 @@
     },
     {
         "merged": "com.newbee.ble_tool.app-merged_res-11:/drawable_ic_launcher.png.flat",
-        "source": "com.newbee.ble_tool.app-build_lib-1.1.4-4:/drawable/ic_launcher.png"
+        "source": "com.newbee.ble_tool.app-build_lib-1.1.4-3:/drawable/ic_launcher.png"
     },
     {
         "merged": "com.newbee.ble_tool.app-merged_res-11:/drawable-hdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
@@ -813,7 +813,7 @@
     },
     {
         "merged": "com.newbee.ble_tool.app-merged_res-11:/layout-v2_adapter_apps_layout.xml.flat",
-        "source": "com.newbee.ble_tool.app-build_lib-1.1.4-4:/layout-v2/adapter_apps_layout.xml"
+        "source": "com.newbee.ble_tool.app-build_lib-1.1.4-3:/layout-v2/adapter_apps_layout.xml"
     },
     {
         "merged": "com.newbee.ble_tool.app-merged_res-11:/drawable-mdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
@@ -857,7 +857,7 @@
     },
     {
         "merged": "com.newbee.ble_tool.app-merged_res-11:/anim_dialog_exit.xml.flat",
-        "source": "com.newbee.ble_tool.app-build_lib-1.1.4-4:/anim/dialog_exit.xml"
+        "source": "com.newbee.ble_tool.app-build_lib-1.1.4-3:/anim/dialog_exit.xml"
     },
     {
         "merged": "com.newbee.ble_tool.app-merged_res-11:/anim_abc_tooltip_exit.xml.flat",
@@ -1113,7 +1113,7 @@
     },
     {
         "merged": "com.newbee.ble_tool.app-merged_res-11:/drawable_launcher_app_list_bg.png.flat",
-        "source": "com.newbee.ble_tool.app-build_lib-1.1.4-4:/drawable/launcher_app_list_bg.png"
+        "source": "com.newbee.ble_tool.app-build_lib-1.1.4-3:/drawable/launcher_app_list_bg.png"
     },
     {
         "merged": "com.newbee.ble_tool.app-merged_res-11:/drawable-mdpi-v4_notification_bg_low_pressed.9.png.flat",
@@ -1265,7 +1265,7 @@
     },
     {
         "merged": "com.newbee.ble_tool.app-merged_res-11:/layout-v2_activity_user_private.xml.flat",
-        "source": "com.newbee.ble_tool.app-build_lib-1.1.4-4:/layout-v2/activity_user_private.xml"
+        "source": "com.newbee.ble_tool.app-build_lib-1.1.4-3:/layout-v2/activity_user_private.xml"
     },
     {
         "merged": "com.newbee.ble_tool.app-merged_res-11:/layout-v21_notification_template_custom_big.xml.flat",
@@ -1545,7 +1545,7 @@
     },
     {
         "merged": "com.newbee.ble_tool.app-merged_res-11:/raw_beep.ogg.flat",
-        "source": "com.newbee.ble_tool.app-build_lib-1.1.4-4:/raw/beep.ogg"
+        "source": "com.newbee.ble_tool.app-build_lib-1.1.4-3:/raw/beep.ogg"
     },
     {
         "merged": "com.newbee.ble_tool.app-merged_res-11:/drawable-hdpi-v4_notify_panel_notification_icon_bg.png.flat",
@@ -1609,7 +1609,7 @@
     },
     {
         "merged": "com.newbee.ble_tool.app-merged_res-11:/anim_out.xml.flat",
-        "source": "com.newbee.ble_tool.app-build_lib-1.1.4-4:/anim/out.xml"
+        "source": "com.newbee.ble_tool.app-build_lib-1.1.4-3:/anim/out.xml"
     },
     {
         "merged": "com.newbee.ble_tool.app-merged_res-11:/interpolator_btn_radio_to_off_mtrl_animation_interpolator_0.xml.flat",
