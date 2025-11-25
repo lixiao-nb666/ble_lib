@@ -1,7 +1,7 @@
-Marking mipmap:ic_launcher:2131427328 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
-Marking mipmap:img_test_jd:2131427342 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
-Marking mipmap:img_test_4:2131427338 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
-Marking mipmap:img_test_7:2131427341 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
+Marking mipmap:ic_launcher:2131427329 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
+Marking mipmap:img_test_jd:2131427343 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
+Marking mipmap:img_test_7:2131427342 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
+Marking mipmap:hg_test:2131427328 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
 Marking layout:activity_main_test:2131361821 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
 Marking id:tv_ble:2131165360 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
 Marking id:tv_ble_statu:2131165361 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
@@ -2292,6 +2292,7 @@ Marking id:tag_unhandled_key_listeners:2131165348 used because it matches string
 @layout/support_simple_spinner_dropdown_item : reachable=true
     @attr/dropdownListPreferredItemHeight
     @attr/spinnerDropDownItemStyle
+@mipmap/hg_test : reachable=true
 @mipmap/ic_launcher : reachable=true
     @drawable/ic_launcher_background
     @drawable/ic_launcher_foreground
@@ -2306,7 +2307,7 @@ Marking id:tag_unhandled_key_listeners:2131165348 used because it matches string
 @mipmap/img_test_1 : reachable=false
 @mipmap/img_test_2 : reachable=false
 @mipmap/img_test_3 : reachable=false
-@mipmap/img_test_4 : reachable=true
+@mipmap/img_test_4 : reachable=false
 @mipmap/img_test_5 : reachable=false
 @mipmap/img_test_6 : reachable=false
 @mipmap/img_test_7 : reachable=true
@@ -4125,11 +4126,11 @@ The root reachable resources are:
  layout:notification_template_part_chronometer:2131361830
  layout:notification_template_part_time:2131361831
  layout:support_simple_spinner_dropdown_item:2131361835
- mipmap:ic_launcher:2131427328
- mipmap:ic_launcher_round:2131427329
- mipmap:img_test_4:2131427338
- mipmap:img_test_7:2131427341
- mipmap:img_test_jd:2131427342
+ mipmap:hg_test:2131427328
+ mipmap:ic_launcher:2131427329
+ mipmap:ic_launcher_round:2131427330
+ mipmap:img_test_7:2131427342
+ mipmap:img_test_jd:2131427343
  string:abc_action_bar_up_description:2131558401
  string:abc_menu_alt_shortcut_label:2131558408
  string:abc_menu_ctrl_shortcut_label:2131558409
@@ -4213,6 +4214,7 @@ Skipped unused resource res/mipmap-xxhdpi-v4/img_test_0.png: 550962 bytes (repla
 Skipped unused resource res/mipmap-xxhdpi-v4/img_test_1.jpg: 6808 bytes (replaced with small dummy file of size 0 bytes)
 Skipped unused resource res/mipmap-xxhdpi-v4/img_test_2.jpg: 149639 bytes (replaced with small dummy file of size 0 bytes)
 Skipped unused resource res/mipmap-xxhdpi-v4/img_test_3.png: 1503957 bytes (replaced with small dummy file of size 67 bytes)
+Skipped unused resource res/mipmap-xxhdpi-v4/img_test_4.jpg: 7236 bytes (replaced with small dummy file of size 0 bytes)
 Skipped unused resource res/mipmap-xxhdpi-v4/img_test_5.jpg: 13739 bytes (replaced with small dummy file of size 0 bytes)
 Skipped unused resource res/mipmap-xxhdpi-v4/img_test_6.png: 298687 bytes (replaced with small dummy file of size 67 bytes)
 Skipped unused resource res/raw/beep.ogg: 12237 bytes (replaced with small dummy file of size 0 bytes)

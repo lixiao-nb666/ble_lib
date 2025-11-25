@@ -22,6 +22,7 @@ id tv_ble
 id tv_ble_statu
 layout activity_lib_jpeg
 layout activity_main_test
+mipmap hg_test
 mipmap ic_launcher
 mipmap ic_launcher_round
 mipmap img

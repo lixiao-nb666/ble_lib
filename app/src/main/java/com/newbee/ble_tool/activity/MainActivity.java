@@ -83,9 +83,9 @@ public class MainActivity extends BaseCompatActivity {
                         handler.postDelayed(sendTimeRunnable,1000);
                         break;
                     case R.id.bt_send_test_image:
-                        int rsId=R.mipmap.img_test_4;
+                        int rsId=R.mipmap.img_test_7;
                         if(isSend){
-                            rsId=R.mipmap.img_test_7;
+                            rsId=R.mipmap.hg_test;
                         }
                         Bitmap bt1 = BitmapFactory.decodeResource(MainActivity.this.getResources(),rsId);
 //                        BleSendImageInfoBean bleSendImageInfoBean=new BleSendImageInfoBean();
@@ -114,8 +114,8 @@ public class MainActivity extends BaseCompatActivity {
         bleSendImageInfoBean.setMaxW(200);
         bleSendImageInfoBean.setMaxH(320);
         bleSendImageInfoBean.setBitmap(bitmap);
-        BleSendBitmapQualityType.DEF.setQualityV(70);
-        BleSendBitmapQualityType.DEF.setZoomScaling(0.8f);
+        BleSendBitmapQualityType.DEF.setQualityV(65);
+        BleSendBitmapQualityType.DEF.setZoomScaling(0.65f);
         bleSendImageInfoBean.setBitmapQualityType(BleSendBitmapQualityType.DEF);
         BleEventSubscriptionSubject.getInstance().sendImage(bleSendImageInfoBean);
     }

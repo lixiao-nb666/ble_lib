@@ -70,19 +70,23 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
 //            }
 
             isStart=true;
-//            Log.i("kankantupian","kankantubianzenmhuishi:1111--"+bleSendImageInfoBean.getBitmap().getAllocationByteCount()+"--"+bleSendImageInfoBean.getBitmap().getWidth()+"*"+bleSendImageInfoBean.getBitmap().getHeight());
-            newBitMap= BleSendImageUtil.autoScaleBitmap(bleSendImageInfoBean.getBitmap(),bleSendImageInfoBean.getMaxW(),bleSendImageInfoBean.getMaxH(),bleSendImageInfoBean.getBitmapQualityType().getZoomScaling());
+            Log.i("kankantupian","kankantubianzenmhuishi:1111--"+bleSendImageInfoBean.getBitmap().getAllocationByteCount()+"--"+bleSendImageInfoBean.getBitmap().getWidth()+"*"+bleSendImageInfoBean.getBitmap().getHeight());
+           if(bleSendImageInfoBean.getBitmapQualityType().getQualityV()==100&&bleSendImageInfoBean.getBitmapQualityType().getZoomScaling()==1f){
+                newBitMap =  bleSendImageInfoBean.getBitmap();
+           }else {
+               newBitMap= BleSendImageUtil.autoScaleBitmap(bleSendImageInfoBean.getBitmap(),bleSendImageInfoBean.getMaxW(),bleSendImageInfoBean.getMaxH(),bleSendImageInfoBean.getBitmapQualityType().getZoomScaling());
+           }
             if(null==newBitMap){
                 listen.sendOver(0);
                 return;
             }
-//            Log.i("kankantupian","kankantubianzenmhuishi:1111222--"+newBitMap.getByteCount()+"--"+newBitMap.getWidth()+"*"+newBitMap.getHeight());
+            Log.i("kankantupian","kankantubianzenmhuishi:1111222--"+newBitMap.getByteCount()+"--"+newBitMap.getWidth()+"*"+newBitMap.getHeight());
             w=newBitMap.getWidth();
             h=newBitMap.getHeight();
             byte[] imageBytes=BleSendImageUtil.bitmap2Bytes(newBitMap,bleSendImageInfoBean.getBitmapQualityType());
 //            byte[] imageBytes= ImageCompressUtils.compressBitmap(newBitMap,5,Bitmap.CompressFormat.JPEG);
             size=imageBytes.length;
-//            Log.i("kankantupian","kankantubianzenmhuishi:1111333--"+size+"---"+bleSendImageInfoBean.getBitmapQualityType().getQualityV());
+            Log.i("kankantupian","kankantubianzenmhuishi:1111333--"+size+"---"+bleSendImageInfoBean.getBitmapQualityType().getQualityV()+"---"+bleSendImageInfoBean.getBitmapQualityType().getZoomScaling());
 //            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.NONE,newBitMap);
             if(null==imageBytes||imageBytes.length==0){
                 listen.sendOver(0);

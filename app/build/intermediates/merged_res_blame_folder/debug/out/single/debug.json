@@ -392,6 +392,10 @@
         "source": "com.newbee.ble_tool.app-appcompat-1.2.0-5:/drawable-xxxhdpi-v4/abc_btn_check_to_on_mtrl_015.png"
     },
     {
+        "merged": "com.newbee.ble_tool.app-merged_res-11:/mipmap-xxhdpi_img_test_7.jpg.flat",
+        "source": "com.newbee.ble_tool.app-main-13:/mipmap-xxhdpi/img_test_7.jpg"
+    },
+    {
         "merged": "com.newbee.ble_tool.app-merged_res-11:/drawable-mdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",
         "source": "com.newbee.ble_tool.app-appcompat-1.2.0-5:/drawable-mdpi-v4/abc_text_select_handle_right_mtrl_dark.png"
     },
@@ -418,10 +422,6 @@
     {
         "merged": "com.newbee.ble_tool.app-merged_res-11:/drawable-hdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
         "source": "com.newbee.ble_tool.app-appcompat-1.2.0-5:/drawable-hdpi-v4/abc_list_pressed_holo_dark.9.png"
-    },
-    {
-        "merged": "com.newbee.ble_tool.app-merged_res-11:/mipmap-xxhdpi_img_test_7.png.flat",
-        "source": "com.newbee.ble_tool.app-main-13:/mipmap-xxhdpi/img_test_7.png"
     },
     {
         "merged": "com.newbee.ble_tool.app-merged_res-11:/drawable-mdpi-v4_notify_panel_notification_icon_bg.png.flat",
@@ -630,6 +630,10 @@
     {
         "merged": "com.newbee.ble_tool.app-merged_res-11:/layout_abc_popup_menu_item_layout.xml.flat",
         "source": "com.newbee.ble_tool.app-appcompat-1.2.0-5:/layout/abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "com.newbee.ble_tool.app-merged_res-11:/mipmap-xxhdpi_hg_test.jpg.flat",
+        "source": "com.newbee.ble_tool.app-main-13:/mipmap-xxhdpi/hg_test.jpg"
     },
     {
         "merged": "com.newbee.ble_tool.app-merged_res-11:/drawable-xxxhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
