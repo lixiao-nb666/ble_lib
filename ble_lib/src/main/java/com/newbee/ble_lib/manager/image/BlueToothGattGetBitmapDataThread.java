@@ -6,6 +6,7 @@ import android.util.Log;
 
 import com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager;
 import com.newbee.ble_lib.util.BleSendImageUtil;
+import com.newbee.ble_lib.util.ImageCompressUtils;
 import com.nrmyw.ble_event_lib.bean.BleSendImageEndInfoBean;
 import com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean;
 import com.nrmyw.ble_event_lib.bean.BleSendImageStartInfoBean;
@@ -69,15 +70,20 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
 //            }
 
             isStart=true;
-            newBitMap= BleSendImageUtil.autoScaleBitmap(bleSendImageInfoBean.getBitmap(),bleSendImageInfoBean.getMaxW(),bleSendImageInfoBean.getMaxH());
-            w=newBitMap.getWidth();
-            h=newBitMap.getHeight();
+//            Log.i("kankantupian","kankantubianzenmhuishi:1111--"+bleSendImageInfoBean.getBitmap().getAllocationByteCount()+"--"+bleSendImageInfoBean.getBitmap().getWidth()+"*"+bleSendImageInfoBean.getBitmap().getHeight());
+            newBitMap= BleSendImageUtil.autoScaleBitmap(bleSendImageInfoBean.getBitmap(),bleSendImageInfoBean.getMaxW(),bleSendImageInfoBean.getMaxH(),bleSendImageInfoBean.getBitmapQualityType().getZoomScaling());
             if(null==newBitMap){
                 listen.sendOver(0);
                 return;
             }
+//            Log.i("kankantupian","kankantubianzenmhuishi:1111222--"+newBitMap.getByteCount()+"--"+newBitMap.getWidth()+"*"+newBitMap.getHeight());
+            w=newBitMap.getWidth();
+            h=newBitMap.getHeight();
             byte[] imageBytes=BleSendImageUtil.bitmap2Bytes(newBitMap,bleSendImageInfoBean.getBitmapQualityType());
+//            byte[] imageBytes= ImageCompressUtils.compressBitmap(newBitMap,5,Bitmap.CompressFormat.JPEG);
             size=imageBytes.length;
+//            Log.i("kankantupian","kankantubianzenmhuishi:1111333--"+size+"---"+bleSendImageInfoBean.getBitmapQualityType().getQualityV());
+//            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.NONE,newBitMap);
             if(null==imageBytes||imageBytes.length==0){
                 listen.sendOver(0);
                 return;
@@ -88,7 +94,7 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
             over();
         }catch (Exception e){
             listen.sendOver(0);
-            Log.i("kankanshibushizheli","kankanshibushizheli:333"+e.toString());
+            Log.i("kankanshibushizheli","kankantubianzenmhuishi:1111222:err"+e.toString());
         }
     }
 

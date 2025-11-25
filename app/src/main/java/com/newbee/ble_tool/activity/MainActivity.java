@@ -9,6 +9,7 @@ import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -20,6 +21,10 @@ import com.newbee.ble_tool.R;
 
 
 import com.newbee.ble_tool.type.HudDevice;
+import com.newbee.ble_tool.util.HudBleByteUtil;
+import com.newbee.ble_tool.util.HudCmdType;
+import com.newbee.ble_tool.util.HudSendImageType;
+import com.newbee.bulid_lib.mybase.LG;
 import com.newbee.bulid_lib.mybase.activity.BaseCompatActivity;
 
 import com.newbee.t800_lib.type.T800CmdType;
@@ -32,7 +37,7 @@ import com.nrmyw.ble_event_lib.statu.BleStatu;
 import com.nrmyw.ble_event_lib.statu.BleStatuEventObserver;
 import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
 import com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType;
-import com.nrmyw.ble_event_lib.util.BleByteUtil;
+
 
 import java.nio.charset.StandardCharsets;
 
@@ -55,7 +60,7 @@ public class MainActivity extends BaseCompatActivity {
         }
     };
     private TextView bleTV,bleStatuTV;
-    private Button initBT,searchBT,disconnectedBT,sendTestBT,sendImageTestBT;
+    private Button initBT,searchBT,disconnectedBT,sendTestBT,sendImageTestBT,sendProgressBT;
     private View.OnClickListener onClickListener=new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -78,18 +83,52 @@ public class MainActivity extends BaseCompatActivity {
                         handler.postDelayed(sendTimeRunnable,1000);
                         break;
                     case R.id.bt_send_test_image:
-                        Bitmap bt1 = BitmapFactory.decodeResource(MainActivity.this.getResources(), R.drawable.img_test_1);
-                        BleSendImageInfoBean bleSendImageInfoBean=new BleSendImageInfoBean();
-                        bleSendImageInfoBean.setBitmap(bt1);
-                        bleSendImageInfoBean.setBitmapQualityType(BleSendBitmapQualityType.ULTRA_HIGH);
-                        BleEventSubscriptionSubject.getInstance().sendImage(bleSendImageInfoBean);
+                        int rsId=R.mipmap.img_test_4;
+                        if(isSend){
+                            rsId=R.mipmap.img_test_7;
+                        }
+                        Bitmap bt1 = BitmapFactory.decodeResource(MainActivity.this.getResources(),rsId);
+//                        BleSendImageInfoBean bleSendImageInfoBean=new BleSendImageInfoBean();
+//                        bleSendImageInfoBean.setBitmap(bt1);
+//                        bleSendImageInfoBean.setBitmapQualityType(BleSendBitmapQualityType.ULTRA_LOW);
+//                        BleEventSubscriptionSubject.getInstance().sendImage(bleSendImageInfoBean);
+                        sendBitmap(bt1);
+                        isSend=!isSend;
+                        break;
+                    case R.id.bt_send_test_progress:
+                        Bitmap bt2 = BitmapFactory.decodeResource(MainActivity.this.getResources(),R.mipmap.img_test_jd);
 
+                        sendProgress(bt2);
                         break;
                 }
 
 
         }
     };
+
+    private boolean isSend;
+
+    public void sendBitmap(Bitmap bitmap){
+        BleSendImageInfoBean bleSendImageInfoBean=new BleSendImageInfoBean();
+        bleSendImageInfoBean.setType(0);
+        bleSendImageInfoBean.setMaxW(200);
+        bleSendImageInfoBean.setMaxH(320);
+        bleSendImageInfoBean.setBitmap(bitmap);
+        BleSendBitmapQualityType.DEF.setQualityV(70);
+        BleSendBitmapQualityType.DEF.setZoomScaling(0.8f);
+        bleSendImageInfoBean.setBitmapQualityType(BleSendBitmapQualityType.DEF);
+        BleEventSubscriptionSubject.getInstance().sendImage(bleSendImageInfoBean);
+    }
+
+    public void sendProgress(Bitmap bitmap){
+        BleSendImageInfoBean bleSendImageInfoBean=new BleSendImageInfoBean();
+        bleSendImageInfoBean.setType(1);
+        bleSendImageInfoBean.setMaxW(22);
+        bleSendImageInfoBean.setMaxH(320);
+        bleSendImageInfoBean.setBitmap(bitmap);
+        bleSendImageInfoBean.setBitmapQualityType(BleSendBitmapQualityType.PROGRESS);
+        BleEventSubscriptionSubject.getInstance().sendImage(bleSendImageInfoBean);
+    }
 
 
     private Runnable sendTimeRunnable=new Runnable() {
@@ -113,10 +152,21 @@ public class MainActivity extends BaseCompatActivity {
             }
             BleDeviceBean bleDeviceBean= NewBeeBleManager.getInstance().getNowUseBleDevice();
 
-            if(null!=bleDeviceBean){
+            if(null!=bleDeviceBean&&null!=bleTV){
                 bleTV.setText(HudDevice.values()[bleDeviceBean.getDeviceType()].name());
             }
             switch (bleStatu){
+                case NONE:
+                    if(null!=msg.obj&&msg.obj instanceof Bitmap){
+                        Bitmap bitmap=(Bitmap) msg.obj;
+                        if(null!=bitmap&&!bitmap.isRecycled()){
+                            ivv.setImageBitmap(bitmap);
+
+                        }
+
+                    }
+                    break;
+
                 case CONNECTING:
 
                     break;
@@ -130,7 +180,7 @@ public class MainActivity extends BaseCompatActivity {
                     setViewByBleConnectStatu(NewBeeBleManager.getInstance().isConnect());
                     break;
                 case RUN_ERR:
-                case NONE:
+
                 case CONNECTING_ERR:
                     if(null!=msg.obj){
                         bleTV.append(msg.obj.toString());
@@ -139,30 +189,81 @@ public class MainActivity extends BaseCompatActivity {
                 case SEND_IMAGE_START:
                     if(msg.obj instanceof BleSendImageStartInfoBean){
                         BleSendImageStartInfoBean startInfoBean= (BleSendImageStartInfoBean) msg.obj;
-                        String startSS="A55A000F1000AF0104000008FA0100";
-                        BleEventSubscriptionSubject.getInstance().sendImageIndexCmd(0, startSS.getBytes(StandardCharsets.UTF_8));
+//                        String startSS="A55A000F1000AF0104000008FA0100";
+//                        BleEventSubscriptionSubject.getInstance().sendImageIndexCmd(0, startSS.getBytes(StandardCharsets.UTF_8));
+                        lastTime=System.currentTimeMillis();
+                        Log.i("kankantupian","kankantubianzenmhuishi:1111333--0000---"+startInfoBean.toString());
+                        doSendImageStartThing(startInfoBean);
                     }
 
                     break;
                 case SEND_IMAGE_END:
                     if(msg.obj instanceof BleSendImageEndInfoBean){
                         BleSendImageEndInfoBean endInfoBean= (BleSendImageEndInfoBean) msg.obj;
-                        String endSS="A55A000F1000AF0104000008FA0000";
-                        BleEventSubscriptionSubject.getInstance().sendImageIndexCmd(endInfoBean.getIndex(), endSS.getBytes(StandardCharsets.UTF_8));
+                        Log.i("kankantupian","kankantubianzenmhuishi:1111333--9999---"+endInfoBean.toString());
+
+                        doSendImageEndThing(endInfoBean);
                     }
+                    break;
+                case SEND_IMAGE_DATA_END:
+                    long nowTime=System.currentTimeMillis();
+                    Log.i("kankantupian","kankantubianzenmhuishi:1111333--8888---"+msg.obj.toString()+"---"+(nowTime-lastTime));
+
                     break;
             }
         }
     };
+    private long lastTime;
+
+    private void doSendImageStartThing(BleSendImageStartInfoBean startInfoBean){
+        BleDeviceBean bleDeviceBean= NewBeeBleManager.getInstance().getNowUseBleDevice();
+        byte[] startBytes= null;
+        HudDevice hudDevice=HudDevice.values()[bleDeviceBean.getDeviceType()];
+        switch (hudDevice){
+            case T800:
+                startBytes= HudBleByteUtil.getAllByte(HudCmdType.READY_SEND_IMAGE,startInfoBean.getW(),startInfoBean.getH(),startInfoBean.getSize(), HudSendImageType.START);
+                break;
+            default:
+                startBytes=HudBleByteUtil.getAllByte(HudCmdType.READY_SEND_IMAGE,startInfoBean.getW(),startInfoBean.getH(),startInfoBean.getSize(), HudSendImageType.START,startInfoBean.getType());
+                break;
+        }
+        if(null!=startBytes){
+            BleEventSubscriptionSubject.getInstance().sendImageIndexCmd(0,startBytes);
+        }
+
+    }
+
+    private void doSendImageEndThing(BleSendImageEndInfoBean endInfoBean){
+        BleDeviceBean bleDeviceBean= NewBeeBleManager.getInstance().getNowUseBleDevice();
+        byte[] endBytes=null;
+        HudDevice hudDevice=HudDevice.values()[bleDeviceBean.getDeviceType()];
+        switch (hudDevice){
+            case T800:
+                endBytes=HudBleByteUtil.getAllByte(HudCmdType.READY_SEND_IMAGE,endInfoBean.getW(),endInfoBean.getH(),endInfoBean.getSize(), HudSendImageType.END);
+                break;
+            default:
+                endBytes=HudBleByteUtil.getAllByte(HudCmdType.READY_SEND_IMAGE,endInfoBean.getW(),endInfoBean.getH(),endInfoBean.getSize(), HudSendImageType.END,endInfoBean.getType());
+                break;
+        }
+
+        if(null!=endBytes){
+            BleEventSubscriptionSubject.getInstance().sendImageIndexCmd(endInfoBean.getIndex(),endBytes);
+        }
+
+
+
+
+    }
 
 
     @Override
     public int getViewLayoutRsId() {
-        return R.layout.activity_main11;
+        return R.layout.activity_main_test;
     }
 
     @Override
     public void initView() {
+
         bleTV=findViewById(R.id.tv_ble);
         bleStatuTV=findViewById(R.id.tv_ble_statu);
         initBT=findViewById(R.id.bt_init);
@@ -170,17 +271,21 @@ public class MainActivity extends BaseCompatActivity {
         disconnectedBT=findViewById(R.id.bt_disconnected);
         sendTestBT=findViewById(R.id.bt_send_test);
         sendImageTestBT=findViewById(R.id.bt_send_test_image);
+        sendProgressBT=findViewById(R.id.bt_send_test_progress);
+        ivv=findViewById(R.id.ivv);
         initBT.setOnClickListener(onClickListener);
         searchBT.setOnClickListener(onClickListener);
         disconnectedBT.setOnClickListener(onClickListener);
         sendTestBT.setOnClickListener(onClickListener);
         sendImageTestBT.setOnClickListener(onClickListener);
+        sendProgressBT.setOnClickListener(onClickListener);
         setViewByBleConnectStatu(NewBeeBleManager.getInstance().isConnect());
         BleStatuEventSubscriptionSubject.getInstance().attach(bleStatuEventObserver);
 //        BleHintEventSubscriptionSubject.getInstance().attach(bleHintEventObserver);
         NewBeeBleManager.getInstance().nowGetAllPermissions();
-    }
 
+    }
+    private ImageView ivv;
     @Override
     public void initData() {
 

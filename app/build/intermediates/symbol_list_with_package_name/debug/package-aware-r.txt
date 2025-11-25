@@ -779,7 +779,6 @@ drawable btn_radio_on_to_off_mtrl_animation
 drawable ic_launcher
 drawable ic_launcher_background
 drawable ic_launcher_foreground
-drawable img_test_1
 drawable launcher_app_list
 drawable launcher_app_list_bg
 drawable notification_action_background
@@ -854,6 +853,7 @@ id action_mode_close_button
 id action_text
 id actions
 id activity_chooser_view_content
+id activity_main
 id add
 id alertTitle
 id always
@@ -867,7 +867,9 @@ id bt_reget
 id bt_search
 id bt_send_test
 id bt_send_test_image
+id bt_send_test_progress
 id bt_update_now
+id btn_compress
 id buttonPanel
 id center_vertical
 id checkbox
@@ -899,6 +901,7 @@ id italic
 id item_touch_helper_previous_elevation
 id iv_app_icon
 id iv_back
+id ivv
 id line1
 id line3
 id listMode
@@ -1021,7 +1024,8 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_main11
+layout activity_lib_jpeg
+layout activity_main_test
 layout activity_user_private
 layout activity_version_update
 layout adapter_apps_layout
@@ -1038,6 +1042,19 @@ layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 mipmap ic_launcher
 mipmap ic_launcher_round
+mipmap img
+mipmap img_1
+mipmap img_2
+mipmap img_3
+mipmap img_test_0
+mipmap img_test_1
+mipmap img_test_2
+mipmap img_test_3
+mipmap img_test_4
+mipmap img_test_5
+mipmap img_test_6
+mipmap img_test_7
+mipmap img_test_jd
 raw beep
 string abc_action_bar_home_description
 string abc_action_bar_up_description

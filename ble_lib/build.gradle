@@ -32,8 +32,22 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    sourceSets {
+//        main {
+//            jniLibs.srcDirs 'libs'
+//
+//            // 这里没有添加libjpeg.so这个动态库，也是可以执行的。
+//            // 原因在于android本身使用了 libjpeg.so这个动态库，
+//            // 这个库存放在/system/lib下，如果我们没有加入
+//            // libjpeg.so的话，他会去/system/lib下加载这个动态库
+//
+//            // 如果为了保险起见，也可将 libjpeg.so 一并加入到 libs文件夹下
+//
+//        }
+    }
 }
 
 dependencies {
-    implementation 'com.github.lixiao-nb666:ble_event:1.0.22'
+    implementation 'com.github.lixiao-nb666:ble_event:1.0.24'
 }

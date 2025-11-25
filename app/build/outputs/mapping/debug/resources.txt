@@ -1,13 +1,17 @@
 Marking mipmap:ic_launcher:2131427328 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
-Marking drawable:img_test_1:2131099746 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
-Marking layout:activity_main11:2131361820 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
-Marking id:tv_ble:2131165356 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
-Marking id:tv_ble_statu:2131165357 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
-Marking id:bt_init:2131165250 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
-Marking id:bt_search:2131165252 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
-Marking id:bt_disconnected:2131165249 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
-Marking id:bt_send_test:2131165253 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
-Marking id:bt_send_test_image:2131165254 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
+Marking mipmap:img_test_jd:2131427342 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
+Marking mipmap:img_test_4:2131427338 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
+Marking mipmap:img_test_7:2131427341 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
+Marking layout:activity_main_test:2131361821 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
+Marking id:tv_ble:2131165360 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
+Marking id:tv_ble_statu:2131165361 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
+Marking id:bt_init:2131165251 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
+Marking id:bt_search:2131165253 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
+Marking id:bt_disconnected:2131165250 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
+Marking id:bt_send_test:2131165254 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
+Marking id:bt_send_test_image:2131165255 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
+Marking id:bt_send_test_progress:2131165256 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
+Marking id:ivv:2131165290 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
 android.content.res.Resources#getIdentifier present: true
 Web content present: false
 Referenced Strings:
@@ -22,7 +26,6 @@ numb_9
 1210
 androidx.view.accessibility.Accessibi...
 android.speech.extra.RESULTS_PENDINGI...
-kankanshibushizheli:333
 AM
 0
 1
@@ -34,6 +37,7 @@ SET_DAYLIGHTING_SHOW_STATU
 3400
 2310
 onMenuKeyEvent
+SET_BIG_TURN_TYPE_HIDE_AND_SHOW
 removeItemAt
 BEGIN_OBJECT
 canSendImageMsg:
@@ -49,6 +53,7 @@ _
 user_query
 ACTION_CLEAR_ACCESSIBILITY_FOCUS
 h
+SEND_SPEED
 r
 androidx.lifecycle.BundlableSavedStat...
 GridLayoutManager
@@ -88,6 +93,7 @@ numb_46
 ACTION_SCROLL_BACKWARD
 TooltipPopup
 android.graphics.drawable.VectorDrawable
+PROGRESS
 HUE
 requestRelaunchActivity
 ACTION_SCROLL_UP
@@ -127,7 +133,6 @@ ACTION_PAGE_UP
 mNextServedView
 kankanshibushizheli
 androidx.view.accessibility.Accessibi...
-A55A000F1000AF0104000008FA0000
 1234kasjffdlks:1
 1234kasjffdlks:2
 L_RF_Y_RF
@@ -147,6 +152,7 @@ WARNING_POINT_2_B_STR
 TextView
 setEpicenterBounds
 ImageView
+HIDE_INTERVAL_SPEED
 read
 DST
 SUBCLASSES
@@ -164,6 +170,7 @@ android.view.
 SRC
 UPPER_CAMEL_CASE
 c15
+kankantubianzenmhuishi:1111222:err
 c16
 busd
 c18
@@ -282,6 +289,7 @@ tbt16
 tbt17
 tbt18
 tbt19
+kankantupian
 LIBRARY_GROUP_PREFIX
 ACCESSIBILITY_CLICKABLE_SPAN_ID
 ACTION_PAGE_LEFT
@@ -347,6 +355,7 @@ notification
 group
 R_F_Y_R
 android.speech.extra.RESULTS_PENDINGI...
+REACH_STR
 canSendMsg:
 tbt74
 1301
@@ -490,6 +499,7 @@ android.hardware.bluetooth_le
 700666
 android.support.FILE_PROVIDER_PATHS
 kankanshujufdajfls:
+IMAGE
 SCREEN
 GET_SN
 EditText
@@ -534,7 +544,6 @@ limit
 MissingPermission
 android.resource://
 R_F_Y
-A55A000F1000AF0104000008FA0100
 LF_RF_Y
 R_RF_N
 NULL
@@ -574,6 +583,7 @@ ACTVAutoSizeHelper
 android.widget.
 AbImageUtil
 _LifecycleAdapter
+CLEAR_PROGRESS_BAR
 mOnKeyListener
 ACTION_PASTE
 RF_F_N
@@ -590,10 +600,12 @@ FINISHED
 freeze
 TRACE_TAG_APP
 android:support:next_request_index
+PROGRESS_BAR
 SuggestionsAdapter
 10
 11
 ACTION_NEXT_HTML_ELEMENT
+SET_UI
 LOWER_CASE_WITH_DASHES
 ACTION_COLLAPSE
 L_RF_Y
@@ -605,6 +617,7 @@ HI_PASS
 20
 21
 rw
+SET_TWS_NAME
 ToolbarWidgetWrapper
 ACTION_PAGE_DOWN
 classes_to_restore
@@ -621,6 +634,7 @@ PREVENT
 OPEN
 UPPER_CAMEL_CASE_WITH_SPACES
 android.speech.action.WEB_SEARCH
+SET_TURN_BJ
 STRING
 40
 41
@@ -637,6 +651,7 @@ NUMBER
 ResourcesCompat
 RUNNING
 query
+SET_DISPLAY_RECT_SIZE
 android.resource
 TypefaceCompatApi21Impl
 COLOR_DODGE
@@ -702,11 +717,13 @@ PREVENT_WHEN_EMPTY
 LOW
 result_code
 END_OBJECT
+SEND_WARNING_POINT_SPEED
 ACTION_FOCUS
 T800
 android.support.BIND_NOTIFICATION_SID...
 createFromFamiliesWithDefault
 tbt250
+SET_BLE_NAME
 power
 LF_T_Y
 numb_10
@@ -834,7 +851,7 @@ Marking attr:itemPadding:2130837657 used because it matches string pool constant
 Marking dimen:item_touch_helper_max_drag_scroll_per_frame:2131034210 used because it matches string pool constant item
 Marking dimen:item_touch_helper_swipe_escape_max_velocity:2131034211 used because it matches string pool constant item
 Marking dimen:item_touch_helper_swipe_escape_velocity:2131034212 used because it matches string pool constant item
-Marking id:item_touch_helper_previous_elevation:2131165284 used because it matches string pool constant item
+Marking id:item_touch_helper_previous_elevation:2131165287 used because it matches string pool constant item
 Marking color:notification_action_color_filter:2130968741 used because it matches string pool constant notification
 Marking color:notification_icon_bg_color:2130968742 used because it matches string pool constant notification
 Marking dimen:notification_action_icon_size:2131034213 used because it matches string pool constant notification
@@ -852,29 +869,29 @@ Marking dimen:notification_small_icon_size_as_large:2131034224 used because it m
 Marking dimen:notification_subtext_size:2131034225 used because it matches string pool constant notification
 Marking dimen:notification_top_pad:2131034226 used because it matches string pool constant notification
 Marking dimen:notification_top_pad_large_text:2131034227 used because it matches string pool constant notification
-Marking drawable:notification_action_background:2131099749 used because it matches string pool constant notification
-Marking drawable:notification_bg:2131099750 used because it matches string pool constant notification
-Marking drawable:notification_bg_low:2131099751 used because it matches string pool constant notification
-Marking drawable:notification_bg_low_normal:2131099752 used because it matches string pool constant notification
-Marking drawable:notification_bg_low_pressed:2131099753 used because it matches string pool constant notification
-Marking drawable:notification_bg_normal:2131099754 used because it matches string pool constant notification
-Marking drawable:notification_bg_normal_pressed:2131099755 used because it matches string pool constant notification
-Marking drawable:notification_icon_background:2131099756 used because it matches string pool constant notification
-Marking drawable:notification_template_icon_bg:2131099757 used because it matches string pool constant notification
-Marking drawable:notification_template_icon_low_bg:2131099758 used because it matches string pool constant notification
-Marking drawable:notification_tile_bg:2131099759 used because it matches string pool constant notification
-Marking id:notification_background:2131165299 used because it matches string pool constant notification
-Marking id:notification_main_column:2131165300 used because it matches string pool constant notification
-Marking id:notification_main_column_container:2131165301 used because it matches string pool constant notification
-Marking layout:notification_action:2131361825 used because it matches string pool constant notification
-Marking layout:notification_action_tombstone:2131361826 used because it matches string pool constant notification
-Marking layout:notification_template_custom_big:2131361827 used because it matches string pool constant notification
-Marking layout:notification_template_icon_group:2131361828 used because it matches string pool constant notification
-Marking layout:notification_template_part_chronometer:2131361829 used because it matches string pool constant notification
-Marking layout:notification_template_part_time:2131361830 used because it matches string pool constant notification
-Marking id:group_divider:2131165275 used because it matches string pool constant group
+Marking drawable:notification_action_background:2131099748 used because it matches string pool constant notification
+Marking drawable:notification_bg:2131099749 used because it matches string pool constant notification
+Marking drawable:notification_bg_low:2131099750 used because it matches string pool constant notification
+Marking drawable:notification_bg_low_normal:2131099751 used because it matches string pool constant notification
+Marking drawable:notification_bg_low_pressed:2131099752 used because it matches string pool constant notification
+Marking drawable:notification_bg_normal:2131099753 used because it matches string pool constant notification
+Marking drawable:notification_bg_normal_pressed:2131099754 used because it matches string pool constant notification
+Marking drawable:notification_icon_background:2131099755 used because it matches string pool constant notification
+Marking drawable:notification_template_icon_bg:2131099756 used because it matches string pool constant notification
+Marking drawable:notification_template_icon_low_bg:2131099757 used because it matches string pool constant notification
+Marking drawable:notification_tile_bg:2131099758 used because it matches string pool constant notification
+Marking id:notification_background:2131165303 used because it matches string pool constant notification
+Marking id:notification_main_column:2131165304 used because it matches string pool constant notification
+Marking id:notification_main_column_container:2131165305 used because it matches string pool constant notification
+Marking layout:notification_action:2131361826 used because it matches string pool constant notification
+Marking layout:notification_action_tombstone:2131361827 used because it matches string pool constant notification
+Marking layout:notification_template_custom_big:2131361828 used because it matches string pool constant notification
+Marking layout:notification_template_icon_group:2131361829 used because it matches string pool constant notification
+Marking layout:notification_template_part_chronometer:2131361830 used because it matches string pool constant notification
+Marking layout:notification_template_part_time:2131361831 used because it matches string pool constant notification
+Marking id:group_divider:2131165278 used because it matches string pool constant group
 Marking attr:defaultQueryHint:2130837600 used because it matches string pool constant def
-Marking id:default_activity_button:2131165267 used because it matches string pool constant def
+Marking id:default_activity_button:2131165270 used because it matches string pool constant def
 Marking attr:font:2130837632 used because it matches string pool constant font
 Marking attr:fontFamily:2130837633 used because it matches string pool constant font
 Marking attr:fontProviderAuthority:2130837634 used because it matches string pool constant font
@@ -893,20 +910,20 @@ Marking attr:contentInsetLeft:2130837594 used because it matches string pool con
 Marking attr:contentInsetRight:2130837595 used because it matches string pool constant content
 Marking attr:contentInsetStart:2130837596 used because it matches string pool constant content
 Marking attr:contentInsetStartWithNavigation:2130837597 used because it matches string pool constant content
-Marking id:content:2131165262 used because it matches string pool constant content
-Marking id:contentPanel:2131165263 used because it matches string pool constant content
+Marking id:content:2131165265 used because it matches string pool constant content
+Marking id:contentPanel:2131165266 used because it matches string pool constant content
 Marking attr:menu:2130837681 used because it matches string pool constant menu
 Marking attr:queryBackground:2130837701 used because it matches string pool constant query
 Marking attr:queryHint:2130837702 used because it matches string pool constant query
-Marking id:none:2131165297 used because it matches string pool constant none
-Marking id:tag_accessibility_actions:2131165337 used because it matches string pool constant tag
-Marking id:tag_accessibility_clickable_spans:2131165338 used because it matches string pool constant tag
-Marking id:tag_accessibility_heading:2131165339 used because it matches string pool constant tag
-Marking id:tag_accessibility_pane_title:2131165340 used because it matches string pool constant tag
-Marking id:tag_screen_reader_focusable:2131165341 used because it matches string pool constant tag
-Marking id:tag_transition_group:2131165342 used because it matches string pool constant tag
-Marking id:tag_unhandled_key_event_manager:2131165343 used because it matches string pool constant tag
-Marking id:tag_unhandled_key_listeners:2131165344 used because it matches string pool constant tag
+Marking id:none:2131165301 used because it matches string pool constant none
+Marking id:tag_accessibility_actions:2131165341 used because it matches string pool constant tag
+Marking id:tag_accessibility_clickable_spans:2131165342 used because it matches string pool constant tag
+Marking id:tag_accessibility_heading:2131165343 used because it matches string pool constant tag
+Marking id:tag_accessibility_pane_title:2131165344 used because it matches string pool constant tag
+Marking id:tag_screen_reader_focusable:2131165345 used because it matches string pool constant tag
+Marking id:tag_transition_group:2131165346 used because it matches string pool constant tag
+Marking id:tag_unhandled_key_event_manager:2131165347 used because it matches string pool constant tag
+Marking id:tag_unhandled_key_listeners:2131165348 used because it matches string pool constant tag
 @anim/abc_fade_in : reachable=false
 @anim/abc_fade_out : reachable=false
 @anim/abc_grow_fade_in_from_bottom : reachable=false
@@ -1860,7 +1877,6 @@ Marking id:tag_unhandled_key_listeners:2131165344 used because it matches string
 @drawable/ic_launcher_background : reachable=false
 @drawable/ic_launcher_foreground : reachable=false
     @drawable/$ic_launcher_foreground__0
-@drawable/img_test_1 : reachable=true
 @drawable/launcher_app_list : reachable=false
 @drawable/launcher_app_list_bg : reachable=false
 @drawable/notification_action_background : reachable=true
@@ -1951,6 +1967,7 @@ Marking id:tag_unhandled_key_listeners:2131165344 used because it matches string
 @id/action_text : reachable=false
 @id/actions : reachable=false
 @id/activity_chooser_view_content : reachable=false
+@id/activity_main : reachable=false
 @id/add : reachable=false
 @id/alertTitle : reachable=true
 @id/always : reachable=false
@@ -1964,7 +1981,9 @@ Marking id:tag_unhandled_key_listeners:2131165344 used because it matches string
 @id/bt_search : reachable=true
 @id/bt_send_test : reachable=true
 @id/bt_send_test_image : reachable=true
+@id/bt_send_test_progress : reachable=true
 @id/bt_update_now : reachable=false
+@id/btn_compress : reachable=false
 @id/buttonPanel : reachable=true
 @id/center_vertical : reachable=false
 @id/checkbox : reachable=false
@@ -1996,6 +2015,7 @@ Marking id:tag_unhandled_key_listeners:2131165344 used because it matches string
 @id/item_touch_helper_previous_elevation : reachable=true
 @id/iv_app_icon : reachable=false
 @id/iv_back : reachable=false
+@id/ivv : reachable=true
 @id/line1 : reachable=false
 @id/line3 : reachable=false
 @id/listMode : reachable=false
@@ -2212,7 +2232,8 @@ Marking id:tag_unhandled_key_listeners:2131165344 used because it matches string
     @style/TextAppearance_AppCompat_Tooltip
     @dimen/tooltip_margin
     @dimen/tooltip_vertical_padding
-@layout/activity_main11 : reachable=true
+@layout/activity_lib_jpeg : reachable=false
+@layout/activity_main_test : reachable=true
     @color/white
     @color/black
 @layout/activity_user_private : reachable=false
@@ -2277,6 +2298,19 @@ Marking id:tag_unhandled_key_listeners:2131165344 used because it matches string
 @mipmap/ic_launcher_round : reachable=true
     @drawable/ic_launcher_background
     @drawable/ic_launcher_foreground
+@mipmap/img : reachable=false
+@mipmap/img_1 : reachable=false
+@mipmap/img_2 : reachable=false
+@mipmap/img_3 : reachable=false
+@mipmap/img_test_0 : reachable=false
+@mipmap/img_test_1 : reachable=false
+@mipmap/img_test_2 : reachable=false
+@mipmap/img_test_3 : reachable=false
+@mipmap/img_test_4 : reachable=true
+@mipmap/img_test_5 : reachable=false
+@mipmap/img_test_6 : reachable=false
+@mipmap/img_test_7 : reachable=true
+@mipmap/img_test_jd : reachable=true
 @raw/beep : reachable=false
 @string/abc_action_bar_home_description : reachable=false
 @string/abc_action_bar_up_description : reachable=true
@@ -3955,18 +3989,17 @@ The root reachable resources are:
  drawable:abc_textfield_search_default_mtrl_alpha:2131099732
  drawable:abc_textfield_search_material:2131099733
  drawable:abc_vector_test:2131099734
- drawable:img_test_1:2131099746
- drawable:notification_action_background:2131099749
- drawable:notification_bg:2131099750
- drawable:notification_bg_low:2131099751
- drawable:notification_bg_low_normal:2131099752
- drawable:notification_bg_low_pressed:2131099753
- drawable:notification_bg_normal:2131099754
- drawable:notification_bg_normal_pressed:2131099755
- drawable:notification_icon_background:2131099756
- drawable:notification_template_icon_bg:2131099757
- drawable:notification_template_icon_low_bg:2131099758
- drawable:notification_tile_bg:2131099759
+ drawable:notification_action_background:2131099748
+ drawable:notification_bg:2131099749
+ drawable:notification_bg_low:2131099750
+ drawable:notification_bg_low_normal:2131099751
+ drawable:notification_bg_low_pressed:2131099752
+ drawable:notification_bg_normal:2131099753
+ drawable:notification_bg_normal_pressed:2131099754
+ drawable:notification_icon_background:2131099755
+ drawable:notification_template_icon_bg:2131099756
+ drawable:notification_template_icon_low_bg:2131099757
+ drawable:notification_tile_bg:2131099758
  id:accessibility_action_clickable_span:2131165190
  id:accessibility_custom_action_0:2131165191
  id:accessibility_custom_action_1:2131165192
@@ -4009,60 +4042,62 @@ The root reachable resources are:
  id:action_menu_presenter:2131165235
  id:action_mode_bar_stub:2131165237
  id:action_mode_close_button:2131165238
- id:alertTitle:2131165243
- id:bt_disconnected:2131165249
- id:bt_init:2131165250
- id:bt_search:2131165252
- id:bt_send_test:2131165253
- id:bt_send_test_image:2131165254
- id:buttonPanel:2131165256
- id:content:2131165262
- id:contentPanel:2131165263
- id:custom:2131165264
- id:customPanel:2131165265
- id:decor_content_parent:2131165266
- id:default_activity_button:2131165267
- id:edit_query:2131165270
- id:group_divider:2131165275
- id:item_touch_helper_previous_elevation:2131165284
- id:message:2131165293
- id:none:2131165297
- id:notification_background:2131165299
- id:notification_main_column:2131165300
- id:notification_main_column_container:2131165301
- id:parentPanel:2131165304
- id:scrollIndicatorDown:2131165311
- id:scrollIndicatorUp:2131165312
- id:scrollView:2131165313
- id:search_button:2131165316
- id:search_close_btn:2131165317
- id:search_edit_frame:2131165318
- id:search_go_btn:2131165319
- id:search_mag_icon:2131165320
- id:search_plate:2131165321
- id:search_src_text:2131165322
- id:search_voice_btn:2131165323
- id:shortcut:2131165325
- id:spacer:2131165329
- id:split_action_bar:2131165330
- id:submenuarrow:2131165334
- id:submit_area:2131165335
- id:tag_accessibility_actions:2131165337
- id:tag_accessibility_clickable_spans:2131165338
- id:tag_accessibility_heading:2131165339
- id:tag_accessibility_pane_title:2131165340
- id:tag_screen_reader_focusable:2131165341
- id:tag_transition_group:2131165342
- id:tag_unhandled_key_event_manager:2131165343
- id:tag_unhandled_key_listeners:2131165344
- id:textSpacerNoButtons:2131165347
- id:textSpacerNoTitle:2131165348
- id:title:2131165350
- id:titleDividerNoCustom:2131165351
- id:title_template:2131165352
- id:topPanel:2131165354
- id:tv_ble:2131165356
- id:tv_ble_statu:2131165357
+ id:alertTitle:2131165244
+ id:bt_disconnected:2131165250
+ id:bt_init:2131165251
+ id:bt_search:2131165253
+ id:bt_send_test:2131165254
+ id:bt_send_test_image:2131165255
+ id:bt_send_test_progress:2131165256
+ id:buttonPanel:2131165259
+ id:content:2131165265
+ id:contentPanel:2131165266
+ id:custom:2131165267
+ id:customPanel:2131165268
+ id:decor_content_parent:2131165269
+ id:default_activity_button:2131165270
+ id:edit_query:2131165273
+ id:group_divider:2131165278
+ id:item_touch_helper_previous_elevation:2131165287
+ id:ivv:2131165290
+ id:message:2131165297
+ id:none:2131165301
+ id:notification_background:2131165303
+ id:notification_main_column:2131165304
+ id:notification_main_column_container:2131165305
+ id:parentPanel:2131165308
+ id:scrollIndicatorDown:2131165315
+ id:scrollIndicatorUp:2131165316
+ id:scrollView:2131165317
+ id:search_button:2131165320
+ id:search_close_btn:2131165321
+ id:search_edit_frame:2131165322
+ id:search_go_btn:2131165323
+ id:search_mag_icon:2131165324
+ id:search_plate:2131165325
+ id:search_src_text:2131165326
+ id:search_voice_btn:2131165327
+ id:shortcut:2131165329
+ id:spacer:2131165333
+ id:split_action_bar:2131165334
+ id:submenuarrow:2131165338
+ id:submit_area:2131165339
+ id:tag_accessibility_actions:2131165341
+ id:tag_accessibility_clickable_spans:2131165342
+ id:tag_accessibility_heading:2131165343
+ id:tag_accessibility_pane_title:2131165344
+ id:tag_screen_reader_focusable:2131165345
+ id:tag_transition_group:2131165346
+ id:tag_unhandled_key_event_manager:2131165347
+ id:tag_unhandled_key_listeners:2131165348
+ id:textSpacerNoButtons:2131165351
+ id:textSpacerNoTitle:2131165352
+ id:title:2131165354
+ id:titleDividerNoCustom:2131165355
+ id:title_template:2131165356
+ id:topPanel:2131165358
+ id:tv_ble:2131165360
+ id:tv_ble_statu:2131165361
  layout:abc_action_bar_title_item:2131361792
  layout:abc_action_menu_item_layout:2131361794
  layout:abc_action_menu_layout:2131361795
@@ -4082,16 +4117,19 @@ The root reachable resources are:
  layout:abc_search_dropdown_item_icons_2line:2131361816
  layout:abc_search_view:2131361817
  layout:abc_tooltip:2131361819
- layout:activity_main11:2131361820
- layout:notification_action:2131361825
- layout:notification_action_tombstone:2131361826
- layout:notification_template_custom_big:2131361827
- layout:notification_template_icon_group:2131361828
- layout:notification_template_part_chronometer:2131361829
- layout:notification_template_part_time:2131361830
- layout:support_simple_spinner_dropdown_item:2131361834
+ layout:activity_main_test:2131361821
+ layout:notification_action:2131361826
+ layout:notification_action_tombstone:2131361827
+ layout:notification_template_custom_big:2131361828
+ layout:notification_template_icon_group:2131361829
+ layout:notification_template_part_chronometer:2131361830
+ layout:notification_template_part_time:2131361831
+ layout:support_simple_spinner_dropdown_item:2131361835
  mipmap:ic_launcher:2131427328
  mipmap:ic_launcher_round:2131427329
+ mipmap:img_test_4:2131427338
+ mipmap:img_test_7:2131427341
+ mipmap:img_test_jd:2131427342
  string:abc_action_bar_up_description:2131558401
  string:abc_menu_alt_shortcut_label:2131558408
  string:abc_menu_ctrl_shortcut_label:2131558409
@@ -4162,8 +4200,19 @@ Skipped unused resource res/drawable/launcher_app_list_bg.png: 1608696 bytes (re
 Skipped unused resource res/layout/abc_action_bar_up_container.xml: 588 bytes (replaced with small dummy file of size 9 bytes)
 Skipped unused resource res/layout/abc_activity_chooser_view.xml: 3884 bytes (replaced with small dummy file of size 9 bytes)
 Skipped unused resource res/layout/abc_activity_chooser_view_list_item.xml: 2684 bytes (replaced with small dummy file of size 9 bytes)
+Skipped unused resource res/layout/activity_lib_jpeg.xml: 781 bytes (replaced with small dummy file of size 9 bytes)
 Skipped unused resource res/layout-v2/activity_user_private.xml: 3491 bytes (replaced with small dummy file of size 9 bytes)
 Skipped unused resource res/layout-v2/activity_version_update.xml: 5123 bytes (replaced with small dummy file of size 9 bytes)
 Skipped unused resource res/layout-v2/adapter_apps_layout.xml: 1826 bytes (replaced with small dummy file of size 9 bytes)
 Skipped unused resource res/layout/custom_dialog.xml: 828 bytes (replaced with small dummy file of size 9 bytes)
+Skipped unused resource res/mipmap-xxhdpi-v4/img.png: 149639 bytes (replaced with small dummy file of size 67 bytes)
+Skipped unused resource res/mipmap-xxhdpi-v4/img_1.png: 494270 bytes (replaced with small dummy file of size 67 bytes)
+Skipped unused resource res/mipmap-xxhdpi-v4/img_2.png: 298687 bytes (replaced with small dummy file of size 67 bytes)
+Skipped unused resource res/mipmap-xxhdpi-v4/img_3.png: 196092 bytes (replaced with small dummy file of size 67 bytes)
+Skipped unused resource res/mipmap-xxhdpi-v4/img_test_0.png: 550962 bytes (replaced with small dummy file of size 67 bytes)
+Skipped unused resource res/mipmap-xxhdpi-v4/img_test_1.jpg: 6808 bytes (replaced with small dummy file of size 0 bytes)
+Skipped unused resource res/mipmap-xxhdpi-v4/img_test_2.jpg: 149639 bytes (replaced with small dummy file of size 0 bytes)
+Skipped unused resource res/mipmap-xxhdpi-v4/img_test_3.png: 1503957 bytes (replaced with small dummy file of size 67 bytes)
+Skipped unused resource res/mipmap-xxhdpi-v4/img_test_5.jpg: 13739 bytes (replaced with small dummy file of size 0 bytes)
+Skipped unused resource res/mipmap-xxhdpi-v4/img_test_6.png: 298687 bytes (replaced with small dummy file of size 67 bytes)
 Skipped unused resource res/raw/beep.ogg: 12237 bytes (replaced with small dummy file of size 0 bytes)

@@ -158,13 +158,18 @@ public class AbImageUtil {
             // 获取Bitmap资源的宽和高
             int bmpW = bitmap.getWidth();
             int bmpH = bitmap.getHeight();
+//            bmpW= (int) (bmpW*scale);
+//            bmpH= (int) (bmpH*scale);
             // 注意这个Matirx是android.graphics底下的那个
             Matrix mt = new Matrix();
             // 设置缩放系数，分别为原来的0.8和0.8
+
             mt.postScale(scale, scale);
             resizeBmp = Bitmap.createBitmap(bitmap, 0, 0, bmpW, bmpH, mt, true);
+//            resizeBmp =  Bitmap.createBitmap(bitmap, 0, 0, bmpW, bmpH);
+
         } catch (Exception e) {
-            Log.i("kankanshibushizheli","kankanshibushizheli:2222----"+ e.toString());
+            Log.i("kankantupian","kankantubianzenmhuishi:11116666--"+"--"+e.toString());
 
         }
         return resizeBmp;

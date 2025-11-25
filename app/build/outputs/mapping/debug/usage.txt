@@ -5875,6 +5875,7 @@ com.newbee.ble_lib.util.AbImageUtil:
     public static android.graphics.Bitmap imageView2Bitmap(android.widget.ImageView)
     public static android.graphics.Bitmap rotateBitmap(android.graphics.Bitmap,float)
     public static android.graphics.Bitmap rotateBitmapTranslate(android.graphics.Bitmap,float)
+    public static android.graphics.Bitmap scaleImg(android.graphics.Bitmap,float)
     public static android.graphics.Bitmap scaleImg(android.graphics.Bitmap,int,int)
     public static android.graphics.Bitmap scaleImg(java.io.File,int,int)
     public void setOnImageUtilsListener(com.newbee.ble_lib.util.AbImageUtil$OnImageUtilsListener)
@@ -5891,6 +5892,13 @@ com.newbee.ble_lib.util.BleErrManager:
     public static void sendErrMsg()
 com.newbee.ble_lib.util.BleSendImageUtil:
     public void <init>()
+com.newbee.ble_lib.util.ImageCompressUtils:
+    public void <init>()
+    public static int calculateInSampleSize(int,int,int,int)
+    public static byte[] compressBitmap(android.graphics.Bitmap,int,android.graphics.Bitmap$CompressFormat)
+    public static byte[] compressImage(android.content.Context,android.net.Uri,int,android.graphics.Bitmap$CompressFormat,int)
+    public static byte[] compressToSize(android.content.Context,android.net.Uri,int,int,int,android.graphics.Bitmap$CompressFormat,int)
+    private static android.graphics.Bitmap decodeBitmapFromUri(android.content.Context,android.net.Uri,int)
 com.newbee.ble_tool.BuildConfig
 com.newbee.ble_tool.R$color
 com.newbee.ble_tool.R$drawable
@@ -5911,6 +5919,23 @@ com.newbee.ble_tool.type.HudDevice:
     private void <init>(java.lang.String,int,java.lang.String,int,com.newbee.ble_tool.type.HudDeviceSendDataType)
     public static com.newbee.ble_tool.type.HudDevice getBleDeviceType(com.nrmyw.ble_event_lib.bean.BleDeviceBean)
     public com.newbee.ble_tool.type.HudDeviceSendDataType getSendDataType()
+com.newbee.ble_tool.util.HudBleByteUtil:
+    public void <init>()
+com.newbee.ble_tool.util.HudCmdSendDataUtil:
+    public void <init>()
+com.newbee.ble_tool.util.HudConfig:
+    public static final java.lang.String ACTION_GATT_CONNECTED
+    public static final java.lang.String ACTION_GATT_DISCONNECTED
+    public static final java.lang.String ACTION_GATT_SERVICES_DISCOVERED
+    public static final java.lang.String ACTION_GATT_WRITE_STATE
+    public static final boolean isAutomatic
+    public static final int mtu
+    public static final java.lang.String noticeID
+    public static final java.lang.String serviceID
+    public static final java.lang.String writeID
+    public void <init>()
+com.newbee.ble_tool.util.HudImageType:
+    public byte getType()
 com.newbee.bulid_lib.BuildConfig
 com.newbee.bulid_lib.R$anim
 com.newbee.bulid_lib.R$color
@@ -6077,25 +6102,13 @@ com.nrmyw.ble_event_lib.R
 com.nrmyw.ble_event_lib.bean.BleDeviceBean:
     public java.lang.String getAdress()
     public java.lang.String getBleName()
-    public void setAdress(java.lang.String)
 com.nrmyw.ble_event_lib.bean.BleSendImageEndInfoBean:
-    public int getH()
     public java.lang.String getName()
-    public int getSize()
-    public int getType()
     public long getUseTime()
-    public int getW()
 com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean:
-    public void setMaxH(int)
-    public void setMaxW(int)
     public void setName(java.lang.String)
-    public void setType(int)
 com.nrmyw.ble_event_lib.bean.BleSendImageStartInfoBean:
-    public int getH()
     public java.lang.String getName()
-    public int getSize()
-    public int getType()
-    public int getW()
 com.nrmyw.ble_event_lib.config.NewBeeBleConfig:
     private boolean disconnectAutoConnect
     public boolean isDisconnectAutoConnect()
@@ -6111,8 +6124,6 @@ com.nrmyw.ble_event_lib.send.BleEventSubscriptionSubject:
     public void sendCmd(byte[])
     public void startSearchBle()
 com.nrmyw.ble_event_lib.statu.BleStatuEventSubject
-com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType:
-    public void setQualityV(int)
 com.nrmyw.ble_event_lib.type.BleSendFileType:
     int ord
     public int getOrd()
@@ -6121,9 +6132,7 @@ com.nrmyw.ble_event_lib.util.BleByteUtil:
     public void <init>()
     public static varargs byte[] addToNewBytes(byte[][])
     public static int byteArrayToInt(byte[])
-    public static byte[] intToByteArray32(int)
     public static byte[] intToByteArray32only1(int)
-    public static byte[] intToByteArray32only2(int)
     public static byte[] intToByteArray32only3(int)
     public static java.lang.String parseByte2HexStr(byte)
     public static byte[] resultData(byte[])
