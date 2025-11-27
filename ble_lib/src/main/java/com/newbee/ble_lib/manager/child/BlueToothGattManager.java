@@ -81,9 +81,9 @@ public class BlueToothGattManager {
         public void onMtuChanged(BluetoothGatt gatt, int mtu, int status) {
             super.onMtuChanged(gatt, mtu, status);
             Log.w(tag,"BluetoothAdapter  initialized  111:3--"+mtu+"--"+status);
-            int numb=mtu/100;
+
             if(mtu>= BleManagerConfig.CAN_SEND_MTU){
-                NewBeeBleConfig.getInstance().setRealMtu(mtu-numb);
+                NewBeeBleConfig.getInstance().setRealMtu(mtu-BleManagerConfig.MTU_CHA);
             }else {
                 NewBeeBleConfig.getInstance().setRealMtu(mtu);
             }
@@ -249,8 +249,6 @@ public class BlueToothGattManager {
 //                Log.e( "接收--->端口数 据： " + b);
 //            }
 //            Log.e( "接收--->端口数 据： --------------end" );
-
-
         }
 
     };
