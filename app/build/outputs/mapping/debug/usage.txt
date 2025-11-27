@@ -5842,7 +5842,10 @@ com.newbee.ble_lib.base.BaseServiceDao:
     public void setActionStr(java.lang.String)
     public void startService()
     public void stopService()
-com.newbee.ble_lib.config.BleManagerConfig
+com.newbee.ble_lib.config.BleManagerConfig:
+    public static final int CAN_SEND_MTU
+    public static final long CONNECT_OLD_HUD_TIME
+    public void <init>()
 com.newbee.ble_lib.manager.child.BleConnectManager:
     private void closeBluetooth()
 com.newbee.ble_lib.manager.child.BlueToothGattManager:

@@ -3,8 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 0b09317
-# pg_map_hash: SHA-256 0b0931775ed12b20ebc933b2561e923fba64fb4bdaabd81eef0673c7739f9448
+# pg_map_id: ba27010
+# pg_map_hash: SHA-256 ba270106b8b32e69a35b824f27bee5f4169f433ee5e143268baa0757b67b04ba
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -6458,6 +6458,8 @@ com.newbee.ble_lib.base.BaseServiceDao$1 -> com.newbee.ble_lib.base.BaseServiceD
     28:28:void <init>(com.newbee.ble_lib.base.BaseServiceDao) -> <init>
     31:34:void onServiceConnected(android.content.ComponentName,android.os.IBinder) -> onServiceConnected
     38:39:void onServiceDisconnected(android.content.ComponentName) -> onServiceDisconnected
+com.newbee.ble_lib.config.BleManagerConfig -> com.newbee.ble_lib.config.BleManagerConfig:
+    7:7:void <clinit>() -> <clinit>
 com.newbee.ble_lib.manager.child.BleConnectManager -> com.newbee.ble_lib.manager.child.BleConnectManager:
     42:131:void <init>() -> <init>
     106:109:boolean bleIsOpen() -> bleIsOpen
@@ -6476,7 +6478,7 @@ com.newbee.ble_lib.manager.child.BleConnectManager$1 -> com.newbee.ble_lib.manag
     134:135:void onScanFailed(int) -> onScanFailed
     145:151:void onScanResult(int,android.bluetooth.le.ScanResult) -> onScanResult
 com.newbee.ble_lib.manager.child.BlueToothGattManager -> com.newbee.ble_lib.manager.child.BlueToothGattManager:
-    38:299:void <init>() -> <init>
+    38:297:void <init>() -> <init>
     37:37:java.lang.String access$000(com.newbee.ble_lib.manager.child.BlueToothGattManager) -> access$000
     37:37:long access$100(com.newbee.ble_lib.manager.child.BlueToothGattManager) -> access$100
     37:37:android.bluetooth.BluetoothGatt access$200(com.newbee.ble_lib.manager.child.BlueToothGattManager) -> access$200
@@ -6487,22 +6489,22 @@ com.newbee.ble_lib.manager.child.BlueToothGattManager -> com.newbee.ble_lib.mana
     37:37:android.bluetooth.BluetoothGattService access$502(com.newbee.ble_lib.manager.child.BlueToothGattManager,android.bluetooth.BluetoothGattService) -> access$502
     37:37:android.bluetooth.BluetoothGattCharacteristic access$600(com.newbee.ble_lib.manager.child.BlueToothGattManager) -> access$600
     37:37:android.bluetooth.BluetoothGattCharacteristic access$602(com.newbee.ble_lib.manager.child.BlueToothGattManager,android.bluetooth.BluetoothGattCharacteristic) -> access$602
-    296:297:void checkIsDisConnecting() -> checkIsDisConnecting
-    289:293:void close() -> close
-    429:434:void disconnect() -> disconnect
-    265:272:com.newbee.ble_lib.manager.child.BlueToothGattManager getInstance() -> getInstance
-    303:332:void initGatt(android.bluetooth.BluetoothDevice,android.content.Context) -> initGatt
-    301:301:boolean isConnecting() -> isConnecting
-    390:397:boolean isNowCanSend() -> isNowCanSend
-    277:286:void pause() -> pause
-    402:421:void queSendCmd(byte[]) -> queSendCmd
-    340:361:boolean setCharacteristicNotification1(android.bluetooth.BluetoothGattCharacteristic,boolean) -> setCharacteristicNotification1
+    294:295:void checkIsDisConnecting() -> checkIsDisConnecting
+    287:291:void close() -> close
+    427:432:void disconnect() -> disconnect
+    263:270:com.newbee.ble_lib.manager.child.BlueToothGattManager getInstance() -> getInstance
+    301:330:void initGatt(android.bluetooth.BluetoothDevice,android.content.Context) -> initGatt
+    299:299:boolean isConnecting() -> isConnecting
+    388:395:boolean isNowCanSend() -> isNowCanSend
+    275:284:void pause() -> pause
+    400:419:void queSendCmd(byte[]) -> queSendCmd
+    338:359:boolean setCharacteristicNotification1(android.bluetooth.BluetoothGattCharacteristic,boolean) -> setCharacteristicNotification1
 com.newbee.ble_lib.manager.child.BlueToothGattManager$1 -> com.newbee.ble_lib.manager.child.BlueToothGattManager$1:
     47:47:void <init>(com.newbee.ble_lib.manager.child.BlueToothGattManager) -> <init>
     183:197:void displayGattServices1() -> displayGattServices1
     212:221:boolean findCharacteristic() -> findCharacteristic
     200:208:boolean findService() -> findService
-    244:254:void onCharacteristicChanged(android.bluetooth.BluetoothGatt,android.bluetooth.BluetoothGattCharacteristic) -> onCharacteristicChanged
+    244:252:void onCharacteristicChanged(android.bluetooth.BluetoothGatt,android.bluetooth.BluetoothGattCharacteristic) -> onCharacteristicChanged
     230:236:void onCharacteristicRead(android.bluetooth.BluetoothGatt,android.bluetooth.BluetoothGattCharacteristic,int) -> onCharacteristicRead
     51:64:void onCharacteristicWrite(android.bluetooth.BluetoothGatt,android.bluetooth.BluetoothGattCharacteristic,int) -> onCharacteristicWrite
     115:130:void onConnectionStateChange(android.bluetooth.BluetoothGatt,int,int) -> onConnectionStateChange
@@ -7066,10 +7068,11 @@ com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject -> com.nrmyw.ble_
 com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType -> com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType:
     3:9:void <clinit>() -> <clinit>
     12:15:void <init>(java.lang.String,int,int) -> <init>
-    18:18:int getQualityV() -> getQualityV
-    36:36:float getZoomScaling() -> getZoomScaling
-    22:23:void setQualityV(int) -> setQualityV
-    26:33:void setZoomScaling(float) -> setZoomScaling
+    12:20:void <init>(java.lang.String,int,int,float) -> <init>
+    23:23:int getQualityV() -> getQualityV
+    41:41:float getZoomScaling() -> getZoomScaling
+    27:28:void setQualityV(int) -> setQualityV
+    31:38:void setZoomScaling(float) -> setZoomScaling
     3:3:com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType valueOf(java.lang.String) -> valueOf
     3:3:com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType[] values() -> values
 com.nrmyw.ble_event_lib.type.BleSendFileType -> com.nrmyw.ble_event_lib.type.BleSendFileType:
