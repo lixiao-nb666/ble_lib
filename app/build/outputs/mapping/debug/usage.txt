@@ -5842,6 +5842,7 @@ com.newbee.ble_lib.base.BaseServiceDao:
     public void setActionStr(java.lang.String)
     public void startService()
     public void stopService()
+com.newbee.ble_lib.config.BleManagerConfig
 com.newbee.ble_lib.manager.child.BleConnectManager:
     private void closeBluetooth()
 com.newbee.ble_lib.manager.child.BlueToothGattManager:
@@ -5887,6 +5888,10 @@ com.newbee.ble_lib.util.AbImageUtil:
     public static android.graphics.drawable.Drawable view2Drawable(android.view.View)
 com.newbee.ble_lib.util.BleCheckUtil:
     public void <init>()
+com.newbee.ble_lib.util.BleConnectStatuUtil:
+    private void clear()
+    public long getConnectTime()
+    public long getDisConnectTime()
 com.newbee.ble_lib.util.BleErrManager:
     public void <init>()
     public static void sendErrMsg()
@@ -5969,7 +5974,6 @@ com.newbee.bulid_lib.mybase.activity.BaseCompatActivity:
     public java.lang.String getIntentString()
     public int getRsColor(int)
     public java.lang.String getRsString(int)
-    public void showToast(java.lang.String)
     public void toActivity(java.lang.Class)
     public void toActivity(java.lang.Class,java.lang.String)
 com.newbee.bulid_lib.mybase.activity.util.ActivityManager:
@@ -6100,7 +6104,6 @@ com.nrmyw.ble_event_lib.R$string:
     private void <init>()
 com.nrmyw.ble_event_lib.R
 com.nrmyw.ble_event_lib.bean.BleDeviceBean:
-    public java.lang.String getAdress()
     public java.lang.String getBleName()
 com.nrmyw.ble_event_lib.bean.BleSendImageEndInfoBean:
     public java.lang.String getName()

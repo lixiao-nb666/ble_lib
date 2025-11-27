@@ -15,6 +15,7 @@ import android.os.Build;
 import android.util.Log;
 
 import com.newbee.ble_lib.NewBeeBleManager;
+import com.newbee.ble_lib.config.BleManagerConfig;
 import com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager;
 import com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager;
 
@@ -50,7 +51,10 @@ public class BlueToothGattManager {
             super.onCharacteristicWrite(gatt, characteristic, status);
             /* 蓝牙反馈回调 */
 //            EventBus.getDefault().post(new EventBluetoothStateMessage(ACTION_GATT_WRITE_STATE,status));
-            Log.i(tag,"发送 ===  :发送成功"+status);
+
+            long sendOkTime=System.currentTimeMillis();
+
+            Log.i(tag,"发送 ===  :发送成功"+status+"---用时为:"+(sendOkTime-sendTime));
             Log.w(tag,"BluetoothAdapter  initialized  111:1");
             nowCanSend=true;
 
@@ -77,16 +81,25 @@ public class BlueToothGattManager {
         public void onMtuChanged(BluetoothGatt gatt, int mtu, int status) {
             super.onMtuChanged(gatt, mtu, status);
             Log.w(tag,"BluetoothAdapter  initialized  111:3--"+mtu+"--"+status);
-
-            if (BluetoothGatt.GATT_SUCCESS == status){
-//                bluetoothGatt.discoverServices();
-                NewBeeBleConfig.getInstance().setRealMtu(mtu);
-                Log.e(tag,"设置MTU值成功" );
+            int numb=mtu/100;
+            if(mtu>= BleManagerConfig.CAN_SEND_MTU){
+                NewBeeBleConfig.getInstance().setRealMtu(mtu-numb);
             }else {
-                Log.e(tag,"设置MTU值失败");
                 NewBeeBleConfig.getInstance().setRealMtu(mtu);
-//                bluetoothGatt.discoverServices();
             }
+
+
+//            if (BluetoothGatt.GATT_SUCCESS == status){
+////                bluetoothGatt.discoverServices();
+//
+//
+//
+//                Log.e(tag,"设置MTU值成功"+mtu );
+//            }else {
+//                Log.e(tag,"设置MTU值失败"+mtu);
+//                NewBeeBleConfig.getInstance().setRealMtu(mtu-5);
+////                bluetoothGatt.discoverServices();
+//            }
             bluetoothGatt.discoverServices();
         }
 
@@ -246,7 +259,6 @@ public class BlueToothGattManager {
 
 
     private BlueToothGattManager(){
-        BlueToothGattSendMsgManager.getInstance();
     }
 
     public static BlueToothGattManager getInstance(){
@@ -386,6 +398,7 @@ public class BlueToothGattManager {
     }
 
 
+    private long sendTime;
    public synchronized void queSendCmd(byte[] cmd){
         if (bluetoothGatt!=null&&writeCharacteristic!=null){
             try {
@@ -393,6 +406,7 @@ public class BlueToothGattManager {
                 //boolean b = mBluetoothGatt.writeCharacteristic(writeCharacteristic, cmd, BluetoothGattCharacteristic.WRITE_TYPE_DEFAULT);
                 writeCharacteristic.setValue(cmd);
                 bluetoothGatt.writeCharacteristic(writeCharacteristic);
+                sendTime=System.currentTimeMillis();
                 BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.SENDING_DATA,cmd);
                 Log.i("kankanfasongtupian","-------------kankanshenmegui111:"+ BleByteUtil.parseByte2HexStr(cmd));
 //              LogUtil.e("发送指令："+ CYUtils.Bytes2HexString(cmd));

@@ -430,7 +430,6 @@ ACTION_CLICK
 GET_GPS_SPEED
 TraceCompat
 android.speech.extra.LANGUAGE_MODEL
-设置MTU值失败
 getResPackage
 LANE_INFORMATION
 LT_RF_N
@@ -486,7 +485,6 @@ content
 ListPopupWindow
 LOWER_CASE_WITH_DOTS
 class
-设置MTU值成功
 L_T_Y
 READY_SEND_IMAGE
 IconCompat

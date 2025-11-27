@@ -169,7 +169,6 @@ public class BleConnectManager {
         if(null==bluetoothLeScanner){
             return;
         }
-
         bluetoothLeScanner.startScan(scanCallback);
         BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.SEARCHING);
         tryToConnectOldDevice();
@@ -185,13 +184,18 @@ public class BleConnectManager {
 
 
 
-    private String mBluetoothDeviceAddress;
+
 
     private void tryToConnectOldDevice(){
-        if(TextUtils.isEmpty(mBluetoothDeviceAddress)){
-            return;
-        }
-        connect(mBluetoothDeviceAddress);
+        try {
+            if(!BleConnectStatuUtil.getInstance().checkCanUseOldDeviceAdress()){
+                return;
+            }
+            if(null==BleConnectStatuUtil.getInstance().getNowUseBleDevice()||TextUtils.isEmpty(BleConnectStatuUtil.getInstance().getNowUseBleDevice().getAdress())){
+                return;
+            }
+            connect(BleConnectStatuUtil.getInstance().getNowUseBleDevice().getAdress());
+        }catch (Exception e){}
     }
 
     /**
@@ -213,7 +217,7 @@ public class BleConnectManager {
 
         BlueToothGattManager.getInstance().initGatt(device,context);
 //        LG.e("Trying to create a new connection:"+address);
-        mBluetoothDeviceAddress = address;
+
         return true;
     }
 

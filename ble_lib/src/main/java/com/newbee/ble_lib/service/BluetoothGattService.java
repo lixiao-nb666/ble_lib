@@ -24,7 +24,7 @@ import com.nrmyw.ble_event_lib.send.BleEventSubscriptionSubject;
 import com.nrmyw.ble_event_lib.statu.BleStatu;
 import com.nrmyw.ble_event_lib.statu.BleStatuEventObserver;
 import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
-import com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType;
+
 
 
 public class BluetoothGattService extends BaseService {
@@ -87,12 +87,13 @@ public class BluetoothGattService extends BaseService {
             }
             Log.w(tag,"BluetoothAdapter  initialized  11155----11666");
             Log.i(tag,"1234kasjffdlks:1");
+            long nowTime=System.currentTimeMillis();
             if(isDisConnectReinit){
                 isDisConnectReinit=false;
                 bleEventObserver.havePermissionInitBle();
+                Log.w(tag,"BluetoothAdapter  initialized  11155----111144");
             }else {
                 bleEventObserver. startSearchBle();
-
             }
             autoConnectDevice();
         }
@@ -109,7 +110,7 @@ public class BluetoothGattService extends BaseService {
     private void autoConnectDeviceNow(){
         Log.w(tag,"BluetoothAdapter  initialized  11155----11222");
         handler.removeCallbacks(autoConnectRunnable);
-        int waitTime=1*1000;
+        int waitTime=1000;
         if(isDisConnectReinit){
             waitTime=3*1000;
         }
@@ -131,19 +132,32 @@ public class BluetoothGattService extends BaseService {
     private Runnable bleDisConnectRunnable=new Runnable() {
         @Override
         public void run() {
-            Log.w(tag,"BluetoothAdapter  initialized  11155----1122");
-            isDisConnectReinit=true;
+            nowIsDisConnect();
             BleConnectStatuUtil.getInstance().sendDisconnected();
         }
     };
+
+    private void nowIsDisConnect(){
+        Log.w(tag,"BluetoothAdapter  initialized  11155----111133");
+        if(!isDisConnectReinit){
+            isDisConnectReinit=true;
+        }
+
+    }
+
+
     private BleStatuEventObserver bleStatuEventObserver=new BleStatuEventObserver() {
         @Override
         public void sendBleStatu(BleStatu bleStatu, Object... objects) {
             Log.w(tag,"BluetoothAdapter  initialized  11155----"+ bleStatu);
                 switch (bleStatu){
                     case DISCONNECTED:
+                        nowIsDisConnect();
+                        Log.w(tag,"BluetoothAdapter  initialized  11155----111155");
+                        autoConnectDeviceNow();
+                        break;
                     case CONNECTING_ERR:
-                        Log.w(tag,"BluetoothAdapter  initialized  11155----1111");
+                        Log.w(tag,"BluetoothAdapter  initialized  11155----111111");
                         autoConnectDeviceNow();
                         break;
                     case CONNECTING:

@@ -28,7 +28,6 @@ public class BleCheckUtil {
         String deviceName = device.getName();
         String address=device.getAddress();
         if(null!=bleDeviceBean&&!TextUtils.isEmpty(address)){
-
             setToConnecting(bleDeviceBean,deviceName,address);
             return true;
         }else {

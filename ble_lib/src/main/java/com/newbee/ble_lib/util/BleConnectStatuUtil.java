@@ -3,6 +3,7 @@ package com.newbee.ble_lib.util;
 import android.content.Context;
 import android.text.TextUtils;
 
+import com.newbee.ble_lib.config.BleManagerConfig;
 import com.newbee.ble_lib.manager.child.BleConnectManager;
 import com.newbee.ble_lib.manager.child.BlueToothGattManager;
 import com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager;
@@ -16,6 +17,9 @@ public class BleConnectStatuUtil {
     private static BleConnectStatuUtil util;
     private BleDeviceBean nowUseBleDevice;
     private boolean isConnect;
+
+    private long connectTime;
+    private long disConnectTime;
     private BleConnectStatuUtil(){
         isConnect=false;
     }
@@ -31,7 +35,23 @@ public class BleConnectStatuUtil {
         return util;
     }
 
+    private void clear(){
+        nowUseBleDevice=null;
+        isConnect=false;
+        connectTime=0;
+    }
+
+
+    public boolean checkCanUseOldDeviceAdress(){
+        if(!isConnect&&disConnectTime!=0&&System.currentTimeMillis()-disConnectTime>= BleManagerConfig.CONNECT_OLD_HUD_TIME){
+            return true;
+        }
+        return false;
+    }
+
+
     public BleDeviceBean getNowUseBleDevice() {
+
         return nowUseBleDevice;
     }
 
@@ -39,8 +59,7 @@ public class BleConnectStatuUtil {
         return isConnect;
     }
 
-    private long lastConnectTime;
-    private String lastAddress;
+
     public void sendConnecting(BleDeviceBean bleDeviceBean, String address){
         if(null!=bleDeviceBean&&isConnect){
             BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.NONE,"Now is connected,Can not connect other !");
@@ -53,33 +72,32 @@ public class BleConnectStatuUtil {
             BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.NONE,"Connecting,Please wait !");
             return;
         }
-        lastConnectTime=nowTime;
+
         nowUseBleDevice=bleDeviceBean;
-        lastAddress=address;
         BleConnectManager.getInstance().connect(address);
     }
 
+
     public  void sendConnected(){
+        connectTime=System.currentTimeMillis();
+        disConnectTime=0;
         isConnect=true;
         BlueToothGattSendMsgManager.getInstance().clear();
-        BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.CONNECTED,lastAddress);
+        BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.CONNECTED,nowUseBleDevice.getAdress());
     }
 
     public void setConnectErr(String errStr){
-        lastConnectTime=0;
         BleErrManager.sendConnectErrMsg(errStr);
     }
 
 
 
     public synchronized void sendDisconnected(){
-
-        if(!isConnect&&null==nowUseBleDevice){
+        if(!isConnect){
             return;
         }
-        lastConnectTime=0;
         isConnect=false;
-
+        disConnectTime=System.currentTimeMillis();
         BlueToothGattSendMsgManager.getInstance().clear();
         BlueToothGattManager.getInstance().checkIsDisConnecting();
         BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.DISCONNECTED);
@@ -94,7 +112,7 @@ public class BleConnectStatuUtil {
             return;
         }
         try {
-            if(nowUseBleDevice.getDeviceName().equals(checkName)&&lastAddress.equals(checkAdress)){
+            if(nowUseBleDevice.getDeviceName().equals(checkName)&&nowUseBleDevice.getAdress().equals(checkAdress)){
                 sendDisconnected();
             }
         }catch (Exception e){
@@ -104,4 +122,11 @@ public class BleConnectStatuUtil {
     }
 
 
+    public long getConnectTime() {
+        return connectTime;
+    }
+
+    public long getDisConnectTime() {
+        return disConnectTime;
+    }
 }

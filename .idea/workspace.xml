@@ -22,50 +22,53 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8eea6d03-d1e4-4dd5-a95d-cfd1509ed020" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/hg_test.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/config/BleManagerConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/apk/debug/ble_tool_release-debug-1.0.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/apk/debug/ble_tool_release-debug-1.0.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/minifyDebugWithR8/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/minifyDebugWithR8/classes.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/mergeDebugResources/compile-file-map.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/mergeDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/mergeDebugResources/merger.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/packageDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/packageDebugResources/merger.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/newbee/ble_tool/activity/MainActivity$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/newbee/ble_tool/activity/MainActivity$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/newbee/ble_tool/activity/MainActivity$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/newbee/ble_tool/activity/MainActivity$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/newbee/ble_tool/activity/MainActivity$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/newbee/ble_tool/activity/MainActivity$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/newbee/ble_tool/activity/MainActivity$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/newbee/ble_tool/activity/MainActivity$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/newbee/ble_tool/activity/MainActivity$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/newbee/ble_tool/activity/MainActivity$5.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/newbee/ble_tool/activity/MainActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/newbee/ble_tool/activity/MainActivity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/newbee/ble_tool/app/MyApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/newbee/ble_tool/app/MyApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/linked_res_for_bundle/debug/bundled-res.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/linked_res_for_bundle/debug/bundled-res.ap_" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/local_only_symbol_list/debug/R-def.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/local_only_symbol_list/debug/R-def.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged-not-compiled-resources/debug/mipmap-xxhdpi-v4/img_test_7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_img_test_7.png.flat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/single/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/single/debug.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/packaged_res/debug/mipmap-xxhdpi-v4/img_test_7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/runtime_symbol_list/debug/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/runtime_symbol_list/debug/R.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/shrunk_processed_res/debug/resources-debug-proto-stripped.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/shrunk_processed_res/debug/resources-debug-proto-stripped.ap_" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/shrunk_processed_res/debug/resources-debug-stripped.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/shrunk_processed_res/debug/resources-debug-stripped.ap_" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/stable_resource_ids_file/debug/stableIds.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/stable_resource_ids_file/debug/stableIds.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/mapping/debug/mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/mapping/debug/mapping.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/mapping/debug/resources.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/mapping/debug/resources.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/mapping/debug/seeds.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/mapping/debug/seeds.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/mapping/debug/usage.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/mapping/debug/usage.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/newbee/ble_tool/activity/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/newbee/ble_tool/activity/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/img_test_7.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/compile_library_classes_jar/debug/classes.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/compile_library_classes_jar/debug/classes.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/manager/child/BleConnectManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/manager/child/BleConnectManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/manager/child/BlueToothGattManager$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/manager/child/BlueToothGattManager$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/manager/child/BlueToothGattManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/manager/child/BlueToothGattManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/manager/image/BlueToothGattGetBitmapDataThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/manager/image/BlueToothGattGetBitmapDataThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/service/BluetoothGattService$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/service/BluetoothGattService$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/service/BluetoothGattService$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/service/BluetoothGattService$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/service/BluetoothGattService$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/service/BluetoothGattService$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/service/BluetoothGattService$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/service/BluetoothGattService$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/service/BluetoothGattService$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/service/BluetoothGattService$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/service/BluetoothGattService.class" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/service/BluetoothGattService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/util/BleCheckUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/util/BleCheckUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/util/BleConnectStatuUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/util/BleConnectStatuUtil.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/runtime_library_classes_jar/debug/classes.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/runtime_library_classes_jar/debug/classes.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ble_lib/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/manager/image/BlueToothGattGetBitmapDataThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/manager/image/BlueToothGattGetBitmapDataThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/manager/child/BleConnectManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/manager/child/BleConnectManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/manager/child/BlueToothGattManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/manager/child/BlueToothGattManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/service/BluetoothGattService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/service/BluetoothGattService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/util/BleCheckUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/util/BleCheckUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/util/BleConnectStatuUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/util/BleConnectStatuUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,12 +274,12 @@
         </entry>
         <entry key="com.newbee.ble_tool">
           <value>
-            <CheckInfo lastCheckTimestamp="1763978299735" />
+            <CheckInfo lastCheckTimestamp="1764125974645" />
           </value>
         </entry>
         <entry key="com.newbee.ble_tool.test">
           <value>
-            <CheckInfo lastCheckTimestamp="1763978299735" />
+            <CheckInfo lastCheckTimestamp="1764125974644" />
           </value>
         </entry>
       </map>

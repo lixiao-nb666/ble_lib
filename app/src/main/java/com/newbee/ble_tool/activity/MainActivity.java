@@ -39,9 +39,6 @@ import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
 import com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType;
 
 
-import java.nio.charset.StandardCharsets;
-
-
 public class MainActivity extends BaseCompatActivity {
     private BleStatuEventObserver bleStatuEventObserver=new BleStatuEventObserver() {
         @Override
@@ -151,10 +148,18 @@ public class MainActivity extends BaseCompatActivity {
                 bleTV.append("-"+getResources().getText(msg.arg1));
             }
             BleDeviceBean bleDeviceBean= NewBeeBleManager.getInstance().getNowUseBleDevice();
+            if(null!=bleTV){
 
-            if(null!=bleDeviceBean&&null!=bleTV){
-                bleTV.setText(HudDevice.values()[bleDeviceBean.getDeviceType()].name());
+
+                if(null!=bleDeviceBean){
+                    Log.w(tag,"BluetoothAdapter  initialized  11155----111188:"+bleDeviceBean.getDeviceName());
+                    bleTV.setText(HudDevice.values()[bleDeviceBean.getDeviceType()].name());
+                }else {
+                    Log.w(tag,"BluetoothAdapter  initialized  11155----11118811");
+                    bleTV.setText("");
+                }
             }
+
             switch (bleStatu){
                 case NONE:
                     if(null!=msg.obj&&msg.obj instanceof Bitmap){
@@ -209,6 +214,7 @@ public class MainActivity extends BaseCompatActivity {
                     long nowTime=System.currentTimeMillis();
                     Log.i("kankantupian","kankantubianzenmhuishi:1111333--8888---"+msg.obj.toString()+"---"+(nowTime-lastTime));
 
+                    showToast("send image time :"+(nowTime-lastTime));
                     break;
             }
         }
