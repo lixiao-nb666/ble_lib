@@ -5904,6 +5904,7 @@ com.newbee.ble_lib.util.ImageCompressUtils:
     public void <init>()
     public static int calculateInSampleSize(int,int,int,int)
     public static byte[] compressBitmap(android.graphics.Bitmap,int,android.graphics.Bitmap$CompressFormat)
+    public static byte[] compressBitmap(android.graphics.Bitmap,int,android.graphics.Bitmap$CompressFormat,int)
     public static byte[] compressImage(android.content.Context,android.net.Uri,int,android.graphics.Bitmap$CompressFormat,int)
     public static byte[] compressToSize(android.content.Context,android.net.Uri,int,int,int,android.graphics.Bitmap$CompressFormat,int)
     private static android.graphics.Bitmap decodeBitmapFromUri(android.content.Context,android.net.Uri,int)

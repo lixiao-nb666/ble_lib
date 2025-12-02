@@ -3,8 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: ba27010
-# pg_map_hash: SHA-256 ba270106b8b32e69a35b824f27bee5f4169f433ee5e143268baa0757b67b04ba
+# pg_map_id: 85aa6f5
+# pg_map_hash: SHA-256 85aa6f5d3d706458462e8af908b056da39b1ff69d32401a4ea81cfe192bc5cb4
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -6459,7 +6459,7 @@ com.newbee.ble_lib.base.BaseServiceDao$1 -> com.newbee.ble_lib.base.BaseServiceD
     31:34:void onServiceConnected(android.content.ComponentName,android.os.IBinder) -> onServiceConnected
     38:39:void onServiceDisconnected(android.content.ComponentName) -> onServiceDisconnected
 com.newbee.ble_lib.config.BleManagerConfig -> com.newbee.ble_lib.config.BleManagerConfig:
-    7:7:void <clinit>() -> <clinit>
+    7:11:void <clinit>() -> <clinit>
 com.newbee.ble_lib.manager.child.BleConnectManager -> com.newbee.ble_lib.manager.child.BleConnectManager:
     42:131:void <init>() -> <init>
     106:109:boolean bleIsOpen() -> bleIsOpen
@@ -6631,8 +6631,8 @@ com.newbee.ble_lib.service.BluetoothGattServiceMsgType -> com.newbee.ble_lib.ser
     5:5:com.newbee.ble_lib.service.BluetoothGattServiceMsgType valueOf(java.lang.String) -> valueOf
     5:5:com.newbee.ble_lib.service.BluetoothGattServiceMsgType[] values() -> values
 com.newbee.ble_lib.util.AbImageUtil -> com.newbee.ble_lib.util.AbImageUtil:
-    39:39:void <clinit>() -> <clinit>
-    334:354:byte[] bitmap2Bytes(android.graphics.Bitmap,android.graphics.Bitmap$CompressFormat,boolean,int) -> bitmap2Bytes
+    41:41:void <clinit>() -> <clinit>
+    336:367:byte[] bitmap2Bytes(android.graphics.Bitmap,android.graphics.Bitmap$CompressFormat,boolean,int) -> bitmap2Bytes
 com.newbee.ble_lib.util.BleCheckUtil -> com.newbee.ble_lib.util.BleCheckUtil:
     21:21:boolean checkPhoneCanUseBle(android.content.pm.PackageManager) -> checkPhoneCanUseBle
     25:35:boolean checkTheBleCanUse(android.bluetooth.le.ScanResult) -> checkTheBleCanUse
@@ -6652,8 +6652,8 @@ com.newbee.ble_lib.util.BleConnectStatuUtil -> com.newbee.ble_lib.util.BleConnec
 com.newbee.ble_lib.util.BleErrManager -> com.newbee.ble_lib.util.BleErrManager:
     9:10:void sendConnectErrMsg(java.lang.String) -> sendConnectErrMsg
 com.newbee.ble_lib.util.BleSendImageUtil -> com.newbee.ble_lib.util.BleSendImageUtil:
-    33:50:android.graphics.Bitmap autoScaleBitmap(android.graphics.Bitmap,int,int,float) -> autoScaleBitmap
-    18:27:byte[] bitmap2Bytes(android.graphics.Bitmap,com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType) -> bitmap2Bytes
+    34:51:android.graphics.Bitmap autoScaleBitmap(android.graphics.Bitmap,int,int,float) -> autoScaleBitmap
+    18:28:byte[] bitmap2Bytes(android.graphics.Bitmap,com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType) -> bitmap2Bytes
 com.newbee.ble_lib.util.ImageCompressUtils -> com.newbee.ble_lib.util.ImageCompressUtils:
     123:123:android.graphics.Bitmap scaleBitmap(android.graphics.Bitmap,int,int) -> scaleBitmap
 com.newbee.ble_tool.activity.MainActivity -> com.newbee.ble_tool.activity.MainActivity:

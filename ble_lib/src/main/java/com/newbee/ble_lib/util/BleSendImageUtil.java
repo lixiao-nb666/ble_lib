@@ -24,6 +24,7 @@ public class BleSendImageUtil {
         }else if(qualityV>100){
             qualityV=60;
         }
+
         return AbImageUtil.bitmap2Bytes(bm, Bitmap.CompressFormat.JPEG,true,qualityV);
     }
 

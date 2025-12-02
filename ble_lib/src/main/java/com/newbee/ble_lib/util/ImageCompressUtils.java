@@ -126,6 +126,21 @@ public class ImageCompressUtils {
     /**
      * 压缩 Bitmap 到指定大小以内（KB）
      */
+    public static byte[] compressBitmap(Bitmap bitmap, int maxKb, Bitmap.CompressFormat format,int quality) {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+//        int quality = 100;
+        bitmap.compress(format, quality, outputStream);
+        Log.i("kankantupian","kankantubianzenmhuishi:1111333--444");
+        while (outputStream.toByteArray().length > maxKb * 1024 && quality > 10) {
+            outputStream.reset();
+            quality -= 5;
+            bitmap.compress(format, quality, outputStream);
+//            Log.i("kankantupian","kankantubianzenmhuishi:1111333--555--"+outputStream.toByteArray().length);
+        }
+        Log.i("kankantupian","kankantubianzenmhuishi:1111333--666--"+outputStream.toByteArray().length);
+        return outputStream.toByteArray();
+    }
+
     public static byte[] compressBitmap(Bitmap bitmap, int maxKb, Bitmap.CompressFormat format) {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         int quality = 100;

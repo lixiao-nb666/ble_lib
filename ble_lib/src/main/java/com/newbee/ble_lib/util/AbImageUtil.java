@@ -21,6 +21,8 @@ import android.view.View;
 import android.view.View.MeasureSpec;
 import android.widget.ImageView;
 
+import com.newbee.ble_lib.config.BleManagerConfig;
+
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -334,8 +336,19 @@ public class AbImageUtil {
         byte[] result = null;
         ByteArrayOutputStream output = null;
         try {
+
+
+
             output = new ByteArrayOutputStream();
             bitmap.compress(mCompressFormat, quality, output);
+
+            while (output.toByteArray().length > BleManagerConfig.SEND_IMAGE_MAX_KB * 1024 && quality > 10) {
+                output.reset();
+                quality -= 5;
+                bitmap.compress(mCompressFormat, quality, output);
+//            Log.i("kankantupian","kankantubianzenmhuishi:1111333--555--"+outputStream.toByteArray().length);
+            }
+
             result = output.toByteArray();
             if (needRecycle) {
                 bitmap.recycle();

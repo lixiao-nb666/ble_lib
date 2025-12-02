@@ -84,7 +84,7 @@ public class BlueToothGattGetBitmapDataThread extends Thread{
             w=newBitMap.getWidth();
             h=newBitMap.getHeight();
             byte[] imageBytes=BleSendImageUtil.bitmap2Bytes(newBitMap,bleSendImageInfoBean.getBitmapQualityType());
-//            byte[] imageBytes= ImageCompressUtils.compressBitmap(newBitMap,5,Bitmap.CompressFormat.JPEG);
+//            byte[] imageBytes= ImageCompressUtils.compressBitmap(newBitMap,4,Bitmap.CompressFormat.JPEG,100);
             size=imageBytes.length;
             Log.i("kankantupian","kankantubianzenmhuishi:1111333--"+size+"---"+bleSendImageInfoBean.getBitmapQualityType().getQualityV()+"---"+bleSendImageInfoBean.getBitmapQualityType().getZoomScaling());
 //            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.NONE,newBitMap);
