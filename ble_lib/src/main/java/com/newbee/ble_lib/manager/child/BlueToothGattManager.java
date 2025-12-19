@@ -13,24 +13,16 @@ import android.bluetooth.BluetoothProfile;
 import android.content.Context;
 import android.os.Build;
 import android.util.Log;
-
-import com.newbee.ble_lib.NewBeeBleManager;
 import com.newbee.ble_lib.config.BleManagerConfig;
-import com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager;
 import com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager;
-
-
-
+import com.newbee.ble_lib.service.event.BleDelayEventSubscriptionSubject;
+import com.newbee.ble_lib.service.event.BleDelayType;
 import com.newbee.ble_lib.util.BleConnectStatuUtil;
-
 import com.newbee.ble_lib.util.BleErrManager;
 import com.nrmyw.ble_event_lib.config.NewBeeBleConfig;
 import com.nrmyw.ble_event_lib.statu.BleStatu;
 import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
 import com.nrmyw.ble_event_lib.util.BleByteUtil;
-
-
-import java.util.List;
 import java.util.UUID;
 
 @SuppressLint("MissingPermission")
@@ -44,6 +36,8 @@ public class BlueToothGattManager {
     private BluetoothGattCharacteristic writeCharacteristic;//写数据特征值
     private BluetoothGattCharacteristic readCharacteristic;//写数据特征值
     /* 连接远程设备的回调函数 */
+
+
     private final BluetoothGattCallback mGattCallback = new BluetoothGattCallback() {
 
         @Override
@@ -52,16 +46,10 @@ public class BlueToothGattManager {
             /* 蓝牙反馈回调 */
 //            EventBus.getDefault().post(new EventBluetoothStateMessage(ACTION_GATT_WRITE_STATE,status));
 
-            long sendOkTime=System.currentTimeMillis();
-
-            Log.i(tag,"发送 ===  :发送成功"+status+"---用时为:"+(sendOkTime-sendTime));
-            Log.w(tag,"BluetoothAdapter  initialized  111:1");
-            nowCanSend=true;
-
-            BlueToothGattSendMsgManager.getInstance().setNowCanSend();
-            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.CAN_SEND_DATA);
-            Log.i(tag,"收到指令没111");
+            BlueToothSendStatuManager.getInstance().sendBytesIsOk(status);
         }
+
+
 
         @Override
         public void onDescriptorWrite(BluetoothGatt gatt, BluetoothGattDescriptor descriptor, int status) {
@@ -192,7 +180,8 @@ public class BlueToothGattManager {
                 return;
             }
             Log.w(tag,"BluetoothAdapter  initialized  111:222");
-            nowCanSend=true;
+
+            BlueToothSendStatuManager.getInstance().initOk();
             BleConnectStatuUtil.getInstance().sendConnected();
         }
 
@@ -241,7 +230,17 @@ public class BlueToothGattManager {
         @Override
         public void onCharacteristicChanged(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic) {
 //            eventUpdate(characteristic);
-            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RETRUN_BYTES,characteristic.getValue());
+            try {
+
+                BlueToothSendStatuManager.getInstance().getRetrunBytes(characteristic.getValue());
+            }catch (Exception e){
+                Log.i(tag,"发送 ===  :发送成功---checkReturnToSend 3333?????????:"+e.toString());
+            }
+
+
+
+
+
 //            BleCmdRetrunEventSubscriptionSubject.getInstance().getCmd(characteristic.getValue());
 //            byte[] value =characteristic.getValue() ;
 //            Log.e( "接收--->端口数 据： --------------start"+ T800CmdRetrunType.GET_BRIGHTNESS.getType());
@@ -271,8 +270,10 @@ public class BlueToothGattManager {
     }
 
 
+
+
     private void pause(){
-        nowCanSend=false;
+        BlueToothSendStatuManager.getInstance().initData();
         dataService = null;
         writeCharacteristic = null;
         readCharacteristic = null;
@@ -300,7 +301,7 @@ public class BlueToothGattManager {
     }
     public synchronized void initGatt(BluetoothDevice device,Context context){
         connecting=true;
-        nowCanSend=false;
+        BlueToothSendStatuManager.getInstance().initData();
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 //            //自动回连有个问题，如果数据量大的情况下，手机系统自动回连会按默认的mtu值传输
 //            Log.w(tag,"BluetoothAdapter  initialized  111"+NewBeeBleConfig.getInstance().isAutoConnect());
@@ -381,41 +382,34 @@ public class BlueToothGattManager {
 
 
 
-    boolean nowCanSend;
-    long lastSendTime;
-
-    public boolean isNowCanSend(){
-        long nowTime=System.currentTimeMillis();
-        if(nowTime-lastSendTime>3000){
-            nowCanSend=true;
-        }
-        if(nowCanSend){
-            lastSendTime=nowTime;
-        }
-        return nowCanSend;
-    }
 
 
-    private long sendTime;
-   public synchronized void queSendCmd(byte[] cmd){
+
+
+    synchronized boolean queSendCmd(byte[] cmd){
         if (bluetoothGatt!=null&&writeCharacteristic!=null){
             try {
                 //if (Build.VERSION.SDK_INT>= Build.VERSION_CODES.TIRAMISU)
                 //boolean b = mBluetoothGatt.writeCharacteristic(writeCharacteristic, cmd, BluetoothGattCharacteristic.WRITE_TYPE_DEFAULT);
                 writeCharacteristic.setValue(cmd);
                 bluetoothGatt.writeCharacteristic(writeCharacteristic);
-                sendTime=System.currentTimeMillis();
-                BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.SENDING_DATA,cmd);
+
+
                 Log.i("kankanfasongtupian","-------------kankanshenmegui111:"+ BleByteUtil.parseByte2HexStr(cmd));
 //              LogUtil.e("发送指令："+ CYUtils.Bytes2HexString(cmd));
-                nowCanSend=false;
+                //这里设置flase，因为正在发送中
+
+                return true;
             }catch (Exception e){
                 e.printStackTrace();
-                nowCanSend=true;
-                BlueToothGattSendMsgManager.getInstance().setNowCanSend();
-                Log.i("kankanfasongtupian","-------------kankanshenmegui111:"+ e.toString());
+                //这里设置true，因为正在发送失败了
+
+                return false;
+
             }
+
         }
+        return false;
     }
 
 

@@ -1,7 +1,9 @@
 package com.newbee.ble_lib.manager.msg;
 
 
+import android.util.Log;
 
+import com.nrmyw.ble_event_lib.util.BleByteUtil;
 
 public class BlueToothGattSendMsgManager {
    private static BlueToothGattSendMsgManager blueToothGattSendManager;
@@ -40,28 +42,31 @@ public class BlueToothGattSendMsgManager {
    }
 
 
+    public void setFileNowReSend(){
+        BlueToothGattMsgManager.getInstance().reSendFileMsg();
 
+    }
 
 
    public void sendMsgByCmd(byte[] cmd){
-
+       Log.i("tag","发送 ===  :发送成功---checkReturnToSend 3311-222112:count"+BleByteUtil.parseByte2HexStr(cmd));
        BlueToothGattMsgManager.getInstance().addMsg(cmd);
        BlueToothGattMsgManager.getInstance().queMsg();
     }
 
-   public void sendMsgByImg(int index,byte[] cmd){
-
-       BlueToothGattMsgManager.getInstance().addMsgByImage(index,cmd);
+   public void sendMsgByFile(int index,byte[] cmd){
+       Log.i("tag","发送 ===  :发送成功---checkReturnToSend 3311-222111:count"+index+"---"+"--"+cmd.length+"--"+BleByteUtil.parseByte2HexStr(cmd));
+       BlueToothGattMsgManager.getInstance().addMsgByFile(index,cmd);
        BlueToothGattMsgManager.getInstance().queMsg();
    }
 
 
-   public void readySendImage(){
-       BlueToothGattMsgManager.getInstance().readySendImage();
+   public void readySendFile(){
+       BlueToothGattMsgManager.getInstance().readySendFile();
    }
 
-    public void setImageMsgNum(int imageMsgNum){
-       BlueToothGattMsgManager.getInstance().setNowCanSendImageNumb(imageMsgNum);
+    public void setFileMsgNum(int imageMsgNum){
+       BlueToothGattMsgManager.getInstance().setNowCanSendFileNumb(imageMsgNum);
     }
 
 

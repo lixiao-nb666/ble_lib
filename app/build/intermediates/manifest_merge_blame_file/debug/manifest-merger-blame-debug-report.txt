@@ -50,86 +50,99 @@
 32    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 32-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:27:5-97
 32-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:27:22-78
-33
-34    <!-- 声明应用需要支持BLE -->
-35    <uses-feature
-35-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:32:5-34:35
-36        android:name="android.hardware.bluetooth_le"
-36-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:33:9-53
-37        android:required="true" />
-37-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:34:9-32
+33    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+33-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:29:5-80
+33-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:29:22-77
+34    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+34-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:27:5-97
+34-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:27:22-78
+35    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+35-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:31:5-82
+35-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:31:22-79
+36    <!-- Android11额外添加 -->
+37    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+37-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:31:5-82
+37-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:31:22-79
 38
-39    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
-39-->[com.github.lixiao-nb666:build_lib:1.1.4] C:\Users\Administrator\.gradle\caches\transforms-3\78abc2b51b1969b31c6136540b763e63\transformed\build_lib-1.1.4\AndroidManifest.xml:9:5-86
-39-->[com.github.lixiao-nb666:build_lib:1.1.4] C:\Users\Administrator\.gradle\caches\transforms-3\78abc2b51b1969b31c6136540b763e63\transformed\build_lib-1.1.4\AndroidManifest.xml:9:22-83
-40
-41    <application
-41-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:38:5-78:19
-42        android:name="com.newbee.ble_tool.app.MyApp"
-42-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:40:9-34
-43        android:allowBackup="true"
-43-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:39:9-35
-44        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-44-->[androidx.core:core:1.3.2] C:\Users\Administrator\.gradle\caches\transforms-3\5c56de5eb577ed66bde2e174b1717882\transformed\core-1.3.2\AndroidManifest.xml:24:18-86
-45        android:debuggable="true"
-46        android:icon="@mipmap/ic_launcher"
-46-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:41:9-43
-47        android:label="@string/app_name"
-47-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:42:9-41
-48        android:roundIcon="@mipmap/ic_launcher_round"
-48-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:43:9-54
-49        android:supportsRtl="true"
-49-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:44:9-35
-50        android:testOnly="true"
-51        android:theme="@style/Theme.AppCompat.NoActionBar" >
-51-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:45:9-59
-52        <activity
-52-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:48:9-59:20
-53            android:name="com.newbee.ble_tool.activity.MainActivity"
-53-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:49:13-50
-54            android:exported="true"
-54-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:51:13-36
-55            android:label="@string/app_name"
-55-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:50:13-45
-56            android:launchMode="standard"
-56-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:52:13-42
-57            android:screenOrientation="portrait" >
-57-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:53:13-49
-58            <intent-filter>
-58-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:54:13-58:29
-59                <action android:name="android.intent.action.MAIN" />
-59-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:55:17-69
-59-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:55:25-66
-60
-61                <category android:name="android.intent.category.LAUNCHER" />
-61-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:57:17-77
-61-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:57:27-74
-62            </intent-filter>
-63        </activity>
-64
-65        <service
-65-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:61:9-62:38
-66            android:name="com.newbee.ble_lib.service.BluetoothGattService"
-66-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:61:18-80
-67            android:exported="true" />
-67-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:62:13-36
-68
-69        <!-- <receiver -->
-70        <!-- android:name="com.newbee.ble_lib.receiver.BleStatuBroadcastReceiver" -->
-71        <!-- android:exported="true"> -->
-72
+39    <!-- 声明应用需要支持BLE -->
+40    <uses-feature
+40-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:37:5-39:35
+41        android:name="android.hardware.bluetooth_le"
+41-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:38:9-53
+42        android:required="true" />
+42-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:39:9-32
+43
+44    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
+44-->[com.github.lixiao-nb666:build_lib:1.1.4] C:\Users\Administrator\.gradle\caches\transforms-3\78abc2b51b1969b31c6136540b763e63\transformed\build_lib-1.1.4\AndroidManifest.xml:9:5-86
+44-->[com.github.lixiao-nb666:build_lib:1.1.4] C:\Users\Administrator\.gradle\caches\transforms-3\78abc2b51b1969b31c6136540b763e63\transformed\build_lib-1.1.4\AndroidManifest.xml:9:22-83
+45
+46    <application
+46-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:43:5-83:19
+47        android:name="com.newbee.ble_tool.app.MyApp"
+47-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:45:9-34
+48        android:allowBackup="true"
+48-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:44:9-35
+49        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+49-->[androidx.core:core:1.3.2] C:\Users\Administrator\.gradle\caches\transforms-3\5c56de5eb577ed66bde2e174b1717882\transformed\core-1.3.2\AndroidManifest.xml:24:18-86
+50        android:debuggable="true"
+51        android:icon="@mipmap/ic_launcher"
+51-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:46:9-43
+52        android:label="@string/app_name"
+52-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:47:9-41
+53        android:roundIcon="@mipmap/ic_launcher_round"
+53-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:48:9-54
+54        android:supportsRtl="true"
+54-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:49:9-35
+55        android:testOnly="true"
+56        android:theme="@style/Theme.AppCompat.NoActionBar" >
+56-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:50:9-59
+57        <activity
+57-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:53:9-64:20
+58            android:name="com.newbee.ble_tool.activity.MainActivity"
+58-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:54:13-50
+59            android:exported="true"
+59-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:56:13-36
+60            android:label="@string/app_name"
+60-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:55:13-45
+61            android:launchMode="standard"
+61-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:57:13-42
+62            android:screenOrientation="portrait" >
+62-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:58:13-49
+63            <intent-filter>
+63-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:59:13-63:29
+64                <action android:name="android.intent.action.MAIN" />
+64-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:60:17-69
+64-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:60:25-66
+65
+66                <category android:name="android.intent.category.LAUNCHER" />
+66-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:62:17-77
+66-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:62:27-74
+67            </intent-filter>
+68        </activity>
+69
+70        <service
+70-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:66:9-67:38
+71            android:name="com.newbee.ble_lib.service.BluetoothGattService"
+71-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:66:18-80
+72            android:exported="true" />
+72-->F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:67:13-36
 73
-74        <!-- <intent-filter> -->
-75        <!-- <action android:name="hud_ble_broadcast" /> -->
-76        <!-- <action android:name="android.bluetooth.adapter.action.STATE_CHANGED" /> -->
-77        <!-- <action android:name="android.bluetooth.device.action.ACL_CONNECTED" /> -->
-78        <!-- <action android:name="android.bluetooth.device.action.ACL_DISCONNECTED" /> -->
-79        <!-- <action android:name="android.bluetooth.device.action.FOUND" /> -->
-80        <!-- </intent-filter> -->
-81
-82
-83        <!-- </receiver> -->
-84
-85    </application>
+74        <!-- <receiver -->
+75        <!-- android:name="com.newbee.ble_lib.receiver.BleStatuBroadcastReceiver" -->
+76        <!-- android:exported="true"> -->
+77
+78
+79        <!-- <intent-filter> -->
+80        <!-- <action android:name="hud_ble_broadcast" /> -->
+81        <!-- <action android:name="android.bluetooth.adapter.action.STATE_CHANGED" /> -->
+82        <!-- <action android:name="android.bluetooth.device.action.ACL_CONNECTED" /> -->
+83        <!-- <action android:name="android.bluetooth.device.action.ACL_DISCONNECTED" /> -->
+84        <!-- <action android:name="android.bluetooth.device.action.FOUND" /> -->
+85        <!-- </intent-filter> -->
 86
-87</manifest>
+87
+88        <!-- </receiver> -->
+89
+90    </application>
+91
+92</manifest>

@@ -3,18 +3,21 @@ Marking mipmap:img_test_jd:2131427343 reachable: referenced from F:\asworkspace\
 Marking mipmap:img_test_7:2131427342 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
 Marking mipmap:hg_test:2131427328 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
 Marking layout:activity_main_test:2131361821 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
-Marking id:tv_ble:2131165360 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
-Marking id:tv_ble_statu:2131165361 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
+Marking id:tv_ble:2131165361 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
+Marking id:tv_ble_statu:2131165362 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
 Marking id:bt_init:2131165251 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
 Marking id:bt_search:2131165253 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
 Marking id:bt_disconnected:2131165250 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
 Marking id:bt_send_test:2131165254 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
-Marking id:bt_send_test_image:2131165255 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
-Marking id:bt_send_test_progress:2131165256 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
-Marking id:ivv:2131165290 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
+Marking id:bt_send_test_image:2131165256 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
+Marking id:bt_send_test_progress:2131165257 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
+Marking id:bt_send_test_file:2131165255 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
+Marking id:ivv:2131165291 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
+Marking id:tv_log:2131165364 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
 android.content.res.Resources#getIdentifier present: true
 Web content present: false
 Referenced Strings:
+android.settings.MANAGE_APP_ALL_FILES...
 DST_OVER
 suggest_intent_data
 numb_6
@@ -26,7 +29,9 @@ numb_9
 1210
 androidx.view.accessibility.Accessibi...
 android.speech.extra.RESULTS_PENDINGI...
+otakankantupian
 AM
+SEND_INDEX_OK
 0
 1
 kaishifasongtupianle
@@ -37,10 +42,16 @@ SET_DAYLIGHTING_SHOW_STATU
 3400
 2310
 onMenuKeyEvent
-SET_BIG_TURN_TYPE_HIDE_AND_SHOW
+kankantubianzenmhuis:over4
 removeItemAt
+kankantubianzenmhuis:over1
+kankantubianzenmhuis:over3
 BEGIN_OBJECT
+kankantubianzenmhuis:over2
+kaishi1111111111:3
 canSendImageMsg:
+kaishi1111111111:2
+kaishi1111111111:1
 android.intent.extra.PROCESS_TEXT_REA...
 HAND
 3411
@@ -53,10 +64,11 @@ _
 user_query
 ACTION_CLEAR_ACCESSIBILITY_FOCUS
 h
-SEND_SPEED
 r
+kaishi1111111111:9
 androidx.lifecycle.BundlableSavedStat...
 GridLayoutManager
+package:
 TypefaceCompatApi26Impl
 L_F_Y
 w
@@ -100,6 +112,7 @@ ACTION_SCROLL_UP
 jobscheduler
 BITMAP_MASKABLE
 YELLOW_STATU
+kankantodoType
 android:support:fragments
 SearchView
 START
@@ -110,14 +123,17 @@ ACTION_CONTEXT_CLICK
 SEARCHING
 TooltipCompatHandler
 R_T_N
+READY_OK
 L_N
 SRC_OVER
+SEND_ERR
 write
 RF_N
 SENDING_DATA
 L_Y
 android.content.res.ThemedResourceCache
 RF_Y
+otakaishi1111111111:3
 doAfterTextChanged
 .xml
 BlueBroadcastReceiver
@@ -144,6 +160,7 @@ DESTROYED
 LIBRARY_GROUP
 CONNECTED
 INT_ENUM
+MD5
 mMainThread
 android.intent.action.TIME_SET
 SEND_IMAGE
@@ -152,7 +169,6 @@ WARNING_POINT_2_B_STR
 TextView
 setEpicenterBounds
 ImageView
-HIDE_INTERVAL_SPEED
 read
 DST
 SUBCLASSES
@@ -170,8 +186,9 @@ android.view.
 SRC
 UPPER_CAMEL_CASE
 c15
-kankantubianzenmhuishi:1111222:err
 c16
+kankantubianzenmhuishi:1111222:err
+END_OK
 busd
 c18
 WARNING_POINT_1_B_STR
@@ -186,6 +203,7 @@ android.intent.action.SEARCH
 BITMAP
 L_LF_Y
 L_R_Y_R
+SEND_OTA_START
 DISCONNECTED
 ATTACH
 android:user_visible_hint
@@ -197,11 +215,12 @@ PM
 Next_LANE_NAME
 RestrictedApi
 accessibility
+tryToConnectOldDevice1111
 suggest_intent_extra_data
 suggest_flags
-SEND_CMD_BY_IMAGE_INDEX
 androidx.appcompat.app.ActionBar$Tab
 ACTION_SCROLL_DOWN
+SEND_CMD_BY_BYTES_INDEX
 GROUP_ID
 RUN_ERR
 SupportMenuInflater
@@ -245,30 +264,36 @@ REPLACE
 suggest_intent_query
 F_Y
 search_suggest_query
+tryToConnectOldDevice111144
 tbt160
 NAME
 FragmentManager
 name
 Class
 NestedScrollView
+DELAY
 android.bluetooth.device.action.ACL_C...
+SEND_FILE
 TESTS
 bool
 font_variation_settings
 L_F_Y_L
 android
 L_F_Y_F
+RE_SEND
 rwt
 status_bar_height
 CREATED
 DIFFERENCE
 SOFT_LIGHT
 SHOW
+/DCIM/cpu1.bin
 android:view_state
 tbt185
 SeekBar
 tbt186
 numb_154
+tryToConnectOldDevice111122
 ULTRA_HIGH
 highb
 LF_RF_Y_RF
@@ -309,11 +334,13 @@ android.bluetooth.adapter.action.STAT...
 tbt120
 tbt121
 CheckedTextView
+tryToConnectOldDevice111100
 LF_RF_Y_LF
 robolectric
 1501
 1500
 INIT_BLE
+A5A6
 LUMINOSITY
 tbt134
 LT_Y
@@ -355,7 +382,6 @@ notification
 group
 R_F_Y_R
 android.speech.extra.RESULTS_PENDINGI...
-REACH_STR
 canSendMsg:
 tbt74
 1301
@@ -428,12 +454,14 @@ web_search
 XOR
 ACTION_CLICK
 GET_GPS_SPEED
+SEND_OTA_END
 TraceCompat
 android.speech.extra.LANGUAGE_MODEL
 getResPackage
 LANE_INFORMATION
 LT_RF_N
 QUERY_SN
+SEND_BLE_CMD_BYTES
 ImageButton
 SRC_OUT
 androidx.view.accessibility.Accessibi...
@@ -470,6 +498,7 @@ androidx.transition.FragmentTransitio...
 LF_T_Y_LF
 android.speech.extra.MAX_RESULTS
 SyntheticAccessor
+SEND_OTA_ERR
 END
 ACTION_ACCESSIBILITY_FOCUS
 font_weight
@@ -482,6 +511,8 @@ android.speech.extra.LANGUAGE
 ULTRA_LOW
 timeout
 content
+SEND_OTA_PROGRESS
+SEND_OTA
 ListPopupWindow
 LOWER_CASE_WITH_DOTS
 class
@@ -497,7 +528,6 @@ android.hardware.bluetooth_le
 700666
 android.support.FILE_PROVIDER_PATHS
 kankanshujufdajfls:
-IMAGE
 SCREEN
 GET_SN
 EditText
@@ -511,6 +541,7 @@ DST_IN
 INFERRED
 FOUND_BLE_DEVICE
 ACTION_CLEAR_SELECTION
+tryToConnectOldDevice
 suggest_intent_action
 file
 STATE_ON
@@ -581,7 +612,6 @@ ACTVAutoSizeHelper
 android.widget.
 AbImageUtil
 _LifecycleAdapter
-CLEAR_PROGRESS_BAR
 mOnKeyListener
 ACTION_PASTE
 RF_F_N
@@ -598,12 +628,11 @@ FINISHED
 freeze
 TRACE_TAG_APP
 android:support:next_request_index
-PROGRESS_BAR
 SuggestionsAdapter
+cpu1.bin
 10
 11
 ACTION_NEXT_HTML_ELEMENT
-SET_UI
 LOWER_CASE_WITH_DASHES
 ACTION_COLLAPSE
 L_RF_Y
@@ -615,7 +644,6 @@ HI_PASS
 20
 21
 rw
-SET_TWS_NAME
 ToolbarWidgetWrapper
 ACTION_PAGE_DOWN
 classes_to_restore
@@ -632,7 +660,6 @@ PREVENT
 OPEN
 UPPER_CAMEL_CASE_WITH_SPACES
 android.speech.action.WEB_SEARCH
-SET_TURN_BJ
 STRING
 40
 41
@@ -640,6 +667,7 @@ android.os.action.POWER_SAVE_MODE_CHA...
 SET_BRIGHTNESS
 的
 Operations:
+开始发送OTA
 SET_SOUND
 ON_START
 50
@@ -649,7 +677,6 @@ NUMBER
 ResourcesCompat
 RUNNING
 query
-SET_DISPLAY_RECT_SIZE
 android.resource
 TypefaceCompatApi21Impl
 COLOR_DODGE
@@ -700,6 +727,7 @@ numb_28
 kankanfasongtupian
 numb_201
 NONE
+ota
 getTextDirectionHeuristic
 HARD_LIGHT
 DISCONNECT_BLE
@@ -715,13 +743,11 @@ PREVENT_WHEN_EMPTY
 LOW
 result_code
 END_OBJECT
-SEND_WARNING_POINT_SPEED
 ACTION_FOCUS
 T800
 android.support.BIND_NOTIFICATION_SID...
 createFromFamiliesWithDefault
 tbt250
-SET_BLE_NAME
 power
 LF_T_Y
 numb_10
@@ -849,7 +875,7 @@ Marking attr:itemPadding:2130837657 used because it matches string pool constant
 Marking dimen:item_touch_helper_max_drag_scroll_per_frame:2131034210 used because it matches string pool constant item
 Marking dimen:item_touch_helper_swipe_escape_max_velocity:2131034211 used because it matches string pool constant item
 Marking dimen:item_touch_helper_swipe_escape_velocity:2131034212 used because it matches string pool constant item
-Marking id:item_touch_helper_previous_elevation:2131165287 used because it matches string pool constant item
+Marking id:item_touch_helper_previous_elevation:2131165288 used because it matches string pool constant item
 Marking color:notification_action_color_filter:2130968741 used because it matches string pool constant notification
 Marking color:notification_icon_bg_color:2130968742 used because it matches string pool constant notification
 Marking dimen:notification_action_icon_size:2131034213 used because it matches string pool constant notification
@@ -878,18 +904,18 @@ Marking drawable:notification_icon_background:2131099755 used because it matches
 Marking drawable:notification_template_icon_bg:2131099756 used because it matches string pool constant notification
 Marking drawable:notification_template_icon_low_bg:2131099757 used because it matches string pool constant notification
 Marking drawable:notification_tile_bg:2131099758 used because it matches string pool constant notification
-Marking id:notification_background:2131165303 used because it matches string pool constant notification
-Marking id:notification_main_column:2131165304 used because it matches string pool constant notification
-Marking id:notification_main_column_container:2131165305 used because it matches string pool constant notification
+Marking id:notification_background:2131165304 used because it matches string pool constant notification
+Marking id:notification_main_column:2131165305 used because it matches string pool constant notification
+Marking id:notification_main_column_container:2131165306 used because it matches string pool constant notification
 Marking layout:notification_action:2131361826 used because it matches string pool constant notification
 Marking layout:notification_action_tombstone:2131361827 used because it matches string pool constant notification
 Marking layout:notification_template_custom_big:2131361828 used because it matches string pool constant notification
 Marking layout:notification_template_icon_group:2131361829 used because it matches string pool constant notification
 Marking layout:notification_template_part_chronometer:2131361830 used because it matches string pool constant notification
 Marking layout:notification_template_part_time:2131361831 used because it matches string pool constant notification
-Marking id:group_divider:2131165278 used because it matches string pool constant group
+Marking id:group_divider:2131165279 used because it matches string pool constant group
 Marking attr:defaultQueryHint:2130837600 used because it matches string pool constant def
-Marking id:default_activity_button:2131165270 used because it matches string pool constant def
+Marking id:default_activity_button:2131165271 used because it matches string pool constant def
 Marking attr:font:2130837632 used because it matches string pool constant font
 Marking attr:fontFamily:2130837633 used because it matches string pool constant font
 Marking attr:fontProviderAuthority:2130837634 used because it matches string pool constant font
@@ -908,20 +934,20 @@ Marking attr:contentInsetLeft:2130837594 used because it matches string pool con
 Marking attr:contentInsetRight:2130837595 used because it matches string pool constant content
 Marking attr:contentInsetStart:2130837596 used because it matches string pool constant content
 Marking attr:contentInsetStartWithNavigation:2130837597 used because it matches string pool constant content
-Marking id:content:2131165265 used because it matches string pool constant content
-Marking id:contentPanel:2131165266 used because it matches string pool constant content
+Marking id:content:2131165266 used because it matches string pool constant content
+Marking id:contentPanel:2131165267 used because it matches string pool constant content
 Marking attr:menu:2130837681 used because it matches string pool constant menu
 Marking attr:queryBackground:2130837701 used because it matches string pool constant query
 Marking attr:queryHint:2130837702 used because it matches string pool constant query
-Marking id:none:2131165301 used because it matches string pool constant none
-Marking id:tag_accessibility_actions:2131165341 used because it matches string pool constant tag
-Marking id:tag_accessibility_clickable_spans:2131165342 used because it matches string pool constant tag
-Marking id:tag_accessibility_heading:2131165343 used because it matches string pool constant tag
-Marking id:tag_accessibility_pane_title:2131165344 used because it matches string pool constant tag
-Marking id:tag_screen_reader_focusable:2131165345 used because it matches string pool constant tag
-Marking id:tag_transition_group:2131165346 used because it matches string pool constant tag
-Marking id:tag_unhandled_key_event_manager:2131165347 used because it matches string pool constant tag
-Marking id:tag_unhandled_key_listeners:2131165348 used because it matches string pool constant tag
+Marking id:none:2131165302 used because it matches string pool constant none
+Marking id:tag_accessibility_actions:2131165342 used because it matches string pool constant tag
+Marking id:tag_accessibility_clickable_spans:2131165343 used because it matches string pool constant tag
+Marking id:tag_accessibility_heading:2131165344 used because it matches string pool constant tag
+Marking id:tag_accessibility_pane_title:2131165345 used because it matches string pool constant tag
+Marking id:tag_screen_reader_focusable:2131165346 used because it matches string pool constant tag
+Marking id:tag_transition_group:2131165347 used because it matches string pool constant tag
+Marking id:tag_unhandled_key_event_manager:2131165348 used because it matches string pool constant tag
+Marking id:tag_unhandled_key_listeners:2131165349 used because it matches string pool constant tag
 @anim/abc_fade_in : reachable=false
 @anim/abc_fade_out : reachable=false
 @anim/abc_grow_fade_in_from_bottom : reachable=false
@@ -1978,6 +2004,7 @@ Marking id:tag_unhandled_key_listeners:2131165348 used because it matches string
 @id/bt_reget : reachable=false
 @id/bt_search : reachable=true
 @id/bt_send_test : reachable=true
+@id/bt_send_test_file : reachable=true
 @id/bt_send_test_image : reachable=true
 @id/bt_send_test_progress : reachable=true
 @id/bt_update_now : reachable=false
@@ -2086,6 +2113,7 @@ Marking id:tag_unhandled_key_listeners:2131165348 used because it matches string
 @id/tv_ble : reachable=true
 @id/tv_ble_statu : reachable=true
 @id/tv_down_info : reachable=false
+@id/tv_log : reachable=true
 @id/tv_private : reachable=false
 @id/tv_show_update_info : reachable=false
 @id/tv_update_version_name : reachable=false
@@ -2354,8 +2382,13 @@ Marking id:tag_unhandled_key_listeners:2131165348 used because it matches string
 @string/ble_statu_retrun_bytes : reachable=true
 @string/ble_statu_run_err : reachable=true
 @string/ble_statu_searching : reachable=true
+@string/ble_statu_send_image_data_end : reachable=true
 @string/ble_statu_send_image_end : reachable=true
 @string/ble_statu_send_image_start : reachable=true
+@string/ble_statu_send_ota_end : reachable=true
+@string/ble_statu_send_ota_err : reachable=true
+@string/ble_statu_send_ota_progress : reachable=true
+@string/ble_statu_send_ota_start : reachable=true
 @string/ble_statu_sending_data : reachable=true
 @string/ble_statu_state_off : reachable=true
 @string/ble_statu_state_on : reachable=true
@@ -4046,57 +4079,59 @@ The root reachable resources are:
  id:bt_init:2131165251
  id:bt_search:2131165253
  id:bt_send_test:2131165254
- id:bt_send_test_image:2131165255
- id:bt_send_test_progress:2131165256
- id:buttonPanel:2131165259
- id:content:2131165265
- id:contentPanel:2131165266
- id:custom:2131165267
- id:customPanel:2131165268
- id:decor_content_parent:2131165269
- id:default_activity_button:2131165270
- id:edit_query:2131165273
- id:group_divider:2131165278
- id:item_touch_helper_previous_elevation:2131165287
- id:ivv:2131165290
- id:message:2131165297
- id:none:2131165301
- id:notification_background:2131165303
- id:notification_main_column:2131165304
- id:notification_main_column_container:2131165305
- id:parentPanel:2131165308
- id:scrollIndicatorDown:2131165315
- id:scrollIndicatorUp:2131165316
- id:scrollView:2131165317
- id:search_button:2131165320
- id:search_close_btn:2131165321
- id:search_edit_frame:2131165322
- id:search_go_btn:2131165323
- id:search_mag_icon:2131165324
- id:search_plate:2131165325
- id:search_src_text:2131165326
- id:search_voice_btn:2131165327
- id:shortcut:2131165329
- id:spacer:2131165333
- id:split_action_bar:2131165334
- id:submenuarrow:2131165338
- id:submit_area:2131165339
- id:tag_accessibility_actions:2131165341
- id:tag_accessibility_clickable_spans:2131165342
- id:tag_accessibility_heading:2131165343
- id:tag_accessibility_pane_title:2131165344
- id:tag_screen_reader_focusable:2131165345
- id:tag_transition_group:2131165346
- id:tag_unhandled_key_event_manager:2131165347
- id:tag_unhandled_key_listeners:2131165348
- id:textSpacerNoButtons:2131165351
- id:textSpacerNoTitle:2131165352
- id:title:2131165354
- id:titleDividerNoCustom:2131165355
- id:title_template:2131165356
- id:topPanel:2131165358
- id:tv_ble:2131165360
- id:tv_ble_statu:2131165361
+ id:bt_send_test_file:2131165255
+ id:bt_send_test_image:2131165256
+ id:bt_send_test_progress:2131165257
+ id:buttonPanel:2131165260
+ id:content:2131165266
+ id:contentPanel:2131165267
+ id:custom:2131165268
+ id:customPanel:2131165269
+ id:decor_content_parent:2131165270
+ id:default_activity_button:2131165271
+ id:edit_query:2131165274
+ id:group_divider:2131165279
+ id:item_touch_helper_previous_elevation:2131165288
+ id:ivv:2131165291
+ id:message:2131165298
+ id:none:2131165302
+ id:notification_background:2131165304
+ id:notification_main_column:2131165305
+ id:notification_main_column_container:2131165306
+ id:parentPanel:2131165309
+ id:scrollIndicatorDown:2131165316
+ id:scrollIndicatorUp:2131165317
+ id:scrollView:2131165318
+ id:search_button:2131165321
+ id:search_close_btn:2131165322
+ id:search_edit_frame:2131165323
+ id:search_go_btn:2131165324
+ id:search_mag_icon:2131165325
+ id:search_plate:2131165326
+ id:search_src_text:2131165327
+ id:search_voice_btn:2131165328
+ id:shortcut:2131165330
+ id:spacer:2131165334
+ id:split_action_bar:2131165335
+ id:submenuarrow:2131165339
+ id:submit_area:2131165340
+ id:tag_accessibility_actions:2131165342
+ id:tag_accessibility_clickable_spans:2131165343
+ id:tag_accessibility_heading:2131165344
+ id:tag_accessibility_pane_title:2131165345
+ id:tag_screen_reader_focusable:2131165346
+ id:tag_transition_group:2131165347
+ id:tag_unhandled_key_event_manager:2131165348
+ id:tag_unhandled_key_listeners:2131165349
+ id:textSpacerNoButtons:2131165352
+ id:textSpacerNoTitle:2131165353
+ id:title:2131165355
+ id:titleDividerNoCustom:2131165356
+ id:title_template:2131165357
+ id:topPanel:2131165359
+ id:tv_ble:2131165361
+ id:tv_ble_statu:2131165362
+ id:tv_log:2131165364
  layout:abc_action_bar_title_item:2131361792
  layout:abc_action_menu_item_layout:2131361794
  layout:abc_action_menu_layout:2131361795
@@ -4157,17 +4192,22 @@ The root reachable resources are:
  string:ble_statu_retrun_bytes:2131558440
  string:ble_statu_run_err:2131558441
  string:ble_statu_searching:2131558442
- string:ble_statu_send_image_end:2131558443
- string:ble_statu_send_image_start:2131558444
- string:ble_statu_sending_data:2131558445
- string:ble_statu_state_off:2131558446
- string:ble_statu_state_on:2131558447
- string:ble_statu_user_disconnect:2131558448
- string:ble_statu_user_init:2131558449
- string:ble_statu_user_scan:2131558450
- string:ble_statu_user_send_cmd:2131558451
- string:ble_statu_user_send_image:2131558452
- string:ble_statu_user_send_image_cmd_index:2131558453
+ string:ble_statu_send_image_data_end:2131558443
+ string:ble_statu_send_image_end:2131558444
+ string:ble_statu_send_image_start:2131558445
+ string:ble_statu_send_ota_end:2131558446
+ string:ble_statu_send_ota_err:2131558447
+ string:ble_statu_send_ota_progress:2131558448
+ string:ble_statu_send_ota_start:2131558449
+ string:ble_statu_sending_data:2131558450
+ string:ble_statu_state_off:2131558451
+ string:ble_statu_state_on:2131558452
+ string:ble_statu_user_disconnect:2131558453
+ string:ble_statu_user_init:2131558454
+ string:ble_statu_user_scan:2131558455
+ string:ble_statu_user_send_cmd:2131558456
+ string:ble_statu_user_send_image:2131558457
+ string:ble_statu_user_send_image_cmd_index:2131558458
  style:Animation_AppCompat_Tooltip:2131623940
  style:Theme_AppCompat_CompactMenu:2131624183
  style:Theme_AppCompat_Empty:2131624195

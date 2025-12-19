@@ -9,4 +9,29 @@ public class BleManagerConfig {
     public static final long CONNECT_OLD_HUD_TIME=30*1000;
 
     public static int SEND_IMAGE_MAX_KB=4;
+
+    public static byte CMD_TITLE_1=(byte) 0xA5;//T800固定要加的第一个字节
+    public static byte CMD_TITLE_2=(byte) 0x5A;//T800固定要加的第二个字节
+    public static byte CMD_END_1=(byte) 0x0D;//T800文档要求要加，实际不加的
+    public static byte CMD_END_2=(byte) 0x0A;//T800文档要求要加，实际不加的
+    public static int  defMixLength=5;
+
+    public static byte CMD_SEND_IMAGE_TITLE=(byte)0x10;
+
+    public static byte CMD_SEND_IMAGE_START=(byte)0x01;
+
+    public static byte CMD_SEND_IMAGE_END=(byte)0x00;
+
+    public static byte CMD_SEND_FILE_TITLE=(byte)0xA5;
+
+    public static byte CMD_SEND_FILE_START=(byte)0xA1;
+    public static byte CMD_SEND_FILE_SENDING=(byte)0xA2;
+    public static byte CMD_SEND_FILE_END=(byte)0xA3;
+
+    public static byte CMD_ERR_INDEX=(byte)0xA4;
+
+    public static byte CMD_ERR_NUMB=(byte)0xA5;
+
+    public static byte CMD_CUCCESS=(byte)0xA6;
+
 }

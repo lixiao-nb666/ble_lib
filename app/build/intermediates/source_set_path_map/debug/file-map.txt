@@ -1,4 +1,4 @@
-com.newbee.ble_tool.app-ble_event-1.0.24-0 C:\Users\Administrator\.gradle\caches\transforms-3\50a2781c43d1879808d79761a1045d7c\transformed\ble_event-1.0.24\res
+com.newbee.ble_tool.app-ble_event-1.0.34-0 C:\Users\Administrator\.gradle\caches\transforms-3\59b04fdc9ecba39a6f1cece7f41c88b8\transformed\ble_event-1.0.34\res
 com.newbee.ble_tool.app-core-1.3.2-1 C:\Users\Administrator\.gradle\caches\transforms-3\5c56de5eb577ed66bde2e174b1717882\transformed\core-1.3.2\res
 com.newbee.ble_tool.app-appcompat-resources-1.2.0-2 C:\Users\Administrator\.gradle\caches\transforms-3\6fd1b2d805c292cc81ee11d1d85b986e\transformed\appcompat-resources-1.2.0\res
 com.newbee.ble_tool.app-recyclerview-1.2.1-3 C:\Users\Administrator\.gradle\caches\transforms-3\772027d9435ec24b9bd9466d42f95752\transformed\recyclerview-1.2.1\res

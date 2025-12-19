@@ -5850,17 +5850,39 @@ com.newbee.ble_lib.manager.child.BleConnectManager:
     private void closeBluetooth()
 com.newbee.ble_lib.manager.child.BlueToothGattManager:
     public void setCharacteristicNotification(android.bluetooth.BluetoothGattCharacteristic,boolean)
+com.newbee.ble_lib.manager.child.BlueToothSendOtaManager
+com.newbee.ble_lib.manager.child.BlueToothSendStatuManager:
+    public void setWaitTime(long)
+com.newbee.ble_lib.manager.child.ConnectOldDeviceManager
 com.newbee.ble_lib.manager.child.DataBle
 com.newbee.ble_lib.manager.child.OtaBle
-com.newbee.ble_lib.manager.image.BlueToothGattGetBitmapDataThread:
-    public int getType()
+com.newbee.ble_lib.manager.file.BlueToothGattGetFileDataThread:
     public boolean isStart()
-com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager:
+com.newbee.ble_lib.manager.file.BlueToothGattSendFile:
+    public abstract boolean isStart()
+com.newbee.ble_lib.manager.file.BlueToothGattSendFileManager:
     public void close()
     private void queLast()
+com.newbee.ble_lib.manager.file.send.CheckRetrunByteAndToDoType:
+    public byte[] getCheckBytes()
+    public java.lang.String getCheckStr()
+com.newbee.ble_lib.manager.file.send.SendBitmapManager:
+    private static com.newbee.ble_lib.manager.file.send.SendBitmapManager sendBitmapManager
+    public int getType()
+    public boolean isStart()
+com.newbee.ble_lib.manager.file.send.SendFileManager:
+    public boolean isStart()
+com.newbee.ble_lib.manager.file.send.SendOtaManager:
+    public boolean isStart()
 com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager:
     public void close()
-    public synchronized void removeImageMsg(java.lang.String)
+    public synchronized void removeFileMsg(java.lang.String)
+com.newbee.ble_lib.service.BluetoothGattService$5:
+    public void sendBytesIndexCmd(int,byte[])
+    public void sendFile(com.nrmyw.ble_event_lib.bean.BleSendFileInfoBean)
+com.newbee.ble_lib.service.BluetoothGattService:
+    static synthetic java.lang.String access$2200(com.newbee.ble_lib.service.BluetoothGattService)
+com.newbee.ble_lib.service.event.BleDelayEventSubject
 com.newbee.ble_lib.util.AbImageUtil$OnImageUtilsListener
 com.newbee.ble_lib.util.AbImageUtil:
     private static com.newbee.ble_lib.util.AbImageUtil$OnImageUtilsListener onImageUtilsListener
@@ -5900,6 +5922,11 @@ com.newbee.ble_lib.util.BleErrManager:
     public static void sendErrMsg()
 com.newbee.ble_lib.util.BleSendImageUtil:
     public void <init>()
+com.newbee.ble_lib.util.BytesCheckUtil
+com.newbee.ble_lib.util.CryptoUtils:
+    public void <init>()
+com.newbee.ble_lib.util.FileAndByteUtil:
+    public void <init>()
 com.newbee.ble_lib.util.ImageCompressUtils:
     public void <init>()
     public static int calculateInSampleSize(int,int,int,int)
@@ -5908,6 +5935,10 @@ com.newbee.ble_lib.util.ImageCompressUtils:
     public static byte[] compressImage(android.content.Context,android.net.Uri,int,android.graphics.Bitmap$CompressFormat,int)
     public static byte[] compressToSize(android.content.Context,android.net.Uri,int,int,int,android.graphics.Bitmap$CompressFormat,int)
     private static android.graphics.Bitmap decodeBitmapFromUri(android.content.Context,android.net.Uri,int)
+com.newbee.ble_lib.util.hud.HudBleByteUtil:
+    public void <init>()
+com.newbee.ble_lib.util.hud.HudCmdSendDataUtil:
+    public void <init>()
 com.newbee.ble_tool.BuildConfig
 com.newbee.ble_tool.R$color
 com.newbee.ble_tool.R$drawable
@@ -5916,6 +5947,8 @@ com.newbee.ble_tool.R$layout
 com.newbee.ble_tool.R$mipmap
 com.newbee.ble_tool.R$string
 com.newbee.ble_tool.R
+com.newbee.ble_tool.activity.MainActivity:
+    private static final int REQUEST_MANAGE_FILES_ACCESS
 com.newbee.ble_tool.config.T800Config:
     public static final java.lang.String ACTION_GATT_CONNECTED
     public static final java.lang.String ACTION_GATT_DISCONNECTED
@@ -5928,23 +5961,6 @@ com.newbee.ble_tool.type.HudDevice:
     private void <init>(java.lang.String,int,java.lang.String,int,com.newbee.ble_tool.type.HudDeviceSendDataType)
     public static com.newbee.ble_tool.type.HudDevice getBleDeviceType(com.nrmyw.ble_event_lib.bean.BleDeviceBean)
     public com.newbee.ble_tool.type.HudDeviceSendDataType getSendDataType()
-com.newbee.ble_tool.util.HudBleByteUtil:
-    public void <init>()
-com.newbee.ble_tool.util.HudCmdSendDataUtil:
-    public void <init>()
-com.newbee.ble_tool.util.HudConfig:
-    public static final java.lang.String ACTION_GATT_CONNECTED
-    public static final java.lang.String ACTION_GATT_DISCONNECTED
-    public static final java.lang.String ACTION_GATT_SERVICES_DISCOVERED
-    public static final java.lang.String ACTION_GATT_WRITE_STATE
-    public static final boolean isAutomatic
-    public static final int mtu
-    public static final java.lang.String noticeID
-    public static final java.lang.String serviceID
-    public static final java.lang.String writeID
-    public void <init>()
-com.newbee.ble_tool.util.HudImageType:
-    public byte getType()
 com.newbee.bulid_lib.BuildConfig
 com.newbee.bulid_lib.R$anim
 com.newbee.bulid_lib.R$color
@@ -6109,13 +6125,38 @@ com.nrmyw.ble_event_lib.R$string:
 com.nrmyw.ble_event_lib.R
 com.nrmyw.ble_event_lib.bean.BleDeviceBean:
     public java.lang.String getBleName()
+com.nrmyw.ble_event_lib.bean.BleSendFileInfoBean:
+    public byte getCmdTitle()
+    public java.lang.String getFileName()
+    public void setCmdTitle(byte)
+    public void setFileName(java.lang.String)
+    public void setFilePath(java.lang.String)
 com.nrmyw.ble_event_lib.bean.BleSendImageEndInfoBean:
+    public int getH()
+    public int getIndex()
     public java.lang.String getName()
+    public int getSize()
+    public int getType()
     public long getUseTime()
+    public int getW()
 com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean:
     public void setName(java.lang.String)
 com.nrmyw.ble_event_lib.bean.BleSendImageStartInfoBean:
+    public int getH()
     public java.lang.String getName()
+    public int getSize()
+    public int getType()
+    public int getW()
+com.nrmyw.ble_event_lib.bean.BleSendOtaInfoBean:
+    public java.lang.String getFileName()
+    public byte[] getNeedResendBytes()
+    public byte[] getReadyOkBytes()
+    public byte[] getSendEndBytes()
+    public byte[] getSendIndexOkBytes()
+    public void setNeedResendBytes(byte[])
+    public void setReadyOkBytes(byte[])
+    public void setSendEndBytes(byte[])
+    public void setSendIndexOkBytes(byte[])
 com.nrmyw.ble_event_lib.config.NewBeeBleConfig:
     private boolean disconnectAutoConnect
     public boolean isDisconnectAutoConnect()
@@ -6124,11 +6165,15 @@ com.nrmyw.ble_event_lib.config.NewBeeBleConfig:
     public void setNoticeID(java.lang.String)
     public void setServiceID(java.lang.String)
     public void setWriteID(java.lang.String)
+com.nrmyw.ble_event_lib.send.BleEventObserver:
+    public abstract void sendBytesIndexCmd(int,byte[])
+    public abstract void sendFile(com.nrmyw.ble_event_lib.bean.BleSendFileInfoBean)
 com.nrmyw.ble_event_lib.send.BleEventSubject
 com.nrmyw.ble_event_lib.send.BleEventSubscriptionSubject:
     public void disconnectedBle()
     public void havePermissionInitBle()
-    public void sendCmd(byte[])
+    public void sendBytesIndexCmd(int,byte[])
+    public void sendFile(com.nrmyw.ble_event_lib.bean.BleSendFileInfoBean)
     public void startSearchBle()
 com.nrmyw.ble_event_lib.statu.BleStatuEventSubject
 com.nrmyw.ble_event_lib.type.BleSendFileType:
@@ -6140,7 +6185,6 @@ com.nrmyw.ble_event_lib.util.BleByteUtil:
     public static varargs byte[] addToNewBytes(byte[][])
     public static int byteArrayToInt(byte[])
     public static byte[] intToByteArray32only1(int)
-    public static byte[] intToByteArray32only3(int)
     public static java.lang.String parseByte2HexStr(byte)
     public static byte[] resultData(byte[])
 event.BaseEventObserver

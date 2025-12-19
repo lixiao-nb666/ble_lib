@@ -2,6 +2,7 @@ package com.newbee.ble_lib.util;
 
 import android.content.Context;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.newbee.ble_lib.config.BleManagerConfig;
 import com.newbee.ble_lib.manager.child.BleConnectManager;
@@ -43,10 +44,29 @@ public class BleConnectStatuUtil {
 
 
     public boolean checkCanUseOldDeviceAdress(){
-        if(!isConnect&&disConnectTime!=0&&System.currentTimeMillis()-disConnectTime>= BleManagerConfig.CONNECT_OLD_HUD_TIME){
-            return true;
+        if(disConnectTime==0){
+            //因为是第一次，直接返回
+            return false;
         }
-        return false;
+
+        if(isConnect){
+            //如果连接状态，直接返回不行
+            return false;
+        }
+        if(System.currentTimeMillis()-disConnectTime>= BleManagerConfig.CONNECT_OLD_HUD_TIME){
+            //超出有效连接时间内
+            return false;
+        }
+        if(null==BleConnectStatuUtil.getInstance().getNowUseBleDevice()){
+            //数据为空，也不行
+            return false;
+        }
+        if(TextUtils.isEmpty(BleConnectStatuUtil.getInstance().getNowUseBleDevice().getAdress())){
+            return false;
+        }
+
+
+        return true;
     }
 
 
@@ -83,6 +103,7 @@ public class BleConnectStatuUtil {
         disConnectTime=0;
         isConnect=true;
         BlueToothGattSendMsgManager.getInstance().clear();
+        BleConnectManager.getInstance().stopScan();
         BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.CONNECTED,nowUseBleDevice.getAdress());
     }
 

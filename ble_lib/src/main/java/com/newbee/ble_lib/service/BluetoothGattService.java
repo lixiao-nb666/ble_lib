@@ -13,11 +13,18 @@ import com.newbee.ble_lib.base.BaseService;
 
 import com.newbee.ble_lib.manager.child.BleConnectManager;
 
-import com.newbee.ble_lib.manager.image.BlueToothGattSendImageManager;
+import com.newbee.ble_lib.manager.child.BlueToothGattManager;
+import com.newbee.ble_lib.manager.child.BlueToothSendStatuManager;
+import com.newbee.ble_lib.manager.file.BlueToothGattSendFileManager;
 import com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager;
+import com.newbee.ble_lib.service.event.BleDelayEventSubscriptionSubject;
+import com.newbee.ble_lib.service.event.BleDelayObserver;
+import com.newbee.ble_lib.service.event.BleDelayType;
 import com.newbee.ble_lib.util.BleConnectStatuUtil;
 import com.nrmyw.ble_event_lib.bean.BleDeviceBean;
+import com.nrmyw.ble_event_lib.bean.BleSendFileInfoBean;
 import com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean;
+import com.nrmyw.ble_event_lib.bean.BleSendOtaInfoBean;
 import com.nrmyw.ble_event_lib.config.NewBeeBleConfig;
 import com.nrmyw.ble_event_lib.send.BleEventObserver;
 import com.nrmyw.ble_event_lib.send.BleEventSubscriptionSubject;
@@ -55,11 +62,25 @@ public class BluetoothGattService extends BaseService {
                         BlueToothGattSendMsgManager.getInstance().sendMsgByCmd((byte[]) msg.obj);
                         break;
                     case SEND_IMAGE:
-                        BlueToothGattSendImageManager.getInstance().sendBitMap((BleSendImageInfoBean) msg.obj);
+                        BlueToothGattSendFileManager.getInstance().sendBitMap((BleSendImageInfoBean) msg.obj);
                         break;
-                    case SEND_CMD_BY_IMAGE_INDEX:
-                        BlueToothGattSendMsgManager.getInstance().sendMsgByImg(msg.arg1, (byte[]) msg.obj);
+                    case SEND_FILE:
+
+                        BlueToothGattSendFileManager.getInstance().sendFile((BleSendFileInfoBean) msg.obj);
                         break;
+                    case SEND_OTA:
+
+                        BlueToothGattSendFileManager.getInstance().sendOta((BleSendOtaInfoBean) msg.obj);
+                        break;
+
+                    case SEND_CMD_BY_BYTES_INDEX:
+                        BlueToothGattSendMsgManager.getInstance().sendMsgByFile(msg.arg1, (byte[]) msg.obj);
+                        break;
+                    case DELAY:
+                        BleDelayType bleDelayType=BleDelayType.values()[msg.arg1];
+                        selectDelayTypeToDo(bleDelayType);
+                        break;
+
                 }
                 BleStatu bleStatu=BleStatu.USER_DO;
                 bleStatu.setStrId(msgType.getStrId());
@@ -70,6 +91,14 @@ public class BluetoothGattService extends BaseService {
         }
     };
 
+    private void selectDelayTypeToDo(BleDelayType delayType){
+        switch (delayType){
+            case SEND_BLE_CMD_BYTES:
+                BlueToothSendStatuManager.getInstance().noticeOtherNowCanSned();
+                break;
+        }
+    }
+
     private Runnable autoConnectRunnable=new Runnable() {
         @Override
         public void run() {
@@ -77,7 +106,6 @@ public class BluetoothGattService extends BaseService {
             if(!NewBeeBleConfig.getInstance().isAutoConnect()){
                 return;
             }
-
             Log.w(tag,"BluetoothAdapter  initialized  11155----11444");
             BleDeviceBean bleDeviceBean= BleConnectStatuUtil.getInstance().getNowUseBleDevice();
             boolean isConnect=BleConnectStatuUtil.getInstance().isConnect();
@@ -168,7 +196,7 @@ public class BluetoothGattService extends BaseService {
                         break;
                     case SENDING_DATA:
                         handler.removeCallbacks(bleDisConnectRunnable);
-                        handler.postDelayed(bleDisConnectRunnable,10*1000);
+                        handler.postDelayed(bleDisConnectRunnable,3*1000);
                         break;
                     case CAN_SEND_DATA:
                         handler.removeCallbacks(bleDisConnectRunnable);
@@ -181,9 +209,9 @@ public class BluetoothGattService extends BaseService {
 
     @Override
     public void init() {
+        BleDelayEventSubscriptionSubject.getInstance().attach(bleDelayObserver);
         BleStatuEventSubscriptionSubject.getInstance().attach(bleStatuEventObserver);
         BleEventSubscriptionSubject.getInstance().attach(bleEventObserver);
-
         NewBeeBleManager.getInstance().setBleEventObserver(bleEventObserver);
     }
 
@@ -217,8 +245,10 @@ public class BluetoothGattService extends BaseService {
     public void close() {
         handler.removeCallbacksAndMessages(null);
         BleConnectManager.getInstance().close();
+        BleDelayEventSubscriptionSubject.getInstance().detach(bleDelayObserver);
         BleEventSubscriptionSubject.getInstance().detach(bleEventObserver);
         BleStatuEventSubscriptionSubject.getInstance().detach(bleStatuEventObserver);
+
     }
 
 
@@ -253,7 +283,16 @@ public class BluetoothGattService extends BaseService {
 
         }
 
-        @Override
+       @Override
+       public void sendBytesIndexCmd(int index, byte[] bytes) {
+           Message msg=new Message();
+           msg.what=BluetoothGattServiceMsgType.SEND_CMD_BY_BYTES_INDEX.ordinal();
+           msg.obj=bytes;
+           msg.arg1=index;
+           handler.sendMessage(msg);
+       }
+
+       @Override
         public void sendImage(BleSendImageInfoBean sendImageInfoBean) {
             Message msg=new Message();
             msg.what=BluetoothGattServiceMsgType.SEND_IMAGE.ordinal();
@@ -261,18 +300,34 @@ public class BluetoothGattService extends BaseService {
             handler.sendMessage(msg);
         }
 
+       @Override
+       public void sendFile(BleSendFileInfoBean sendFileInfoBean) {
+           Log.i(tag,"kaishi11111111110000000");
+           Message msg=new Message();
+           msg.what=BluetoothGattServiceMsgType.SEND_FILE.ordinal();
+           msg.obj=sendFileInfoBean;
+           handler.sendMessage(msg);
+       }
+
+       @Override
+       public void sendOta(BleSendOtaInfoBean sendOtaInfoBean) {
+           Message msg=new Message();
+           msg.what=BluetoothGattServiceMsgType.SEND_OTA.ordinal();
+           msg.obj=sendOtaInfoBean;
+           handler.sendMessage(msg);
+       }
+   };
+
+
+    private BleDelayObserver bleDelayObserver=new BleDelayObserver() {
         @Override
-        public void sendImageIndexCmd(int index, byte[] bytes) {
+        public void delayDo(BleDelayType delayType, long needDelayTime) {
+            handler.removeMessages(BluetoothGattServiceMsgType.DELAY.ordinal());
             Message msg=new Message();
-            msg.what=BluetoothGattServiceMsgType.SEND_CMD_BY_IMAGE_INDEX.ordinal();
-            msg.obj=bytes;
-            msg.arg1=index;
-            handler.sendMessage(msg);
+            msg.what=BluetoothGattServiceMsgType.DELAY.ordinal();
+            msg.arg1=delayType.ordinal();
+            handler.sendMessageDelayed(msg,needDelayTime);
         }
     };
-
-
-
-
 
 }

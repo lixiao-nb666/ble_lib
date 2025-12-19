@@ -9,7 +9,11 @@ public enum BluetoothGattServiceMsgType {
     DISCONNECT_BLE(com.nrmyw.ble_event_lib.R.string.ble_statu_user_disconnect),
     SEND_CMD(com.nrmyw.ble_event_lib.R.string.ble_statu_user_send_cmd),
     SEND_IMAGE(com.nrmyw.ble_event_lib.R.string.ble_statu_user_send_image),
-    SEND_CMD_BY_IMAGE_INDEX(com.nrmyw.ble_event_lib.R.string.ble_statu_user_send_image_cmd_index),
+    SEND_FILE(com.nrmyw.ble_event_lib.R.string.ble_statu_user_send_image),
+
+    SEND_OTA(com.nrmyw.ble_event_lib.R.string.ble_statu_user_send_image),
+    SEND_CMD_BY_BYTES_INDEX(com.nrmyw.ble_event_lib.R.string.ble_statu_user_send_image_cmd_index),
+    DELAY(com.nrmyw.ble_event_lib.R.string.ble_statu_none),
     ;
     private int strId;
     BluetoothGattServiceMsgType(int strId){

@@ -1,11 +1,16 @@
 package com.newbee.ble_tool.activity;
 
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -17,26 +22,33 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.newbee.ble_lib.NewBeeBleManager;
+import com.newbee.ble_lib.util.BleSendImageUtil;
+import com.newbee.ble_lib.util.FileAndByteUtil;
+import com.newbee.ble_lib.util.hud.HudBleByteUtil;
+import com.newbee.ble_lib.util.hud.HudCmdSendDataUtil;
 import com.newbee.ble_tool.R;
 
 
 import com.newbee.ble_tool.type.HudDevice;
-import com.newbee.ble_tool.util.HudBleByteUtil;
-import com.newbee.ble_tool.util.HudCmdType;
-import com.newbee.ble_tool.util.HudSendImageType;
+
 import com.newbee.bulid_lib.mybase.LG;
 import com.newbee.bulid_lib.mybase.activity.BaseCompatActivity;
 
 import com.newbee.t800_lib.type.T800CmdType;
 import com.nrmyw.ble_event_lib.bean.BleDeviceBean;
+import com.nrmyw.ble_event_lib.bean.BleSendFileInfoBean;
 import com.nrmyw.ble_event_lib.bean.BleSendImageEndInfoBean;
 import com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean;
 import com.nrmyw.ble_event_lib.bean.BleSendImageStartInfoBean;
+import com.nrmyw.ble_event_lib.bean.BleSendOtaInfoBean;
 import com.nrmyw.ble_event_lib.send.BleEventSubscriptionSubject;
 import com.nrmyw.ble_event_lib.statu.BleStatu;
 import com.nrmyw.ble_event_lib.statu.BleStatuEventObserver;
 import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
 import com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType;
+import com.nrmyw.ble_event_lib.util.BleByteUtil;
+
+import java.io.File;
 
 
 public class MainActivity extends BaseCompatActivity {
@@ -56,8 +68,8 @@ public class MainActivity extends BaseCompatActivity {
             handler.sendMessage(msg);
         }
     };
-    private TextView bleTV,bleStatuTV;
-    private Button initBT,searchBT,disconnectedBT,sendTestBT,sendImageTestBT,sendProgressBT;
+    private TextView bleTV,bleStatuTV,logTV;
+    private Button initBT,searchBT,disconnectedBT,sendTestBT,sendImageTestBT,sendProgressBT,sendFileBT;
     private View.OnClickListener onClickListener=new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -94,15 +106,48 @@ public class MainActivity extends BaseCompatActivity {
                         break;
                     case R.id.bt_send_test_progress:
                         Bitmap bt2 = BitmapFactory.decodeResource(MainActivity.this.getResources(),R.mipmap.img_test_jd);
-
                         sendProgress(bt2);
                         break;
+                    case R.id.bt_send_test_file:
+                        if(!canOta){
+
+                            canOta=true;
+                        }
+
+                        BleEventSubscriptionSubject.getInstance().sendCmd(HudCmdSendDataUtil.startOTA());
+                        lastTime=System.currentTimeMillis();
+                        String filePath= Environment.getExternalStorageDirectory().getPath()+"/"+"DCIM/cpu1.bin";
+                        byte[] fileBytes= FileAndByteUtil.getBytesByFile(filePath);
+                        if(null==fileBytes||fileBytes.length==0){
+                            showToast("err : file size =0" );
+                            return;
+                        }
+                        size=fileBytes.length;
+                        byte[] start=HudCmdSendDataUtil.getReadySendFile(size,null,true);
+                        Log.i("tag","发送 ===  :发送成功---checkReturnToSend 3322111111:count"+ BleByteUtil.parseByte2HexStr(start));
+                        BleEventSubscriptionSubject.getInstance().sendCmd(start);
+                        logTV.setText("开始发送OTA");
+
+                        //                        String filePath= Environment.getExternalStorageDirectory().getPath()+"/"+"DCIM/cpu1.bin";
+//                        File file=new File(filePath);
+//                        Log.i("kankanshifoucunzai","kankanshifoucunzai:"+filePath+"--"+file.exists());
+//                        BleSendFileInfoBean bleSendFileInfoBean=new BleSendFileInfoBean();
+//                        bleSendFileInfoBean.setFilePath(filePath);
+//                        bleSendFileInfoBean.setFileName("cpu1.bin");
+//                        BleEventSubscriptionSubject.getInstance().sendFile(bleSendFileInfoBean);
+
+                        BleSendOtaInfoBean bleSendFileInfoBean=new BleSendOtaInfoBean();
+                        bleSendFileInfoBean.setFilePath(filePath);
+                        bleSendFileInfoBean.setFileName("cpu1.bin");
+
+                        BleEventSubscriptionSubject.getInstance().sendOta(bleSendFileInfoBean);
+
+                        break;
                 }
-
-
         }
     };
 
+    private int index;
     private boolean isSend;
 
     public void sendBitmap(Bitmap bitmap){
@@ -126,7 +171,6 @@ public class MainActivity extends BaseCompatActivity {
         bleSendImageInfoBean.setBitmapQualityType(BleSendBitmapQualityType.PROGRESS);
         BleEventSubscriptionSubject.getInstance().sendImage(bleSendImageInfoBean);
     }
-
 
     private Runnable sendTimeRunnable=new Runnable() {
         @Override
@@ -166,14 +210,10 @@ public class MainActivity extends BaseCompatActivity {
                         Bitmap bitmap=(Bitmap) msg.obj;
                         if(null!=bitmap&&!bitmap.isRecycled()){
                             ivv.setImageBitmap(bitmap);
-
                         }
-
                     }
                     break;
-
                 case CONNECTING:
-
                     break;
                 case CONNECTED:
                     bleTV.append("-连接成功");
@@ -198,7 +238,7 @@ public class MainActivity extends BaseCompatActivity {
 //                        BleEventSubscriptionSubject.getInstance().sendImageIndexCmd(0, startSS.getBytes(StandardCharsets.UTF_8));
                         lastTime=System.currentTimeMillis();
                         Log.i("kankantupian","kankantubianzenmhuishi:1111333--0000---"+startInfoBean.toString());
-                        doSendImageStartThing(startInfoBean);
+//                        doSendImageStartThing(startInfoBean);
                     }
 
                     break;
@@ -206,8 +246,7 @@ public class MainActivity extends BaseCompatActivity {
                     if(msg.obj instanceof BleSendImageEndInfoBean){
                         BleSendImageEndInfoBean endInfoBean= (BleSendImageEndInfoBean) msg.obj;
                         Log.i("kankantupian","kankantubianzenmhuishi:1111333--9999---"+endInfoBean.toString());
-
-                        doSendImageEndThing(endInfoBean);
+//                        doSendImageEndThing(endInfoBean);
                     }
                     break;
                 case SEND_IMAGE_DATA_END:
@@ -216,50 +255,73 @@ public class MainActivity extends BaseCompatActivity {
 
                     showToast("send image time :"+(nowTime-lastTime));
                     break;
+                case RETRUN_BYTES:
+                    byte[] data= (byte[]) msg.obj;
+
+                    Log.i("kankantupian","aishi1111111111:9333---888999000---"+ BleByteUtil.parseByte2HexStr(data));
+                    logTV.append("\n"+index+"-"+BleByteUtil.parseByte2HexStr(data));
+//                    if(canOta){
+//                        String filePath= Environment.getExternalStorageDirectory().getPath()+"/"+"DCIM/cpu1.bin";
+//                        File file=new File(filePath);
+//                        Log.i("kankanshifoucunzai","kankanshifoucunzai:"+filePath+"--"+file.exists());
+//                        BleSendOtaInfoBean bleSendFileInfoBean=new BleSendOtaInfoBean();
+//                        bleSendFileInfoBean.setFilePath(filePath);
+//                        bleSendFileInfoBean.setFileName("cpu1.bin");
+//
+//                        BleEventSubscriptionSubject.getInstance().sendOta(bleSendFileInfoBean);
+//                        canOta=false;
+//                        index=-1;
+//                    }
+
+                    index++;
+
+                    break;
+
             }
         }
     };
     private long lastTime;
+    private int size;
 
-    private void doSendImageStartThing(BleSendImageStartInfoBean startInfoBean){
-        BleDeviceBean bleDeviceBean= NewBeeBleManager.getInstance().getNowUseBleDevice();
-        byte[] startBytes= null;
-        HudDevice hudDevice=HudDevice.values()[bleDeviceBean.getDeviceType()];
-        switch (hudDevice){
-            case T800:
-                startBytes= HudBleByteUtil.getAllByte(HudCmdType.READY_SEND_IMAGE,startInfoBean.getW(),startInfoBean.getH(),startInfoBean.getSize(), HudSendImageType.START);
-                break;
-            default:
-                startBytes=HudBleByteUtil.getAllByte(HudCmdType.READY_SEND_IMAGE,startInfoBean.getW(),startInfoBean.getH(),startInfoBean.getSize(), HudSendImageType.START,startInfoBean.getType());
-                break;
-        }
-        if(null!=startBytes){
-            BleEventSubscriptionSubject.getInstance().sendImageIndexCmd(0,startBytes);
-        }
-
-    }
-
-    private void doSendImageEndThing(BleSendImageEndInfoBean endInfoBean){
-        BleDeviceBean bleDeviceBean= NewBeeBleManager.getInstance().getNowUseBleDevice();
-        byte[] endBytes=null;
-        HudDevice hudDevice=HudDevice.values()[bleDeviceBean.getDeviceType()];
-        switch (hudDevice){
-            case T800:
-                endBytes=HudBleByteUtil.getAllByte(HudCmdType.READY_SEND_IMAGE,endInfoBean.getW(),endInfoBean.getH(),endInfoBean.getSize(), HudSendImageType.END);
-                break;
-            default:
-                endBytes=HudBleByteUtil.getAllByte(HudCmdType.READY_SEND_IMAGE,endInfoBean.getW(),endInfoBean.getH(),endInfoBean.getSize(), HudSendImageType.END,endInfoBean.getType());
-                break;
-        }
-
-        if(null!=endBytes){
-            BleEventSubscriptionSubject.getInstance().sendImageIndexCmd(endInfoBean.getIndex(),endBytes);
-        }
-
-
-
-
-    }
+//    private void doSendImageStartThing(BleSendImageStartInfoBean startInfoBean){
+//        BleDeviceBean bleDeviceBean= NewBeeBleManager.getInstance().getNowUseBleDevice();
+//        byte[] startBytes= null;
+//        HudDevice hudDevice=HudDevice.values()[bleDeviceBean.getDeviceType()];
+//        switch (hudDevice){
+//            case T800:
+//                startBytes= HudBleByteUtil.getAllByte(HudCmdType.READY_SEND_IMAGE,startInfoBean.getW(),startInfoBean.getH(),startInfoBean.getSize(), HudSendImageType.START);
+//                break;
+//            default:
+//                startBytes=HudBleByteUtil.getAllByte(HudCmdType.READY_SEND_IMAGE,startInfoBean.getW(),startInfoBean.getH(),startInfoBean.getSize(), HudSendImageType.START,startInfoBean.getType());
+//                break;
+//        }
+//        if(null!=startBytes){
+//            BleEventSubscriptionSubject.getInstance().sendImageIndexCmd(0,startBytes);
+//        }
+//
+//    }
+//
+//    private void doSendImageEndThing(BleSendImageEndInfoBean endInfoBean){
+//        BleDeviceBean bleDeviceBean= NewBeeBleManager.getInstance().getNowUseBleDevice();
+//        byte[] endBytes=null;
+//        HudDevice hudDevice=HudDevice.values()[bleDeviceBean.getDeviceType()];
+//        switch (hudDevice){
+//            case T800:
+//                endBytes=HudBleByteUtil.getAllByte(HudCmdType.READY_SEND_IMAGE,endInfoBean.getW(),endInfoBean.getH(),endInfoBean.getSize(), HudSendImageType.END);
+//                break;
+//            default:
+//                endBytes=HudBleByteUtil.getAllByte(HudCmdType.READY_SEND_IMAGE,endInfoBean.getW(),endInfoBean.getH(),endInfoBean.getSize(), HudSendImageType.END,endInfoBean.getType());
+//                break;
+//        }
+//
+//        if(null!=endBytes){
+//            BleEventSubscriptionSubject.getInstance().sendImageIndexCmd(endInfoBean.getIndex(),endBytes);
+//        }
+//
+//
+//
+//
+//    }
 
 
     @Override
@@ -267,9 +329,9 @@ public class MainActivity extends BaseCompatActivity {
         return R.layout.activity_main_test;
     }
 
+    private boolean canOta;
     @Override
     public void initView() {
-
         bleTV=findViewById(R.id.tv_ble);
         bleStatuTV=findViewById(R.id.tv_ble_statu);
         initBT=findViewById(R.id.bt_init);
@@ -278,18 +340,20 @@ public class MainActivity extends BaseCompatActivity {
         sendTestBT=findViewById(R.id.bt_send_test);
         sendImageTestBT=findViewById(R.id.bt_send_test_image);
         sendProgressBT=findViewById(R.id.bt_send_test_progress);
+        sendFileBT=findViewById(R.id.bt_send_test_file);
         ivv=findViewById(R.id.ivv);
+        logTV=findViewById(R.id.tv_log);
         initBT.setOnClickListener(onClickListener);
         searchBT.setOnClickListener(onClickListener);
         disconnectedBT.setOnClickListener(onClickListener);
         sendTestBT.setOnClickListener(onClickListener);
         sendImageTestBT.setOnClickListener(onClickListener);
         sendProgressBT.setOnClickListener(onClickListener);
+        sendFileBT.setOnClickListener(onClickListener);
         setViewByBleConnectStatu(NewBeeBleManager.getInstance().isConnect());
         BleStatuEventSubscriptionSubject.getInstance().attach(bleStatuEventObserver);
 //        BleHintEventSubscriptionSubject.getInstance().attach(bleHintEventObserver);
         NewBeeBleManager.getInstance().nowGetAllPermissions();
-
     }
     private ImageView ivv;
     @Override
@@ -309,7 +373,7 @@ public class MainActivity extends BaseCompatActivity {
 
     @Override
     public void viewIsShow() {
-
+        requestPermission();
     }
 
     @Override
@@ -339,8 +403,6 @@ public class MainActivity extends BaseCompatActivity {
             sendTestBT.setVisibility(View.GONE);
             sendImageTestBT.setVisibility(View.GONE);
         }
-
-
     }
 
 
@@ -351,4 +413,25 @@ public class MainActivity extends BaseCompatActivity {
         BleStatuEventSubscriptionSubject.getInstance().detach(bleStatuEventObserver);
 //        BleHintEventSubscriptionSubject.getInstance().detach(bleHintEventObserver);
     }
+
+    private static final int REQUEST_MANAGE_FILES_ACCESS = 2;
+    //申请所有文件访问权限
+    public void requestPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            //判断是否有管理外部存储的权限
+            if (!Environment.isExternalStorageManager()) {
+                Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
+                intent.setData(Uri.parse("package:" + getPackageName()));
+                startActivityForResult(intent, REQUEST_MANAGE_FILES_ACCESS);
+            } else {
+                // TODO: 2023/11/22
+                // 已有所有文件访问权限，可直接执行文件相关操作
+            }
+        } else {
+            // TODO: 2023/11/22
+            //非android11及以上版本，走正常申请权限流程
+        }
+    }
+
+
 }

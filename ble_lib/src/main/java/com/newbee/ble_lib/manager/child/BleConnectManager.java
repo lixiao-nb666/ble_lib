@@ -143,7 +143,6 @@ public class BleConnectManager {
         @Override
         public void onScanResult(int callbackType, ScanResult result) {
             super.onScanResult(callbackType, result);
-
             if(BleCheckUtil.checkTheBleCanUse(result)){
                 stopScan();
             }
@@ -154,7 +153,7 @@ public class BleConnectManager {
     /** 开始扫描 **/
 //    long lastSearchBleTime;
     public void startSearchBLE(){
-
+        Log.i("tryToConnectOldDevice","tryToConnectOldDevice111100");
 //        if(null==bluetoothAdapter){
 //            return;
 //        }
@@ -188,12 +187,12 @@ public class BleConnectManager {
 
     private void tryToConnectOldDevice(){
         try {
+            Log.i("tryToConnectOldDevice","tryToConnectOldDevice1111");
             if(!BleConnectStatuUtil.getInstance().checkCanUseOldDeviceAdress()){
+                Log.i("tryToConnectOldDevice","tryToConnectOldDevice111122");
                 return;
             }
-            if(null==BleConnectStatuUtil.getInstance().getNowUseBleDevice()||TextUtils.isEmpty(BleConnectStatuUtil.getInstance().getNowUseBleDevice().getAdress())){
-                return;
-            }
+            Log.i("tryToConnectOldDevice","tryToConnectOldDevice111144");
             connect(BleConnectStatuUtil.getInstance().getNowUseBleDevice().getAdress());
         }catch (Exception e){}
     }

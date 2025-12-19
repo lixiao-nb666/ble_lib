@@ -42,8 +42,13 @@
     <string name="ble_statu_retrun_bytes">Bluetooth：반환 값</string>
     <string name="ble_statu_run_err">Bluetooth：실행 오류</string>
     <string name="ble_statu_searching">Bluetooth：Searching</string>
+    <string name="ble_statu_send_image_data_end">Bluetooth：Sending of images data over</string>
     <string name="ble_statu_send_image_end">Bluetooth：그림 보내기 끝</string>
     <string name="ble_statu_send_image_start">Bluetooth：그림 보내기 시작</string>
+    <string name="ble_statu_send_ota_end">Bluetooth：Send ota end</string>
+    <string name="ble_statu_send_ota_err">Bluetooth：Send ota err</string>
+    <string name="ble_statu_send_ota_progress">Bluetooth：Send ota progress</string>
+    <string name="ble_statu_send_ota_start">Bluetooth：Send ota start</string>
     <string name="ble_statu_sending_data">Bluetooth：데이터 전송 중...</string>
     <string name="ble_statu_state_off">Bluetooth：닫혔습니다. 열어 주십시오</string>
     <string name="ble_statu_state_on">Bluetooth：열려 있음</string>

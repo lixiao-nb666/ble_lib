@@ -26,7 +26,6 @@ public class BleStatuBroadcastReceiverDao {
     private Context context;
     public void init(Context context){
         IntentFilter filter = new IntentFilter();
-
         filter.addAction(BluetoothAdapter.ACTION_STATE_CHANGED); //蓝牙状态广播
         filter.addAction(BluetoothDevice.ACTION_ACL_CONNECTED); //蓝牙连接广播
         filter.addAction(BluetoothDevice.ACTION_ACL_DISCONNECTED); //蓝牙断开广播

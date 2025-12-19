@@ -454,8 +454,13 @@
     <string name="ble_statu_retrun_bytes">Bluetooth：returned value</string>
     <string name="ble_statu_run_err">Bluetooth：run-time error</string>
     <string name="ble_statu_searching">Bluetooth：Searching</string>
+    <string name="ble_statu_send_image_data_end">Bluetooth：Sending of images data over</string>
     <string name="ble_statu_send_image_end">Bluetooth：Sending of images completed</string>
     <string name="ble_statu_send_image_start">Bluetooth：Start sending pictures</string>
+    <string name="ble_statu_send_ota_end">Bluetooth：Send ota end</string>
+    <string name="ble_statu_send_ota_err">Bluetooth：Send ota err</string>
+    <string name="ble_statu_send_ota_progress">Bluetooth：Send ota progress</string>
+    <string name="ble_statu_send_ota_start">Bluetooth：Send ota start</string>
     <string name="ble_statu_sending_data">Bluetooth：Data transmission is in progress...</string>
     <string name="ble_statu_state_off">Bluetooth：off,please open</string>
     <string name="ble_statu_state_on">Bluetooth：on</string>

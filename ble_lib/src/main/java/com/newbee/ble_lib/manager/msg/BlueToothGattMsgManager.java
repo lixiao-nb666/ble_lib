@@ -1,7 +1,10 @@
 package com.newbee.ble_lib.manager.msg;
 
 import android.text.TextUtils;
+import android.util.Log;
+
 import com.newbee.ble_lib.manager.child.BlueToothGattManager;
+import com.newbee.ble_lib.manager.child.BlueToothSendStatuManager;
 import com.nrmyw.ble_event_lib.statu.BleStatu;
 import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
 import com.nrmyw.ble_event_lib.util.BleByteUtil;
@@ -15,9 +18,9 @@ class BlueToothGattMsgManager {
     private Map<String, byte[]> msgMq = new ConcurrentHashMap<>();
 
     private boolean nowCanSendImage;
-    private int imageMsgCountNumb;
-    private int imageMsgIndex;
-    private Map<String, byte[]> imageMsgMq = new ConcurrentHashMap<>();
+    private int fileMsgCountNumb;
+    private int fileMsgIndex;
+    private Map<String, byte[]> fileMsgMq = new ConcurrentHashMap<>();
 
 
     private BlueToothGattMsgManager() {
@@ -47,18 +50,18 @@ class BlueToothGattMsgManager {
 
     public void clear() {
         msgMq.clear();
-        clearImageMsg();
+        clearFileMsg();
     }
 
     public synchronized void queMsg() {
-        if (!queImageMsg()) {
+        if (!queFileMsg()) {
             queCmdMsg();
         }
     }
     public synchronized void addMsg(byte[] msg) {
         String kStr = BleByteUtil.getCmdStrK(msg);
         msgMq.put(kStr, msg);
-
+        Log.i("tag","发送 ===  :发送成功---checkReturnToSend 3311-1:count"+BleByteUtil.parseByte2HexStr(msg));
     }
 
     private void queCmdMsg() {
@@ -75,6 +78,7 @@ class BlueToothGattMsgManager {
             msgMq.clear();
             return;
         }
+        Log.i("tag","发送 ===  :发送成功---checkReturnToSend 3333331111---555666:count"+fileMsgCountNumb+"--"+fileMsgIndex+"----"+BleByteUtil.parseByte2HexStr(cmd));
         listenSendMsg(kStr, cmd);
     }
 
@@ -97,94 +101,109 @@ class BlueToothGattMsgManager {
     private void listenSendMsg(String kStr, byte[] msg) {
 
         try {
-            if (BlueToothGattManager.getInstance().isNowCanSend()) {
-                BlueToothGattManager.getInstance().queSendCmd(msg);
-                removeMsg(kStr);
+            if (BlueToothSendStatuManager.getInstance().isNowCanSend()) {
+                Log.i("tag","发送 ===  :发送成功---checkReturnToSend 3333331112:count"+fileMsgCountNumb+"--"+fileMsgIndex+"----"+BleByteUtil.parseByte2HexStr(msg));
+                BlueToothSendStatuManager.getInstance().sendBytyes(msg);
+                if(msgMq.size()==1){
+                    msgMq.clear();
+                }else {
+                    removeMsg(kStr);
+                }
+
             }
         } catch (Exception e) {
             BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR, "canSendMsg:" + e.toString());
         }
     }
 
-    public void clearImageMsg(){
+    public void clearFileMsg(){
         nowCanSendImage=false;
-        imageMsgCountNumb=0;
-        imageMsgIndex=0;
-        imageMsgMq.clear();
+        fileMsgCountNumb=0;
+        fileMsgIndex=0;
+        fileMsgMq.clear();
     }
 
     private long startSendImageTime;
-    public void readySendImage(){
+    public void readySendFile(){
         nowCanSendImage=true;
-        imageMsgCountNumb=0;
-        imageMsgIndex=0;
-        imageMsgMq.clear();
+        fileMsgCountNumb=0;
+        fileMsgIndex=0;
+        fileMsgMq.clear();
         startSendImageTime=System.currentTimeMillis();
     }
 
-    public void setNowCanSendImageNumb(int countNumb){
-        imageMsgCountNumb=countNumb;
+    public void setNowCanSendFileNumb(int countNumb){
+        fileMsgCountNumb=countNumb;
     }
 
-    private void listenSendImageMsg(int index, byte[] msg) {
+    private void listenSendFileMsg(int index, byte[] msg) {
         try {
-            if (BlueToothGattManager.getInstance().isNowCanSend()) {
-                BlueToothGattManager.getInstance().queSendCmd(msg);
-                if(index==imageMsgCountNumb-1){
-                    clearImageMsg();
+            if (BlueToothSendStatuManager.getInstance().isNowCanSend()) {
+                BlueToothSendStatuManager.getInstance().sendBytyes(msg);
+                if(index==fileMsgCountNumb-1){
+                    clearFileMsg();
                     long sendImageUseTime=System.currentTimeMillis()-startSendImageTime;
-                    BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.SEND_IMAGE_DATA_END, sendImageUseTime);
+                    BlueToothSendStatuManager.getInstance().setFileCheckOver(startSendImageTime,sendImageUseTime);
                 }else {
-                    imageMsgIndex++;
+                    fileMsgIndex++;
                 }
             }
         } catch (Exception e) {
-            clearImageMsg();
+            clearFileMsg();
             BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR, "canSendImageMsg:" + e.toString());
         }
     }
 
 
 
-    public synchronized void addMsgByImage(int index, byte[] msg) {
+    public synchronized void addMsgByFile(int index, byte[] msg) {
         if(!nowCanSendImage){
             return;
         }
-        imageMsgMq.put(index + "", msg);
+        fileMsgMq.put(index + "", msg);
+    }
+
+
+    public void reSendFileMsg(){
+        Log.i("tag", "发送 ===  :发送成功---checkReturnToSend 111133?????????:  ---A5A8----kaishichongfa111222--"+fileMsgIndex);
+        fileMsgIndex--;
+        Log.i("tag"," 发送 ===  :发送成功---checkReturnToSend 111133?????????:   ---A5A8----kaishichongfa111333:--"+fileMsgIndex);
+        queMsg();
     }
 
 
 
 
-    private synchronized boolean queImageMsg() {
+    private synchronized boolean queFileMsg() {
         if (!nowCanSendImage) {
             return false;
         }
-        if(imageMsgCountNumb==0){
+        if(fileMsgCountNumb==0){
             return false;
         }
-        if(imageMsgMq.isEmpty()){
+        if(fileMsgMq.isEmpty()){
             return false;
         }
-        if( imageMsgCountNumb!=imageMsgMq.size()){
+        if( fileMsgCountNumb!=fileMsgMq.size()){
             return false;
         }
 
 
 //        int index = getImageFristK();
-        byte[] cmd = imageMsgMq.get(imageMsgIndex + "");
+        byte[] cmd = fileMsgMq.get(fileMsgIndex + "");
+
+        Log.i("tag","发送 ===  :发送成功---checkReturnToSend 3333331111---555665:count"+fileMsgCountNumb+"--"+fileMsgIndex+"----"+BleByteUtil.parseByte2HexStr(cmd));
         if (null == cmd || cmd.length == 0) {
-            clearImageMsg();
+            clearFileMsg();
             return false;
         }
-        listenSendImageMsg(imageMsgIndex, cmd);
-
+        listenSendFileMsg(fileMsgIndex, cmd);
         return true;
     }
 
 
-    public synchronized void removeImageMsg(String kStr) {
-        imageMsgMq.remove(kStr);
+    public synchronized void removeFileMsg(String kStr) {
+        fileMsgMq.remove(kStr);
 //       LG.i("kankanshujuqingkongmei:"+msgMq.size());
     }
 
