@@ -119,8 +119,9 @@ public class BluetoothGattService extends BaseService {
             if(isDisConnectReinit){
                 isDisConnectReinit=false;
                 bleEventObserver.havePermissionInitBle();
-                Log.w(tag,"BluetoothAdapter  initialized  11155----111144");
+                Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:0001");
             }else {
+                Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:0002");
                 bleEventObserver. startSearchBle();
             }
             autoConnectDevice();

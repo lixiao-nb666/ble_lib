@@ -12,6 +12,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 
+import com.newbee.ble_lib.manager.child.BleConnectManager;
 import com.newbee.ble_lib.manager.child.BlueToothGattManager;
 import com.newbee.ble_lib.util.BleCheckUtil;
 import com.newbee.ble_lib.util.BleConnectStatuUtil;
@@ -42,6 +43,7 @@ public class BleStatuBroadcastReceiver extends BroadcastReceiver {
             BleConnectStatuUtil.getInstance().checkDisconnectedDevice(deviceName,address);
         }else if(action.equals(BluetoothDevice.ACTION_FOUND)){
             BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
+            Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:42---"+device.getName());
             BleCheckUtil.checkTheBleCanUse(device);
         }
 
@@ -57,6 +59,8 @@ public class BleStatuBroadcastReceiver extends BroadcastReceiver {
             BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.STATE_ON);
         }else if(bluetoothAdapterStatu==BluetoothAdapter.STATE_OFF){
             BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.STATE_OFF);
+            Log.i("ble_is_open","ble_is_open_11111:to open ble");
+            BleConnectManager.getInstance().openBluetooth();
         }
     }
 }

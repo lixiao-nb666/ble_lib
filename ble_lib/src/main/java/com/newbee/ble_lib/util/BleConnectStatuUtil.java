@@ -43,7 +43,7 @@ public class BleConnectStatuUtil {
     }
 
 
-    public boolean checkCanUseOldDeviceAdress(){
+    public boolean checkCanUseOldDeviceAdress(boolean canNotScanData){
         if(disConnectTime==0){
             //因为是第一次，直接返回
             return false;
@@ -53,10 +53,6 @@ public class BleConnectStatuUtil {
             //如果连接状态，直接返回不行
             return false;
         }
-        if(System.currentTimeMillis()-disConnectTime>= BleManagerConfig.CONNECT_OLD_HUD_TIME){
-            //超出有效连接时间内
-            return false;
-        }
         if(null==BleConnectStatuUtil.getInstance().getNowUseBleDevice()){
             //数据为空，也不行
             return false;
@@ -64,6 +60,15 @@ public class BleConnectStatuUtil {
         if(TextUtils.isEmpty(BleConnectStatuUtil.getInstance().getNowUseBleDevice().getAdress())){
             return false;
         }
+        if(canNotScanData){
+            return true;
+        }
+
+        if(System.currentTimeMillis()-disConnectTime>= BleManagerConfig.CONNECT_OLD_HUD_TIME){
+            //超出有效连接时间内
+            return false;
+        }
+
 
 
         return true;

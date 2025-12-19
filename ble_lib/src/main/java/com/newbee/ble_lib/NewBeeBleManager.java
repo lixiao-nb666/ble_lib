@@ -84,8 +84,16 @@ public class NewBeeBleManager {
     }
 
 
+    private boolean nowPageIsShow;
+    public void setPageAllIsShow(boolean nowPageIsShow){
+        this.nowPageIsShow=nowPageIsShow;
+    }
 
-//    private Notification notification;
+    public boolean isNowPageIsShow() {
+        return nowPageIsShow;
+    }
+
+    //    private Notification notification;
 //
 //    public void setNotification(Notification notification){
 //        this.notification=notification;

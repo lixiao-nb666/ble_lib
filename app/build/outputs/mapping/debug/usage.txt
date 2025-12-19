@@ -5836,6 +5836,10 @@ com.google.gson.stream.MalformedJsonException:
     public void <init>(java.lang.String,java.lang.Throwable)
     public void <init>(java.lang.Throwable)
 com.newbee.ble_lib.BuildConfig
+com.newbee.ble_lib.NewBeeBleManager:
+    private boolean nowPageIsShow
+    public boolean isNowPageIsShow()
+    public void setPageAllIsShow(boolean)
 com.newbee.ble_lib.R
 com.newbee.ble_lib.base.BaseServiceDao:
     public com.newbee.ble_lib.base.BaseService getService()
@@ -5881,7 +5885,7 @@ com.newbee.ble_lib.service.BluetoothGattService$5:
     public void sendBytesIndexCmd(int,byte[])
     public void sendFile(com.nrmyw.ble_event_lib.bean.BleSendFileInfoBean)
 com.newbee.ble_lib.service.BluetoothGattService:
-    static synthetic java.lang.String access$2200(com.newbee.ble_lib.service.BluetoothGattService)
+    static synthetic java.lang.String access$2100(com.newbee.ble_lib.service.BluetoothGattService)
 com.newbee.ble_lib.service.event.BleDelayEventSubject
 com.newbee.ble_lib.util.AbImageUtil$OnImageUtilsListener
 com.newbee.ble_lib.util.AbImageUtil:

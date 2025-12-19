@@ -226,6 +226,7 @@ SupportMenuInflater
 TaskStackBuilder
 anim
 getHorizontallyScrolling
+ble_is_open_11111
 Spinner
 androidx.savedstate.Restarter
 ICON_FLICKER
@@ -263,7 +264,6 @@ REPLACE
 suggest_intent_query
 F_Y
 search_suggest_query
-tryToConnectOldDevice111144
 tbt160
 NAME
 FragmentManager
@@ -329,10 +329,13 @@ tbt119
 tbt123
 tbt124
 item
+tryToConnectOldDevice2222:0005
 android.bluetooth.adapter.action.STAT...
 tbt120
 tbt121
+tryToConnectOldDevice2222:0002
 CheckedTextView
+tryToConnectOldDevice2222:0001
 tryToConnectOldDevice111100
 LF_RF_Y_LF
 robolectric
@@ -365,6 +368,7 @@ tbt139
 F_LT_N
 END_DOCUMENT
 tbt142
+ble_is_open
 F_LT_Y
 tbt140
 2611
@@ -388,6 +392,7 @@ WrongConstant
 tbt75
 1300
 RETRUN_IMAGE
+ble_is_open_11111:close
 MULTIPLY
 res/
 QUERY_DEVICE_SOUND_STATU
@@ -779,6 +784,7 @@ asyncTraceBegin
 android.permission.ACCESS_COARSE_LOCA...
 1410
 MultiAutoCompleteTextView
+tryToConnectOldDevice2222:0
 tag
 action_msg
 R_N
@@ -812,11 +818,13 @@ DiscouragedPrivateApi
 ResourcesFlusher
 numb_3031
 DEF
+tryToConnectOldDevice2222:2
 PowerStateService
 0x%08x
 appcompat_skip_skip
 ON_STOP
 BEGIN_ARRAY
+ble_is_open_11111:open
 HIGH_N
 fragment
 bluetooth
