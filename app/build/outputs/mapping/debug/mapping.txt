@@ -3,8 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: da077cc
-# pg_map_hash: SHA-256 da077ccf85bd2d609c6035b8b1fd2ee54862ecc75c719f9097d06139a344394f
+# pg_map_id: fc55c8f
+# pg_map_hash: SHA-256 fc55c8f1f4e4a1b52f3305bf81c032cf311901a7392d7177f436c2161385fbe6
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -6464,14 +6464,14 @@ com.newbee.ble_lib.manager.child.BleConnectManager -> com.newbee.ble_lib.manager
     42:131:void <init>() -> <init>
     106:109:boolean bleIsOpen() -> bleIsOpen
     56:67:void close() -> close
-    204:220:boolean connect(java.lang.String) -> connect
-    227:229:void disconnect() -> disconnect
+    206:222:boolean connect(java.lang.String) -> connect
+    229:231:void disconnect() -> disconnect
     45:52:com.newbee.ble_lib.manager.child.BleConnectManager getInstance() -> getInstance
     72:102:void havePermissionInitBle(android.content.Context,android.content.pm.PackageManager) -> havePermissionInitBle
     115:120:void openBluetooth() -> openBluetooth
-    156:174:void startSearchBLE() -> startSearchBLE
-    177:181:void stopScan() -> stopScan
-    190:198:void tryToConnectOldDevice() -> tryToConnectOldDevice
+    156:176:void startSearchBLE() -> startSearchBLE
+    179:183:void stopScan() -> stopScan
+    192:200:void tryToConnectOldDevice() -> tryToConnectOldDevice
 com.newbee.ble_lib.manager.child.BleConnectManager$1 -> com.newbee.ble_lib.manager.child.BleConnectManager$1:
     131:131:void <init>(com.newbee.ble_lib.manager.child.BleConnectManager) -> <init>
     139:141:void onBatchScanResults(java.util.List) -> onBatchScanResults
@@ -6578,30 +6578,34 @@ com.newbee.ble_lib.manager.file.send.SendFileManager$1 -> com.newbee.ble_lib.man
     159:161:void <init>(com.newbee.ble_lib.manager.file.send.SendFileManager) -> <init>
     165:173:void getRetrunByte(byte[]) -> getRetrunByte
 com.newbee.ble_lib.manager.file.send.SendOtaManager -> com.newbee.ble_lib.manager.file.send.SendOtaManager:
-    24:182:void <init>(com.nrmyw.ble_event_lib.bean.BleSendOtaInfoBean) -> <init>
-    18:18:long access$000(com.newbee.ble_lib.manager.file.send.SendOtaManager) -> access$000
-    18:18:void access$100(com.newbee.ble_lib.manager.file.send.SendOtaManager,int,byte[]) -> access$100
-    18:18:com.newbee.ble_lib.manager.file.BlueToothGattGetFileDataThread$Listen access$200(com.newbee.ble_lib.manager.file.send.SendOtaManager) -> access$200
-    18:18:java.lang.String access$300(com.newbee.ble_lib.manager.file.send.SendOtaManager) -> access$300
-    18:18:java.lang.String access$302(com.newbee.ble_lib.manager.file.send.SendOtaManager,java.lang.String) -> access$302
-    18:18:com.newbee.ble_lib.manager.child.BlueToothSendStatuManager$RetrunByteListen access$400(com.newbee.ble_lib.manager.file.send.SendOtaManager) -> access$400
-    18:18:void access$500(com.newbee.ble_lib.manager.file.send.SendOtaManager,byte[]) -> access$500
-    43:43:void clear() -> clear
-    122:126:void over(int,byte[]) -> over
-    46:73:void run() -> run
-    131:137:void sendFileEnd(int,byte[]) -> sendFileEnd
-    83:87:void sendFileStart(int,byte[]) -> sendFileStart
-    31:33:void setListen(com.newbee.ble_lib.manager.file.BlueToothGattGetFileDataThread$Listen) -> setListen
-    90:118:void splitPacketForMtuByte(byte[]) -> splitPacketForMtuByte
+    27:194:void <init>(com.nrmyw.ble_event_lib.bean.BleSendOtaInfoBean) -> <init>
+    21:21:long access$000(com.newbee.ble_lib.manager.file.send.SendOtaManager) -> access$000
+    21:21:int access$102(com.newbee.ble_lib.manager.file.send.SendOtaManager,int) -> access$102
+    21:21:void access$200(com.newbee.ble_lib.manager.file.send.SendOtaManager) -> access$200
+    21:21:void access$300(com.newbee.ble_lib.manager.file.send.SendOtaManager,int,byte[]) -> access$300
+    21:21:com.newbee.ble_lib.manager.file.BlueToothGattGetFileDataThread$Listen access$400(com.newbee.ble_lib.manager.file.send.SendOtaManager) -> access$400
+    21:21:java.lang.String access$500(com.newbee.ble_lib.manager.file.send.SendOtaManager) -> access$500
+    21:21:java.lang.String access$502(com.newbee.ble_lib.manager.file.send.SendOtaManager,java.lang.String) -> access$502
+    21:21:int access$600(com.newbee.ble_lib.manager.file.send.SendOtaManager) -> access$600
+    21:21:com.newbee.ble_lib.manager.child.BlueToothSendStatuManager$RetrunByteListen access$700(com.newbee.ble_lib.manager.file.send.SendOtaManager) -> access$700
+    21:21:void access$800(com.newbee.ble_lib.manager.file.send.SendOtaManager,byte[]) -> access$800
+    47:47:void clear() -> clear
+    132:138:void over(int,byte[]) -> over
+    50:80:void run() -> run
+    142:148:void sendFileEnd(int,byte[]) -> sendFileEnd
+    90:96:void sendFileStart(int,byte[]) -> sendFileStart
+    240:241:void sendProgressEvent() -> sendProgressEvent
+    35:37:void setListen(com.newbee.ble_lib.manager.file.BlueToothGattGetFileDataThread$Listen) -> setListen
+    99:129:void splitPacketForMtuByte(byte[]) -> splitPacketForMtuByte
 com.newbee.ble_lib.manager.file.send.SendOtaManager$1 -> com.newbee.ble_lib.manager.file.send.SendOtaManager$1:
-    140:142:void <init>(com.newbee.ble_lib.manager.file.send.SendOtaManager) -> <init>
-    146:179:void getRetrunByte(byte[]) -> getRetrunByte
+    151:153:void <init>(com.newbee.ble_lib.manager.file.send.SendOtaManager) -> <init>
+    156:191:void getRetrunByte(byte[]) -> getRetrunByte
 com.newbee.ble_lib.manager.file.send.SendOtaManager$2 -> com.newbee.ble_lib.manager.file.send.SendOtaManager$2:
-    182:182:void <init>(com.newbee.ble_lib.manager.file.send.SendOtaManager) -> <init>
-    211:220:void sendFileOver(long,long) -> sendFileOver
-    187:205:void sendMsgOver(byte[],long,long) -> sendMsgOver
+    194:194:void <init>(com.newbee.ble_lib.manager.file.send.SendOtaManager) -> <init>
+    228:236:void sendFileOver(long,long) -> sendFileOver
+    200:224:void sendMsgOver(byte[],long,long) -> sendMsgOver
 com.newbee.ble_lib.manager.file.send.SendOtaManager$3 -> com.newbee.ble_lib.manager.file.send.SendOtaManager$3:
-    152:152:void <clinit>() -> <clinit>
+    162:162:void <clinit>() -> <clinit>
 com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager -> com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager:
     18:28:void <init>() -> <init>
     61:65:void addMsg(byte[]) -> addMsg

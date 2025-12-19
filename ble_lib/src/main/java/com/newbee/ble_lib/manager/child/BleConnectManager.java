@@ -56,6 +56,10 @@ public class BleConnectManager {
         if(null!=context){
             context=null;
         }
+        if(null!=bluetoothLeScanner){
+            bluetoothAdapter=null;
+        }
+
         if(null!=bluetoothAdapter){
             bluetoothAdapter=null;
         }
@@ -144,7 +148,7 @@ public class BleConnectManager {
         public void onScanResult(int callbackType, ScanResult result) {
             super.onScanResult(callbackType, result);
             if(BleCheckUtil.checkTheBleCanUse(result)){
-                stopScan();
+//                stopScan();
             }
 
         }
@@ -164,11 +168,13 @@ public class BleConnectManager {
 //        }
 //        lastSearchBleTime=nowTime;
 
-//        bluetoothAdapter.startDiscovery();
+//
         if(null==bluetoothLeScanner){
             return;
         }
         bluetoothLeScanner.startScan(scanCallback);
+//        bluetoothAdapter.startDiscovery();
+
         BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.SEARCHING);
         tryToConnectOldDevice();
     }

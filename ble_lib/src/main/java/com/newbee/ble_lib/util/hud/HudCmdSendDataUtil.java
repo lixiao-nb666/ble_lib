@@ -105,7 +105,6 @@ public class HudCmdSendDataUtil {
         bytes[3]= (byte)0x05;
         bytes[4] = (byte)0xA0;
         return bytes;
-
     }
 
 

@@ -29,7 +29,6 @@ numb_9
 1210
 androidx.view.accessibility.Accessibi...
 android.speech.extra.RESULTS_PENDINGI...
-otakankantupian
 AM
 SEND_INDEX_OK
 0
