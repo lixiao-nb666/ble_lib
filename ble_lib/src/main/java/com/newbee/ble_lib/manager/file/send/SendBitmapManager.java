@@ -56,11 +56,12 @@ public class SendBitmapManager implements BlueToothGattSendFile {
 //            }
         isStart=true;
         Log.i("kankantupian","kankantubianzenmhuishi:1111--"+bleSendImageInfoBean.getBitmap().getAllocationByteCount()+"--"+bleSendImageInfoBean.getBitmap().getWidth()+"*"+bleSendImageInfoBean.getBitmap().getHeight());
-        if(bleSendImageInfoBean.getBitmapQualityType().getQualityV()==100&&bleSendImageInfoBean.getBitmapQualityType().getZoomScaling()==1f){
-            newBitMap =  bleSendImageInfoBean.getBitmap();
-        }else {
-            newBitMap= BleSendImageUtil.autoScaleBitmap(bleSendImageInfoBean.getBitmap(),bleSendImageInfoBean.getMaxW(),bleSendImageInfoBean.getMaxH(),bleSendImageInfoBean.getBitmapQualityType().getZoomScaling());
-        }
+//        if(bleSendImageInfoBean.getBitmapQualityType().getQualityV()==100&&bleSendImageInfoBean.getBitmapQualityType().getZoomScaling()==1f){
+//            newBitMap =  bleSendImageInfoBean.getBitmap();
+//        }else {
+//
+//        }
+        newBitMap= BleSendImageUtil.autoScaleBitmap(bleSendImageInfoBean.getBitmap(),bleSendImageInfoBean.getMaxW(),bleSendImageInfoBean.getMaxH(),bleSendImageInfoBean.getBitmapQualityType().getZoomScaling());
         if(null==newBitMap){
             listen.sendOver(0);
             return;

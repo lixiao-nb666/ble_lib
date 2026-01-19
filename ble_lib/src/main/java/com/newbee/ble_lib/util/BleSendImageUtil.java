@@ -38,7 +38,6 @@ public class BleSendImageUtil {
         float wmW=bm.getWidth();
         float wmH=bm.getHeight();
         if(maxW>=wmW&&maxH>=wmH){
-            Log.i("kankantupian","kankantubianzenmhuishi:1111--12345---"+bm.getByteCount());
             return bm;
         }
         float needScaleX =maxW/wmW;

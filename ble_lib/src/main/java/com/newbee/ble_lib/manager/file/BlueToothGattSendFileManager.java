@@ -3,6 +3,7 @@ package com.newbee.ble_lib.manager.file;
 import android.util.Log;
 
 
+import com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager;
 import com.nrmyw.ble_event_lib.bean.BleSendFileInfoBean;
 import com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean;
 import com.nrmyw.ble_event_lib.bean.BleSendOtaInfoBean;
@@ -95,6 +96,14 @@ public class BlueToothGattSendFileManager {
         if(null==getFileDataThread){
             getFileDataThread=new BlueToothGattGetFileDataThread(bleSendImageInfoBean,threadListen);
             getFileDataThread.start();
+        }else {
+            if(bleSendImageInfoBean.getType()==0){
+                getFileDataThread.interrupt();
+                getFileDataThread=null;
+                BlueToothGattSendMsgManager.getInstance().clearIndexMsg();
+                getFileDataThread=new BlueToothGattGetFileDataThread(bleSendImageInfoBean,threadListen);
+                getFileDataThread.start();
+            }
         }
 
 
