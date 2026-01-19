@@ -4,6 +4,7 @@ package com.newbee.ble_lib.util;
 import android.graphics.Bitmap;
 import android.util.Log;
 
+import com.newbee.ble_lib.config.BleManagerConfig;
 import com.nrmyw.ble_event_lib.config.NewBeeBleConfig;
 import com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType;
 
@@ -24,8 +25,9 @@ public class BleSendImageUtil {
         }else if(qualityV>100){
             qualityV=60;
         }
+        int maxKb=BleManagerConfig.useBleSendBitmapQualityTypeGetMaxKb(qualityType);
 
-        return AbImageUtil.bitmap2Bytes(bm, Bitmap.CompressFormat.JPEG,true,qualityV);
+        return AbImageUtil.bitmap2Bytes(bm, Bitmap.CompressFormat.JPEG,true,maxKb,qualityV);
     }
 
 

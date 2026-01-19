@@ -3,8 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 97a2bef
-# pg_map_hash: SHA-256 97a2befae12253afadc518149d88063395ae162efd30004e6060636d2535fbd7
+# pg_map_id: bdd58ae
+# pg_map_hash: SHA-256 bdd58aeecb0d7f2aef75b18f4f2cf570ea0fef1a27f7a48fc06df3e86313483c
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -6459,7 +6459,10 @@ com.newbee.ble_lib.base.BaseServiceDao$1 -> com.newbee.ble_lib.base.BaseServiceD
     31:34:void onServiceConnected(android.content.ComponentName,android.os.IBinder) -> onServiceConnected
     38:39:void onServiceDisconnected(android.content.ComponentName) -> onServiceDisconnected
 com.newbee.ble_lib.config.BleManagerConfig -> com.newbee.ble_lib.config.BleManagerConfig:
-    7:35:void <clinit>() -> <clinit>
+    9:40:void <clinit>() -> <clinit>
+    44:51:int useBleSendBitmapQualityTypeGetMaxKb(com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType) -> useBleSendBitmapQualityTypeGetMaxKb
+com.newbee.ble_lib.config.BleManagerConfig$1 -> com.newbee.ble_lib.config.BleManagerConfig$1:
+    44:44:void <clinit>() -> <clinit>
 com.newbee.ble_lib.manager.child.BleConnectManager -> com.newbee.ble_lib.manager.child.BleConnectManager:
     42:138:void <init>() -> <init>
     34:34:boolean access$000(com.newbee.ble_lib.manager.child.BleConnectManager) -> access$000
@@ -6541,13 +6544,14 @@ com.newbee.ble_lib.manager.file.BlueToothGattSendFileManager -> com.newbee.ble_l
     11:11:com.newbee.ble_lib.manager.file.BlueToothGattGetFileDataThread access$000(com.newbee.ble_lib.manager.file.BlueToothGattSendFileManager) -> access$000
     11:11:com.newbee.ble_lib.manager.file.BlueToothGattGetFileDataThread access$002(com.newbee.ble_lib.manager.file.BlueToothGattSendFileManager,com.newbee.ble_lib.manager.file.BlueToothGattGetFileDataThread) -> access$002
     38:45:com.newbee.ble_lib.manager.file.BlueToothGattSendFileManager getInstance() -> getInstance
-    96:124:void sendBitMap(com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean) -> sendBitMap
-    78:84:void sendFile(com.nrmyw.ble_event_lib.bean.BleSendFileInfoBean) -> sendFile
-    87:93:void sendOta(com.nrmyw.ble_event_lib.bean.BleSendOtaInfoBean) -> sendOta
+    95:123:void sendBitMap(com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean) -> sendBitMap
+    77:83:void sendFile(com.nrmyw.ble_event_lib.bean.BleSendFileInfoBean) -> sendFile
+    86:92:void sendOta(com.nrmyw.ble_event_lib.bean.BleSendOtaInfoBean) -> sendOta
 com.newbee.ble_lib.manager.file.BlueToothGattSendFileManager$1 -> com.newbee.ble_lib.manager.file.BlueToothGattSendFileManager$1:
     14:14:void <init>(com.newbee.ble_lib.manager.file.BlueToothGattSendFileManager) -> <init>
     17:24:void sendOver(long) -> sendOver
 com.newbee.ble_lib.manager.file.send.CheckRetrunByteAndToDoType -> com.newbee.ble_lib.manager.file.send.CheckRetrunByteAndToDoType:
+    6:6:com.newbee.ble_lib.manager.file.send.CheckRetrunByteAndToDoType[] $values() -> $values
     6:12:void <clinit>() -> <clinit>
     16:18:void <init>(java.lang.String,int) -> <init>
     19:22:void <init>(java.lang.String,int,byte[]) -> <init>
@@ -6555,18 +6559,18 @@ com.newbee.ble_lib.manager.file.send.CheckRetrunByteAndToDoType -> com.newbee.bl
     6:6:com.newbee.ble_lib.manager.file.send.CheckRetrunByteAndToDoType valueOf(java.lang.String) -> valueOf
     6:6:com.newbee.ble_lib.manager.file.send.CheckRetrunByteAndToDoType[] values() -> values
 com.newbee.ble_lib.manager.file.send.SendBitmapManager -> com.newbee.ble_lib.manager.file.send.SendBitmapManager:
-    27:107:void <init>(com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean) -> <init>
-    140:148:void clear() -> clear
-    95:102:void over() -> over
+    27:105:void <init>(com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean) -> <init>
+    138:146:void clear() -> clear
+    95:100:void over() -> over
     46:91:void run() -> run
-    173:187:void sendImageEnd(long) -> sendImageEnd
-    160:170:void sendImageStart() -> sendImageStart
-    129:131:void setListen(com.newbee.ble_lib.manager.file.BlueToothGattGetFileDataThread$Listen) -> setListen
-    219:245:void splitPacketForMtuByte(byte[]) -> splitPacketForMtuByte
+    171:184:void sendImageEnd(long) -> sendImageEnd
+    158:168:void sendImageStart() -> sendImageStart
+    127:129:void setListen(com.newbee.ble_lib.manager.file.BlueToothGattGetFileDataThread$Listen) -> setListen
+    216:242:void splitPacketForMtuByte(byte[]) -> splitPacketForMtuByte
 com.newbee.ble_lib.manager.file.send.SendBitmapManager$1 -> com.newbee.ble_lib.manager.file.send.SendBitmapManager$1:
-    107:107:void <init>(com.newbee.ble_lib.manager.file.send.SendBitmapManager) -> <init>
-    116:124:void sendFileOver(long,long) -> sendFileOver
-    112:112:void sendMsgOver(byte[],long,long) -> sendMsgOver
+    105:105:void <init>(com.newbee.ble_lib.manager.file.send.SendBitmapManager) -> <init>
+    114:122:void sendFileOver(long,long) -> sendFileOver
+    110:110:void sendMsgOver(byte[],long,long) -> sendMsgOver
 com.newbee.ble_lib.manager.file.send.SendFileManager -> com.newbee.ble_lib.manager.file.send.SendFileManager:
     30:159:void <init>(com.nrmyw.ble_event_lib.bean.BleSendFileInfoBean) -> <init>
     49:49:void clear() -> clear
@@ -6628,14 +6632,15 @@ com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager -> com.newbee.ble_lib.man
 com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager -> com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager:
     15:17:void <init>() -> <init>
     36:37:void clear() -> clear
+    40:41:void clearIndexMsg() -> clearIndexMsg
     31:33:void close() -> close
     20:27:com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager getInstance() -> getInstance
-    65:66:void readySendFile() -> readySendFile
-    52:55:void sendMsgByCmd(byte[]) -> sendMsgByCmd
-    58:61:void sendMsgByFile(int,byte[]) -> sendMsgByFile
-    69:70:void setFileMsgNum(int) -> setFileMsgNum
-    46:48:void setFileNowReSend() -> setFileNowReSend
-    41:42:void setNowCanSend() -> setNowCanSend
+    69:70:void readySendFile() -> readySendFile
+    56:59:void sendMsgByCmd(byte[]) -> sendMsgByCmd
+    62:65:void sendMsgByFile(int,byte[]) -> sendMsgByFile
+    73:74:void setFileMsgNum(int) -> setFileMsgNum
+    50:52:void setFileNowReSend() -> setFileNowReSend
+    45:46:void setNowCanSend() -> setNowCanSend
 com.newbee.ble_lib.receiver.BleStatuBroadcastReceiver -> com.newbee.ble_lib.receiver.BleStatuBroadcastReceiver:
     26:27:void <init>() -> <init>
     31:53:void onReceive(android.content.Context,android.content.Intent) -> onReceive
@@ -6646,7 +6651,7 @@ com.newbee.ble_lib.receiver.BleStatuBroadcastReceiverDao -> com.newbee.ble_lib.r
     16:23:com.newbee.ble_lib.receiver.BleStatuBroadcastReceiverDao getInstance() -> getInstance
     28:35:void init(android.content.Context) -> init
 com.newbee.ble_lib.service.BluetoothGattService -> com.newbee.ble_lib.service.BluetoothGattService:
-    37:323:void <init>() -> <init>
+    37:344:void <init>() -> <init>
     37:37:java.lang.String access$000(com.newbee.ble_lib.service.BluetoothGattService) -> access$000
     37:37:void access$100(com.newbee.ble_lib.service.BluetoothGattService) -> access$100
     37:37:void access$1000(com.newbee.ble_lib.service.BluetoothGattService) -> access$1000
@@ -6668,40 +6673,40 @@ com.newbee.ble_lib.service.BluetoothGattService -> com.newbee.ble_lib.service.Bl
     37:37:java.lang.String access$700(com.newbee.ble_lib.service.BluetoothGattService) -> access$700
     37:37:java.lang.String access$800(com.newbee.ble_lib.service.BluetoothGattService) -> access$800
     37:37:com.nrmyw.ble_event_lib.send.BleEventObserver access$900(com.newbee.ble_lib.service.BluetoothGattService) -> access$900
-    133:136:void autoConnectDevice() -> autoConnectDevice
-    140:148:void autoConnectDeviceNow() -> autoConnectDeviceNow
-    156:158:void cancelAutoConnect() -> cancelAutoConnect
-    247:253:void close() -> close
-    213:217:void init() -> init
-    150:153:void nowConnectIngWait() -> nowConnectIngWait
-    170:175:void nowIsDisConnect() -> nowIsDisConnect
-    95:100:void selectDelayTypeToDo(com.newbee.ble_lib.service.event.BleDelayType) -> selectDelayTypeToDo
-    224:224:void start(android.content.Intent,int,int) -> start
+    139:142:void autoConnectDevice() -> autoConnectDevice
+    146:154:void autoConnectDeviceNow() -> autoConnectDeviceNow
+    162:164:void cancelAutoConnect() -> cancelAutoConnect
+    253:259:void close() -> close
+    219:223:void init() -> init
+    156:159:void nowConnectIngWait() -> nowConnectIngWait
+    176:181:void nowIsDisConnect() -> nowIsDisConnect
+    101:106:void selectDelayTypeToDo(com.newbee.ble_lib.service.event.BleDelayType) -> selectDelayTypeToDo
+    230:230:void start(android.content.Intent,int,int) -> start
 com.newbee.ble_lib.service.BluetoothGattService$1 -> com.newbee.ble_lib.service.BluetoothGattService$1:
     41:41:void <init>(com.newbee.ble_lib.service.BluetoothGattService) -> <init>
-    44:91:void handleMessage(android.os.Message) -> handleMessage
+    44:97:void handleMessage(android.os.Message) -> handleMessage
 com.newbee.ble_lib.service.BluetoothGattService$2 -> com.newbee.ble_lib.service.BluetoothGattService$2:
-    102:102:void <init>(com.newbee.ble_lib.service.BluetoothGattService) -> <init>
-    105:128:void run() -> run
+    108:108:void <init>(com.newbee.ble_lib.service.BluetoothGattService) -> <init>
+    111:134:void run() -> run
 com.newbee.ble_lib.service.BluetoothGattService$3 -> com.newbee.ble_lib.service.BluetoothGattService$3:
-    161:161:void <init>(com.newbee.ble_lib.service.BluetoothGattService) -> <init>
-    164:166:void run() -> run
+    167:167:void <init>(com.newbee.ble_lib.service.BluetoothGattService) -> <init>
+    170:172:void run() -> run
 com.newbee.ble_lib.service.BluetoothGattService$4 -> com.newbee.ble_lib.service.BluetoothGattService$4:
-    178:178:void <init>(com.newbee.ble_lib.service.BluetoothGattService) -> <init>
-    181:207:void sendBleStatu(com.nrmyw.ble_event_lib.statu.BleStatu,java.lang.Object[]) -> sendBleStatu
+    184:184:void <init>(com.newbee.ble_lib.service.BluetoothGattService) -> <init>
+    187:213:void sendBleStatu(com.nrmyw.ble_event_lib.statu.BleStatu,java.lang.Object[]) -> sendBleStatu
 com.newbee.ble_lib.service.BluetoothGattService$5 -> com.newbee.ble_lib.service.BluetoothGattService$5:
-    257:257:void <init>(com.newbee.ble_lib.service.BluetoothGattService) -> <init>
-    275:276:void disconnectedBle() -> disconnectedBle
-    261:264:void havePermissionInitBle() -> havePermissionInitBle
-    280:285:void sendCmd(byte[]) -> sendCmd
-    298:302:void sendImage(com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean) -> sendImage
-    315:319:void sendOta(com.nrmyw.ble_event_lib.bean.BleSendOtaInfoBean) -> sendOta
-    268:271:void startSearchBle() -> startSearchBle
+    263:263:void <init>(com.newbee.ble_lib.service.BluetoothGattService) -> <init>
+    281:282:void disconnectedBle() -> disconnectedBle
+    267:270:void havePermissionInitBle() -> havePermissionInitBle
+    286:291:void sendCmd(byte[]) -> sendCmd
+    304:308:void sendImage(com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean) -> sendImage
+    321:325:void sendOta(com.nrmyw.ble_event_lib.bean.BleSendOtaInfoBean) -> sendOta
+    274:277:void startSearchBle() -> startSearchBle
 com.newbee.ble_lib.service.BluetoothGattService$6 -> com.newbee.ble_lib.service.BluetoothGattService$6:
-    323:323:void <init>(com.newbee.ble_lib.service.BluetoothGattService) -> <init>
-    326:331:void delayDo(com.newbee.ble_lib.service.event.BleDelayType,long) -> delayDo
+    344:344:void <init>(com.newbee.ble_lib.service.BluetoothGattService) -> <init>
+    347:352:void delayDo(com.newbee.ble_lib.service.event.BleDelayType,long) -> delayDo
 com.newbee.ble_lib.service.BluetoothGattService$7 -> com.newbee.ble_lib.service.BluetoothGattService$7:
-    48:182:void <clinit>() -> <clinit>
+    48:188:void <clinit>() -> <clinit>
 com.newbee.ble_lib.service.BluetoothGattServiceDao -> com.newbee.ble_lib.service.BluetoothGattServiceDao:
     16:30:void <init>(android.content.Context) -> <init>
     25:25:java.lang.Class getSsCls() -> getSsCls
@@ -6710,9 +6715,10 @@ com.newbee.ble_lib.service.BluetoothGattServiceDao$1 -> com.newbee.ble_lib.servi
     16:16:void <init>(com.newbee.ble_lib.service.BluetoothGattServiceDao) -> <init>
     20:20:void isStart() -> isStart
 com.newbee.ble_lib.service.BluetoothGattServiceMsgType -> com.newbee.ble_lib.service.BluetoothGattServiceMsgType:
-    5:16:void <clinit>() -> <clinit>
-    19:21:void <init>(java.lang.String,int,int) -> <init>
-    24:24:int getStrId() -> getStrId
+    5:5:com.newbee.ble_lib.service.BluetoothGattServiceMsgType[] $values() -> $values
+    5:19:void <clinit>() -> <clinit>
+    22:24:void <init>(java.lang.String,int,int) -> <init>
+    27:27:int getStrId() -> getStrId
     5:5:com.newbee.ble_lib.service.BluetoothGattServiceMsgType valueOf(java.lang.String) -> valueOf
     5:5:com.newbee.ble_lib.service.BluetoothGattServiceMsgType[] values() -> values
 com.newbee.ble_lib.service.event.BleDelayEventSubscriptionSubject -> com.newbee.ble_lib.service.event.BleDelayEventSubscriptionSubject:
@@ -6722,13 +6728,14 @@ com.newbee.ble_lib.service.event.BleDelayEventSubscriptionSubject -> com.newbee.
     38:39:void detach(com.newbee.ble_lib.service.event.BleDelayObserver) -> detach
     20:26:com.newbee.ble_lib.service.event.BleDelayEventSubscriptionSubject getInstance() -> getInstance
 com.newbee.ble_lib.service.event.BleDelayType -> com.newbee.ble_lib.service.event.BleDelayType:
+    3:3:com.newbee.ble_lib.service.event.BleDelayType[] $values() -> $values
     3:5:void <clinit>() -> <clinit>
     3:3:void <init>(java.lang.String,int) -> <init>
     3:3:com.newbee.ble_lib.service.event.BleDelayType valueOf(java.lang.String) -> valueOf
     3:3:com.newbee.ble_lib.service.event.BleDelayType[] values() -> values
 com.newbee.ble_lib.util.AbImageUtil -> com.newbee.ble_lib.util.AbImageUtil:
     41:41:void <clinit>() -> <clinit>
-    336:367:byte[] bitmap2Bytes(android.graphics.Bitmap,android.graphics.Bitmap$CompressFormat,boolean,int) -> bitmap2Bytes
+    336:367:byte[] bitmap2Bytes(android.graphics.Bitmap,android.graphics.Bitmap$CompressFormat,boolean,int,int) -> bitmap2Bytes
 com.newbee.ble_lib.util.BleCheckUtil -> com.newbee.ble_lib.util.BleCheckUtil:
     21:21:boolean checkPhoneCanUseBle(android.content.pm.PackageManager) -> checkPhoneCanUseBle
     25:35:boolean checkTheBleCanUse(android.bluetooth.le.ScanResult) -> checkTheBleCanUse
@@ -6748,8 +6755,8 @@ com.newbee.ble_lib.util.BleConnectStatuUtil -> com.newbee.ble_lib.util.BleConnec
 com.newbee.ble_lib.util.BleErrManager -> com.newbee.ble_lib.util.BleErrManager:
     9:10:void sendConnectErrMsg(java.lang.String) -> sendConnectErrMsg
 com.newbee.ble_lib.util.BleSendImageUtil -> com.newbee.ble_lib.util.BleSendImageUtil:
-    34:51:android.graphics.Bitmap autoScaleBitmap(android.graphics.Bitmap,int,int,float) -> autoScaleBitmap
-    18:28:byte[] bitmap2Bytes(android.graphics.Bitmap,com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType) -> bitmap2Bytes
+    36:53:android.graphics.Bitmap autoScaleBitmap(android.graphics.Bitmap,int,int,float) -> autoScaleBitmap
+    19:30:byte[] bitmap2Bytes(android.graphics.Bitmap,com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType) -> bitmap2Bytes
 com.newbee.ble_lib.util.CryptoUtils -> com.newbee.ble_lib.util.CryptoUtils:
     14:20:byte[] getMD5(byte[]) -> getMD5
 com.newbee.ble_lib.util.FileAndByteUtil -> com.newbee.ble_lib.util.FileAndByteUtil:
@@ -6772,6 +6779,7 @@ com.newbee.ble_tool.activity.MainActivity -> com.newbee.ble_tool.activity.MainAc
     54:54:android.widget.ImageView access$1100(com.newbee.ble_tool.activity.MainActivity) -> access$1100
     54:54:int access$1200(com.newbee.ble_tool.activity.MainActivity) -> access$1200
     54:54:int access$1208(com.newbee.ble_tool.activity.MainActivity) -> access$1208
+    54:54:android.widget.TextView access$1300(com.newbee.ble_tool.activity.MainActivity) -> access$1300
     54:54:boolean access$200(com.newbee.ble_tool.activity.MainActivity) -> access$200
     54:54:boolean access$202(com.newbee.ble_tool.activity.MainActivity,boolean) -> access$202
     54:54:boolean access$300(com.newbee.ble_tool.activity.MainActivity) -> access$300
@@ -6784,19 +6792,19 @@ com.newbee.ble_tool.activity.MainActivity -> com.newbee.ble_tool.activity.MainAc
     54:54:android.widget.TextView access$700(com.newbee.ble_tool.activity.MainActivity) -> access$700
     54:54:android.widget.TextView access$800(com.newbee.ble_tool.activity.MainActivity) -> access$800
     54:54:java.lang.String access$900(com.newbee.ble_tool.activity.MainActivity) -> access$900
-    387:387:void changeConfig() -> changeConfig
-    372:372:void closeActivity() -> closeActivity
-    329:329:int getViewLayoutRsId() -> getViewLayoutRsId
-    367:367:void initControl() -> initControl
-    362:362:void initData() -> initData
-    335:357:void initView() -> initView
-    411:415:void onDestroy() -> onDestroy
-    420:434:void requestPermission() -> requestPermission
+    390:390:void changeConfig() -> changeConfig
+    375:375:void closeActivity() -> closeActivity
+    330:330:int getViewLayoutRsId() -> getViewLayoutRsId
+    370:370:void initControl() -> initControl
+    365:365:void initData() -> initData
+    336:360:void initView() -> initView
+    414:418:void onDestroy() -> onDestroy
+    423:437:void requestPermission() -> requestPermission
     154:163:void sendBitmap(android.graphics.Bitmap) -> sendBitmap
     166:173:void sendProgress(android.graphics.Bitmap) -> sendProgress
-    393:406:void setViewByBleConnectStatu(boolean) -> setViewByBleConnectStatu
-    382:382:void viewIsPause() -> viewIsPause
-    376:377:void viewIsShow() -> viewIsShow
+    396:409:void setViewByBleConnectStatu(boolean) -> setViewByBleConnectStatu
+    385:385:void viewIsPause() -> viewIsPause
+    379:380:void viewIsShow() -> viewIsShow
 com.newbee.ble_tool.activity.MainActivity$$ExternalSyntheticApiModelOutline0 -> com.newbee.ble_tool.activity.MainActivity$$ExternalSyntheticApiModelOutline0:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
@@ -6813,7 +6821,7 @@ com.newbee.ble_tool.activity.MainActivity$3 -> com.newbee.ble_tool.activity.Main
     178:183:void run() -> run
 com.newbee.ble_tool.activity.MainActivity$4 -> com.newbee.ble_tool.activity.MainActivity$4:
     185:185:void <init>(com.newbee.ble_tool.activity.MainActivity) -> <init>
-    188:281:void handleMessage(android.os.Message) -> handleMessage
+    188:282:void handleMessage(android.os.Message) -> handleMessage
 com.newbee.ble_tool.activity.MainActivity$5 -> com.newbee.ble_tool.activity.MainActivity$5:
     207:207:void <clinit>() -> <clinit>
 com.newbee.ble_tool.app.MyApp -> com.newbee.ble_tool.app.MyApp:
@@ -6835,6 +6843,7 @@ com.newbee.ble_tool.app.MyApp$$ExternalSyntheticApiModelOutline1 -> com.newbee.b
 com.newbee.ble_tool.config.T800Config -> com.newbee.ble_tool.config.T800Config:
     11:17:void <clinit>() -> <clinit>
 com.newbee.ble_tool.type.HudDevice -> com.newbee.ble_tool.type.HudDevice:
+    9:9:com.newbee.ble_tool.type.HudDevice[] $values() -> $values
     9:14:void <clinit>() -> <clinit>
     24:28:void <init>(java.lang.String,int,java.lang.String,java.lang.String,com.newbee.ble_tool.type.HudDeviceSendDataType) -> <init>
     36:42:void <init>(java.lang.String,int,java.lang.String,java.lang.String,java.lang.String,int,com.newbee.ble_tool.type.HudDeviceSendDataType) -> <init>
@@ -6843,6 +6852,7 @@ com.newbee.ble_tool.type.HudDevice -> com.newbee.ble_tool.type.HudDevice:
     9:9:com.newbee.ble_tool.type.HudDevice valueOf(java.lang.String) -> valueOf
     9:9:com.newbee.ble_tool.type.HudDevice[] values() -> values
 com.newbee.ble_tool.type.HudDeviceSendDataType -> com.newbee.ble_tool.type.HudDeviceSendDataType:
+    3:3:com.newbee.ble_tool.type.HudDeviceSendDataType[] $values() -> $values
     3:5:void <clinit>() -> <clinit>
     3:3:void <init>(java.lang.String,int) -> <init>
     3:3:com.newbee.ble_tool.type.HudDeviceSendDataType valueOf(java.lang.String) -> valueOf

@@ -97,8 +97,6 @@ public class SendBitmapManager implements BlueToothGattSendFile {
         sendImageEnd(useTime);
         isStart=false;
         clear();
-
-
     }
 
 
@@ -176,13 +174,12 @@ public class SendBitmapManager implements BlueToothGattSendFile {
         endInfoBean.setH(h);
         endInfoBean.setSize(size);
         endInfoBean.setUseTime(useTime);
-        endInfoBean.setIndex(msgIndex);
+        endInfoBean.setIndex(msgIndex+1);//最后一帧的内容
         endInfoBean.setType(bleSendImageInfoBean.getType());
         endInfoBean.setName(bleSendImageInfoBean.getName());
-        BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.SEND_IMAGE_END,endInfoBean);
-        BlueToothGattSendMsgManager.getInstance().setFileMsgNum(msgIndex+1);
         BlueToothGattSendMsgManager.getInstance().sendMsgByFile(msgIndex, HudBleByteUtil.getImageAllByte(w,h,size,false,bleSendImageInfoBean.getType()));
-
+        BlueToothGattSendMsgManager.getInstance().setFileMsgNum(msgIndex+2);//总数
+        BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.SEND_IMAGE_END,endInfoBean);
 //        BleHintEventSubscriptionSubject.getInstance().sendImageEnd(w,h,size,useTime,index);
     }
 

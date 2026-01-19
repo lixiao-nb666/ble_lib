@@ -75,6 +75,14 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tv_progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:textSize="66px"
+            android:background="@color/black"/>
 
         <TextView
             android:id="@+id/tv_log"

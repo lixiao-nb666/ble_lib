@@ -49,7 +49,6 @@ public class BlueToothGattSendFileManager {
 
    public void close(){
        if(null!=getFileDataThread){
-
            getFileDataThread.interrupt();
            getFileDataThread=null;
        }

@@ -439,6 +439,8 @@
     <string name="abc_shareactionprovider_share_with_application">Share with <ns1:g example="Mail" id="application_name">%s</ns1:g></string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="app_name">Ble_Tool_Lib</string>
+    <string name="ble_clear_index_msg">Bluetooth：Clear index msg</string>
+    <string name="ble_clear_msg">Bluetooth：Clear msg</string>
     <string name="ble_statu_adapter_can_not_use">Bluetooth：The system adapter cannot be used</string>
     <string name="ble_statu_can_not_use">Bluetooth：The system is not usable</string>
     <string name="ble_statu_can_send_data">Bluetooth：Data transmission was successful. You can resend the data</string>

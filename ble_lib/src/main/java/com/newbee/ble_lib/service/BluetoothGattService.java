@@ -76,6 +76,12 @@ public class BluetoothGattService extends BaseService {
                     case SEND_CMD_BY_BYTES_INDEX:
                         BlueToothGattSendMsgManager.getInstance().sendMsgByFile(msg.arg1, (byte[]) msg.obj);
                         break;
+                    case CLEAR_MSG:
+                        BlueToothGattSendMsgManager.getInstance().clear();
+                        break;
+                    case CLEAR_INDEX_MSG:
+                        BlueToothGattSendMsgManager.getInstance().clearIndexMsg();
+                        break;
                     case DELAY:
                         BleDelayType bleDelayType=BleDelayType.values()[msg.arg1];
                         selectDelayTypeToDo(bleDelayType);
@@ -315,6 +321,21 @@ public class BluetoothGattService extends BaseService {
            Message msg=new Message();
            msg.what=BluetoothGattServiceMsgType.SEND_OTA.ordinal();
            msg.obj=sendOtaInfoBean;
+           handler.sendMessage(msg);
+       }
+
+       @Override
+       public void clearMsg() {
+           Message msg=new Message();
+           msg.what=BluetoothGattServiceMsgType.CLEAR_MSG.ordinal();
+
+           handler.sendMessage(msg);
+       }
+
+       @Override
+       public void clearIndexMsg() {
+           Message msg=new Message();
+           msg.what=BluetoothGattServiceMsgType.CLEAR_INDEX_MSG.ordinal();
            handler.sendMessage(msg);
        }
    };

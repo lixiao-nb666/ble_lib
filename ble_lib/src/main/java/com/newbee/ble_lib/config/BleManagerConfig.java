@@ -1,5 +1,7 @@
 package com.newbee.ble_lib.config;
 
+import com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType;
+
 public class BleManagerConfig {
 
     public static final int CAN_SEND_MTU=512;
@@ -8,7 +10,10 @@ public class BleManagerConfig {
 
     public static final long CONNECT_OLD_HUD_TIME=30*1000;
 
-    public static int SEND_IMAGE_MAX_KB=4;
+    private static int SEND_IMAGE_MAX_KB_1=8;
+    private static int SEND_IMAGE_MAX_KB_2=6;
+
+    private static int SEND_IMAGE_MAX_KB_3=4;
 
     public static byte CMD_TITLE_1=(byte) 0xA5;//T800固定要加的第一个字节
     public static byte CMD_TITLE_2=(byte) 0x5A;//T800固定要加的第二个字节
@@ -33,5 +38,18 @@ public class BleManagerConfig {
     public static byte CMD_ERR_NUMB=(byte)0xA5;
 
     public static byte CMD_CUCCESS=(byte)0xA6;
+
+
+    public static int useBleSendBitmapQualityTypeGetMaxKb(BleSendBitmapQualityType qualityType){
+        switch (qualityType){
+            case ULTRA_HIGH:
+                return BleManagerConfig.SEND_IMAGE_MAX_KB_1;
+            case HIGH:
+            case DEF:
+                return BleManagerConfig.SEND_IMAGE_MAX_KB_2;
+            default:
+                return BleManagerConfig.SEND_IMAGE_MAX_KB_3;
+        }
+    }
 
 }

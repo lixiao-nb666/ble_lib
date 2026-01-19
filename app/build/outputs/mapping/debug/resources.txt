@@ -12,6 +12,7 @@ Marking id:bt_send_test:2131165254 reachable: referenced from F:\asworkspace\hud
 Marking id:bt_send_test_image:2131165256 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
 Marking id:bt_send_test_progress:2131165257 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
 Marking id:bt_send_test_file:2131165255 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
+Marking id:tv_progress:2131165366 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
 Marking id:ivv:2131165291 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
 Marking id:tv_log:2131165364 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
 android.content.res.Resources#getIdentifier present: true
@@ -29,6 +30,7 @@ numb_9
 1210
 androidx.view.accessibility.Accessibi...
 android.speech.extra.RESULTS_PENDINGI...
+CLEAR_MSG
 AM
 SEND_INDEX_OK
 0
@@ -116,6 +118,7 @@ android:support:fragments
 SearchView
 START
 SATURATION
+CLEAR_INDEX_MSG
 setExclusiveCheckable
 R_RF_Y_RF
 ACTION_CONTEXT_CLICK
@@ -2122,6 +2125,7 @@ Marking id:tag_unhandled_key_listeners:2131165349 used because it matches string
 @id/tv_down_info : reachable=false
 @id/tv_log : reachable=true
 @id/tv_private : reachable=false
+@id/tv_progress : reachable=true
 @id/tv_show_update_info : reachable=false
 @id/tv_update_version_name : reachable=false
 @id/tv_user_private_body : reachable=false
@@ -2374,6 +2378,8 @@ Marking id:tag_unhandled_key_listeners:2131165349 used because it matches string
 @string/abc_shareactionprovider_share_with_application : reachable=false
 @string/abc_toolbar_collapse_description : reachable=false
 @string/app_name : reachable=true
+@string/ble_clear_index_msg : reachable=true
+@string/ble_clear_msg : reachable=true
 @string/ble_statu_adapter_can_not_use : reachable=true
 @string/ble_statu_can_not_use : reachable=true
 @string/ble_statu_can_send_data : reachable=true
@@ -4139,6 +4145,7 @@ The root reachable resources are:
  id:tv_ble:2131165361
  id:tv_ble_statu:2131165362
  id:tv_log:2131165364
+ id:tv_progress:2131165366
  layout:abc_action_bar_title_item:2131361792
  layout:abc_action_menu_item_layout:2131361794
  layout:abc_action_menu_layout:2131361795
@@ -4184,37 +4191,39 @@ The root reachable resources are:
  string:abc_prepend_shortcut_label:2131558417
  string:abc_searchview_description_search:2131558421
  string:app_name:2131558427
- string:ble_statu_adapter_can_not_use:2131558428
- string:ble_statu_can_not_use:2131558429
- string:ble_statu_can_send_data:2131558430
- string:ble_statu_connected:2131558431
- string:ble_statu_connecting:2131558432
- string:ble_statu_connecting_err:2131558433
- string:ble_statu_disconnected:2131558434
- string:ble_statu_found_ble_device:2131558435
- string:ble_statu_init:2131558436
- string:ble_statu_manager_can_not_use:2131558437
- string:ble_statu_none:2131558438
- string:ble_statu_opening:2131558439
- string:ble_statu_retrun_bytes:2131558440
- string:ble_statu_run_err:2131558441
- string:ble_statu_searching:2131558442
- string:ble_statu_send_image_data_end:2131558443
- string:ble_statu_send_image_end:2131558444
- string:ble_statu_send_image_start:2131558445
- string:ble_statu_send_ota_end:2131558446
- string:ble_statu_send_ota_err:2131558447
- string:ble_statu_send_ota_progress:2131558448
- string:ble_statu_send_ota_start:2131558449
- string:ble_statu_sending_data:2131558450
- string:ble_statu_state_off:2131558451
- string:ble_statu_state_on:2131558452
- string:ble_statu_user_disconnect:2131558453
- string:ble_statu_user_init:2131558454
- string:ble_statu_user_scan:2131558455
- string:ble_statu_user_send_cmd:2131558456
- string:ble_statu_user_send_image:2131558457
- string:ble_statu_user_send_image_cmd_index:2131558458
+ string:ble_clear_index_msg:2131558428
+ string:ble_clear_msg:2131558429
+ string:ble_statu_adapter_can_not_use:2131558430
+ string:ble_statu_can_not_use:2131558431
+ string:ble_statu_can_send_data:2131558432
+ string:ble_statu_connected:2131558433
+ string:ble_statu_connecting:2131558434
+ string:ble_statu_connecting_err:2131558435
+ string:ble_statu_disconnected:2131558436
+ string:ble_statu_found_ble_device:2131558437
+ string:ble_statu_init:2131558438
+ string:ble_statu_manager_can_not_use:2131558439
+ string:ble_statu_none:2131558440
+ string:ble_statu_opening:2131558441
+ string:ble_statu_retrun_bytes:2131558442
+ string:ble_statu_run_err:2131558443
+ string:ble_statu_searching:2131558444
+ string:ble_statu_send_image_data_end:2131558445
+ string:ble_statu_send_image_end:2131558446
+ string:ble_statu_send_image_start:2131558447
+ string:ble_statu_send_ota_end:2131558448
+ string:ble_statu_send_ota_err:2131558449
+ string:ble_statu_send_ota_progress:2131558450
+ string:ble_statu_send_ota_start:2131558451
+ string:ble_statu_sending_data:2131558452
+ string:ble_statu_state_off:2131558453
+ string:ble_statu_state_on:2131558454
+ string:ble_statu_user_disconnect:2131558455
+ string:ble_statu_user_init:2131558456
+ string:ble_statu_user_scan:2131558457
+ string:ble_statu_user_send_cmd:2131558458
+ string:ble_statu_user_send_image:2131558459
+ string:ble_statu_user_send_image_cmd_index:2131558460
  style:Animation_AppCompat_Tooltip:2131623940
  style:Theme_AppCompat_CompactMenu:2131624183
  style:Theme_AppCompat_Empty:2131624195

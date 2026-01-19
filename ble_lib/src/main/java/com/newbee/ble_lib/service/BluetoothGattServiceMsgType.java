@@ -13,6 +13,9 @@ public enum BluetoothGattServiceMsgType {
 
     SEND_OTA(com.nrmyw.ble_event_lib.R.string.ble_statu_user_send_image),
     SEND_CMD_BY_BYTES_INDEX(com.nrmyw.ble_event_lib.R.string.ble_statu_user_send_image_cmd_index),
+
+    CLEAR_INDEX_MSG(com.nrmyw.ble_event_lib.R.string.ble_clear_index_msg),
+    CLEAR_MSG(com.nrmyw.ble_event_lib.R.string.ble_clear_msg),
     DELAY(com.nrmyw.ble_event_lib.R.string.ble_statu_none),
     ;
     private int strId;

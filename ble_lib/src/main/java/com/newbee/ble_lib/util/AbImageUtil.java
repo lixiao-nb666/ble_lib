@@ -329,10 +329,10 @@ public class AbImageUtil {
      * @return byte[] 图片的byte[]
      */
     public static byte[] bitmap2Bytes(Bitmap bitmap, Bitmap.CompressFormat mCompressFormat, final boolean needRecycle) {
-        return bitmap2Bytes(bitmap,mCompressFormat,needRecycle,200);
+        return bitmap2Bytes(bitmap,mCompressFormat,needRecycle,4,200);
     }
 
-    public static byte[] bitmap2Bytes(Bitmap bitmap, Bitmap.CompressFormat mCompressFormat, final boolean needRecycle,int quality) {
+    public static byte[] bitmap2Bytes(Bitmap bitmap, Bitmap.CompressFormat mCompressFormat, final boolean needRecycle,int maxKB,int quality) {
         byte[] result = null;
         ByteArrayOutputStream output = null;
         try {
@@ -342,7 +342,7 @@ public class AbImageUtil {
             output = new ByteArrayOutputStream();
             bitmap.compress(mCompressFormat, quality, output);
 
-            while (output.toByteArray().length > BleManagerConfig.SEND_IMAGE_MAX_KB * 1024 && quality > 10) {
+            while (output.toByteArray().length > maxKB * 1024 && quality > 10) {
                 output.reset();
                 quality -= 5;
                 bitmap.compress(mCompressFormat, quality, output);

@@ -27,6 +27,8 @@
     <string msgid="8875138169939072951" name="abc_shareactionprovider_share_with">"分享对象"</string>
     <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"与<ns1:g id="APPLICATION_NAME">%s</ns1:g>分享"</string>
     <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"收起"</string>
+    <string name="ble_clear_index_msg">蓝牙：清空index消息指令</string>
+    <string name="ble_clear_msg">蓝牙：清空消息指令</string>
     <string name="ble_statu_adapter_can_not_use">蓝牙：系统适配器不能使用</string>
     <string name="ble_statu_can_not_use">蓝牙：系统不能使用</string>
     <string name="ble_statu_can_send_data">蓝牙：数据发送成功，可以重新发送数据</string>

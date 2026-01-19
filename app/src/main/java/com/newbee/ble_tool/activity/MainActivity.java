@@ -68,7 +68,7 @@ public class MainActivity extends BaseCompatActivity {
             handler.sendMessage(msg);
         }
     };
-    private TextView bleTV,bleStatuTV,logTV;
+    private TextView bleTV,bleStatuTV,logTV,progressTV;
     private Button initBT,searchBT,disconnectedBT,sendTestBT,sendImageTestBT,sendProgressBT,sendFileBT;
     private View.OnClickListener onClickListener=new View.OnClickListener() {
         @Override
@@ -252,12 +252,10 @@ public class MainActivity extends BaseCompatActivity {
                 case SEND_IMAGE_DATA_END:
                     long nowTime=System.currentTimeMillis();
                     Log.i("kankantupian","kankantubianzenmhuishi:1111333--8888---"+msg.obj.toString()+"---"+(nowTime-lastTime));
-
                     showToast("send image time :"+(nowTime-lastTime));
                     break;
                 case RETRUN_BYTES:
                     byte[] data= (byte[]) msg.obj;
-
                     Log.i("kankantupian","aishi1111111111:9333---888999000---"+ BleByteUtil.parseByte2HexStr(data));
                     logTV.append("\n"+index+"-"+BleByteUtil.parseByte2HexStr(data));
 //                    if(canOta){
@@ -276,7 +274,10 @@ public class MainActivity extends BaseCompatActivity {
                     index++;
 
                     break;
-
+                case SEND_OTA_PROGRESS:
+                    int progress= (int) msg.obj;
+                    progressTV.setText(progress+"%");
+                    break;
             }
         }
     };
@@ -341,6 +342,7 @@ public class MainActivity extends BaseCompatActivity {
         sendImageTestBT=findViewById(R.id.bt_send_test_image);
         sendProgressBT=findViewById(R.id.bt_send_test_progress);
         sendFileBT=findViewById(R.id.bt_send_test_file);
+        progressTV=findViewById(R.id.tv_progress);
         ivv=findViewById(R.id.ivv);
         logTV=findViewById(R.id.tv_log);
         initBT.setOnClickListener(onClickListener);
@@ -350,6 +352,7 @@ public class MainActivity extends BaseCompatActivity {
         sendImageTestBT.setOnClickListener(onClickListener);
         sendProgressBT.setOnClickListener(onClickListener);
         sendFileBT.setOnClickListener(onClickListener);
+
         setViewByBleConnectStatu(NewBeeBleManager.getInstance().isConnect());
         BleStatuEventSubscriptionSubject.getInstance().attach(bleStatuEventObserver);
 //        BleHintEventSubscriptionSubject.getInstance().attach(bleHintEventObserver);

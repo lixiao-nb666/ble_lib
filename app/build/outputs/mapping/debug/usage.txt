@@ -5882,6 +5882,8 @@ com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager:
     public void close()
     public synchronized void removeFileMsg(java.lang.String)
 com.newbee.ble_lib.service.BluetoothGattService$5:
+    public void clearIndexMsg()
+    public void clearMsg()
     public void sendBytesIndexCmd(int,byte[])
     public void sendFile(com.nrmyw.ble_event_lib.bean.BleSendFileInfoBean)
 com.newbee.ble_lib.service.BluetoothGattService:
@@ -6170,10 +6172,14 @@ com.nrmyw.ble_event_lib.config.NewBeeBleConfig:
     public void setServiceID(java.lang.String)
     public void setWriteID(java.lang.String)
 com.nrmyw.ble_event_lib.send.BleEventObserver:
+    public abstract void clearIndexMsg()
+    public abstract void clearMsg()
     public abstract void sendBytesIndexCmd(int,byte[])
     public abstract void sendFile(com.nrmyw.ble_event_lib.bean.BleSendFileInfoBean)
 com.nrmyw.ble_event_lib.send.BleEventSubject
 com.nrmyw.ble_event_lib.send.BleEventSubscriptionSubject:
+    public void clearIndexMsg()
+    public void clearMsg()
     public void disconnectedBle()
     public void havePermissionInitBle()
     public void sendBytesIndexCmd(int,byte[])

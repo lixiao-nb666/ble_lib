@@ -27,6 +27,8 @@
     <string msgid="8875138169939072951" name="abc_shareactionprovider_share_with">"공유 대상:"</string>
     <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"<ns1:g id="APPLICATION_NAME">%s</ns1:g>과(와) 공유"</string>
     <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"접기"</string>
+    <string name="ble_clear_index_msg">Bluetooth：Clear index msg</string>
+    <string name="ble_clear_msg">Bluetooth：Clear msg</string>
     <string name="ble_statu_adapter_can_not_use">Bluetooth：시스템 어댑터를 사용할 수 없습니다</string>
     <string name="ble_statu_can_not_use">Bluetooth：시스템이 사용할 수 없습니다</string>
     <string name="ble_statu_can_send_data">Bluetooth：블루투스 데이터 전송이 성공하였다，데이터 재발송이 가능하다</string>

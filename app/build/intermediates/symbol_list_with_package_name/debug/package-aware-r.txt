@@ -977,6 +977,7 @@ id tv_ble_statu
 id tv_down_info
 id tv_log
 id tv_private
+id tv_progress
 id tv_show_update_info
 id tv_update_version_name
 id tv_user_private_body
@@ -1087,6 +1088,8 @@ string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string app_name
+string ble_clear_index_msg
+string ble_clear_msg
 string ble_statu_adapter_can_not_use
 string ble_statu_can_not_use
 string ble_statu_can_send_data

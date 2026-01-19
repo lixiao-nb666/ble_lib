@@ -22,6 +22,7 @@ id ivv
 id tv_ble
 id tv_ble_statu
 id tv_log
+id tv_progress
 layout activity_lib_jpeg
 layout activity_main_test
 mipmap hg_test
