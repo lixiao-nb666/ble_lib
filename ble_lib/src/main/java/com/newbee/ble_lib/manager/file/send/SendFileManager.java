@@ -146,11 +146,8 @@ public class SendFileManager implements BlueToothGattSendFile {
     public void sendFileEnd(long useTime,int size,byte[] md5Bytes){
 
         byte[] cmdEnd= HudCmdSendDataUtil.getReadySendFile(size,md5Bytes,false);
-
         BlueToothGattSendMsgManager.getInstance().setFileMsgNum(msgIndex+1);
         BlueToothGattSendMsgManager.getInstance().sendMsgByFile(msgIndex, cmdEnd);
-
-
         Log.i("tag","kaishi1111111111:9333--"+(msgIndex+1)+"--"+(msgIndex+2)+"--"+cmdEnd.length+"---"+BleByteUtil.parseByte2HexStr(cmdEnd));
 //        BleHintEventSubscriptionSubject.getInstance().sendImageEnd(w,h,size,useTime,index);
     }

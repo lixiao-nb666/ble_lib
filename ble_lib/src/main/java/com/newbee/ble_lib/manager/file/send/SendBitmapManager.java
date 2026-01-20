@@ -179,7 +179,14 @@ public class SendBitmapManager implements BlueToothGattSendFile {
         endInfoBean.setType(bleSendImageInfoBean.getType());
         endInfoBean.setName(bleSendImageInfoBean.getName());
         BlueToothGattSendMsgManager.getInstance().sendMsgByFile(msgIndex, HudBleByteUtil.getImageAllByte(w,h,size,false,bleSendImageInfoBean.getType()));
-        BlueToothGattSendMsgManager.getInstance().setFileMsgNum(msgIndex+2);//总数
+        if(bleSendImageInfoBean.getType()==0){
+            //发送实景图，需要补一帧指令
+            BlueToothGattSendMsgManager.getInstance().setFileMsgNum(msgIndex+2);//总数
+        }else {
+            //别的不用的补指令，所以少1
+            BlueToothGattSendMsgManager.getInstance().setFileMsgNum(msgIndex+1);//总数
+        }
+
         BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.SEND_IMAGE_END,endInfoBean);
 //        BleHintEventSubscriptionSubject.getInstance().sendImageEnd(w,h,size,useTime,index);
     }
@@ -215,7 +222,6 @@ public class SendBitmapManager implements BlueToothGattSendFile {
     private   void splitPacketForMtuByte(byte[] imageDatas){
 //        dataInfoQueue=new LinkedList();
         if(!(null == imageDatas)){
-
             int dataIndex=0;
             int mtu= NewBeeBleConfig.getInstance().getRealMtu();
             Log.i("kankanfasongtupian", "-------------kankanshenmegui:111---555666--999--????????" +mtu+"--"+imageDatas.length);
