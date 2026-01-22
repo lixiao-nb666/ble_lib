@@ -1,19 +1,12 @@
 package com.newbee.ble_lib.service;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
-
 import com.newbee.ble_lib.NewBeeBleManager;
-import com.newbee.ble_lib.R;
 import com.newbee.ble_lib.base.BaseService;
-
+import com.newbee.ble_lib.config.BleManagerConfig;
 import com.newbee.ble_lib.manager.child.BleConnectManager;
-
-import com.newbee.ble_lib.manager.child.BlueToothGattManager;
 import com.newbee.ble_lib.manager.child.BlueToothSendStatuManager;
 import com.newbee.ble_lib.manager.file.BlueToothGattSendFileManager;
 import com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager;
@@ -47,13 +40,13 @@ public class BluetoothGattService extends BaseService {
 
                 switch (msgType){
                     case INIT_BLE:
-                        Log.w(tag,"BluetoothAdapter  initialized  11155----11999");
+
                         BleConnectManager.getInstance().havePermissionInitBle(getBaseContext(),getPackageManager());
-                        autoConnectDevice();
+                        autoConnectDevice(AutoConnectType.INIT);
                         break;
                     case SCAN_BLE:
-                        Log.w(tag,"BluetoothAdapter  initialized  11155----11000");
                         BleConnectManager.getInstance().startSearchBLE();
+                        toConnectOldDevice();
                         break;
                     case DISCONNECT_BLE:
                         BleConnectManager.getInstance().disconnect();
@@ -86,7 +79,6 @@ public class BluetoothGattService extends BaseService {
                         BleDelayType bleDelayType=BleDelayType.values()[msg.arg1];
                         selectDelayTypeToDo(bleDelayType);
                         break;
-
                 }
                 BleStatu bleStatu=BleStatu.USER_DO;
                 bleStatu.setStrId(msgType.getStrId());
@@ -105,105 +97,103 @@ public class BluetoothGattService extends BaseService {
         }
     }
 
-    private Runnable autoConnectRunnable=new Runnable() {
-        @Override
-        public void run() {
-            Log.w(tag,"BluetoothAdapter  initialized  11155----11333");
-            if(!NewBeeBleConfig.getInstance().isAutoConnect()){
-                return;
-            }
-            Log.w(tag,"BluetoothAdapter  initialized  11155----11444");
-            BleDeviceBean bleDeviceBean= BleConnectStatuUtil.getInstance().getNowUseBleDevice();
-            boolean isConnect=BleConnectStatuUtil.getInstance().isConnect();
-            if(null!=bleDeviceBean&&isConnect){
-                Log.w(tag,"BluetoothAdapter  initialized  11155----11555");
-                return;
-            }
-            Log.w(tag,"BluetoothAdapter  initialized  11155----11666");
-            Log.i(tag,"1234kasjffdlks:1");
-            long nowTime=System.currentTimeMillis();
-            if(isDisConnectReinit){
-                isDisConnectReinit=false;
-                bleEventObserver.havePermissionInitBle();
-                Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:0001");
-            }else {
-                Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:0002");
-                bleEventObserver. startSearchBle();
-            }
-            autoConnectDevice();
+
+
+    private void autoConnectDevice(AutoConnectType autoConnectType){
+        handler.removeCallbacks(autoConnectRunnable);
+        handler.removeCallbacks(bleDisConnectRunnable);
+        handler.removeCallbacks(tryToConnectOldDeviceRunnable);
+        if(null==autoConnectType){
+            autoConnectType=AutoConnectType.INIT;
         }
-    };
+        long needTime=0;
+        switch (autoConnectType){
+            case INIT:
+                needTime=BleManagerConfig.BLE_AUTO_CONNECT_TIME;
+//                handler.postDelayed(autoConnectRunnable, BleManagerConfig.BLE_AUTO_CONNECT_TIME);
+                break;
+            case DISCONNECT:
+                needTime=BleManagerConfig.BLE_DISCONNECT_RECONNECT_TIME;
+//                handler.postDelayed(autoConnectRunnable,BleManagerConfig.BLE_DISCONNECT_RECONNECT_TIME);
+                break;
+            case CONNECT_ERR:
+                needTime=BleManagerConfig.BLE_CONNECT_ERR_RECONNECT_TIME;
+                break;
+            case CONNECTING:
+                needTime=BleManagerConfig.BLE_CONNECTING_WAIT_TIME;
+                break;
 
-    private void autoConnectDevice(){
-
-        Log.i(tag,"1234kasjffdlks:2");
-        handler.removeCallbacks(autoConnectRunnable);
-        handler.postDelayed(autoConnectRunnable,5*1000);
-    }
-
-    boolean isDisConnectReinit;
-    private void autoConnectDeviceNow(){
-        Log.w(tag,"BluetoothAdapter  initialized  11155----11222");
-        handler.removeCallbacks(autoConnectRunnable);
-        int waitTime=1000;
-        if(isDisConnectReinit){
-            waitTime=3*1000;
         }
-        handler.postDelayed(autoConnectRunnable,waitTime);
+        handler.postDelayed(autoConnectRunnable,needTime);
+
 
     }
-    private void nowConnectIngWait(){
-        Log.i(tag,"1234kasjffdlks:4");
-        handler.removeCallbacks(autoConnectRunnable);
-        handler.postDelayed(autoConnectRunnable,13*1000);
-    }
+
+//    private void removeAutoConnectDevice(){
+//        handler.removeCallbacks(autoConnectRunnable);
+//    }
+
+//    boolean isDisConnectReinit;
+
+
+
+
+
+
+//    private void nowConnectIngWait(){
+//        handler.removeCallbacks(autoConnectRunnable);
+//        handler.postDelayed(autoConnectRunnable,BleManagerConfig.BLE_CONNECTING_WAIT_TIME);
+//    }
 
     private void cancelAutoConnect(){
-        Log.i(tag,"1234kasjffdlks:5");
         handler.removeCallbacks(autoConnectRunnable);
     }
 
+//    private void nowIsDisConnect(){
+//
+//        if(!isDisConnectReinit){
+//            isDisConnectReinit=true;
+//        }
+//
+//    }
 
-    private Runnable bleDisConnectRunnable=new Runnable() {
-        @Override
-        public void run() {
-            nowIsDisConnect();
-            BleConnectStatuUtil.getInstance().sendDisconnected();
-        }
-    };
 
-    private void nowIsDisConnect(){
-        Log.w(tag,"BluetoothAdapter  initialized  11155----111133");
-        if(!isDisConnectReinit){
-            isDisConnectReinit=true;
-        }
-
+    private void toConnectOldDevice(){
+        handler.removeCallbacks(tryToConnectOldDeviceRunnable);
+        handler.postDelayed(tryToConnectOldDeviceRunnable,BleManagerConfig.BLE_CONNECT_OLD_WAIT_TIME);
     }
+
+    private void cancelConnectOldDevice(){
+        handler.removeCallbacks(tryToConnectOldDeviceRunnable);
+    }
+
 
 
     private BleStatuEventObserver bleStatuEventObserver=new BleStatuEventObserver() {
         @Override
         public void sendBleStatu(BleStatu bleStatu, Object... objects) {
-            Log.w(tag,"BluetoothAdapter  initialized  11155----"+ bleStatu);
+
                 switch (bleStatu){
                     case DISCONNECTED:
-                        nowIsDisConnect();
-                        Log.w(tag,"BluetoothAdapter  initialized  11155----111155");
-                        autoConnectDeviceNow();
+//                        nowIsDisConnect();
+
+                        autoConnectDevice(AutoConnectType.DISCONNECT);
                         break;
                     case CONNECTING_ERR:
-                        Log.w(tag,"BluetoothAdapter  initialized  11155----111111");
-                        autoConnectDeviceNow();
+                       autoConnectDevice(AutoConnectType.CONNECT_ERR);
                         break;
                     case CONNECTING:
-                        nowConnectIngWait();
+                        autoConnectDevice(AutoConnectType.CONNECTING);
+                        cancelConnectOldDevice();
+//                        nowConnectIngWait();
                         break;
                     case CONNECTED:
+                        cancelConnectOldDevice();
                         cancelAutoConnect();
                         break;
                     case SENDING_DATA:
                         handler.removeCallbacks(bleDisConnectRunnable);
-                        handler.postDelayed(bleDisConnectRunnable,3*1000);
+                        handler.postDelayed(bleDisConnectRunnable,BleManagerConfig.BLE_CHECK_DATA_SEND_TIME);
                         break;
                     case CAN_SEND_DATA:
                         handler.removeCallbacks(bleDisConnectRunnable);
@@ -255,23 +245,19 @@ public class BluetoothGattService extends BaseService {
         BleDelayEventSubscriptionSubject.getInstance().detach(bleDelayObserver);
         BleEventSubscriptionSubject.getInstance().detach(bleEventObserver);
         BleStatuEventSubscriptionSubject.getInstance().detach(bleStatuEventObserver);
-
     }
 
 
 
    private  BleEventObserver bleEventObserver=new BleEventObserver() {
-
         @Override
         public void havePermissionInitBle() {
-            Log.w(tag,"BluetoothAdapter  initialized  11155----11888");
             handler.sendEmptyMessage(BluetoothGattServiceMsgType.INIT_BLE.ordinal());
-
         }
 
         @Override
         public void startSearchBle() {
-            Log.w(tag,"BluetoothAdapter  initialized  11155----11777");
+
             handler.sendEmptyMessage(BluetoothGattServiceMsgType.SCAN_BLE.ordinal());
 
         }
@@ -309,7 +295,7 @@ public class BluetoothGattService extends BaseService {
 
        @Override
        public void sendFile(BleSendFileInfoBean sendFileInfoBean) {
-           Log.i(tag,"kaishi11111111110000000");
+
            Message msg=new Message();
            msg.what=BluetoothGattServiceMsgType.SEND_FILE.ordinal();
            msg.obj=sendFileInfoBean;
@@ -351,5 +337,58 @@ public class BluetoothGattService extends BaseService {
             handler.sendMessageDelayed(msg,needDelayTime);
         }
     };
+
+
+
+
+    private Runnable autoConnectRunnable=new Runnable() {
+        @Override
+        public void run() {
+            if(!NewBeeBleConfig.getInstance().isAutoConnect()){
+                return;
+            }
+            BleDeviceBean bleDeviceBean= BleConnectStatuUtil.getInstance().getNowUseBleDevice();
+            boolean isConnect=BleConnectStatuUtil.getInstance().isConnect();
+            if(null!=bleDeviceBean&&isConnect){
+                return;
+            }
+//            long nowTime=System.currentTimeMillis();
+//            if(isDisConnectReinit){
+//                isDisConnectReinit=false;
+//                bleEventObserver.havePermissionInitBle();
+//            }else {
+//
+//            }
+            if(BleConnectManager.getInstance().checkCanScan()){
+                bleEventObserver. startSearchBle();
+            }else {
+                bleEventObserver.havePermissionInitBle();
+            }
+            autoConnectDevice(AutoConnectType.INIT);
+        }
+    };
+
+    private Runnable bleDisConnectRunnable=new Runnable() {
+        @Override
+        public void run() {
+//            nowIsDisConnect();
+            BleConnectStatuUtil.getInstance().sendDisconnected();
+        }
+    };
+
+    private Runnable tryToConnectOldDeviceRunnable =new Runnable() {
+        @Override
+        public void run() {
+            BleConnectManager.getInstance().checkAndToConnectOldDevice();
+        }
+    };
+
+
+    private enum AutoConnectType{
+        INIT,
+        DISCONNECT,
+        CONNECT_ERR,
+        CONNECTING,
+    }
 
 }

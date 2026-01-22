@@ -84,15 +84,15 @@
             android:textSize="66px"
             android:background="@color/black"/>
 
-        <TextView
-            android:id="@+id/tv_log"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:textColor="@color/white"
-            android:textSize="66px"
-            android:background="@color/black"/>
+
 
     </ScrollView>
-
+    <TextView
+        android:id="@+id/tv_log"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textColor="@color/white"
+        android:textSize="66px"
+        android:background="@color/black"/>
 </LinearLayout>

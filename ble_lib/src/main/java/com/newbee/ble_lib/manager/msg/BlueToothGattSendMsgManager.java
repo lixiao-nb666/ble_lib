@@ -28,7 +28,7 @@ public class BlueToothGattSendMsgManager {
    }
 
    public void close(){
-       BlueToothGattSendMsgManager.getInstance().close();
+       BlueToothGattMsgManager.getInstance().close();
        blueToothGattSendManager=null;
    }
 

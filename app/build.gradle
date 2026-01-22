@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace 'com.newbee.ble_tool'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.newbee.ble_tool"
-        minSdk 21
-        targetSdk 32
+        minSdk 24
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -119,7 +119,7 @@ dependencies {
     implementation 'com.github.lixiao-nb666:build_lib:1.1.4'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
     implementation 'com.github.lixiao-nb666:t800_data_lib:1.0.2'
-    implementation 'com.github.lixiao-nb666:ble_event:1.0.34'
+    implementation 'com.github.lixiao-nb666:ble_event:1.0.35'
     implementation project(path: ':ble_lib')
 
 }

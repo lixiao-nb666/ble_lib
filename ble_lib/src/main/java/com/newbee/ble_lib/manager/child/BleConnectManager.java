@@ -52,6 +52,11 @@ public class BleConnectManager {
         return bleManager;
     }
 
+
+    public void clear(){
+        countCannotScandataNumb=0;
+    }
+
     public void close(){
         if(null!=context){
             context=null;
@@ -68,11 +73,27 @@ public class BleConnectManager {
         }
         BlueToothGattManager.getInstance().close();
         bluetoothManager=null;
+        bleManager=null;
     }
 
 
+
+    public boolean checkCanScan(){
+        if(null==bluetoothManager){
+            return false;
+        }
+        if(null==bluetoothAdapter){
+            return false;
+        }
+        if(null==bluetoothLeScanner){
+            return false;
+        }
+        return bleIsOpen();
+    }
+
     private Context context;
     public void havePermissionInitBle(Context context, PackageManager packageManager){
+        countCannotScandataNumb=0;
         if(!BleCheckUtil.checkPhoneCanUseBle(packageManager)){
 //            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.BLE_CAN_NOT_USE);
             BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR,com.nrmyw.ble_event_lib.R.string.ble_statu_can_not_use);
@@ -88,11 +109,13 @@ public class BleConnectManager {
         bluetoothAdapter=bluetoothManager.getAdapter();
         if(null==bluetoothAdapter){
 //            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.BLE_ADAPTER_CAN_NOT_USE);
+            Log.i("kankanadaptercannotuse","kankanadaptercannotuse---2");
             BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR,com.nrmyw.ble_event_lib.R.string.ble_statu_adapter_can_not_use);
             return;
         }
         bluetoothLeScanner =bluetoothAdapter.getBluetoothLeScanner();
         if(null==bluetoothLeScanner){
+            Log.i("kankanadaptercannotuse","kankanadaptercannotuse---3");
             BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR,com.nrmyw.ble_event_lib.R.string.ble_statu_adapter_can_not_use);
             return;
         }
@@ -123,7 +146,6 @@ public class BleConnectManager {
             return;
         }
         bluetoothAdapter.enable();
-
     }
 
     /** 关闭蓝牙 **/
@@ -151,9 +173,9 @@ public class BleConnectManager {
         public void onScanResult(int callbackType, ScanResult result) {
             super.onScanResult(callbackType, result);
             Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:41---"+result.getDevice().getName());
-            if(!nowUseListenScanData){
-                nowUseListenScanData=true;
-            }
+//            if(!nowUseListenScanData){
+//                nowUseListenScanData=true;
+//            }
             if(BleCheckUtil.checkTheBleCanUse(result)){
 //                stopScan();
                 //不能stopScan要不会导致，后续连接不上
@@ -164,7 +186,7 @@ public class BleConnectManager {
 
     /** 开始扫描 **/
 //    long lastSearchBleTime;
-    private boolean nowUseListenScanData;
+//    private boolean nowUseListenScanData;
     private int countCannotScandataNumb;
     public void startSearchBLE(){
         Log.i("tryToConnectOldDevice","tryToConnectOldDevice111100");
@@ -182,54 +204,60 @@ public class BleConnectManager {
         if(null==bluetoothLeScanner){
             return;
         }
+
+        Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:1:---111---"+countCannotScandataNumb);
+
+        if(countCannotScandataNumb>=2){
+            Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:1:---112");
+            bluetoothLeScanner.startScan(scanCallback);
+            bluetoothAdapter.startDiscovery();
+        }else {
+            Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:1:---113");
+            bluetoothLeScanner.startScan(scanCallback);
+        }
+
         Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:0");
         //bluetoothLeScanner.startScan(scanCallback)这个方法有点问题，搜索太久了，找不到数据,离谱大了
-        if(nowUseListenScanData){
-            nowUseListenScanData=false;
-            countCannotScandataNumb=0;
+//        if(null!=BleConnectStatuUtil.getInstance().getNowUseBleDevice()){
+//
+//            tryToConnectOldDevice();
+//
+//        }else{
+//            if(nowUseListenScanData){
+//                Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:1:---112");
+//                bluetoothLeScanner.startScan(scanCallback);
+//            }else {
+//                if(countCannotScandataNumb>=3){
+//                    Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:1:---113");
+//                    bluetoothAdapter.startDiscovery();
+//
+//                }else if(countCannotScandataNumb>=1){
+//                    Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:1:---114");
+//                    bluetoothLeScanner.startScan(scanCallback);
+//                    bluetoothAdapter.startDiscovery();
+//                }else {
+//                    Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:1:---115");
+//                    bluetoothLeScanner.startScan(scanCallback);
+//                }
+//            }
 
-        }else {
-            countCannotScandataNumb++;
-            Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:1:---"+countCannotScandataNumb);
-        }
-        if(null==BleConnectStatuUtil.getInstance().getNowUseBleDevice()){
-            Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:1:---111");
-            bluetoothLeScanner.startScan(scanCallback);
-        }else{
-            if(nowUseListenScanData){
-                Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:1:---112");
-                bluetoothLeScanner.startScan(scanCallback);
-            }else {
-                if(countCannotScandataNumb>=3){
-                    Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:1:---113");
-                    bluetoothAdapter.startDiscovery();
 
-                }else if(countCannotScandataNumb>=1){
-                    Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:1:---114");
-                    bluetoothLeScanner.startScan(scanCallback);
-                    bluetoothAdapter.startDiscovery();
-                }else {
-                    Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:1:---115");
-                    bluetoothLeScanner.startScan(scanCallback);
-                }
-            }
-            tryToConnectOldDevice();
-        }
+//        }
 
 
 
-        if(!nowUseListenScanData&&countCannotScandataNumb>=1){
-            if(countCannotScandataNumb>=1){
-
-            }
-            Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:2");
-
-        }
+//        if(!nowUseListenScanData&&countCannotScandataNumb>=1){
+//            if(countCannotScandataNumb>=1){
+//
+//            }
+//            Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:2");
+//
+//        }
 
 
 
 //        bluetoothAdapter.startDiscovery();
-
+        countCannotScandataNumb++;
         BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.SEARCHING);
 
     }
@@ -242,19 +270,23 @@ public class BleConnectManager {
     }
 
 
-
+    public void checkAndToConnectOldDevice(){
+        if(null!=BleConnectStatuUtil.getInstance().getNowUseBleDevice()){
+            tryToConnectOldDevice();
+        }
+    }
 
 
 
     private void tryToConnectOldDevice(){
         try {
-            Log.i("tryToConnectOldDevice","tryToConnectOldDevice1111");
-            boolean canNotScanData=!nowUseListenScanData&&countCannotScandataNumb>1;
-            if(!BleConnectStatuUtil.getInstance().checkCanUseOldDeviceAdress(canNotScanData)){
-                Log.i("tryToConnectOldDevice","tryToConnectOldDevice111122");
+            Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:1:---114");
+//            boolean canNotScanData=!nowUseListenScanData&&countCannotScandataNumb>1;
+            if(!BleConnectStatuUtil.getInstance().checkCanUseOldDeviceAdress(true)){
+
                 return;
             }
-            Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:0005");
+            Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:1:---115");
             connect(BleConnectStatuUtil.getInstance().getNowUseBleDevice().getAdress());
         }catch (Exception e){}
     }
@@ -266,6 +298,7 @@ public class BleConnectManager {
         if (null==bluetoothAdapter || TextUtils.isEmpty(address)) {
 //            LG.e("BluetoothAdapter not initialized or unspecified address");
             //这里不能关闭，关闭之后重新连接部上
+            Log.i("kankanadaptercannotuse","kankanadaptercannotuse---1");
             BleConnectStatuUtil.getInstance().setConnectErr(context.getResources().getString(com.nrmyw.ble_event_lib.R.string.ble_statu_adapter_can_not_use));
             return false;
         }
@@ -275,7 +308,6 @@ public class BleConnectManager {
             BleConnectStatuUtil.getInstance().setConnectErr("Device not found");
             return false;
         }
-
         BlueToothGattManager.getInstance().initGatt(device,context);
 //        LG.e("Trying to create a new connection:"+address);
 

@@ -278,7 +278,6 @@ public class BlueToothGattManager {
         writeCharacteristic = null;
         readCharacteristic = null;
         if(null!=bluetoothGatt){
-
             bluetoothGatt.close();
             bluetoothGatt=null;
         }
@@ -288,7 +287,7 @@ public class BlueToothGattManager {
         pause();
         BlueToothGattSendMsgManager.getInstance().close();
         BlueToothGattSendMsgManager.getInstance().close();
-
+        blueToothGattManager=null;
     }
 
     public void checkIsDisConnecting(){
@@ -386,7 +385,7 @@ public class BlueToothGattManager {
 
 
 
-    synchronized boolean queSendCmd(byte[] cmd){
+    synchronized SEND_CMD_STATU queSendCmd(byte[] cmd){
         if (bluetoothGatt!=null&&writeCharacteristic!=null){
             try {
                 //if (Build.VERSION.SDK_INT>= Build.VERSION_CODES.TIRAMISU)
@@ -399,17 +398,17 @@ public class BlueToothGattManager {
 //              LogUtil.e("发送指令："+ CYUtils.Bytes2HexString(cmd));
                 //这里设置flase，因为正在发送中
 
-                return true;
+                return SEND_CMD_STATU.OK;
             }catch (Exception e){
                 e.printStackTrace();
                 //这里设置true，因为正在发送失败了
 
-                return false;
+                return SEND_CMD_STATU.ERR;
 
             }
 
         }
-        return false;
+        return SEND_CMD_STATU.FLASE;
     }
 
 
@@ -423,6 +422,12 @@ public class BlueToothGattManager {
 //            bluetoothGatt=null;
         }
 
+    }
+
+    public enum SEND_CMD_STATU{
+        OK,
+        ERR,
+        FLASE,
     }
 
 }

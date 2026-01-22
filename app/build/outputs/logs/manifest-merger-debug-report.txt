@@ -1,15 +1,15 @@
 -- Merging decision tree log ---
 manifest
-ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:2:1-84:12
-INJECTED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:2:1-84:12
-INJECTED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:2:1-84:12
-INJECTED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:2:1-84:12
+ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:2:1-97:12
+INJECTED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:2:1-97:12
+INJECTED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:2:1-97:12
+INJECTED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:2:1-97:12
 MERGED from [com.github.lixiao-nb666:build_lib:1.1.4] C:\Users\Administrator\.gradle\caches\transforms-3\78abc2b51b1969b31c6136540b763e63\transformed\build_lib-1.1.4\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.2.0] C:\Users\Administrator\.gradle\caches\transforms-3\a3858696d564d45af7268a0a610872e8\transformed\appcompat-1.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.recyclerview:recyclerview:1.2.1] C:\Users\Administrator\.gradle\caches\transforms-3\772027d9435ec24b9bd9466d42f95752\transformed\recyclerview-1.2.1\AndroidManifest.xml:17:1-24:12
 MERGED from [com.github.lixiao-nb666:t800_data_lib:1.0.2] C:\Users\Administrator\.gradle\caches\transforms-3\6252025e83ade19d50291c3193fc35ea\transformed\t800_data_lib-1.0.2\AndroidManifest.xml:2:1-9:12
 MERGED from [:ble_lib] F:\asworkspace\hud\lib\ble_lib\ble_lib\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
-MERGED from [com.github.lixiao-nb666:ble_event:1.0.34] C:\Users\Administrator\.gradle\caches\transforms-3\59b04fdc9ecba39a6f1cece7f41c88b8\transformed\ble_event-1.0.34\AndroidManifest.xml:2:1-9:12
+MERGED from [com.github.lixiao-nb666:ble_event:1.0.35] C:\Users\Administrator\.gradle\caches\transforms-3\904417caf7fbd11b02ad38c0b69937cc\transformed\ble_event-1.0.35\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\f33401e088e03b4906c1e1ee487642e4\transformed\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-3\2a60b3300c6f34c1be7409a2ef9e70c8\transformed\fragment-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\1b2c2bc523e43a8695e5871c17c75f28\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -31,81 +31,125 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Administ
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\0e741046a937ab091b9e076b813b3774\transformed\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.lixiao-nb666:sava_data_lib:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\0b9b2f0fdb8e6c16a793ef69353e68b0\transformed\sava_data_lib-1.0.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.github.lixiao-nb666:gson_lib:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\9a3d942714a52fbe33514a9aaac92ba3\transformed\gson_lib-1.0.0\AndroidManifest.xml:2:1-9:12
-INJECTED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:2:1-84:12
-INJECTED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:2:1-84:12
-INJECTED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:2:1-84:12
+INJECTED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:2:1-97:12
+INJECTED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:2:1-97:12
+INJECTED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:2:1-97:12
 	package
 		INJECTED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml
-		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:2:1-84:12
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:2:1-97:12
 		INJECTED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml
-		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:2:1-84:12
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:2:1-97:12
 		INJECTED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml
-		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:2:1-84:12
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:2:1-97:12
 		INJECTED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:2:11-69
-uses-permission#android.permission.BLUETOOTH
-ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:5:5-68
-	android:name
-		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:5:22-65
-uses-permission#android.permission.BLUETOOTH_CONNECT
-ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:6:5-76
-	android:name
-		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:6:22-73
-uses-permission#android.permission.BLUETOOTH_SCAN
-ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:9:5-73
-	android:name
-		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:9:22-70
-uses-permission#android.permission.BLUETOOTH_ADMIN
-ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:10:5-74
-	android:name
-		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:10:22-71
-uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:14:5-15:45
-	tools:ignore
-		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:15:9-42
-	android:name
-		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:14:22-76
-uses-permission#android.permission.BLUETOOTH_ADVERTISE
-ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:16:5-78
-	android:name
-		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:16:22-75
-uses-permission#android.permission.FOREGROUND_SERVICE
-ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:17:5-76
-	android:name
-		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:17:22-74
-uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:22:5-81
-	android:name
-		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:22:22-78
-uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:27:5-97
-	android:name
-		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:27:22-78
-uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:29:5-80
-	android:name
-		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:29:22-77
-uses-permission#android.permission.MANAGE_EXTERNAL_STORAGE
-ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:31:5-82
-	tools:ignore
-		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:34:9-37
-	android:name
-		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:31:22-79
-uses-feature#android.hardware.bluetooth_le
-ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:37:5-39:35
+uses-feature#android.hardware.bluetooth
+ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:5:5-7:35
 	android:required
-		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:39:9-32
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:7:9-32
 	android:name
-		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:38:9-53
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:6:9-50
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:9:5-81
+	android:name
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:9:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:11:5-81
+	android:name
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:11:22-78
+uses-permission#android.permission.MANAGE_EXTERNAL_STORAGE
+ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:14:5-15:61
+	tools:ignore
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:15:9-58
+	android:name
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:14:22-79
+uses-permission#android.permission.BLUETOOTH
+ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:17:5-19:48
+	tools:remove
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:19:9-45
+	android:name
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:18:9-52
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:20:5-22:48
+	tools:remove
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:22:9-45
+	android:name
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:21:9-58
+uses-permission#android.permission.BLUETOOTH_SCAN
+ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:23:5-26:31
+	android:usesPermissionFlags
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:25:9-55
+	tools:targetApi
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:26:9-28
+	android:name
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:24:9-57
+uses-permission#android.permission.BLUETOOTH_CONNECT
+ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:27:5-30:31
+	android:usesPermissionFlags
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:29:9-55
+	tools:targetApi
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:30:9-28
+	android:name
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:28:9-60
+uses-permission-sdk-23#android.permission.ACCESS_COARSE_LOCATION
+ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:32:5-34:38
+	android:maxSdkVersion
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:34:9-35
+	android:name
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:33:9-65
+uses-permission-sdk-23#android.permission.ACCESS_FINE_LOCATION
+ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:37:5-39:38
+	android:maxSdkVersion
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:39:9-35
+	android:name
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:38:9-63
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:40:5-79
+	android:name
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:40:22-76
+uses-permission#android.permission.INTERNET
+ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:42:5-67
+	android:name
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:42:22-64
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:43:5-81
+	android:name
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:43:22-78
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:45:5-79
+	android:name
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:45:22-76
+uses-permission#android.permission.ACCESS_BACKGROUND_LOCATION
+ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:46:5-47:51
+	tools:ignore
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:47:9-48
+	android:name
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:46:22-82
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:49:5-75
+	android:name
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:49:22-72
+uses-permission#android.permission.CHANGE_WIFI_STATE
+ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:50:5-76
+	android:name
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:50:22-73
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:51:5-76
+	android:name
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:51:22-73
+uses-permission#android.permission.WAKE_LOCK
+ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:52:5-68
+	android:name
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:52:22-65
 application
-ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:43:5-83:19
+ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:56:5-96:19
 MERGED from [androidx.core:core:1.3.2] C:\Users\Administrator\.gradle\caches\transforms-3\5c56de5eb577ed66bde2e174b1717882\transformed\core-1.3.2\AndroidManifest.xml:24:5-89
 MERGED from [androidx.core:core:1.3.2] C:\Users\Administrator\.gradle\caches\transforms-3\5c56de5eb577ed66bde2e174b1717882\transformed\core-1.3.2\AndroidManifest.xml:24:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-3\adde4d3ac3409c6c1a1c8a9c431e7391\transformed\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
@@ -113,49 +157,49 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Ad
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.3.2] C:\Users\Administrator\.gradle\caches\transforms-3\5c56de5eb577ed66bde2e174b1717882\transformed\core-1.3.2\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:49:9-35
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:62:9-35
 	android:label
-		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:47:9-41
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:60:9-41
 	android:roundIcon
-		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:48:9-54
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:61:9-54
 	tools:targetApi
-		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:51:9-29
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:64:9-29
 	android:icon
-		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:46:9-43
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:59:9-43
 	android:allowBackup
-		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:44:9-35
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:57:9-35
 	android:theme
-		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:50:9-59
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:63:9-59
 	android:name
-		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:45:9-34
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:58:9-34
 activity#com.newbee.ble_tool.activity.MainActivity
-ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:53:9-64:20
+ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:66:9-77:20
 	android:screenOrientation
-		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:58:13-49
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:71:13-49
 	android:label
-		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:55:13-45
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:68:13-45
 	android:launchMode
-		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:57:13-42
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:70:13-42
 	android:exported
-		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:56:13-36
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:69:13-36
 	android:name
-		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:54:13-50
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:67:13-50
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:59:13-63:29
+ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:72:13-76:29
 action#android.intent.action.MAIN
-ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:60:17-69
+ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:73:17-69
 	android:name
-		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:60:25-66
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:73:25-66
 category#android.intent.category.LAUNCHER
-ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:62:17-77
+ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:75:17-77
 	android:name
-		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:62:27-74
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:75:27-74
 service#com.newbee.ble_lib.service.BluetoothGattService
-ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:66:9-67:38
+ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:79:9-80:38
 	android:exported
-		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:67:13-36
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:80:13-36
 	android:name
-		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:66:18-80
+		ADDED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:79:18-80
 uses-sdk
 INJECTED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml
@@ -170,8 +214,8 @@ MERGED from [com.github.lixiao-nb666:t800_data_lib:1.0.2] C:\Users\Administrator
 MERGED from [com.github.lixiao-nb666:t800_data_lib:1.0.2] C:\Users\Administrator\.gradle\caches\transforms-3\6252025e83ade19d50291c3193fc35ea\transformed\t800_data_lib-1.0.2\AndroidManifest.xml:5:5-7:41
 MERGED from [:ble_lib] F:\asworkspace\hud\lib\ble_lib\ble_lib\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:ble_lib] F:\asworkspace\hud\lib\ble_lib\ble_lib\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [com.github.lixiao-nb666:ble_event:1.0.34] C:\Users\Administrator\.gradle\caches\transforms-3\59b04fdc9ecba39a6f1cece7f41c88b8\transformed\ble_event-1.0.34\AndroidManifest.xml:5:5-7:41
-MERGED from [com.github.lixiao-nb666:ble_event:1.0.34] C:\Users\Administrator\.gradle\caches\transforms-3\59b04fdc9ecba39a6f1cece7f41c88b8\transformed\ble_event-1.0.34\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.lixiao-nb666:ble_event:1.0.35] C:\Users\Administrator\.gradle\caches\transforms-3\904417caf7fbd11b02ad38c0b69937cc\transformed\ble_event-1.0.35\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.lixiao-nb666:ble_event:1.0.35] C:\Users\Administrator\.gradle\caches\transforms-3\904417caf7fbd11b02ad38c0b69937cc\transformed\ble_event-1.0.35\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\f33401e088e03b4906c1e1ee487642e4\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\f33401e088e03b4906c1e1ee487642e4\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-3\2a60b3300c6f34c1be7409a2ef9e70c8\transformed\fragment-1.1.0\AndroidManifest.xml:20:5-22:41

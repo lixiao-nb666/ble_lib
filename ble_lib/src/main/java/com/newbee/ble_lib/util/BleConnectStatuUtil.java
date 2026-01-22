@@ -64,13 +64,10 @@ public class BleConnectStatuUtil {
             return true;
         }
 
-        if(System.currentTimeMillis()-disConnectTime>= BleManagerConfig.CONNECT_OLD_HUD_TIME){
-            //超出有效连接时间内
-            return false;
-        }
-
-
-
+//        if(System.currentTimeMillis()-disConnectTime>= BleManagerConfig.CONNECT_OLD_HUD_TIME){
+//            //超出有效连接时间内
+//            return false;
+//        }
         return true;
     }
 
@@ -124,7 +121,8 @@ public class BleConnectStatuUtil {
         }
         isConnect=false;
         disConnectTime=System.currentTimeMillis();
-        BlueToothGattSendMsgManager.getInstance().clear();
+        BleConnectManager.getInstance().clear();
+        BlueToothGattSendMsgManager.getInstance().close();
         BlueToothGattManager.getInstance().checkIsDisConnecting();
         BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.DISCONNECTED);
     }

@@ -5847,8 +5847,13 @@ com.newbee.ble_lib.base.BaseServiceDao:
     public void startService()
     public void stopService()
 com.newbee.ble_lib.config.BleManagerConfig:
+    public static final long BLE_AUTO_CONNECT_TIME
+    public static final long BLE_CHECK_DATA_SEND_TIME
+    public static final long BLE_CONNECTING_WAIT_TIME
+    public static final long BLE_CONNECT_ERR_RECONNECT_TIME
+    public static final long BLE_CONNECT_OLD_WAIT_TIME
+    public static final long BLE_DISCONNECT_RECONNECT_TIME
     public static final int CAN_SEND_MTU
-    public static final long CONNECT_OLD_HUD_TIME
     public void <init>()
 com.newbee.ble_lib.manager.child.BleConnectManager:
     private void closeBluetooth()
@@ -5879,15 +5884,11 @@ com.newbee.ble_lib.manager.file.send.SendFileManager:
 com.newbee.ble_lib.manager.file.send.SendOtaManager:
     public boolean isStart()
 com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager:
-    public void close()
     public synchronized void removeFileMsg(java.lang.String)
-com.newbee.ble_lib.service.BluetoothGattService$5:
+com.newbee.ble_lib.service.BluetoothGattService$3:
     public void clearIndexMsg()
     public void clearMsg()
-    public void sendBytesIndexCmd(int,byte[])
     public void sendFile(com.nrmyw.ble_event_lib.bean.BleSendFileInfoBean)
-com.newbee.ble_lib.service.BluetoothGattService:
-    static synthetic java.lang.String access$2100(com.newbee.ble_lib.service.BluetoothGattService)
 com.newbee.ble_lib.service.event.BleDelayEventSubject
 com.newbee.ble_lib.util.AbImageUtil$OnImageUtilsListener
 com.newbee.ble_lib.util.AbImageUtil:
@@ -5967,6 +5968,25 @@ com.newbee.ble_tool.type.HudDevice:
     private void <init>(java.lang.String,int,java.lang.String,int,com.newbee.ble_tool.type.HudDeviceSendDataType)
     public static com.newbee.ble_tool.type.HudDevice getBleDeviceType(com.nrmyw.ble_event_lib.bean.BleDeviceBean)
     public com.newbee.ble_tool.type.HudDeviceSendDataType getSendDataType()
+com.newbee.ble_tool.util.HudBleByteUtil:
+    public void <init>()
+com.newbee.ble_tool.util.HudCmdSendDataUtil:
+    public void <init>()
+com.newbee.ble_tool.util.HudConfig:
+    public static final java.lang.String ACTION_GATT_CONNECTED
+    public static final java.lang.String ACTION_GATT_DISCONNECTED
+    public static final java.lang.String ACTION_GATT_SERVICES_DISCOVERED
+    public static final java.lang.String ACTION_GATT_WRITE_STATE
+    public static final boolean isAutomatic
+    public static final int mtu
+    public static final java.lang.String noticeID
+    public static final java.lang.String serviceID
+    public static final java.lang.String writeID
+    public void <init>()
+com.newbee.ble_tool.util.HudImageShowType:
+    public byte getType()
+com.newbee.ble_tool.util.HudImageType:
+    public byte getType()
 com.newbee.bulid_lib.BuildConfig
 com.newbee.bulid_lib.R$anim
 com.newbee.bulid_lib.R$color
@@ -6139,10 +6159,8 @@ com.nrmyw.ble_event_lib.bean.BleSendFileInfoBean:
     public void setFilePath(java.lang.String)
 com.nrmyw.ble_event_lib.bean.BleSendImageEndInfoBean:
     public int getH()
-    public int getIndex()
     public java.lang.String getName()
     public int getSize()
-    public int getType()
     public long getUseTime()
     public int getW()
 com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean:
@@ -6174,7 +6192,6 @@ com.nrmyw.ble_event_lib.config.NewBeeBleConfig:
 com.nrmyw.ble_event_lib.send.BleEventObserver:
     public abstract void clearIndexMsg()
     public abstract void clearMsg()
-    public abstract void sendBytesIndexCmd(int,byte[])
     public abstract void sendFile(com.nrmyw.ble_event_lib.bean.BleSendFileInfoBean)
 com.nrmyw.ble_event_lib.send.BleEventSubject
 com.nrmyw.ble_event_lib.send.BleEventSubscriptionSubject:
@@ -6182,7 +6199,6 @@ com.nrmyw.ble_event_lib.send.BleEventSubscriptionSubject:
     public void clearMsg()
     public void disconnectedBle()
     public void havePermissionInitBle()
-    public void sendBytesIndexCmd(int,byte[])
     public void sendFile(com.nrmyw.ble_event_lib.bean.BleSendFileInfoBean)
     public void startSearchBle()
 com.nrmyw.ble_event_lib.statu.BleStatuEventSubject

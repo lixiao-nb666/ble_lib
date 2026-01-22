@@ -8,7 +8,7 @@ public class BleManagerConfig {
 
     public static int MTU_CHA=5;
 
-    public static final long CONNECT_OLD_HUD_TIME=30*1000;
+//    public static final long CONNECT_OLD_HUD_TIME=30*1000;
 
     private static int SEND_IMAGE_MAX_KB_1=8;
     private static int SEND_IMAGE_MAX_KB_2=6;
@@ -39,6 +39,18 @@ public class BleManagerConfig {
 
     public static byte CMD_CUCCESS=(byte)0xA6;
 
+    public static final long BLE_AUTO_CONNECT_TIME=15*1000;
+
+    public static final long BLE_DISCONNECT_RECONNECT_TIME=2222;
+
+    public static final long BLE_CONNECT_ERR_RECONNECT_TIME=1688;
+
+    public static final long BLE_CHECK_DATA_SEND_TIME=6*1000;
+
+    public static final long BLE_CONNECTING_WAIT_TIME=10*1000;
+
+
+    public static final long BLE_CONNECT_OLD_WAIT_TIME=BLE_AUTO_CONNECT_TIME>BLE_CONNECTING_WAIT_TIME?BLE_AUTO_CONNECT_TIME-BLE_CONNECTING_WAIT_TIME:BLE_CONNECTING_WAIT_TIME-BLE_AUTO_CONNECT_TIME;
 
     public static int useBleSendBitmapQualityTypeGetMaxKb(BleSendBitmapQualityType qualityType){
         switch (qualityType){

@@ -175,15 +175,17 @@ public class SendBitmapManager implements BlueToothGattSendFile {
         endInfoBean.setH(h);
         endInfoBean.setSize(size);
         endInfoBean.setUseTime(useTime);
-        endInfoBean.setIndex(msgIndex+1);//最后一帧的内容
+
         endInfoBean.setType(bleSendImageInfoBean.getType());
         endInfoBean.setName(bleSendImageInfoBean.getName());
         BlueToothGattSendMsgManager.getInstance().sendMsgByFile(msgIndex, HudBleByteUtil.getImageAllByte(w,h,size,false,bleSendImageInfoBean.getType()));
         if(bleSendImageInfoBean.getType()==0){
             //发送实景图，需要补一帧指令
+            endInfoBean.setIndex(msgIndex+1);//最后一帧的内容
             BlueToothGattSendMsgManager.getInstance().setFileMsgNum(msgIndex+2);//总数
         }else {
             //别的不用的补指令，所以少1
+            endInfoBean.setIndex(0);//最后一帧的内容
             BlueToothGattSendMsgManager.getInstance().setFileMsgNum(msgIndex+1);//总数
         }
 

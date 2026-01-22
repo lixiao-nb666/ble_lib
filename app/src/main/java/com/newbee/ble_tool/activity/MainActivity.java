@@ -24,13 +24,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.newbee.ble_lib.NewBeeBleManager;
 import com.newbee.ble_lib.util.BleSendImageUtil;
 import com.newbee.ble_lib.util.FileAndByteUtil;
-import com.newbee.ble_lib.util.hud.HudBleByteUtil;
+
 import com.newbee.ble_lib.util.hud.HudCmdSendDataUtil;
 import com.newbee.ble_tool.R;
 
 
 import com.newbee.ble_tool.type.HudDevice;
 
+import com.newbee.ble_tool.util.HudBleByteUtil;
+import com.newbee.ble_tool.util.HudCmdType;
+import com.newbee.ble_tool.util.HudImageShowType;
+import com.newbee.ble_tool.util.HudSendImageType;
 import com.newbee.bulid_lib.mybase.LG;
 import com.newbee.bulid_lib.mybase.activity.BaseCompatActivity;
 
@@ -193,8 +197,6 @@ public class MainActivity extends BaseCompatActivity {
             }
             BleDeviceBean bleDeviceBean= NewBeeBleManager.getInstance().getNowUseBleDevice();
             if(null!=bleTV){
-
-
                 if(null!=bleDeviceBean){
                     Log.w(tag,"BluetoothAdapter  initialized  11155----111188:"+bleDeviceBean.getDeviceName());
                     bleTV.setText(HudDevice.values()[bleDeviceBean.getDeviceType()].name());
@@ -203,7 +205,6 @@ public class MainActivity extends BaseCompatActivity {
                     bleTV.setText("");
                 }
             }
-
             switch (bleStatu){
                 case NONE:
                     if(null!=msg.obj&&msg.obj instanceof Bitmap){
@@ -246,7 +247,7 @@ public class MainActivity extends BaseCompatActivity {
                     if(msg.obj instanceof BleSendImageEndInfoBean){
                         BleSendImageEndInfoBean endInfoBean= (BleSendImageEndInfoBean) msg.obj;
                         Log.i("kankantupian","kankantubianzenmhuishi:1111333--9999---"+endInfoBean.toString());
-//                        doSendImageEndThing(endInfoBean);
+                        doSendImageEndThing(endInfoBean);
                     }
                     break;
                 case SEND_IMAGE_DATA_END:
@@ -302,27 +303,15 @@ public class MainActivity extends BaseCompatActivity {
 //
 //    }
 //
-//    private void doSendImageEndThing(BleSendImageEndInfoBean endInfoBean){
-//        BleDeviceBean bleDeviceBean= NewBeeBleManager.getInstance().getNowUseBleDevice();
-//        byte[] endBytes=null;
-//        HudDevice hudDevice=HudDevice.values()[bleDeviceBean.getDeviceType()];
-//        switch (hudDevice){
-//            case T800:
-//                endBytes=HudBleByteUtil.getAllByte(HudCmdType.READY_SEND_IMAGE,endInfoBean.getW(),endInfoBean.getH(),endInfoBean.getSize(), HudSendImageType.END);
-//                break;
-//            default:
-//                endBytes=HudBleByteUtil.getAllByte(HudCmdType.READY_SEND_IMAGE,endInfoBean.getW(),endInfoBean.getH(),endInfoBean.getSize(), HudSendImageType.END,endInfoBean.getType());
-//                break;
-//        }
-//
-//        if(null!=endBytes){
-//            BleEventSubscriptionSubject.getInstance().sendImageIndexCmd(endInfoBean.getIndex(),endBytes);
-//        }
-//
-//
-//
-//
-//    }
+    private void doSendImageEndThing(BleSendImageEndInfoBean endInfoBean){
+        if(endInfoBean.getType()!=0){
+            return;
+        }
+        byte[]   endBytes= HudBleByteUtil.getAllByte(HudCmdType.SHOW_IMAGE, HudImageShowType.SHOW);
+        if(null!=endBytes){
+            BleEventSubscriptionSubject.getInstance().sendBytesIndexCmd(endInfoBean.getIndex(),endBytes);
+        }
+    }
 
 
     @Override

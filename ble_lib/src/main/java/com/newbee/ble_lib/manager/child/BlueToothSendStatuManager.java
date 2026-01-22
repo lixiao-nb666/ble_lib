@@ -106,16 +106,24 @@ public class BlueToothSendStatuManager {
 
 
     public void sendBytyes(byte[] bytes){
-        if(BlueToothGattManager.getInstance().queSendCmd(bytes)){
-            nowCanSend=false;
-            sendTime=System.currentTimeMillis();
-            lastSendBytes=bytes;
-            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.SENDING_DATA,bytes);
-        }else {
-            nowCanSend=true;
-            lastSendBytes=null;
-            BlueToothGattSendMsgManager.getInstance().setNowCanSend();
-        }
+
+         switch (BlueToothGattManager.getInstance().queSendCmd(bytes)){
+             case OK:
+                 nowCanSend=false;
+                 sendTime=System.currentTimeMillis();
+                 lastSendBytes=bytes;
+                 BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.SENDING_DATA,bytes);
+                 break;
+             case ERR:
+                 initOk();
+                 BlueToothGattSendMsgManager.getInstance().setNowCanSend();
+                 break;
+             case FLASE:
+                 nowCanSend=true;
+                 lastSendBytes=null;
+                 BlueToothGattSendMsgManager.getInstance().setNowCanSend();
+                 break;
+         }
     }
 
 
