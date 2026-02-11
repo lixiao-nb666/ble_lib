@@ -29,6 +29,9 @@
     <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"접기"</string>
     <string name="ble_clear_index_msg">Bluetooth：Clear index msg</string>
     <string name="ble_clear_msg">Bluetooth：Clear msg</string>
+    <string name="ble_send_file_err_is_run">Bluetooth：Send file err (thread is run)</string>
+    <string name="ble_send_image_err_is_run">Bluetooth：Send image err (thread is run)</string>
+    <string name="ble_send_ota_err_is_run">Bluetooth：Send ota err (thread is run)</string>
     <string name="ble_statu_adapter_can_not_use">Bluetooth：시스템 어댑터를 사용할 수 없습니다</string>
     <string name="ble_statu_can_not_use">Bluetooth：시스템이 사용할 수 없습니다</string>
     <string name="ble_statu_can_send_data">Bluetooth：블루투스 데이터 전송이 성공하였다，데이터 재발송이 가능하다</string>

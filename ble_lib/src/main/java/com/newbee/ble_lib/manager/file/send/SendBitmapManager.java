@@ -88,7 +88,10 @@ public class SendBitmapManager implements BlueToothGattSendFile {
         splitPacketForMtuByte(imageBytes);
 //            queToSendCmd();
         over();
-
+        if(null!=newBitMap){
+            newBitMap.recycle();
+            newBitMap=null;
+        }
     }
 
 

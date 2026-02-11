@@ -7,6 +7,8 @@ import com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager;
 import com.nrmyw.ble_event_lib.bean.BleSendFileInfoBean;
 import com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean;
 import com.nrmyw.ble_event_lib.bean.BleSendOtaInfoBean;
+import com.nrmyw.ble_event_lib.statu.BleStatu;
+import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
 
 
 public class BlueToothGattSendFileManager {
@@ -80,6 +82,8 @@ public class BlueToothGattSendFileManager {
             Log.i("tag","kaishi1111111111:2");
             getFileDataThread=new BlueToothGattGetFileDataThread(bleSendFileInfoBean,threadListen);
             getFileDataThread.start();
+        }else {
+            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.SEND_FILE_ERR_ISRUN,bleSendFileInfoBean);
         }
     }
 
@@ -89,6 +93,8 @@ public class BlueToothGattSendFileManager {
             Log.i("tag","kaishi1111111111:2");
             getFileDataThread=new BlueToothGattGetFileDataThread(bleSendOtaInfoBean,threadListen);
             getFileDataThread.start();
+        }else {
+            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.SEND_OTA_ERR_ISRUN,bleSendOtaInfoBean);
         }
     }
 
@@ -103,6 +109,8 @@ public class BlueToothGattSendFileManager {
                 BlueToothGattSendMsgManager.getInstance().clearIndexMsg();
                 getFileDataThread=new BlueToothGattGetFileDataThread(bleSendImageInfoBean,threadListen);
                 getFileDataThread.start();
+            }else {
+                BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.SEND_IMAGE_ERR_ISRUN,bleSendImageInfoBean);
             }
         }
 

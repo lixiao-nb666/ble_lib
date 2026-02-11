@@ -503,6 +503,7 @@ COLOR
 androidx.transition.FragmentTransitio...
 LF_T_Y_LF
 android.speech.extra.MAX_RESULTS
+SEND_FILE_ERR_ISRUN
 SyntheticAccessor
 SEND_OTA_ERR
 END
@@ -585,6 +586,7 @@ R_F_Y
 LF_RF_Y
 R_RF_N
 NULL
+SEND_IMAGE_ERR_ISRUN
 GRAVITY
 AUTO
 null
@@ -657,6 +659,7 @@ HI_PASS
 21
 rw
 SET_TWS_NAME
+SEND_OTA_ERR_ISRUN
 ToolbarWidgetWrapper
 ACTION_PAGE_DOWN
 classes_to_restore
@@ -2389,6 +2392,9 @@ Marking id:tag_unhandled_key_listeners:2131165349 used because it matches string
 @string/app_name : reachable=true
 @string/ble_clear_index_msg : reachable=true
 @string/ble_clear_msg : reachable=true
+@string/ble_send_file_err_is_run : reachable=true
+@string/ble_send_image_err_is_run : reachable=true
+@string/ble_send_ota_err_is_run : reachable=true
 @string/ble_statu_adapter_can_not_use : reachable=true
 @string/ble_statu_can_not_use : reachable=true
 @string/ble_statu_can_send_data : reachable=true
@@ -4179,37 +4185,40 @@ The root reachable resources are:
  string:app_name:2131558427
  string:ble_clear_index_msg:2131558428
  string:ble_clear_msg:2131558429
- string:ble_statu_adapter_can_not_use:2131558430
- string:ble_statu_can_not_use:2131558431
- string:ble_statu_can_send_data:2131558432
- string:ble_statu_connected:2131558433
- string:ble_statu_connecting:2131558434
- string:ble_statu_connecting_err:2131558435
- string:ble_statu_disconnected:2131558436
- string:ble_statu_found_ble_device:2131558437
- string:ble_statu_init:2131558438
- string:ble_statu_manager_can_not_use:2131558439
- string:ble_statu_none:2131558440
- string:ble_statu_opening:2131558441
- string:ble_statu_retrun_bytes:2131558442
- string:ble_statu_run_err:2131558443
- string:ble_statu_searching:2131558444
- string:ble_statu_send_image_data_end:2131558445
- string:ble_statu_send_image_end:2131558446
- string:ble_statu_send_image_start:2131558447
- string:ble_statu_send_ota_end:2131558448
- string:ble_statu_send_ota_err:2131558449
- string:ble_statu_send_ota_progress:2131558450
- string:ble_statu_send_ota_start:2131558451
- string:ble_statu_sending_data:2131558452
- string:ble_statu_state_off:2131558453
- string:ble_statu_state_on:2131558454
- string:ble_statu_user_disconnect:2131558455
- string:ble_statu_user_init:2131558456
- string:ble_statu_user_scan:2131558457
- string:ble_statu_user_send_cmd:2131558458
- string:ble_statu_user_send_image:2131558459
- string:ble_statu_user_send_image_cmd_index:2131558460
+ string:ble_send_file_err_is_run:2131558430
+ string:ble_send_image_err_is_run:2131558431
+ string:ble_send_ota_err_is_run:2131558432
+ string:ble_statu_adapter_can_not_use:2131558433
+ string:ble_statu_can_not_use:2131558434
+ string:ble_statu_can_send_data:2131558435
+ string:ble_statu_connected:2131558436
+ string:ble_statu_connecting:2131558437
+ string:ble_statu_connecting_err:2131558438
+ string:ble_statu_disconnected:2131558439
+ string:ble_statu_found_ble_device:2131558440
+ string:ble_statu_init:2131558441
+ string:ble_statu_manager_can_not_use:2131558442
+ string:ble_statu_none:2131558443
+ string:ble_statu_opening:2131558444
+ string:ble_statu_retrun_bytes:2131558445
+ string:ble_statu_run_err:2131558446
+ string:ble_statu_searching:2131558447
+ string:ble_statu_send_image_data_end:2131558448
+ string:ble_statu_send_image_end:2131558449
+ string:ble_statu_send_image_start:2131558450
+ string:ble_statu_send_ota_end:2131558451
+ string:ble_statu_send_ota_err:2131558452
+ string:ble_statu_send_ota_progress:2131558453
+ string:ble_statu_send_ota_start:2131558454
+ string:ble_statu_sending_data:2131558455
+ string:ble_statu_state_off:2131558456
+ string:ble_statu_state_on:2131558457
+ string:ble_statu_user_disconnect:2131558458
+ string:ble_statu_user_init:2131558459
+ string:ble_statu_user_scan:2131558460
+ string:ble_statu_user_send_cmd:2131558461
+ string:ble_statu_user_send_image:2131558462
+ string:ble_statu_user_send_image_cmd_index:2131558463
  style:Animation_AppCompat_Tooltip:2131623940
  style:Theme_AppCompat_CompactMenu:2131624183
  style:Theme_AppCompat_Empty:2131624195

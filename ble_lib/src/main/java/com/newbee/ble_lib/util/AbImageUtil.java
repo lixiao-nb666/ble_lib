@@ -352,6 +352,7 @@ public class AbImageUtil {
             result = output.toByteArray();
             if (needRecycle) {
                 bitmap.recycle();
+                bitmap=null;
             }
         } catch (Exception e) {
             e.printStackTrace();

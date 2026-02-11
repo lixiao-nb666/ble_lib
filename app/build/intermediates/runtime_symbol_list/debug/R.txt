@@ -1089,6 +1089,9 @@ int string abc_toolbar_collapse_description 0x7f0d001a
 int string app_name 0x7f0d001b
 int string ble_clear_index_msg 0x7f0d001c
 int string ble_clear_msg 0x7f0d001d
+int string ble_send_file_err_is_run 0x7f0d0063
+int string ble_send_image_err_is_run 0x7f0d0064
+int string ble_send_ota_err_is_run 0x7f0d0065
 int string ble_statu_adapter_can_not_use 0x7f0d001e
 int string ble_statu_can_not_use 0x7f0d001f
 int string ble_statu_can_send_data 0x7f0d0020

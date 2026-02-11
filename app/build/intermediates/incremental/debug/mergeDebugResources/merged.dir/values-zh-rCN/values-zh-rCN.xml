@@ -29,6 +29,9 @@
     <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"收起"</string>
     <string name="ble_clear_index_msg">蓝牙：清空index消息指令</string>
     <string name="ble_clear_msg">蓝牙：清空消息指令</string>
+    <string name="ble_send_file_err_is_run">蓝牙： 发送文件错误（线程在运行）</string>
+    <string name="ble_send_image_err_is_run">蓝牙： 发送图片错误（线程在运行）</string>
+    <string name="ble_send_ota_err_is_run">蓝牙： 发送OTA错误（线程在运行）</string>
     <string name="ble_statu_adapter_can_not_use">蓝牙：系统适配器不能使用</string>
     <string name="ble_statu_can_not_use">蓝牙：系统不能使用</string>
     <string name="ble_statu_can_send_data">蓝牙：数据发送成功，可以重新发送数据</string>

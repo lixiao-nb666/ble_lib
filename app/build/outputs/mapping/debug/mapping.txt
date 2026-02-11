@@ -3,8 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: a26b207
-# pg_map_hash: SHA-256 a26b207047351f99282dfdec44c3858a1759873b77c0932bcaa9a210b262f6a4
+# pg_map_id: 65f3fbd
+# pg_map_hash: SHA-256 65f3fbdc5d5e58941329d90f2192f44d6b36110b411ac42e989c08b08f8ab6aa
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -6547,16 +6547,16 @@ com.newbee.ble_lib.manager.file.BlueToothGattGetFileDataThread -> com.newbee.ble
     56:60:void interrupt() -> interrupt
     73:100:void run() -> run
 com.newbee.ble_lib.manager.file.BlueToothGattSendFileManager -> com.newbee.ble_lib.manager.file.BlueToothGattSendFileManager:
-    15:36:void <init>() -> <init>
-    12:12:com.newbee.ble_lib.manager.file.BlueToothGattGetFileDataThread access$000(com.newbee.ble_lib.manager.file.BlueToothGattSendFileManager) -> access$000
-    12:12:com.newbee.ble_lib.manager.file.BlueToothGattGetFileDataThread access$002(com.newbee.ble_lib.manager.file.BlueToothGattSendFileManager,com.newbee.ble_lib.manager.file.BlueToothGattGetFileDataThread) -> access$002
-    39:46:com.newbee.ble_lib.manager.file.BlueToothGattSendFileManager getInstance() -> getInstance
-    96:132:void sendBitMap(com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean) -> sendBitMap
-    78:84:void sendFile(com.nrmyw.ble_event_lib.bean.BleSendFileInfoBean) -> sendFile
-    87:93:void sendOta(com.nrmyw.ble_event_lib.bean.BleSendOtaInfoBean) -> sendOta
+    17:38:void <init>() -> <init>
+    14:14:com.newbee.ble_lib.manager.file.BlueToothGattGetFileDataThread access$000(com.newbee.ble_lib.manager.file.BlueToothGattSendFileManager) -> access$000
+    14:14:com.newbee.ble_lib.manager.file.BlueToothGattGetFileDataThread access$002(com.newbee.ble_lib.manager.file.BlueToothGattSendFileManager,com.newbee.ble_lib.manager.file.BlueToothGattGetFileDataThread) -> access$002
+    41:48:com.newbee.ble_lib.manager.file.BlueToothGattSendFileManager getInstance() -> getInstance
+    102:140:void sendBitMap(com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean) -> sendBitMap
+    80:88:void sendFile(com.nrmyw.ble_event_lib.bean.BleSendFileInfoBean) -> sendFile
+    91:99:void sendOta(com.nrmyw.ble_event_lib.bean.BleSendOtaInfoBean) -> sendOta
 com.newbee.ble_lib.manager.file.BlueToothGattSendFileManager$1 -> com.newbee.ble_lib.manager.file.BlueToothGattSendFileManager$1:
-    15:15:void <init>(com.newbee.ble_lib.manager.file.BlueToothGattSendFileManager) -> <init>
-    18:25:void sendOver(long) -> sendOver
+    17:17:void <init>(com.newbee.ble_lib.manager.file.BlueToothGattSendFileManager) -> <init>
+    20:27:void sendOver(long) -> sendOver
 com.newbee.ble_lib.manager.file.send.CheckRetrunByteAndToDoType -> com.newbee.ble_lib.manager.file.send.CheckRetrunByteAndToDoType:
     6:6:com.newbee.ble_lib.manager.file.send.CheckRetrunByteAndToDoType[] $values() -> $values
     6:12:void <clinit>() -> <clinit>
@@ -6566,18 +6566,18 @@ com.newbee.ble_lib.manager.file.send.CheckRetrunByteAndToDoType -> com.newbee.bl
     6:6:com.newbee.ble_lib.manager.file.send.CheckRetrunByteAndToDoType valueOf(java.lang.String) -> valueOf
     6:6:com.newbee.ble_lib.manager.file.send.CheckRetrunByteAndToDoType[] values() -> values
 com.newbee.ble_lib.manager.file.send.SendBitmapManager -> com.newbee.ble_lib.manager.file.send.SendBitmapManager:
-    27:106:void <init>(com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean) -> <init>
-    139:147:void clear() -> clear
-    96:101:void over() -> over
-    46:92:void run() -> run
-    172:194:void sendImageEnd(long) -> sendImageEnd
-    159:169:void sendImageStart() -> sendImageStart
-    128:130:void setListen(com.newbee.ble_lib.manager.file.BlueToothGattGetFileDataThread$Listen) -> setListen
-    226:251:void splitPacketForMtuByte(byte[]) -> splitPacketForMtuByte
+    27:109:void <init>(com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean) -> <init>
+    142:150:void clear() -> clear
+    99:104:void over() -> over
+    46:95:void run() -> run
+    175:197:void sendImageEnd(long) -> sendImageEnd
+    162:172:void sendImageStart() -> sendImageStart
+    131:133:void setListen(com.newbee.ble_lib.manager.file.BlueToothGattGetFileDataThread$Listen) -> setListen
+    229:254:void splitPacketForMtuByte(byte[]) -> splitPacketForMtuByte
 com.newbee.ble_lib.manager.file.send.SendBitmapManager$1 -> com.newbee.ble_lib.manager.file.send.SendBitmapManager$1:
-    106:106:void <init>(com.newbee.ble_lib.manager.file.send.SendBitmapManager) -> <init>
-    115:123:void sendFileOver(long,long) -> sendFileOver
-    111:111:void sendMsgOver(byte[],long,long) -> sendMsgOver
+    109:109:void <init>(com.newbee.ble_lib.manager.file.send.SendBitmapManager) -> <init>
+    118:126:void sendFileOver(long,long) -> sendFileOver
+    114:114:void sendMsgOver(byte[],long,long) -> sendMsgOver
 com.newbee.ble_lib.manager.file.send.SendFileManager -> com.newbee.ble_lib.manager.file.send.SendFileManager:
     30:156:void <init>(com.nrmyw.ble_event_lib.bean.BleSendFileInfoBean) -> <init>
     49:49:void clear() -> clear
@@ -6739,7 +6739,7 @@ com.newbee.ble_lib.service.event.BleDelayType -> com.newbee.ble_lib.service.even
     3:3:com.newbee.ble_lib.service.event.BleDelayType[] values() -> values
 com.newbee.ble_lib.util.AbImageUtil -> com.newbee.ble_lib.util.AbImageUtil:
     41:41:void <clinit>() -> <clinit>
-    336:367:byte[] bitmap2Bytes(android.graphics.Bitmap,android.graphics.Bitmap$CompressFormat,boolean,int,int) -> bitmap2Bytes
+    336:368:byte[] bitmap2Bytes(android.graphics.Bitmap,android.graphics.Bitmap$CompressFormat,boolean,int,int) -> bitmap2Bytes
 com.newbee.ble_lib.util.BleCheckUtil -> com.newbee.ble_lib.util.BleCheckUtil:
     21:21:boolean checkPhoneCanUseBle(android.content.pm.PackageManager) -> checkPhoneCanUseBle
     25:35:boolean checkTheBleCanUse(android.bluetooth.le.ScanResult) -> checkTheBleCanUse
@@ -7200,10 +7200,10 @@ com.nrmyw.ble_event_lib.send.BleEventSubscriptionSubject -> com.nrmyw.ble_event_
     84:88:void sendImage(com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean) -> sendImage
     100:103:void sendOta(com.nrmyw.ble_event_lib.bean.BleSendOtaInfoBean) -> sendOta
 com.nrmyw.ble_event_lib.statu.BleStatu -> com.nrmyw.ble_event_lib.statu.BleStatu:
-    6:32:void <clinit>() -> <clinit>
-    35:37:void <init>(java.lang.String,int,int) -> <init>
-    40:40:int getStrId() -> getStrId
-    44:47:void setStrId(int) -> setStrId
+    6:35:void <clinit>() -> <clinit>
+    38:40:void <init>(java.lang.String,int,int) -> <init>
+    43:43:int getStrId() -> getStrId
+    47:50:void setStrId(int) -> setStrId
     6:6:com.nrmyw.ble_event_lib.statu.BleStatu valueOf(java.lang.String) -> valueOf
     6:6:com.nrmyw.ble_event_lib.statu.BleStatu[] values() -> values
 com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject -> com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject:

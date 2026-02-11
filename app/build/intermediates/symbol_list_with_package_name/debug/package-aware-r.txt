@@ -1090,6 +1090,9 @@ string abc_toolbar_collapse_description
 string app_name
 string ble_clear_index_msg
 string ble_clear_msg
+string ble_send_file_err_is_run
+string ble_send_image_err_is_run
+string ble_send_ota_err_is_run
 string ble_statu_adapter_can_not_use
 string ble_statu_can_not_use
 string ble_statu_can_send_data
