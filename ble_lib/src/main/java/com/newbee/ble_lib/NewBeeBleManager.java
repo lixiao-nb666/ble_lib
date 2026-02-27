@@ -31,21 +31,31 @@ public class NewBeeBleManager {
 
 
     public void init(Context context){
-        bluetoothGattServiceDao=new BluetoothGattServiceDao(context);
-        bluetoothGattServiceDao.startServiceIsBind();
-        BleStatuBroadcastReceiverDao.getInstance().init(context);
 
+        BleStatuBroadcastReceiverDao.getInstance().init(context);
+        startService(context);
+    }
+
+    public void startService(Context context){
+        if(null==bluetoothGattServiceDao){
+            bluetoothGattServiceDao=new BluetoothGattServiceDao(context);
+            bluetoothGattServiceDao.startServiceIsBind();
+        }
+
+    }
+
+    public void stopService(){
+        if(null!=bluetoothGattServiceDao){
+            bluetoothGattServiceDao.stopServiceIsBind();
+            bluetoothGattServiceDao=null;
+        }
     }
 
     public void close(){
         if (null!=bleEventObserver) {
             bleEventObserver=null;
         }
-
-        if(null!=bluetoothGattServiceDao){
-            bluetoothGattServiceDao.stopServiceIsBind();
-            bluetoothGattServiceDao=null;
-        }
+        stopService();
         BleStatuBroadcastReceiverDao.getInstance().close();
     }
 
