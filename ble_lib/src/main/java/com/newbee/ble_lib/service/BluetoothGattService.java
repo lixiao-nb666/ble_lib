@@ -40,7 +40,6 @@ public class BluetoothGattService extends BaseService {
 
                 switch (msgType){
                     case INIT_BLE:
-
                         BleConnectManager.getInstance().havePermissionInitBle(getBaseContext(),getPackageManager());
                         autoConnectDevice(AutoConnectType.INIT);
                         break;

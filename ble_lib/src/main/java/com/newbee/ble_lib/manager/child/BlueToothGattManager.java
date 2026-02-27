@@ -231,7 +231,6 @@ public class BlueToothGattManager {
         public void onCharacteristicChanged(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic) {
 //            eventUpdate(characteristic);
             try {
-
                 BlueToothSendStatuManager.getInstance().getRetrunBytes(characteristic.getValue());
             }catch (Exception e){
                 Log.i(tag,"发送 ===  :发送成功---checkReturnToSend 3333?????????:"+e.toString());
@@ -272,26 +271,27 @@ public class BlueToothGattManager {
 
 
 
-    private void pause(){
+    private void clearData(){
         BlueToothSendStatuManager.getInstance().initData();
         dataService = null;
         writeCharacteristic = null;
         readCharacteristic = null;
         if(null!=bluetoothGatt){
+            bluetoothGatt.disconnect();
             bluetoothGatt.close();
             bluetoothGatt=null;
         }
     }
 
     public void close(){
-        pause();
+        clearData();
         BlueToothGattSendMsgManager.getInstance().close();
         BlueToothGattSendMsgManager.getInstance().close();
         blueToothGattManager=null;
     }
 
     public void checkIsDisConnecting(){
-        pause();
+        clearData();
     }
 
     private boolean connecting=false;
@@ -299,6 +299,9 @@ public class BlueToothGattManager {
         return connecting;
     }
     public synchronized void initGatt(BluetoothDevice device,Context context){
+        if(null!=bluetoothGatt||null!=readCharacteristic||null!=writeCharacteristic||null!=dataService){
+            clearData();
+        }
         connecting=true;
         BlueToothSendStatuManager.getInstance().initData();
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {

@@ -57,6 +57,20 @@ public class BleConnectManager {
         countCannotScandataNumb=0;
     }
 
+    private void initData(){
+        countCannotScandataNumb=0;
+        if(null!=bluetoothManager){
+            bluetoothManager=null;
+        }
+        if(null!=bluetoothAdapter){
+            bluetoothAdapter=null;
+        }
+        if(null!=bluetoothLeScanner){
+            bluetoothLeScanner=null;
+        }
+
+    }
+
     public void close(){
         if(null!=context){
             context=null;
@@ -88,25 +102,29 @@ public class BleConnectManager {
         if(null==bluetoothLeScanner){
             return false;
         }
+        if(countCannotScandataNumb>=6){
+            return false;
+        }
         return bleIsOpen();
     }
 
     private Context context;
     public void havePermissionInitBle(Context context, PackageManager packageManager){
-        countCannotScandataNumb=0;
+        initData();
         if(!BleCheckUtil.checkPhoneCanUseBle(packageManager)){
 //            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.BLE_CAN_NOT_USE);
             BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR,com.nrmyw.ble_event_lib.R.string.ble_statu_can_not_use);
             return;
         }
-
         bluetoothManager= (BluetoothManager) context.getSystemService(Context.BLUETOOTH_SERVICE);
+
         if(null==bluetoothManager){
 //            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.BLE_MANAGER_CAN_NOT_USE);
             BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR,com.nrmyw.ble_event_lib.R.string.ble_statu_manager_can_not_use);
             return;
         }
         bluetoothAdapter=bluetoothManager.getAdapter();
+
         if(null==bluetoothAdapter){
 //            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.BLE_ADAPTER_CAN_NOT_USE);
             Log.i("kankanadaptercannotuse","kankanadaptercannotuse---2");
