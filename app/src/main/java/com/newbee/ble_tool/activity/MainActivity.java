@@ -139,11 +139,9 @@ public class MainActivity extends BaseCompatActivity {
 //                        bleSendFileInfoBean.setFilePath(filePath);
 //                        bleSendFileInfoBean.setFileName("cpu1.bin");
 //                        BleEventSubscriptionSubject.getInstance().sendFile(bleSendFileInfoBean);
-
                         BleSendOtaInfoBean bleSendFileInfoBean=new BleSendOtaInfoBean();
                         bleSendFileInfoBean.setFilePath(filePath);
                         bleSendFileInfoBean.setFileName("cpu1.bin");
-
                         BleEventSubscriptionSubject.getInstance().sendOta(bleSendFileInfoBean);
 
                         break;
@@ -191,7 +189,7 @@ public class MainActivity extends BaseCompatActivity {
         public void handleMessage(@NonNull Message msg) {
             super.handleMessage(msg);
             BleStatu bleStatu=BleStatu.values()[msg.what];
-            bleStatuTV.setText(getResources().getText(bleStatu.getStrId()));
+            bleStatuTV.setText(bleStatu.toString()+getResources().getText(bleStatu.getStrId())+"111");
             if(msg.arg1!=0){
                 bleTV.append("-"+getResources().getText(msg.arg1));
             }

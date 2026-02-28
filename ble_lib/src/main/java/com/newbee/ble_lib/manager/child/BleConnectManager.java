@@ -108,8 +108,36 @@ public class BleConnectManager {
         return bleIsOpen();
     }
 
+    private boolean checkDeviceIsConnected(){
+        if(null==bluetoothManager){
+            return false;
+        }
+        if(null==bluetoothAdapter){
+            return false;
+        }
+        if(null==bluetoothLeScanner){
+            return false;
+        }
+        if(null==BleConnectStatuUtil.getInstance().getNowUseBleDevice()||TextUtils.isEmpty(BleConnectStatuUtil.getInstance().getNowUseBleDevice().getAdress())){
+            return false;
+        }
+        if(BleConnectStatuUtil.getInstance().isConnect()){
+            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.CONNECTED,BleConnectStatuUtil.getInstance().getNowUseBleDevice().getAdress());
+            return true;
+        }else {
+            return false;
+        }
+
+
+    }
+
     private Context context;
     public void havePermissionInitBle(Context context, PackageManager packageManager){
+        if(checkDeviceIsConnected()){
+            return;
+        }
+
+
         initData();
         if(!BleCheckUtil.checkPhoneCanUseBle(packageManager)){
 //            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.BLE_CAN_NOT_USE);
