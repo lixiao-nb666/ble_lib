@@ -118,7 +118,7 @@ public class SendBitmapManager implements BlueToothGattSendFile {
             Log.i("kankantupian","kankantubianzenmhuis:over1");
             long nowTime=System.currentTimeMillis();
             long allUseTime=startTime-nowTime;
-            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.SEND_IMAGE_DATA_END,allUseTime);
+            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.SEND_IMAGE_DATA_END,allUseTime,bleSendImageInfoBean);
             if(null!=listen){
                 Log.i("kankantupian","kankantubianzenmhuis:over2");
                 listen.sendOver(useTime);
