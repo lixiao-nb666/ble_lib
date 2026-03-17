@@ -3,13 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-<<<<<<< HEAD
 # pg_map_id: aaca8c6
 # pg_map_hash: SHA-256 aaca8c6796432bfce4f2fd99cc74cc1f8267e515286a469d48856ba0904b2931
-=======
-# pg_map_id: 95cf41c
-# pg_map_hash: SHA-256 95cf41c4dc57634eb24fc0c6403398d59a3212f642998bb9d2fcab6cb3899a77
->>>>>>> 5f9108e69f04369f602983e5ffc766a6c8a4ec47
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -6576,10 +6571,6 @@ com.newbee.ble_lib.manager.file.send.CheckRetrunByteAndToDoType -> com.newbee.bl
     6:6:com.newbee.ble_lib.manager.file.send.CheckRetrunByteAndToDoType[] values() -> values
 com.newbee.ble_lib.manager.file.send.SendBitmapManager -> com.newbee.ble_lib.manager.file.send.SendBitmapManager:
     28:110:void <init>(com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean) -> <init>
-<<<<<<< HEAD
-=======
-    21:21:com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean access$000(com.newbee.ble_lib.manager.file.send.SendBitmapManager) -> access$000
->>>>>>> 5f9108e69f04369f602983e5ffc766a6c8a4ec47
     143:151:void clear() -> clear
     100:105:void over() -> over
     47:96:void run() -> run

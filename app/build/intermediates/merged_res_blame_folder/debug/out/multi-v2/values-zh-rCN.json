@@ -4,7 +4,7 @@
             "outputFile": "com.newbee.ble_tool.app-mergeDebugResources-9:/values-zh-rCN/values-zh-rCN.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-3\\7a55961dae9d77ef99139908a851e3c2\\transformed\\ble_event-1.0.37\\res\\values-zh-rCN\\values-zh-rCN.xml",
+                    "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-3\\b568abb97bf885c1eb8faee39505b564\\transformed\\ble_event-1.0.38\\res\\values-zh-rCN\\values-zh-rCN.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
