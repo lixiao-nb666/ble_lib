@@ -60,6 +60,7 @@ public class BluetoothGattService extends BaseService {
                         BlueToothGattSendMsgManager.getInstance().sendMsgByCmd((byte[]) msg.obj);
                         break;
                     case SEND_IMAGE:
+
                         BlueToothGattSendFileManager.getInstance().sendBitMap((BleSendImageInfoBean) msg.obj);
                         break;
                     case SEND_FILE:
