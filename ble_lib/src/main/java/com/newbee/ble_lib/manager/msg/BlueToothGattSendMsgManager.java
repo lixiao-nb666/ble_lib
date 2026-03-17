@@ -3,6 +3,7 @@ package com.newbee.ble_lib.manager.msg;
 
 import android.util.Log;
 
+import com.nrmyw.ble_event_lib.type.BleSendFileType;
 import com.nrmyw.ble_event_lib.util.BleByteUtil;
 
 public class BlueToothGattSendMsgManager {
