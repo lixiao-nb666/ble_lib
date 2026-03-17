@@ -102,13 +102,13 @@ public class BleConnectManager {
         if(null==bluetoothLeScanner){
             return false;
         }
-        if(countCannotScandataNumb>=4){
+        if(countCannotScandataNumb>=6){
             return false;
         }
         return bleIsOpen();
     }
 
-    private boolean checkDeviceIsConnected(){
+    public boolean checkDeviceIsConnected(){
         if(null==bluetoothManager){
             return false;
         }
@@ -133,9 +133,7 @@ public class BleConnectManager {
 
     private Context context;
     public void havePermissionInitBle(Context context, PackageManager packageManager){
-        if(checkDeviceIsConnected()){
-            return;
-        }
+
 
 
         initData();

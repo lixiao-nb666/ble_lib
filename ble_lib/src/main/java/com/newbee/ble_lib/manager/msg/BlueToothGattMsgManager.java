@@ -7,7 +7,6 @@ import com.newbee.ble_lib.manager.child.BlueToothGattManager;
 import com.newbee.ble_lib.manager.child.BlueToothSendStatuManager;
 import com.nrmyw.ble_event_lib.statu.BleStatu;
 import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
-import com.nrmyw.ble_event_lib.type.BleSendFileType;
 import com.nrmyw.ble_event_lib.util.BleByteUtil;
 
 import java.util.Map;
@@ -54,10 +53,7 @@ class BlueToothGattMsgManager {
         clearFileMsg();
     }
 
-
     public synchronized void queMsg() {
-
-
         if (!queFileMsg()) {
             queCmdMsg();
         }
@@ -128,12 +124,7 @@ class BlueToothGattMsgManager {
     }
 
     private long startSendImageTime;
-
-
-
     public void readySendFile(){
-
-
         nowCanSendImage=true;
         fileMsgCountNumb=0;
         fileMsgIndex=0;
@@ -207,15 +198,7 @@ class BlueToothGattMsgManager {
             return false;
         }
         listenSendFileMsg(fileMsgIndex, cmd);
-
-
         return true;
-    }
-
-
-
-    private void checkCanSendImageOverMsg(){
-
     }
 
 

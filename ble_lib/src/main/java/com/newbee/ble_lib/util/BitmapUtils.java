@@ -1,4 +1,4 @@
-//package com.newbee.ble_lib.util;
+package com.newbee.ble_lib.util;//package com.newbee.ble_lib.util;
 //
 //import android.content.Context;
 //import android.graphics.Bitmap;

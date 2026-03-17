@@ -19,7 +19,6 @@ import com.nrmyw.ble_event_lib.bean.BleSendImageEndInfoBean;
 import com.nrmyw.ble_event_lib.config.NewBeeBleConfig;
 import com.nrmyw.ble_event_lib.statu.BleStatu;
 import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
-import com.nrmyw.ble_event_lib.type.BleSendFileType;
 import com.nrmyw.ble_event_lib.util.BleByteUtil;
 
 public class SendFileManager implements BlueToothGattSendFile {

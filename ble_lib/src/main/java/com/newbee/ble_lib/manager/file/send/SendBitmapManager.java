@@ -15,7 +15,6 @@ import com.nrmyw.ble_event_lib.bean.BleSendImageStartInfoBean;
 import com.nrmyw.ble_event_lib.config.NewBeeBleConfig;
 import com.nrmyw.ble_event_lib.statu.BleStatu;
 import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
-import com.nrmyw.ble_event_lib.type.BleSendFileType;
 import com.nrmyw.ble_event_lib.util.BleByteUtil;
 
 public class SendBitmapManager implements BlueToothGattSendFile {
@@ -118,7 +117,7 @@ public class SendBitmapManager implements BlueToothGattSendFile {
         public void sendFileOver(long startTime, long useTime) {
             Log.i("kankantupian","kankantubianzenmhuis:over1");
             long nowTime=System.currentTimeMillis();
-            long allUseTime=nowTime-startTime;
+            long allUseTime=startTime-nowTime;
             BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.SEND_IMAGE_DATA_END,allUseTime);
             if(null!=listen){
                 Log.i("kankantupian","kankantubianzenmhuis:over2");

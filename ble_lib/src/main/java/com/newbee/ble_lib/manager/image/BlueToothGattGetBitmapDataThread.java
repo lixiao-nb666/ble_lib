@@ -1,4 +1,4 @@
-//package com.newbee.ble_lib.manager.image;
+package com.newbee.ble_lib.manager.image;//package com.newbee.ble_lib.manager.image;
 //
 //import android.graphics.Bitmap;
 //import android.util.Log;
