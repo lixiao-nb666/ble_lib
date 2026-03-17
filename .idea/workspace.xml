@@ -22,9 +22,58 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8eea6d03-d1e4-4dd5-a95d-cfd1509ed020" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/manager/child/BleConnectManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/manager/child/BleConnectManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/apk/debug/ble_tool_release-debug-1.0.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/apk/debug/ble_tool_release-debug-1.0.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/minifyDebugWithR8/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/minifyDebugWithR8/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/merge-state" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/merge-state" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/mapping/debug/configuration.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/mapping/debug/configuration.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/mapping/debug/mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/mapping/debug/mapping.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/mapping/debug/seeds.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/mapping/debug/seeds.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/mapping/debug/usage.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/mapping/debug/usage.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/compile_library_classes_jar/debug/classes.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/compile_library_classes_jar/debug/classes.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/manager/child/BleConnectManager$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/manager/child/BleConnectManager$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/manager/child/BleConnectManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/manager/child/BleConnectManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/manager/file/send/SendBitmapManager$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/manager/file/send/SendBitmapManager$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/manager/file/send/SendBitmapManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/manager/file/send/SendBitmapManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/manager/file/send/SendFileManager$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/manager/file/send/SendFileManager$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/manager/file/send/SendFileManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/manager/file/send/SendFileManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/manager/file/send/SendOtaManager$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/manager/file/send/SendOtaManager$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/manager/file/send/SendOtaManager$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/manager/file/send/SendOtaManager$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/manager/file/send/SendOtaManager$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/manager/file/send/SendOtaManager$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/manager/file/send/SendOtaManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/manager/file/send/SendOtaManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/manager/msg/BlueToothGattMsgManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/manager/msg/BlueToothGattMsgManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/manager/msg/BlueToothGattSendMsgManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/manager/msg/BlueToothGattSendMsgManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/service/BluetoothGattService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/service/BluetoothGattService$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/service/BluetoothGattService$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/service/BluetoothGattService$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/service/BluetoothGattService$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/service/BluetoothGattService$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/service/BluetoothGattService$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/service/BluetoothGattService$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/service/BluetoothGattService$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/service/BluetoothGattService$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/service/BluetoothGattService$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/service/BluetoothGattService$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/service/BluetoothGattService$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/service/BluetoothGattService$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/service/BluetoothGattService$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/service/BluetoothGattService$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/service/BluetoothGattService$AutoConnectType.class" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/service/BluetoothGattService$AutoConnectType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/service/BluetoothGattService.class" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/javac/debug/classes/com/newbee/ble_lib/service/BluetoothGattService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/intermediates/runtime_library_classes_jar/debug/classes.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/intermediates/runtime_library_classes_jar/debug/classes.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/manager/file/send/SendBitmapManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/manager/file/send/SendBitmapManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/manager/file/send/SendFileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/manager/file/send/SendFileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/manager/file/send/SendOtaManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/manager/file/send/SendOtaManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/manager/msg/BlueToothGattMsgManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/manager/msg/BlueToothGattMsgManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/manager/msg/BlueToothGattSendMsgManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/ble_lib/src/main/java/com/newbee/ble_lib/manager/msg/BlueToothGattSendMsgManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +83,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\Administrator\.android\avd\Medium_Phone.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=4c431812)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -67,6 +116,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.lixiao-nb666/ble_event/1.0.8/edb3b6cbb9d5fcd6db84c6c5119aff923f55469f/ble_event-1.0.8-sources.jar!/com/nrmyw/ble_event_lib/config/NewBeeBleConfig.java" root0="FORCE_HIGHLIGHTING" />
@@ -83,22 +133,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Android App.app.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/asworkspace/hud/lib/ble_lib/ble_lib/src/main/java/com/newbee/ble_lib/service/event&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDK Location&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Android App.app.executor": "Run",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "F:/asworkspace/hud/lib/ble_lib/ble_lib/src/main/java/com/newbee/ble_lib/service/event",
+    "project.structure.last.edited": "SDK Location",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
-}</component>
+}]]></component>
   <component name="PsdUISettings">
     <option name="MODULE_TAB" value="Properties" />
     <option name="LAST_EDITED_SIGNING_CONFIG" value="debug" />
@@ -211,8 +262,64 @@
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="02d171d9-1146-483f-9b80-3a62426c9045" value="TOOL_WINDOW" />
+        <entry key="4505ef78-9a63-4d77-8b5d-c71057dbb708" value="TOOL_WINDOW" />
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
+        <entry key="02d171d9-1146-483f-9b80-3a62426c9045">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+            </State>
+          </value>
+        </entry>
+        <entry key="4505ef78-9a63-4d77-8b5d-c71057dbb708">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:F:/asworkspace/hud/lib/ble_lib/ble_lib" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State />
@@ -231,12 +338,12 @@
         </entry>
         <entry key="com.newbee.ble_tool">
           <value>
-            <CheckInfo lastCheckTimestamp="1772248201925" />
+            <CheckInfo lastCheckTimestamp="1773663987616" />
           </value>
         </entry>
         <entry key="com.newbee.ble_tool.test">
           <value>
-            <CheckInfo lastCheckTimestamp="1772248201925" />
+            <CheckInfo lastCheckTimestamp="1773663987617" />
           </value>
         </entry>
       </map>
