@@ -63,7 +63,6 @@ public class BluetoothGattService extends BaseService {
                         BlueToothGattSendFileManager.getInstance().sendBitMap((BleSendImageInfoBean) msg.obj);
                         break;
                     case SEND_FILE:
-
                         BlueToothGattSendFileManager.getInstance().sendFile((BleSendFileInfoBean) msg.obj);
                         break;
                     case SEND_OTA:
@@ -139,11 +138,6 @@ public class BluetoothGattService extends BaseService {
 //    }
 
 //    boolean isDisConnectReinit;
-
-
-
-
-
 
 //    private void nowConnectIngWait(){
 //        handler.removeCallbacks(autoConnectRunnable);

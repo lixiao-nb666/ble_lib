@@ -82,6 +82,7 @@ public class BleConnectStatuUtil {
     }
 
 
+
     public void sendConnecting(BleDeviceBean bleDeviceBean, String address){
         if(null!=bleDeviceBean&&isConnect){
             BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.NONE,"Now is connected,Can not connect other !");
@@ -94,7 +95,6 @@ public class BleConnectStatuUtil {
             BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.NONE,"Connecting,Please wait !");
             return;
         }
-
         nowUseBleDevice=bleDeviceBean;
         BleConnectManager.getInstance().connect(address);
     }

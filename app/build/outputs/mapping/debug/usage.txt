@@ -5884,7 +5884,6 @@ com.newbee.ble_lib.manager.file.send.SendFileManager:
 com.newbee.ble_lib.manager.file.send.SendOtaManager:
     public boolean isStart()
 com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager:
-    private void checkCanSendImageOverMsg()
     public synchronized void removeFileMsg(java.lang.String)
 com.newbee.ble_lib.service.BluetoothGattService$3:
     public void clearIndexMsg()

@@ -250,7 +250,6 @@ public class BleConnectManager {
         }
 
         Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:1:---111---"+countCannotScandataNumb);
-
         if(countCannotScandataNumb>=2){
             Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:1:---112");
             bluetoothLeScanner.startScan(scanCallback);
@@ -259,7 +258,6 @@ public class BleConnectManager {
             Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:1:---113");
             bluetoothLeScanner.startScan(scanCallback);
         }
-
         Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:0");
         //bluetoothLeScanner.startScan(scanCallback)这个方法有点问题，搜索太久了，找不到数据,离谱大了
 //        if(null!=BleConnectStatuUtil.getInstance().getNowUseBleDevice()){
@@ -327,10 +325,11 @@ public class BleConnectManager {
             Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:1:---114");
 //            boolean canNotScanData=!nowUseListenScanData&&countCannotScandataNumb>1;
             if(!BleConnectStatuUtil.getInstance().checkCanUseOldDeviceAdress(true)){
-
                 return;
             }
             Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:1:---115");
+//            BleConnectStatuUtil.getInstance().sendConnecting(BleConnectStatuUtil.getInstance().getNowUseBleDevice(),BleConnectStatuUtil.getInstance().getNowUseBleDevice().getAdress());
+            //这里属于后台行为，可以不提交
             connect(BleConnectStatuUtil.getInstance().getNowUseBleDevice().getAdress());
         }catch (Exception e){}
     }

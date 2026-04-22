@@ -4,11 +4,11 @@ plugins {
 
 android {
     namespace 'com.newbee.ble_lib'
-    compileSdk 32
+    compileSdk 31
 
     defaultConfig {
         minSdk 21
-        targetSdk 32
+        targetSdk 31
     }
 
 
@@ -27,6 +27,7 @@ android {
             consumerProguardFiles 'proguard-rules.pro'
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8

@@ -273,6 +273,7 @@ public class BlueToothGattManager {
 
     private void clearData(){
         BlueToothSendStatuManager.getInstance().initData();
+        connecting=false;
         dataService = null;
         writeCharacteristic = null;
         readCharacteristic = null;
@@ -295,14 +296,22 @@ public class BlueToothGattManager {
     }
 
     private boolean connecting=false;
+    private long connectingTime;
     public synchronized boolean isConnecting(){
+        if(connecting&&System.currentTimeMillis()-connectingTime>=BleManagerConfig.BLE_CONNECTING_WAIT_TIME){
+            connecting=false;
+        }
         return connecting;
     }
-    public synchronized void initGatt(BluetoothDevice device,Context context){
+
+
+
+    public synchronized void initGatt(BluetoothDevice device, Context context){
         if(null!=bluetoothGatt||null!=readCharacteristic||null!=writeCharacteristic||null!=dataService){
             clearData();
         }
         connecting=true;
+        connectingTime=System.currentTimeMillis();
         BlueToothSendStatuManager.getInstance().initData();
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 //            //自动回连有个问题，如果数据量大的情况下，手机系统自动回连会按默认的mtu值传输
@@ -419,7 +428,7 @@ public class BlueToothGattManager {
 //        if(null!=writeCharacteristic){
 //            writeCharacteristic=null;
 //        }
-
+        connecting=false;
         if (null!=bluetoothGatt ) {
             bluetoothGatt.disconnect();
 //            bluetoothGatt=null;
