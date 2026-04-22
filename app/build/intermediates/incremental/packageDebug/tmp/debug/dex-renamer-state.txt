@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-#Tue Apr 21 17:53:33 CST 2026
-=======
-#Mon Apr 20 16:37:10 CST 2026
->>>>>>> 752aa7783d57e4b5dbab9c350510bc641667d153
+#Wed Apr 22 10:02:22 CST 2026
 base.0=F\:\\asworkspace\\hud\\lib\\ble_lib\\app\\build\\intermediates\\dex\\debug\\minifyDebugWithR8\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

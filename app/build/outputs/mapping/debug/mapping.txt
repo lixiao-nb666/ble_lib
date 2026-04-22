@@ -3,13 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-<<<<<<< HEAD
 # pg_map_id: 49bbf20
 # pg_map_hash: SHA-256 49bbf20800924e1b00bdae15a1044251fde23cd4c5f075f9371d718bb22498cb
-=======
-# pg_map_id: 7b2abea
-# pg_map_hash: SHA-256 7b2abeaf914b7f1b3b830548cf86f1d8c3726c903b3e71264c39843b361b0f09
->>>>>>> 752aa7783d57e4b5dbab9c350510bc641667d153
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -6478,24 +6473,15 @@ com.newbee.ble_lib.manager.child.BleConnectManager -> com.newbee.ble_lib.manager
     112:128:boolean checkDeviceIsConnected() -> checkDeviceIsConnected
     57:58:void clear() -> clear
     75:91:void close() -> close
-<<<<<<< HEAD
     341:357:boolean connect(java.lang.String) -> connect
     364:366:void disconnect() -> disconnect
-=======
-    340:356:boolean connect(java.lang.String) -> connect
-    363:365:void disconnect() -> disconnect
->>>>>>> 752aa7783d57e4b5dbab9c350510bc641667d153
     45:52:com.newbee.ble_lib.manager.child.BleConnectManager getInstance() -> getInstance
     139:176:void havePermissionInitBle(android.content.Context,android.content.pm.PackageManager) -> havePermissionInitBle
     61:72:void initData() -> initData
     189:193:void openBluetooth() -> openBluetooth
     236:305:void startSearchBLE() -> startSearchBLE
     308:312:void stopScan() -> stopScan
-<<<<<<< HEAD
     325:335:void tryToConnectOldDevice() -> tryToConnectOldDevice
-=======
-    325:334:void tryToConnectOldDevice() -> tryToConnectOldDevice
->>>>>>> 752aa7783d57e4b5dbab9c350510bc641667d153
 com.newbee.ble_lib.manager.child.BleConnectManager$1 -> com.newbee.ble_lib.manager.child.BleConnectManager$1:
     204:204:void <init>(com.newbee.ble_lib.manager.child.BleConnectManager) -> <init>
     212:214:void onBatchScanResults(java.util.List) -> onBatchScanResults
