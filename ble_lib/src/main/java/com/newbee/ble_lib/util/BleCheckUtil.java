@@ -28,10 +28,10 @@ public class BleCheckUtil {
         String deviceName = device.getName();
         String address=device.getAddress();
         if(null!=bleDeviceBean&&!TextUtils.isEmpty(address)){
+            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.FOUND_BLE_DEVICE,deviceName,address);
             setToConnecting(bleDeviceBean,deviceName,address);
             return true;
         }else {
-            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.FOUND_BLE_DEVICE,deviceName,address);
             return false;
         }
 
@@ -59,10 +59,11 @@ public class BleCheckUtil {
         String address=device.getAddress();
         if(null!=bleDeviceBean&&!TextUtils.isEmpty(address)){
 //                Log.w(tag,"BluetoothAdapter  initialized  111556677--8811--"+ deviceName+"--"+address);
-                setToConnecting(bleDeviceBean,deviceName,address);
+            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.FOUND_BLE_DEVICE,deviceName,address);
+            setToConnecting(bleDeviceBean,deviceName,address);
             return true;
         }else {
-            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.FOUND_BLE_DEVICE,deviceName,address);
+
             return false;
         }
     }
