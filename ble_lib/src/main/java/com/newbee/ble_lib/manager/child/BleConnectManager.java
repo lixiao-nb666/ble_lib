@@ -102,7 +102,7 @@ public class BleConnectManager {
         if(null==bluetoothLeScanner){
             return false;
         }
-        if(countCannotScandataNumb>=6){
+        if(countCannotScandataNumb>=4){
             return false;
         }
         return bleIsOpen();

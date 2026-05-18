@@ -3,8 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 49bbf20
-# pg_map_hash: SHA-256 49bbf20800924e1b00bdae15a1044251fde23cd4c5f075f9371d718bb22498cb
+# pg_map_id: 75f589b
+# pg_map_hash: SHA-256 75f589b31e309c946b2ea60e92c21f2523e608950cafecf83e8270b141205e48
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -6747,8 +6747,8 @@ com.newbee.ble_lib.util.AbImageUtil -> com.newbee.ble_lib.util.AbImageUtil:
 com.newbee.ble_lib.util.BleCheckUtil -> com.newbee.ble_lib.util.BleCheckUtil:
     21:21:boolean checkPhoneCanUseBle(android.content.pm.PackageManager) -> checkPhoneCanUseBle
     25:35:boolean checkTheBleCanUse(android.bluetooth.le.ScanResult) -> checkTheBleCanUse
-    55:66:boolean checkTheBleCanUse(android.bluetooth.BluetoothDevice) -> checkTheBleCanUse
-    71:75:void setToConnecting(com.nrmyw.ble_event_lib.bean.BleDeviceBean,java.lang.String,java.lang.String) -> setToConnecting
+    55:67:boolean checkTheBleCanUse(android.bluetooth.BluetoothDevice) -> checkTheBleCanUse
+    72:76:void setToConnecting(com.nrmyw.ble_event_lib.bean.BleDeviceBean,java.lang.String,java.lang.String) -> setToConnecting
 com.newbee.ble_lib.util.BleConnectStatuUtil -> com.newbee.ble_lib.util.BleConnectStatuUtil:
     24:26:void <init>() -> <init>
     47:64:boolean checkCanUseOldDeviceAdress(boolean) -> checkCanUseOldDeviceAdress
