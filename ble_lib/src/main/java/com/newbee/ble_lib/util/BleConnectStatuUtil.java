@@ -8,6 +8,8 @@ import com.newbee.ble_lib.config.BleManagerConfig;
 import com.newbee.ble_lib.manager.child.BleConnectManager;
 import com.newbee.ble_lib.manager.child.BlueToothGattManager;
 import com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager;
+import com.newbee.ble_lib.service.event.BleDelayEventSubscriptionSubject;
+import com.newbee.ble_lib.service.event.BleDelayType;
 import com.nrmyw.ble_event_lib.bean.BleDeviceBean;
 import com.nrmyw.ble_event_lib.statu.BleStatu;
 import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
@@ -48,7 +50,6 @@ public class BleConnectStatuUtil {
             //因为是第一次，直接返回
             return false;
         }
-
         if(isConnect){
             //如果连接状态，直接返回不行
             return false;
@@ -106,6 +107,10 @@ public class BleConnectStatuUtil {
         isConnect=true;
         BlueToothGattSendMsgManager.getInstance().clear();
         BleConnectManager.getInstance().stopScan();
+        BleDelayEventSubscriptionSubject.getInstance().delayDo(BleDelayType.SEND_CONNECTED_MSG,168);
+    }
+
+    public void sendConnectedMsg(){
         BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.CONNECTED,nowUseBleDevice.getAdress());
     }
 

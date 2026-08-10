@@ -96,10 +96,10 @@ public class MainActivity extends BaseCompatActivity {
                         handler.postDelayed(sendTimeRunnable,1000);
                         break;
                     case R.id.bt_send_test_image:
-                        int rsId=R.mipmap.img_test_7;
-                        if(isSend){
-                            rsId=R.mipmap.hg_test;
-                        }
+                        int rsId=R.mipmap.hud_bitmap_sample;
+//                        if(isSend){
+//                            rsId=R.mipmap.test11;
+//                        }
                         Bitmap bt1 = BitmapFactory.decodeResource(MainActivity.this.getResources(),rsId);
 //                        BleSendImageInfoBean bleSendImageInfoBean=new BleSendImageInfoBean();
 //                        bleSendImageInfoBean.setBitmap(bt1);
@@ -155,12 +155,12 @@ public class MainActivity extends BaseCompatActivity {
     public void sendBitmap(Bitmap bitmap){
         BleSendImageInfoBean bleSendImageInfoBean=new BleSendImageInfoBean();
         bleSendImageInfoBean.setType(0);
-        bleSendImageInfoBean.setMaxW(200);
+        bleSendImageInfoBean.setMaxW(360);
         bleSendImageInfoBean.setMaxH(320);
         bleSendImageInfoBean.setBitmap(bitmap);
-        BleSendBitmapQualityType.DEF.setQualityV(65);
-        BleSendBitmapQualityType.DEF.setZoomScaling(0.65f);
-        bleSendImageInfoBean.setBitmapQualityType(BleSendBitmapQualityType.DEF);
+        BleSendBitmapQualityType.ULTRA_HIGH.setQualityV(80);
+        BleSendBitmapQualityType.ULTRA_HIGH.setZoomScaling(1f);
+        bleSendImageInfoBean.setBitmapQualityType(BleSendBitmapQualityType.ULTRA_HIGH);
         BleEventSubscriptionSubject.getInstance().sendImage(bleSendImageInfoBean);
     }
 
@@ -218,6 +218,9 @@ public class MainActivity extends BaseCompatActivity {
                     bleTV.append("-连接成功");
                     Log.i("","kankanshujufdajfls:"+bleDeviceBean.getPairFuntionType());
                     setViewByBleConnectStatu(NewBeeBleManager.getInstance().isConnect());
+                    T800CmdType t800CmdType=T800CmdType.TIME;
+                    t800CmdType.useObjectSSetBody();
+                    NewBeeBleManager.getInstance().getEventImp().sendCmd(t800CmdType.getAllByte());
                     break;
                 case DISCONNECTED:
                     bleTV.append("已经断开连接");

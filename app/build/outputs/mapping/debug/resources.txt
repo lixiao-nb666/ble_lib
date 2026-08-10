@@ -1,7 +1,6 @@
-Marking mipmap:ic_launcher:2131427329 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
-Marking mipmap:img_test_jd:2131427343 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
-Marking mipmap:img_test_7:2131427342 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
-Marking mipmap:hg_test:2131427328 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
+Marking mipmap:ic_launcher:2131427330 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
+Marking mipmap:img_test_jd:2131427344 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
+Marking mipmap:hud_bitmap_sample:2131427329 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
 Marking layout:activity_main_test:2131361821 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
 Marking id:tv_ble:2131165361 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
 Marking id:tv_ble_statu:2131165362 reachable: referenced from F:\asworkspace\hud\lib\ble_lib\app\build\intermediates\dex\debug\minifyDebugWithR8\classes.dex
@@ -44,6 +43,7 @@ SET_DAYLIGHTING_SHOW_STATU
 3400
 2310
 onMenuKeyEvent
+NOW_IS_CONNECTED
 SET_BIG_TURN_TYPE_HIDE_AND_SHOW
 kankantubianzenmhuis:over4
 removeItemAt
@@ -89,6 +89,7 @@ roadName
 isTagEnabled
 ISOLATED_STABLE_IDS
 L_RF_Y_L
+T800_1
 ACTION_SET_PROGRESS
 5610
 5611
@@ -101,7 +102,6 @@ UNSET_PRIMARY_NAV
 TypefaceCompatUtil
 mUnthemedEntries
 CheckBox
-T700_DEBUG
 androidx.view.accessibility.Accessibi...
 numb_41
 ACTION_CLEAR_FOCUS
@@ -114,11 +114,15 @@ HUE
 requestRelaunchActivity
 ACTION_SCROLL_UP
 jobscheduler
+T700_1
 BITMAP_MASKABLE
+T700_2
 YELLOW_STATU
 kankantodoType
 android:support:fragments
 SearchView
+H5000_1
+H5000_2
 START
 SATURATION
 CLEAR_INDEX_MSG
@@ -149,10 +153,12 @@ suggest_text_1
 suggest_text_2
 androidx.view.accessibility.Accessibi...
 ACTION_PAGE_UP
+H3000_1
 mNextServedView
 kankanshibushizheli
 androidx.view.accessibility.Accessibi...
 L_RF_Y_RF
+H3000
 R_T_Y
 LoaderManager
 NavUtils
@@ -223,6 +229,7 @@ suggest_flags
 androidx.appcompat.app.ActionBar$Tab
 ACTION_SCROLL_DOWN
 SEND_CMD_BY_BYTES_INDEX
+H5000
 GROUP_ID
 RUN_ERR
 SupportMenuInflater
@@ -231,6 +238,7 @@ anim
 getHorizontallyScrolling
 ble_is_open_11111
 Spinner
+SEND_CONNECTED_MSG
 androidx.savedstate.Restarter
 ICON_FLICKER
 android.bluetooth.device.action.FOUND
@@ -290,6 +298,7 @@ DIFFERENCE
 SOFT_LIGHT
 SHOW
 /DCIM/cpu1.bin
+HUT_T
 android:view_state
 tbt185
 SeekBar
@@ -302,9 +311,7 @@ TIME
 RatingBar
 L_LF_Y_L
 tbt11
-T700_UPDATE_2
 tbt12
-T700_UPDATE_1
 tbt13
 SEND_IMAGE_DATA_END
 QUERY_DEVICE_VERSION
@@ -316,7 +323,10 @@ tbt17
 tbt18
 tbt19
 kankantupian
+T900
+T900_1
 LIBRARY_GROUP_PREFIX
+T900_2
 ACCESSIBILITY_CLICKABLE_SPAN_ID
 ACTION_PAGE_LEFT
 BUS_N_D
@@ -399,7 +409,9 @@ res/
 QUERY_DEVICE_SOUND_STATU
 L_LF_Y_LF
 rebase
+T3000
 android:support:request_fragment_who
+T700_GUI3
 2401
 1311
 2400
@@ -564,7 +576,9 @@ ACTION_PAGE_RIGHT
 menu
 undera
 underb
+T850_1
 L_R_N
+T850_2
 ACTION_HIDE_TOOLTIP
 com.android.internal.view.menu.MenuBu...
 mH
@@ -728,6 +742,7 @@ View
 SEND_CMD
 1601
 1600
+HUD_T
 CAN_SEND_DATA
 LF_Y
 location
@@ -811,6 +826,7 @@ RF_F_Y_F
 GET_SOUND
 R_Y
 F_LT_Y_T
+T3000_1
 ActivityRecreator
 3601
 2511
@@ -831,6 +847,7 @@ mAccessibilityDelegate
 INT_FLAG
 3611
 3610
+T850
 DiscouragedPrivateApi
 ResourcesFlusher
 numb_3031
@@ -2342,7 +2359,8 @@ Marking id:tag_unhandled_key_listeners:2131165349 used because it matches string
 @layout/support_simple_spinner_dropdown_item : reachable=true
     @attr/dropdownListPreferredItemHeight
     @attr/spinnerDropDownItemStyle
-@mipmap/hg_test : reachable=true
+@mipmap/hg_test : reachable=false
+@mipmap/hud_bitmap_sample : reachable=true
 @mipmap/ic_launcher : reachable=true
     @drawable/ic_launcher_background
     @drawable/ic_launcher_foreground
@@ -2360,8 +2378,9 @@ Marking id:tag_unhandled_key_listeners:2131165349 used because it matches string
 @mipmap/img_test_4 : reachable=false
 @mipmap/img_test_5 : reachable=false
 @mipmap/img_test_6 : reachable=false
-@mipmap/img_test_7 : reachable=true
+@mipmap/img_test_7 : reachable=false
 @mipmap/img_test_jd : reachable=true
+@mipmap/test11 : reachable=false
 @raw/beep : reachable=false
 @string/abc_action_bar_home_description : reachable=false
 @string/abc_action_bar_up_description : reachable=true
@@ -4166,11 +4185,10 @@ The root reachable resources are:
  layout:notification_template_part_chronometer:2131361830
  layout:notification_template_part_time:2131361831
  layout:support_simple_spinner_dropdown_item:2131361835
- mipmap:hg_test:2131427328
- mipmap:ic_launcher:2131427329
- mipmap:ic_launcher_round:2131427330
- mipmap:img_test_7:2131427342
- mipmap:img_test_jd:2131427343
+ mipmap:hud_bitmap_sample:2131427329
+ mipmap:ic_launcher:2131427330
+ mipmap:ic_launcher_round:2131427331
+ mipmap:img_test_jd:2131427344
  string:abc_action_bar_up_description:2131558401
  string:abc_menu_alt_shortcut_label:2131558408
  string:abc_menu_ctrl_shortcut_label:2131558409
@@ -4257,6 +4275,7 @@ Skipped unused resource res/layout-v2/activity_user_private.xml: 3491 bytes (rep
 Skipped unused resource res/layout-v2/activity_version_update.xml: 5123 bytes (replaced with small dummy file of size 9 bytes)
 Skipped unused resource res/layout-v2/adapter_apps_layout.xml: 1826 bytes (replaced with small dummy file of size 9 bytes)
 Skipped unused resource res/layout/custom_dialog.xml: 828 bytes (replaced with small dummy file of size 9 bytes)
+Skipped unused resource res/mipmap-xxhdpi-v4/hg_test.jpg: 10955 bytes (replaced with small dummy file of size 0 bytes)
 Skipped unused resource res/mipmap-xxhdpi-v4/img.png: 149639 bytes (replaced with small dummy file of size 67 bytes)
 Skipped unused resource res/mipmap-xxhdpi-v4/img_1.png: 494270 bytes (replaced with small dummy file of size 67 bytes)
 Skipped unused resource res/mipmap-xxhdpi-v4/img_2.png: 298687 bytes (replaced with small dummy file of size 67 bytes)
@@ -4268,4 +4287,6 @@ Skipped unused resource res/mipmap-xxhdpi-v4/img_test_3.png: 1503957 bytes (repl
 Skipped unused resource res/mipmap-xxhdpi-v4/img_test_4.jpg: 7236 bytes (replaced with small dummy file of size 0 bytes)
 Skipped unused resource res/mipmap-xxhdpi-v4/img_test_5.jpg: 13739 bytes (replaced with small dummy file of size 0 bytes)
 Skipped unused resource res/mipmap-xxhdpi-v4/img_test_6.png: 298687 bytes (replaced with small dummy file of size 67 bytes)
+Skipped unused resource res/mipmap-xxhdpi-v4/img_test_7.jpg: 11141 bytes (replaced with small dummy file of size 0 bytes)
+Skipped unused resource res/mipmap-xxhdpi-v4/test11.png: 1044148 bytes (replaced with small dummy file of size 67 bytes)
 Skipped unused resource res/raw/beep.ogg: 12237 bytes (replaced with small dummy file of size 0 bytes)

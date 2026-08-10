@@ -98,6 +98,9 @@ public class BluetoothGattService extends BaseService {
             case SEND_BLE_CMD_BYTES:
                 BlueToothSendStatuManager.getInstance().noticeOtherNowCanSned();
                 break;
+            case SEND_CONNECTED_MSG:
+                BleConnectStatuUtil.getInstance().sendConnectedMsg();
+                break;
         }
     }
 

@@ -120,6 +120,7 @@ public class ImageCompressUtils {
      * 缩放图片到指定宽高
      */
     public static Bitmap scaleBitmap(Bitmap bitmap, int targetWidth, int targetHeight) {
+
         return Bitmap.createScaledBitmap(bitmap, targetWidth, targetHeight, true);
     }
 

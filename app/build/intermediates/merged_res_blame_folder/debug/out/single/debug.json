@@ -1504,6 +1504,10 @@
         "source": "com.newbee.ble_tool.app-core-1.3.2-0:/drawable-mdpi-v4/notification_bg_low_normal.9.png"
     },
     {
+        "merged": "com.newbee.ble_tool.app-merged_res-11:/mipmap-xxhdpi_test11.png.flat",
+        "source": "com.newbee.ble_tool.app-main-13:/mipmap-xxhdpi/test11.png"
+    },
+    {
         "merged": "com.newbee.ble_tool.app-merged_res-11:/layout_abc_screen_simple_overlay_action_mode.xml.flat",
         "source": "com.newbee.ble_tool.app-appcompat-1.2.0-4:/layout/abc_screen_simple_overlay_action_mode.xml"
     },
@@ -1554,6 +1558,10 @@
     {
         "merged": "com.newbee.ble_tool.app-merged_res-11:/color_abc_secondary_text_material_dark.xml.flat",
         "source": "com.newbee.ble_tool.app-appcompat-1.2.0-4:/color/abc_secondary_text_material_dark.xml"
+    },
+    {
+        "merged": "com.newbee.ble_tool.app-merged_res-11:/mipmap-xxhdpi_hud_bitmap_sample.png.flat",
+        "source": "com.newbee.ble_tool.app-main-13:/mipmap-xxhdpi/hud_bitmap_sample.png"
     },
     {
         "merged": "com.newbee.ble_tool.app-merged_res-11:/drawable-xhdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",

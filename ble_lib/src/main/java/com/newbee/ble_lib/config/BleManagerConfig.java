@@ -1,5 +1,7 @@
 package com.newbee.ble_lib.config;
 
+import android.util.Log;
+
 import com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType;
 
 public class BleManagerConfig {
@@ -55,6 +57,7 @@ public class BleManagerConfig {
     public static int useBleSendBitmapQualityTypeGetMaxKb(BleSendBitmapQualityType qualityType){
         switch (qualityType){
             case ULTRA_HIGH:
+                Log.i("kankantupian","kankantubianzenmhuishi:1111333--8888---"+20);
                 return BleManagerConfig.SEND_IMAGE_MAX_KB_1;
             case HIGH:
             case DEF:

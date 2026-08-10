@@ -8,6 +8,7 @@ import com.newbee.ble_lib.manager.file.BlueToothGattGetFileDataThread;
 import com.newbee.ble_lib.manager.file.BlueToothGattSendFile;
 import com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager;
 import com.newbee.ble_lib.util.BleSendImageUtil;
+import com.newbee.ble_lib.util.bit_to_file.BitmapUtils;
 import com.newbee.ble_lib.util.hud.HudBleByteUtil;
 import com.nrmyw.ble_event_lib.bean.BleSendImageEndInfoBean;
 import com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean;
@@ -66,6 +67,8 @@ public class SendBitmapManager implements BlueToothGattSendFile {
             listen.sendOver(0);
             return;
         }
+//        boolean isSave=        (BitmapUtils.bitmapToFile(newBitMap,"test.jpg",Bitmap.CompressFormat.JPEG, 20)!=null);
+
         Log.i("kankantupian","kankantubianzenmhuishi:1111222--"+newBitMap.getByteCount()+"--"+newBitMap.getWidth()+"*"+newBitMap.getHeight());
         w=newBitMap.getWidth();
         h=newBitMap.getHeight();

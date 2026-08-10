@@ -126,7 +126,7 @@ public class BlueToothGattManager {
             if (status == BluetoothGatt.GATT_SUCCESS) {
                 Log.i(tag,"--发现服务onServicesDiscovered called--");
                 //EventBus.getDefault().post(new EventBluetoothStateMessage(ACTION_GATT_SERVICES_DISCOVERED));
-                displayGattServices1();
+                displayGattServices();
             } else {
                 Log.w(tag,"OnservicesDiscovered receiced:" + status);
                 // 8 ： 设备超出范围
@@ -166,7 +166,7 @@ public class BlueToothGattManager {
 //
 //        }
 
-        private void displayGattServices1(){
+        private void displayGattServices(){
             //查找服务
             if(!findService()){
                 return;

@@ -5942,6 +5942,7 @@ com.newbee.ble_lib.util.ImageCompressUtils:
     public static byte[] compressImage(android.content.Context,android.net.Uri,int,android.graphics.Bitmap$CompressFormat,int)
     public static byte[] compressToSize(android.content.Context,android.net.Uri,int,int,int,android.graphics.Bitmap$CompressFormat,int)
     private static android.graphics.Bitmap decodeBitmapFromUri(android.content.Context,android.net.Uri,int)
+com.newbee.ble_lib.util.bit_to_file.BitmapUtils
 com.newbee.ble_lib.util.hud.HudBleByteUtil:
     public void <init>()
 com.newbee.ble_lib.util.hud.HudCmdSendDataUtil:
