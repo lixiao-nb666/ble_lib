@@ -3,8 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 9ebb94e
-# pg_map_hash: SHA-256 9ebb94eb75b0b5b3fd2ce2afeda2af2e7157c5640ec8189c6d0616cfc38b60db
+# pg_map_id: e446e85
+# pg_map_hash: SHA-256 e446e85b5a6f31cf23e2ca10c67ce8544c70b2e40cf3b1e5726c2a1ff96d81af
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -6246,24 +6246,157 @@ androidx.versionedparcelable.VersionedParcelParcel -> androidx.versionedparcelab
     146:147:void writeInt(int) -> writeInt
     176:177:void writeParcelable(android.os.Parcelable) -> writeParcelable
     166:167:void writeString(java.lang.String) -> writeString
+com.google.gson.FieldAttributes -> com.google.gson.FieldAttributes:
+    44:47:void <init>(java.lang.reflect.Field) -> <init>
 com.google.gson.FieldNamingPolicy -> com.google.gson.FieldNamingPolicy:
     31:136:void <clinit>() -> <clinit>
     31:31:void <init>(java.lang.String,int) -> <init>
     31:31:void <init>(java.lang.String,int,com.google.gson.FieldNamingPolicy$1) -> <init>
+    185:187:java.lang.String modifyString(char,java.lang.String,int) -> modifyString
+    147:155:java.lang.String separateCamelCase(java.lang.String,java.lang.String) -> separateCamelCase
+    162:180:java.lang.String upperCaseFirstLetter(java.lang.String) -> upperCaseFirstLetter
     31:31:com.google.gson.FieldNamingPolicy valueOf(java.lang.String) -> valueOf
     31:31:com.google.gson.FieldNamingPolicy[] values() -> values
 com.google.gson.FieldNamingPolicy$1 -> com.google.gson.FieldNamingPolicy$1:
     37:37:void <init>(java.lang.String,int) -> <init>
+    39:39:java.lang.String translateName(java.lang.reflect.Field) -> translateName
 com.google.gson.FieldNamingPolicy$2 -> com.google.gson.FieldNamingPolicy$2:
     53:53:void <init>(java.lang.String,int) -> <init>
+    55:55:java.lang.String translateName(java.lang.reflect.Field) -> translateName
 com.google.gson.FieldNamingPolicy$3 -> com.google.gson.FieldNamingPolicy$3:
     72:72:void <init>(java.lang.String,int) -> <init>
+    74:74:java.lang.String translateName(java.lang.reflect.Field) -> translateName
 com.google.gson.FieldNamingPolicy$4 -> com.google.gson.FieldNamingPolicy$4:
     90:90:void <init>(java.lang.String,int) -> <init>
+    92:92:java.lang.String translateName(java.lang.reflect.Field) -> translateName
 com.google.gson.FieldNamingPolicy$5 -> com.google.gson.FieldNamingPolicy$5:
     113:113:void <init>(java.lang.String,int) -> <init>
+    115:115:java.lang.String translateName(java.lang.reflect.Field) -> translateName
 com.google.gson.FieldNamingPolicy$6 -> com.google.gson.FieldNamingPolicy$6:
     136:136:void <init>(java.lang.String,int) -> <init>
+    138:138:java.lang.String translateName(java.lang.reflect.Field) -> translateName
+com.google.gson.Gson -> com.google.gson.Gson:
+    114:114:void <clinit>() -> <clinit>
+    186:193:void <init>() -> <init>
+    124:281:void <init>(com.google.gson.internal.Excluder,com.google.gson.FieldNamingStrategy,java.util.Map,boolean,boolean,boolean,boolean,boolean,boolean,boolean,com.google.gson.LongSerializationPolicy,java.lang.String,int,int,java.util.List,java.util.List,java.util.List) -> <init>
+    899:907:void assertFullConsumption(java.lang.Object,com.google.gson.stream.JsonReader) -> assertFullConsumption
+    388:396:com.google.gson.TypeAdapter atomicLongAdapter(com.google.gson.TypeAdapter) -> atomicLongAdapter
+    400:423:com.google.gson.TypeAdapter atomicLongArrayAdapter(com.google.gson.TypeAdapter) -> atomicLongArrayAdapter
+    358:363:void checkValidFloatingPoint(double) -> checkValidFloatingPoint
+    310:313:com.google.gson.TypeAdapter doubleAdapter(boolean) -> doubleAdapter
+    334:337:com.google.gson.TypeAdapter floatAdapter(boolean) -> floatAdapter
+    813:814:java.lang.Object fromJson(java.lang.String,java.lang.Class) -> fromJson
+    837:842:java.lang.Object fromJson(java.lang.String,java.lang.reflect.Type) -> fromJson
+    891:894:java.lang.Object fromJson(java.io.Reader,java.lang.reflect.Type) -> fromJson
+    919:946:java.lang.Object fromJson(com.google.gson.stream.JsonReader,java.lang.reflect.Type) -> fromJson
+    434:470:com.google.gson.TypeAdapter getAdapter(com.google.gson.reflect.TypeToken) -> getAdapter
+    556:556:com.google.gson.TypeAdapter getAdapter(java.lang.Class) -> getAdapter
+    528:546:com.google.gson.TypeAdapter getDelegateAdapter(com.google.gson.TypeAdapterFactory,com.google.gson.reflect.TypeToken) -> getDelegateAdapter
+    366:369:com.google.gson.TypeAdapter longAdapter(com.google.gson.LongSerializationPolicy) -> longAdapter
+    765:767:com.google.gson.stream.JsonReader newJsonReader(java.io.Reader) -> newJsonReader
+    750:758:com.google.gson.stream.JsonWriter newJsonWriter(java.io.Writer) -> newJsonWriter
+    615:618:java.lang.String toJson(java.lang.Object) -> toJson
+    637:639:java.lang.String toJson(java.lang.Object,java.lang.reflect.Type) -> toJson
+    682:687:void toJson(java.lang.Object,java.lang.reflect.Type,java.lang.Appendable) -> toJson
+    696:714:void toJson(java.lang.Object,java.lang.reflect.Type,com.google.gson.stream.JsonWriter) -> toJson
+    724:726:java.lang.String toJson(com.google.gson.JsonElement) -> toJson
+    739:744:void toJson(com.google.gson.JsonElement,java.lang.Appendable) -> toJson
+    775:792:void toJson(com.google.gson.JsonElement,com.google.gson.stream.JsonWriter) -> toJson
+    1024:1029:java.lang.String toString() -> toString
+com.google.gson.Gson$1 -> com.google.gson.Gson$1:
+    313:313:void <init>(com.google.gson.Gson) -> <init>
+    313:313:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    315:319:java.lang.Double read(com.google.gson.stream.JsonReader) -> read
+    313:313:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    322:329:void write(com.google.gson.stream.JsonWriter,java.lang.Number) -> write
+com.google.gson.Gson$2 -> com.google.gson.Gson$2:
+    337:337:void <init>(com.google.gson.Gson) -> <init>
+    337:337:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    339:343:java.lang.Float read(com.google.gson.stream.JsonReader) -> read
+    337:337:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    346:353:void write(com.google.gson.stream.JsonWriter,java.lang.Number) -> write
+com.google.gson.Gson$3 -> com.google.gson.Gson$3:
+    369:369:void <init>() -> <init>
+    369:369:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    371:375:java.lang.Number read(com.google.gson.stream.JsonReader) -> read
+    369:369:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    378:383:void write(com.google.gson.stream.JsonWriter,java.lang.Number) -> write
+com.google.gson.Gson$4 -> com.google.gson.Gson$4:
+    388:388:void <init>(com.google.gson.TypeAdapter) -> <init>
+    388:388:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    393:394:java.util.concurrent.atomic.AtomicLong read(com.google.gson.stream.JsonReader) -> read
+    388:388:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    390:391:void write(com.google.gson.stream.JsonWriter,java.util.concurrent.atomic.AtomicLong) -> write
+com.google.gson.Gson$5 -> com.google.gson.Gson$5:
+    400:400:void <init>(com.google.gson.TypeAdapter) -> <init>
+    400:400:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    409:421:java.util.concurrent.atomic.AtomicLongArray read(com.google.gson.stream.JsonReader) -> read
+    400:400:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    402:407:void write(com.google.gson.stream.JsonWriter,java.util.concurrent.atomic.AtomicLongArray) -> write
+com.google.gson.Gson$FutureTypeAdapter -> com.google.gson.Gson$FutureTypeAdapter:
+    997:997:void <init>() -> <init>
+    1008:1011:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    1001:1005:void setDelegate(com.google.gson.TypeAdapter) -> setDelegate
+    1015:1019:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+com.google.gson.JsonArray -> com.google.gson.JsonArray:
+    39:41:void <init>() -> <init>
+    105:109:void add(com.google.gson.JsonElement) -> add
+    377:377:boolean equals(java.lang.Object) -> equals
+    382:382:int hashCode() -> hashCode
+    182:182:java.util.Iterator iterator() -> iterator
+com.google.gson.JsonElement -> com.google.gson.JsonElement:
+    33:33:void <init>() -> <init>
+    104:107:com.google.gson.JsonArray getAsJsonArray() -> getAsJsonArray
+    88:91:com.google.gson.JsonObject getAsJsonObject() -> getAsJsonObject
+    120:123:com.google.gson.JsonPrimitive getAsJsonPrimitive() -> getAsJsonPrimitive
+    47:47:boolean isJsonArray() -> isJsonArray
+    75:75:boolean isJsonNull() -> isJsonNull
+    56:56:boolean isJsonObject() -> isJsonObject
+    65:65:boolean isJsonPrimitive() -> isJsonPrimitive
+    322:328:java.lang.String toString() -> toString
+com.google.gson.JsonIOException -> com.google.gson.JsonIOException:
+    29:30:void <init>(java.lang.String) -> <init>
+    33:34:void <init>(java.lang.String,java.lang.Throwable) -> <init>
+    43:44:void <init>(java.lang.Throwable) -> <init>
+com.google.gson.JsonNull -> com.google.gson.JsonNull:
+    32:32:void <clinit>() -> <clinit>
+    39:41:void <init>() -> <init>
+    65:65:boolean equals(java.lang.Object) -> equals
+    57:57:int hashCode() -> hashCode
+com.google.gson.JsonObject -> com.google.gson.JsonObject:
+    32:33:void <init>() -> <init>
+    58:62:void add(java.lang.String,com.google.gson.JsonElement) -> add
+    136:136:java.util.Set entrySet() -> entrySet
+    210:211:boolean equals(java.lang.Object) -> equals
+    216:216:int hashCode() -> hashCode
+com.google.gson.JsonParseException -> com.google.gson.JsonParseException:
+    42:43:void <init>(java.lang.String) -> <init>
+    52:53:void <init>(java.lang.String,java.lang.Throwable) -> <init>
+    62:63:void <init>(java.lang.Throwable) -> <init>
+com.google.gson.JsonPrimitive -> com.google.gson.JsonPrimitive:
+    35:35:void <clinit>() -> <clinit>
+    46:48:void <init>(java.lang.Boolean) -> <init>
+    55:57:void <init>(java.lang.Number) -> <init>
+    64:66:void <init>(java.lang.String) -> <init>
+    310:330:boolean equals(java.lang.Object) -> equals
+    136:140:boolean getAsBoolean() -> getAsBoolean
+    126:126:java.lang.Boolean getAsBooleanWrapper() -> getAsBooleanWrapper
+    197:197:double getAsDouble() -> getAsDouble
+    264:264:int getAsInt() -> getAsInt
+    242:242:long getAsLong() -> getAsLong
+    161:161:java.lang.Number getAsNumber() -> getAsNumber
+    180:185:java.lang.String getAsString() -> getAsString
+    293:305:int hashCode() -> hashCode
+    116:116:boolean isBoolean() -> isBoolean
+    338:343:boolean isIntegral(com.google.gson.JsonPrimitive) -> isIntegral
+    150:150:boolean isNumber() -> isNumber
+    278:288:boolean isPrimitiveOrString(java.lang.Object) -> isPrimitiveOrString
+    170:170:boolean isString() -> isString
+    98:108:void setValue(java.lang.Object) -> setValue
+com.google.gson.JsonSyntaxException -> com.google.gson.JsonSyntaxException:
+    30:31:void <init>(java.lang.String) -> <init>
+    34:35:void <init>(java.lang.String,java.lang.Throwable) -> <init>
+    45:46:void <init>(java.lang.Throwable) -> <init>
 com.google.gson.LongSerializationPolicy -> com.google.gson.LongSerializationPolicy:
     27:45:void <clinit>() -> <clinit>
     27:27:void <init>(java.lang.String,int) -> <init>
@@ -6274,7 +6407,148 @@ com.google.gson.LongSerializationPolicy$1 -> com.google.gson.LongSerializationPo
     34:34:void <init>(java.lang.String,int) -> <init>
 com.google.gson.LongSerializationPolicy$2 -> com.google.gson.LongSerializationPolicy$2:
     45:45:void <init>(java.lang.String,int) -> <init>
+com.google.gson.TypeAdapter -> com.google.gson.TypeAdapter:
+    119:119:void <init>() -> <init>
+    186:186:com.google.gson.TypeAdapter nullSafe() -> nullSafe
+    233:237:com.google.gson.JsonElement toJsonTree(java.lang.Object) -> toJsonTree
+com.google.gson.TypeAdapter$1 -> com.google.gson.TypeAdapter$1:
+    186:186:void <init>(com.google.gson.TypeAdapter) -> <init>
+    195:199:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    188:193:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+com.google.gson.internal.$Gson$Preconditions -> com.google.gson.internal.$Gson$Preconditions:
+# {"id":"sourceFile","fileName":"$Gson$Preconditions.java"}
+    45:48:void checkArgument(boolean) -> checkArgument
+    38:41:java.lang.Object checkNotNull(java.lang.Object) -> checkNotNull
+com.google.gson.internal.$Gson$Types -> com.google.gson.internal.$Gson$Types:
+# {"id":"sourceFile","fileName":"$Gson$Types.java"}
+    40:40:void <clinit>() -> <clinit>
+    64:64:java.lang.reflect.GenericArrayType arrayOf(java.lang.reflect.Type) -> arrayOf
+    104:123:java.lang.reflect.Type canonicalize(java.lang.reflect.Type) -> canonicalize
+    457:458:void checkNotPrimitive(java.lang.reflect.Type) -> checkNotPrimitive
+    450:451:java.lang.Class declaringClassOf(java.lang.reflect.TypeVariable) -> declaringClassOf
+    162:162:boolean equal(java.lang.Object,java.lang.Object) -> equal
+    169:219:boolean equals(java.lang.reflect.Type,java.lang.reflect.Type) -> equals
+    292:294:java.lang.reflect.Type getArrayComponentType(java.lang.reflect.Type) -> getArrayComponentType
+    302:310:java.lang.reflect.Type getCollectionElementType(java.lang.reflect.Type,java.lang.Class) -> getCollectionElementType
+    237:267:java.lang.reflect.Type getGenericSupertype(java.lang.reflect.Type,java.lang.Class,java.lang.Class) -> getGenericSupertype
+    323:333:java.lang.reflect.Type[] getMapKeyAndValueTypes(java.lang.reflect.Type,java.lang.Class) -> getMapKeyAndValueTypes
+    128:156:java.lang.Class getRawType(java.lang.reflect.Type) -> getRawType
+    278:284:java.lang.reflect.Type getSupertype(java.lang.reflect.Type,java.lang.Class,java.lang.Class) -> getSupertype
+    224:224:int hashCodeOrZero(java.lang.Object) -> hashCodeOrZero
+    437:442:int indexOf(java.lang.Object[],java.lang.Object) -> indexOf
+    54:54:java.lang.reflect.ParameterizedType newParameterizedTypeWithOwner(java.lang.reflect.Type,java.lang.reflect.Type,java.lang.reflect.Type[]) -> newParameterizedTypeWithOwner
+    337:337:java.lang.reflect.Type resolve(java.lang.reflect.Type,java.lang.Class,java.lang.reflect.Type) -> resolve
+    344:414:java.lang.reflect.Type resolve(java.lang.reflect.Type,java.lang.Class,java.lang.reflect.Type,java.util.Collection) -> resolve
+    420:433:java.lang.reflect.Type resolveTypeVariable(java.lang.reflect.Type,java.lang.Class,java.lang.reflect.TypeVariable) -> resolveTypeVariable
+    75:80:java.lang.reflect.WildcardType subtypeOf(java.lang.reflect.Type) -> subtypeOf
+    90:95:java.lang.reflect.WildcardType supertypeOf(java.lang.reflect.Type) -> supertypeOf
+    228:228:java.lang.String typeToString(java.lang.reflect.Type) -> typeToString
+com.google.gson.internal.$Gson$Types$GenericArrayTypeImpl -> com.google.gson.internal.$Gson$Types$GenericArrayTypeImpl:
+# {"id":"sourceFile","fileName":"$Gson$Types.java"}
+    527:529:void <init>(java.lang.reflect.Type) -> <init>
+    536:537:boolean equals(java.lang.Object) -> equals
+    532:532:java.lang.reflect.Type getGenericComponentType() -> getGenericComponentType
+    541:541:int hashCode() -> hashCode
+    545:545:java.lang.String toString() -> toString
+com.google.gson.internal.$Gson$Types$ParameterizedTypeImpl -> com.google.gson.internal.$Gson$Types$ParameterizedTypeImpl:
+# {"id":"sourceFile","fileName":"$Gson$Types.java"}
+    465:482:void <init>(java.lang.reflect.Type,java.lang.reflect.Type,java.lang.reflect.Type[]) -> <init>
+    497:498:boolean equals(java.lang.Object) -> equals
+    485:485:java.lang.reflect.Type[] getActualTypeArguments() -> getActualTypeArguments
+    493:493:java.lang.reflect.Type getOwnerType() -> getOwnerType
+    489:489:java.lang.reflect.Type getRawType() -> getRawType
+    502:504:int hashCode() -> hashCode
+    508:518:java.lang.String toString() -> toString
+com.google.gson.internal.$Gson$Types$WildcardTypeImpl -> com.google.gson.internal.$Gson$Types$WildcardTypeImpl:
+# {"id":"sourceFile","fileName":"$Gson$Types.java"}
+    560:577:void <init>(java.lang.reflect.Type[],java.lang.reflect.Type[]) -> <init>
+    588:589:boolean equals(java.lang.Object) -> equals
+    584:584:java.lang.reflect.Type[] getLowerBounds() -> getLowerBounds
+    580:580:java.lang.reflect.Type[] getUpperBounds() -> getUpperBounds
+    594:595:int hashCode() -> hashCode
+    599:604:java.lang.String toString() -> toString
+com.google.gson.internal.ConstructorConstructor -> com.google.gson.internal.ConstructorConstructor:
+    51:55:void <init>(java.util.Map) -> <init>
+    58:96:com.google.gson.internal.ObjectConstructor get(com.google.gson.reflect.TypeToken) -> get
+    101:125:com.google.gson.internal.ObjectConstructor newDefaultConstructor(java.lang.Class) -> newDefaultConstructor
+    136:215:com.google.gson.internal.ObjectConstructor newDefaultImplementationConstructor(java.lang.reflect.Type,java.lang.Class) -> newDefaultImplementationConstructor
+    220:220:com.google.gson.internal.ObjectConstructor newUnsafeAllocator(java.lang.reflect.Type,java.lang.Class) -> newUnsafeAllocator
+    236:236:java.lang.String toString() -> toString
+com.google.gson.internal.ConstructorConstructor$1 -> com.google.gson.internal.ConstructorConstructor$1:
+    66:66:void <init>(com.google.gson.internal.ConstructorConstructor,com.google.gson.InstanceCreator,java.lang.reflect.Type) -> <init>
+    68:68:java.lang.Object construct() -> construct
+com.google.gson.internal.ConstructorConstructor$10 -> com.google.gson.internal.ConstructorConstructor$10:
+    188:188:void <init>(com.google.gson.internal.ConstructorConstructor) -> <init>
+    190:190:java.lang.Object construct() -> construct
+com.google.gson.internal.ConstructorConstructor$11 -> com.google.gson.internal.ConstructorConstructor$11:
+    194:194:void <init>(com.google.gson.internal.ConstructorConstructor) -> <init>
+    196:196:java.lang.Object construct() -> construct
+com.google.gson.internal.ConstructorConstructor$12 -> com.google.gson.internal.ConstructorConstructor$12:
+    201:201:void <init>(com.google.gson.internal.ConstructorConstructor) -> <init>
+    203:203:java.lang.Object construct() -> construct
+com.google.gson.internal.ConstructorConstructor$13 -> com.google.gson.internal.ConstructorConstructor$13:
+    207:207:void <init>(com.google.gson.internal.ConstructorConstructor) -> <init>
+    209:209:java.lang.Object construct() -> construct
+com.google.gson.internal.ConstructorConstructor$14 -> com.google.gson.internal.ConstructorConstructor$14:
+    220:221:void <init>(com.google.gson.internal.ConstructorConstructor,java.lang.Class,java.lang.reflect.Type) -> <init>
+    225:228:java.lang.Object construct() -> construct
+com.google.gson.internal.ConstructorConstructor$2 -> com.google.gson.internal.ConstructorConstructor$2:
+    78:78:void <init>(com.google.gson.internal.ConstructorConstructor,com.google.gson.InstanceCreator,java.lang.reflect.Type) -> <init>
+    80:80:java.lang.Object construct() -> construct
+com.google.gson.internal.ConstructorConstructor$3 -> com.google.gson.internal.ConstructorConstructor$3:
+    105:105:void <init>(com.google.gson.internal.ConstructorConstructor,java.lang.reflect.Constructor) -> <init>
+    109:120:java.lang.Object construct() -> construct
+com.google.gson.internal.ConstructorConstructor$4 -> com.google.gson.internal.ConstructorConstructor$4:
+    138:138:void <init>(com.google.gson.internal.ConstructorConstructor) -> <init>
+    140:140:java.lang.Object construct() -> construct
+com.google.gson.internal.ConstructorConstructor$5 -> com.google.gson.internal.ConstructorConstructor$5:
+    144:144:void <init>(com.google.gson.internal.ConstructorConstructor,java.lang.reflect.Type) -> <init>
+    147:155:java.lang.Object construct() -> construct
+com.google.gson.internal.ConstructorConstructor$6 -> com.google.gson.internal.ConstructorConstructor$6:
+    160:160:void <init>(com.google.gson.internal.ConstructorConstructor) -> <init>
+    162:162:java.lang.Object construct() -> construct
+com.google.gson.internal.ConstructorConstructor$7 -> com.google.gson.internal.ConstructorConstructor$7:
+    166:166:void <init>(com.google.gson.internal.ConstructorConstructor) -> <init>
+    168:168:java.lang.Object construct() -> construct
+com.google.gson.internal.ConstructorConstructor$8 -> com.google.gson.internal.ConstructorConstructor$8:
+    172:172:void <init>(com.google.gson.internal.ConstructorConstructor) -> <init>
+    174:174:java.lang.Object construct() -> construct
+com.google.gson.internal.ConstructorConstructor$9 -> com.google.gson.internal.ConstructorConstructor$9:
+    182:182:void <init>(com.google.gson.internal.ConstructorConstructor) -> <init>
+    184:184:java.lang.Object construct() -> construct
+com.google.gson.internal.Excluder -> com.google.gson.internal.Excluder:
+    52:52:void <clinit>() -> <clinit>
+    50:59:void <init>() -> <init>
+    50:50:java.lang.Object clone() -> clone
+    63:65:com.google.gson.internal.Excluder clone() -> clone
+    112:122:com.google.gson.TypeAdapter create(com.google.gson.Gson,com.google.gson.reflect.TypeToken) -> create
+    210:211:boolean excludeClass(java.lang.Class,boolean) -> excludeClass
+    194:206:boolean excludeClassChecks(java.lang.Class) -> excludeClassChecks
+    215:221:boolean excludeClassInStrategy(java.lang.Class,boolean) -> excludeClassInStrategy
+    152:190:boolean excludeField(java.lang.reflect.Field,boolean) -> excludeField
+    225:226:boolean isAnonymousOrLocal(java.lang.Class) -> isAnonymousOrLocal
+    230:230:boolean isInnerClass(java.lang.Class) -> isInnerClass
+    234:234:boolean isStatic(java.lang.Class) -> isStatic
+    242:248:boolean isValidSince(com.google.gson.annotations.Since) -> isValidSince
+    252:258:boolean isValidUntil(com.google.gson.annotations.Until) -> isValidUntil
+    238:238:boolean isValidVersion(com.google.gson.annotations.Since,com.google.gson.annotations.Until) -> isValidVersion
+com.google.gson.internal.Excluder$1 -> com.google.gson.internal.Excluder$1:
+    122:122:void <init>(com.google.gson.internal.Excluder,boolean,boolean,com.google.gson.Gson,com.google.gson.reflect.TypeToken) -> <init>
+    143:146:com.google.gson.TypeAdapter delegate() -> delegate
+    127:131:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    135:140:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+com.google.gson.internal.JavaVersion -> com.google.gson.internal.JavaVersion:
+    26:26:void <clinit>() -> <clinit>
+    29:30:int determineMajorJavaVersion() -> determineMajorJavaVersion
+    62:73:int extractBeginningInt(java.lang.String) -> extractBeginningInt
+    35:42:int getMajorJavaVersion(java.lang.String) -> getMajorJavaVersion
+    81:81:int getMajorJavaVersion() -> getMajorJavaVersion
+    88:88:boolean isJava9OrLater() -> isJava9OrLater
+    48:56:int parseDotted(java.lang.String) -> parseDotted
+com.google.gson.internal.JsonReaderInternalAccess -> com.google.gson.internal.JsonReaderInternalAccess:
+    25:25:void <init>() -> <init>
 com.google.gson.internal.LazilyParsedNumber -> com.google.gson.internal.LazilyParsedNumber:
+    30:32:void <init>(java.lang.String) -> <init>
     63:63:double doubleValue() -> doubleValue
     87:94:boolean equals(java.lang.Object) -> equals
     58:58:float floatValue() -> floatValue
@@ -6420,24 +6694,545 @@ com.google.gson.internal.LinkedTreeMap$Node -> com.google.gson.internal.LinkedTr
     516:522:com.google.gson.internal.LinkedTreeMap$Node last() -> last
     475:477:java.lang.Object setValue(java.lang.Object) -> setValue
     496:496:java.lang.String toString() -> toString
+com.google.gson.internal.PreJava9DateFormatProvider -> com.google.gson.internal.PreJava9DateFormatProvider:
+    59:69:java.lang.String getDatePartOfDateTimePattern(int) -> getDatePartOfDateTimePattern
+    74:83:java.lang.String getTimePartOfDateTimePattern(int) -> getTimePartOfDateTimePattern
+    39:40:java.text.DateFormat getUSDateTimeFormat(int,int) -> getUSDateTimeFormat
+com.google.gson.internal.Primitives -> com.google.gson.internal.Primitives:
+    45:60:void <clinit>() -> <clinit>
+    64:66:void add(java.util.Map,java.util.Map,java.lang.Class,java.lang.Class) -> add
+    72:72:boolean isPrimitive(java.lang.reflect.Type) -> isPrimitive
+    98:100:java.lang.Class wrap(java.lang.Class) -> wrap
+com.google.gson.internal.Streams -> com.google.gson.internal.Streams:
+    44:64:com.google.gson.JsonElement parse(com.google.gson.stream.JsonReader) -> parse
+    72:73:void write(com.google.gson.JsonElement,com.google.gson.stream.JsonWriter) -> write
+    76:76:java.io.Writer writerForAppendable(java.lang.Appendable) -> writerForAppendable
+com.google.gson.internal.Streams$AppendableWriter -> com.google.gson.internal.Streams$AppendableWriter:
+    85:89:void <init>(java.lang.Appendable) -> <init>
+    101:101:void close() -> close
+    100:100:void flush() -> flush
+    92:94:void write(char[],int,int) -> write
+    97:98:void write(int) -> write
+com.google.gson.internal.Streams$AppendableWriter$CurrentWrite -> com.google.gson.internal.Streams$AppendableWriter$CurrentWrite:
+    106:106:void <init>() -> <init>
+    112:112:char charAt(int) -> charAt
+    109:109:int length() -> length
+    115:115:java.lang.CharSequence subSequence(int,int) -> subSequence
+com.google.gson.internal.UnsafeAllocator -> com.google.gson.internal.UnsafeAllocator:
+    31:31:void <init>() -> <init>
+    115:122:void assertInstantiable(java.lang.Class) -> assertInstantiable
+    40:101:com.google.gson.internal.UnsafeAllocator create() -> create
+com.google.gson.internal.UnsafeAllocator$1 -> com.google.gson.internal.UnsafeAllocator$1:
+    45:45:void <init>(java.lang.reflect.Method,java.lang.Object) -> <init>
+    49:50:java.lang.Object newInstance(java.lang.Class) -> newInstance
+com.google.gson.internal.UnsafeAllocator$2 -> com.google.gson.internal.UnsafeAllocator$2:
+    69:69:void <init>(java.lang.reflect.Method,int) -> <init>
+    73:74:java.lang.Object newInstance(java.lang.Class) -> newInstance
+com.google.gson.internal.UnsafeAllocator$3 -> com.google.gson.internal.UnsafeAllocator$3:
+    89:89:void <init>(java.lang.reflect.Method) -> <init>
+    93:94:java.lang.Object newInstance(java.lang.Class) -> newInstance
+com.google.gson.internal.UnsafeAllocator$4 -> com.google.gson.internal.UnsafeAllocator$4:
+    101:101:void <init>() -> <init>
+    104:104:java.lang.Object newInstance(java.lang.Class) -> newInstance
+com.google.gson.internal.bind.ArrayTypeAdapter -> com.google.gson.internal.bind.ArrayTypeAdapter:
+    39:39:void <clinit>() -> <clinit>
+    57:61:void <init>(com.google.gson.Gson,com.google.gson.TypeAdapter,java.lang.Class) -> <init>
+    64:82:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    87:98:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+com.google.gson.internal.bind.ArrayTypeAdapter$1 -> com.google.gson.internal.bind.ArrayTypeAdapter$1:
+    39:39:void <init>() -> <init>
+    42:50:com.google.gson.TypeAdapter create(com.google.gson.Gson,com.google.gson.reflect.TypeToken) -> create
+com.google.gson.internal.bind.CollectionTypeAdapterFactory -> com.google.gson.internal.bind.CollectionTypeAdapterFactory:
+    39:41:void <init>(com.google.gson.internal.ConstructorConstructor) -> <init>
+    45:58:com.google.gson.TypeAdapter create(com.google.gson.Gson,com.google.gson.reflect.TypeToken) -> create
+com.google.gson.internal.bind.CollectionTypeAdapterFactory$Adapter -> com.google.gson.internal.bind.CollectionTypeAdapterFactory$Adapter:
+    67:71:void <init>(com.google.gson.Gson,java.lang.reflect.Type,com.google.gson.TypeAdapter,com.google.gson.internal.ObjectConstructor) -> <init>
+    61:61:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    74:86:java.util.Collection read(com.google.gson.stream.JsonReader) -> read
+    61:61:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    90:100:void write(com.google.gson.stream.JsonWriter,java.util.Collection) -> write
+com.google.gson.internal.bind.DateTypeAdapter -> com.google.gson.internal.bind.DateTypeAdapter:
+    47:47:void <clinit>() -> <clinit>
+    58:68:void <init>() -> <init>
+    78:87:java.util.Date deserializeToDate(java.lang.String) -> deserializeToDate
+    46:46:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    71:75:java.util.Date read(com.google.gson.stream.JsonReader) -> read
+    46:46:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    91:98:void write(com.google.gson.stream.JsonWriter,java.util.Date) -> write
+com.google.gson.internal.bind.DateTypeAdapter$1 -> com.google.gson.internal.bind.DateTypeAdapter$1:
+    47:47:void <init>() -> <init>
+    50:50:com.google.gson.TypeAdapter create(com.google.gson.Gson,com.google.gson.reflect.TypeToken) -> create
+com.google.gson.internal.bind.JsonAdapterAnnotationTypeAdapterFactory -> com.google.gson.internal.bind.JsonAdapterAnnotationTypeAdapterFactory:
+    37:39:void <init>(com.google.gson.internal.ConstructorConstructor) -> <init>
+    44:49:com.google.gson.TypeAdapter create(com.google.gson.Gson,com.google.gson.reflect.TypeToken) -> create
+    55:81:com.google.gson.TypeAdapter getTypeAdapter(com.google.gson.internal.ConstructorConstructor,com.google.gson.Gson,com.google.gson.reflect.TypeToken,com.google.gson.annotations.JsonAdapter) -> getTypeAdapter
+com.google.gson.internal.bind.JsonTreeReader -> com.google.gson.internal.bind.JsonTreeReader:
+    38:46:void <clinit>() -> <clinit>
+    71:75:void beginArray() -> beginArray
+    87:90:void beginObject() -> beginObject
+    252:254:void close() -> close
+    78:84:void endArray() -> endArray
+    93:99:void endObject() -> endObject
+    160:164:void expect(com.google.gson.stream.JsonToken) -> expect
+    299:314:java.lang.String getPath() -> getPath
+    102:103:boolean hasNext() -> hasNext
+    318:318:java.lang.String locationString() -> locationString
+    190:195:boolean nextBoolean() -> nextBoolean
+    207:220:double nextDouble() -> nextDouble
+    238:248:int nextInt() -> nextInt
+    224:234:long nextLong() -> nextLong
+    167:173:java.lang.String nextName() -> nextName
+    199:204:void nextNull() -> nextNull
+    177:186:java.lang.String nextString() -> nextString
+    107:145:com.google.gson.stream.JsonToken peek() -> peek
+    150:150:java.lang.Object peekStack() -> peekStack
+    154:156:java.lang.Object popStack() -> popStack
+    276:281:void promoteNameToValue() -> promoteNameToValue
+    284:296:void push(java.lang.Object) -> push
+    257:269:void skipValue() -> skipValue
+    272:272:java.lang.String toString() -> toString
+com.google.gson.internal.bind.JsonTreeReader$1 -> com.google.gson.internal.bind.JsonTreeReader$1:
+    38:38:void <init>() -> <init>
+    43:43:void close() -> close
+    40:40:int read(char[],int,int) -> read
+com.google.gson.internal.bind.JsonTreeWriter -> com.google.gson.internal.bind.JsonTreeWriter:
+    34:46:void <clinit>() -> <clinit>
+    49:59:void <init>() -> <init>
+    95:98:com.google.gson.stream.JsonWriter beginArray() -> beginArray
+    114:117:com.google.gson.stream.JsonWriter beginObject() -> beginObject
+    203:207:void close() -> close
+    102:110:com.google.gson.stream.JsonWriter endArray() -> endArray
+    121:129:com.google.gson.stream.JsonWriter endObject() -> endObject
+    200:200:void flush() -> flush
+    65:68:com.google.gson.JsonElement get() -> get
+    133:141:com.google.gson.stream.JsonWriter name(java.lang.String) -> name
+    153:154:com.google.gson.stream.JsonWriter nullValue() -> nullValue
+    72:72:com.google.gson.JsonElement peek() -> peek
+    76:92:void put(com.google.gson.JsonElement) -> put
+    145:149:com.google.gson.stream.JsonWriter value(java.lang.String) -> value
+    158:159:com.google.gson.stream.JsonWriter value(boolean) -> value
+    163:167:com.google.gson.stream.JsonWriter value(java.lang.Boolean) -> value
+    179:180:com.google.gson.stream.JsonWriter value(long) -> value
+    184:196:com.google.gson.stream.JsonWriter value(java.lang.Number) -> value
+com.google.gson.internal.bind.JsonTreeWriter$1 -> com.google.gson.internal.bind.JsonTreeWriter$1:
+    34:34:void <init>() -> <init>
+    42:42:void close() -> close
+    39:39:void flush() -> flush
+    36:36:void write(char[],int,int) -> write
+com.google.gson.internal.bind.MapTypeAdapterFactory -> com.google.gson.internal.bind.MapTypeAdapterFactory:
+    110:113:void <init>(com.google.gson.internal.ConstructorConstructor,boolean) -> <init>
+    116:133:com.google.gson.TypeAdapter create(com.google.gson.Gson,com.google.gson.reflect.TypeToken) -> create
+    140:142:com.google.gson.TypeAdapter getKeyAdapter(com.google.gson.Gson,java.lang.reflect.Type) -> getKeyAdapter
+com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter -> com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter:
+    152:158:void <init>(com.google.gson.internal.bind.MapTypeAdapterFactory,com.google.gson.Gson,java.lang.reflect.Type,com.google.gson.TypeAdapter,java.lang.reflect.Type,com.google.gson.TypeAdapter,com.google.gson.internal.ObjectConstructor) -> <init>
+    246:260:java.lang.String keyToString(com.google.gson.JsonElement) -> keyToString
+    145:145:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    161:195:java.util.Map read(com.google.gson.stream.JsonReader) -> read
+    145:145:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    199:243:void write(com.google.gson.stream.JsonWriter,java.util.Map) -> write
+com.google.gson.internal.bind.ObjectTypeAdapter -> com.google.gson.internal.bind.ObjectTypeAdapter:
+    38:38:void <clinit>() -> <clinit>
+    50:52:void <init>(com.google.gson.Gson) -> <init>
+    55:89:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    95:108:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+com.google.gson.internal.bind.ObjectTypeAdapter$1 -> com.google.gson.internal.bind.ObjectTypeAdapter$1:
+    38:38:void <init>() -> <init>
+    41:44:com.google.gson.TypeAdapter create(com.google.gson.Gson,com.google.gson.reflect.TypeToken) -> create
+com.google.gson.internal.bind.ObjectTypeAdapter$2 -> com.google.gson.internal.bind.ObjectTypeAdapter$2:
+    56:56:void <clinit>() -> <clinit>
+com.google.gson.internal.bind.ReflectiveTypeAdapterFactory -> com.google.gson.internal.bind.ReflectiveTypeAdapterFactory:
+    53:62:void <init>(com.google.gson.internal.ConstructorConstructor,com.google.gson.FieldNamingStrategy,com.google.gson.internal.Excluder,com.google.gson.internal.bind.JsonAdapterAnnotationTypeAdapterFactory) -> <init>
+    95:102:com.google.gson.TypeAdapter create(com.google.gson.Gson,com.google.gson.reflect.TypeToken) -> create
+    108:120:com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$BoundField createBoundField(com.google.gson.Gson,java.lang.reflect.Field,java.lang.String,com.google.gson.reflect.TypeToken,boolean,boolean) -> createBoundField
+    65:65:boolean excludeField(java.lang.reflect.Field,boolean) -> excludeField
+    69:69:boolean excludeField(java.lang.reflect.Field,boolean,com.google.gson.internal.Excluder) -> excludeField
+    145:179:java.util.Map getBoundFields(com.google.gson.Gson,com.google.gson.reflect.TypeToken,java.lang.Class) -> getBoundFields
+    74:91:java.util.List getFieldNames(java.lang.reflect.Field) -> getFieldNames
+com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$1 -> com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$1:
+    120:120:void <init>(com.google.gson.internal.bind.ReflectiveTypeAdapterFactory,java.lang.String,boolean,boolean,java.lang.reflect.Field,boolean,com.google.gson.TypeAdapter,com.google.gson.Gson,com.google.gson.reflect.TypeToken,boolean) -> <init>
+    131:135:void read(com.google.gson.stream.JsonReader,java.lang.Object) -> read
+    124:128:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    137:139:boolean writeField(java.lang.Object) -> writeField
+com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter -> com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter:
+    201:204:void <init>(com.google.gson.internal.ObjectConstructor,java.util.Map) -> <init>
+    207:231:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    235:252:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$BoundField -> com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$BoundField:
+    187:191:void <init>(java.lang.String,boolean,boolean) -> <init>
+com.google.gson.internal.bind.SqlDateTypeAdapter -> com.google.gson.internal.bind.SqlDateTypeAdapter:
+    39:39:void <clinit>() -> <clinit>
+    38:47:void <init>() -> <init>
+    38:38:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    50:59:java.sql.Date read(com.google.gson.stream.JsonReader) -> read
+    38:38:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    64:66:void write(com.google.gson.stream.JsonWriter,java.sql.Date) -> write
+com.google.gson.internal.bind.SqlDateTypeAdapter$1 -> com.google.gson.internal.bind.SqlDateTypeAdapter$1:
+    39:39:void <init>() -> <init>
+    42:42:com.google.gson.TypeAdapter create(com.google.gson.Gson,com.google.gson.reflect.TypeToken) -> create
+com.google.gson.internal.bind.TimeTypeAdapter -> com.google.gson.internal.bind.TimeTypeAdapter:
+    41:41:void <clinit>() -> <clinit>
+    40:48:void <init>() -> <init>
+    40:40:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    50:59:java.sql.Time read(com.google.gson.stream.JsonReader) -> read
+    40:40:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    63:65:void write(com.google.gson.stream.JsonWriter,java.sql.Time) -> write
+com.google.gson.internal.bind.TimeTypeAdapter$1 -> com.google.gson.internal.bind.TimeTypeAdapter$1:
+    41:41:void <init>() -> <init>
+    44:44:com.google.gson.TypeAdapter create(com.google.gson.Gson,com.google.gson.reflect.TypeToken) -> create
+com.google.gson.internal.bind.TreeTypeAdapter -> com.google.gson.internal.bind.TreeTypeAdapter:
+    47:59:void <init>(com.google.gson.JsonSerializer,com.google.gson.JsonDeserializer,com.google.gson.Gson,com.google.gson.reflect.TypeToken,com.google.gson.TypeAdapterFactory) -> <init>
+    86:89:com.google.gson.TypeAdapter delegate() -> delegate
+    62:69:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    73:83:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl -> com.google.gson.internal.bind.TreeTypeAdapter$GsonContextImpl:
+    153:153:void <init>(com.google.gson.internal.bind.TreeTypeAdapter) -> <init>
+    153:153:void <init>(com.google.gson.internal.bind.TreeTypeAdapter,com.google.gson.internal.bind.TreeTypeAdapter$1) -> <init>
+com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper -> com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper:
+    33:37:void <init>(com.google.gson.Gson,com.google.gson.TypeAdapter,java.lang.reflect.Type) -> <init>
+    76:80:java.lang.reflect.Type getRuntimeTypeIfMoreSpecific(java.lang.reflect.Type,java.lang.Object) -> getRuntimeTypeIfMoreSpecific
+    41:41:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    53:70:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+com.google.gson.internal.bind.TypeAdapters -> com.google.gson.internal.bind.TypeAdapters:
+    69:808:void <clinit>() -> <clinit>
+    834:834:com.google.gson.TypeAdapterFactory newFactory(java.lang.Class,com.google.gson.TypeAdapter) -> newFactory
+    847:847:com.google.gson.TypeAdapterFactory newFactory(java.lang.Class,java.lang.Class,com.google.gson.TypeAdapter) -> newFactory
+    862:862:com.google.gson.TypeAdapterFactory newFactoryForMultipleTypes(java.lang.Class,java.lang.Class,com.google.gson.TypeAdapter) -> newFactoryForMultipleTypes
+    881:881:com.google.gson.TypeAdapterFactory newTypeHierarchyFactory(java.lang.Class,com.google.gson.TypeAdapter) -> newTypeHierarchyFactory
+com.google.gson.internal.bind.TypeAdapters$1 -> com.google.gson.internal.bind.TypeAdapters$1:
+    69:69:void <init>() -> <init>
+    69:69:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    77:77:java.lang.Class read(com.google.gson.stream.JsonReader) -> read
+    69:69:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    72:73:void write(com.google.gson.stream.JsonWriter,java.lang.Class) -> write
+com.google.gson.internal.bind.TypeAdapters$10 -> com.google.gson.internal.bind.TypeAdapters$10:
+    265:265:void <init>() -> <init>
+    265:265:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    267:283:java.util.concurrent.atomic.AtomicIntegerArray read(com.google.gson.stream.JsonReader) -> read
+    265:265:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    286:291:void write(com.google.gson.stream.JsonWriter,java.util.concurrent.atomic.AtomicIntegerArray) -> write
+com.google.gson.internal.bind.TypeAdapters$11 -> com.google.gson.internal.bind.TypeAdapters$11:
+    296:296:void <init>() -> <init>
+    296:296:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    299:306:java.lang.Number read(com.google.gson.stream.JsonReader) -> read
+    296:296:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    311:312:void write(com.google.gson.stream.JsonWriter,java.lang.Number) -> write
+com.google.gson.internal.bind.TypeAdapters$12 -> com.google.gson.internal.bind.TypeAdapters$12:
+    315:315:void <init>() -> <init>
+    315:315:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    318:322:java.lang.Number read(com.google.gson.stream.JsonReader) -> read
+    315:315:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    326:327:void write(com.google.gson.stream.JsonWriter,java.lang.Number) -> write
+com.google.gson.internal.bind.TypeAdapters$13 -> com.google.gson.internal.bind.TypeAdapters$13:
+    330:330:void <init>() -> <init>
+    330:330:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    333:337:java.lang.Number read(com.google.gson.stream.JsonReader) -> read
+    330:330:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    341:342:void write(com.google.gson.stream.JsonWriter,java.lang.Number) -> write
+com.google.gson.internal.bind.TypeAdapters$14 -> com.google.gson.internal.bind.TypeAdapters$14:
+    345:345:void <init>() -> <init>
+    345:345:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    348:357:java.lang.Number read(com.google.gson.stream.JsonReader) -> read
+    345:345:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    362:363:void write(com.google.gson.stream.JsonWriter,java.lang.Number) -> write
+com.google.gson.internal.bind.TypeAdapters$15 -> com.google.gson.internal.bind.TypeAdapters$15:
+    368:368:void <init>() -> <init>
+    368:368:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    371:379:java.lang.Character read(com.google.gson.stream.JsonReader) -> read
+    368:368:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    383:384:void write(com.google.gson.stream.JsonWriter,java.lang.Character) -> write
+com.google.gson.internal.bind.TypeAdapters$16 -> com.google.gson.internal.bind.TypeAdapters$16:
+    390:390:void <init>() -> <init>
+    390:390:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    393:402:java.lang.String read(com.google.gson.stream.JsonReader) -> read
+    390:390:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    406:407:void write(com.google.gson.stream.JsonWriter,java.lang.String) -> write
+com.google.gson.internal.bind.TypeAdapters$17 -> com.google.gson.internal.bind.TypeAdapters$17:
+    410:410:void <init>() -> <init>
+    410:410:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    412:419:java.math.BigDecimal read(com.google.gson.stream.JsonReader) -> read
+    410:410:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    424:425:void write(com.google.gson.stream.JsonWriter,java.math.BigDecimal) -> write
+com.google.gson.internal.bind.TypeAdapters$18 -> com.google.gson.internal.bind.TypeAdapters$18:
+    428:428:void <init>() -> <init>
+    428:428:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    430:437:java.math.BigInteger read(com.google.gson.stream.JsonReader) -> read
+    428:428:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    442:443:void write(com.google.gson.stream.JsonWriter,java.math.BigInteger) -> write
+com.google.gson.internal.bind.TypeAdapters$19 -> com.google.gson.internal.bind.TypeAdapters$19:
+    448:448:void <init>() -> <init>
+    448:448:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    451:455:java.lang.StringBuilder read(com.google.gson.stream.JsonReader) -> read
+    448:448:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    459:460:void write(com.google.gson.stream.JsonWriter,java.lang.StringBuilder) -> write
+com.google.gson.internal.bind.TypeAdapters$2 -> com.google.gson.internal.bind.TypeAdapters$2:
+    84:84:void <init>() -> <init>
+    84:84:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    86:118:java.util.BitSet read(com.google.gson.stream.JsonReader) -> read
+    84:84:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    122:128:void write(com.google.gson.stream.JsonWriter,java.util.BitSet) -> write
+com.google.gson.internal.bind.TypeAdapters$20 -> com.google.gson.internal.bind.TypeAdapters$20:
+    466:466:void <init>() -> <init>
+    466:466:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    469:473:java.lang.StringBuffer read(com.google.gson.stream.JsonReader) -> read
+    466:466:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    477:478:void write(com.google.gson.stream.JsonWriter,java.lang.StringBuffer) -> write
+com.google.gson.internal.bind.TypeAdapters$21 -> com.google.gson.internal.bind.TypeAdapters$21:
+    484:484:void <init>() -> <init>
+    484:484:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    487:492:java.net.URL read(com.google.gson.stream.JsonReader) -> read
+    484:484:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    496:497:void write(com.google.gson.stream.JsonWriter,java.net.URL) -> write
+com.google.gson.internal.bind.TypeAdapters$22 -> com.google.gson.internal.bind.TypeAdapters$22:
+    502:502:void <init>() -> <init>
+    502:502:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    505:513:java.net.URI read(com.google.gson.stream.JsonReader) -> read
+    502:502:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    518:519:void write(com.google.gson.stream.JsonWriter,java.net.URI) -> write
+com.google.gson.internal.bind.TypeAdapters$23 -> com.google.gson.internal.bind.TypeAdapters$23:
+    524:524:void <init>() -> <init>
+    524:524:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    527:532:java.net.InetAddress read(com.google.gson.stream.JsonReader) -> read
+    524:524:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    536:537:void write(com.google.gson.stream.JsonWriter,java.net.InetAddress) -> write
+com.google.gson.internal.bind.TypeAdapters$24 -> com.google.gson.internal.bind.TypeAdapters$24:
+    543:543:void <init>() -> <init>
+    543:543:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    546:550:java.util.UUID read(com.google.gson.stream.JsonReader) -> read
+    543:543:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    554:555:void write(com.google.gson.stream.JsonWriter,java.util.UUID) -> write
+com.google.gson.internal.bind.TypeAdapters$25 -> com.google.gson.internal.bind.TypeAdapters$25:
+    560:560:void <init>() -> <init>
+    560:560:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    563:563:java.util.Currency read(com.google.gson.stream.JsonReader) -> read
+    560:560:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    567:568:void write(com.google.gson.stream.JsonWriter,java.util.Currency) -> write
+com.google.gson.internal.bind.TypeAdapters$26 -> com.google.gson.internal.bind.TypeAdapters$26:
+    572:572:void <init>() -> <init>
+    575:580:com.google.gson.TypeAdapter create(com.google.gson.Gson,com.google.gson.reflect.TypeToken) -> create
+com.google.gson.internal.bind.TypeAdapters$26$1 -> com.google.gson.internal.bind.TypeAdapters$26$1:
+    580:580:void <init>(com.google.gson.internal.bind.TypeAdapters$26,com.google.gson.TypeAdapter) -> <init>
+    580:580:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    582:583:java.sql.Timestamp read(com.google.gson.stream.JsonReader) -> read
+    580:580:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    587:588:void write(com.google.gson.stream.JsonWriter,java.sql.Timestamp) -> write
+com.google.gson.internal.bind.TypeAdapters$27 -> com.google.gson.internal.bind.TypeAdapters$27:
+    593:593:void <init>() -> <init>
+    593:593:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    603:632:java.util.Calendar read(com.google.gson.stream.JsonReader) -> read
+    593:593:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    637:655:void write(com.google.gson.stream.JsonWriter,java.util.Calendar) -> write
+com.google.gson.internal.bind.TypeAdapters$28 -> com.google.gson.internal.bind.TypeAdapters$28:
+    661:661:void <init>() -> <init>
+    661:661:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    664:687:java.util.Locale read(com.google.gson.stream.JsonReader) -> read
+    661:661:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    692:693:void write(com.google.gson.stream.JsonWriter,java.util.Locale) -> write
+com.google.gson.internal.bind.TypeAdapters$29 -> com.google.gson.internal.bind.TypeAdapters$29:
+    698:698:void <init>() -> <init>
+    698:698:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    700:732:com.google.gson.JsonElement read(com.google.gson.stream.JsonReader) -> read
+    698:698:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    737:767:void write(com.google.gson.stream.JsonWriter,com.google.gson.JsonElement) -> write
+com.google.gson.internal.bind.TypeAdapters$3 -> com.google.gson.internal.bind.TypeAdapters$3:
+    133:133:void <init>() -> <init>
+    133:133:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    136:144:java.lang.Boolean read(com.google.gson.stream.JsonReader) -> read
+    133:133:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    148:149:void write(com.google.gson.stream.JsonWriter,java.lang.Boolean) -> write
+com.google.gson.internal.bind.TypeAdapters$30 -> com.google.gson.internal.bind.TypeAdapters$30:
+    808:808:void <init>() -> <init>
+    811:818:com.google.gson.TypeAdapter create(com.google.gson.Gson,com.google.gson.reflect.TypeToken) -> create
+com.google.gson.internal.bind.TypeAdapters$32 -> com.google.gson.internal.bind.TypeAdapters$32:
+    834:834:void <init>(java.lang.Class,com.google.gson.TypeAdapter) -> <init>
+    837:837:com.google.gson.TypeAdapter create(com.google.gson.Gson,com.google.gson.reflect.TypeToken) -> create
+    840:840:java.lang.String toString() -> toString
+com.google.gson.internal.bind.TypeAdapters$33 -> com.google.gson.internal.bind.TypeAdapters$33:
+    847:847:void <init>(java.lang.Class,java.lang.Class,com.google.gson.TypeAdapter) -> <init>
+    850:851:com.google.gson.TypeAdapter create(com.google.gson.Gson,com.google.gson.reflect.TypeToken) -> create
+    854:855:java.lang.String toString() -> toString
+com.google.gson.internal.bind.TypeAdapters$34 -> com.google.gson.internal.bind.TypeAdapters$34:
+    862:862:void <init>(java.lang.Class,java.lang.Class,com.google.gson.TypeAdapter) -> <init>
+    865:866:com.google.gson.TypeAdapter create(com.google.gson.Gson,com.google.gson.reflect.TypeToken) -> create
+    869:870:java.lang.String toString() -> toString
+com.google.gson.internal.bind.TypeAdapters$35 -> com.google.gson.internal.bind.TypeAdapters$35:
+    881:881:void <init>(java.lang.Class,com.google.gson.TypeAdapter) -> <init>
+    884:888:com.google.gson.TypeAdapter create(com.google.gson.Gson,com.google.gson.reflect.TypeToken) -> create
+    904:904:java.lang.String toString() -> toString
+com.google.gson.internal.bind.TypeAdapters$35$1 -> com.google.gson.internal.bind.TypeAdapters$35$1:
+    888:888:void <init>(com.google.gson.internal.bind.TypeAdapters$35,java.lang.Class) -> <init>
+    894:899:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    890:891:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+com.google.gson.internal.bind.TypeAdapters$36 -> com.google.gson.internal.bind.TypeAdapters$36:
+    92:92:void <clinit>() -> <clinit>
+com.google.gson.internal.bind.TypeAdapters$4 -> com.google.gson.internal.bind.TypeAdapters$4:
+    156:156:void <init>() -> <init>
+    156:156:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    158:162:java.lang.Boolean read(com.google.gson.stream.JsonReader) -> read
+    156:156:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    166:167:void write(com.google.gson.stream.JsonWriter,java.lang.Boolean) -> write
+com.google.gson.internal.bind.TypeAdapters$5 -> com.google.gson.internal.bind.TypeAdapters$5:
+    173:173:void <init>() -> <init>
+    173:173:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    176:184:java.lang.Number read(com.google.gson.stream.JsonReader) -> read
+    173:173:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    189:190:void write(com.google.gson.stream.JsonWriter,java.lang.Number) -> write
+com.google.gson.internal.bind.TypeAdapters$6 -> com.google.gson.internal.bind.TypeAdapters$6:
+    196:196:void <init>() -> <init>
+    196:196:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    199:206:java.lang.Number read(com.google.gson.stream.JsonReader) -> read
+    196:196:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    211:212:void write(com.google.gson.stream.JsonWriter,java.lang.Number) -> write
+com.google.gson.internal.bind.TypeAdapters$7 -> com.google.gson.internal.bind.TypeAdapters$7:
+    218:218:void <init>() -> <init>
+    218:218:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    221:228:java.lang.Number read(com.google.gson.stream.JsonReader) -> read
+    218:218:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    233:234:void write(com.google.gson.stream.JsonWriter,java.lang.Number) -> write
+com.google.gson.internal.bind.TypeAdapters$8 -> com.google.gson.internal.bind.TypeAdapters$8:
+    239:239:void <init>() -> <init>
+    239:239:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    242:244:java.util.concurrent.atomic.AtomicInteger read(com.google.gson.stream.JsonReader) -> read
+    239:239:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    248:249:void write(com.google.gson.stream.JsonWriter,java.util.concurrent.atomic.AtomicInteger) -> write
+com.google.gson.internal.bind.TypeAdapters$9 -> com.google.gson.internal.bind.TypeAdapters$9:
+    254:254:void <init>() -> <init>
+    254:254:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    256:256:java.util.concurrent.atomic.AtomicBoolean read(com.google.gson.stream.JsonReader) -> read
+    254:254:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    259:260:void write(com.google.gson.stream.JsonWriter,java.util.concurrent.atomic.AtomicBoolean) -> write
+com.google.gson.internal.bind.TypeAdapters$EnumTypeAdapter -> com.google.gson.internal.bind.TypeAdapters$EnumTypeAdapter:
+    774:794:void <init>(java.lang.Class) -> <init>
+    773:773:java.lang.Object read(com.google.gson.stream.JsonReader) -> read
+    796:800:java.lang.Enum read(com.google.gson.stream.JsonReader) -> read
+    773:773:void write(com.google.gson.stream.JsonWriter,java.lang.Object) -> write
+    804:805:void write(com.google.gson.stream.JsonWriter,java.lang.Enum) -> write
+com.google.gson.internal.bind.util.ISO8601Utils -> com.google.gson.internal.bind.util.ISO8601Utils:
+    30:30:void <clinit>() -> <clinit>
+    288:288:boolean checkOffset(java.lang.String,int,char) -> checkOffset
+    345:349:int indexOfNonDigit(java.lang.String,int) -> indexOfNonDigit
+    124:276:java.util.Date parse(java.lang.String,java.text.ParsePosition) -> parse
+    301:323:int parseInt(java.lang.String,int,int) -> parseInt
+com.google.gson.internal.reflect.PreJava9ReflectionAccessor -> com.google.gson.internal.reflect.PreJava9ReflectionAccessor:
+    26:26:void <init>() -> <init>
+    31:32:void makeAccessible(java.lang.reflect.AccessibleObject) -> makeAccessible
+com.google.gson.internal.reflect.ReflectionAccessor -> com.google.gson.internal.reflect.ReflectionAccessor:
+    36:36:void <clinit>() -> <clinit>
+    33:33:void <init>() -> <init>
+    52:52:com.google.gson.internal.reflect.ReflectionAccessor getInstance() -> getInstance
+com.google.gson.internal.reflect.UnsafeReflectionAccessor -> com.google.gson.internal.reflect.UnsafeReflectionAccessor:
+    31:35:void <init>() -> <init>
+    81:83:java.lang.reflect.Field getOverrideField() -> getOverrideField
+    70:75:java.lang.Object getUnsafeInstance() -> getUnsafeInstance
+    40:51:void makeAccessible(java.lang.reflect.AccessibleObject) -> makeAccessible
+    55:65:boolean makeAccessibleWithUnsafe(java.lang.reflect.AccessibleObject) -> makeAccessibleWithUnsafe
+com.google.gson.reflect.TypeToken -> com.google.gson.reflect.TypeToken:
+    61:65:void <init>() -> <init>
+    71:75:void <init>(java.lang.reflect.Type) -> <init>
+    284:285:boolean equals(java.lang.Object) -> equals
+    296:296:com.google.gson.reflect.TypeToken get(java.lang.reflect.Type) -> get
+    303:303:com.google.gson.reflect.TypeToken get(java.lang.Class) -> get
+    94:94:java.lang.Class getRawType() -> getRawType
+    82:87:java.lang.reflect.Type getSuperclassTypeParameter(java.lang.Class) -> getSuperclassTypeParameter
+    101:101:java.lang.reflect.Type getType() -> getType
+    280:280:int hashCode() -> hashCode
+    289:289:java.lang.String toString() -> toString
+com.google.gson.stream.JsonReader -> com.google.gson.stream.JsonReader:
+    192:1616:void <clinit>() -> <clinit>
+    230:294:void <init>(java.io.Reader) -> <init>
+    341:352:void beginArray() -> beginArray
+    377:387:void beginObject() -> beginObject
+    1408:1411:void checkLenient() -> checkLenient
+    1216:1220:void close() -> close
+    1576:1591:void consumeNonExecutePrefix() -> consumeNonExecutePrefix
+    462:594:int doPeek() -> doPeek
+    359:370:void endArray() -> endArray
+    394:406:void endObject() -> endObject
+    1284:1309:boolean fillBuffer(int) -> fillBuffer
+    1468:1491:java.lang.String getPath() -> getPath
+    412:416:boolean hasNext() -> hasNext
+    333:333:boolean isLenient() -> isLenient
+    745:765:boolean isLiteral(char) -> isLiteral
+    1458:1460:java.lang.String locationString() -> locationString
+    840:853:boolean nextBoolean() -> nextBoolean
+    886:917:double nextDouble() -> nextDouble
+    1163:1209:int nextInt() -> nextInt
+    931:972:long nextLong() -> nextLong
+    777:793:java.lang.String nextName() -> nextName
+    1327:1403:int nextNonWhitespace(boolean) -> nextNonWhitespace
+    864:874:void nextNull() -> nextNull
+    987:1033:java.lang.String nextQuotedValue(char) -> nextQuotedValue
+    805:829:java.lang.String nextString() -> nextString
+    1041:1092:java.lang.String nextUnquotedValue() -> nextUnquotedValue
+    423:457:com.google.gson.stream.JsonToken peek() -> peek
+    599:638:int peekKeyword() -> peekKeyword
+    643:740:int peekNumber() -> peekNumber
+    1264:1276:void push(int) -> push
+    1504:1559:char readEscapeCharacter() -> readEscapeCharacter
+    326:327:void setLenient(boolean) -> setLenient
+    1097:1119:void skipQuotedValue(char) -> skipQuotedValue
+    1435:1450:boolean skipTo(java.lang.String) -> skipTo
+    1419:1429:void skipToEndOfLine() -> skipToEndOfLine
+    1124:1150:void skipUnquotedValue() -> skipUnquotedValue
+    1228:1261:void skipValue() -> skipValue
+    1568:1568:java.io.IOException syntaxError(java.lang.String) -> syntaxError
+    1454:1454:java.lang.String toString() -> toString
+com.google.gson.stream.JsonReader$1 -> com.google.gson.stream.JsonReader$1:
+    1594:1594:void <init>() -> <init>
+    1596:1614:void promoteNameToValue(com.google.gson.stream.JsonReader) -> promoteNameToValue
 com.google.gson.stream.JsonToken -> com.google.gson.stream.JsonToken:
     25:84:void <clinit>() -> <clinit>
     25:25:void <init>(java.lang.String,int) -> <init>
     25:25:com.google.gson.stream.JsonToken valueOf(java.lang.String) -> valueOf
     25:25:com.google.gson.stream.JsonToken[] values() -> values
+com.google.gson.stream.JsonWriter -> com.google.gson.stream.JsonWriter:
+    145:162:void <clinit>() -> <clinit>
+    167:202:void <init>(java.io.Writer) -> <init>
+    612:620:void beforeName() -> beforeName
+    629:658:void beforeValue() -> beforeValue
+    287:288:com.google.gson.stream.JsonWriter beginArray() -> beginArray
+    307:308:com.google.gson.stream.JsonWriter beginObject() -> beginObject
+    337:350:com.google.gson.stream.JsonWriter close(int,int,java.lang.String) -> close
+    555:562:void close() -> close
+    297:297:com.google.gson.stream.JsonWriter endArray() -> endArray
+    317:317:com.google.gson.stream.JsonWriter endObject() -> endObject
+    543:547:void flush() -> flush
+    277:277:boolean getSerializeNulls() -> getSerializeNulls
+    261:261:boolean isHtmlSafe() -> isHtmlSafe
+    242:242:boolean isLenient() -> isLenient
+    386:396:com.google.gson.stream.JsonWriter name(java.lang.String) -> name
+    597:605:void newline() -> newline
+    446:456:com.google.gson.stream.JsonWriter nullValue() -> nullValue
+    325:328:com.google.gson.stream.JsonWriter open(int,java.lang.String) -> open
+    366:369:int peek() -> peek
+    354:360:void push(int) -> push
+    376:377:void replaceTop(int) -> replaceTop
+    253:254:void setHtmlSafe(boolean) -> setHtmlSafe
+    213:220:void setIndent(java.lang.String) -> setIndent
+    235:236:void setLenient(boolean) -> setLenient
+    269:270:void setSerializeNulls(boolean) -> setSerializeNulls
+    565:594:void string(java.lang.String) -> string
+    414:420:com.google.gson.stream.JsonWriter value(java.lang.String) -> value
+    465:468:com.google.gson.stream.JsonWriter value(boolean) -> value
+    477:483:com.google.gson.stream.JsonWriter value(java.lang.Boolean) -> value
+    509:512:com.google.gson.stream.JsonWriter value(long) -> value
+    523:535:com.google.gson.stream.JsonWriter value(java.lang.Number) -> value
+    400:405:void writeDeferredName() -> writeDeferredName
+com.google.gson.stream.MalformedJsonException -> com.google.gson.stream.MalformedJsonException:
+    29:30:void <init>(java.lang.String) -> <init>
 com.newbee.ble_lib.NewBeeBleManager -> com.newbee.ble_lib.NewBeeBleManager:
     17:19:void <init>() -> <init>
-    55:60:void close() -> close
-    70:70:com.nrmyw.ble_event_lib.send.BleEventObserver getEventImp() -> getEventImp
+    58:63:void close() -> close
+    73:73:com.nrmyw.ble_event_lib.send.BleEventObserver getEventImp() -> getEventImp
     22:29:com.newbee.ble_lib.NewBeeBleManager getInstance() -> getInstance
-    89:89:com.nrmyw.ble_event_lib.bean.BleDeviceBean getNowUseBleDevice() -> getNowUseBleDevice
-    35:37:void init(android.content.Context) -> init
-    93:93:boolean isConnect() -> isConnect
-    80:85:void nowCheckToInitBle() -> nowCheckToInitBle
-    75:77:void nowGetAllPermissions() -> nowGetAllPermissions
-    64:66:void setBleEventObserver(com.nrmyw.ble_event_lib.send.BleEventObserver) -> setBleEventObserver
-    40:45:void startService(android.content.Context) -> startService
-    48:52:void stopService() -> stopService
+    92:92:com.nrmyw.ble_event_lib.bean.BleDeviceBean getNowUseBleDevice() -> getNowUseBleDevice
+    34:36:void init(android.content.Context) -> init
+    96:96:boolean isConnect() -> isConnect
+    83:88:void nowCheckToInitBle() -> nowCheckToInitBle
+    78:80:void nowGetAllPermissions() -> nowGetAllPermissions
+    67:69:void setBleEventObserver(com.nrmyw.ble_event_lib.send.BleEventObserver) -> setBleEventObserver
+    39:40:void setShareBleDevice(com.nrmyw.ble_event_lib.bean.BleDeviceBean) -> setShareBleDevice
+    43:48:void startService(android.content.Context) -> startService
+    51:55:void stopService() -> stopService
 com.newbee.ble_lib.base.BaseService -> com.newbee.ble_lib.base.BaseService:
     8:50:void <init>() -> <init>
     8:8:com.newbee.ble_lib.base.BaseService$StatuListen access$000(com.newbee.ble_lib.base.BaseService) -> access$000
@@ -6461,32 +7256,33 @@ com.newbee.ble_lib.base.BaseServiceDao$1 -> com.newbee.ble_lib.base.BaseServiceD
     31:34:void onServiceConnected(android.content.ComponentName,android.os.IBinder) -> onServiceConnected
     38:39:void onServiceDisconnected(android.content.ComponentName) -> onServiceDisconnected
 com.newbee.ble_lib.config.BleManagerConfig -> com.newbee.ble_lib.config.BleManagerConfig:
-    11:42:void <clinit>() -> <clinit>
+    11:70:void <clinit>() -> <clinit>
+    75:75:boolean isIsAutoConnectOldDevice() -> isIsAutoConnectOldDevice
     58:66:int useBleSendBitmapQualityTypeGetMaxKb(com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType) -> useBleSendBitmapQualityTypeGetMaxKb
 com.newbee.ble_lib.config.BleManagerConfig$1 -> com.newbee.ble_lib.config.BleManagerConfig$1:
     58:58:void <clinit>() -> <clinit>
 com.newbee.ble_lib.manager.child.BleConnectManager -> com.newbee.ble_lib.manager.child.BleConnectManager:
-    42:204:void <init>() -> <init>
-    180:183:boolean bleIsOpen() -> bleIsOpen
-    316:319:void checkAndToConnectOldDevice() -> checkAndToConnectOldDevice
-    96:108:boolean checkCanScan() -> checkCanScan
-    112:128:boolean checkDeviceIsConnected() -> checkDeviceIsConnected
-    57:58:void clear() -> clear
-    75:91:void close() -> close
-    341:357:boolean connect(java.lang.String) -> connect
-    364:366:void disconnect() -> disconnect
-    45:52:com.newbee.ble_lib.manager.child.BleConnectManager getInstance() -> getInstance
-    139:176:void havePermissionInitBle(android.content.Context,android.content.pm.PackageManager) -> havePermissionInitBle
-    61:72:void initData() -> initData
-    189:193:void openBluetooth() -> openBluetooth
-    236:305:void startSearchBLE() -> startSearchBLE
-    308:312:void stopScan() -> stopScan
-    325:335:void tryToConnectOldDevice() -> tryToConnectOldDevice
+    43:205:void <init>() -> <init>
+    181:184:boolean bleIsOpen() -> bleIsOpen
+    319:322:void checkAndToConnectOldDevice() -> checkAndToConnectOldDevice
+    97:109:boolean checkCanScan() -> checkCanScan
+    113:129:boolean checkDeviceIsConnected() -> checkDeviceIsConnected
+    58:59:void clear() -> clear
+    76:92:void close() -> close
+    344:360:boolean connect(java.lang.String) -> connect
+    367:369:void disconnect() -> disconnect
+    46:53:com.newbee.ble_lib.manager.child.BleConnectManager getInstance() -> getInstance
+    140:177:void havePermissionInitBle(android.content.Context,android.content.pm.PackageManager) -> havePermissionInitBle
+    62:73:void initData() -> initData
+    190:194:void openBluetooth() -> openBluetooth
+    237:307:void startSearchBLE() -> startSearchBLE
+    310:315:void stopScan() -> stopScan
+    328:338:void tryToConnectOldDevice() -> tryToConnectOldDevice
 com.newbee.ble_lib.manager.child.BleConnectManager$1 -> com.newbee.ble_lib.manager.child.BleConnectManager$1:
-    204:204:void <init>(com.newbee.ble_lib.manager.child.BleConnectManager) -> <init>
-    212:214:void onBatchScanResults(java.util.List) -> onBatchScanResults
-    207:208:void onScanFailed(int) -> onScanFailed
-    218:228:void onScanResult(int,android.bluetooth.le.ScanResult) -> onScanResult
+    205:205:void <init>(com.newbee.ble_lib.manager.child.BleConnectManager) -> <init>
+    213:215:void onBatchScanResults(java.util.List) -> onBatchScanResults
+    208:209:void onScanFailed(int) -> onScanFailed
+    219:229:void onScanResult(int,android.bluetooth.le.ScanResult) -> onScanResult
 com.newbee.ble_lib.manager.child.BlueToothGattManager -> com.newbee.ble_lib.manager.child.BlueToothGattManager:
     30:298:void <init>() -> <init>
     29:29:java.lang.String access$000(com.newbee.ble_lib.manager.child.BlueToothGattManager) -> access$000
@@ -6501,12 +7297,12 @@ com.newbee.ble_lib.manager.child.BlueToothGattManager -> com.newbee.ble_lib.mana
     295:296:void checkIsDisConnecting() -> checkIsDisConnecting
     275:285:void clearData() -> clearData
     288:292:void close() -> close
-    431:437:void disconnect() -> disconnect
+    432:438:void disconnect() -> disconnect
     261:268:com.newbee.ble_lib.manager.child.BlueToothGattManager getInstance() -> getInstance
-    309:342:void initGatt(android.bluetooth.BluetoothDevice,android.content.Context) -> initGatt
+    309:343:void initGatt(android.bluetooth.BluetoothDevice,android.content.Context) -> initGatt
     300:304:boolean isConnecting() -> isConnecting
-    400:423:com.newbee.ble_lib.manager.child.BlueToothGattManager$SEND_CMD_STATU queSendCmd(byte[]) -> queSendCmd
-    350:371:boolean setCharacteristicNotification1(android.bluetooth.BluetoothGattCharacteristic,boolean) -> setCharacteristicNotification1
+    401:424:com.newbee.ble_lib.manager.child.BlueToothGattManager$SEND_CMD_STATU queSendCmd(byte[]) -> queSendCmd
+    351:372:boolean setCharacteristicNotification1(android.bluetooth.BluetoothGattCharacteristic,boolean) -> setCharacteristicNotification1
 com.newbee.ble_lib.manager.child.BlueToothGattManager$1 -> com.newbee.ble_lib.manager.child.BlueToothGattManager$1:
     41:41:void <init>(com.newbee.ble_lib.manager.child.BlueToothGattManager) -> <init>
     171:186:void displayGattServices() -> displayGattServices
@@ -6520,11 +7316,11 @@ com.newbee.ble_lib.manager.child.BlueToothGattManager$1 -> com.newbee.ble_lib.ma
     70:92:void onMtuChanged(android.bluetooth.BluetoothGatt,int,int) -> onMtuChanged
     125:139:void onServicesDiscovered(android.bluetooth.BluetoothGatt,int) -> onServicesDiscovered
 com.newbee.ble_lib.manager.child.BlueToothGattManager$SEND_CMD_STATU -> com.newbee.ble_lib.manager.child.BlueToothGattManager$SEND_CMD_STATU:
-    439:439:com.newbee.ble_lib.manager.child.BlueToothGattManager$SEND_CMD_STATU[] $values() -> $values
-    439:442:void <clinit>() -> <clinit>
-    439:439:void <init>(java.lang.String,int) -> <init>
-    439:439:com.newbee.ble_lib.manager.child.BlueToothGattManager$SEND_CMD_STATU valueOf(java.lang.String) -> valueOf
-    439:439:com.newbee.ble_lib.manager.child.BlueToothGattManager$SEND_CMD_STATU[] values() -> values
+    440:440:com.newbee.ble_lib.manager.child.BlueToothGattManager$SEND_CMD_STATU[] $values() -> $values
+    440:443:void <clinit>() -> <clinit>
+    440:440:void <init>(java.lang.String,int) -> <init>
+    440:440:com.newbee.ble_lib.manager.child.BlueToothGattManager$SEND_CMD_STATU valueOf(java.lang.String) -> valueOf
+    440:440:com.newbee.ble_lib.manager.child.BlueToothGattManager$SEND_CMD_STATU[] values() -> values
 com.newbee.ble_lib.manager.child.BlueToothSendStatuManager -> com.newbee.ble_lib.manager.child.BlueToothSendStatuManager:
     19:37:void <init>() -> <init>
     196:215:void checkReturnToSend() -> checkReturnToSend
@@ -6663,58 +7459,58 @@ com.newbee.ble_lib.receiver.BleStatuBroadcastReceiverDao -> com.newbee.ble_lib.r
     16:23:com.newbee.ble_lib.receiver.BleStatuBroadcastReceiverDao getInstance() -> getInstance
     28:35:void init(android.content.Context) -> init
 com.newbee.ble_lib.service.BluetoothGattService -> com.newbee.ble_lib.service.BluetoothGattService:
-    30:381:void <init>() -> <init>
-    30:30:void access$000(com.newbee.ble_lib.service.BluetoothGattService,com.newbee.ble_lib.service.BluetoothGattService$AutoConnectType) -> access$000
-    30:30:void access$100(com.newbee.ble_lib.service.BluetoothGattService) -> access$100
-    30:30:void access$200(com.newbee.ble_lib.service.BluetoothGattService,com.newbee.ble_lib.service.event.BleDelayType) -> access$200
-    30:30:void access$300(com.newbee.ble_lib.service.BluetoothGattService) -> access$300
-    30:30:void access$400(com.newbee.ble_lib.service.BluetoothGattService) -> access$400
-    30:30:java.lang.Runnable access$500(com.newbee.ble_lib.service.BluetoothGattService) -> access$500
-    30:30:android.os.Handler access$600(com.newbee.ble_lib.service.BluetoothGattService) -> access$600
-    30:30:com.nrmyw.ble_event_lib.send.BleEventObserver access$700(com.newbee.ble_lib.service.BluetoothGattService) -> access$700
-    110:137:void autoConnectDevice(com.newbee.ble_lib.service.BluetoothGattService$AutoConnectType) -> autoConnectDevice
-    151:152:void cancelAutoConnect() -> cancelAutoConnect
-    169:170:void cancelConnectOldDevice() -> cancelConnectOldDevice
-    245:250:void close() -> close
-    211:215:void init() -> init
-    97:105:void selectDelayTypeToDo(com.newbee.ble_lib.service.event.BleDelayType) -> selectDelayTypeToDo
-    222:222:void start(android.content.Intent,int,int) -> start
-    164:166:void toConnectOldDevice() -> toConnectOldDevice
+    31:385:void <init>() -> <init>
+    31:31:void access$000(com.newbee.ble_lib.service.BluetoothGattService,com.newbee.ble_lib.service.BluetoothGattService$AutoConnectType) -> access$000
+    31:31:void access$100(com.newbee.ble_lib.service.BluetoothGattService) -> access$100
+    31:31:void access$200(com.newbee.ble_lib.service.BluetoothGattService,com.newbee.ble_lib.service.event.BleDelayType) -> access$200
+    31:31:void access$300(com.newbee.ble_lib.service.BluetoothGattService) -> access$300
+    31:31:void access$400(com.newbee.ble_lib.service.BluetoothGattService) -> access$400
+    31:31:java.lang.Runnable access$500(com.newbee.ble_lib.service.BluetoothGattService) -> access$500
+    31:31:android.os.Handler access$600(com.newbee.ble_lib.service.BluetoothGattService) -> access$600
+    31:31:com.nrmyw.ble_event_lib.send.BleEventObserver access$700(com.newbee.ble_lib.service.BluetoothGattService) -> access$700
+    112:139:void autoConnectDevice(com.newbee.ble_lib.service.BluetoothGattService$AutoConnectType) -> autoConnectDevice
+    153:154:void cancelAutoConnect() -> cancelAutoConnect
+    171:172:void cancelConnectOldDevice() -> cancelConnectOldDevice
+    249:254:void close() -> close
+    215:219:void init() -> init
+    99:107:void selectDelayTypeToDo(com.newbee.ble_lib.service.event.BleDelayType) -> selectDelayTypeToDo
+    226:226:void start(android.content.Intent,int,int) -> start
+    166:168:void toConnectOldDevice() -> toConnectOldDevice
 com.newbee.ble_lib.service.BluetoothGattService$1 -> com.newbee.ble_lib.service.BluetoothGattService$1:
-    34:34:void <init>(com.newbee.ble_lib.service.BluetoothGattService) -> <init>
-    37:93:void handleMessage(android.os.Message) -> handleMessage
+    35:35:void <init>(com.newbee.ble_lib.service.BluetoothGattService) -> <init>
+    38:95:void handleMessage(android.os.Message) -> handleMessage
 com.newbee.ble_lib.service.BluetoothGattService$2 -> com.newbee.ble_lib.service.BluetoothGattService$2:
-    174:174:void <init>(com.newbee.ble_lib.service.BluetoothGattService) -> <init>
-    178:205:void sendBleStatu(com.nrmyw.ble_event_lib.statu.BleStatu,java.lang.Object[]) -> sendBleStatu
+    176:176:void <init>(com.newbee.ble_lib.service.BluetoothGattService) -> <init>
+    180:207:void sendBleStatu(com.nrmyw.ble_event_lib.statu.BleStatu,java.lang.Object[]) -> sendBleStatu
 com.newbee.ble_lib.service.BluetoothGattService$3 -> com.newbee.ble_lib.service.BluetoothGattService$3:
-    254:254:void <init>(com.newbee.ble_lib.service.BluetoothGattService) -> <init>
-    269:270:void disconnectedBle() -> disconnectedBle
-    257:258:void havePermissionInitBle() -> havePermissionInitBle
-    283:288:void sendBytesIndexCmd(int,byte[]) -> sendBytesIndexCmd
-    274:279:void sendCmd(byte[]) -> sendCmd
-    292:296:void sendImage(com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean) -> sendImage
-    309:313:void sendOta(com.nrmyw.ble_event_lib.bean.BleSendOtaInfoBean) -> sendOta
-    263:265:void startSearchBle() -> startSearchBle
+    258:258:void <init>(com.newbee.ble_lib.service.BluetoothGattService) -> <init>
+    273:274:void disconnectedBle() -> disconnectedBle
+    261:262:void havePermissionInitBle() -> havePermissionInitBle
+    287:292:void sendBytesIndexCmd(int,byte[]) -> sendBytesIndexCmd
+    278:283:void sendCmd(byte[]) -> sendCmd
+    296:300:void sendImage(com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean) -> sendImage
+    313:317:void sendOta(com.nrmyw.ble_event_lib.bean.BleSendOtaInfoBean) -> sendOta
+    267:269:void startSearchBle() -> startSearchBle
 com.newbee.ble_lib.service.BluetoothGattService$4 -> com.newbee.ble_lib.service.BluetoothGattService$4:
-    332:332:void <init>(com.newbee.ble_lib.service.BluetoothGattService) -> <init>
-    335:340:void delayDo(com.newbee.ble_lib.service.event.BleDelayType,long) -> delayDo
+    336:336:void <init>(com.newbee.ble_lib.service.BluetoothGattService) -> <init>
+    339:344:void delayDo(com.newbee.ble_lib.service.event.BleDelayType,long) -> delayDo
 com.newbee.ble_lib.service.BluetoothGattService$5 -> com.newbee.ble_lib.service.BluetoothGattService$5:
-    346:346:void <init>(com.newbee.ble_lib.service.BluetoothGattService) -> <init>
-    349:370:void run() -> run
+    350:350:void <init>(com.newbee.ble_lib.service.BluetoothGattService) -> <init>
+    353:374:void run() -> run
 com.newbee.ble_lib.service.BluetoothGattService$6 -> com.newbee.ble_lib.service.BluetoothGattService$6:
-    373:373:void <init>(com.newbee.ble_lib.service.BluetoothGattService) -> <init>
-    377:378:void run() -> run
+    377:377:void <init>(com.newbee.ble_lib.service.BluetoothGattService) -> <init>
+    381:382:void run() -> run
 com.newbee.ble_lib.service.BluetoothGattService$7 -> com.newbee.ble_lib.service.BluetoothGattService$7:
-    381:381:void <init>(com.newbee.ble_lib.service.BluetoothGattService) -> <init>
-    384:385:void run() -> run
+    385:385:void <init>(com.newbee.ble_lib.service.BluetoothGattService) -> <init>
+    389:389:void run() -> run
 com.newbee.ble_lib.service.BluetoothGattService$8 -> com.newbee.ble_lib.service.BluetoothGattService$8:
-    41:178:void <clinit>() -> <clinit>
+    42:180:void <clinit>() -> <clinit>
 com.newbee.ble_lib.service.BluetoothGattService$AutoConnectType -> com.newbee.ble_lib.service.BluetoothGattService$AutoConnectType:
-    389:389:com.newbee.ble_lib.service.BluetoothGattService$AutoConnectType[] $values() -> $values
-    389:393:void <clinit>() -> <clinit>
-    389:389:void <init>(java.lang.String,int) -> <init>
-    389:389:com.newbee.ble_lib.service.BluetoothGattService$AutoConnectType valueOf(java.lang.String) -> valueOf
-    389:389:com.newbee.ble_lib.service.BluetoothGattService$AutoConnectType[] values() -> values
+    393:393:com.newbee.ble_lib.service.BluetoothGattService$AutoConnectType[] $values() -> $values
+    393:397:void <clinit>() -> <clinit>
+    393:393:void <init>(java.lang.String,int) -> <init>
+    393:393:com.newbee.ble_lib.service.BluetoothGattService$AutoConnectType valueOf(java.lang.String) -> valueOf
+    393:393:com.newbee.ble_lib.service.BluetoothGattService$AutoConnectType[] values() -> values
 com.newbee.ble_lib.service.BluetoothGattServiceDao -> com.newbee.ble_lib.service.BluetoothGattServiceDao:
     16:30:void <init>(android.content.Context) -> <init>
     25:25:java.lang.Class getSsCls() -> getSsCls
@@ -6751,16 +7547,17 @@ com.newbee.ble_lib.util.BleCheckUtil -> com.newbee.ble_lib.util.BleCheckUtil:
     72:76:void setToConnecting(com.nrmyw.ble_event_lib.bean.BleDeviceBean,java.lang.String,java.lang.String) -> setToConnecting
 com.newbee.ble_lib.util.BleConnectStatuUtil -> com.newbee.ble_lib.util.BleConnectStatuUtil:
     26:28:void <init>() -> <init>
-    49:65:boolean checkCanUseOldDeviceAdress(boolean) -> checkCanUseOldDeviceAdress
-    136:151:void checkDisconnectedDevice(java.lang.String,java.lang.String) -> checkDisconnectedDevice
+    50:62:boolean checkCanUseOldDeviceAdress(boolean) -> checkCanUseOldDeviceAdress
+    137:152:void checkDisconnectedDevice(java.lang.String,java.lang.String) -> checkDisconnectedDevice
     31:38:com.newbee.ble_lib.util.BleConnectStatuUtil getInstance() -> getInstance
-    78:78:com.nrmyw.ble_event_lib.bean.BleDeviceBean getNowUseBleDevice() -> getNowUseBleDevice
-    82:82:boolean isConnect() -> isConnect
-    105:111:void sendConnected() -> sendConnected
-    114:115:void sendConnectedMsg() -> sendConnectedMsg
-    88:101:void sendConnecting(com.nrmyw.ble_event_lib.bean.BleDeviceBean,java.lang.String) -> sendConnecting
-    123:133:void sendDisconnected() -> sendDisconnected
-    118:119:void setConnectErr(java.lang.String) -> setConnectErr
+    75:75:com.nrmyw.ble_event_lib.bean.BleDeviceBean getNowUseBleDevice() -> getNowUseBleDevice
+    79:79:boolean isConnect() -> isConnect
+    106:112:void sendConnected() -> sendConnected
+    115:116:void sendConnectedMsg() -> sendConnectedMsg
+    85:98:void sendConnecting(com.nrmyw.ble_event_lib.bean.BleDeviceBean,java.lang.String) -> sendConnecting
+    124:134:void sendDisconnected() -> sendDisconnected
+    119:120:void setConnectErr(java.lang.String) -> setConnectErr
+    101:102:void setShareBleDevice(com.nrmyw.ble_event_lib.bean.BleDeviceBean) -> setShareBleDevice
 com.newbee.ble_lib.util.BleErrManager -> com.newbee.ble_lib.util.BleErrManager:
     9:10:void sendConnectErrMsg(java.lang.String) -> sendConnectErrMsg
 com.newbee.ble_lib.util.BleSendImageUtil -> com.newbee.ble_lib.util.BleSendImageUtil:
@@ -6781,66 +7578,66 @@ com.newbee.ble_lib.util.hud.HudCmdSendDataUtil -> com.newbee.ble_lib.util.hud.Hu
     77:97:byte[] getSendFile(int,byte[]) -> getSendFile
     101:107:byte[] startOTA() -> startOTA
 com.newbee.ble_tool.activity.MainActivity -> com.newbee.ble_tool.activity.MainActivity:
-    58:187:void <init>() -> <init>
-    58:58:android.os.Handler access$000(com.newbee.ble_tool.activity.MainActivity) -> access$000
-    58:58:java.lang.Runnable access$100(com.newbee.ble_tool.activity.MainActivity) -> access$100
-    58:58:java.lang.String access$1000(com.newbee.ble_tool.activity.MainActivity) -> access$1000
-    58:58:android.widget.ImageView access$1100(com.newbee.ble_tool.activity.MainActivity) -> access$1100
-    58:58:void access$1200(com.newbee.ble_tool.activity.MainActivity,com.nrmyw.ble_event_lib.bean.BleSendImageEndInfoBean) -> access$1200
-    58:58:int access$1300(com.newbee.ble_tool.activity.MainActivity) -> access$1300
-    58:58:int access$1308(com.newbee.ble_tool.activity.MainActivity) -> access$1308
-    58:58:android.widget.TextView access$1400(com.newbee.ble_tool.activity.MainActivity) -> access$1400
-    58:58:boolean access$200(com.newbee.ble_tool.activity.MainActivity) -> access$200
-    58:58:boolean access$202(com.newbee.ble_tool.activity.MainActivity,boolean) -> access$202
-    58:58:boolean access$300(com.newbee.ble_tool.activity.MainActivity) -> access$300
-    58:58:boolean access$302(com.newbee.ble_tool.activity.MainActivity,boolean) -> access$302
-    58:58:long access$400(com.newbee.ble_tool.activity.MainActivity) -> access$400
-    58:58:long access$402(com.newbee.ble_tool.activity.MainActivity,long) -> access$402
-    58:58:int access$500(com.newbee.ble_tool.activity.MainActivity) -> access$500
-    58:58:int access$502(com.newbee.ble_tool.activity.MainActivity,int) -> access$502
-    58:58:android.widget.TextView access$600(com.newbee.ble_tool.activity.MainActivity) -> access$600
-    58:58:android.widget.TextView access$700(com.newbee.ble_tool.activity.MainActivity) -> access$700
-    58:58:android.widget.TextView access$800(com.newbee.ble_tool.activity.MainActivity) -> access$800
-    58:58:java.lang.String access$900(com.newbee.ble_tool.activity.MainActivity) -> access$900
-    380:380:void changeConfig() -> changeConfig
-    365:365:void closeActivity() -> closeActivity
-    308:315:void doSendImageEndThing(com.nrmyw.ble_event_lib.bean.BleSendImageEndInfoBean) -> doSendImageEndThing
-    320:320:int getViewLayoutRsId() -> getViewLayoutRsId
-    360:360:void initControl() -> initControl
-    355:355:void initData() -> initData
-    326:350:void initView() -> initView
-    404:408:void onDestroy() -> onDestroy
-    413:427:void requestPermission() -> requestPermission
-    156:165:void sendBitmap(android.graphics.Bitmap) -> sendBitmap
-    168:175:void sendProgress(android.graphics.Bitmap) -> sendProgress
-    386:399:void setViewByBleConnectStatu(boolean) -> setViewByBleConnectStatu
-    375:375:void viewIsPause() -> viewIsPause
-    369:370:void viewIsShow() -> viewIsShow
+    61:190:void <init>() -> <init>
+    61:61:android.os.Handler access$000(com.newbee.ble_tool.activity.MainActivity) -> access$000
+    61:61:java.lang.Runnable access$100(com.newbee.ble_tool.activity.MainActivity) -> access$100
+    61:61:java.lang.String access$1000(com.newbee.ble_tool.activity.MainActivity) -> access$1000
+    61:61:android.widget.ImageView access$1100(com.newbee.ble_tool.activity.MainActivity) -> access$1100
+    61:61:void access$1200(com.newbee.ble_tool.activity.MainActivity,com.nrmyw.ble_event_lib.bean.BleSendImageEndInfoBean) -> access$1200
+    61:61:int access$1300(com.newbee.ble_tool.activity.MainActivity) -> access$1300
+    61:61:int access$1308(com.newbee.ble_tool.activity.MainActivity) -> access$1308
+    61:61:android.widget.TextView access$1400(com.newbee.ble_tool.activity.MainActivity) -> access$1400
+    61:61:boolean access$200(com.newbee.ble_tool.activity.MainActivity) -> access$200
+    61:61:boolean access$202(com.newbee.ble_tool.activity.MainActivity,boolean) -> access$202
+    61:61:boolean access$300(com.newbee.ble_tool.activity.MainActivity) -> access$300
+    61:61:boolean access$302(com.newbee.ble_tool.activity.MainActivity,boolean) -> access$302
+    61:61:long access$400(com.newbee.ble_tool.activity.MainActivity) -> access$400
+    61:61:long access$402(com.newbee.ble_tool.activity.MainActivity,long) -> access$402
+    61:61:int access$500(com.newbee.ble_tool.activity.MainActivity) -> access$500
+    61:61:int access$502(com.newbee.ble_tool.activity.MainActivity,int) -> access$502
+    61:61:android.widget.TextView access$600(com.newbee.ble_tool.activity.MainActivity) -> access$600
+    61:61:android.widget.TextView access$700(com.newbee.ble_tool.activity.MainActivity) -> access$700
+    61:61:android.widget.TextView access$800(com.newbee.ble_tool.activity.MainActivity) -> access$800
+    61:61:java.lang.String access$900(com.newbee.ble_tool.activity.MainActivity) -> access$900
+    390:390:void changeConfig() -> changeConfig
+    375:375:void closeActivity() -> closeActivity
+    318:325:void doSendImageEndThing(com.nrmyw.ble_event_lib.bean.BleSendImageEndInfoBean) -> doSendImageEndThing
+    330:330:int getViewLayoutRsId() -> getViewLayoutRsId
+    370:370:void initControl() -> initControl
+    365:365:void initData() -> initData
+    336:360:void initView() -> initView
+    414:418:void onDestroy() -> onDestroy
+    423:437:void requestPermission() -> requestPermission
+    159:168:void sendBitmap(android.graphics.Bitmap) -> sendBitmap
+    171:178:void sendProgress(android.graphics.Bitmap) -> sendProgress
+    396:409:void setViewByBleConnectStatu(boolean) -> setViewByBleConnectStatu
+    385:385:void viewIsPause() -> viewIsPause
+    379:380:void viewIsShow() -> viewIsShow
 com.newbee.ble_tool.activity.MainActivity$$ExternalSyntheticApiModelOutline0 -> com.newbee.ble_tool.activity.MainActivity$$ExternalSyntheticApiModelOutline0:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
     boolean com.newbee.ble_tool.activity.MainActivity$$InternalSyntheticApiModelOutline$1$51a13f0c2079808be1920f2c17522515c19dd2b9194eff732bb280fe48edeaf9$0.m() -> m
       # {"id":"com.android.tools.r8.synthesized"}
 com.newbee.ble_tool.activity.MainActivity$1 -> com.newbee.ble_tool.activity.MainActivity$1:
-    59:59:void <init>(com.newbee.ble_tool.activity.MainActivity) -> <init>
-    62:73:void sendBleStatu(com.nrmyw.ble_event_lib.statu.BleStatu,java.lang.Object[]) -> sendBleStatu
+    62:62:void <init>(com.newbee.ble_tool.activity.MainActivity) -> <init>
+    65:76:void sendBleStatu(com.nrmyw.ble_event_lib.statu.BleStatu,java.lang.Object[]) -> sendBleStatu
 com.newbee.ble_tool.activity.MainActivity$2 -> com.newbee.ble_tool.activity.MainActivity$2:
-    77:77:void <init>(com.newbee.ble_tool.activity.MainActivity) -> <init>
-    80:149:void onClick(android.view.View) -> onClick
+    80:80:void <init>(com.newbee.ble_tool.activity.MainActivity) -> <init>
+    83:152:void onClick(android.view.View) -> onClick
 com.newbee.ble_tool.activity.MainActivity$3 -> com.newbee.ble_tool.activity.MainActivity$3:
-    177:177:void <init>(com.newbee.ble_tool.activity.MainActivity) -> <init>
-    180:185:void run() -> run
+    180:180:void <init>(com.newbee.ble_tool.activity.MainActivity) -> <init>
+    183:188:void run() -> run
 com.newbee.ble_tool.activity.MainActivity$4 -> com.newbee.ble_tool.activity.MainActivity$4:
-    187:187:void <init>(com.newbee.ble_tool.activity.MainActivity) -> <init>
-    190:284:void handleMessage(android.os.Message) -> handleMessage
+    190:190:void <init>(com.newbee.ble_tool.activity.MainActivity) -> <init>
+    193:294:void handleMessage(android.os.Message) -> handleMessage
 com.newbee.ble_tool.activity.MainActivity$5 -> com.newbee.ble_tool.activity.MainActivity$5:
-    206:206:void <clinit>() -> <clinit>
+    209:209:void <clinit>() -> <clinit>
 com.newbee.ble_tool.app.MyApp -> com.newbee.ble_tool.app.MyApp:
-    19:19:void <init>() -> <init>
-    35:36:void close() -> close
-    23:26:void init() -> init
-    31:31:void needClear(java.lang.String) -> needClear
-    39:62:void startTo() -> startTo
+    24:24:void <init>() -> <init>
+    52:53:void close() -> close
+    28:43:void init() -> init
+    48:48:void needClear(java.lang.String) -> needClear
+    56:79:void startTo() -> startTo
 com.newbee.ble_tool.app.MyApp$$ExternalSyntheticApiModelOutline0 -> com.newbee.ble_tool.app.MyApp$$ExternalSyntheticApiModelOutline0:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
@@ -6970,11 +7767,18 @@ com.newbee.bulid_lib.mybase.share.MyShare -> com.newbee.bulid_lib.mybase.share.M
     15:16:void <init>() -> <init>
     19:26:com.newbee.bulid_lib.mybase.share.MyShare getInstance() -> getInstance
     31:31:java.lang.String getString(java.lang.String) -> getString
+    41:42:void putString(java.lang.String,java.lang.String) -> putString
 com.newbee.bulid_lib.util.phone.PhoneConfig -> com.newbee.bulid_lib.util.phone.PhoneConfig:
     10:10:void <init>() -> <init>
 com.newbee.data_sava_lib.share.BaseShare -> com.newbee.data_sava_lib.share.BaseShare:
     12:19:void <init>(android.content.Context) -> <init>
     33:34:java.lang.String getString(java.lang.String) -> getString
+    27:29:void putString(java.lang.String,java.lang.String) -> putString
+com.newbee.gson_lib.gson.MyGson -> com.newbee.gson_lib.gson.MyGson:
+    15:17:void <init>() -> <init>
+    36:38:java.lang.Object fromJson(java.lang.String,java.lang.Class) -> fromJson
+    20:27:com.newbee.gson_lib.gson.MyGson getInstance() -> getInstance
+    31:31:java.lang.String toGsonStr(java.lang.Object) -> toGsonStr
 com.newbee.gson_lib.gson.bean.Send -> com.newbee.gson_lib.gson.bean.Send:
     11:12:void <init>() -> <init>
     44:44:java.lang.String toString() -> toString

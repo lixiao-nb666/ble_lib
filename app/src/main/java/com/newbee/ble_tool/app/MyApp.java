@@ -6,6 +6,8 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.text.TextUtils;
+import android.util.Log;
 
 import com.newbee.ble_lib.NewBeeBleManager;
 import com.newbee.ble_tool.R;
@@ -13,15 +15,30 @@ import com.newbee.ble_tool.config.T800Config;
 
 import com.newbee.ble_tool.type.HudDevice;
 import com.newbee.bulid_lib.mybase.appliction.BaseApplication;
+import com.newbee.bulid_lib.mybase.share.MyShare;
+import com.newbee.gson_lib.gson.MyGson;
+import com.nrmyw.ble_event_lib.bean.BleDeviceBean;
 import com.nrmyw.ble_event_lib.config.NewBeeBleConfig;
 
 
 public class MyApp extends BaseApplication {
-
+    public static final String bleDeviceShareStr="bleDeviceShareStr";
     @Override
     protected void init() {
         NewBeeBleConfig.getInstance().init(T800Config.isAutomatic,T800Config.mtu,T800Config.serviceID,T800Config.writeID,T800Config.noticeID, HudDevice.getBleDeviceTypeList());
         NewBeeBleManager.getInstance().init(getBaseContext());
+
+        try {
+            Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:1:---1152");
+            String bleDeviceShareStr= MyShare.getInstance().getString(MyApp.bleDeviceShareStr);
+            if(!TextUtils.isEmpty(bleDeviceShareStr)){
+                Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:1:---1153");
+                BleDeviceBean bleDeviceBean= MyGson.getInstance().fromJson(bleDeviceShareStr,BleDeviceBean.class);
+                NewBeeBleManager.getInstance().setShareBleDevice(bleDeviceBean);
+            }
+        }catch (Exception e){}
+
+
         startTo();
     }
 

@@ -20,6 +20,7 @@ import android.util.SparseArray;
 import com.newbee.ble_lib.R;
 
 
+import com.newbee.ble_lib.config.BleManagerConfig;
 import com.newbee.ble_lib.util.BleCheckUtil;
 import com.newbee.ble_lib.util.BleConnectStatuUtil;
 import com.nrmyw.ble_event_lib.bean.BleDeviceBean;
@@ -250,10 +251,11 @@ public class BleConnectManager {
         }
 
         Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:1:---111---"+countCannotScandataNumb);
+        bluetoothLeScanner.startScan(scanCallback);
+        bluetoothAdapter.startDiscovery();
         if(countCannotScandataNumb>=2){
             Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:1:---112");
-            bluetoothLeScanner.startScan(scanCallback);
-            bluetoothAdapter.startDiscovery();
+
         }else {
             Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:1:---113");
             bluetoothLeScanner.startScan(scanCallback);
@@ -301,7 +303,7 @@ public class BleConnectManager {
 //        bluetoothAdapter.startDiscovery();
         countCannotScandataNumb++;
         BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.SEARCHING);
-
+        checkAndToConnectOldDevice();
     }
 
     public void stopScan(){
@@ -309,11 +311,12 @@ public class BleConnectManager {
             return;
         }
         bluetoothLeScanner.stopScan(scanCallback);
+        bluetoothAdapter.cancelDiscovery();
     }
 
 
     public void checkAndToConnectOldDevice(){
-        if(null!=BleConnectStatuUtil.getInstance().getNowUseBleDevice()){
+        if(BleManagerConfig.isIsAutoConnectOldDevice()){
             tryToConnectOldDevice();
         }
     }

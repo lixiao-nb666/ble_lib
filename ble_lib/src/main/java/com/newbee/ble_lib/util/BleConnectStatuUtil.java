@@ -39,17 +39,14 @@ public class BleConnectStatuUtil {
     }
 
     private void clear(){
-        nowUseBleDevice=null;
+
         isConnect=false;
         connectTime=0;
     }
 
 
     public boolean checkCanUseOldDeviceAdress(boolean canNotScanData){
-        if(disConnectTime==0){
-            //因为是第一次，直接返回
-            return false;
-        }
+
         if(isConnect){
             //如果连接状态，直接返回不行
             return false;
@@ -100,6 +97,10 @@ public class BleConnectStatuUtil {
         BleConnectManager.getInstance().connect(address);
     }
 
+    public void setShareBleDevice(BleDeviceBean bleDevice){
+        nowUseBleDevice=bleDevice;
+    }
+
 
     public  void sendConnected(){
         connectTime=System.currentTimeMillis();
@@ -107,7 +108,7 @@ public class BleConnectStatuUtil {
         isConnect=true;
         BlueToothGattSendMsgManager.getInstance().clear();
         BleConnectManager.getInstance().stopScan();
-        BleDelayEventSubscriptionSubject.getInstance().delayDo(BleDelayType.SEND_CONNECTED_MSG,168);
+        BleDelayEventSubscriptionSubject.getInstance().delayDo(BleDelayType.SEND_CONNECTED_MSG,456);
     }
 
     public void sendConnectedMsg(){

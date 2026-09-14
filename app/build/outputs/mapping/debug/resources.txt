@@ -19,6 +19,7 @@ Web content present: false
 Referenced Strings:
 android.settings.MANAGE_APP_ALL_FILES...
 DST_OVER
+year
 suggest_intent_data
 numb_6
 :run
@@ -66,6 +67,7 @@ GET_DEVICE_VERSION
 _
 user_query
 ACTION_CLEAR_ACCESSIBILITY_FOCUS
+Infinity
 h
 SEND_SPEED
 r
@@ -78,6 +80,7 @@ L_F_Y
 w
 4510
 MODULATE
+hourOfDay
 x
 L_F_N
 4511
@@ -112,6 +115,7 @@ android.graphics.drawable.VectorDrawable
 PROGRESS
 HUE
 requestRelaunchActivity
+NaN
 ACTION_SCROLL_UP
 jobscheduler
 T700_1
@@ -169,6 +173,7 @@ CONNECTED
 INT_ENUM
 MD5
 mMainThread
+UTC
 android.intent.action.TIME_SET
 SEND_IMAGE
 OVERLAY
@@ -185,6 +190,7 @@ c01
 SPEEDING
 c04
 c05
+newInstance
 c07
 MenuItemWrapper
 END_ARRAY
@@ -213,6 +219,7 @@ BITMAP
 L_LF_Y
 L_R_Y_R
 SEND_OTA_START
+minute
 DISCONNECTED
 ATTACH
 android:user_visible_hint
@@ -247,6 +254,7 @@ tbt44
 tbt46
 tbt47
 tbt48
+objectFieldOffset
 ACTION_SELECT
 R_RF_Y_R
 FACTORY_SET
@@ -317,6 +325,7 @@ SEND_IMAGE_DATA_END
 QUERY_DEVICE_VERSION
 tbt14
 tbt15
+FALSE
 window
 tbt16
 tbt17
@@ -324,6 +333,7 @@ tbt18
 tbt19
 kankantupian
 T900
+M/d/yy
 T900_1
 LIBRARY_GROUP_PREFIX
 T900_2
@@ -393,6 +403,7 @@ SET_DEVICE_SOUND_STATU
 AppCompatViewInflater
 notification
 group
+getConstructorId
 R_F_Y_R
 android.speech.extra.RESULTS_PENDINGI...
 REACH_STR
@@ -418,6 +429,7 @@ T700_GUI3
 fonts
 1310
 R_F_Y_F
+bleDeviceShareStr
 tbt101
 tbt102
 ACTION_PREVIOUS_HTML_ELEMENT
@@ -463,6 +475,7 @@ LIBRARY
 ON_ANY
 TwilightManager
 makeOptionalFitsSystemWindows
+GMT
 traceCounter
 FLASE
 ON_PAUSE
@@ -471,6 +484,7 @@ web_search
 4611
 XOR
 ACTION_CLICK
+allocateInstance
 GET_GPS_SPEED
 SEND_OTA_END
 TraceCompat
@@ -481,9 +495,11 @@ LT_RF_N
 QUERY_SN
 SEND_BLE_CMD_BYTES
 ImageButton
+override
 SRC_OUT
 androidx.view.accessibility.Accessibi...
 ToggleButton
+java.version
 DETACH
 computeFitSystemWindows
 RED
@@ -517,6 +533,7 @@ LF_T_Y_LF
 android.speech.extra.MAX_RESULTS
 SEND_FILE_ERR_ISRUN
 SyntheticAccessor
+month
 SEND_OTA_ERR
 END
 ACTION_ACCESSIBILITY_FOCUS
@@ -538,6 +555,7 @@ class
 L_T_Y
 READY_SEND_IMAGE
 IconCompat
+false
 LIGHTEN
 L_T_N
 ACTION_MOVE_WINDOW
@@ -558,6 +576,7 @@ SET_PRIMARY_NAV
 INIT
 getResId
 DST_IN
+sun.misc.Unsafe
 INFERRED
 FOUND_BLE_DEVICE
 ERR
@@ -590,6 +609,7 @@ R_F_N
 android.speech.action.RECOGNIZE_SPEECH
 Running...
 mDrawableCache
+second
 _size
 UnknownNullness
 R_RF_Y
@@ -600,11 +620,13 @@ R_F_Y
 LF_RF_Y
 R_RF_N
 NULL
+TRUE
 SEND_IMAGE_ERR_ISRUN
 GRAVITY
 AUTO
 null
 font_italic
+true
 s05
 s08
 PLUS
@@ -616,6 +638,7 @@ addFontFromBuffer
 ViewUtils
 TURN_TYPE
 asyncTraceEnd
+theUnsafe
 s15
 ACTION_SCROLL_LEFT
 STARTED
@@ -645,6 +668,7 @@ CLEAR
 android.graphics.FontFamily
 AutoCompleteTextView
 RestrictedAPI
+00
 DST_OUT
 suggest_icon_1
 suggest_icon_2
@@ -668,6 +692,7 @@ L_RF_Y
 IDENTITY
 input_method
 GET_ACK_SIZE
+dayOfMonth
 SoonBlockedPrivateApi
 HI_PASS
 20
@@ -693,6 +718,7 @@ UPPER_CAMEL_CASE_WITH_SPACES
 android.speech.action.WEB_SEARCH
 SET_TURN_BJ
 STRING
+closed
 40
 41
 android.os.action.POWER_SAVE_MODE_CHA...
@@ -705,6 +731,7 @@ ON_START
 50
 51
 app_data
+putBoolean
 NUMBER
 ResourcesCompat
 RUNNING
@@ -977,6 +1004,10 @@ Marking attr:contentInsetStartWithNavigation:2130837597 used because it matches 
 Marking id:content:2131165266 used because it matches string pool constant content
 Marking id:contentPanel:2131165267 used because it matches string pool constant content
 Marking attr:menu:2130837681 used because it matches string pool constant menu
+Marking color:secondary_text_default_material_dark:2130968781 used because it matches string pool constant second
+Marking color:secondary_text_default_material_light:2130968782 used because it matches string pool constant second
+Marking color:secondary_text_disabled_material_dark:2130968783 used because it matches string pool constant second
+Marking color:secondary_text_disabled_material_light:2130968784 used because it matches string pool constant second
 Marking attr:queryBackground:2130837701 used because it matches string pool constant query
 Marking attr:queryHint:2130837702 used because it matches string pool constant query
 Marking id:none:2131165302 used because it matches string pool constant none
@@ -1586,10 +1617,10 @@ Marking id:tag_unhandled_key_listeners:2131165349 used because it matches string
 @color/sandybrown : reachable=false
 @color/seagreen : reachable=false
 @color/seashell : reachable=false
-@color/secondary_text_default_material_dark : reachable=false
-@color/secondary_text_default_material_light : reachable=false
-@color/secondary_text_disabled_material_dark : reachable=false
-@color/secondary_text_disabled_material_light : reachable=false
+@color/secondary_text_default_material_dark : reachable=true
+@color/secondary_text_default_material_light : reachable=true
+@color/secondary_text_disabled_material_dark : reachable=true
+@color/secondary_text_disabled_material_light : reachable=true
 @color/sienna : reachable=false
 @color/silver : reachable=false
 @color/skyblue : reachable=false
@@ -3969,6 +4000,10 @@ The root reachable resources are:
  color:androidx_core_secondary_text_default_material_light:2130968605
  color:notification_action_color_filter:2130968741
  color:notification_icon_bg_color:2130968742
+ color:secondary_text_default_material_dark:2130968781
+ color:secondary_text_default_material_light:2130968782
+ color:secondary_text_disabled_material_dark:2130968783
+ color:secondary_text_disabled_material_light:2130968784
  dimen:abc_action_bar_stacked_max_height:2131034121
  dimen:abc_action_bar_stacked_tab_max_width:2131034122
  dimen:abc_cascading_menus_min_smallest_width:2131034134

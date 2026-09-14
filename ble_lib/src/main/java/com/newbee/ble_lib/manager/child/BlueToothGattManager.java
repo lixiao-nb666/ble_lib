@@ -333,6 +333,7 @@ public class BlueToothGattManager {
         } else {
             Log.w(tag,"BluetoothAdapter  initialized  11122");
             bluetoothGatt = device.connectGatt(context, false, mGattCallback);
+
         }
 
 

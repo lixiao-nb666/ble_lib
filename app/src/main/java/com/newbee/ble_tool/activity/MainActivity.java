@@ -29,6 +29,7 @@ import com.newbee.ble_lib.util.hud.HudCmdSendDataUtil;
 import com.newbee.ble_tool.R;
 
 
+import com.newbee.ble_tool.app.MyApp;
 import com.newbee.ble_tool.type.HudDevice;
 
 import com.newbee.ble_tool.util.HudBleByteUtil;
@@ -38,6 +39,8 @@ import com.newbee.ble_tool.util.HudSendImageType;
 import com.newbee.bulid_lib.mybase.LG;
 import com.newbee.bulid_lib.mybase.activity.BaseCompatActivity;
 
+import com.newbee.bulid_lib.mybase.share.MyShare;
+import com.newbee.gson_lib.gson.MyGson;
 import com.newbee.t800_lib.type.T800CmdType;
 import com.nrmyw.ble_event_lib.bean.BleDeviceBean;
 import com.nrmyw.ble_event_lib.bean.BleSendFileInfoBean;
@@ -221,6 +224,13 @@ public class MainActivity extends BaseCompatActivity {
                     T800CmdType t800CmdType=T800CmdType.TIME;
                     t800CmdType.useObjectSSetBody();
                     NewBeeBleManager.getInstance().getEventImp().sendCmd(t800CmdType.getAllByte());
+                    Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:1:---1150");
+                    if(null!=NewBeeBleManager.getInstance().getNowUseBleDevice()){
+                        String bleDevicePutShareStr= MyGson.getInstance().toGsonStr(NewBeeBleManager.getInstance().getNowUseBleDevice());
+                        Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:1:---1151");
+                        MyShare.getInstance().putString(MyApp.bleDeviceShareStr,bleDevicePutShareStr);
+                    }
+
                     break;
                 case DISCONNECTED:
                     bleTV.append("已经断开连接");

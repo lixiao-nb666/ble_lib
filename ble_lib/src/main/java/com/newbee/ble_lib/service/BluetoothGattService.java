@@ -13,6 +13,7 @@ import com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager;
 import com.newbee.ble_lib.service.event.BleDelayEventSubscriptionSubject;
 import com.newbee.ble_lib.service.event.BleDelayObserver;
 import com.newbee.ble_lib.service.event.BleDelayType;
+
 import com.newbee.ble_lib.util.BleConnectStatuUtil;
 import com.nrmyw.ble_event_lib.bean.BleDeviceBean;
 import com.nrmyw.ble_event_lib.bean.BleSendFileInfoBean;
@@ -45,6 +46,7 @@ public class BluetoothGattService extends BaseService {
                         }
                         BleConnectManager.getInstance().havePermissionInitBle(getBaseContext(),getPackageManager());
                         autoConnectDevice(AutoConnectType.INIT);
+                        toConnectOldDevice();
                         break;
                     case SCAN_BLE:
                         if(BleConnectManager.getInstance().checkDeviceIsConnected()){
@@ -204,6 +206,8 @@ public class BluetoothGattService extends BaseService {
                 }
         }
     };
+
+
 
 
     @Override
@@ -381,7 +385,7 @@ public class BluetoothGattService extends BaseService {
     private Runnable tryToConnectOldDeviceRunnable =new Runnable() {
         @Override
         public void run() {
-            BleConnectManager.getInstance().checkAndToConnectOldDevice();
+//            BleConnectManager.getInstance().checkAndToConnectOldDevice();
         }
     };
 

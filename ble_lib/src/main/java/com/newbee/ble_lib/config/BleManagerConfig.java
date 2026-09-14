@@ -41,7 +41,7 @@ public class BleManagerConfig {
 
     public static byte CMD_CUCCESS=(byte)0xA6;
 
-    public static final long BLE_AUTO_CONNECT_TIME=17*1000;
+    public static final long BLE_AUTO_CONNECT_TIME=30*1000;
 
     public static final long BLE_DISCONNECT_RECONNECT_TIME=2222;
 
@@ -67,4 +67,15 @@ public class BleManagerConfig {
         }
     }
 
+    private static boolean isAutoConnectOldDevice=true;
+
+
+
+    public static boolean isIsAutoConnectOldDevice() {
+        return isAutoConnectOldDevice;
+    }
+
+    public static void setIsAutoConnectOldDevice(boolean isAutoConnectOldDevice) {
+        BleManagerConfig.isAutoConnectOldDevice = isAutoConnectOldDevice;
+    }
 }

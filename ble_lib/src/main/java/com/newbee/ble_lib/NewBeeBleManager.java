@@ -31,9 +31,12 @@ public class NewBeeBleManager {
 
 
     public void init(Context context){
-
         BleStatuBroadcastReceiverDao.getInstance().init(context);
         startService(context);
+    }
+
+    public void setShareBleDevice(BleDeviceBean bleDevice){
+        BleConnectStatuUtil.getInstance().setShareBleDevice(bleDevice);
     }
 
     public void startService(Context context){

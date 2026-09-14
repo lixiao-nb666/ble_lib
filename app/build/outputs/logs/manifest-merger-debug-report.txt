@@ -7,6 +7,8 @@ INJECTED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:2:
 MERGED from [com.github.lixiao-nb666:build_lib:1.1.4] C:\Users\Administrator\.gradle\caches\transforms-3\78abc2b51b1969b31c6136540b763e63\transformed\build_lib-1.1.4\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.2.0] C:\Users\Administrator\.gradle\caches\transforms-3\a3858696d564d45af7268a0a610872e8\transformed\appcompat-1.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.recyclerview:recyclerview:1.2.1] C:\Users\Administrator\.gradle\caches\transforms-3\772027d9435ec24b9bd9466d42f95752\transformed\recyclerview-1.2.1\AndroidManifest.xml:17:1-24:12
+MERGED from [com.github.lixiao-nb666:sava_data_lib:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\0b9b2f0fdb8e6c16a793ef69353e68b0\transformed\sava_data_lib-1.0.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.github.lixiao-nb666:gson_lib:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\9a3d942714a52fbe33514a9aaac92ba3\transformed\gson_lib-1.0.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.github.lixiao-nb666:t800_data_lib:1.0.2] C:\Users\Administrator\.gradle\caches\transforms-3\6252025e83ade19d50291c3193fc35ea\transformed\t800_data_lib-1.0.2\AndroidManifest.xml:2:1-9:12
 MERGED from [:ble_lib] F:\asworkspace\hud\lib\ble_lib\ble_lib\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [com.github.lixiao-nb666:ble_event:1.0.38] C:\Users\Administrator\.gradle\caches\transforms-3\b568abb97bf885c1eb8faee39505b564\transformed\ble_event-1.0.38\AndroidManifest.xml:2:1-9:12
@@ -29,8 +31,6 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Administrator\.g
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\bf204cc5d1ee021a0b779a40e33c278f\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\f7ca91eab21575eed2a0be5b1b02101f\transformed\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\0e741046a937ab091b9e076b813b3774\transformed\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.github.lixiao-nb666:sava_data_lib:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\0b9b2f0fdb8e6c16a793ef69353e68b0\transformed\sava_data_lib-1.0.0\AndroidManifest.xml:2:1-9:12
-MERGED from [com.github.lixiao-nb666:gson_lib:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\9a3d942714a52fbe33514a9aaac92ba3\transformed\gson_lib-1.0.0\AndroidManifest.xml:2:1-9:12
 INJECTED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:2:1-97:12
 INJECTED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:2:1-97:12
 INJECTED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml:2:1-97:12
@@ -210,6 +210,10 @@ MERGED from [androidx.appcompat:appcompat:1.2.0] C:\Users\Administrator\.gradle\
 MERGED from [androidx.appcompat:appcompat:1.2.0] C:\Users\Administrator\.gradle\caches\transforms-3\a3858696d564d45af7268a0a610872e8\transformed\appcompat-1.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.recyclerview:recyclerview:1.2.1] C:\Users\Administrator\.gradle\caches\transforms-3\772027d9435ec24b9bd9466d42f95752\transformed\recyclerview-1.2.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.recyclerview:recyclerview:1.2.1] C:\Users\Administrator\.gradle\caches\transforms-3\772027d9435ec24b9bd9466d42f95752\transformed\recyclerview-1.2.1\AndroidManifest.xml:20:5-22:41
+MERGED from [com.github.lixiao-nb666:sava_data_lib:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\0b9b2f0fdb8e6c16a793ef69353e68b0\transformed\sava_data_lib-1.0.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.lixiao-nb666:sava_data_lib:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\0b9b2f0fdb8e6c16a793ef69353e68b0\transformed\sava_data_lib-1.0.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.lixiao-nb666:gson_lib:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\9a3d942714a52fbe33514a9aaac92ba3\transformed\gson_lib-1.0.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.lixiao-nb666:gson_lib:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\9a3d942714a52fbe33514a9aaac92ba3\transformed\gson_lib-1.0.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.lixiao-nb666:t800_data_lib:1.0.2] C:\Users\Administrator\.gradle\caches\transforms-3\6252025e83ade19d50291c3193fc35ea\transformed\t800_data_lib-1.0.2\AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.lixiao-nb666:t800_data_lib:1.0.2] C:\Users\Administrator\.gradle\caches\transforms-3\6252025e83ade19d50291c3193fc35ea\transformed\t800_data_lib-1.0.2\AndroidManifest.xml:5:5-7:41
 MERGED from [:ble_lib] F:\asworkspace\hud\lib\ble_lib\ble_lib\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
@@ -254,10 +258,6 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Administ
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\f7ca91eab21575eed2a0be5b1b02101f\transformed\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\0e741046a937ab091b9e076b813b3774\transformed\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\0e741046a937ab091b9e076b813b3774\transformed\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.github.lixiao-nb666:sava_data_lib:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\0b9b2f0fdb8e6c16a793ef69353e68b0\transformed\sava_data_lib-1.0.0\AndroidManifest.xml:5:5-7:41
-MERGED from [com.github.lixiao-nb666:sava_data_lib:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\0b9b2f0fdb8e6c16a793ef69353e68b0\transformed\sava_data_lib-1.0.0\AndroidManifest.xml:5:5-7:41
-MERGED from [com.github.lixiao-nb666:gson_lib:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\9a3d942714a52fbe33514a9aaac92ba3\transformed\gson_lib-1.0.0\AndroidManifest.xml:5:5-7:41
-MERGED from [com.github.lixiao-nb666:gson_lib:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\9a3d942714a52fbe33514a9aaac92ba3\transformed\gson_lib-1.0.0\AndroidManifest.xml:5:5-7:41
 INJECTED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml
 INJECTED from F:\asworkspace\hud\lib\ble_lib\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
