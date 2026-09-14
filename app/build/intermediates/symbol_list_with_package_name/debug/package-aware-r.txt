@@ -1092,6 +1092,7 @@ string abc_toolbar_collapse_description
 string app_name
 string ble_clear_index_msg
 string ble_clear_msg
+string ble_put_def_ble_device
 string ble_send_file_err_is_run
 string ble_send_image_err_is_run
 string ble_send_ota_err_is_run

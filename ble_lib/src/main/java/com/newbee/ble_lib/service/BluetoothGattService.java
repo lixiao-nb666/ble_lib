@@ -85,6 +85,12 @@ public class BluetoothGattService extends BaseService {
                         BleDelayType bleDelayType=BleDelayType.values()[msg.arg1];
                         selectDelayTypeToDo(bleDelayType);
                         break;
+                    case NOW_IS_CONNECTED:
+                        break;
+                    case PUT_DEF_BLE_DEVICE:
+                        BleDeviceBean bleDeviceBean= (BleDeviceBean) msg.obj;
+                        BleConnectStatuUtil.getInstance().setShareBleDevice(bleDeviceBean);
+                        break;
                 }
                 BleStatu bleStatu=BleStatu.USER_DO;
                 bleStatu.setStrId(msgType.getStrId());
@@ -329,6 +335,15 @@ public class BluetoothGattService extends BaseService {
            Message msg=new Message();
            msg.what=BluetoothGattServiceMsgType.CLEAR_INDEX_MSG.ordinal();
            handler.sendMessage(msg);
+       }
+
+       @Override
+       public void setDefBleDevice(BleDeviceBean defBleDevice) {
+           Message msg=new Message();
+           msg.what=BluetoothGattServiceMsgType.PUT_DEF_BLE_DEVICE.ordinal();
+           msg.obj=defBleDevice;
+           handler.sendMessage(msg);
+
        }
    };
 

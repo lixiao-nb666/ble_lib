@@ -19,6 +19,7 @@ import com.newbee.bulid_lib.mybase.share.MyShare;
 import com.newbee.gson_lib.gson.MyGson;
 import com.nrmyw.ble_event_lib.bean.BleDeviceBean;
 import com.nrmyw.ble_event_lib.config.NewBeeBleConfig;
+import com.nrmyw.ble_event_lib.send.BleEventSubscriptionSubject;
 
 
 public class MyApp extends BaseApplication {
@@ -35,7 +36,8 @@ public class MyApp extends BaseApplication {
             if(!TextUtils.isEmpty(bleDeviceShareStr)){
                 Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:1:---1153");
                 BleDeviceBean bleDeviceBean= MyGson.getInstance().fromJson(bleDeviceShareStr,BleDeviceBean.class);
-                NewBeeBleManager.getInstance().setShareBleDevice(bleDeviceBean);
+                BleEventSubscriptionSubject.getInstance().setDefBleDevice(bleDeviceBean);
+
             }
         }catch (Exception e){}
 

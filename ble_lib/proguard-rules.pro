@@ -36,6 +36,7 @@
 
     getInstance(...);
     init(...);
+    setShareBleDevice(...);
     getEventImp();
      isConnect();
     getNowUseBleDevice();

@@ -19,6 +19,9 @@ public enum BluetoothGattServiceMsgType {
     DELAY(com.nrmyw.ble_event_lib.R.string.ble_statu_none),
 
     NOW_IS_CONNECTED(com.nrmyw.ble_event_lib.R.string.ble_statu_connected),
+
+    PUT_DEF_BLE_DEVICE(com.nrmyw.ble_event_lib.R.string.ble_put_def_ble_device),
+
     ;
     private int strId;
     BluetoothGattServiceMsgType(int strId){

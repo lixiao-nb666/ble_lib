@@ -35,9 +35,7 @@ public class NewBeeBleManager {
         startService(context);
     }
 
-    public void setShareBleDevice(BleDeviceBean bleDevice){
-        BleConnectStatuUtil.getInstance().setShareBleDevice(bleDevice);
-    }
+
 
     public void startService(Context context){
         if(null==bluetoothGattServiceDao){
