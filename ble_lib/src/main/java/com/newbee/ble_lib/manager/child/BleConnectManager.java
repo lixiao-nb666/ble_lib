@@ -24,6 +24,7 @@ import com.newbee.ble_lib.config.BleManagerConfig;
 import com.newbee.ble_lib.util.BleCheckUtil;
 import com.newbee.ble_lib.util.BleConnectStatuUtil;
 import com.nrmyw.ble_event_lib.bean.BleDeviceBean;
+import com.nrmyw.ble_event_lib.config.NewBeeBleConfig;
 import com.nrmyw.ble_event_lib.statu.BleStatu;
 import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
 import com.nrmyw.ble_event_lib.util.BleByteUtil;
@@ -316,7 +317,7 @@ public class BleConnectManager {
 
 
     public void checkAndToConnectOldDevice(){
-        if(BleManagerConfig.isIsAutoConnectOldDevice()){
+        if(NewBeeBleConfig.getInstance().isDisconnectAutoConnect()){
             tryToConnectOldDevice();
         }
     }

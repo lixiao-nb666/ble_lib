@@ -3,8 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: e446e85
-# pg_map_hash: SHA-256 e446e85b5a6f31cf23e2ca10c67ce8544c70b2e40cf3b1e5726c2a1ff96d81af
+# pg_map_id: e2bd6b5
+# pg_map_hash: SHA-256 e2bd6b56fd2a0fa16ebba3a97b94fef198848fcefc2ac7f3fa92d35221a96434
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -7256,33 +7256,32 @@ com.newbee.ble_lib.base.BaseServiceDao$1 -> com.newbee.ble_lib.base.BaseServiceD
     31:34:void onServiceConnected(android.content.ComponentName,android.os.IBinder) -> onServiceConnected
     38:39:void onServiceDisconnected(android.content.ComponentName) -> onServiceDisconnected
 com.newbee.ble_lib.config.BleManagerConfig -> com.newbee.ble_lib.config.BleManagerConfig:
-    11:70:void <clinit>() -> <clinit>
-    75:75:boolean isIsAutoConnectOldDevice() -> isIsAutoConnectOldDevice
+    11:42:void <clinit>() -> <clinit>
     58:66:int useBleSendBitmapQualityTypeGetMaxKb(com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType) -> useBleSendBitmapQualityTypeGetMaxKb
 com.newbee.ble_lib.config.BleManagerConfig$1 -> com.newbee.ble_lib.config.BleManagerConfig$1:
     58:58:void <clinit>() -> <clinit>
 com.newbee.ble_lib.manager.child.BleConnectManager -> com.newbee.ble_lib.manager.child.BleConnectManager:
-    43:205:void <init>() -> <init>
-    181:184:boolean bleIsOpen() -> bleIsOpen
-    319:322:void checkAndToConnectOldDevice() -> checkAndToConnectOldDevice
-    97:109:boolean checkCanScan() -> checkCanScan
-    113:129:boolean checkDeviceIsConnected() -> checkDeviceIsConnected
-    58:59:void clear() -> clear
-    76:92:void close() -> close
-    344:360:boolean connect(java.lang.String) -> connect
-    367:369:void disconnect() -> disconnect
-    46:53:com.newbee.ble_lib.manager.child.BleConnectManager getInstance() -> getInstance
-    140:177:void havePermissionInitBle(android.content.Context,android.content.pm.PackageManager) -> havePermissionInitBle
-    62:73:void initData() -> initData
-    190:194:void openBluetooth() -> openBluetooth
-    237:307:void startSearchBLE() -> startSearchBLE
-    310:315:void stopScan() -> stopScan
-    328:338:void tryToConnectOldDevice() -> tryToConnectOldDevice
+    44:206:void <init>() -> <init>
+    182:185:boolean bleIsOpen() -> bleIsOpen
+    320:323:void checkAndToConnectOldDevice() -> checkAndToConnectOldDevice
+    98:110:boolean checkCanScan() -> checkCanScan
+    114:130:boolean checkDeviceIsConnected() -> checkDeviceIsConnected
+    59:60:void clear() -> clear
+    77:93:void close() -> close
+    345:361:boolean connect(java.lang.String) -> connect
+    368:370:void disconnect() -> disconnect
+    47:54:com.newbee.ble_lib.manager.child.BleConnectManager getInstance() -> getInstance
+    141:178:void havePermissionInitBle(android.content.Context,android.content.pm.PackageManager) -> havePermissionInitBle
+    63:74:void initData() -> initData
+    191:195:void openBluetooth() -> openBluetooth
+    238:308:void startSearchBLE() -> startSearchBLE
+    311:316:void stopScan() -> stopScan
+    329:339:void tryToConnectOldDevice() -> tryToConnectOldDevice
 com.newbee.ble_lib.manager.child.BleConnectManager$1 -> com.newbee.ble_lib.manager.child.BleConnectManager$1:
-    205:205:void <init>(com.newbee.ble_lib.manager.child.BleConnectManager) -> <init>
-    213:215:void onBatchScanResults(java.util.List) -> onBatchScanResults
-    208:209:void onScanFailed(int) -> onScanFailed
-    219:229:void onScanResult(int,android.bluetooth.le.ScanResult) -> onScanResult
+    206:206:void <init>(com.newbee.ble_lib.manager.child.BleConnectManager) -> <init>
+    214:216:void onBatchScanResults(java.util.List) -> onBatchScanResults
+    209:210:void onScanFailed(int) -> onScanFailed
+    220:230:void onScanResult(int,android.bluetooth.le.ScanResult) -> onScanResult
 com.newbee.ble_lib.manager.child.BlueToothGattManager -> com.newbee.ble_lib.manager.child.BlueToothGattManager:
     30:298:void <init>() -> <init>
     29:29:java.lang.String access$000(com.newbee.ble_lib.manager.child.BlueToothGattManager) -> access$000
@@ -7634,10 +7633,10 @@ com.newbee.ble_tool.activity.MainActivity$5 -> com.newbee.ble_tool.activity.Main
     209:209:void <clinit>() -> <clinit>
 com.newbee.ble_tool.app.MyApp -> com.newbee.ble_tool.app.MyApp:
     24:24:void <init>() -> <init>
-    52:53:void close() -> close
-    28:43:void init() -> init
-    48:48:void needClear(java.lang.String) -> needClear
-    56:79:void startTo() -> startTo
+    53:54:void close() -> close
+    28:44:void init() -> init
+    49:49:void needClear(java.lang.String) -> needClear
+    57:80:void startTo() -> startTo
 com.newbee.ble_tool.app.MyApp$$ExternalSyntheticApiModelOutline0 -> com.newbee.ble_tool.app.MyApp$$ExternalSyntheticApiModelOutline0:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
@@ -7998,6 +7997,8 @@ com.nrmyw.ble_event_lib.config.NewBeeBleConfig -> com.nrmyw.ble_event_lib.config
     112:112:java.lang.String getWriteID() -> getWriteID
     54:60:void init(boolean,int,java.lang.String,java.lang.String,java.lang.String,java.util.List) -> init
     82:82:boolean isAutoConnect() -> isAutoConnect
+    120:120:boolean isDisconnectAutoConnect() -> isDisconnectAutoConnect
+    124:125:void setDisconnectAutoConnect(boolean) -> setDisconnectAutoConnect
     66:67:void setRealMtu(int) -> setRealMtu
 com.nrmyw.ble_event_lib.send.BleEventSubscriptionSubject -> com.nrmyw.ble_event_lib.send.BleEventSubscriptionSubject:
     22:24:void <init>() -> <init>

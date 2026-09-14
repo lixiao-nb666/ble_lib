@@ -67,15 +67,5 @@ public class BleManagerConfig {
         }
     }
 
-    private static boolean isAutoConnectOldDevice=true;
 
-
-
-    public static boolean isIsAutoConnectOldDevice() {
-        return isAutoConnectOldDevice;
-    }
-
-    public static void setIsAutoConnectOldDevice(boolean isAutoConnectOldDevice) {
-        BleManagerConfig.isAutoConnectOldDevice = isAutoConnectOldDevice;
-    }
 }

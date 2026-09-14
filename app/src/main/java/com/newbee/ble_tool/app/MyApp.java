@@ -26,6 +26,7 @@ public class MyApp extends BaseApplication {
     @Override
     protected void init() {
         NewBeeBleConfig.getInstance().init(T800Config.isAutomatic,T800Config.mtu,T800Config.serviceID,T800Config.writeID,T800Config.noticeID, HudDevice.getBleDeviceTypeList());
+        NewBeeBleConfig.getInstance().setDisconnectAutoConnect(true);
         NewBeeBleManager.getInstance().init(getBaseContext());
 
         try {

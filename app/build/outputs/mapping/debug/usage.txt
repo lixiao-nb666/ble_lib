@@ -5904,7 +5904,6 @@ com.newbee.ble_lib.config.BleManagerConfig:
     public static final long BLE_DISCONNECT_RECONNECT_TIME
     public static final int CAN_SEND_MTU
     public void <init>()
-    public static void setIsAutoConnectOldDevice(boolean)
 com.newbee.ble_lib.manager.child.BleConnectManager:
     private void closeBluetooth()
 com.newbee.ble_lib.manager.child.BlueToothGattManager:
@@ -6236,10 +6235,7 @@ com.nrmyw.ble_event_lib.bean.BleSendOtaInfoBean:
     public void setSendEndBytes(byte[])
     public void setSendIndexOkBytes(byte[])
 com.nrmyw.ble_event_lib.config.NewBeeBleConfig:
-    private boolean disconnectAutoConnect
-    public boolean isDisconnectAutoConnect()
     public void setAutoConnect(boolean)
-    public void setDisconnectAutoConnect(boolean)
     public void setNoticeID(java.lang.String)
     public void setServiceID(java.lang.String)
     public void setWriteID(java.lang.String)
