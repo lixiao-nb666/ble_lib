@@ -46,7 +46,9 @@ public class BleConnectStatuUtil {
 
 
     public boolean checkCanUseOldDeviceAdress(boolean canNotScanData){
-
+        if (disConnectTime==0){
+            return false;
+        }
         if(isConnect){
             //如果连接状态，直接返回不行
             return false;
@@ -98,7 +100,15 @@ public class BleConnectStatuUtil {
     }
 
     public void setShareBleDevice(BleDeviceBean bleDevice){
+        if(isConnect&&nowUseBleDevice!=null){
+            return;
+        }
         nowUseBleDevice=bleDevice;
+        isConnect=false;
+        disConnectTime=System.currentTimeMillis();
+        BleConnectManager.getInstance().clear();
+        BlueToothGattSendMsgManager.getInstance().close();
+        BlueToothGattManager.getInstance().checkIsDisConnecting();
     }
 
 
