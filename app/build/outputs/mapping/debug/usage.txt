@@ -5937,6 +5937,7 @@ com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager:
 com.newbee.ble_lib.service.BluetoothGattService$3:
     public void clearIndexMsg()
     public void clearMsg()
+    public void sendCmdByKStr(java.lang.String,byte[])
     public void sendFile(com.nrmyw.ble_event_lib.bean.BleSendFileInfoBean)
 com.newbee.ble_lib.service.event.BleDelayEventSubject
 com.newbee.ble_lib.util.AbImageUtil$OnImageUtilsListener
@@ -6242,6 +6243,7 @@ com.nrmyw.ble_event_lib.config.NewBeeBleConfig:
 com.nrmyw.ble_event_lib.send.BleEventObserver:
     public abstract void clearIndexMsg()
     public abstract void clearMsg()
+    public abstract void sendCmdByKStr(java.lang.String,byte[])
     public abstract void sendFile(com.nrmyw.ble_event_lib.bean.BleSendFileInfoBean)
 com.nrmyw.ble_event_lib.send.BleEventSubject
 com.nrmyw.ble_event_lib.send.BleEventSubscriptionSubject:
@@ -6249,6 +6251,7 @@ com.nrmyw.ble_event_lib.send.BleEventSubscriptionSubject:
     public void clearMsg()
     public void disconnectedBle()
     public void havePermissionInitBle()
+    public void sendCmdByKStr(java.lang.String,byte[])
     public void sendFile(com.nrmyw.ble_event_lib.bean.BleSendFileInfoBean)
     public void startSearchBle()
 com.nrmyw.ble_event_lib.statu.BleStatuEventSubject

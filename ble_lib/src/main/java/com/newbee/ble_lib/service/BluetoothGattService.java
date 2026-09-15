@@ -3,9 +3,11 @@ package com.newbee.ble_lib.service;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
+import android.text.TextUtils;
+
 import com.newbee.ble_lib.NewBeeBleManager;
 import com.newbee.ble_lib.base.BaseService;
-import com.newbee.ble_lib.bean.KeyStrBytesBean;
+
 import com.newbee.ble_lib.config.BleManagerConfig;
 import com.newbee.ble_lib.manager.child.BleConnectManager;
 import com.newbee.ble_lib.manager.child.BlueToothSendStatuManager;
@@ -60,13 +62,12 @@ public class BluetoothGattService extends BaseService {
                         BleConnectManager.getInstance().disconnect();
                         break;
                     case SEND_CMD:
-                        if(msg.obj instanceof KeyStrBytesBean){
-                            KeyStrBytesBean keyStrBytesBean= (KeyStrBytesBean) msg.obj;
-                            BlueToothGattSendMsgManager.getInstance().sendMsgByCmd(keyStrBytesBean.getKeyStr(),keyStrBytesBean.getBytes());
+                        if(!TextUtils.isEmpty(keyStr)){
+                            BlueToothGattSendMsgManager.getInstance().sendMsgByCmd(keyStr,(byte[]) msg.obj);
+                            keyStr="";
                         }else {
                             BlueToothGattSendMsgManager.getInstance().sendMsgByCmd((byte[]) msg.obj);
                         }
-
 
                         break;
                     case SEND_IMAGE:
@@ -267,7 +268,7 @@ public class BluetoothGattService extends BaseService {
         BleStatuEventSubscriptionSubject.getInstance().detach(bleStatuEventObserver);
     }
 
-
+    private String keyStr;
 
    private  BleEventObserver bleEventObserver=new BleEventObserver() {
         @Override
@@ -296,12 +297,13 @@ public class BluetoothGattService extends BaseService {
 
         }
 
+
        @Override
-       public void sendCmdByKStr(String keyStr, byte[] bytes) {
-           KeyStrBytesBean keyStrBytesBean=new KeyStrBytesBean(keyStr,bytes);
+       public void sendCmdByKStr(String setKeyStr, byte[] bytes) {
+           keyStr=setKeyStr;
            Message msg=new Message();
            msg.what=BluetoothGattServiceMsgType.SEND_CMD.ordinal();
-           msg.obj=keyStrBytesBean;
+           msg.obj=bytes;
            handler.sendMessage(msg);
        }
 

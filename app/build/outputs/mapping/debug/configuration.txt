@@ -298,9 +298,9 @@
 -keep public class * extends android.preference.Preference
 
 # End of content from F:\asworkspace\hud\lib\ble_lib\ble_lib\build\intermediates\consumer_proguard_dir\debug\lib0\proguard.txt
-# The proguard configuration file for the following section is C:\Users\Administrator\.gradle\caches\transforms-3\51109adbb5b919786f129cbfc6f9fa4a\transformed\ble_event-1.0.40\proguard.txt
+# The proguard configuration file for the following section is C:\Users\Administrator\.gradle\caches\transforms-3\c8af162c90d6963a3cf66d8051196209\transformed\ble_event-1.0.41\proguard.txt
 
-# End of content from C:\Users\Administrator\.gradle\caches\transforms-3\51109adbb5b919786f129cbfc6f9fa4a\transformed\ble_event-1.0.40\proguard.txt
+# End of content from C:\Users\Administrator\.gradle\caches\transforms-3\c8af162c90d6963a3cf66d8051196209\transformed\ble_event-1.0.41\proguard.txt
 # The proguard configuration file for the following section is C:\Users\Administrator\.gradle\caches\transforms-3\1282e2a4b56306d4b655af35a574b455\transformed\vectordrawable-animated-1.1.0\proguard.txt
 # Copyright (C) 2016 The Android Open Source Project
 #
