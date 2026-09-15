@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.os.Message;
 import com.newbee.ble_lib.NewBeeBleManager;
 import com.newbee.ble_lib.base.BaseService;
+import com.newbee.ble_lib.bean.KeyStrBytesBean;
 import com.newbee.ble_lib.config.BleManagerConfig;
 import com.newbee.ble_lib.manager.child.BleConnectManager;
 import com.newbee.ble_lib.manager.child.BlueToothSendStatuManager;
@@ -59,7 +60,14 @@ public class BluetoothGattService extends BaseService {
                         BleConnectManager.getInstance().disconnect();
                         break;
                     case SEND_CMD:
-                        BlueToothGattSendMsgManager.getInstance().sendMsgByCmd((byte[]) msg.obj);
+                        if(msg.obj instanceof KeyStrBytesBean){
+                            KeyStrBytesBean keyStrBytesBean= (KeyStrBytesBean) msg.obj;
+                            BlueToothGattSendMsgManager.getInstance().sendMsgByCmd(keyStrBytesBean.getKeyStr(),keyStrBytesBean.getBytes());
+                        }else {
+                            BlueToothGattSendMsgManager.getInstance().sendMsgByCmd((byte[]) msg.obj);
+                        }
+
+
                         break;
                     case SEND_IMAGE:
                         BlueToothGattSendFileManager.getInstance().sendBitMap((BleSendImageInfoBean) msg.obj);
@@ -287,6 +295,15 @@ public class BluetoothGattService extends BaseService {
             handler.sendMessage(msg);
 
         }
+
+       @Override
+       public void sendCmdByKStr(String keyStr, byte[] bytes) {
+           KeyStrBytesBean keyStrBytesBean=new KeyStrBytesBean(keyStr,bytes);
+           Message msg=new Message();
+           msg.what=BluetoothGattServiceMsgType.SEND_CMD.ordinal();
+           msg.obj=keyStrBytesBean;
+           handler.sendMessage(msg);
+       }
 
        @Override
        public void sendBytesIndexCmd(int index, byte[] bytes) {

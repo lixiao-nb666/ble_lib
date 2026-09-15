@@ -64,6 +64,12 @@ class BlueToothGattMsgManager {
         Log.i("tag","发送 ===  :发送成功---checkReturnToSend 3311-1:count"+BleByteUtil.parseByte2HexStr(msg));
     }
 
+    public synchronized void addMsg(String defKey,byte[] msg) {
+        String kStr = defKey+BleByteUtil.getCmdStrK(msg);
+        msgMq.put(kStr, msg);
+        Log.i("tag","发送 ===  :发送成功---checkReturnToSend 3311-1:count"+BleByteUtil.parseByte2HexStr(msg));
+    }
+
     private void queCmdMsg() {
         if (msgMq.isEmpty()) {
             return;

@@ -58,6 +58,12 @@ public class BlueToothGattSendMsgManager {
        BlueToothGattMsgManager.getInstance().queMsg();
     }
 
+    public void sendMsgByCmd(String key,byte[] cmd){
+        Log.i("tag","发送 ===  :发送成功---checkReturnToSend 3311-222113:count"+BleByteUtil.parseByte2HexStr(cmd));
+        BlueToothGattMsgManager.getInstance().addMsg(key,cmd);
+        BlueToothGattMsgManager.getInstance().queMsg();
+    }
+
    public void sendMsgByFile(int index,byte[] cmd){
        Log.i("tag","发送 ===  :发送成功---checkReturnToSend 3311-222111:count"+index+"---"+"--"+cmd.length+"--"+BleByteUtil.parseByte2HexStr(cmd));
        BlueToothGattMsgManager.getInstance().addMsgByFile(index,cmd);
