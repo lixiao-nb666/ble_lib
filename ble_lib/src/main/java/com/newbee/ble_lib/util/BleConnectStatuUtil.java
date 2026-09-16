@@ -95,9 +95,13 @@ public class BleConnectStatuUtil {
             BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.NONE,"Connecting,Please wait !");
             return;
         }
+        Log.i("checkShareBleDevice","checkShareBleDevice1113:"+checkIsSame(bleDeviceBean));
+        Log.i("checkShareBleDevice","checkShareBleDevice1113:"+nowUseBleDevice);
+        Log.i("checkShareBleDevice","checkShareBleDevice1113:"+bleDeviceBean);
         if(checkIsSame(bleDeviceBean)){
             return;
         }
+
         nowUseBleDevice=bleDeviceBean;
         BleConnectManager.getInstance().connect(address);
     }
