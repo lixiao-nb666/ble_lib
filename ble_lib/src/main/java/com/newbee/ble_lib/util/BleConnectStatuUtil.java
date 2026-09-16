@@ -95,8 +95,26 @@ public class BleConnectStatuUtil {
             BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.NONE,"Connecting,Please wait !");
             return;
         }
+        if(checkIsSame(bleDeviceBean)){
+            return;
+        }
         nowUseBleDevice=bleDeviceBean;
         BleConnectManager.getInstance().connect(address);
+    }
+
+
+    private boolean checkIsSame(BleDeviceBean checkBean){
+        try {
+            if(nowUseBleDevice==null||TextUtils.isEmpty(nowUseBleDevice.getAdress())||TextUtils.isEmpty(nowUseBleDevice.getBleName())){
+                return false;
+            }
+            if(nowUseBleDevice.getAdress().equals(checkBean.getAdress())&&nowUseBleDevice.getBleName().equals(checkBean.getBleName())){
+                return true;
+            }
+        }catch (Exception e){
+
+        }
+        return false;
     }
 
     public void setShareBleDevice(BleDeviceBean bleDevice){
