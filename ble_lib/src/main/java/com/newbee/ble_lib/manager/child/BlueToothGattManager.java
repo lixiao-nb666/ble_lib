@@ -106,7 +106,10 @@ public class BlueToothGattManager {
                 //广播里面已经发送了事件通知，这里就不用处理了
                 Log.e(tag,"连接成功Connected to GATT server ");
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    bluetoothGatt.requestConnectionPriority(BluetoothGatt.CONNECTION_PRIORITY_HIGH);
+                    if(connectionPriority!=BluetoothGatt.CONNECTION_PRIORITY_HIGH){
+                        connectionPriority=BluetoothGatt.CONNECTION_PRIORITY_HIGH;
+                        bluetoothGatt.requestConnectionPriority(connectionPriority);
+                    }
                     bluetoothGatt.requestMtu(NewBeeBleConfig.getInstance().getMtu());
                 }
             } else if (newState == BluetoothProfile.STATE_DISCONNECTED) {
@@ -306,7 +309,7 @@ public class BlueToothGattManager {
 
 
 
-    public synchronized void initGatt(BluetoothDevice device, Context context){
+    public synchronized void initGatt(BluetoothDevice device, Context context,boolean isScanData){
         if(null!=bluetoothGatt||null!=readCharacteristic||null!=writeCharacteristic||null!=dataService){
             clearData();
         }
@@ -326,21 +329,27 @@ public class BlueToothGattManager {
 //            Log.w(tag,"BluetoothAdapter  initialized  11100"+NewBeeBleConfig.getInstance().isAutoConnect());
 //            bluetoothGatt = device.connectGatt(context, false, mGattCallback, BluetoothDevice.TRANSPORT_LE, BluetoothDevice.PHY_LE_1M_MASK);
 //        } else
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
 
             Log.w(tag,"BluetoothAdapter  initialized  11111");
             bluetoothGatt = device.connectGatt(context, false, mGattCallback, BluetoothDevice.TRANSPORT_LE);
+
         } else {
             Log.w(tag,"BluetoothAdapter  initialized  11122");
             bluetoothGatt = device.connectGatt(context, false, mGattCallback);
 
         }
+        if(isScanData){
+            connectionPriority=BluetoothGatt.CONNECTION_PRIORITY_HIGH;
+        }else {
+            connectionPriority=BluetoothGatt.CONNECTION_PRIORITY_LOW_POWER;
+        }
 
-
-
-
-
+        bluetoothGatt.requestConnectionPriority(connectionPriority);
     }
+
+    private int connectionPriority;
 
     /**
      * 设置特征什变化通知

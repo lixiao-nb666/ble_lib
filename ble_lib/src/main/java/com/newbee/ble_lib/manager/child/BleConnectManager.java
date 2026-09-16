@@ -9,6 +9,7 @@ import android.bluetooth.le.ScanCallback;
 import android.bluetooth.le.ScanFilter;
 import android.bluetooth.le.ScanRecord;
 import android.bluetooth.le.ScanResult;
+import android.bluetooth.le.ScanSettings;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -29,6 +30,7 @@ import com.nrmyw.ble_event_lib.statu.BleStatu;
 import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
 import com.nrmyw.ble_event_lib.util.BleByteUtil;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -160,6 +162,7 @@ public class BleConnectManager {
             return;
         }
         bluetoothLeScanner =bluetoothAdapter.getBluetoothLeScanner();
+
         if(null==bluetoothLeScanner){
             Log.i("kankanadaptercannotuse","kankanadaptercannotuse---3");
             BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.RUN_ERR,com.nrmyw.ble_event_lib.R.string.ble_statu_adapter_can_not_use);
@@ -252,14 +255,39 @@ public class BleConnectManager {
         }
 
         Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:1:---111---"+countCannotScandataNumb);
-        bluetoothLeScanner.startScan(scanCallback);
-        bluetoothAdapter.startDiscovery();
-        if(countCannotScandataNumb>=2){
-            Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:1:---112");
+        ScanSettings settings=null;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            settings = new ScanSettings.Builder()
+                    .setScanMode(ScanSettings.SCAN_MODE_LOW_LATENCY)
+                    .setCallbackType(ScanSettings.CALLBACK_TYPE_MATCH_LOST)
+                    .setReportDelay(0)
+                    .build();
 
         }else {
+            settings = new ScanSettings.Builder()
+                    .setScanMode(ScanSettings.SCAN_MODE_LOW_LATENCY)
+                    .setReportDelay(0)
+                    .build();
+        }
+        List<ScanFilter> filters = new ArrayList<>();
+        filters.add(new ScanFilter.Builder()
+
+                .setServiceUuid(ParcelUuid.fromString(NewBeeBleConfig.getInstance().getServiceID())) // 服务UUID
+
+                .build());
+
+
+//        bluetoothLeScanner.startScan(null,settings,scanCallback);
+        bluetoothLeScanner.startScan(scanCallback);
+//        bluetoothAdapter.startDiscovery();
+//
+        if(countCannotScandataNumb>=2){
+            Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:1:---112");
+//            bluetoothLeScanner.startScan(scanCallback);
+//            bluetoothAdapter.startDiscovery();
+        }else {
             Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:1:---113");
-            bluetoothLeScanner.startScan(scanCallback);
+//            bluetoothLeScanner.startScan(scanCallback);
         }
         Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:0");
         //bluetoothLeScanner.startScan(scanCallback)这个方法有点问题，搜索太久了，找不到数据,离谱大了
@@ -334,14 +362,14 @@ public class BleConnectManager {
             Log.i("tryToConnectOldDevice","tryToConnectOldDevice2222:1:---115");
 //            BleConnectStatuUtil.getInstance().sendConnecting(BleConnectStatuUtil.getInstance().getNowUseBleDevice(),BleConnectStatuUtil.getInstance().getNowUseBleDevice().getAdress());
             //这里属于后台行为，可以不提交
-            connect(BleConnectStatuUtil.getInstance().getNowUseBleDevice().getAdress());
+            connect(BleConnectStatuUtil.getInstance().getNowUseBleDevice().getAdress(),false);
         }catch (Exception e){}
     }
 
     /**
      * 连接远程蓝牙
      */
-    public boolean connect(String address) {
+    public boolean connect(String address,boolean isScanData) {
         if (null==bluetoothAdapter || TextUtils.isEmpty(address)) {
 //            LG.e("BluetoothAdapter not initialized or unspecified address");
             //这里不能关闭，关闭之后重新连接部上
@@ -355,7 +383,7 @@ public class BleConnectManager {
             BleConnectStatuUtil.getInstance().setConnectErr("Device not found");
             return false;
         }
-        BlueToothGattManager.getInstance().initGatt(device,context);
+        BlueToothGattManager.getInstance().initGatt(device,context,isScanData);
 //        LG.e("Trying to create a new connection:"+address);
 
         return true;

@@ -435,7 +435,8 @@ public class BluetoothGattService extends BaseService {
     private Runnable tryToConnectOldDeviceRunnable =new Runnable() {
         @Override
         public void run() {
-//            BleConnectManager.getInstance().checkAndToConnectOldDevice();
+            Log.i("tryToConnectOldDevice","checkShareBleDevice111--11441");
+            BleConnectManager.getInstance().checkAndToConnectOldDevice();
         }
     };
 

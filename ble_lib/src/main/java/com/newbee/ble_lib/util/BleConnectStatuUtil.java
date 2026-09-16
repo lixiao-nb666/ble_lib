@@ -103,7 +103,7 @@ public class BleConnectStatuUtil {
         }
 
         nowUseBleDevice=bleDeviceBean;
-        BleConnectManager.getInstance().connect(address);
+        BleConnectManager.getInstance().connect(address,true);
     }
 
 

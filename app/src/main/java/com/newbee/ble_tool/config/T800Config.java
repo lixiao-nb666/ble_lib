@@ -9,6 +9,7 @@ public class T800Config {
     public final static String ACTION_GATT_SERVICES_DISCOVERED = "ACTION_GATT_SERVICES_DISCOVERED";
     public final static String ACTION_GATT_WRITE_STATE = "ACTION_GATT_WRITE_STATE";
     public static String serviceID = "0000ffff-0000-1000-8000-00805f9b34fb";
+
     public static String writeID = "00009abc-0000-1000-8000-00805f9b34fb";
     public static String noticeID = "00001234-0000-1000-8000-00805f9b34fb";
     public static byte cmdt1=(byte) 0xA5;//T800固定要加的第一个字节

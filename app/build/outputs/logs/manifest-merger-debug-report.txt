@@ -11,7 +11,7 @@ MERGED from [com.github.lixiao-nb666:sava_data_lib:1.0.0] C:\Users\Administrator
 MERGED from [com.github.lixiao-nb666:gson_lib:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\9a3d942714a52fbe33514a9aaac92ba3\transformed\gson_lib-1.0.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.github.lixiao-nb666:t800_data_lib:1.0.2] C:\Users\Administrator\.gradle\caches\transforms-3\6252025e83ade19d50291c3193fc35ea\transformed\t800_data_lib-1.0.2\AndroidManifest.xml:2:1-9:12
 MERGED from [:ble_lib] F:\asworkspace\hud\lib\ble_lib\ble_lib\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
-MERGED from [com.github.lixiao-nb666:ble_event:1.0.38] C:\Users\Administrator\.gradle\caches\transforms-3\b568abb97bf885c1eb8faee39505b564\transformed\ble_event-1.0.38\AndroidManifest.xml:2:1-9:12
+MERGED from [com.github.lixiao-nb666:ble_event:1.0.41] C:\Users\Administrator\.gradle\caches\transforms-3\c8af162c90d6963a3cf66d8051196209\transformed\ble_event-1.0.41\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\f33401e088e03b4906c1e1ee487642e4\transformed\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-3\2a60b3300c6f34c1be7409a2ef9e70c8\transformed\fragment-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\1b2c2bc523e43a8695e5871c17c75f28\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -218,8 +218,8 @@ MERGED from [com.github.lixiao-nb666:t800_data_lib:1.0.2] C:\Users\Administrator
 MERGED from [com.github.lixiao-nb666:t800_data_lib:1.0.2] C:\Users\Administrator\.gradle\caches\transforms-3\6252025e83ade19d50291c3193fc35ea\transformed\t800_data_lib-1.0.2\AndroidManifest.xml:5:5-7:41
 MERGED from [:ble_lib] F:\asworkspace\hud\lib\ble_lib\ble_lib\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:ble_lib] F:\asworkspace\hud\lib\ble_lib\ble_lib\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [com.github.lixiao-nb666:ble_event:1.0.38] C:\Users\Administrator\.gradle\caches\transforms-3\b568abb97bf885c1eb8faee39505b564\transformed\ble_event-1.0.38\AndroidManifest.xml:5:5-7:41
-MERGED from [com.github.lixiao-nb666:ble_event:1.0.38] C:\Users\Administrator\.gradle\caches\transforms-3\b568abb97bf885c1eb8faee39505b564\transformed\ble_event-1.0.38\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.lixiao-nb666:ble_event:1.0.41] C:\Users\Administrator\.gradle\caches\transforms-3\c8af162c90d6963a3cf66d8051196209\transformed\ble_event-1.0.41\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.lixiao-nb666:ble_event:1.0.41] C:\Users\Administrator\.gradle\caches\transforms-3\c8af162c90d6963a3cf66d8051196209\transformed\ble_event-1.0.41\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\f33401e088e03b4906c1e1ee487642e4\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Administrator\.gradle\caches\transforms-3\f33401e088e03b4906c1e1ee487642e4\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\Administrator\.gradle\caches\transforms-3\2a60b3300c6f34c1be7409a2ef9e70c8\transformed\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
