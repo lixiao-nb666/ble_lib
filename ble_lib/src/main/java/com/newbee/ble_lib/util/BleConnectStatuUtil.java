@@ -96,8 +96,8 @@ public class BleConnectStatuUtil {
             return;
         }
         Log.i("checkShareBleDevice","checkShareBleDevice1113:"+checkIsSame(bleDeviceBean));
-        Log.i("checkShareBleDevice","checkShareBleDevice1113:"+nowUseBleDevice);
-        Log.i("checkShareBleDevice","checkShareBleDevice1113:"+bleDeviceBean);
+        Log.i("checkShareBleDevice","checkShareBleDevice1114:"+nowUseBleDevice);
+        Log.i("checkShareBleDevice","checkShareBleDevice1115:"+bleDeviceBean);
         if(checkIsSame(bleDeviceBean)){
             return;
         }
@@ -122,12 +122,14 @@ public class BleConnectStatuUtil {
     }
 
     public void setShareBleDevice(BleDeviceBean bleDevice){
+        Log.i("checkShareBleDevice","checkShareBleDevice1116:"+bleDevice);
         if(isConnect&&nowUseBleDevice!=null){
             return;
         }
         nowUseBleDevice=bleDevice;
         isConnect=false;
         disConnectTime=System.currentTimeMillis();
+        Log.i("checkShareBleDevice","checkShareBleDevice1117:"+nowUseBleDevice);
         BleConnectManager.getInstance().clear();
         BlueToothGattSendMsgManager.getInstance().close();
         BlueToothGattManager.getInstance().checkIsDisConnecting();

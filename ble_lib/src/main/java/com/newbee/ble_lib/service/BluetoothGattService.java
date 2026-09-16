@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.newbee.ble_lib.NewBeeBleManager;
 import com.newbee.ble_lib.base.BaseService;
@@ -97,8 +98,10 @@ public class BluetoothGattService extends BaseService {
                     case NOW_IS_CONNECTED:
                         break;
                     case PUT_DEF_BLE_DEVICE:
+                        Log.i("checkShareBleDevice","checkShareBleDevice11191："+msg.obj);
                         BleDeviceBean bleDeviceBean= (BleDeviceBean) msg.obj;
                         BleConnectStatuUtil.getInstance().setShareBleDevice(bleDeviceBean);
+                        Log.i("checkShareBleDevice","checkShareBleDevice11192："+msg.obj);
                         break;
                 }
                 BleStatu bleStatu=BleStatu.USER_DO;
@@ -362,7 +365,7 @@ public class BluetoothGattService extends BaseService {
            msg.what=BluetoothGattServiceMsgType.PUT_DEF_BLE_DEVICE.ordinal();
            msg.obj=defBleDevice;
            handler.sendMessage(msg);
-
+           Log.i("checkShareBleDevice","checkShareBleDevice1119:"+defBleDevice);
        }
    };
 
