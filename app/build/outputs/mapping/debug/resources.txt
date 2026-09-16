@@ -64,6 +64,7 @@ HAND
 addFontWeightStyle
 GET_DEVICE_VERSION
 4501
+bleDeviceShareKey_blePairFuntionType
 _
 user_query
 ACTION_CLEAR_ACCESSIBILITY_FOCUS
@@ -218,6 +219,7 @@ android.intent.action.SEARCH
 BITMAP
 L_LF_Y
 L_R_Y_R
+bleDeviceShareKey_deviceBody
 SEND_OTA_START
 minute
 DISCONNECTED
@@ -247,6 +249,7 @@ ble_is_open_11111
 Spinner
 SEND_CONNECTED_MSG
 androidx.savedstate.Restarter
+checkShareBleDevice
 ICON_FLICKER
 android.bluetooth.device.action.FOUND
 tbt43
@@ -256,6 +259,7 @@ tbt47
 tbt48
 objectFieldOffset
 ACTION_SELECT
+bleDeviceShareKey_
 R_RF_Y_R
 FACTORY_SET
 :launch
@@ -298,14 +302,18 @@ font_variation_settings
 L_F_Y_L
 android
 L_F_Y_F
+bleDeviceShareKey_deviceTitle
+checkShareBleDevice11166:
 RE_SEND
 rwt
 status_bar_height
 CREATED
 DIFFERENCE
+checkShareBleDevice1113:
 SOFT_LIGHT
 SHOW
 /DCIM/cpu1.bin
+bleDeviceShareKey_deviceName
 HUT_T
 android:view_state
 tbt185
@@ -318,6 +326,7 @@ LF_RF_Y_RF
 TIME
 RatingBar
 L_LF_Y_L
+checkShareBleDevice1114:
 tbt11
 tbt12
 tbt13
@@ -343,6 +352,7 @@ BUS_N_D
 D_N
 in_progress
 higha
+checkShareBleDevice1115:
 font_ttc_index
 BUS_N_B
 ACTION_SHOW_ON_SCREEN
@@ -359,6 +369,7 @@ tryToConnectOldDevice111100
 LF_RF_Y_LF
 robolectric
 1501
+checkShareBleDevice1116:
 1500
 INIT_BLE
 A5A6
@@ -376,6 +387,7 @@ android.permission.ACCESS_FINE_LOCATION
 2601
 1511
 2600
+checkShareBleDevice1117:
 1510
 YELLOW_STATU_STR
 INITIALIZED
@@ -402,6 +414,7 @@ ThemeUtils
 SET_DEVICE_SOUND_STATU
 AppCompatViewInflater
 notification
+checkShareBleDevice1119:
 PUT_DEF_BLE_DEVICE
 group
 getConstructorId
@@ -419,6 +432,7 @@ ble_is_open_11111:close
 MULTIPLY
 res/
 QUERY_DEVICE_SOUND_STATU
+checkShareBleDevice111661:
 L_LF_Y_LF
 rebase
 T3000
@@ -513,6 +527,7 @@ android.support.PARENT_ACTIVITY
 android.bluetooth.device.action.ACL_D...
 font
 ADD
+bleDeviceShareKey_bleManufacturerSpec...
 REWRITE_SN
 setTouchModal
 CONNECTING_ERR
@@ -568,6 +583,7 @@ android.support.FILE_PROVIDER_PATHS
 kankanshujufdajfls:
 IMAGE
 SCREEN
+bleDeviceShareKey_bleManufacturerSpec...
 GET_SN
 EditText
 arch_disk_io_%d
@@ -614,6 +630,7 @@ second
 _size
 UnknownNullness
 R_RF_Y
+bleDeviceShareKey_bleAdress
 limit
 MissingPermission
 android.resource://
@@ -714,6 +731,7 @@ android:target_state
 WARNING_POINT_2_T_STR
 ACTION_EXPAND
 PREVENT
+bleDeviceShareKey_deviceType
 OPEN
 UPPER_CAMEL_CASE_WITH_SPACES
 android.speech.action.WEB_SEARCH
@@ -728,6 +746,7 @@ SET_BRIGHTNESS
 Operations:
 开始发送OTA
 SET_SOUND
+bleDeviceShareKey_bleName
 ON_START
 50
 51

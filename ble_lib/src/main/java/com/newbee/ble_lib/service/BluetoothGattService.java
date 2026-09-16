@@ -18,6 +18,7 @@ import com.newbee.ble_lib.service.event.BleDelayEventSubscriptionSubject;
 import com.newbee.ble_lib.service.event.BleDelayObserver;
 import com.newbee.ble_lib.service.event.BleDelayType;
 
+import com.newbee.ble_lib.share.BleToolShare;
 import com.newbee.ble_lib.util.BleConnectStatuUtil;
 import com.nrmyw.ble_event_lib.bean.BleDeviceBean;
 import com.nrmyw.ble_event_lib.bean.BleSendFileInfoBean;
@@ -212,6 +213,7 @@ public class BluetoothGattService extends BaseService {
                     case CONNECTED:
                         cancelConnectOldDevice();
                         cancelAutoConnect();
+                        getBleToolShare().putShareBleDevice(BleConnectStatuUtil.getInstance().getNowUseBleDevice());
                         break;
                     case SENDING_DATA:
                         handler.removeCallbacks(bleDisConnectRunnable);
@@ -225,7 +227,17 @@ public class BluetoothGattService extends BaseService {
         }
     };
 
-
+    private BleToolShare bleToolShare;
+    private BleToolShare getBleToolShare(){
+        if(null==bleToolShare){
+            synchronized (BluetoothGattService.class){
+                if(null==bleToolShare){
+                    bleToolShare=new BleToolShare(getApplicationContext());
+                }
+            }
+        }
+        return bleToolShare;
+    }
 
 
     @Override
@@ -234,6 +246,7 @@ public class BluetoothGattService extends BaseService {
         BleStatuEventSubscriptionSubject.getInstance().attach(bleStatuEventObserver);
         BleEventSubscriptionSubject.getInstance().attach(bleEventObserver);
         NewBeeBleManager.getInstance().setBleEventObserver(bleEventObserver);
+        BleConnectStatuUtil.getInstance().setShareBleDevice(getBleToolShare().getShareBleDevice());
     }
 
 

@@ -122,6 +122,11 @@ public class BleConnectStatuUtil {
     }
 
     public void setShareBleDevice(BleDeviceBean bleDevice){
+        Log.i("checkShareBleDevice","checkShareBleDevice11166:"+bleDevice);
+        if(null==bleDevice||TextUtils.isEmpty(bleDevice.getAdress())){
+            return;
+        }
+
         Log.i("checkShareBleDevice","checkShareBleDevice1116:"+bleDevice);
         if(isConnect&&nowUseBleDevice!=null){
             return;

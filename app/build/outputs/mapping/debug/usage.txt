@@ -5940,6 +5940,10 @@ com.newbee.ble_lib.service.BluetoothGattService$3:
     public void sendCmdByKStr(java.lang.String,byte[])
     public void sendFile(com.nrmyw.ble_event_lib.bean.BleSendFileInfoBean)
 com.newbee.ble_lib.service.event.BleDelayEventSubject
+com.newbee.ble_lib.share.BaseShare:
+    public void clear()
+com.newbee.ble_lib.share.BleToolShare:
+    public synthetic bridge void clear()
 com.newbee.ble_lib.util.AbImageUtil$OnImageUtilsListener
 com.newbee.ble_lib.util.AbImageUtil:
     private static com.newbee.ble_lib.util.AbImageUtil$OnImageUtilsListener onImageUtilsListener
@@ -6203,8 +6207,6 @@ com.nrmyw.ble_event_lib.BuildConfig
 com.nrmyw.ble_event_lib.R$string:
     private void <init>()
 com.nrmyw.ble_event_lib.R
-com.nrmyw.ble_event_lib.bean.BleDeviceBean:
-    public java.lang.String getBleName()
 com.nrmyw.ble_event_lib.bean.BleSendFileInfoBean:
     public byte getCmdTitle()
     public java.lang.String getFileName()
