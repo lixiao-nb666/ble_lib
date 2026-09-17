@@ -105,12 +105,12 @@ public class BlueToothGattManager {
             if (newState == BluetoothProfile.STATE_CONNECTED) {
                 //广播里面已经发送了事件通知，这里就不用处理了
                 Log.w(tag,"BluetoothAdapter  initialized  11122----------3");
-                if(connectionPriority!=BluetoothGatt.CONNECTION_PRIORITY_HIGH){
-                    Log.w(tag,"BluetoothAdapter  initialized  11122----------4");
-                    connectionPriority=BluetoothGatt.CONNECTION_PRIORITY_HIGH;
-                    bluetoothGatt.requestConnectionPriority(connectionPriority);
-                }
-
+//                if(connectionPriority!=BluetoothGatt.CONNECTION_PRIORITY_HIGH){
+//                    Log.w(tag,"BluetoothAdapter  initialized  11122----------4");
+//                    connectionPriority=BluetoothGatt.CONNECTION_PRIORITY_HIGH;
+//                    bluetoothGatt.requestConnectionPriority(connectionPriority);
+//                }
+                bluetoothGatt.requestConnectionPriority(BluetoothGatt.CONNECTION_PRIORITY_HIGH);
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     bluetoothGatt.requestMtu(NewBeeBleConfig.getInstance().getMtu());
                 }
@@ -344,15 +344,16 @@ public class BlueToothGattManager {
         }
         if(isScanData){
             Log.w(tag,"BluetoothAdapter  initialized  11122----------1");
-            connectionPriority=BluetoothGatt.CONNECTION_PRIORITY_HIGH;
+
+            bluetoothGatt.requestConnectionPriority(BluetoothGatt.CONNECTION_PRIORITY_HIGH);
         }else {
             Log.w(tag,"BluetoothAdapter  initialized  11122----------2");
-            connectionPriority=BluetoothGatt.CONNECTION_PRIORITY_LOW_POWER;
+            bluetoothGatt.requestConnectionPriority(BluetoothGatt.CONNECTION_PRIORITY_LOW_POWER);
         }
-        bluetoothGatt.requestConnectionPriority(connectionPriority);
+
     }
 
-    private int connectionPriority;
+
 
     /**
      * 设置特征什变化通知
