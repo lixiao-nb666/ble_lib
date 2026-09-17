@@ -347,9 +347,8 @@ public class BlueToothGattManager {
             connectionPriority=BluetoothGatt.CONNECTION_PRIORITY_HIGH;
         }else {
             Log.w(tag,"BluetoothAdapter  initialized  11122----------2");
-            connectionPriority=BluetoothGatt.CONNECTION_PRIORITY_BALANCED;
+            connectionPriority=BluetoothGatt.CONNECTION_PRIORITY_LOW_POWER;
         }
-
         bluetoothGatt.requestConnectionPriority(connectionPriority);
     }
 
