@@ -99,10 +99,10 @@ public class BluetoothGattService extends BaseService {
                     case NOW_IS_CONNECTED:
                         break;
                     case PUT_DEF_BLE_DEVICE:
-                        Log.i("checkShareBleDevice","checkShareBleDevice11191："+msg.obj);
-                        BleDeviceBean bleDeviceBean= (BleDeviceBean) msg.obj;
-                        BleConnectStatuUtil.getInstance().setShareBleDevice(bleDeviceBean);
-                        Log.i("checkShareBleDevice","checkShareBleDevice11192："+msg.obj);
+//                        Log.i("checkShareBleDevice","checkShareBleDevice11191："+msg.obj);
+//                        BleDeviceBean bleDeviceBean= (BleDeviceBean) msg.obj;
+//                        BleConnectStatuUtil.getInstance().setShareBleDevice(bleDeviceBean);
+//                        Log.i("checkShareBleDevice","checkShareBleDevice11192："+msg.obj);
                         break;
                 }
                 BleStatu bleStatu=BleStatu.USER_DO;

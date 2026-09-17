@@ -3,8 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: 9fcbcf3
-# pg_map_hash: SHA-256 9fcbcf31ea6a2c35fca18760f864ccb0438ce19faf5a4206a97f502e0b330a69
+# pg_map_id: c1faedb
+# pg_map_hash: SHA-256 c1faedb2eb3b11af83d7e0ea088c9ebfc0dd547f95a1d4a7b91aaabf1e85ba07
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -7230,7 +7230,7 @@ com.newbee.ble_lib.NewBeeBleManager -> com.newbee.ble_lib.NewBeeBleManager:
     83:88:void nowCheckToInitBle() -> nowCheckToInitBle
     78:80:void nowGetAllPermissions() -> nowGetAllPermissions
     67:69:void setBleEventObserver(com.nrmyw.ble_event_lib.send.BleEventObserver) -> setBleEventObserver
-    39:40:void setShareBleDevice(com.nrmyw.ble_event_lib.bean.BleDeviceBean) -> setShareBleDevice
+    40:40:void setShareBleDevice(com.nrmyw.ble_event_lib.bean.BleDeviceBean) -> setShareBleDevice
     43:48:void startService(android.content.Context) -> startService
     51:55:void stopService() -> stopService
 com.newbee.ble_lib.base.BaseService -> com.newbee.ble_lib.base.BaseService:

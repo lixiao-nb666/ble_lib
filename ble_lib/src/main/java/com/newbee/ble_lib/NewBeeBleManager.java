@@ -36,7 +36,7 @@ public class NewBeeBleManager {
     }
 
     public void  setShareBleDevice(BleDeviceBean bleDevice){
-        BleConnectStatuUtil.getInstance().setShareBleDevice(bleDevice);
+//        BleConnectStatuUtil.getInstance().setShareBleDevice(bleDevice);
     }
 
     public void startService(Context context){

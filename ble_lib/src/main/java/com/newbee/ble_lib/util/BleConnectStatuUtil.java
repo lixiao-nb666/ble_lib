@@ -98,9 +98,9 @@ public class BleConnectStatuUtil {
         Log.i("checkShareBleDevice","checkShareBleDevice1113:"+checkIsSame(bleDeviceBean));
         Log.i("checkShareBleDevice","checkShareBleDevice1114:"+nowUseBleDevice);
         Log.i("checkShareBleDevice","checkShareBleDevice1115:"+bleDeviceBean);
-        if(checkIsSame(bleDeviceBean)){
-            return;
-        }
+//        if(checkIsSame(bleDeviceBean)){
+//            return;
+//        }
         nowUseBleDevice=bleDeviceBean;
         BleConnectManager.getInstance().connect(address,true);
     }
