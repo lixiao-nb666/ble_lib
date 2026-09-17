@@ -109,16 +109,17 @@ public class BlueToothGattManager {
                     Log.w(tag,"BluetoothAdapter  initialized  11122----------4");
                     connectionPriority=BluetoothGatt.CONNECTION_PRIORITY_HIGH;
                     bluetoothGatt.requestConnectionPriority(connectionPriority);
-                 
                 }
-                bluetoothGatt.requestMtu(NewBeeBleConfig.getInstance().getMtu());
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    bluetoothGatt.requestMtu(NewBeeBleConfig.getInstance().getMtu());
+                }
 
             } else if (newState == BluetoothProfile.STATE_DISCONNECTED) {
                 //广播里面已经发送了事件通知，这里就不用处理了
                 Log.e(tag,"连接失败 Disconnected from GATT server "+newState+" === "+status);
                 BleConnectStatuUtil.getInstance().sendDisconnected();
             }
-
         }
 
         /**
@@ -349,7 +350,7 @@ public class BlueToothGattManager {
             connectionPriority=BluetoothGatt.CONNECTION_PRIORITY_BALANCED;
         }
 
-//        bluetoothGatt.requestConnectionPriority(connectionPriority);
+        bluetoothGatt.requestConnectionPriority(connectionPriority);
     }
 
     private int connectionPriority;
