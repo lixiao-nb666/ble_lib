@@ -3,8 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: eb46275
-# pg_map_hash: SHA-256 eb46275f7b01fd0d2749498d343212bbfaa39a4d08c9d6f4a9f89c26eb15ab03
+# pg_map_id: 1d5b56c
+# pg_map_hash: SHA-256 1d5b56c474befc75d34f6b745bda045270d8c506aa9068cee8552d0cc00cf2e9
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -7298,12 +7298,12 @@ com.newbee.ble_lib.manager.child.BlueToothGattManager -> com.newbee.ble_lib.mana
     298:299:void checkIsDisConnecting() -> checkIsDisConnecting
     278:288:void clearData() -> clearData
     291:295:void close() -> close
-    441:447:void disconnect() -> disconnect
+    443:449:void disconnect() -> disconnect
     264:271:com.newbee.ble_lib.manager.child.BlueToothGattManager getInstance() -> getInstance
-    312:350:void initGatt(android.bluetooth.BluetoothDevice,android.content.Context,boolean) -> initGatt
+    312:352:void initGatt(android.bluetooth.BluetoothDevice,android.content.Context,boolean) -> initGatt
     303:307:boolean isConnecting() -> isConnecting
-    410:433:com.newbee.ble_lib.manager.child.BlueToothGattManager$SEND_CMD_STATU queSendCmd(byte[]) -> queSendCmd
-    360:381:boolean setCharacteristicNotification1(android.bluetooth.BluetoothGattCharacteristic,boolean) -> setCharacteristicNotification1
+    412:435:com.newbee.ble_lib.manager.child.BlueToothGattManager$SEND_CMD_STATU queSendCmd(byte[]) -> queSendCmd
+    362:383:boolean setCharacteristicNotification1(android.bluetooth.BluetoothGattCharacteristic,boolean) -> setCharacteristicNotification1
 com.newbee.ble_lib.manager.child.BlueToothGattManager$1 -> com.newbee.ble_lib.manager.child.BlueToothGattManager$1:
     41:41:void <init>(com.newbee.ble_lib.manager.child.BlueToothGattManager) -> <init>
     174:189:void displayGattServices() -> displayGattServices
@@ -7317,11 +7317,11 @@ com.newbee.ble_lib.manager.child.BlueToothGattManager$1 -> com.newbee.ble_lib.ma
     70:92:void onMtuChanged(android.bluetooth.BluetoothGatt,int,int) -> onMtuChanged
     128:142:void onServicesDiscovered(android.bluetooth.BluetoothGatt,int) -> onServicesDiscovered
 com.newbee.ble_lib.manager.child.BlueToothGattManager$SEND_CMD_STATU -> com.newbee.ble_lib.manager.child.BlueToothGattManager$SEND_CMD_STATU:
-    449:449:com.newbee.ble_lib.manager.child.BlueToothGattManager$SEND_CMD_STATU[] $values() -> $values
-    449:452:void <clinit>() -> <clinit>
-    449:449:void <init>(java.lang.String,int) -> <init>
-    449:449:com.newbee.ble_lib.manager.child.BlueToothGattManager$SEND_CMD_STATU valueOf(java.lang.String) -> valueOf
-    449:449:com.newbee.ble_lib.manager.child.BlueToothGattManager$SEND_CMD_STATU[] values() -> values
+    451:451:com.newbee.ble_lib.manager.child.BlueToothGattManager$SEND_CMD_STATU[] $values() -> $values
+    451:454:void <clinit>() -> <clinit>
+    451:451:void <init>(java.lang.String,int) -> <init>
+    451:451:com.newbee.ble_lib.manager.child.BlueToothGattManager$SEND_CMD_STATU valueOf(java.lang.String) -> valueOf
+    451:451:com.newbee.ble_lib.manager.child.BlueToothGattManager$SEND_CMD_STATU[] values() -> values
 com.newbee.ble_lib.manager.child.BlueToothSendStatuManager -> com.newbee.ble_lib.manager.child.BlueToothSendStatuManager:
     19:37:void <init>() -> <init>
     196:215:void checkReturnToSend() -> checkReturnToSend
@@ -7568,17 +7568,17 @@ com.newbee.ble_lib.util.BleCheckUtil -> com.newbee.ble_lib.util.BleCheckUtil:
 com.newbee.ble_lib.util.BleConnectStatuUtil -> com.newbee.ble_lib.util.BleConnectStatuUtil:
     26:28:void <init>() -> <init>
     49:64:boolean checkCanUseOldDeviceAdress(boolean) -> checkCanUseOldDeviceAdress
-    176:191:void checkDisconnectedDevice(java.lang.String,java.lang.String) -> checkDisconnectedDevice
-    112:121:boolean checkIsSame(com.nrmyw.ble_event_lib.bean.BleDeviceBean) -> checkIsSame
+    175:190:void checkDisconnectedDevice(java.lang.String,java.lang.String) -> checkDisconnectedDevice
+    111:120:boolean checkIsSame(com.nrmyw.ble_event_lib.bean.BleDeviceBean) -> checkIsSame
     31:38:com.newbee.ble_lib.util.BleConnectStatuUtil getInstance() -> getInstance
     77:77:com.nrmyw.ble_event_lib.bean.BleDeviceBean getNowUseBleDevice() -> getNowUseBleDevice
     81:81:boolean isConnect() -> isConnect
-    145:151:void sendConnected() -> sendConnected
-    154:155:void sendConnectedMsg() -> sendConnectedMsg
-    87:107:void sendConnecting(com.nrmyw.ble_event_lib.bean.BleDeviceBean,java.lang.String) -> sendConnecting
-    163:173:void sendDisconnected() -> sendDisconnected
-    158:159:void setConnectErr(java.lang.String) -> setConnectErr
-    125:141:void setShareBleDevice(com.nrmyw.ble_event_lib.bean.BleDeviceBean) -> setShareBleDevice
+    144:150:void sendConnected() -> sendConnected
+    153:154:void sendConnectedMsg() -> sendConnectedMsg
+    87:106:void sendConnecting(com.nrmyw.ble_event_lib.bean.BleDeviceBean,java.lang.String) -> sendConnecting
+    162:172:void sendDisconnected() -> sendDisconnected
+    157:158:void setConnectErr(java.lang.String) -> setConnectErr
+    124:140:void setShareBleDevice(com.nrmyw.ble_event_lib.bean.BleDeviceBean) -> setShareBleDevice
 com.newbee.ble_lib.util.BleErrManager -> com.newbee.ble_lib.util.BleErrManager:
     9:10:void sendConnectErrMsg(java.lang.String) -> sendConnectErrMsg
 com.newbee.ble_lib.util.BleSendImageUtil -> com.newbee.ble_lib.util.BleSendImageUtil:

@@ -101,7 +101,6 @@ public class BleConnectStatuUtil {
         if(checkIsSame(bleDeviceBean)){
             return;
         }
-
         nowUseBleDevice=bleDeviceBean;
         BleConnectManager.getInstance().connect(address,true);
     }

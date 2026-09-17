@@ -1,4 +1,4 @@
-#Wed Sep 16 19:12:56 CST 2026
+#Thu Sep 17 21:58:58 CST 2026
 base.0=F\:\\asworkspace\\hud\\lib\\ble_lib\\app\\build\\intermediates\\dex\\debug\\minifyDebugWithR8\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

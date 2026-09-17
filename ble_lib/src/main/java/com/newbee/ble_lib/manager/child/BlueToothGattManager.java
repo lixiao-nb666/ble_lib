@@ -104,14 +104,15 @@ public class BlueToothGattManager {
             connecting=false;
             if (newState == BluetoothProfile.STATE_CONNECTED) {
                 //广播里面已经发送了事件通知，这里就不用处理了
-                Log.e(tag,"连接成功Connected to GATT server ");
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    if(connectionPriority!=BluetoothGatt.CONNECTION_PRIORITY_HIGH){
-                        connectionPriority=BluetoothGatt.CONNECTION_PRIORITY_HIGH;
-                        bluetoothGatt.requestConnectionPriority(connectionPriority);
-                    }
-                    bluetoothGatt.requestMtu(NewBeeBleConfig.getInstance().getMtu());
+                Log.w(tag,"BluetoothAdapter  initialized  11122----------3");
+                if(connectionPriority!=BluetoothGatt.CONNECTION_PRIORITY_HIGH){
+                    Log.w(tag,"BluetoothAdapter  initialized  11122----------4");
+                    connectionPriority=BluetoothGatt.CONNECTION_PRIORITY_HIGH;
+                    bluetoothGatt.requestConnectionPriority(connectionPriority);
+                 
                 }
+                bluetoothGatt.requestMtu(NewBeeBleConfig.getInstance().getMtu());
+
             } else if (newState == BluetoothProfile.STATE_DISCONNECTED) {
                 //广播里面已经发送了事件通知，这里就不用处理了
                 Log.e(tag,"连接失败 Disconnected from GATT server "+newState+" === "+status);
@@ -341,12 +342,14 @@ public class BlueToothGattManager {
 
         }
         if(isScanData){
+            Log.w(tag,"BluetoothAdapter  initialized  11122----------1");
             connectionPriority=BluetoothGatt.CONNECTION_PRIORITY_HIGH;
         }else {
-            connectionPriority=BluetoothGatt.CONNECTION_PRIORITY_LOW_POWER;
+            Log.w(tag,"BluetoothAdapter  initialized  11122----------2");
+            connectionPriority=BluetoothGatt.CONNECTION_PRIORITY_BALANCED;
         }
 
-        bluetoothGatt.requestConnectionPriority(connectionPriority);
+//        bluetoothGatt.requestConnectionPriority(connectionPriority);
     }
 
     private int connectionPriority;
