@@ -12,16 +12,11 @@ import android.bluetooth.BluetoothGattService;
 import android.bluetooth.BluetoothProfile;
 import android.content.Context;
 import android.os.Build;
-import android.util.Log;
 import com.newbee.ble_lib.config.BleManagerConfig;
 import com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager;
-import com.newbee.ble_lib.service.event.BleDelayEventSubscriptionSubject;
-import com.newbee.ble_lib.service.event.BleDelayType;
 import com.newbee.ble_lib.util.BleConnectStatuUtil;
 import com.newbee.ble_lib.util.BleErrManager;
 import com.nrmyw.ble_event_lib.config.NewBeeBleConfig;
-import com.nrmyw.ble_event_lib.statu.BleStatu;
-import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
 import com.nrmyw.ble_event_lib.util.BleByteUtil;
 import java.util.UUID;
 
@@ -55,8 +50,7 @@ public class BlueToothGattManager {
         public void onDescriptorWrite(BluetoothGatt gatt, BluetoothGattDescriptor descriptor, int status) {
             super.onDescriptorWrite(gatt, descriptor, status);
             /*if (status == BluetoothGatt.GATT_SUCCESS) {}*/
-            Log.e(tag,"写入值成功22:" + status);
-            Log.w(tag,"BluetoothAdapter  initialized  111:2");
+
 
             if (status == BluetoothGatt.GATT_SUCCESS) {
 //                bluetoothGatt.requestMtu(NewBeeBleConfig.getInstance().getMtu());
@@ -68,7 +62,7 @@ public class BlueToothGattManager {
         @Override
         public void onMtuChanged(BluetoothGatt gatt, int mtu, int status) {
             super.onMtuChanged(gatt, mtu, status);
-            Log.w(tag,"BluetoothAdapter  initialized  111:3--"+mtu+"--"+status);
+
 
             if(mtu>= BleManagerConfig.CAN_SEND_MTU){
                 NewBeeBleConfig.getInstance().setRealMtu(mtu-BleManagerConfig.MTU_CHA);
@@ -100,11 +94,11 @@ public class BlueToothGattManager {
 //                isReady = false;
 //            }
 
-            Log.w(tag,"BluetoothAdapter  initialized  111:4--"+newState);
+
             connecting=false;
             if (newState == BluetoothProfile.STATE_CONNECTED) {
                 //广播里面已经发送了事件通知，这里就不用处理了
-                Log.w(tag,"BluetoothAdapter  initialized  11122----------3");
+
 //                if(connectionPriority!=BluetoothGatt.CONNECTION_PRIORITY_HIGH){
 //                    Log.w(tag,"BluetoothAdapter  initialized  11122----------4");
 //                    connectionPriority=BluetoothGatt.CONNECTION_PRIORITY_HIGH;
@@ -117,7 +111,7 @@ public class BlueToothGattManager {
 
             } else if (newState == BluetoothProfile.STATE_DISCONNECTED) {
                 //广播里面已经发送了事件通知，这里就不用处理了
-                Log.e(tag,"连接失败 Disconnected from GATT server "+newState+" === "+status);
+
                 BleConnectStatuUtil.getInstance().sendDisconnected();
             }
         }
@@ -127,13 +121,13 @@ public class BlueToothGattManager {
          */
         @Override
         public void onServicesDiscovered(BluetoothGatt gatt, int status) {
-            Log.w(tag,"BluetoothAdapter  initialized  111:5--"+status);
+
             if (status == BluetoothGatt.GATT_SUCCESS) {
-                Log.i(tag,"--发现服务onServicesDiscovered called--");
+
                 //EventBus.getDefault().post(new EventBluetoothStateMessage(ACTION_GATT_SERVICES_DISCOVERED));
                 displayGattServices();
             } else {
-                Log.w(tag,"OnservicesDiscovered receiced:" + status);
+
                 // 8 ： 设备超出范围
                 // 22 ：表示本地设备终止了连接
                 // 133 ：连接超时或未找到设备。
@@ -184,7 +178,7 @@ public class BlueToothGattManager {
             if(!setCharacteristicNotification1(readCharacteristic,true)){
                 return;
             }
-            Log.w(tag,"BluetoothAdapter  initialized  111:222");
+
 
             BlueToothSendStatuManager.getInstance().initOk();
             BleConnectStatuUtil.getInstance().sendConnected();
@@ -221,9 +215,9 @@ public class BlueToothGattManager {
          */
         @Override
         public void onCharacteristicRead(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic, int status) {
-            Log.w(tag,"BluetoothAdapter  initialized  111:6");
+
             if (status == BluetoothGatt.GATT_SUCCESS) {
-                Log.i(tag,"--onCharacteristicRead called--");
+
                 /////将数据通过通知到页面
 //                eventUpdate(characteristic);
             }
@@ -238,7 +232,7 @@ public class BlueToothGattManager {
             try {
                 BlueToothSendStatuManager.getInstance().getRetrunBytes(characteristic.getValue());
             }catch (Exception e){
-                Log.i(tag,"发送 ===  :发送成功---checkReturnToSend 3333?????????:"+e.toString());
+
             }
 
 
@@ -334,20 +328,20 @@ public class BlueToothGattManager {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
 
-            Log.w(tag,"BluetoothAdapter  initialized  11111");
+
             bluetoothGatt = device.connectGatt(context, false, mGattCallback, BluetoothDevice.TRANSPORT_LE);
 
         } else {
-            Log.w(tag,"BluetoothAdapter  initialized  11122");
+
             bluetoothGatt = device.connectGatt(context, false, mGattCallback);
 
         }
         if(isScanData){
-            Log.w(tag,"BluetoothAdapter  initialized  11122----------1");
+
 
             bluetoothGatt.requestConnectionPriority(BluetoothGatt.CONNECTION_PRIORITY_HIGH);
         }else {
-            Log.w(tag,"BluetoothAdapter  initialized  11122----------2");
+
             bluetoothGatt.requestConnectionPriority(BluetoothGatt.CONNECTION_PRIORITY_LOW_POWER);
         }
 
@@ -390,7 +384,7 @@ public class BlueToothGattManager {
      */
     public void setCharacteristicNotification(BluetoothGattCharacteristic characteristic, boolean enabled) {
         if ( bluetoothGatt == null) {
-            Log.w(tag,"BluetoothAdapter not initialized");
+
             return;
         }
         bluetoothGatt.setCharacteristicNotification(characteristic, enabled);
@@ -420,7 +414,7 @@ public class BlueToothGattManager {
                 bluetoothGatt.writeCharacteristic(writeCharacteristic);
 
 
-                Log.i("kankanfasongtupian","-------------kankanshenmegui111:"+ BleByteUtil.parseByte2HexStr(cmd));
+
 //              LogUtil.e("发送指令："+ CYUtils.Bytes2HexString(cmd));
                 //这里设置flase，因为正在发送中
 

@@ -1,10 +1,7 @@
 package com.newbee.ble_lib.util;
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.util.Log;
 
-import com.newbee.ble_lib.config.BleManagerConfig;
+import android.text.TextUtils;
 import com.newbee.ble_lib.manager.child.BleConnectManager;
 import com.newbee.ble_lib.manager.child.BlueToothGattManager;
 import com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager;
@@ -14,7 +11,6 @@ import com.nrmyw.ble_event_lib.bean.BleDeviceBean;
 import com.nrmyw.ble_event_lib.statu.BleStatu;
 import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
 
-import java.security.spec.ECField;
 
 public class BleConnectStatuUtil {
     private static BleConnectStatuUtil util;
@@ -95,9 +91,7 @@ public class BleConnectStatuUtil {
             BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.NONE,"Connecting,Please wait !");
             return;
         }
-        Log.i("checkShareBleDevice","checkShareBleDevice1113:"+checkIsSame(bleDeviceBean));
-        Log.i("checkShareBleDevice","checkShareBleDevice1114:"+nowUseBleDevice);
-        Log.i("checkShareBleDevice","checkShareBleDevice1115:"+bleDeviceBean);
+
 //        if(checkIsSame(bleDeviceBean)){
 //            return;
 //        }
@@ -121,19 +115,19 @@ public class BleConnectStatuUtil {
     }
 
     public void setShareBleDevice(BleDeviceBean bleDevice){
-        Log.i("checkShareBleDevice","checkShareBleDevice11166:"+bleDevice);
+
         if(null==bleDevice||TextUtils.isEmpty(bleDevice.getAdress())){
             return;
         }
 
-        Log.i("checkShareBleDevice","checkShareBleDevice1116:"+bleDevice);
+
         if(isConnect&&nowUseBleDevice!=null){
             return;
         }
         nowUseBleDevice=bleDevice;
         isConnect=false;
         disConnectTime=System.currentTimeMillis();
-        Log.i("checkShareBleDevice","checkShareBleDevice1117:"+nowUseBleDevice);
+
         BleConnectManager.getInstance().clear();
         BlueToothGattSendMsgManager.getInstance().close();
         BlueToothGattManager.getInstance().checkIsDisConnecting();

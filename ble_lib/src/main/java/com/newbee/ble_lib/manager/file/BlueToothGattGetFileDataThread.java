@@ -1,8 +1,6 @@
 package com.newbee.ble_lib.manager.file;
 
 import android.text.TextUtils;
-import android.util.Log;
-
 import com.newbee.ble_lib.manager.file.send.SendBitmapManager;
 import com.newbee.ble_lib.manager.file.send.SendFileManager;
 import com.newbee.ble_lib.manager.file.send.SendOtaManager;
@@ -93,16 +91,12 @@ public class BlueToothGattGetFileDataThread extends Thread{
             }
         }catch (Exception e){
             listen.sendOver(0);
-            Log.i("kankanshibushizheli","kankantubianzenmhuishi:1111222:err"+e.toString());
         }
-
-
     }
 
 
 
     public interface Listen{
-
         public void sendOver(long useTime);
     }
 

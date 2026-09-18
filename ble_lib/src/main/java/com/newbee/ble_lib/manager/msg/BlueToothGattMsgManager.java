@@ -1,9 +1,7 @@
 package com.newbee.ble_lib.manager.msg;
 
 import android.text.TextUtils;
-import android.util.Log;
 
-import com.newbee.ble_lib.manager.child.BlueToothGattManager;
 import com.newbee.ble_lib.manager.child.BlueToothSendStatuManager;
 import com.nrmyw.ble_event_lib.statu.BleStatu;
 import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
@@ -61,13 +59,13 @@ class BlueToothGattMsgManager {
     public synchronized void addMsg(byte[] msg) {
         String kStr = BleByteUtil.getCmdStrK(msg);
         msgMq.put(kStr, msg);
-        Log.i("tag","发送 ===  :发送成功---checkReturnToSend 3311-1:count"+BleByteUtil.parseByte2HexStr(msg));
+
     }
 
     public synchronized void addMsg(String defKey,byte[] msg) {
         String kStr = defKey+BleByteUtil.getCmdStrK(msg);
         msgMq.put(kStr, msg);
-        Log.i("tag","发送 ===  :发送成功---checkReturnToSend 3311-1:count"+BleByteUtil.parseByte2HexStr(msg));
+
     }
 
     private void queCmdMsg() {
@@ -84,7 +82,7 @@ class BlueToothGattMsgManager {
             msgMq.clear();
             return;
         }
-        Log.i("tag","发送 ===  :发送成功---checkReturnToSend 3333331111---555666:count"+fileMsgCountNumb+"--"+fileMsgIndex+"----"+BleByteUtil.parseByte2HexStr(cmd));
+
         listenSendMsg(kStr, cmd);
     }
 
@@ -108,7 +106,7 @@ class BlueToothGattMsgManager {
 
         try {
             if (BlueToothSendStatuManager.getInstance().isNowCanSend()) {
-                Log.i("tag","发送 ===  :发送成功---checkReturnToSend 3333331112:count"+fileMsgCountNumb+"--"+fileMsgIndex+"----"+BleByteUtil.parseByte2HexStr(msg));
+
                 BlueToothSendStatuManager.getInstance().sendBytyes(msg);
                 if(msgMq.size()==1){
                     msgMq.clear();
@@ -171,9 +169,7 @@ class BlueToothGattMsgManager {
 
 
     public void reSendFileMsg(){
-        Log.i("tag", "发送 ===  :发送成功---checkReturnToSend 111133?????????:  ---A5A8----kaishichongfa111222--"+fileMsgIndex);
         fileMsgIndex--;
-        Log.i("tag"," 发送 ===  :发送成功---checkReturnToSend 111133?????????:   ---A5A8----kaishichongfa111333:--"+fileMsgIndex);
         queMsg();
     }
 
@@ -193,12 +189,8 @@ class BlueToothGattMsgManager {
         if( fileMsgCountNumb!=fileMsgMq.size()){
             return false;
         }
-
-
 //        int index = getImageFristK();
         byte[] cmd = fileMsgMq.get(fileMsgIndex + "");
-
-        Log.i("tag","发送 ===  :发送成功---checkReturnToSend 3333331111---555665:count"+fileMsgCountNumb+"--"+fileMsgIndex+"----"+BleByteUtil.parseByte2HexStr(cmd));
         if (null == cmd || cmd.length == 0) {
             clearFileMsg();
             return false;

@@ -2,10 +2,9 @@ package com.newbee.ble_lib.util;
 
 
 import android.graphics.Bitmap;
-import android.util.Log;
 
 import com.newbee.ble_lib.config.BleManagerConfig;
-import com.nrmyw.ble_event_lib.config.NewBeeBleConfig;
+
 import com.nrmyw.ble_event_lib.type.BleSendBitmapQualityType;
 
 
@@ -48,7 +47,7 @@ public class BleSendImageUtil {
         Bitmap newBitMap=ImageCompressUtils.scaleBitmap(bm, (int) (wmW*needScale), (int) (wmH*needScale));
 
 //        newBitMap.setConfig(Bitmap.Config.RGB_565);
-        Log.i("kankantupian","kankantubianzenmhuishi:1111--123456:"+newBitMap.getConfig());
+
         return newBitMap;
     }
 
