@@ -129,6 +129,8 @@ public class BlueToothSendStatuManager {
 
     public void sendBytesIsOk(int status){
         long sendOkTime=System.currentTimeMillis();
+
+        Log.i("ble_code_check","ble_code_check:send data start:"+status+"---用时为:"+(sendOkTime-sendTime));
         Log.i(tag,"发送 ===  :发送成功"+status+"---用时为:"+(sendOkTime-sendTime));
         if(null!=sendOverListen){
             sendOverListen.sendMsgOver(lastSendBytes,sendTime,sendOkTime-sendOkTime);
