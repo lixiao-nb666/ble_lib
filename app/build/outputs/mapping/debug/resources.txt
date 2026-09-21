@@ -147,7 +147,6 @@ SENDING_DATA
 L_Y
 android.content.res.ThemedResourceCache
 RF_Y
-otakaishi1111111111:3
 doAfterTextChanged
 .xml
 BlueBroadcastReceiver
@@ -202,7 +201,6 @@ SRC
 UPPER_CAMEL_CASE
 c15
 c16
-kankantubianzenmhuishi:1111222:err
 END_OK
 busd
 c18
@@ -211,7 +209,6 @@ busb
 busa
 androidx.appcompat.widget.LinearLayou...
 L_LF_N
-写入值成功22:
 OK
 SCAN_BLE
 L_R_Y_L
@@ -245,7 +242,6 @@ SupportMenuInflater
 TaskStackBuilder
 anim
 getHorizontallyScrolling
-ble_is_open_11111
 Spinner
 SEND_CONNECTED_MSG
 androidx.savedstate.Restarter
@@ -277,6 +273,7 @@ performStopActivity
 L_T_Y_L
 AppCompatDelegate
 L_T_Y_T
+ble_code_check:connect_mold:old_device
 view
 F_N
 NewApi
@@ -303,13 +300,11 @@ L_F_Y_L
 android
 L_F_Y_F
 bleDeviceShareKey_deviceTitle
-checkShareBleDevice11166:
 RE_SEND
 rwt
 status_bar_height
 CREATED
 DIFFERENCE
-checkShareBleDevice1113:
 SOFT_LIGHT
 SHOW
 /DCIM/cpu1.bin
@@ -326,7 +321,6 @@ LF_RF_Y_RF
 TIME
 RatingBar
 L_LF_Y_L
-checkShareBleDevice1114:
 tbt11
 tbt12
 tbt13
@@ -352,7 +346,6 @@ BUS_N_D
 D_N
 in_progress
 higha
-checkShareBleDevice1115:
 font_ttc_index
 BUS_N_B
 ACTION_SHOW_ON_SCREEN
@@ -365,11 +358,9 @@ android.bluetooth.adapter.action.STAT...
 tbt120
 tbt121
 CheckedTextView
-tryToConnectOldDevice111100
 LF_RF_Y_LF
 robolectric
 1501
-checkShareBleDevice1116:
 1500
 INIT_BLE
 A5A6
@@ -387,7 +378,6 @@ android.permission.ACCESS_FINE_LOCATION
 2601
 1511
 2600
-checkShareBleDevice1117:
 1510
 YELLOW_STATU_STR
 INITIALIZED
@@ -428,7 +418,6 @@ WrongConstant
 tbt75
 1300
 RETRUN_IMAGE
-ble_is_open_11111:close
 MULTIPLY
 res/
 QUERY_DEVICE_SOUND_STATU
@@ -545,6 +534,7 @@ free_form
 androidx.view.accessibility.Accessibi...
 COLOR
 androidx.transition.FragmentTransitio...
+ble_code_check:connect_mold:new_device
 LF_T_Y_LF
 android.speech.extra.MAX_RESULTS
 SEND_FILE_ERR_ISRUN
@@ -601,9 +591,9 @@ ACTION_CLEAR_SELECTION
 tryToConnectOldDevice
 suggest_intent_action
 file
-kankanadaptercannotuse
 STATE_ON
 STATE_OFF
+ble_code_check
 DARKEN
 mServedView
 L_R_Y
@@ -808,7 +798,6 @@ numb_28
 kankanfasongtupian
 numb_201
 NONE
-ota
 getTextDirectionHeuristic
 HARD_LIGHT
 DISCONNECT_BLE
@@ -863,7 +852,6 @@ asyncTraceBegin
 android.permission.ACCESS_COARSE_LOCA...
 1410
 MultiAutoCompleteTextView
-tryToConnectOldDevice2222:0
 tag
 action_msg
 R_N
@@ -904,7 +892,6 @@ PowerStateService
 appcompat_skip_skip
 ON_STOP
 BEGIN_ARRAY
-ble_is_open_11111:open
 HIGH_N
 fragment
 bluetooth

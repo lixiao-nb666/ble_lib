@@ -117,10 +117,8 @@ public class MainActivity extends BaseCompatActivity {
                         break;
                     case R.id.bt_send_test_file:
                         if(!canOta){
-
                             canOta=true;
                         }
-
                         BleEventSubscriptionSubject.getInstance().sendCmd(HudCmdSendDataUtil.startOTA());
                         lastTime=System.currentTimeMillis();
                         String filePath= Environment.getExternalStorageDirectory().getPath()+"/"+"DCIM/cpu1.bin";
@@ -184,7 +182,7 @@ public class MainActivity extends BaseCompatActivity {
             t800CmdType.useObjectSSetBody();
             NewBeeBleManager.getInstance().getEventImp().sendCmd(t800CmdType.getAllByte());
             handler.removeCallbacks(sendTimeRunnable);
-            handler.postDelayed(sendTimeRunnable,1000);
+            handler.postDelayed(sendTimeRunnable,10);
         }
     };
     private Handler handler=new Handler(){

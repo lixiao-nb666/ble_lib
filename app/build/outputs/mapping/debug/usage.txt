@@ -5975,6 +5975,7 @@ com.newbee.ble_lib.util.AbImageUtil:
 com.newbee.ble_lib.util.BleCheckUtil:
     public void <init>()
 com.newbee.ble_lib.util.BleConnectStatuUtil:
+    private boolean checkIsSame(com.nrmyw.ble_event_lib.bean.BleDeviceBean)
     private void clear()
     public long getConnectTime()
     public long getDisConnectTime()

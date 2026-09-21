@@ -107,7 +107,7 @@ public class BlueToothGattManager {
 //                    bluetoothGatt.requestConnectionPriority(connectionPriority);
 //                }
                 Log.i("ble_code_check","ble_code_check:connect set HIGH");
-                bluetoothGatt.requestConnectionPriority(BluetoothGatt.CONNECTION_PRIORITY_BALANCED);
+                bluetoothGatt.requestConnectionPriority(BluetoothGatt.CONNECTION_PRIORITY_HIGH);
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     Log.i("ble_code_check","ble_code_check:connect reset mtu");
                     bluetoothGatt.requestMtu(NewBeeBleConfig.getInstance().getMtu());
@@ -409,20 +409,21 @@ public class BlueToothGattManager {
     synchronized SEND_CMD_STATU queSendCmd(byte[] cmd){
         if (bluetoothGatt!=null&&writeCharacteristic!=null){
             try {
-
+                long nowTime=System.currentTimeMillis();
                 //if (Build.VERSION.SDK_INT>= Build.VERSION_CODES.TIRAMISU)
                 //boolean b = mBluetoothGatt.writeCharacteristic(writeCharacteristic, cmd, BluetoothGattCharacteristic.WRITE_TYPE_DEFAULT);
                 writeCharacteristic.setValue(cmd);
                 bluetoothGatt.writeCharacteristic(writeCharacteristic);
-                long nowTime=System.currentTimeMillis();
 
+                long sendOverTime=System.currentTimeMillis();
+                long sendTime=sendOverTime-nowTime;
                 if(lastTime==0){
-                    lastTime=nowTime;
-                    Log.i("ble_code_check","ble_code_check:send data start");
+                    lastTime=sendOverTime;
+                    Log.i("ble_code_check","ble_code_check:send data start:"+sendTime);
                 }else {
 
-                    Log.i("ble_code_check","ble_code_check:send data end"+(nowTime-lastTime));
-                    lastTime=nowTime;
+                    Log.i("ble_code_check","ble_code_check:send data end:"+(sendOverTime-lastTime)+"---"+sendTime);
+                    lastTime=sendOverTime;
                 }
 
 
