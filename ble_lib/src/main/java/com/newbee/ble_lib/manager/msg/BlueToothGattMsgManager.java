@@ -205,8 +205,14 @@ class BlueToothGattMsgManager {
 //       LG.i("kankanshujuqingkongmei:"+msgMq.size());
     }
 
+    public int getMsgNumb(){
+        return msgMq.size();
+    }
 
 
+    public int getFileMsgNumb(){
+        return fileMsgMq.size();
+    }
 
 
 

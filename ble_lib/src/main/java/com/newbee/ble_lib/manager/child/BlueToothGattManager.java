@@ -422,7 +422,7 @@ public class BlueToothGattManager {
                     Log.i("ble_code_check","ble_code_check:send data start:"+sendTime);
                 }else {
 
-                    Log.i("ble_code_check","ble_code_check:send data end:"+(sendOverTime-lastTime)+"---"+sendTime);
+                    Log.i("ble_code_check","ble_code_check:send data end:"+(sendOverTime-lastTime)+"---"+sendTime+"---cansendMsgNumb:"+BlueToothGattSendMsgManager.getInstance().getMsgNumb()+"-"+BlueToothGattSendMsgManager.getInstance().getFileMsgNumb());
                     lastTime=sendOverTime;
                 }
 

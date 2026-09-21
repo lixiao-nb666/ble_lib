@@ -3,8 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: c18b5a6
-# pg_map_hash: SHA-256 c18b5a66c4501700729ae938a404f12ee7abff741f01a7365b52fcc63672289b
+# pg_map_id: c44a533
+# pg_map_hash: SHA-256 c44a533e4df1f9d2b11231651f2a1805c971613c06eb3e3ab98ebef08d25babb
 android.app.AppComponentFactory -> android.app.AppComponentFactory:
 # {"id":"com.android.tools.r8.synthesized"}
     void <clinit>() -> <clinit>
@@ -7425,8 +7425,10 @@ com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager -> com.newbee.ble_lib.man
     50:52:void clear() -> clear
     124:128:void clearFileMsg() -> clearFileMsg
     41:43:void close() -> close
+    214:214:int getFileMsgNumb() -> getFileMsgNumb
     95:100:java.lang.String getFristKStr() -> getFristKStr
     29:36:com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager getInstance() -> getInstance
+    209:209:int getMsgNumb() -> getMsgNumb
     145:159:void listenSendFileMsg(int,byte[]) -> listenSendFileMsg
     108:121:void listenSendMsg(java.lang.String,byte[]) -> listenSendMsg
     72:87:void queCmdMsg() -> queCmdMsg
@@ -7438,17 +7440,19 @@ com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager -> com.newbee.ble_lib.man
     140:141:void setNowCanSendFileNumb(int) -> setNowCanSendFileNumb
 com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager -> com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager:
     10:12:void <init>() -> <init>
-    31:32:void clear() -> clear
-    35:36:void clearIndexMsg() -> clearIndexMsg
+    40:41:void clear() -> clear
+    44:45:void clearIndexMsg() -> clearIndexMsg
     26:28:void close() -> close
+    35:35:int getFileMsgNumb() -> getFileMsgNumb
     15:22:com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager getInstance() -> getInstance
-    67:68:void readySendFile() -> readySendFile
-    51:53:void sendMsgByCmd(byte[]) -> sendMsgByCmd
-    56:58:void sendMsgByCmd(java.lang.String,byte[]) -> sendMsgByCmd
-    61:63:void sendMsgByFile(int,byte[]) -> sendMsgByFile
-    71:72:void setFileMsgNum(int) -> setFileMsgNum
-    45:47:void setFileNowReSend() -> setFileNowReSend
-    40:41:void setNowCanSend() -> setNowCanSend
+    31:31:int getMsgNumb() -> getMsgNumb
+    76:77:void readySendFile() -> readySendFile
+    60:62:void sendMsgByCmd(byte[]) -> sendMsgByCmd
+    65:67:void sendMsgByCmd(java.lang.String,byte[]) -> sendMsgByCmd
+    70:72:void sendMsgByFile(int,byte[]) -> sendMsgByFile
+    80:81:void setFileMsgNum(int) -> setFileMsgNum
+    54:56:void setFileNowReSend() -> setFileNowReSend
+    49:50:void setNowCanSend() -> setNowCanSend
 com.newbee.ble_lib.receiver.BleStatuBroadcastReceiver -> com.newbee.ble_lib.receiver.BleStatuBroadcastReceiver:
     26:27:void <init>() -> <init>
     31:53:void onReceive(android.content.Context,android.content.Intent) -> onReceive

@@ -27,6 +27,15 @@ public class BlueToothGattSendMsgManager {
        blueToothGattSendManager=null;
    }
 
+   public int getMsgNumb(){
+       return BlueToothGattMsgManager.getInstance().getMsgNumb();
+   }
+
+    public int getFileMsgNumb(){
+        return BlueToothGattMsgManager.getInstance().getFileMsgNumb();
+    }
+
+
    public void clear(){
        BlueToothGattMsgManager.getInstance().clear();
    }
