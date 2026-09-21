@@ -213,7 +213,7 @@ public class SendOtaManager implements BlueToothGattSendFile {
 //                  BlueToothSendStatuManager.getInstance().setSendOverListen(null);
                     BlueToothSendStatuManager.getInstance().needRetrunByteListenDo(true,retrunByteListen);
                     splitPacketForMtuByte(fileBytes);
-           
+
                 }
             }
 

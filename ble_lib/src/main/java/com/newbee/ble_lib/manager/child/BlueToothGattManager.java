@@ -12,6 +12,8 @@ import android.bluetooth.BluetoothGattService;
 import android.bluetooth.BluetoothProfile;
 import android.content.Context;
 import android.os.Build;
+import android.util.Log;
+
 import com.newbee.ble_lib.config.BleManagerConfig;
 import com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager;
 import com.newbee.ble_lib.util.BleConnectStatuUtil;
@@ -104,14 +106,14 @@ public class BlueToothGattManager {
 //                    connectionPriority=BluetoothGatt.CONNECTION_PRIORITY_HIGH;
 //                    bluetoothGatt.requestConnectionPriority(connectionPriority);
 //                }
+                Log.i("ble_code_check","ble_code_check:connect set HIGH");
                 bluetoothGatt.requestConnectionPriority(BluetoothGatt.CONNECTION_PRIORITY_HIGH);
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    Log.i("ble_code_check","ble_code_check:connect reset mtu");
                     bluetoothGatt.requestMtu(NewBeeBleConfig.getInstance().getMtu());
                 }
-
             } else if (newState == BluetoothProfile.STATE_DISCONNECTED) {
                 //广播里面已经发送了事件通知，这里就不用处理了
-
                 BleConnectStatuUtil.getInstance().sendDisconnected();
             }
         }
@@ -328,7 +330,6 @@ public class BlueToothGattManager {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
 
-
             bluetoothGatt = device.connectGatt(context, false, mGattCallback, BluetoothDevice.TRANSPORT_LE);
 
         } else {
@@ -338,10 +339,10 @@ public class BlueToothGattManager {
         }
         if(isScanData){
 
-
+            Log.i("ble_code_check","ble_code_check:connect_mold:new_device");
             bluetoothGatt.requestConnectionPriority(BluetoothGatt.CONNECTION_PRIORITY_HIGH);
         }else {
-
+            Log.i("ble_code_check","ble_code_check:connect_mold:old_device");
             bluetoothGatt.requestConnectionPriority(BluetoothGatt.CONNECTION_PRIORITY_LOW_POWER);
         }
 
@@ -404,14 +405,24 @@ public class BlueToothGattManager {
 
 
 
-
+    long lastTime;
     synchronized SEND_CMD_STATU queSendCmd(byte[] cmd){
         if (bluetoothGatt!=null&&writeCharacteristic!=null){
             try {
+
                 //if (Build.VERSION.SDK_INT>= Build.VERSION_CODES.TIRAMISU)
                 //boolean b = mBluetoothGatt.writeCharacteristic(writeCharacteristic, cmd, BluetoothGattCharacteristic.WRITE_TYPE_DEFAULT);
                 writeCharacteristic.setValue(cmd);
                 bluetoothGatt.writeCharacteristic(writeCharacteristic);
+                long nowTime=System.currentTimeMillis();
+
+                if(lastTime==0){
+                    lastTime=nowTime;
+                    Log.i("ble_code_check","ble_code_check:send data start");
+                }else {
+
+                    Log.i("ble_code_check","ble_code_check:send data end"+(nowTime-lastTime));
+                }
 
 
 
