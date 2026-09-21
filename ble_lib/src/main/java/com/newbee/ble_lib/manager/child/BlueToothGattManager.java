@@ -107,7 +107,7 @@ public class BlueToothGattManager {
 //                    bluetoothGatt.requestConnectionPriority(connectionPriority);
 //                }
                 Log.i("ble_code_check","ble_code_check:connect set HIGH");
-                bluetoothGatt.requestConnectionPriority(BluetoothGatt.CONNECTION_PRIORITY_HIGH);
+                bluetoothGatt.requestConnectionPriority(BluetoothGatt.CONNECTION_PRIORITY_BALANCED);
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     Log.i("ble_code_check","ble_code_check:connect reset mtu");
                     bluetoothGatt.requestMtu(NewBeeBleConfig.getInstance().getMtu());
@@ -422,6 +422,7 @@ public class BlueToothGattManager {
                 }else {
 
                     Log.i("ble_code_check","ble_code_check:send data end"+(nowTime-lastTime));
+                    lastTime=nowTime;
                 }
 
 
