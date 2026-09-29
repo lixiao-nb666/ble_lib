@@ -1,8 +1,7 @@
 package com.newbee.ble_lib.manager.msg;
 
 
-
-
+import com.newbee.ble_lib.util.BleConnectStatuUtil;
 
 public class BlueToothGattSendMsgManager {
    private static BlueToothGattSendMsgManager blueToothGattSendManager;
@@ -57,16 +56,25 @@ public class BlueToothGattSendMsgManager {
 
 
    public void sendMsgByCmd(byte[] cmd){
+       if(!BleConnectStatuUtil.getInstance().isConnect()){
+           return;
+       }
        BlueToothGattMsgManager.getInstance().addMsg(cmd);
        BlueToothGattMsgManager.getInstance().queMsg();
     }
 
     public void sendMsgByCmd(String key,byte[] cmd){
+        if(!BleConnectStatuUtil.getInstance().isConnect()){
+            return;
+        }
         BlueToothGattMsgManager.getInstance().addMsg(key,cmd);
         BlueToothGattMsgManager.getInstance().queMsg();
     }
 
    public void sendMsgByFile(int index,byte[] cmd){
+       if(!BleConnectStatuUtil.getInstance().isConnect()){
+           return;
+       }
        BlueToothGattMsgManager.getInstance().addMsgByFile(index,cmd);
        BlueToothGattMsgManager.getInstance().queMsg();
    }

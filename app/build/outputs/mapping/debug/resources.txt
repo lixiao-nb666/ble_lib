@@ -209,7 +209,6 @@ busb
 busa
 androidx.appcompat.widget.LinearLayou...
 L_LF_N
-写入值成功22:
 OK
 SCAN_BLE
 L_R_Y_L
@@ -274,6 +273,7 @@ performStopActivity
 L_T_Y_L
 AppCompatDelegate
 L_T_Y_T
+ble_code_check:connect_mold:old_device
 view
 F_N
 NewApi
@@ -534,6 +534,7 @@ free_form
 androidx.view.accessibility.Accessibi...
 COLOR
 androidx.transition.FragmentTransitio...
+ble_code_check:connect_mold:new_device
 LF_T_Y_LF
 android.speech.extra.MAX_RESULTS
 SEND_FILE_ERR_ISRUN

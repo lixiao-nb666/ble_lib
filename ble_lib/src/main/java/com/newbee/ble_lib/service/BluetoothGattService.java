@@ -222,7 +222,6 @@ public class BluetoothGattService extends BaseService {
                     case CAN_SEND_DATA:
                         handler.removeCallbacks(bleDisConnectRunnable);
                         break;
-
                 }
         }
     };

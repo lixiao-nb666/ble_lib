@@ -162,6 +162,7 @@ public class BleConnectStatuUtil {
         BleConnectManager.getInstance().clear();
         BlueToothGattSendMsgManager.getInstance().close();
         BlueToothGattManager.getInstance().checkIsDisConnecting();
+        BlueToothGattSendMsgManager.getInstance().clear();
         BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.DISCONNECTED);
     }
 
