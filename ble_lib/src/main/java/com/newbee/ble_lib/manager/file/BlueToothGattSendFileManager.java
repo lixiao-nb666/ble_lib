@@ -83,27 +83,36 @@ public class BlueToothGattSendFileManager {
             getFileDataThread=new BlueToothGattGetFileDataThread(bleSendFileInfoBean,threadListen);
             getFileDataThread.start();
         }else {
+
             BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.SEND_FILE_ERR_ISRUN,bleSendFileInfoBean);
         }
     }
 
     public void sendOta(BleSendOtaInfoBean bleSendOtaInfoBean){
         Log.i("tag","kaishi1111111111:1");
-        if(null==getFileDataThread){
-            Log.i("tag","kaishi1111111111:2");
-            getFileDataThread=new BlueToothGattGetFileDataThread(bleSendOtaInfoBean,threadListen);
-            getFileDataThread.start();
-        }else {
-            BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.SEND_OTA_ERR_ISRUN,bleSendOtaInfoBean);
+        if(null!=getFileDataThread){
+            getFileDataThread.interrupt();
+            getFileDataThread=null;
+        }
+        getFileDataThread=new BlueToothGattGetFileDataThread(bleSendOtaInfoBean,threadListen);
+        getFileDataThread.start();
+    }
+
+
+    public void closeOta(){
+        if(null!=getFileDataThread&&getFileDataThread.getThreadType()== BlueToothGattGetFileDataThread.ThreadType.OTA){
+            getFileDataThread.interrupt();
+            getFileDataThread=null;
         }
     }
+
 
    public void sendBitMap(BleSendImageInfoBean bleSendImageInfoBean){
         if(null==getFileDataThread){
             getFileDataThread=new BlueToothGattGetFileDataThread(bleSendImageInfoBean,threadListen);
             getFileDataThread.start();
         }else {
-            if(bleSendImageInfoBean.getType()==0){
+            if(getFileDataThread.getThreadType()== BlueToothGattGetFileDataThread.ThreadType.BITMAP&&bleSendImageInfoBean.getType()==0){
                 getFileDataThread.interrupt();
                 getFileDataThread=null;
                 BlueToothGattSendMsgManager.getInstance().clearIndexMsg();

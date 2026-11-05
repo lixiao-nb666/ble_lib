@@ -5,6 +5,8 @@ import com.newbee.ble_lib.manager.child.BlueToothSendStatuManager;
 import com.newbee.ble_lib.manager.file.BlueToothGattGetFileDataThread;
 import com.newbee.ble_lib.manager.file.BlueToothGattSendFile;
 import com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager;
+import com.newbee.ble_lib.service.event.BleDelayEventSubscriptionSubject;
+import com.newbee.ble_lib.service.event.BleDelayType;
 import com.newbee.ble_lib.util.CryptoUtils;
 import com.newbee.ble_lib.util.FileAndByteUtil;
 import com.newbee.ble_lib.util.hud.HudCmdSendDataUtil;
@@ -234,6 +236,7 @@ public class SendOtaManager implements BlueToothGattSendFile {
 
     private void sendProgressEvent(){
         BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.SEND_OTA_PROGRESS,progress);
+        BleDelayEventSubscriptionSubject.getInstance().delayDo(BleDelayType.CANCEL_OTA,20*1000);
     }
 
 

@@ -5,4 +5,6 @@ public enum BleDelayType {
     SEND_BLE_CMD_BYTES,
 
     SEND_CONNECTED_MSG,
+
+    CANCEL_OTA,
 }

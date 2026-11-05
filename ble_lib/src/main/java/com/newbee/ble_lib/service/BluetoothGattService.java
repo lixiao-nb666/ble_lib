@@ -122,6 +122,10 @@ public class BluetoothGattService extends BaseService {
             case SEND_CONNECTED_MSG:
                 BleConnectStatuUtil.getInstance().sendConnectedMsg();
                 break;
+            case CANCEL_OTA:
+                BlueToothGattSendFileManager.getInstance().closeOta();
+                BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.SEND_OTA_ERR,"data is err ! please reboot HUD device ,and retry");
+                break;
         }
     }
 

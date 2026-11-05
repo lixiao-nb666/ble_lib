@@ -77,14 +77,18 @@ public class BlueToothGattGetFileDataThread extends Thread{
                 return;
             }
             if(null!=bleSendImageInfoBean){
+
                 blueToothGattSendFile=new SendBitmapManager(bleSendImageInfoBean);
                 blueToothGattSendFile.setListen(listen);
+                threadType=ThreadType.BITMAP;
             }else if(null!=bleSendFileInfoBean){
                 blueToothGattSendFile=new SendFileManager(bleSendFileInfoBean);
                 blueToothGattSendFile.setListen(listen);
+                threadType=ThreadType.FILE;
             }else if(null!=bleSendOtaInfoBean){
                 blueToothGattSendFile=new SendOtaManager(bleSendOtaInfoBean);
                 blueToothGattSendFile.setListen(listen);
+                threadType=ThreadType.OTA;
             }
             if(null!=blueToothGattSendFile){
                 blueToothGattSendFile.clear();
@@ -93,11 +97,25 @@ public class BlueToothGattGetFileDataThread extends Thread{
             listen.sendOver(0);
         }
     }
+    private ThreadType threadType=ThreadType.NONE;
+
+    public ThreadType  getThreadType(){
+        return threadType;
+    }
 
 
 
     public interface Listen{
         public void sendOver(long useTime);
+    }
+
+    public  enum ThreadType{
+        NONE,
+        BITMAP,
+        FILE,
+        OTA,
+
+
     }
 
 }
