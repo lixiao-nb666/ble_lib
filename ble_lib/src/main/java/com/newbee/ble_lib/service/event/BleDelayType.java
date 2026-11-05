@@ -7,4 +7,6 @@ public enum BleDelayType {
     SEND_CONNECTED_MSG,
 
     CANCEL_OTA,
+
+    RE_UPDATE_OTA,
 }

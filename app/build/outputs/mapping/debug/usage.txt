@@ -5934,7 +5934,7 @@ com.newbee.ble_lib.manager.file.send.SendOtaManager:
     public boolean isStart()
 com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager:
     public synchronized void removeFileMsg(java.lang.String)
-com.newbee.ble_lib.service.BluetoothGattService$3:
+com.newbee.ble_lib.service.BluetoothGattService$4:
     public void clearIndexMsg()
     public void clearMsg()
     public void sendCmdByKStr(java.lang.String,byte[])

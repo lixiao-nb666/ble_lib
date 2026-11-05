@@ -92,10 +92,10 @@ public class BluetoothGattService extends BaseService {
                     case CLEAR_INDEX_MSG:
                         BlueToothGattSendMsgManager.getInstance().clearIndexMsg();
                         break;
-                    case DELAY:
-                        BleDelayType bleDelayType=BleDelayType.values()[msg.arg1];
-                        selectDelayTypeToDo(bleDelayType);
-                        break;
+//                    case DELAY:
+//                        BleDelayType bleDelayType=BleDelayType.values()[msg.arg1];
+//                        selectDelayTypeToDo(bleDelayType);
+//                        break;
                     case NOW_IS_CONNECTED:
                         break;
                     case PUT_DEF_BLE_DEVICE:
@@ -128,7 +128,14 @@ public class BluetoothGattService extends BaseService {
                 break;
         }
     }
-
+    private Handler delayHandler=new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            BleDelayType bleDelayType=BleDelayType.values()[msg.what];
+            selectDelayTypeToDo(bleDelayType);
+        }
+    };
 
 
     private void autoConnectDevice(AutoConnectType autoConnectType){
@@ -281,6 +288,7 @@ public class BluetoothGattService extends BaseService {
     @Override
     public void close() {
         handler.removeCallbacksAndMessages(null);
+        delayHandler.removeCallbacksAndMessages(null);
         BleConnectManager.getInstance().close();
         BleDelayEventSubscriptionSubject.getInstance().detach(bleDelayObserver);
         BleEventSubscriptionSubject.getInstance().detach(bleEventObserver);
@@ -389,11 +397,18 @@ public class BluetoothGattService extends BaseService {
     private BleDelayObserver bleDelayObserver=new BleDelayObserver() {
         @Override
         public void delayDo(BleDelayType delayType, long needDelayTime) {
-            handler.removeMessages(BluetoothGattServiceMsgType.DELAY.ordinal());
-            Message msg=new Message();
-            msg.what=BluetoothGattServiceMsgType.DELAY.ordinal();
-            msg.arg1=delayType.ordinal();
-            handler.sendMessageDelayed(msg,needDelayTime);
+            if(null==delayType||delayType==BleDelayType.NONE){
+                return;
+            }
+            if(needDelayTime==0){
+                delayHandler.removeMessages(delayType.ordinal());
+            }else {
+                delayHandler.removeMessages(delayType.ordinal());
+                Message msg=new Message();
+                msg.what=delayType.ordinal();
+                msg.arg1=delayType.ordinal();
+                delayHandler.sendMessageDelayed(msg,needDelayTime);
+            }
         }
     };
 

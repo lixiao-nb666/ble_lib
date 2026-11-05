@@ -287,15 +287,23 @@ public class MainActivity extends BaseCompatActivity {
                 case SEND_OTA_PROGRESS:
                     int progress= (int) msg.obj;
                     progressTV.setText(progress+"%");
+                    Log.i(tag,"ota---------"+progress+"%");
                     break;
                 case SEND_OTA_END:
                     progressTV.setText("OTA完成");
+                    Log.i(tag,"ota---------end");
                     break;
+                case SEND_OTA_START:
+                    Log.i(tag,"ota---------start");
+                    break;
+
                 case SEND_OTA_ERR:
                     progressTV.setText("err:"+msg.obj);
+                    Log.i(tag,"ota---------err:"+msg.obj);
                     break;
                 case SEND_OTA_ERR_ISRUN:
                     progressTV.setText("run  err:"+msg.obj);
+                    Log.i(tag,"ota---------runerr:"+msg.obj);
                     break;
             }
         }

@@ -293,7 +293,6 @@ FragmentManager
 name
 Class
 NestedScrollView
-DELAY
 android.bluetooth.device.action.ACL_C...
 SEND_FILE
 TESTS
@@ -570,6 +569,7 @@ LIGHTEN
 L_T_N
 ACTION_MOVE_WINDOW
 DEFAULT
+RE_UPDATE_OTA
 SHARED_STABLE_IDS
 android.hardware.bluetooth_le
 700666

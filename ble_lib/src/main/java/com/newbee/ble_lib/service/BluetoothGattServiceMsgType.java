@@ -16,7 +16,7 @@ public enum BluetoothGattServiceMsgType {
 
     CLEAR_INDEX_MSG(com.nrmyw.ble_event_lib.R.string.ble_clear_index_msg),
     CLEAR_MSG(com.nrmyw.ble_event_lib.R.string.ble_clear_msg),
-    DELAY(com.nrmyw.ble_event_lib.R.string.ble_statu_none),
+//    DELAY(com.nrmyw.ble_event_lib.R.string.ble_statu_none),
 
     NOW_IS_CONNECTED(com.nrmyw.ble_event_lib.R.string.ble_statu_connected),
 
