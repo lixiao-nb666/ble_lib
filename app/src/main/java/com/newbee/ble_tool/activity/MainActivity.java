@@ -121,7 +121,7 @@ public class MainActivity extends BaseCompatActivity {
                         }
                         BleEventSubscriptionSubject.getInstance().sendCmd(HudCmdSendDataUtil.startOTA());
                         lastTime=System.currentTimeMillis();
-                        String filePath= Environment.getExternalStorageDirectory().getPath()+"/"+"DCIM/t850_cpu1.bin";
+                        String filePath= Environment.getExternalStorageDirectory().getPath()+"/"+"DCIM/cpu1.bin";
                         byte[] fileBytes= FileAndByteUtil.getBytesByFile(filePath);
                         if(null==fileBytes||fileBytes.length==0){
                             showToast("err : file size =0" );
@@ -142,7 +142,7 @@ public class MainActivity extends BaseCompatActivity {
 //                        BleEventSubscriptionSubject.getInstance().sendFile(bleSendFileInfoBean);
                         BleSendOtaInfoBean bleSendFileInfoBean=new BleSendOtaInfoBean();
                         bleSendFileInfoBean.setFilePath(filePath);
-                        bleSendFileInfoBean.setFileName("t850_cpu1.bin");
+                        bleSendFileInfoBean.setFileName("cpu1.bin");
                         BleEventSubscriptionSubject.getInstance().sendOta(bleSendFileInfoBean);
 
                         break;

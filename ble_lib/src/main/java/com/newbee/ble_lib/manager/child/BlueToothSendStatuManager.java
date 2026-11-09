@@ -139,15 +139,16 @@ public class BlueToothSendStatuManager {
             nowCanSend=true;
             checkReturnToSend();
         }else if(waitTime>0&&waitTime<=50){
-//            if(sendOkTime>waitTime){
-////                Log.w(tag,"BluetoothAdapter  initialized  111:1112");
-////                noticeOtherNowCanSned();
-////                Log.w(tag,"BluetoothAdapter  initialized  111:1111");
-//
-//            }
+            if(sendOkTime>waitTime){
+//                Log.w(tag,"BluetoothAdapter  initialized  111:1112");
+//                noticeOtherNowCanSned();
+//                Log.w(tag,"BluetoothAdapter  initialized  111:1111");
+
+            }
             BleDelayEventSubscriptionSubject.getInstance().delayDo(BleDelayType.SEND_BLE_CMD_BYTES,waitTime);
         }else {
-            BleDelayEventSubscriptionSubject.getInstance().delayDo(BleDelayType.SEND_BLE_CMD_BYTES,6);
+//            BleDelayEventSubscriptionSubject.getInstance().delayDo(BleDelayType.SEND_BLE_CMD_BYTES,6);
+            noticeOtherNowCanSned();
 
         }
         Log.i(tag,"收到指令没111");
