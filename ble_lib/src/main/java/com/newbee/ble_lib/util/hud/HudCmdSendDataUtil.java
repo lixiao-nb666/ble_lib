@@ -50,7 +50,7 @@ public class HudCmdSendDataUtil {
     }
 
     public static byte[] getReadySendFileEnd(int length){
-        return getReadySendFile(length,true);
+        return getReadySendFile(length,false);
     }
 
 

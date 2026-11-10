@@ -155,29 +155,23 @@ public class SendOtaManager implements BlueToothGattSendFile {
                 if(null==retrunBytes){
                     return;
                 }
-
                 CheckRetrunByteAndToDoType toDoType=CheckRetrunByteAndToDoType.useRetrunBytesGet(retrunBytes);
-
                 switch (toDoType){
                     case READY_OK:
-
                         progress=19;
                         sendProgressEvent();
                         over(size,md5Bytes);
 //                        BlueToothSendStatuManager.getInstance().setToDoType(toDoType);
-
                         break;
                     case END_OK:
                         progress=100;
                         sendProgressEvent();
                         BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.SEND_OTA_END);
-
                         break;
                     case SEND_INDEX_OK:
                         BlueToothSendStatuManager.getInstance().setToDoType(toDoType);
                         break;
                     case RE_SEND:
-
                         break;
                     default:
                         if(null!=listen){
