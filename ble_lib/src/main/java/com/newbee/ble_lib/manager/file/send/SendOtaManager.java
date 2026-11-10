@@ -87,7 +87,7 @@ public class SendOtaManager implements BlueToothGattSendFile {
     private int progress;
     private void sendFileStart(int size,byte[] md5Bytes){
         BlueToothGattSendMsgManager.getInstance().readySendFile();
-        byte[] cmdStart= HudCmdSendDataUtil.getReadySendFile(size,md5Bytes,true);
+        byte[] cmdStart= HudCmdSendDataUtil.getReadySendFileStart(size);
         checkStr=BleByteUtil.parseByte2HexStr(cmdStart);
         BlueToothGattSendMsgManager.getInstance().sendMsgByCmd(cmdStart);
         progress=3;
@@ -138,7 +138,7 @@ public class SendOtaManager implements BlueToothGattSendFile {
 
 
     public void sendFileEnd(int size,byte[] md5Bytes){
-        byte[] cmdEnd= HudCmdSendDataUtil.getReadySendFile(size,md5Bytes,false);
+        byte[] cmdEnd= HudCmdSendDataUtil.getReadySendFileEnd(size);
         BlueToothGattSendMsgManager.getInstance().setFileMsgNum(msgIndex+1);
         BlueToothGattSendMsgManager.getInstance().sendMsgByFile(msgIndex, cmdEnd);
         needProgressNumb=(msgIndex+1)/79;

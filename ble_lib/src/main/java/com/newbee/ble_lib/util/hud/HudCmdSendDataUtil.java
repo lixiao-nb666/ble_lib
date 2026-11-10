@@ -5,6 +5,7 @@ import com.newbee.ble_lib.config.BleManagerConfig;
 import com.newbee.ble_lib.util.CryptoUtils;
 import com.nrmyw.ble_event_lib.util.BleByteUtil;
 
+import java.net.PortUnreachableException;
 
 
 public class HudCmdSendDataUtil {
@@ -43,7 +44,46 @@ public class HudCmdSendDataUtil {
     }
 
 
-    public static byte[] getReadySendFile( int length,byte[] md5Bytes,boolean isStart){
+
+    public static byte[] getReadySendFileStart(int length){
+        return getReadySendFile(length,true);
+    }
+
+    public static byte[] getReadySendFileEnd(int length){
+        return getReadySendFile(length,true);
+    }
+
+
+    private static byte[] getReadySendFile( int length,boolean isStart){
+        int l=5;
+        if(isStart){
+            l=5;
+        }else {
+            l=2;
+        }
+        byte[]bytes=new byte[l];
+        bytes[0]=BleManagerConfig.CMD_SEND_FILE_TITLE;
+        if(isStart){
+            bytes[1]=BleManagerConfig.CMD_SEND_FILE_START;
+        }else {
+            bytes[1]=BleManagerConfig.CMD_SEND_FILE_END;
+        }
+        if(l==2){
+            return bytes;
+        }
+
+        byte[] lBytes= BleByteUtil.intToByteArray32only3(length);
+        bytes[2]=lBytes[0];
+        bytes[3]=lBytes[1];
+        bytes[4]= lBytes[2];
+//        byte[] cmd = new byte[bytes.length + md5Bytes.length];
+        byte[] cmd = new byte[bytes.length ];
+        System.arraycopy(bytes, 0, cmd, 0, bytes.length);
+//        System.arraycopy(md5Bytes, 0, cmd, bytes.length, md5Bytes.length);
+        return cmd;
+    }
+
+    private static byte[] getReadySendFile( int length,byte[] md5Bytes,boolean isStart){
         int l=5;
         if(isStart){
             l=5;

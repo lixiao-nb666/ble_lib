@@ -128,9 +128,9 @@ public class MainActivity extends BaseCompatActivity {
                             return;
                         }
                         size=fileBytes.length;
-                        byte[] start=HudCmdSendDataUtil.getReadySendFile(size,null,true);
-                        Log.i("tag","发送 ===  :发送成功---checkReturnToSend 3322111111:count"+ BleByteUtil.parseByte2HexStr(start));
-                        BleEventSubscriptionSubject.getInstance().sendCmd(start);
+//                        byte[] start=HudCmdSendDataUtil.getReadySendFileStart(size);
+//                        Log.i("tag","发送 ===  :发送成功---checkReturnToSend 3322111111:count"+ BleByteUtil.parseByte2HexStr(start));
+//                        BleEventSubscriptionSubject.getInstance().sendCmd(start);
                         logTV.setText("开始发送OTA");
 
                         //                        String filePath= Environment.getExternalStorageDirectory().getPath()+"/"+"DCIM/cpu1.bin";
@@ -304,6 +304,11 @@ public class MainActivity extends BaseCompatActivity {
                 case SEND_OTA_ERR_ISRUN:
                     progressTV.setText("run  err:"+msg.obj);
                     Log.i(tag,"ota---------runerr:"+msg.obj);
+                    break;
+
+                case SENDING_DATA:
+                    byte[] bytes= (byte[]) msg.obj;
+                    Log.i(tag,"ota---------SENDING_DATA:"+BleByteUtil.parseByte2HexStr(bytes));
                     break;
             }
         }

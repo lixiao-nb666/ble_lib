@@ -6002,6 +6002,7 @@ com.newbee.ble_lib.util.hud.HudBleByteUtil:
     public void <init>()
 com.newbee.ble_lib.util.hud.HudCmdSendDataUtil:
     public void <init>()
+    private static byte[] getReadySendFile(int,byte[],boolean)
 com.newbee.ble_tool.BuildConfig
 com.newbee.ble_tool.R$color
 com.newbee.ble_tool.R$drawable
