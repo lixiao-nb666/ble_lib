@@ -602,6 +602,7 @@ DARKEN
 FILE
 mServedView
 L_R_Y
+kankanchangdu
 HIDE
 ACTION_PAGE_RIGHT
 menu

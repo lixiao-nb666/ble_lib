@@ -5933,6 +5933,7 @@ com.newbee.ble_lib.manager.file.send.SendFileManager:
 com.newbee.ble_lib.manager.file.send.SendOtaManager:
     public boolean isStart()
 com.newbee.ble_lib.manager.msg.BlueToothGattMsgManager:
+    private byte[] lastFileCmd
     public synchronized void removeFileMsg(java.lang.String)
 com.newbee.ble_lib.service.BluetoothGattService$4:
     public void clearIndexMsg()
@@ -6255,6 +6256,7 @@ com.nrmyw.ble_event_lib.send.BleEventSubscriptionSubject:
     public void clearMsg()
     public void disconnectedBle()
     public void havePermissionInitBle()
+    public void sendCmd(byte[])
     public void sendCmdByKStr(java.lang.String,byte[])
     public void sendFile(com.nrmyw.ble_event_lib.bean.BleSendFileInfoBean)
     public void startSearchBle()

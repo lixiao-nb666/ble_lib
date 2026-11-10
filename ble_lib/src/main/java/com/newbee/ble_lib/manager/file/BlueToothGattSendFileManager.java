@@ -21,6 +21,7 @@ public class BlueToothGattSendFileManager {
             if(null!=getFileDataThread){
                 getFileDataThread.interrupt();
                 getFileDataThread=null;
+                BlueToothGattSendMsgManager.getInstance().isOta(false);
                 Log.i("kankantupian","kankantubianzenmhuis:over4");
             }
 //            queLast();
@@ -83,7 +84,6 @@ public class BlueToothGattSendFileManager {
             getFileDataThread=new BlueToothGattGetFileDataThread(bleSendFileInfoBean,threadListen);
             getFileDataThread.start();
         }else {
-
             BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.SEND_FILE_ERR_ISRUN,bleSendFileInfoBean);
         }
     }
@@ -103,6 +103,7 @@ public class BlueToothGattSendFileManager {
         if(null!=getFileDataThread&&getFileDataThread.getThreadType()== BlueToothGattGetFileDataThread.ThreadType.OTA){
             getFileDataThread.interrupt();
             getFileDataThread=null;
+            BlueToothGattSendMsgManager.getInstance().isOta(false);
         }
     }
 

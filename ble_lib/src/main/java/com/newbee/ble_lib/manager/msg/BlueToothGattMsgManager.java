@@ -170,11 +170,12 @@ class BlueToothGattMsgManager {
 
     public void reSendFileMsg(){
         fileMsgIndex--;
+//        fileMsgIndex=0;
         queMsg();
     }
 
 
-
+    private byte[] lastFileCmd;
 
     private synchronized boolean queFileMsg() {
         if (!nowCanSendImage) {
@@ -195,6 +196,7 @@ class BlueToothGattMsgManager {
             clearFileMsg();
             return false;
         }
+
         listenSendFileMsg(fileMsgIndex, cmd);
         return true;
     }
@@ -212,6 +214,10 @@ class BlueToothGattMsgManager {
 
     public int getFileMsgNumb(){
         return fileMsgMq.size();
+    }
+
+    public int getIndex(){
+        return fileMsgIndex;
     }
 
 

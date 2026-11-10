@@ -119,7 +119,7 @@ public class MainActivity extends BaseCompatActivity {
                         if(!canOta){
                             canOta=true;
                         }
-                        BleEventSubscriptionSubject.getInstance().sendCmd(HudCmdSendDataUtil.startOTA());
+
                         lastTime=System.currentTimeMillis();
                         String filePath= Environment.getExternalStorageDirectory().getPath()+"/"+"DCIM/cpu1.bin";
                         byte[] fileBytes= FileAndByteUtil.getBytesByFile(filePath);

@@ -34,6 +34,10 @@ public class BlueToothGattSendMsgManager {
         return BlueToothGattMsgManager.getInstance().getFileMsgNumb();
     }
 
+    public int getFileIndex(){
+       return BlueToothGattMsgManager.getInstance().getIndex();
+    }
+
 
    public void clear(){
        BlueToothGattMsgManager.getInstance().clear();
@@ -55,10 +59,29 @@ public class BlueToothGattSendMsgManager {
     }
 
 
-   public void sendMsgByCmd(byte[] cmd){
+    private boolean nowIsOta;
+    public void isOta(boolean nowIsOta){
+        this.nowIsOta=nowIsOta;
+    }
+
+    public void sendMsgByCmdNowIsOta(byte[] cmd){
+        if(!BleConnectStatuUtil.getInstance().isConnect()){
+            return;
+        }
+        BlueToothGattMsgManager.getInstance().addMsg(cmd);
+        BlueToothGattMsgManager.getInstance().queMsg();
+    }
+
+
+
+    public void sendMsgByCmd(byte[] cmd){
        if(!BleConnectStatuUtil.getInstance().isConnect()){
            return;
        }
+       if(nowIsOta){
+           return;
+       }
+
        BlueToothGattMsgManager.getInstance().addMsg(cmd);
        BlueToothGattMsgManager.getInstance().queMsg();
     }

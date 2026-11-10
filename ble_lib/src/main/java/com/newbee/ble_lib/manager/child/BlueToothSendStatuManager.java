@@ -202,13 +202,12 @@ public class BlueToothSendStatuManager {
          }
         Log.i(tag,"发送 ===  :发送成功---checkReturnToSend 22:");
          switch (toDoType){
-             case READY_OK:
+
              case SEND_ERR:
-                 noticeOtherNowCanSned();
-                 break;
              case RE_SEND:
                  noticeOtherNowReSned();
                  break;
+             case READY_OK:
              default:
                  noticeOtherNowCanSned();
                  break;

@@ -1,6 +1,8 @@
 package com.newbee.ble_lib.util.hud;
 
 
+import android.util.Log;
+
 import com.newbee.ble_lib.config.BleManagerConfig;
 import com.newbee.ble_lib.util.CryptoUtils;
 import com.nrmyw.ble_event_lib.util.BleByteUtil;
@@ -46,10 +48,12 @@ public class HudCmdSendDataUtil {
 
 
     public static byte[] getReadySendFileStart(int length){
+        Log.i("kankanchangdu","kankanchangdu:start---"+length);
         return getReadySendFile(length,true);
     }
 
     public static byte[] getReadySendFileEnd(int length){
+        Log.i("kankanchangdu","kankanchangdu:end---"+length);
         return getReadySendFile(length,false);
     }
 

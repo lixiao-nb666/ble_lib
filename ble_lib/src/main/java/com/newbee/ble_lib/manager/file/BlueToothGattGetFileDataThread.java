@@ -4,6 +4,7 @@ import android.text.TextUtils;
 import com.newbee.ble_lib.manager.file.send.SendBitmapManager;
 import com.newbee.ble_lib.manager.file.send.SendFileManager;
 import com.newbee.ble_lib.manager.file.send.SendOtaManager;
+import com.newbee.ble_lib.manager.msg.BlueToothGattSendMsgManager;
 import com.nrmyw.ble_event_lib.bean.BleSendFileInfoBean;
 import com.nrmyw.ble_event_lib.bean.BleSendImageInfoBean;
 import com.nrmyw.ble_event_lib.bean.BleSendOtaInfoBean;
@@ -70,6 +71,7 @@ public class BlueToothGattGetFileDataThread extends Thread{
     public void run() {
         super.run();
         try {
+            BlueToothGattSendMsgManager.getInstance().isOta(false);
             if(!canStart){
                 return;
             }

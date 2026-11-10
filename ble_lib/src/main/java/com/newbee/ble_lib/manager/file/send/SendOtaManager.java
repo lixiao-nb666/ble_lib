@@ -14,6 +14,7 @@ import com.newbee.ble_lib.util.FileAndByteUtil;
 import com.newbee.ble_lib.util.hud.HudCmdSendDataUtil;
 import com.nrmyw.ble_event_lib.bean.BleSendOtaInfoBean;
 import com.nrmyw.ble_event_lib.config.NewBeeBleConfig;
+import com.nrmyw.ble_event_lib.send.BleEventSubscriptionSubject;
 import com.nrmyw.ble_event_lib.statu.BleStatu;
 import com.nrmyw.ble_event_lib.statu.BleStatuEventSubscriptionSubject;
 import com.nrmyw.ble_event_lib.util.BleByteUtil;
@@ -66,6 +67,10 @@ public class SendOtaManager implements BlueToothGattSendFile {
             listen.sendOver(0);
             return;
         }
+
+
+        BlueToothGattSendMsgManager.getInstance().isOta(true);
+        BlueToothGattSendMsgManager.getInstance().sendMsgByCmdNowIsOta(HudCmdSendDataUtil.startOTA());
         md5Bytes= CryptoUtils.getMD5(fileBytes);
         size=fileBytes.length;
         msgIndex=0;
@@ -88,8 +93,9 @@ public class SendOtaManager implements BlueToothGattSendFile {
     private void sendFileStart(int size,byte[] md5Bytes){
         BlueToothGattSendMsgManager.getInstance().readySendFile();
         byte[] cmdStart= HudCmdSendDataUtil.getReadySendFileStart(size);
+        Log.i("kankanchangdu","kankanchangdu:start1---"+BleByteUtil.parseByte2HexStr(cmdStart));
         checkStr=BleByteUtil.parseByte2HexStr(cmdStart);
-        BlueToothGattSendMsgManager.getInstance().sendMsgByCmd(cmdStart);
+        BlueToothGattSendMsgManager.getInstance().sendMsgByCmdNowIsOta(cmdStart);
         progress=3;
         sendProgressEvent();
     }
@@ -139,6 +145,7 @@ public class SendOtaManager implements BlueToothGattSendFile {
 
     public void sendFileEnd(int size,byte[] md5Bytes){
         byte[] cmdEnd= HudCmdSendDataUtil.getReadySendFileEnd(size);
+        Log.i("kankanchangdu","kankanchangdu:end1---"+BleByteUtil.parseByte2HexStr(cmdEnd));
         BlueToothGattSendMsgManager.getInstance().setFileMsgNum(msgIndex+1);
         BlueToothGattSendMsgManager.getInstance().sendMsgByFile(msgIndex, cmdEnd);
         needProgressNumb=(msgIndex+1)/79;
@@ -155,6 +162,7 @@ public class SendOtaManager implements BlueToothGattSendFile {
                 if(null==retrunBytes){
                     return;
                 }
+             Log.i("tag","ota---------RetrunByte:"+BleByteUtil.parseByte2HexStr(retrunBytes));
                 CheckRetrunByteAndToDoType toDoType=CheckRetrunByteAndToDoType.useRetrunBytesGet(retrunBytes);
                 switch (toDoType){
                     case READY_OK:
@@ -169,9 +177,8 @@ public class SendOtaManager implements BlueToothGattSendFile {
                         BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.SEND_OTA_END);
                         break;
                     case SEND_INDEX_OK:
-                        BlueToothSendStatuManager.getInstance().setToDoType(toDoType);
-                        break;
                     case RE_SEND:
+                        BlueToothSendStatuManager.getInstance().setToDoType(toDoType);
                         break;
                     default:
                         if(null!=listen){
@@ -185,7 +192,7 @@ public class SendOtaManager implements BlueToothGattSendFile {
 
     private BlueToothSendStatuManager.SendOverListen sendOverListen=new BlueToothSendStatuManager.SendOverListen() {
 
-        private int sendNumb;
+
         @Override
         public void sendMsgOver(byte[] sendCmd, long startTime, long useTime) {
 
@@ -193,7 +200,7 @@ public class SendOtaManager implements BlueToothGattSendFile {
                 return;
             }
             if(TextUtils.isEmpty(checkStr)){
-                sendNumb++;
+                int sendNumb=BlueToothGattSendMsgManager.getInstance().getFileIndex();
                 if(sendNumb%needProgressNumb==0) {
                     int nowP = sendNumb / needProgressNumb;
                     progress = nowP + 20;
