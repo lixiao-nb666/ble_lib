@@ -62,13 +62,11 @@ public class SendOtaManager implements BlueToothGattSendFile {
         isStart=true;
         progress=1;
         sendProgressEvent();
-       fileBytes= FileAndByteUtil.getBytesByFile(otaInfoBean.getFilePath());
+        fileBytes= FileAndByteUtil.getBytesByFile(otaInfoBean.getFilePath());
         if(null==fileBytes||fileBytes.length==0){
             listen.sendOver(0);
             return;
         }
-
-
         BlueToothGattSendMsgManager.getInstance().isOta(true);
         BlueToothGattSendMsgManager.getInstance().sendMsgByCmdNowIsOta(HudCmdSendDataUtil.startOTA());
         md5Bytes= CryptoUtils.getMD5(fileBytes);
@@ -172,7 +170,7 @@ public class SendOtaManager implements BlueToothGattSendFile {
 //                        BlueToothSendStatuManager.getInstance().setToDoType(toDoType);
                         break;
                     case END_OK:
-                        progress=100;
+                        progress=99;
                         sendProgressEvent();
                         BleStatuEventSubscriptionSubject.getInstance().sendBleStatu(BleStatu.SEND_OTA_END);
                         break;
@@ -204,6 +202,9 @@ public class SendOtaManager implements BlueToothGattSendFile {
                 if(sendNumb%needProgressNumb==0) {
                     int nowP = sendNumb / needProgressNumb;
                     progress = nowP + 20;
+                    if(progress>99){
+                        progress=99;
+                    }
                     sendProgressEvent();
                 }
             }else {

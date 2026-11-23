@@ -143,6 +143,7 @@ L_N
 SRC_OVER
 SEND_ERR
 write
+/DCIM/cpu1_850_1204.bin
 RF_N
 SENDING_DATA
 L_Y
@@ -308,7 +309,6 @@ CREATED
 DIFFERENCE
 SOFT_LIGHT
 SHOW
-/DCIM/cpu1.bin
 bleDeviceShareKey_deviceName
 HUT_T
 android:view_state

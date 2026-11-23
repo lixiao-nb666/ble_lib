@@ -34,6 +34,12 @@ public class BlueToothGattManager {
     private BluetoothGattCharacteristic readCharacteristic;//写数据特征值
     /* 连接远程设备的回调函数 */
 
+    public void setSendTimePriorityIsHigh(){
+        try {
+            bluetoothGatt.requestConnectionPriority(BluetoothGatt.CONNECTION_PRIORITY_HIGH);
+        }catch (Exception e){}
+
+    }
 
     private final BluetoothGattCallback mGattCallback = new BluetoothGattCallback() {
 
@@ -42,7 +48,7 @@ public class BlueToothGattManager {
             super.onCharacteristicWrite(gatt, characteristic, status);
             /* 蓝牙反馈回调 */
 //            EventBus.getDefault().post(new EventBluetoothStateMessage(ACTION_GATT_WRITE_STATE,status));
-            BlueToothSendStatuManager.getInstance().sendBytesIsOk(status);
+           BlueToothSendStatuManager.getInstance().sendBytesIsOk(status);
         }
 
         @Override

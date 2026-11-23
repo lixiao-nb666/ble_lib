@@ -121,7 +121,7 @@ public class MainActivity extends BaseCompatActivity {
                         }
 
                         lastTime=System.currentTimeMillis();
-                        String filePath= Environment.getExternalStorageDirectory().getPath()+"/"+"DCIM/cpu1.bin";
+                        String filePath= Environment.getExternalStorageDirectory().getPath()+"/"+"DCIM/cpu1_850_1204.bin";
                         byte[] fileBytes= FileAndByteUtil.getBytesByFile(filePath);
                         if(null==fileBytes||fileBytes.length==0){
                             showToast("err : file size =0" );

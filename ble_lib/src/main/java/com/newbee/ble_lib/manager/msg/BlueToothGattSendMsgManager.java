@@ -40,6 +40,7 @@ public class BlueToothGattSendMsgManager {
 
 
    public void clear(){
+       nowIsOta=false;
        BlueToothGattMsgManager.getInstance().clear();
    }
 
