@@ -132,7 +132,7 @@ public class BlueToothSendStatuManager {
         long sendOkTime=System.currentTimeMillis();
         long useTime=(sendOkTime-sendTime);
         if(useTime>200&&status==0){
-            if(sendOkTime-lastResetPriorityTime>=60*1000){
+            if(sendOkTime-lastResetPriorityTime>=15*1000){
                 lastResetPriorityTime=sendOkTime;
                 BlueToothGattManager.getInstance().setSendTimePriorityIsHigh();
             }
