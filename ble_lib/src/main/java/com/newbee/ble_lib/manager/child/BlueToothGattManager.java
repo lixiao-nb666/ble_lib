@@ -36,7 +36,9 @@ public class BlueToothGattManager {
 
     public void setSendTimePriorityIsHigh(){
         try {
-            bluetoothGatt.requestConnectionPriority(BluetoothGatt.CONNECTION_PRIORITY_HIGH);
+            boolean reset=bluetoothGatt.requestConnectionPriority(BluetoothGatt.CONNECTION_PRIORITY_HIGH);
+
+            Log.i("ble_code_check","ble_code_check:send data start:reset PriorityIsHigh--"+reset);
         }catch (Exception e){}
 
     }
@@ -54,7 +56,8 @@ public class BlueToothGattManager {
         @Override
         public void onDescriptorWrite(BluetoothGatt gatt, BluetoothGattDescriptor descriptor, int status) {
             super.onDescriptorWrite(gatt, descriptor, status);
-            /*if (status == BluetoothGatt.GATT_SUCCESS) {}*/
+//            BluetoothGatt.GATT_SUCCESS
+//            /*if (status == BluetoothGatt.GATT_SUCCESS) {}*/
             if (status == BluetoothGatt.GATT_SUCCESS) {
 //                bluetoothGatt.requestMtu(NewBeeBleConfig.getInstance().getMtu());
 //                BleConnectStatuUtil.getInstance().sendConnected();
